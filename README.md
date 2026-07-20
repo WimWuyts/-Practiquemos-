@@ -1,4 +1,4 @@
-# CHRONICLE 24 — The Time-Travel Newsroom
+# CHRONICLE SJB — The Time-Travel Newsroom
 
 Een interactieve klas-pagina voor de Engelse les. De klas is één nieuwsredactie
 die **door de tijd** kan uitzenden. De tijdmachine is stuk, dus bronnen uit
@@ -22,7 +22,13 @@ uit elkaar houden:
   omkadering (rollen, grammar-boxes, vocab, interview, eindtaak, print, niveau,
   instructiekaart), andere spelvorm. De grote val is een **vervalste "lost
   scene"** (modern Engels op gelinieerd papier) plus een **anachronisme** (een
-  "coffee-house" in 1606).
+  "coffee-house" in 1606). De kaart is in **oude-kaart/Google-Maps-stijl**;
+  daarnaast zit er een **Early Modern English-decoder** (thou = you, hast =
+  have…) op het Vocab-tabblad en een **verdachtenbord met stemmen** op het
+  Verdict-tabblad.
+
+De zender heet **CHRONICLE SJB** (logo **SJB**). Elk personage heeft nu een
+eigen gezichtsvorm, en beide afleveringen hebben dezelfde instructiekaart (❓).
 
 De uitleg hieronder gaat over aflevering 1; aflevering 2 werkt hetzelfde, met
 de kaart in plaats van de binnenstromende feed.

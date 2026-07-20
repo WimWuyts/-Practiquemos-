@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CHRONICLE 24 — The Time-Travel Newsroom</title>
+<title>CHRONICLE SJB — The Time-Travel Newsroom</title>
 <style>
   :root{
     --bg:#e7ecf2; --panel:#ffffff; --panel2:#eef2f7; --border:#d2dae4;
@@ -449,7 +449,7 @@
   <div class="alert">
     <div class="ah"><span>⚠</span> Temporal Alert</div>
     <div class="ab">
-      <h1>CHRONICLE 24 — News Across Time</h1>
+      <h1>CHRONICLE SJB — News Across Time</h1>
       <div class="loc">LONDON · 1912 · WIRELESS ROOM</div>
       <p>You work for the only newsroom that can broadcast through time. Moments ago, the time machine was damaged. Events, sources and people from different centuries are beginning to bleed into one another.</p>
       <div class="msg">A wireless message is coming in right now. The transmission claims to come from the <b>Titanic</b> — but the ship is still sitting in port. Your team decides what is true <b>before</b> the broadcast begins.</div>
@@ -467,7 +467,7 @@
 <header>
   <div class="bar">
     <div class="logo">
-      <span class="c24">C24</span>
+      <span class="c24">SJB</span>
       <span class="tag">News&nbsp;Across&nbsp;Time</span>
     </div>
     <div class="spacer"></div>
@@ -643,7 +643,7 @@
     <div class="ivstage">
       <div class="ivwin" id="ivReporterWin">
         <div id="ivReporter"></div>
-        <div class="ivlower"><div class="role">Reporter</div><div class="who">You — CHRONICLE 24</div><div class="wave" id="waveR"></div></div>
+        <div class="ivlower"><div class="role">Reporter</div><div class="who">You — CHRONICLE SJB</div><div class="wave" id="waveR"></div></div>
       </div>
       <div class="ivwin" id="ivWitnessWin">
         <div id="ivWitness"></div>
@@ -694,7 +694,7 @@
 <div id="printDoc"></div>
 
 <footer>
-  CHRONICLE 24 — The Time-Travel Newsroom · Episode 1: <em>Titanic — The Final Broadcast</em><br>
+  CHRONICLE SJB — The Time-Travel Newsroom · Episode 1: <em>Titanic — The Final Broadcast</em><br>
   Two questions, always: <b>1.</b> Is the information true? &nbsp; <b>2.</b> Can the source be authentic?
 </footer>
 
@@ -1455,9 +1455,9 @@ function loadDraft(){
 function downloadArticle(){
   const h=document.getElementById('headlineBox').value||'(no headline)';
   const a=document.getElementById('articleBox').value||'';
-  const txt='CHRONICLE 24 — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
+  const txt='CHRONICLE SJB — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
   const blob=new Blob([txt],{type:'text/plain'}); const url=URL.createObjectURL(blob);
-  const el=document.createElement('a'); el.href=url; el.download='chronicle24-article.txt'; el.click();
+  const el=document.createElement('a'); el.href=url; el.download='chroniclesjb-article.txt'; el.click();
   setTimeout(()=>URL.revokeObjectURL(url),2000);
 }
 /* teleprompter */
@@ -1496,8 +1496,8 @@ function createRecorder(btnId, wrapId, audioId, dlId, msgId, fileName){
     }
   };
 }
-const toggleRecord   = createRecorder('recBtn','recWrap','playback','dlAudio','recMsg','chronicle24-broadcast.webm');
-const toggleRecordIv = createRecorder('recBtnIv','recWrapIv','playbackIv','dlAudioIv','recMsgIv','chronicle24-interview.webm');
+const toggleRecord   = createRecorder('recBtn','recWrap','playback','dlAudio','recMsg','chroniclesjb-broadcast.webm');
+const toggleRecordIv = createRecorder('recBtnIv','recWrapIv','playbackIv','dlAudioIv','recMsgIv','chroniclesjb-interview.webm');
 
 /* =========================================================
    VOCABULARY — pre-teach word bank (tap to reveal)
@@ -1529,18 +1529,18 @@ function renderVocab(){
 /* =========================================================
    LIVE INTERVIEW — animated role-play (Reporter × Witness)
    ========================================================= */
-const REPORTER = {k:'r', coat:"#1e3a55", skin:"#e6b98c", hair:"short", hairCol:"#3a2a1c", hat:"none", mic:true};
+const REPORTER = {k:'r', face:"oval", coat:"#1e3a55", skin:"#e6b98c", hair:"short", hairCol:"#3a2a1c", hat:"none", mic:true};
 const WITNESSES = [
-  {k:0, name:"Frank, a stoker", role:"Boiler room crew", coat:"#4a3a2c", skin:"#c98a5a", hat:"flatcap", hatCol:"#333741",
+  {k:0, face:"square", name:"Frank, a stoker", role:"Boiler room crew", coat:"#4a3a2c", skin:"#c98a5a", hat:"flatcap", hatCol:"#333741",
    hair:"short", hairCol:"#241a12", facial:"stubble", soot:true,
    back:"You were shovelling coal deep below when the hull screamed. You felt the freezing water reach your boots first, and you ran for the ladders."},
-  {k:1, name:"Fred, the lookout", role:"Crow's nest", coat:"#274456", skin:"#e0b48a", hat:"flatcap", hatCol:"#2c4256",
+  {k:1, face:"long", name:"Fred, the lookout", role:"Crow's nest", coat:"#274456", skin:"#e0b48a", hat:"flatcap", hatCol:"#2c4256",
    hair:"short", hairCol:"#4a3320", facial:"none", collar:true,
    back:"You were high in the crow's nest with no binoculars. You saw the black shape too late, rang the bell three times and shouted the warning."},
-  {k:2, name:"Lady Ashcombe", role:"First-class passenger", coat:"#5a3050", skin:"#ecc6a4", hat:"wide", hatCol:"#8a3d6a",
+  {k:2, face:"round", name:"Lady Ashcombe", role:"First-class passenger", coat:"#5a3050", skin:"#ecc6a4", hat:"wide", hatCol:"#8a3d6a",
    hair:"curls", hairCol:"#3a2418", cheeks:true, earrings:true, necklace:true,
    back:"You were dancing after dinner when the ship shuddered. A steward smiled and told you not to worry — but the floor was already tilting."},
-  {k:3, name:"Officer Wilde", role:"Ship's officer", coat:"#1f2a40", skin:"#dcae86", hat:"peaked", hatCol:"#141c2b",
+  {k:3, face:"wide", name:"Officer Wilde", role:"Ship's officer", coat:"#1f2a40", skin:"#dcae86", hat:"peaked", hatCol:"#141c2b",
    hair:"none", hairCol:"#2a2018", facial:"mustache", buttons:true,
    back:"You were put in charge of a lifeboat. You had seconds to decide who boarded first, and some boats left only half full."},
 ];
@@ -1555,6 +1555,16 @@ const IVQUESTIONS = [
   {t:"continuous", q:"What can you see from the deck right now?"},
 ];
 let ivWit=0, ivQ=0, ivBuilt=false;
+function headShape(face, skin){
+  switch(face){
+    case 'oval':    return `<ellipse cx="100" cy="70" rx="25" ry="29" fill="${skin}"/>`;
+    case 'long':    return `<ellipse cx="100" cy="71" rx="22.5" ry="31" fill="${skin}"/>`;
+    case 'wide':    return `<ellipse cx="100" cy="71" rx="30" ry="25" fill="${skin}"/>`;
+    case 'square':  return `<rect x="73" y="45" width="54" height="52" rx="15" fill="${skin}"/>`;
+    case 'angular': return `<path d="M100 43 Q125 45 126 66 Q127 86 100 98 Q73 86 74 66 Q75 45 100 43 Z" fill="${skin}"/>`;
+    default:        return `<circle cx="100" cy="70" r="27" fill="${skin}"/>`;
+  }
+}
 function personSVG(o){
   const skin=o.skin, coat=o.coat, hairCol=o.hairCol||'#2b2118';
   let back='', hat='', facial='', extra='';
@@ -1583,7 +1593,7 @@ function personSVG(o){
       <path d="M32 170 Q32 111 100 111 Q168 111 168 170 Z" fill="${coat}"/>
       <rect x="88" y="88" width="24" height="26" rx="7" fill="${skin}"/>
       ${back}
-      <circle cx="100" cy="70" r="27" fill="${skin}"/>
+      ${headShape(o.face, skin)}
       <circle cx="90" cy="68" r="2.6" fill="#20303a"/><circle cx="110" cy="68" r="2.6" fill="#20303a"/>
       <path d="M91 82 Q100 87 109 82" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="2" stroke-linecap="round"/>
       ${facial}
@@ -1657,7 +1667,7 @@ function printPack(){
   const timeline = UPDATES.map(u=>`<tr><td>${u.time}</td><td>${u.src}</td><td>${stripTags(u.text)}</td></tr>`).join('');
   const traps = UPDATES.map((u,i)=>u.trap?`<li><b>${u.time} — ${u.src}:</b> ${u.kind==='anachronism'?'anachronism (source impossible in 1912)':'manipulation (period-authentic source, but false)'}</li>`:'').join('');
   document.getElementById('printDoc').innerHTML = `
-    <h1>CHRONICLE 24 — The Time-Travel Newsroom</h1>
+    <h1>CHRONICLE SJB — The Time-Travel Newsroom</h1>
     <div class="sub">Episode 1: Titanic — The Final Broadcast · Student worksheet</div>
     <p>You are a journalist in the only newsroom that can broadcast through time. Reports from 1912 are coming in — but sources from other centuries have leaked in too. Before you publish, always ask: <b>(1)</b> Is the information true? <b>(2)</b> Can the source be authentic?</p>
 

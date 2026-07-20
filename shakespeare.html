@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CHRONICLE 24 — Shakespeare Is Missing</title>
+<title>CHRONICLE SJB — Shakespeare Is Missing</title>
 <style>
   :root{
     --bg:#e7ecf2; --panel:#ffffff; --panel2:#eef2f7; --border:#d2dae4;
@@ -441,22 +441,40 @@
   .btn.hclose{background:rgba(255,255,255,.22); border-color:transparent; color:#fff}
 
   /* ---------- Map of London 1606 ---------- */
-  .map{position:relative; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#0e1a26; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,.08)}
-  .map svg{display:block; width:100%; height:300px}
-  @media(max-width:600px){ .map svg{height:230px} }
+  .map{position:relative; border:1px solid #b39a63; border-radius:12px; overflow:hidden; background:#e8dcc0; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,.10); aspect-ratio:400 / 240}
+  .map svg{display:block; width:100%; height:100%}
   #pins{position:absolute; inset:0}
   .pin{position:absolute; transform:translate(-50%,-50%); background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px; padding:0; pointer-events:none}
   .pin .plabel{pointer-events:none}
   .pin .pdot{pointer-events:auto; cursor:pointer; width:17px; height:17px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--amber); border:2px solid #fff; box-shadow:0 2px 5px rgba(0,0,0,.4); transition:.15s; animation:pinpulse 2s ease-in-out infinite}
   @keyframes pinpulse{0%,100%{box-shadow:0 2px 5px rgba(0,0,0,.4)}50%{box-shadow:0 2px 5px rgba(0,0,0,.4), 0 0 0 6px rgba(245,166,35,.18)}}
   .pin:hover .pdot{transform:rotate(-45deg) scale(1.18)}
-  .pin .plabel{font-size:10.5px; font-weight:700; color:#fff; background:rgba(10,16,22,.72); padding:2px 7px; border-radius:5px; white-space:nowrap; letter-spacing:.2px}
+  .pin .plabel{font-size:10.5px; font-weight:700; color:#2a2216; background:rgba(255,255,255,.92); padding:2px 7px; border-radius:5px; white-space:nowrap; letter-spacing:.2px; box-shadow:0 1px 2px rgba(0,0,0,.28)}
   .pin.visited .pdot{background:var(--green); animation:none; border-radius:50%; transform:rotate(0)}
   .pin.visited:hover .pdot{transform:scale(1.12)}
   .pin.visited .plabel{opacity:.72}
   .pin.trap.visited .pdot{background:var(--violet)}
   .flag{transform-box:fill-box; transform-origin:left center; animation:flagwave 1.6s ease-in-out infinite}
   @keyframes flagwave{0%,100%{transform:skewY(0) scaleX(1)}50%{transform:skewY(-7deg) scaleX(.9)}}
+
+  /* ---------- Early Modern English decoder ---------- */
+  .decoder{border:1px solid rgba(180,120,20,.4); background:linear-gradient(180deg, rgba(245,220,150,.30), rgba(245,220,150,.08)); border-radius:11px; padding:12px 13px; margin-bottom:13px}
+  .decoder .dlabel{font-weight:800; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#8a6a1a; margin-bottom:9px}
+  .decoder .dgrid{display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; font-size:12.5px; font-family:var(--mono)}
+  .decoder .dgrid b{color:var(--text)}
+  .decoder .dtry{font-size:12px; color:var(--muted); margin-top:9px; line-height:1.5}
+
+  /* ---------- Suspect board (verdict) ---------- */
+  .hb .suspect{border:1px solid var(--border); background:var(--panel); border-radius:11px; padding:11px 12px; margin-bottom:9px}
+  .hb .stitle{font-size:14px; font-weight:600; margin-bottom:9px}
+  .hb .srow{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .hb .svote{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono)}
+  .hb .svote button{width:25px; height:25px; border-radius:6px; border:1px solid var(--border); background:var(--panel2); color:var(--text); font-size:16px; font-weight:700; cursor:pointer; line-height:1}
+  .hb .svote button:hover{border-color:var(--cyan)}
+  .hb .svote .vnum{min-width:20px; text-align:center; font-weight:700; font-size:14px}
+  .hb .svote .vlbl{color:var(--muted); font-family:var(--sans); font-size:11px}
+  .hb .filebtn{margin-left:auto; width:auto; font-family:var(--sans); font-size:12.5px; padding:7px 12px; margin-bottom:0}
+  .hb .suspect.picked .opt-fb{display:block; margin-top:9px}
 </style>
 </head>
 <body>
@@ -474,7 +492,7 @@
   <div class="alert">
     <div class="ah"><span>⚠</span> Temporal Alert · Cold Case</div>
     <div class="ab">
-      <h1>CHRONICLE 24 — Shakespeare Is Missing</h1>
+      <h1>CHRONICLE SJB — Shakespeare Is Missing</h1>
       <div class="loc">LONDON · 1606 · THE CITY DESK</div>
       <p>You work for the only newsroom that can travel through time. This afternoon, <b>Macbeth</b> has its premiere at the Globe — but the playwright, <b>William Shakespeare</b>, has vanished, and the final scene is gone with him.</p>
       <div class="msg">Sources from other centuries have leaked into 1606. Explore the <b>map of London</b>, gather evidence, and work out what happened — <b>before</b> the curtain rises. Two questions never change: is it true, and can the source be real in 1606?</div>
@@ -492,7 +510,7 @@
 <header>
   <div class="bar">
     <div class="logo">
-      <span class="c24">C24</span>
+      <span class="c24">SJB</span>
       <span class="tag">News&nbsp;Across&nbsp;Time</span>
     </div>
     <div class="spacer"></div>
@@ -526,26 +544,52 @@
   <main>
     <h2 class="section">Map of London · 1606 — click a location to investigate</h2>
     <div class="map" id="map">
-      <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="400" height="220" fill="#0e1a26"/>
-        <!-- Thames -->
-        <path d="M-10 150 Q 90 128 200 150 T 410 148 L410 178 Q 300 160 200 178 T -10 176 Z" fill="#123246"/>
-        <path d="M-10 152 Q 90 130 200 152 T 410 150" fill="none" stroke="#1f5570" stroke-width="1" opacity=".6"/>
-        <!-- London Bridge -->
-        <rect x="150" y="146" width="40" height="34" fill="#20303c"/>
-        <g fill="#2a3b48"><rect x="153" y="140" width="5" height="8"/><rect x="163" y="140" width="5" height="8"/><rect x="173" y="140" width="5" height="8"/><rect x="183" y="140" width="5" height="8"/></g>
-        <!-- north bank blocks -->
-        <g fill="#182734" stroke="#243644" stroke-width="1">
-          <rect x="30" y="60" width="70" height="46" rx="2"/><rect x="120" y="44" width="60" height="60" rx="2"/>
-          <rect x="200" y="66" width="66" height="40" rx="2"/><rect x="286" y="50" width="80" height="56" rx="2"/>
+      <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="parch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0e5c9"/><stop offset="1" stop-color="#e1cfa1"/></linearGradient>
+          <radialGradient id="parchVig" cx="0.5" cy="0.5" r="0.75"><stop offset="0.62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#5a4a24" stop-opacity="0.20"/></radialGradient>
+        </defs>
+        <rect width="400" height="240" fill="url(#parch)"/>
+        <!-- faint graticule (the ‘map grid’) -->
+        <g stroke="#b7a274" stroke-width="0.5" opacity="0.35">
+          <line x1="50" y1="0" x2="50" y2="240"/><line x1="100" y1="0" x2="100" y2="240"/><line x1="150" y1="0" x2="150" y2="240"/><line x1="200" y1="0" x2="200" y2="240"/><line x1="250" y1="0" x2="250" y2="240"/><line x1="300" y1="0" x2="300" y2="240"/><line x1="350" y1="0" x2="350" y2="240"/>
+          <line x1="0" y1="40" x2="400" y2="40"/><line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="120" x2="400" y2="120"/><line x1="0" y1="160" x2="400" y2="160"/><line x1="0" y1="200" x2="400" y2="200"/>
         </g>
-        <!-- St Paul's spire -->
-        <path d="M150 44 L156 20 L162 44 Z" fill="#2a3b48"/><rect x="153" y="44" width="6" height="10" fill="#2a3b48"/>
-        <!-- south bank (Bankside) -->
-        <g fill="#152430" stroke="#22333f" stroke-width="1"><rect x="60" y="186" width="70" height="30" rx="2"/><rect x="230" y="188" width="90" height="28" rx="2"/></g>
-        <text x="12" y="86" fill="#3a5568" font-family="monospace" font-size="9">N O R T H   B A N K</text>
-        <text x="12" y="206" fill="#3a5568" font-family="monospace" font-size="9">B A N K S I D E</text>
-        <text x="360" y="196" fill="#294a5e" font-family="monospace" font-size="8" text-anchor="end">R. THAMES</text>
+        <!-- fields outside the walls -->
+        <g fill="#bcbf88" opacity="0.5"><ellipse cx="26" cy="34" rx="42" ry="28"/><ellipse cx="372" cy="46" rx="46" ry="30"/><ellipse cx="366" cy="116" rx="30" ry="24"/></g>
+        <!-- The Thames -->
+        <path d="M-10 158 Q 80 140 180 152 Q 280 164 410 152 L410 200 Q 300 186 190 194 Q 90 200 -10 188 Z" fill="#a6c6c2"/>
+        <path d="M-10 160 Q 80 142 180 154 Q 280 166 410 154" fill="none" stroke="#6f9d98" stroke-width="1.2" opacity="0.7"/>
+        <g stroke="#82b1ac" stroke-width="0.7" fill="none" opacity="0.6"><path d="M40 176 q 12 -5 24 0 t 24 0"/><path d="M150 182 q 12 -5 24 0 t 24 0"/><path d="M260 176 q 12 -5 24 0 t 24 0"/></g>
+        <text x="300" y="184" fill="#3d6a64" font-family="Georgia,serif" font-size="10" font-style="italic" transform="rotate(-3 300 184)">R. Thames</text>
+        <!-- London Bridge -->
+        <g fill="#8a6a44"><rect x="176" y="150" width="6" height="44"/></g>
+        <g fill="#a07c4c">${[0,1,2,3,4].map(i=>`<rect x="${170+i*10}" y="146" width="6" height="7"/>`).join('')}</g>
+        <!-- city wall -->
+        <path d="M58 152 Q56 58 200 52 Q334 58 342 152" fill="none" stroke="#9c7d4a" stroke-width="2.5"/>
+        <g fill="#9c7d4a"><rect x="94" y="70" width="6" height="6"/><rect x="150" y="55" width="6" height="6"/><rect x="252" y="57" width="6" height="6"/><rect x="304" y="82" width="6" height="6"/></g>
+        <!-- roads -->
+        <g stroke="#cdb277" stroke-width="4.5" stroke-linecap="round" fill="none"><path d="M78 150 L150 100 L260 96 L332 140"/><path d="M200 150 L200 60"/><path d="M150 100 L122 62"/><path d="M260 96 L292 66"/></g>
+        <g stroke="#efdcA8" stroke-width="1.3" fill="none" opacity="0.85"><path d="M78 150 L150 100 L260 96 L332 140"/><path d="M200 150 L200 60"/></g>
+        <!-- houses (built by renderMap) -->
+        <g id="mapHouses" stroke="#9c7d4a" stroke-width="0.5"></g>
+        <!-- St Paul's -->
+        <g transform="translate(150,90)"><rect x="-9" y="-2" width="18" height="15" fill="#dcc79c" stroke="#9c7d4a"/><path d="M-10 -2 L0 -17 L10 -2 Z" fill="#b98f57"/><line x1="0" y1="-17" x2="0" y2="-26" stroke="#7a5a2e"/><path d="M-3 -23 L3 -23 M0 -27 L0 -20" stroke="#7a5a2e" stroke-width="1"/></g>
+        <text x="150" y="122" fill="#5a4222" font-family="Georgia,serif" font-size="9" text-anchor="middle" font-style="italic">St Paul's</text>
+        <!-- The Tower -->
+        <g transform="translate(322,138)"><rect x="-10" y="-11" width="20" height="17" fill="#dcc79c" stroke="#9c7d4a"/><rect x="-10" y="-15" width="4" height="4" fill="#b98f57"/><rect x="6" y="-15" width="4" height="4" fill="#b98f57"/></g>
+        <text x="322" y="120" fill="#5a4222" font-family="Georgia,serif" font-size="9" text-anchor="middle" font-style="italic">The Tower</text>
+        <!-- The Globe on Bankside -->
+        <g transform="translate(96,200)"><circle r="10" fill="#dcc79c" stroke="#9c7d4a"/><circle r="4" fill="#b98f57"/></g>
+        <text x="150" y="222" fill="#3d6a64" font-family="Georgia,serif" font-size="10" text-anchor="middle" font-style="italic">Bankside</text>
+        <!-- compass rose -->
+        <g transform="translate(362,44)"><circle r="14" fill="none" stroke="#8a6a3a" stroke-width="1"/><path d="M0 -14 L4 0 L0 14 L-4 0 Z" fill="#8a6a3a"/><path d="M-14 0 L0 4 L14 0 L0 -4 Z" fill="#c0a76c"/><text x="0" y="-16" fill="#5a4222" font-family="Georgia,serif" font-size="8" text-anchor="middle" font-weight="700">N</text></g>
+        <!-- title cartouche -->
+        <g transform="translate(20,18)"><rect x="0" y="0" width="120" height="26" rx="3" fill="#f2e8cd" stroke="#8a6a3a" stroke-width="1.2"/><text x="60" y="17" fill="#5a4222" font-family="Georgia,serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">LONDON · 1606</text></g>
+        <!-- vignette + frame -->
+        <rect width="400" height="240" fill="url(#parchVig)"/>
+        <rect x="4" y="4" width="392" height="232" fill="none" stroke="#8a6a3a" stroke-width="1.5"/>
+        <rect x="8" y="8" width="384" height="224" fill="none" stroke="#8a6a3a" stroke-width="0.6"/>
       </svg>
       <div id="pins"></div>
     </div>
@@ -582,7 +626,17 @@
 
     <!-- VOCAB -->
     <div class="pane vocab" id="pane-vocab">
-      <h2 class="section">Pre-teach: newsroom vocabulary</h2>
+      <h2 class="section">Early Modern English &amp; vocabulary</h2>
+      <div class="decoder">
+        <div class="dlabel">🗝 Early Modern English decoder</div>
+        <div class="dgrid">
+          <span><b>thou</b> → you</span><span><b>thee</b> → you (object)</span>
+          <span><b>art</b> → are</span><span><b>hast</b> → have</span>
+          <span><b>doth / dost</b> → does / do</span><span><b>-eth / -est</b> → verb endings</span>
+          <span><b>wherefore</b> → why</span><span><b>hither</b> → (to) here</span>
+        </div>
+        <div class="dtry">This is the English of 1606. A page in <b>modern</b> English (“don't / gonna”) cannot be authentic — that is how you spot a forgery.</div>
+      </div>
       <div class="vhint">Tap a word to reveal its meaning and an example. Try to use a few in your report.</div>
       <div id="vocab"></div>
     </div>
@@ -692,7 +746,7 @@
     <div class="ivstage">
       <div class="ivwin" id="ivReporterWin">
         <div id="ivReporter"></div>
-        <div class="ivlower"><div class="role">Reporter</div><div class="who">You — CHRONICLE 24</div><div class="wave" id="waveR"></div></div>
+        <div class="ivlower"><div class="role">Reporter</div><div class="who">You — CHRONICLE SJB</div><div class="wave" id="waveR"></div></div>
       </div>
       <div class="ivwin" id="ivWitnessWin">
         <div id="ivWitness"></div>
@@ -743,7 +797,7 @@
 <div id="printDoc"></div>
 
 <footer>
-  CHRONICLE 24 — The Time-Travel Newsroom · Episode 2: <em>Shakespeare Is Missing</em> · London, 1606<br>
+  CHRONICLE SJB — The Time-Travel Newsroom · Episode 2: <em>Shakespeare Is Missing</em> · London, 1606<br>
   Two questions, always: <b>1.</b> Is the information true? &nbsp; <b>2.</b> Can the source be authentic to 1606?
 </footer>
 
@@ -864,13 +918,13 @@ const UPDATES = [
 ];
 
 const LOCATIONS = [
-  {i:0, name:"The Globe",        x:20, y:82},
-  {i:1, name:"Lodgings",         x:42, y:30},
-  {i:2, name:"Revels Office",    x:78, y:26},
-  {i:3, name:"The Mermaid",      x:60, y:52},
-  {i:4, name:"Pedlar's stall",   x:30, y:55, trap:true},
-  {i:5, name:"Stationers' Hall", x:40, y:15, trap:true},
-  {i:6, name:"The playbill",     x:14, y:60},
+  {i:0, name:"The Globe",        x:28, y:87},
+  {i:1, name:"Lodgings",         x:26, y:34},
+  {i:2, name:"Revels Office",    x:78, y:32},
+  {i:3, name:"The Mermaid",      x:56, y:47},
+  {i:4, name:"Pedlar's stall",   x:30, y:55},
+  {i:5, name:"Stationers' Hall", x:46, y:38},
+  {i:6, name:"The playbill",     x:13, y:73},
 ];
 
 /* explanation per core tense — appears the first time that tense reaches the screen */
@@ -1126,7 +1180,15 @@ function startBroadcast(){   // "Open the case"
   document.getElementById('onair').classList.add('live');
   document.getElementById('onair').innerHTML = '<span class="dot"></span>Case open';
 }
+function mapHouses(){
+  const spots=[[100,122],[124,112],[148,118],[176,112],[206,108],[236,110],[266,112],[292,120],
+               [112,134],[152,136],[192,134],[232,136],[272,134],[300,138],[132,92],[212,86],[250,90],[300,104]];
+  return spots.map(([x,y])=>{ const w=(8+Math.random()*4), h=(6+Math.random()*3);
+    return `<g transform="translate(${x},${y})"><rect x="${(-w/2).toFixed(1)}" y="0" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="#d8bd8e"/><path d="M${(-w/2-1).toFixed(1)} 0 L0 ${(-h*0.8).toFixed(1)} L${(w/2+1).toFixed(1)} 0 Z" fill="#b3874f"/></g>`;
+  }).join('');
+}
 function renderMap(){
+  const mh=document.getElementById('mapHouses'); if(mh) mh.innerHTML = mapHouses();
   document.getElementById('pins').innerHTML = LOCATIONS.map(l=>
     `<button class="pin" id="pin-${l.i}" style="left:${l.x}%;top:${l.y}%" onclick="visit(${l.i})">
        <span class="pdot"></span><span class="plabel">${l.name}</span>
@@ -1247,6 +1309,7 @@ function resetBroadcast(){
   document.getElementById('onair').classList.remove('live');
   document.getElementById('onair').innerHTML = '<span class="dot"></span>Case closed';
   document.getElementById('overlay').classList.remove('hide');
+  votes.fill(0); renderHeadline();
   renderLog();
   showPane('roles', document.querySelector('.tab'));
 }
@@ -1294,6 +1357,7 @@ const SCENARIOS = [
   }
 ];
 let scnIdx = 0;
+const votes = [0,0,0,0];
 function renderHeadline(){
   const s = SCENARIOS[scnIdx];
   document.getElementById('headline').innerHTML = `
@@ -1301,15 +1365,22 @@ function renderHeadline(){
       <div class="lbl">${s.lbl}</div>
       <div class="facts">${s.facts}</div>
       ${s.opts.map((o,i)=>`
-        <button class="opt ${o.cls}" onclick="pickOpt(${i},this)">
-          ${o.t}
+        <div class="suspect">
+          <div class="stitle">${o.t}</div>
+          <div class="srow">
+            <div class="svote"><button onclick="vote(${i},-1)">−</button><span class="vnum" id="vote-${i}">${votes[i]||0}</span><button onclick="vote(${i},1)">+</button><span class="vlbl">votes</span></div>
+            <button class="opt ${o.cls} filebtn" onclick="pickOpt(${i},this)">⚖ File this verdict</button>
+          </div>
           <div class="opt-fb">${o.fb}</div>
-        </button>`).join('')}
-      <div class="nav"><span>Pick the best-supported verdict — and justify it in your report.</span></div>
+        </div>`).join('')}
+      <div class="nav"><span>Tally the class's votes, then file the best-supported verdict — and justify it in your report.</span></div>
     </div>`;
 }
+function vote(i, d){ votes[i]=Math.max(0,(votes[i]||0)+d); const el=document.getElementById('vote-'+i); if(el) el.textContent=votes[i]; }
 function pickOpt(i, btn){
-  btn.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('picked'));
+  document.querySelectorAll('#headline .suspect').forEach(s=>s.classList.remove('picked'));
+  document.querySelectorAll('#headline .opt').forEach(o=>o.classList.remove('picked'));
+  const sus=btn.closest('.suspect'); if(sus) sus.classList.add('picked');
   btn.classList.add('picked');
 }
 
@@ -1394,9 +1465,9 @@ function loadDraft(){
 function downloadArticle(){
   const h=document.getElementById('headlineBox').value||'(no headline)';
   const a=document.getElementById('articleBox').value||'';
-  const txt='CHRONICLE 24 — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
+  const txt='CHRONICLE SJB — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
   const blob=new Blob([txt],{type:'text/plain'}); const url=URL.createObjectURL(blob);
-  const el=document.createElement('a'); el.href=url; el.download='chronicle24-article.txt'; el.click();
+  const el=document.createElement('a'); el.href=url; el.download='chroniclesjb-article.txt'; el.click();
   setTimeout(()=>URL.revokeObjectURL(url),2000);
 }
 /* teleprompter */
@@ -1435,8 +1506,8 @@ function createRecorder(btnId, wrapId, audioId, dlId, msgId, fileName){
     }
   };
 }
-const toggleRecord   = createRecorder('recBtn','recWrap','playback','dlAudio','recMsg','chronicle24-broadcast.webm');
-const toggleRecordIv = createRecorder('recBtnIv','recWrapIv','playbackIv','dlAudioIv','recMsgIv','chronicle24-interview.webm');
+const toggleRecord   = createRecorder('recBtn','recWrap','playback','dlAudio','recMsg','chroniclesjb-broadcast.webm');
+const toggleRecordIv = createRecorder('recBtnIv','recWrapIv','playbackIv','dlAudioIv','recMsgIv','chroniclesjb-interview.webm');
 
 /* =========================================================
    VOCABULARY — pre-teach word bank (tap to reveal)
@@ -1468,21 +1539,21 @@ function renderVocab(){
 /* =========================================================
    LIVE INTERVIEW — animated role-play (Reporter × Witness)
    ========================================================= */
-const REPORTER = {k:'r', coat:"#1e3a55", skin:"#e6b98c", hair:"short", hairCol:"#3a2a1c", hat:"none", mic:true};
+const REPORTER = {k:'r', face:"oval", coat:"#1e3a55", skin:"#e6b98c", hair:"short", hairCol:"#3a2a1c", hat:"none", mic:true};
 const WITNESSES = [
-  {k:0, name:"Marie Mountjoy", role:"His landlady, Silver Street", coat:"#5a4636", skin:"#e8c6a2", hat:"coif", hatCol:"#efe7d6",
+  {k:0, face:"round", name:"Marie Mountjoy", role:"His landlady, Silver Street", coat:"#5a4636", skin:"#e8c6a2", hat:"coif", hatCol:"#efe7d6",
    hair:"none", cheeks:true,
    back:"He lodges in your house. Last night he went out and never came home. His candle is still burning and a page is torn from his papers."},
-  {k:1, name:"Richard Burbage", role:"Lead actor, the King's Men", coat:"#3a2450", skin:"#dcae86", hat:"none",
+  {k:1, face:"long", name:"Richard Burbage", role:"Lead actor, the King's Men", coat:"#3a2450", skin:"#dcae86", hat:"none",
    hair:"short", hairCol:"#241a12", facial:"beard", earrings:true, ruff:true,
    back:"You are to play Macbeth this afternoon. The company is ready — but the final scene, and its author, have vanished. The house will be full."},
-  {k:2, name:"Ben Jonson", role:"Rival playwright", coat:"#2c3a26", skin:"#d8b48c", hat:"flatcap", hatCol:"#3a3020",
+  {k:2, face:"wide", name:"Ben Jonson", role:"Rival playwright", coat:"#2c3a26", skin:"#d8b48c", hat:"flatcap", hatCol:"#3a3020",
    hair:"short", hairCol:"#2a2016", facial:"beard",
    back:"You write plays too, and you are sharp-tongued about his. People whisper that you are glad he is gone — but you say you know nothing of it."},
-  {k:3, name:"Master of the Revels", role:"The King's censor", coat:"#1f2a40", skin:"#dcae86", hat:"flatcap", hatCol:"#141c2b",
+  {k:3, face:"square", name:"Master of the Revels", role:"The King's censor", coat:"#1f2a40", skin:"#dcae86", hat:"flatcap", hatCol:"#141c2b",
    hair:"none", facial:"mustache", ruff:true,
    back:"You license every play. Witches and a murdered king, so soon after the Gunpowder Plot, alarm you. You wanted the ending changed before today."},
-  {k:4, name:"The pedlar", role:"Street seller", coat:"#4a3a2c", skin:"#c98a5a", hat:"flatcap", hatCol:"#5a4632",
+  {k:4, face:"angular", name:"The pedlar", role:"Street seller", coat:"#4a3a2c", skin:"#c98a5a", hat:"flatcap", hatCol:"#5a4632",
    hair:"short", hairCol:"#241a12", facial:"stubble",
    back:"You are selling a page you call ‘the lost scene’ for good coin. Where you got it, you will not say — and the paper feels oddly smooth."},
 ];
@@ -1497,6 +1568,16 @@ const IVQUESTIONS = [
   {t:"present", q:"Do you believe the ‘lost scene’ is real?"},
 ];
 let ivWit=0, ivQ=0, ivBuilt=false;
+function headShape(face, skin){
+  switch(face){
+    case 'oval':    return `<ellipse cx="100" cy="70" rx="25" ry="29" fill="${skin}"/>`;
+    case 'long':    return `<ellipse cx="100" cy="71" rx="22.5" ry="31" fill="${skin}"/>`;
+    case 'wide':    return `<ellipse cx="100" cy="71" rx="30" ry="25" fill="${skin}"/>`;
+    case 'square':  return `<rect x="73" y="45" width="54" height="52" rx="15" fill="${skin}"/>`;
+    case 'angular': return `<path d="M100 43 Q125 45 126 66 Q127 86 100 98 Q73 86 74 66 Q75 45 100 43 Z" fill="${skin}"/>`;
+    default:        return `<circle cx="100" cy="70" r="27" fill="${skin}"/>`;
+  }
+}
 function personSVG(o){
   const skin=o.skin, coat=o.coat, hairCol=o.hairCol||'#2b2118';
   let back='', hat='', facial='', extra='';
@@ -1528,7 +1609,7 @@ function personSVG(o){
       <path d="M32 170 Q32 111 100 111 Q168 111 168 170 Z" fill="${coat}"/>
       <rect x="88" y="88" width="24" height="26" rx="7" fill="${skin}"/>
       ${back}
-      <circle cx="100" cy="70" r="27" fill="${skin}"/>
+      ${headShape(o.face, skin)}
       <circle cx="90" cy="68" r="2.6" fill="#20303a"/><circle cx="110" cy="68" r="2.6" fill="#20303a"/>
       <path d="M91 82 Q100 87 109 82" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="2" stroke-linecap="round"/>
       ${facial}
@@ -1603,7 +1684,7 @@ function printPack(){
   const timeline = UPDATES.map(u=>`<tr><td>${u.time}</td><td>${u.src}</td><td>${stripTags(u.text)}</td></tr>`).join('');
   const traps = UPDATES.map((u,i)=>u.trap?`<li><b>${u.src} (${u.time}):</b> ${u.impossible?'source impossible in 1606 (forgery / anachronism)':'period-authentic source, but false (manipulation)'}</li>`:'').join('');
   document.getElementById('printDoc').innerHTML = `
-    <h1>CHRONICLE 24 — Shakespeare Is Missing</h1>
+    <h1>CHRONICLE SJB — Shakespeare Is Missing</h1>
     <div class="sub">Episode 2: Shakespeare Is Missing · London, 1606 · Student worksheet</div>
     <p>You are a journalist in the only newsroom that can travel through time. Shakespeare has vanished before the premiere of Macbeth, and sources from other centuries have leaked into 1606. Before you print, always ask: <b>(1)</b> Is the information true? <b>(2)</b> Can the source be authentic to 1606?</p>
 
