@@ -6,9 +6,9 @@
 <title>CHRONICLE 24 — The Time-Travel Newsroom</title>
 <style>
   :root{
-    --bg:#0b0f14; --panel:#141a22; --panel2:#0f151c; --border:#26303b;
-    --text:#e6edf3; --muted:#8896a6; --dim:#5b6b7c;
-    --red:#e5484d; --amber:#f5a623; --cyan:#39c5cf; --green:#3fb950; --violet:#a371f7;
+    --bg:#e7ecf2; --panel:#ffffff; --panel2:#eef2f7; --border:#d2dae4;
+    --text:#17212e; --muted:#586576; --dim:#93a1b0;
+    --red:#d83a3f; --amber:#b9770c; --cyan:#0e8ea0; --green:#2c9a44; --violet:#7444c9;
     --mono:"SF Mono",ui-monospace,"Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
@@ -388,6 +388,50 @@
   }
 
   footer{max-width:1280px; margin:0 auto; padding:0 18px 40px; color:var(--dim); font-size:12px; text-align:center}
+
+  /* ================= LIGHT THEME — chrome lifts, scenes stay dark ================= */
+  header{background:linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,255,255,.82))}
+  .logo .c24{color:#fff}
+  .onair.live{background:var(--red); color:#fff}
+  .onair.live .dot{background:#fff}
+  /* source-type chips: darker ink so they read on white */
+  .k-eyewitness{color:#1a8038}
+  .k-official{color:#2f66c6}
+  .k-wire{color:#0d7a8b}
+  .k-rumor{color:#a86c0a}
+  .k-log{color:#586576}
+  .chip.pub.active{color:#1a8038}
+  .chip.flag.active{color:#6a3fc0}
+  .lb.pub{color:#1a8038}
+  .lb.flag{color:#6a3fc0}
+  .qb.on{color:#0d7a8b}
+  .ivspk .sk.on{color:#b23238}
+  /* lower-thirds sit on the dark scene windows, so keep their text light */
+  .ivlower .role{color:#4fd0dc}
+  /* the dramatic intro alert stays dark — force its text light */
+  .alert h1{color:#fff}
+  .alert p{color:#c2ccd8}
+  .alert .loc{color:#5fd0da}
+  .alert .msg{color:#fff; background:rgba(255,255,255,.07); border-left-color:#f5a623}
+  .alert .hint{color:#8b98a6}
+  /* teleprompter stays dark for reading aloud */
+  .prompter .pbody{color:#e6edf3}
+  .prompter h2{color:#f5b942}
+
+  /* ---------- How-it-works instruction card ---------- */
+  .howto{position:fixed; inset:0; z-index:135; background:rgba(18,26,36,.55); backdrop-filter:blur(4px); display:none; padding:18px; overflow:auto}
+  .howto.open{display:flex}
+  .hcard{max-width:660px; width:100%; margin:auto; background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .hcard .hh{background:var(--cyan); color:#fff; padding:12px 18px; font-weight:800; letter-spacing:.4px; display:flex; align-items:center; gap:10px; font-size:15px}
+  .hcard .hb{padding:14px 20px 20px}
+  .hcard ol{margin:0; padding:0; list-style:none; counter-reset:step}
+  .hcard li{counter-increment:step; position:relative; padding:10px 0 10px 42px; font-size:14px; line-height:1.5; border-bottom:1px solid var(--border); color:var(--muted)}
+  .hcard li:last-child{border-bottom:none}
+  .hcard li b{color:var(--text)}
+  .hcard li::before{content:counter(step); position:absolute; left:0; top:9px; width:27px; height:27px; border-radius:50%; background:var(--cyan); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center}
+  .hcard .two{margin-top:13px; font-size:13px; color:var(--text); background:var(--panel2); border-radius:9px; padding:11px 13px; line-height:1.5}
+  .hcard .two b{color:var(--cyan)}
+  .btn.hclose{background:rgba(255,255,255,.22); border-color:transparent; color:#fff}
 </style>
 </head>
 <body>
@@ -412,7 +456,8 @@
       <p>Tonight's episode: <b>Titanic — The Final Broadcast.</b> Take your positions. The clock is about to start.</p>
       <div class="go">
         <button class="btn primary" onclick="startBroadcast()">▶ Take positions &amp; go live</button>
-        <span class="hint">Teacher: press this when the class is ready.</span>
+        <button class="btn" onclick="openHowto()">❓ How it works</button>
+        <span class="hint">Teacher: press go live when the class is ready.</span>
       </div>
     </div>
   </div>
@@ -439,6 +484,7 @@
       <button class="btn ghost" id="ivBtn" onclick="openInterview()">🎤 Interview</button>
       <button class="btn ghost" id="taskBtn" onclick="openStudio()">✍ Article</button>
       <button class="btn ghost" onclick="printPack()" title="Print / save as PDF">🖨 Print</button>
+      <button class="btn ghost" onclick="openHowto()" title="How it works">❓</button>
       <select class="selbtn" id="diffSel" onchange="setDifficulty(this.value)" title="Difficulty">
         <option value="beginner">Beginner</option>
         <option value="standard" selected>Standard</option>
@@ -629,6 +675,17 @@
       <button class="btn primary" id="recBtnIv" onclick="toggleRecordIv()">🎙 Record</button>
       <span class="recmsg" id="recMsgIv"></span>
       <div id="recWrapIv"><span style="font-size:12px;color:var(--muted)">Your interview:</span> <audio id="playbackIv" controls></audio> <a class="btn ghost" id="dlAudioIv">⬇ audio</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<div class="howto" id="howto">
+  <div class="hcard">
+    <div class="hh">🗞 How this newsroom works <div class="spacer" style="flex:1"></div><button class="btn hclose" onclick="closeHowto()">✕ Close</button></div>
+    <div class="hb">
+      <ol id="howtoSteps"></ol>
+      <div class="two"><b>Golden rule — two questions for every source:</b><br>1) Is the information true? &nbsp;&nbsp; 2) Can the source be real in 1912?</div>
     </div>
   </div>
 </div>
@@ -1472,14 +1529,19 @@ function renderVocab(){
 /* =========================================================
    LIVE INTERVIEW — animated role-play (Reporter × Witness)
    ========================================================= */
+const REPORTER = {k:'r', coat:"#1e3a55", skin:"#e6b98c", hair:"short", hairCol:"#3a2a1c", hat:"none", mic:true};
 const WITNESSES = [
-  {name:"Frank, a stoker", role:"Boiler room crew", coat:"#4a3a2c", skin:"#d8a679", hat:"cap", hatCol:"#33373f",
+  {k:0, name:"Frank, a stoker", role:"Boiler room crew", coat:"#4a3a2c", skin:"#c98a5a", hat:"flatcap", hatCol:"#333741",
+   hair:"short", hairCol:"#241a12", facial:"stubble", soot:true,
    back:"You were shovelling coal deep below when the hull screamed. You felt the freezing water reach your boots first, and you ran for the ladders."},
-  {name:"Fred, the lookout", role:"Crow's nest", coat:"#274456", skin:"#e0b48a", hat:"cap", hatCol:"#2c4256",
+  {k:1, name:"Fred, the lookout", role:"Crow's nest", coat:"#274456", skin:"#e0b48a", hat:"flatcap", hatCol:"#2c4256",
+   hair:"short", hairCol:"#4a3320", facial:"none", collar:true,
    back:"You were high in the crow's nest with no binoculars. You saw the black shape too late, rang the bell three times and shouted the warning."},
-  {name:"Lady Ashcombe", role:"First-class passenger", coat:"#5a3050", skin:"#e6c1a0", hat:"lady", hatCol:"#843a66",
+  {k:2, name:"Lady Ashcombe", role:"First-class passenger", coat:"#5a3050", skin:"#ecc6a4", hat:"wide", hatCol:"#8a3d6a",
+   hair:"curls", hairCol:"#3a2418", cheeks:true, earrings:true, necklace:true,
    back:"You were dancing after dinner when the ship shuddered. A steward smiled and told you not to worry — but the floor was already tilting."},
-  {name:"Officer Wilde", role:"Ship's officer", coat:"#233049", skin:"#dcae86", hat:"officer", hatCol:"#2a3346",
+  {k:3, name:"Officer Wilde", role:"Ship's officer", coat:"#1f2a40", skin:"#dcae86", hat:"peaked", hatCol:"#141c2b",
+   hair:"none", hairCol:"#2a2018", facial:"mustache", buttons:true,
    back:"You were put in charge of a lifeboat. You had seconds to decide who boarded first, and some boats left only half full."},
 ];
 const IVQUESTIONS = [
@@ -1493,30 +1555,47 @@ const IVQUESTIONS = [
   {t:"continuous", q:"What can you see from the deck right now?"},
 ];
 let ivWit=0, ivQ=0, ivBuilt=false;
-function personSVG(coat, skin, hat, hatCol, reporter){
-  let h='';
-  if(hat==='officer') h=`<rect x="64" y="42" width="72" height="9" rx="4" fill="${hatCol}"/><rect x="72" y="26" width="56" height="18" rx="6" fill="${hatCol}"/><rect x="90" y="31" width="20" height="7" rx="1" fill="#e5c35a"/>`;
-  else if(hat==='cap') h=`<path d="M70 46 Q100 22 130 46 Q100 36 70 46 Z" fill="${hatCol}"/><path d="M126 45 q20 1 22 8 q-16 0 -26 -3 z" fill="${hatCol}"/>`;
-  else if(hat==='lady') h=`<ellipse cx="100" cy="44" rx="54" ry="9" fill="${hatCol}"/><path d="M76 44 Q100 12 124 44 Z" fill="${hatCol}"/><path d="M122 40 q24 -12 34 -3 q-16 8 -30 10 z" fill="#e39ac0"/>`;
-  const mic = reporter ? `<rect x="150" y="98" width="7" height="34" rx="3.5" fill="#2a2a2a"/><circle cx="153.5" cy="96" r="10" fill="#333" stroke="#5a5a5a"/><circle cx="153.5" cy="96" r="4" fill="#c9302c"/>` : '';
+function personSVG(o){
+  const skin=o.skin, coat=o.coat, hairCol=o.hairCol||'#2b2118';
+  let back='', hat='', facial='', extra='';
+  // hair behind/around the head
+  if(o.hair==='curls') back=`<circle cx="76" cy="56" r="11" fill="${hairCol}"/><circle cx="124" cy="56" r="11" fill="${hairCol}"/><circle cx="70" cy="72" r="10" fill="${hairCol}"/><circle cx="130" cy="72" r="10" fill="${hairCol}"/><circle cx="80" cy="86" r="8" fill="${hairCol}"/><circle cx="120" cy="86" r="8" fill="${hairCol}"/>`;
+  else if(o.hair==='short') back=`<path d="M72 72 Q69 44 100 44 Q131 44 128 72 Q120 57 100 56 Q80 57 72 72 Z" fill="${hairCol}"/>`;
+  // facial hair
+  if(o.facial==='mustache') facial=`<path d="M88 81 Q100 86 112 81 Q106 87 100 87 Q94 87 88 81 Z" fill="${hairCol}"/>`;
+  else if(o.facial==='stubble') facial=`<path d="M79 80 Q80 99 100 101 Q120 99 121 80 Q116 93 100 94 Q84 93 79 80 Z" fill="${hairCol}" opacity=".22"/>`;
+  // hats
+  if(o.hat==='flatcap') hat=`<path d="M69 47 Q100 21 131 47 Q100 37 69 47 Z" fill="${o.hatCol}"/><path d="M127 46 q20 1 23 8 q-17 0 -27 -3 z" fill="${o.hatCol}"/>`;
+  else if(o.hat==='peaked') hat=`<path d="M68 45 L132 45 L128 27 Q100 20 72 27 Z" fill="${o.hatCol}"/><rect x="63" y="44" width="74" height="8" rx="4" fill="${o.hatCol}"/><rect x="85" y="33" width="30" height="8" rx="2" fill="#c9a227"/><circle cx="100" cy="30" r="3.4" fill="#e8cf6a"/>`;
+  else if(o.hat==='wide') hat=`<ellipse cx="100" cy="46" rx="57" ry="10" fill="${o.hatCol}"/><path d="M74 46 Q100 13 126 46 Z" fill="${o.hatCol}"/><path d="M123 41 q27 -15 40 -4 q-19 11 -34 13 z" fill="#f0a9c9"/>`;
+  // extras
+  if(o.cheeks) extra+=`<circle cx="83" cy="78" r="4.5" fill="#e8899f" opacity=".5"/><circle cx="117" cy="78" r="4.5" fill="#e8899f" opacity=".5"/>`;
+  if(o.soot) extra+=`<circle cx="112" cy="83" r="5.5" fill="#20242a" opacity=".33"/><circle cx="85" cy="88" r="3.5" fill="#20242a" opacity=".28"/>`;
+  if(o.earrings) extra+=`<circle cx="72" cy="80" r="2.6" fill="#e8cf6a"/><circle cx="128" cy="80" r="2.6" fill="#e8cf6a"/>`;
+  if(o.necklace) extra+=`<path d="M85 110 Q100 120 115 110" fill="none" stroke="#e8cf6a" stroke-width="2"/>`;
+  if(o.collar) extra+=`<path d="M88 112 L100 122 L112 112" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>`;
+  if(o.buttons) extra+=`<path d="M100 116 L92 128 M100 116 L108 128" stroke="#0e1726" stroke-width="3" fill="none"/><circle cx="100" cy="130" r="2.4" fill="#e8cf6a"/><circle cx="100" cy="142" r="2.4" fill="#e8cf6a"/>`;
+  const mic = o.mic ? `<rect x="150" y="98" width="7" height="34" rx="3.5" fill="#2a2a2a"/><circle cx="153.5" cy="96" r="10" fill="#333" stroke="#5a5a5a"/><circle cx="153.5" cy="96" r="4" fill="#c9302c"/>` : '';
   return `<svg viewBox="0 0 200 170" preserveAspectRatio="xMidYMid slice">
-    <rect width="200" height="170" fill="#0b1622"/>
-    <circle cx="100" cy="60" r="70" fill="#12212f" opacity=".5"/>
+    <defs><radialGradient id="vg${o.k}" cx="0.5" cy="0.4" r="0.65"><stop offset="0" stop-color="#17293b"/><stop offset="1" stop-color="#0b1622"/></radialGradient></defs>
+    <rect width="200" height="170" fill="url(#vg${o.k})"/>
     <g class="idle">
-      <path d="M34 170 Q34 112 100 112 Q166 112 166 170 Z" fill="${coat}"/>
+      <path d="M32 170 Q32 111 100 111 Q168 111 168 170 Z" fill="${coat}"/>
       <rect x="88" y="88" width="24" height="26" rx="7" fill="${skin}"/>
+      ${back}
       <circle cx="100" cy="70" r="27" fill="${skin}"/>
-      <path d="M74 70 Q74 44 100 44 Q126 44 126 70" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="2"/>
       <circle cx="90" cy="68" r="2.6" fill="#20303a"/><circle cx="110" cy="68" r="2.6" fill="#20303a"/>
-      <path d="M92 82 Q100 87 108 82" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2" stroke-linecap="round"/>
-      <g stroke="rgba(230,237,243,.28)" stroke-width="1">${h}</g>
+      <path d="M91 82 Q100 87 109 82" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="2" stroke-linecap="round"/>
+      ${facial}
+      <g stroke="rgba(230,237,243,.28)" stroke-width="1">${hat}</g>
+      ${extra}
     </g>${mic}</svg>`;
 }
 function waveBars(){ let s=''; for(let i=0;i<18;i++){ s+=`<span class="wbar" style="animation-delay:-${(Math.random()*0.8).toFixed(2)}s"></span>`; } return s; }
 function openInterview(){ if(!ivBuilt){ buildInterview(); ivBuilt=true; } document.getElementById('interview').classList.add('open'); }
 function closeInterview(){ document.getElementById('interview').classList.remove('open'); }
 function buildInterview(){
-  document.getElementById('ivReporter').innerHTML = personSVG('#1e3a55','#e0b48a','cap','#2a4a68', true);
+  document.getElementById('ivReporter').innerHTML = personSVG(REPORTER);
   document.getElementById('waveR').innerHTML = waveBars();
   document.getElementById('waveW').innerHTML = waveBars();
   document.getElementById('ivPick').innerHTML = WITNESSES.map((w,i)=>
@@ -1525,7 +1604,7 @@ function buildInterview(){
 }
 function setWitness(i){
   ivWit=i; const w=WITNESSES[i];
-  document.getElementById('ivWitness').innerHTML = personSVG(w.coat, w.skin, w.hat, w.hatCol, false);
+  document.getElementById('ivWitness').innerHTML = personSVG(w);
   document.getElementById('ivWitName').textContent = w.name;
   document.getElementById('ivWitRole').textContent = w.role;
   document.getElementById('ivBack').innerHTML = `<b>In role:</b> ${w.back}`;
@@ -1548,6 +1627,27 @@ function setSpeaker(who){
 }
 
 /* =========================================================
+   HOW IT WORKS — step-by-step instruction card (simple English)
+   ========================================================= */
+const STEPS = [
+  'You are a reporter in a newsroom that can travel through time. Your team is covering the <b>Titanic</b>, live in 1912.',
+  'Pick your role on the <b>Roles</b> tab and read your job. Everyone has a task.',
+  'Click <b>Next update ▸</b> to receive each new report. Read it out loud to the team.',
+  'For every report, decide: <b>Publish</b> it, <b>Hold</b> it, or <b>🚩 Flag</b> it if something feels wrong.',
+  'Watch out! Some reports do not belong in 1912 (a “radar”, a “smartphone” photo) or are simply <b>lies</b>. Flag those.',
+  'Stuck for words? Open the <b>Grammar</b> and <b>Vocab</b> tabs to help you.',
+  'Try a <b>🎤 Interview</b>: one of you is the reporter, one is a witness. Ask the questions and take turns speaking.',
+  'At the end, open <b>✍ Article</b> and write your news story. Read it on air — you can even record it.',
+  'Use the right tense: <b>simple past</b> for facts, <b>is/are + -ing</b> for live action, <b>say/claim</b> for things you are not sure about.',
+];
+let howtoBuilt=false;
+function openHowto(){
+  if(!howtoBuilt){ document.getElementById('howtoSteps').innerHTML = STEPS.map(s=>`<li>${s}</li>`).join(''); howtoBuilt=true; }
+  document.getElementById('howto').classList.add('open');
+}
+function closeHowto(){ document.getElementById('howto').classList.remove('open'); }
+
+/* =========================================================
    PRINT / PDF — build a clean worksheet, then print
    ========================================================= */
 function printPack(){
@@ -1560,6 +1660,9 @@ function printPack(){
     <h1>CHRONICLE 24 — The Time-Travel Newsroom</h1>
     <div class="sub">Episode 1: Titanic — The Final Broadcast · Student worksheet</div>
     <p>You are a journalist in the only newsroom that can broadcast through time. Reports from 1912 are coming in — but sources from other centuries have leaked in too. Before you publish, always ask: <b>(1)</b> Is the information true? <b>(2)</b> Can the source be authentic?</p>
+
+    <h2>How this lesson works</h2>
+    <ol>${STEPS.map(s=>`<li>${s}</li>`).join('')}</ol>
 
     <h2>Your role</h2>${roles}
 

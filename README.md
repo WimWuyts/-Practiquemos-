@@ -80,6 +80,15 @@ studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
   openklappen als je klaar bent) en een **historische onthulling** (o.a. dat
   echte kranten in 1912 ook "iedereen gered" meldden).
 
+## Uitleg voor leerlingen & uiterlijk
+
+- **Instructiekaart (❓ How it works).** Een stap-voor-stap uitleg in eenvoudig
+  Engels (9 stappen + de "gouden regel": *Is it true? / Can the source be real in
+  1912?*). Bereikbaar via de knop op het startscherm én de **❓** in de balk; de
+  stappen staan ook bovenaan het printbare werkblad.
+- **Licht thema.** De interface is licht; de scene-beelden blijven donker en zien
+  er zo uit als schermen/monitors in de redactie.
+
 ## Interview, woordenschat, print & niveau
 
 - **🎤 Interview (geanimeerd).** Een geanimeerde tv-interview-mode voor twee
