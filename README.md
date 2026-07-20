@@ -80,6 +80,25 @@ studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
   openklappen als je klaar bent) en een **historische onthulling** (o.a. dat
   echte kranten in 1912 ook "iedereen gered" meldden).
 
+## Interview, woordenschat, print & niveau
+
+- **🎤 Interview (geanimeerd).** Een geanimeerde tv-interview-mode voor twee
+  leerlingen: reporter × ooggetuige, met bewegende avatars, animerende
+  geluidsbalken, lower-third naambanners en een "speaking"-knop om beurten te
+  wisselen. Kies uit vier personages (stoker, uitkijk, first-class passagier,
+  officier), elk met een korte in-role achtergrond, en loop door acht
+  interviewvragen (per tijd getagd). Opnemen kan ook.
+- **Vocab (tabblad).** Een pre-teach woordbank met kernwoorden (iceberg,
+  lifeboat, distress signal, wireless, casualty…). Tik op een woord voor de
+  betekenis + een voorbeeldzin.
+- **🖨 Print.** Maakt een net zwart-op-wit **werkblad** (premisse, rollen +
+  taken, grammaticaoverzicht, phrasebook, de volledige tijdlijn, schrijfruimte
+  en reflectievragen) met achteraan een **docentensleutel** met de anachronismen.
+  Print of "Bewaar als PDF" via het printvenster van je browser.
+- **Niveau-schuif.** *Beginner* toont alle hints en gaat rustiger; *Standard* is
+  de standaard; *Advanced* verbergt de 💭-hints en de betrouwbaarheidssterren en
+  laat de berichten sneller binnenkomen (bij Auto).
+
 ## Zo gebruik je het in de klas
 
 1. **Open `index.html`** in een browser (dubbelklikken volstaat; werkt ook op

@@ -311,8 +311,80 @@
   .rubric th{background:var(--panel); color:var(--muted); font-weight:700}
   .rubric td:first-child{color:var(--text); font-weight:600}
 
+  /* ---------- Difficulty ---------- */
+  .selbtn{border:1px solid var(--border); background:var(--panel); color:var(--text); padding:9px 10px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer}
+  body[data-diff="advanced"] .hint-row{display:none}
+  body[data-diff="advanced"] .relmeta{display:none}
+  body[data-diff="beginner"] .grambox{box-shadow:0 0 0 2px rgba(57,197,207,.18)}
+
+  /* ---------- Vocabulary ---------- */
+  .vocab .vhint{font-size:11.5px; color:var(--dim); margin-bottom:11px}
+  .vocab .vc{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:10px 12px; margin-bottom:8px; cursor:pointer; transition:.15s}
+  .vocab .vc:hover{border-color:var(--cyan)}
+  .vocab .vw{font-weight:700; font-size:14px; display:flex; align-items:baseline; gap:8px}
+  .vocab .vw .pos{font-size:11px; color:var(--dim); font-style:italic; font-weight:400}
+  .vocab .vw .rev{margin-left:auto; font-size:11px; color:var(--cyan)}
+  .vocab .vdef{font-size:12.5px; color:var(--muted); margin-top:6px; display:none; line-height:1.5}
+  .vocab .vc.open .vdef{display:block}
+  .vocab .vex{font-family:var(--mono); font-size:12px; color:var(--text); border-left:2px solid var(--cyan); padding-left:8px; margin-top:6px}
+
+  /* ---------- Interview mode ---------- */
+  .interview{position:fixed; inset:0; z-index:130; background:rgba(4,7,10,.96); backdrop-filter:blur(6px); display:none; padding:16px}
+  .interview.open{display:flex}
+  .ivsheet{max-width:1000px; width:100%; margin:auto; background:var(--panel); border:1px solid var(--border); border-radius:16px; max-height:95vh; display:flex; flex-direction:column; overflow:auto; box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .ivstage{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:16px}
+  @media(max-width:700px){ .ivstage{grid-template-columns:1fr} }
+  .ivwin{position:relative; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#05070b; transition:.2s}
+  .ivwin.talking{border-color:var(--red); box-shadow:0 0 0 1px var(--red)}
+  .ivwin svg{display:block; width:100%; height:170px}
+  .idle{animation:idlebob 3.4s ease-in-out infinite}
+  @keyframes idlebob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .ivlower{position:absolute; left:0; right:0; bottom:0; background:linear-gradient(0deg,rgba(0,0,0,.92),transparent); padding:20px 12px 9px; color:#fff; transform:translateY(0); animation:lowerin .5s ease}
+  @keyframes lowerin{from{transform:translateY(20px); opacity:0}to{transform:translateY(0); opacity:1}}
+  .ivlower .who{font-weight:800; font-size:14px}
+  .ivlower .role{font-size:10px; color:var(--cyan); text-transform:uppercase; letter-spacing:1.5px}
+  .wave{display:flex; align-items:flex-end; gap:3px; height:20px; margin-top:6px}
+  .wbar{width:3px; height:3px; background:var(--red); border-radius:2px; animation:wave .8s ease-in-out infinite; animation-play-state:paused}
+  .talking .wave .wbar{animation-play-state:running}
+  @keyframes wave{0%,100%{height:3px}50%{height:18px}}
+  .ivq{margin:0 16px; padding:16px; border:1px solid var(--border); border-radius:12px; background:var(--panel2); text-align:center}
+  .ivq .qtag{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--cyan); font-weight:700}
+  .ivq .qtext{font-size:23px; font-weight:700; margin:9px 0; line-height:1.3; text-wrap:balance}
+  .ivq .qnav{display:flex; justify-content:center; align-items:center; gap:12px; margin-top:8px; font-size:12px; color:var(--muted)}
+  .ivspk{display:flex; gap:8px; justify-content:center; padding:12px 16px 0}
+  .ivspk .sk{border:1px solid var(--border); background:var(--panel2); color:var(--text); padding:7px 13px; border-radius:20px; font-size:12.5px; font-weight:600; cursor:pointer}
+  .ivspk .sk.on{border-color:var(--red); background:rgba(229,72,77,.14); color:#ffb4b6}
+  .ivpicklabel{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-weight:700; padding:14px 16px 0}
+  .ivpick{display:flex; flex-wrap:wrap; gap:8px; padding:8px 16px 0}
+  .ivpick .pk{border:1px solid var(--border); background:var(--panel2); color:var(--text); padding:7px 11px; border-radius:8px; font-size:12.5px; cursor:pointer}
+  .ivpick .pk.on{border-color:var(--cyan); background:rgba(57,197,207,.14)}
+  .ivback{margin:12px 16px; padding:10px 12px; font-size:13px; color:var(--text); background:var(--panel2); border-left:2px solid var(--cyan); border-radius:6px}
+  .ivback b{color:var(--cyan)}
+  .ivfoot{display:flex; align-items:center; gap:9px; flex-wrap:wrap; padding:12px 16px 16px; border-top:1px solid var(--border)}
+  #recWrapIv{display:none; align-items:center; gap:10px; width:100%; margin-top:6px}
+  #recWrapIv audio{height:34px}
+
   @media(prefers-reduced-motion:reduce){
-    .drop,.flare,.sweep,.flick,.rise,.steam,.sink{animation:none}
+    .drop,.flare,.sweep,.flick,.rise,.steam,.sink,.idle,.wbar,.ivlower{animation:none}
+  }
+
+  /* ---------- Print / PDF worksheet ---------- */
+  #printDoc{display:none}
+  @media print{
+    body{background:#fff; color:#000}
+    body>header, body>.wrap, body>.studio, body>.prompter, body>.interview, body>.overlay, body>footer, body>svg{display:none !important}
+    #printDoc{display:block; max-width:720px; margin:0 auto; color:#000; font-size:12pt; line-height:1.5}
+    #printDoc h1{font-size:20pt; margin:0 0 4pt}
+    #printDoc h2{font-size:13pt; border-bottom:1.5pt solid #000; padding-bottom:2pt; margin:18pt 0 6pt}
+    #printDoc .sub{color:#444; font-style:italic; margin:0 0 10pt}
+    #printDoc table{width:100%; border-collapse:collapse; font-size:10pt}
+    #printDoc th,#printDoc td{border:1pt solid #999; padding:4pt 6pt; text-align:left; vertical-align:top}
+    #printDoc .writelines{border:1pt solid #999; height:180pt; border-radius:4pt; margin-top:4pt}
+    #printDoc .role{margin-bottom:6pt}
+    #printDoc .role b{display:block}
+    #printDoc .key{border:1.5pt dashed #999; padding:8pt 10pt; border-radius:4pt; page-break-before:always}
+    #printDoc .muted{color:#555; font-size:10pt}
+    #printDoc ul{margin:4pt 0; padding-left:16pt}
   }
 
   footer{max-width:1280px; margin:0 auto; padding:0 18px 40px; color:var(--dim); font-size:12px; text-align:center}
@@ -364,7 +436,14 @@
     <div class="controls">
       <button class="btn primary" id="nextBtn" onclick="nextUpdate()" disabled>Next update ▸</button>
       <button class="btn ghost" id="autoBtn" onclick="toggleAuto()" disabled>Auto ⏱</button>
+      <button class="btn ghost" id="ivBtn" onclick="openInterview()">🎤 Interview</button>
       <button class="btn ghost" id="taskBtn" onclick="openStudio()">✍ Article</button>
+      <button class="btn ghost" onclick="printPack()" title="Print / save as PDF">🖨 Print</button>
+      <select class="selbtn" id="diffSel" onchange="setDifficulty(this.value)" title="Difficulty">
+        <option value="beginner">Beginner</option>
+        <option value="standard" selected>Standard</option>
+        <option value="advanced">Advanced</option>
+      </select>
       <button class="btn ghost" id="soundBtn" onclick="toggleSound()" title="Sound on/off">🔊</button>
       <button class="btn ghost" onclick="resetBroadcast()">Reset</button>
     </div>
@@ -389,6 +468,7 @@
     <div class="tabs">
       <div class="tab active" data-pane="roles" onclick="showPane('roles',this)">Roles</div>
       <div class="tab" data-pane="grammar" onclick="showPane('grammar',this)">Grammar</div>
+      <div class="tab" data-pane="vocab" onclick="showPane('vocab',this)">Vocab</div>
       <div class="tab" data-pane="headline" onclick="showPane('headline',this)">Headline</div>
       <div class="tab" data-pane="log" onclick="showPane('log',this)">Log</div>
     </div>
@@ -403,6 +483,13 @@
     <div class="pane" id="pane-grammar">
       <h2 class="section">Grammar = a journalist's tool</h2>
       <div id="grammar"></div>
+    </div>
+
+    <!-- VOCAB -->
+    <div class="pane vocab" id="pane-vocab">
+      <h2 class="section">Pre-teach: newsroom vocabulary</h2>
+      <div class="vhint">Tap a word to reveal its meaning and an example. Try to use a few in your report.</div>
+      <div id="vocab"></div>
     </div>
 
     <!-- HEADLINE BUILDER -->
@@ -497,6 +584,57 @@
   <button class="btn pclose" onclick="closePrompter()">✕ close</button>
   <div class="pinner"><h2 id="prompterHead"></h2><div class="pbody" id="prompterBody"></div></div>
 </div>
+
+<!-- ================= LIVE INTERVIEW ================= -->
+<div class="interview" id="interview">
+  <div class="ivsheet">
+    <div class="sbar">
+      <span class="st"><span class="em">●</span> LIVE INTERVIEW — on air</span>
+      <div class="spacer"></div>
+      <button class="btn" onclick="closeInterview()">✕ Close</button>
+    </div>
+
+    <div class="ivstage">
+      <div class="ivwin" id="ivReporterWin">
+        <div id="ivReporter"></div>
+        <div class="ivlower"><div class="role">Reporter</div><div class="who">You — CHRONICLE 24</div><div class="wave" id="waveR"></div></div>
+      </div>
+      <div class="ivwin" id="ivWitnessWin">
+        <div id="ivWitness"></div>
+        <div class="ivlower"><div class="role" id="ivWitRole">Witness</div><div class="who" id="ivWitName">—</div><div class="wave" id="waveW"></div></div>
+      </div>
+    </div>
+
+    <div class="ivspk">
+      <button class="sk" id="spkR" onclick="setSpeaker('reporter')">🎙 Reporter speaking</button>
+      <button class="sk" id="spkW" onclick="setSpeaker('witness')">🗣 Witness speaking</button>
+    </div>
+
+    <div class="ivpicklabel">Choose who you interview</div>
+    <div class="ivpick" id="ivPick"></div>
+    <div class="ivback" id="ivBack"></div>
+
+    <div class="ivq">
+      <div class="qtag" id="ivQTag">Question</div>
+      <div class="qtext" id="ivQText">—</div>
+      <div class="qnav">
+        <button class="btn ghost" onclick="ivStep(-1)">◂ prev</button>
+        <span id="ivQCount">1 / 8</span>
+        <button class="btn ghost" onclick="ivStep(1)">next ▸</button>
+      </div>
+    </div>
+
+    <div class="ivfoot">
+      <span style="font-size:12px;color:var(--muted);margin-right:auto">Reporter asks in English · Witness answers in role. Swap the “speaking” button as you take turns.</span>
+      <button class="btn primary" id="recBtnIv" onclick="toggleRecordIv()">🎙 Record</button>
+      <span class="recmsg" id="recMsgIv"></span>
+      <div id="recWrapIv"><span style="font-size:12px;color:var(--muted)">Your interview:</span> <audio id="playbackIv" controls></audio> <a class="btn ghost" id="dlAudioIv">⬇ audio</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRINTABLE WORKSHEET ================= -->
+<div id="printDoc"></div>
 
 <footer>
   CHRONICLE 24 — The Time-Travel Newsroom · Episode 1: <em>Titanic — The Final Broadcast</em><br>
@@ -782,6 +920,19 @@ function toggleSound(){
 }
 
 /* =========================================================
+   DIFFICULTY — beginner shows all hints & goes slower;
+   advanced hides the 💭 hints and reliability, and runs faster
+   ========================================================= */
+let difficulty = 'standard';
+function setDifficulty(v){
+  difficulty = v;
+  document.body.dataset.diff = v;
+  document.getElementById('diffSel').value = v;
+  if(autoTimer){ stopAuto(); toggleAuto(); } // restart auto at the new speed
+}
+function autoInterval(){ return difficulty==='beginner' ? 35000 : difficulty==='advanced' ? 15000 : 25000; }
+
+/* =========================================================
    VISUAL SCENES — één per berichttype, alles inline SVG/HTML
    ========================================================= */
 function S(inner){ return `<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">${inner}</svg>`; }
@@ -979,9 +1130,9 @@ function addWire(u, i){
       <div class="quote">${u.text}</div>
       <div class="meta">
         <span><b>Grammar:</b> ${u.grammar}</span>
-        <span><b>Reliability:</b> ${rel}</span>
+        <span class="relmeta"><b>Reliability:</b> ${rel}</span>
       </div>
-      <div class="meta"><span>💭 ${u.note}</span></div>
+      <div class="meta hint-row"><span>💭 ${u.note}</span></div>
     </div>
     <div class="wactions">
       <button class="chip pub"  onclick="decide(${i},'pub')">✔ Publish</button>
@@ -1049,7 +1200,7 @@ function toggleAuto(){
   else {
     document.getElementById('autoBtn').textContent = 'Auto ⏸';
     document.getElementById('autoBtn').classList.add('primary');
-    autoTimer = setInterval(()=>{ if(idx<UPDATES.length){ nextUpdate(); } else { stopAuto(); } }, 25000);
+    autoTimer = setInterval(()=>{ if(idx<UPDATES.length){ nextUpdate(); } else { stopAuto(); } }, autoInterval());
   }
 }
 function stopAuto(){
@@ -1259,32 +1410,177 @@ function openPrompter(){
   document.getElementById('prompter').classList.add('open');
 }
 function closePrompter(){ document.getElementById('prompter').classList.remove('open'); }
-/* opnemen (microfoon) */
-let mediaRec=null, chunks=[];
-async function toggleRecord(){
-  const btn=document.getElementById('recBtn'), msg=document.getElementById('recMsg');
-  if(mediaRec && mediaRec.state==='recording'){ mediaRec.stop(); return; }
-  msg.textContent='';
-  if(!navigator.mediaDevices || !window.MediaRecorder){
-    msg.textContent='🎤 Recording is not available here — open the file locally and allow microphone access.'; return;
-  }
-  try{
-    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
-    chunks=[]; mediaRec=new MediaRecorder(stream);
-    mediaRec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
-    mediaRec.onstop=()=>{
-      const blob=new Blob(chunks,{type:'audio/webm'}); const url=URL.createObjectURL(blob);
-      document.getElementById('playback').src=url;
-      const dl=document.getElementById('dlAudio'); dl.href=url; dl.download='chronicle24-broadcast.webm';
-      document.getElementById('recWrap').style.display='flex';
-      stream.getTracks().forEach(t=>t.stop());
-      btn.innerHTML='🎙 Record'; btn.classList.remove('primary'); btn.classList.add('ghost');
-    };
-    mediaRec.start();
-    btn.innerHTML='<span class="recdot"></span>Stop recording'; btn.classList.remove('ghost'); btn.classList.add('primary');
-  }catch(e){
-    msg.textContent='🎤 Microphone denied or unavailable. You can still write and use the teleprompter.';
-  }
+/* recording (microphone) — one reusable recorder per set of element ids */
+function createRecorder(btnId, wrapId, audioId, dlId, msgId, fileName){
+  let rec=null, chunks=[];
+  return async function(){
+    const btn=document.getElementById(btnId), msg=document.getElementById(msgId);
+    if(rec && rec.state==='recording'){ rec.stop(); return; }
+    if(msg) msg.textContent='';
+    if(!navigator.mediaDevices || !window.MediaRecorder){
+      if(msg) msg.textContent='🎤 Recording is not available here — open the file locally and allow microphone access.'; return;
+    }
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      chunks=[]; rec=new MediaRecorder(stream);
+      rec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
+      rec.onstop=()=>{
+        const blob=new Blob(chunks,{type:'audio/webm'}); const url=URL.createObjectURL(blob);
+        document.getElementById(audioId).src=url;
+        const dl=document.getElementById(dlId); dl.href=url; dl.download=fileName;
+        document.getElementById(wrapId).style.display='flex';
+        stream.getTracks().forEach(t=>t.stop());
+        btn.innerHTML='🎙 Record'; btn.classList.remove('primary'); btn.classList.add('ghost');
+      };
+      rec.start();
+      btn.innerHTML='<span class="recdot"></span>Stop recording'; btn.classList.remove('ghost'); btn.classList.add('primary');
+    }catch(e){
+      if(msg) msg.textContent='🎤 Microphone denied or unavailable. You can still write and use the teleprompter.';
+    }
+  };
+}
+const toggleRecord   = createRecorder('recBtn','recWrap','playback','dlAudio','recMsg','chronicle24-broadcast.webm');
+const toggleRecordIv = createRecorder('recBtnIv','recWrapIv','playbackIv','dlAudioIv','recMsgIv','chronicle24-interview.webm');
+
+/* =========================================================
+   VOCABULARY — pre-teach word bank (tap to reveal)
+   ========================================================= */
+const VOCAB = [
+  {w:"iceberg", pos:"n.", def:"A huge floating mass of ice in the sea.", ex:"The ship struck an iceberg at 23:40."},
+  {w:"maiden voyage", pos:"n.", def:"A ship's very first journey.", ex:"It was the Titanic's maiden voyage."},
+  {w:"unsinkable", pos:"adj.", def:"Believed to be impossible to sink.", ex:"The company called the ship unsinkable."},
+  {w:"to strike", pos:"v. (struck)", def:"To hit something hard.", ex:"The ship struck the ice on the starboard side."},
+  {w:"to sink", pos:"v. (sank, sunk)", def:"To go down below the water.", ex:"The ship sank in under three hours."},
+  {w:"starboard", pos:"n.", def:"The right-hand side of a ship.", ex:"The iceberg scraped along the starboard side."},
+  {w:"bow / stern", pos:"n.", def:"The front (bow) and back (stern) of a ship.", ex:"The stern rose almost straight up."},
+  {w:"lifeboat", pos:"n.", def:"A small boat used to save people at sea.", ex:"Women and children are boarding the lifeboats."},
+  {w:"distress signal", pos:"n.", def:"A call for urgent help (the Titanic sent CQD).", ex:"The Titanic sent the distress signal CQD."},
+  {w:"wireless", pos:"n.", def:"Early radio used to send messages by Morse code.", ex:"A warning was received by wireless."},
+  {w:"eyewitness", pos:"n.", def:"A person who saw an event happen.", ex:"An eyewitness said the ship broke in two."},
+  {w:"to tow", pos:"v.", def:"To pull a ship or vehicle along.", ex:"The company claimed the ship was under tow to Halifax."},
+  {w:"casualty", pos:"n.", def:"A person killed or injured in an accident.", ex:"The company falsely reported no casualties."},
+  {w:"survivor", pos:"n.", def:"A person who stays alive after a disaster.", ex:"The Carpathia picked up the survivors."},
+];
+function renderVocab(){
+  document.getElementById('vocab').innerHTML = VOCAB.map((v,i)=>`
+    <div class="vc" onclick="this.classList.toggle('open')">
+      <div class="vw">${v.w} <span class="pos">${v.pos}</span><span class="rev">tap ⇕</span></div>
+      <div class="vdef">${v.def}<div class="vex">${v.ex}</div></div>
+    </div>`).join('');
+}
+
+/* =========================================================
+   LIVE INTERVIEW — animated role-play (Reporter × Witness)
+   ========================================================= */
+const WITNESSES = [
+  {name:"Frank, a stoker", role:"Boiler room crew", coat:"#4a3a2c", skin:"#d8a679", hat:"cap", hatCol:"#33373f",
+   back:"You were shovelling coal deep below when the hull screamed. You felt the freezing water reach your boots first, and you ran for the ladders."},
+  {name:"Fred, the lookout", role:"Crow's nest", coat:"#274456", skin:"#e0b48a", hat:"cap", hatCol:"#2c4256",
+   back:"You were high in the crow's nest with no binoculars. You saw the black shape too late, rang the bell three times and shouted the warning."},
+  {name:"Lady Ashcombe", role:"First-class passenger", coat:"#5a3050", skin:"#e6c1a0", hat:"lady", hatCol:"#843a66",
+   back:"You were dancing after dinner when the ship shuddered. A steward smiled and told you not to worry — but the floor was already tilting."},
+  {name:"Officer Wilde", role:"Ship's officer", coat:"#233049", skin:"#dcae86", hat:"officer", hatCol:"#2a3346",
+   back:"You were put in charge of a lifeboat. You had seconds to decide who boarded first, and some boats left only half full."},
+];
+const IVQUESTIONS = [
+  {t:"past", q:"What did you see when the ship struck the iceberg?"},
+  {t:"past", q:"Where exactly were you at 23:40?"},
+  {t:"continuous", q:"What is happening around you right now?"},
+  {t:"continuous", q:"What are the crew doing at this moment?"},
+  {t:"past", q:"How did the other passengers react?"},
+  {t:"continuous", q:"What are you feeling as you wait for a boat?"},
+  {t:"past", q:"Who did you try to help?"},
+  {t:"continuous", q:"What can you see from the deck right now?"},
+];
+let ivWit=0, ivQ=0, ivBuilt=false;
+function personSVG(coat, skin, hat, hatCol, reporter){
+  let h='';
+  if(hat==='officer') h=`<rect x="64" y="42" width="72" height="9" rx="4" fill="${hatCol}"/><rect x="72" y="26" width="56" height="18" rx="6" fill="${hatCol}"/><rect x="90" y="31" width="20" height="7" rx="1" fill="#e5c35a"/>`;
+  else if(hat==='cap') h=`<path d="M70 46 Q100 22 130 46 Q100 36 70 46 Z" fill="${hatCol}"/><path d="M126 45 q20 1 22 8 q-16 0 -26 -3 z" fill="${hatCol}"/>`;
+  else if(hat==='lady') h=`<ellipse cx="100" cy="44" rx="54" ry="9" fill="${hatCol}"/><path d="M76 44 Q100 12 124 44 Z" fill="${hatCol}"/><path d="M122 40 q24 -12 34 -3 q-16 8 -30 10 z" fill="#e39ac0"/>`;
+  const mic = reporter ? `<rect x="150" y="98" width="7" height="34" rx="3.5" fill="#2a2a2a"/><circle cx="153.5" cy="96" r="10" fill="#333" stroke="#5a5a5a"/><circle cx="153.5" cy="96" r="4" fill="#c9302c"/>` : '';
+  return `<svg viewBox="0 0 200 170" preserveAspectRatio="xMidYMid slice">
+    <rect width="200" height="170" fill="#0b1622"/>
+    <circle cx="100" cy="60" r="70" fill="#12212f" opacity=".5"/>
+    <g class="idle">
+      <path d="M34 170 Q34 112 100 112 Q166 112 166 170 Z" fill="${coat}"/>
+      <rect x="88" y="88" width="24" height="26" rx="7" fill="${skin}"/>
+      <circle cx="100" cy="70" r="27" fill="${skin}"/>
+      <path d="M74 70 Q74 44 100 44 Q126 44 126 70" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="2"/>
+      <circle cx="90" cy="68" r="2.6" fill="#20303a"/><circle cx="110" cy="68" r="2.6" fill="#20303a"/>
+      <path d="M92 82 Q100 87 108 82" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2" stroke-linecap="round"/>
+      <g stroke="rgba(230,237,243,.28)" stroke-width="1">${h}</g>
+    </g>${mic}</svg>`;
+}
+function waveBars(){ let s=''; for(let i=0;i<18;i++){ s+=`<span class="wbar" style="animation-delay:-${(Math.random()*0.8).toFixed(2)}s"></span>`; } return s; }
+function openInterview(){ if(!ivBuilt){ buildInterview(); ivBuilt=true; } document.getElementById('interview').classList.add('open'); }
+function closeInterview(){ document.getElementById('interview').classList.remove('open'); }
+function buildInterview(){
+  document.getElementById('ivReporter').innerHTML = personSVG('#1e3a55','#e0b48a','cap','#2a4a68', true);
+  document.getElementById('waveR').innerHTML = waveBars();
+  document.getElementById('waveW').innerHTML = waveBars();
+  document.getElementById('ivPick').innerHTML = WITNESSES.map((w,i)=>
+    `<button class="pk ${i===0?'on':''}" onclick="setWitness(${i})">${w.name}</button>`).join('');
+  setWitness(0); renderIvQ(); setSpeaker('reporter');
+}
+function setWitness(i){
+  ivWit=i; const w=WITNESSES[i];
+  document.getElementById('ivWitness').innerHTML = personSVG(w.coat, w.skin, w.hat, w.hatCol, false);
+  document.getElementById('ivWitName').textContent = w.name;
+  document.getElementById('ivWitRole').textContent = w.role;
+  document.getElementById('ivBack').innerHTML = `<b>In role:</b> ${w.back}`;
+  document.querySelectorAll('#ivPick .pk').forEach((b,j)=>b.classList.toggle('on', j===i));
+  setSpeaker('witness');
+}
+function renderIvQ(){
+  const q=IVQUESTIONS[ivQ];
+  document.getElementById('ivQTag').textContent = q.t==='past' ? 'Ask in the simple past' : 'Ask in the present continuous';
+  document.getElementById('ivQText').textContent = q.q;
+  document.getElementById('ivQCount').textContent = (ivQ+1)+' / '+IVQUESTIONS.length;
+  setSpeaker('reporter');
+}
+function ivStep(d){ ivQ=(ivQ+d+IVQUESTIONS.length)%IVQUESTIONS.length; renderIvQ(); }
+function setSpeaker(who){
+  const r=document.getElementById('ivReporterWin'), w=document.getElementById('ivWitnessWin');
+  r.classList.toggle('talking', who==='reporter'); w.classList.toggle('talking', who==='witness');
+  document.getElementById('spkR').classList.toggle('on', who==='reporter');
+  document.getElementById('spkW').classList.toggle('on', who==='witness');
+}
+
+/* =========================================================
+   PRINT / PDF — build a clean worksheet, then print
+   ========================================================= */
+function printPack(){
+  const roles = ROLES.map(r=>`<div class="role"><b>${r.name} — <span class="muted">${r.g}</span></b>${r.mission}<ul>${r.tasks.map(t=>`<li>${t}</li>`).join('')}</ul></div>`).join('');
+  const gram = GRAMMAR.map(g=>`<tr><td><b>${g.name}</b><br><span class="muted">${g.form}</span></td><td>${g.use}<br><span class="muted">Signal: ${g.signal}</span></td><td>${g.ex.replace(/<\/?em>/g,'')}</td></tr>`).join('');
+  const phr = PHRASES.map(p=>p.s).join(' · ');
+  const timeline = UPDATES.map(u=>`<tr><td>${u.time}</td><td>${u.src}</td><td>${stripTags(u.text)}</td></tr>`).join('');
+  const traps = UPDATES.map((u,i)=>u.trap?`<li><b>${u.time} — ${u.src}:</b> ${u.kind==='anachronism'?'anachronism (source impossible in 1912)':'manipulation (period-authentic source, but false)'}</li>`:'').join('');
+  document.getElementById('printDoc').innerHTML = `
+    <h1>CHRONICLE 24 — The Time-Travel Newsroom</h1>
+    <div class="sub">Episode 1: Titanic — The Final Broadcast · Student worksheet</div>
+    <p>You are a journalist in the only newsroom that can broadcast through time. Reports from 1912 are coming in — but sources from other centuries have leaked in too. Before you publish, always ask: <b>(1)</b> Is the information true? <b>(2)</b> Can the source be authentic?</p>
+
+    <h2>Your role</h2>${roles}
+
+    <h2>Grammar you will use</h2>
+    <table><tr><th>Tense</th><th>When to use it</th><th>Example</th></tr>${gram}</table>
+
+    <h2>Newsroom phrasebook</h2><p class="muted">${phr}</p>
+
+    <h2>The reports (as they came in)</h2>
+    <table><tr><th>Time</th><th>Source</th><th>Report</th></tr>${timeline}</table>
+
+    <h2>Write your article</h2>
+    <p class="muted">Headline:</p><div class="writelines" style="height:24pt"></div>
+    <p class="muted" style="margin-top:8pt">Article / broadcast script:</p><div class="writelines"></div>
+
+    <h2>Reflection</h2>
+    <ul><li>Which source did you trust most — and why?</li><li>What made the smartphone photo impossible, even though the image looked right?</li><li>Which headline was the hardest to phrase honestly?</li></ul>
+
+    <div class="key"><h2 style="page-break-before:auto">Teacher key — the planted sources</h2><ul>${traps}</ul>
+      <p class="muted">All other reports are period-authentic; wrongly flagging them would suppress a true story.</p></div>`;
+  window.print();
 }
 
 /* =========================================================
@@ -1292,8 +1588,10 @@ async function toggleRecord(){
    ========================================================= */
 renderRoles();
 renderGrammar();
+renderVocab();
 renderHeadline();
 renderLog();
+document.body.dataset.diff = difficulty;
 document.getElementById('feedTotal').textContent = UPDATES.length;
 </script>
 </body>
