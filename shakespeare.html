@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CHRONICLE 24 — Shakespeare Is Missing</title>
+<style>
+  :root{
+    --bg:#e7ecf2; --panel:#ffffff; --panel2:#eef2f7; --border:#d2dae4;
+    --text:#17212e; --muted:#586576; --dim:#93a1b0;
+    --red:#d83a3f; --amber:#b9770c; --cyan:#0e8ea0; --green:#2c9a44; --violet:#7444c9;
+    --mono:"SF Mono",ui-monospace,"Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(57,197,207,.08), transparent 60%),
+      radial-gradient(900px 500px at 0% 110%, rgba(163,113,247,.07), transparent 60%),
+      var(--bg);
+    color:var(--text); font-family:var(--sans); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--cyan)}
+  button{font-family:inherit}
+
+  /* ---------- Header / broadcast console ---------- */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:linear-gradient(180deg, rgba(11,15,20,.98), rgba(11,15,20,.9));
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .bar{max-width:1280px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+  .logo{display:flex; align-items:baseline; gap:10px; font-weight:800; letter-spacing:.5px}
+  .logo .c24{font-family:var(--mono); font-size:20px; color:var(--text); background:var(--red); padding:2px 8px; border-radius:5px; letter-spacing:1px}
+  .logo .tag{font-size:11px; text-transform:uppercase; letter-spacing:3px; color:var(--muted); font-weight:600}
+  .spacer{flex:1}
+  .clockbox{display:flex; align-items:center; gap:14px; font-family:var(--mono)}
+  .clock{font-size:26px; font-weight:700; color:var(--cyan); letter-spacing:1px; line-height:1}
+  .date{font-size:11px; color:var(--muted); letter-spacing:1px; text-align:right}
+  .onair{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:12px; font-weight:700;
+    text-transform:uppercase; letter-spacing:2px; color:var(--dim); border:1px solid var(--border); padding:5px 10px; border-radius:20px}
+  .onair.live{color:#fff; border-color:var(--red); background:rgba(229,72,77,.12)}
+  .dot{width:9px; height:9px; border-radius:50%; background:var(--dim)}
+  .onair.live .dot{background:var(--red); box-shadow:0 0 0 0 rgba(229,72,77,.6); animation:pulse 1.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,72,77,.55)}70%{box-shadow:0 0 0 9px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
+
+  .controls{display:flex; gap:8px; flex-wrap:wrap}
+  .btn{border:1px solid var(--border); background:var(--panel); color:var(--text); padding:9px 14px; border-radius:8px;
+    font-size:13px; font-weight:600; cursor:pointer; transition:.15s}
+  .btn:hover{border-color:var(--cyan); transform:translateY(-1px)}
+  .btn.primary{background:var(--red); border-color:var(--red); color:#fff}
+  .btn.primary:hover{filter:brightness(1.08)}
+  .btn:disabled{opacity:.4; cursor:not-allowed; transform:none; border-color:var(--border)}
+  .btn.ghost{background:transparent}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:1280px; margin:0 auto; padding:20px 18px 60px; display:grid; grid-template-columns:1fr 380px; gap:22px}
+  @media(max-width:980px){ .wrap{grid-template-columns:1fr} }
+
+  h2.section{font-size:12px; text-transform:uppercase; letter-spacing:3px; color:var(--muted); margin:0 0 12px; font-weight:700}
+
+  /* ---------- Wire feed ---------- */
+  .feed{display:flex; flex-direction:column; gap:14px; min-height:200px}
+  .empty{border:1px dashed var(--border); border-radius:12px; padding:40px 22px; text-align:center; color:var(--muted)}
+  .empty strong{color:var(--text); display:block; font-size:16px; margin-bottom:6px}
+
+  .wire{border:1px solid var(--border); background:var(--panel); border-radius:12px; overflow:hidden; animation:slide .45s ease}
+  @keyframes slide{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
+  .wire .top{display:flex; align-items:center; gap:10px; padding:11px 14px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:12px}
+  .wire .wtime{color:var(--cyan); font-weight:700}
+  .wire .src{color:var(--text); font-weight:600}
+  .wire .kind{margin-left:auto; text-transform:uppercase; letter-spacing:1.5px; font-size:10px; font-weight:700; padding:3px 8px; border-radius:5px}
+  .k-eyewitness{color:#7ee787; background:rgba(63,185,80,.12)}
+  .k-official{color:#a0c4ff; background:rgba(88,166,255,.12)}
+  .k-wire{color:var(--cyan); background:rgba(57,197,207,.12)}
+  .k-rumor{color:var(--amber); background:rgba(245,166,35,.12)}
+  .k-log{color:var(--muted); background:rgba(139,150,166,.12)}
+  .k-anachronism{color:#fff; background:var(--violet)}
+  .wire .body{padding:14px}
+  .wire .quote{font-size:16px; line-height:1.55}
+  .wire .quote .hl{background:rgba(245,166,35,.16); border-bottom:1px dashed var(--amber); padding:0 2px}
+  .wire .meta{display:flex; gap:14px; flex-wrap:wrap; margin-top:12px; font-size:12px; color:var(--muted)}
+  .wire .meta b{color:var(--text); font-weight:600}
+  .rel{display:inline-flex; gap:2px}
+  .rel span{color:var(--dim)} .rel span.on{color:var(--green)}
+
+  .wactions{display:flex; gap:8px; flex-wrap:wrap; padding:0 14px 14px}
+  .chip{border:1px solid var(--border); background:var(--panel2); color:var(--text); font-size:12px; font-weight:600;
+    padding:7px 11px; border-radius:7px; cursor:pointer; transition:.15s; display:inline-flex; align-items:center; gap:6px}
+  .chip:hover{border-color:var(--cyan)}
+  .chip.pub.active{background:rgba(63,185,80,.15); border-color:var(--green); color:#7ee787}
+  .chip.hold.active{background:rgba(245,166,35,.15); border-color:var(--amber); color:var(--amber)}
+  .chip.flag.active{background:rgba(163,113,247,.18); border-color:var(--violet); color:#d2b8ff}
+
+  .verdict{margin:0 14px 14px; padding:11px 13px; border-radius:9px; font-size:13px; display:none}
+  .verdict.show{display:block; animation:slide .3s ease}
+  .verdict.good{background:rgba(63,185,80,.1); border:1px solid rgba(63,185,80,.4)}
+  .verdict.bad{background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.4)}
+  .verdict .vh{font-weight:700; margin-bottom:3px; display:flex; align-items:center; gap:7px}
+
+  /* ---------- Sidebar ---------- */
+  .side{position:sticky; top:78px; align-self:start}
+  @media(max-width:980px){ .side{position:static} }
+  .tabs{display:flex; gap:4px; background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:4px; margin-bottom:14px}
+  .tab{flex:1; text-align:center; font-size:12px; font-weight:700; padding:8px 4px; border-radius:7px; cursor:pointer; color:var(--muted); transition:.15s}
+  .tab.active{background:var(--panel); color:var(--text); box-shadow:0 1px 0 rgba(255,255,255,.03) inset}
+  .pane{display:none} .pane.active{display:block; animation:slide .25s ease}
+
+  .card{border:1px solid var(--border); background:var(--panel); border-radius:11px; padding:13px 14px; margin-bottom:11px}
+  .card h3{margin:0 0 4px; font-size:14px; display:flex; align-items:center; gap:8px}
+  .card .role-em{font-size:18px}
+  .card p{margin:4px 0 0; font-size:13px; color:var(--muted)}
+  .card .g{margin-top:8px; font-size:11px; font-family:var(--mono); color:var(--cyan)}
+
+  .gram{border:1px solid var(--border); background:var(--panel); border-radius:11px; padding:12px 14px; margin-bottom:9px}
+  .gram .name{font-weight:700; font-size:13px}
+  .gram .use{font-size:12px; color:var(--muted); margin:2px 0 6px}
+  .gram .ex{font-family:var(--mono); font-size:12.5px; background:var(--panel2); border-left:2px solid var(--cyan); padding:6px 9px; border-radius:5px; color:var(--text)}
+  .gram .ex em{color:var(--amber); font-style:normal; font-weight:700}
+  .gram .gform2{font-family:var(--mono); font-size:11.5px; color:var(--cyan); margin:0 0 6px}
+  .gram .gsig{font-size:11.5px; color:var(--muted); margin-top:7px}
+  .gram .gsig b{color:var(--text); font-weight:600}
+  .gram .gtip{font-size:11.5px; color:var(--dim); font-style:italic; margin-top:4px}
+  .gnote{font-size:12.5px; color:var(--muted); line-height:1.5; border:1px solid rgba(57,197,207,.35); background:rgba(57,197,207,.06); border-radius:9px; padding:9px 11px; margin-bottom:11px}
+  /* expanded just-in-time grammar callout */
+  .grambox .gsignal{font-size:11.5px; color:var(--muted); margin-top:6px}
+  .grambox .gsignal b{color:var(--text); font-weight:600}
+  .grambox .gtip{font-size:11.5px; color:var(--dim); font-style:italic; margin-top:5px}
+
+  /* ---------- Headline builder ---------- */
+  .hb .scn{border:1px solid var(--border); background:var(--panel); border-radius:11px; padding:13px 14px}
+  .hb .scn .lbl{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-weight:700}
+  .hb .scn .facts{font-size:14px; margin:7px 0 12px}
+  .opt{width:100%; text-align:left; border:1px solid var(--border); background:var(--panel2); color:var(--text);
+    padding:11px 12px; border-radius:9px; margin-bottom:8px; cursor:pointer; font-size:14px; transition:.15s; font-family:var(--mono)}
+  .opt:hover{border-color:var(--cyan)}
+  .opt.picked{border-color:var(--cyan)}
+  .opt.strong.picked{border-color:var(--green); background:rgba(63,185,80,.08)}
+  .opt.weak.picked{border-color:var(--amber); background:rgba(245,166,35,.08)}
+  .opt-fb{display:none; font-family:var(--sans); font-size:12.5px; margin-top:7px; color:var(--muted)}
+  .opt.picked .opt-fb{display:block}
+  .hb .nav{display:flex; justify-content:space-between; margin-top:12px; font-size:12px; color:var(--muted)}
+
+  /* ---------- Log ---------- */
+  .logrow{display:flex; gap:10px; padding:9px 0; border-bottom:1px solid var(--border); font-size:13px}
+  .logrow .lt{font-family:var(--mono); color:var(--cyan); flex-shrink:0}
+  .logrow .lb{padding:1px 7px; border-radius:5px; font-size:11px; font-weight:700; flex-shrink:0; height:fit-content}
+  .lb.pub{background:rgba(63,185,80,.15); color:#7ee787}
+  .lb.hold{background:rgba(245,166,35,.15); color:var(--amber)}
+  .lb.flag{background:rgba(163,113,247,.18); color:#d2b8ff}
+  .logempty{color:var(--muted); font-size:13px; padding:12px 0}
+
+  /* ---------- Intro overlay ---------- */
+  .overlay{position:fixed; inset:0; z-index:100; background:rgba(4,7,10,.9); backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center; padding:20px}
+  .overlay.hide{display:none}
+  .alert{max-width:620px; width:100%; border:1px solid var(--red); border-radius:16px; overflow:hidden;
+    background:linear-gradient(180deg, rgba(20,26,34,.98), rgba(11,15,20,.98)); box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .alert .ah{background:var(--red); color:#fff; padding:10px 18px; font-family:var(--mono); font-weight:800; letter-spacing:3px;
+    text-transform:uppercase; font-size:13px; display:flex; align-items:center; gap:10px}
+  .alert .ab{padding:22px 24px}
+  .alert h1{margin:0 0 6px; font-size:24px}
+  .alert .loc{font-family:var(--mono); color:var(--cyan); font-size:13px; letter-spacing:1px; margin-bottom:14px}
+  .alert p{color:var(--muted); font-size:14.5px; margin:0 0 10px}
+  .alert .msg{border-left:3px solid var(--amber); padding:10px 14px; background:var(--panel2); border-radius:6px; color:var(--text); font-size:14px; margin:14px 0}
+  .alert .go{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+  .alert .hint{font-size:12px; color:var(--dim)}
+
+  /* ---------- Visual scenes on each wire ---------- */
+  .viz{position:relative; border-bottom:1px solid var(--border); background:#05070b; line-height:0; overflow:hidden}
+  .scene{display:block; width:100%; height:196px}
+  @media(max-width:600px){ .scene{height:150px} }
+
+  /* rain */
+  .drop{stroke:#a8c8e8; stroke-width:1.2; opacity:.4; animation:rainfall .85s linear infinite}
+  @keyframes rainfall{from{transform:translateY(-24px)}to{transform:translateY(232px)}}
+  /* pulsing flare / distress light */
+  .flare{transform-box:fill-box; transform-origin:center; animation:flarePulse 1.3s ease-in-out infinite}
+  @keyframes flarePulse{0%,100%{opacity:.25; transform:scale(.6)}50%{opacity:1; transform:scale(1.15)}}
+  /* radar sweep */
+  .sweep{animation:spin 2.6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  /* flickering distant lights */
+  .flick{animation:flick 2.4s steps(1) infinite}
+  @keyframes flick{0%,42%{opacity:.15}46%,54%{opacity:1}60%,100%{opacity:.25}}
+  /* rising water */
+  .rise{animation:rise 7s ease-in forwards}
+  @keyframes rise{from{transform:translateY(48px)}to{transform:translateY(0)}}
+  /* drifting steam */
+  .steam{animation:steam 3s ease-out infinite}
+  @keyframes steam{0%{opacity:.55; transform:translate(0,0) scale(1)}100%{opacity:0; transform:translate(-22px,-26px) scale(1.7)}}
+  /* the sinking climax */
+  .sink{transform-box:fill-box; transform-origin:68% 78%; animation:sinkAnim 8s ease-in forwards}
+  @keyframes sinkAnim{0%{transform:rotate(0)}35%{transform:rotate(-30deg)}70%{transform:rotate(-68deg) translateY(16px)}100%{transform:rotate(-80deg) translateY(130px); opacity:.12}}
+
+  /* document register (letterhead / newspaper) */
+  .docwrap{display:flex; justify-content:center; padding:16px; background:#070b11}
+  .letter{max-width:420px; width:100%; background:#efe7d4; color:#3a3323; border-radius:4px; overflow:hidden; font-family:Georgia,serif; box-shadow:0 10px 26px rgba(0,0,0,.5)}
+  .letter .lh{background:#0b2a4a; color:#efe7d4; padding:9px 14px; font-weight:800; letter-spacing:2px; font-size:14px; display:flex; align-items:center; gap:9px}
+  .letter .burgee{color:#e5aa4d; font-size:16px}
+  .letter .lb{padding:12px 16px 16px; font-size:13px; line-height:1.5}
+  .letter .lb p{margin:0 0 8px}
+  .letter .sig{font-style:italic; color:#6b5f3d; margin-top:10px}
+  .news{max-width:440px; width:100%; background:#e8e2d2; color:#20201a; border:1px solid #b9b096; border-radius:3px; padding:14px 18px 18px; font-family:Georgia,serif; box-shadow:0 10px 26px rgba(0,0,0,.5)}
+  .news .nmast{text-align:center; font-weight:900; font-size:26px; letter-spacing:1px; border-bottom:3px double #20201a; padding-bottom:4px; font-family:"Times New Roman",Georgia,serif}
+  .news .nsub{text-align:center; font-size:10px; letter-spacing:3px; text-transform:uppercase; margin:5px 0 10px; color:#5a5445}
+  .news .nhead{text-align:center; font-weight:900; font-size:22px; line-height:1.1; margin-bottom:8px}
+  .news .ncol{font-size:12px; line-height:1.5; column-count:2; column-gap:16px; text-align:justify; color:#33301f}
+
+  /* fake smartphone */
+  .phonewrap{display:flex; justify-content:center; padding:14px; background:#05070b}
+  .phone{width:206px; background:#000; border-radius:24px; padding:8px; box-shadow:0 16px 40px rgba(0,0,0,.6); border:1px solid #2a2f36}
+  .phone .screen{border-radius:17px; overflow:hidden; position:relative; background:#05070b}
+  .phone .statusbar{position:absolute; top:0; left:0; right:0; height:22px; display:flex; justify-content:space-between; align-items:center; padding:0 13px; font-size:10.5px; font-weight:700; color:#fff; z-index:3}
+  .phone .notch{position:absolute; top:5px; left:50%; transform:translateX(-50%); width:50px; height:13px; background:#000; border-radius:8px; z-index:4}
+  .phone .plive{position:absolute; top:27px; left:9px; z-index:3; background:var(--red); color:#fff; font-size:9px; font-weight:800; padding:3px 6px; border-radius:4px; letter-spacing:1px; display:flex; align-items:center; gap:4px}
+  .phone .plive::before{content:""; width:5px; height:5px; background:#fff; border-radius:50%}
+  .phone .pcap{position:absolute; bottom:0; left:0; right:0; z-index:3; padding:9px 11px; font-size:10.5px; background:linear-gradient(0deg,rgba(0,0,0,.85),transparent); color:#fff}
+
+  /* ---------- Just-in-time grammar callout ---------- */
+  .grambox{margin:12px 14px 0; border:1px solid rgba(57,197,207,.45);
+    background:linear-gradient(180deg, rgba(57,197,207,.10), rgba(57,197,207,.02)); border-radius:10px; padding:11px 13px}
+  .grambox .gh{display:flex; align-items:center; gap:8px; font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--cyan)}
+  .grambox .gh .tag{background:var(--cyan); color:#04212a; padding:1px 7px; border-radius:4px; font-size:10px; letter-spacing:1px}
+  .grambox .gname{font-weight:700; font-size:15px; margin:7px 0 3px}
+  .grambox .gform{font-family:var(--mono); font-size:12px; color:var(--text); background:var(--panel2); border-radius:5px; padding:4px 9px; display:inline-block; margin:2px 0 7px}
+  .grambox .guse{font-size:12.5px; color:var(--muted)}
+  .grambox .gex{font-family:var(--mono); font-size:12.5px; margin-top:7px; border-left:2px solid var(--cyan); padding-left:9px; line-height:1.5}
+  .grambox .gex b{color:var(--amber)}
+
+  /* ---------- End-task studio ---------- */
+  .studio{position:fixed; inset:0; z-index:120; background:rgba(4,7,10,.94); backdrop-filter:blur(6px); display:none; padding:16px}
+  .studio.open{display:flex}
+  .sheet{max-width:1120px; width:100%; margin:auto; background:var(--panel); border:1px solid var(--border); border-radius:16px; max-height:95vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .sbar{display:flex; align-items:center; gap:12px; padding:12px 18px; border-bottom:1px solid var(--border); background:var(--panel2)}
+  .sbar .st{font-weight:800; letter-spacing:.5px; font-size:15px}
+  .sbar .st .em{color:var(--red); font-family:var(--mono)}
+  .sgrid{display:grid; grid-template-columns:1fr 330px; overflow:hidden; flex:1; min-height:0}
+  @media(max-width:820px){ .sgrid{grid-template-columns:1fr} .studio .right{display:none} }
+  .sleft{padding:16px 18px; overflow:auto}
+  .sright{padding:16px; border-left:1px solid var(--border); overflow:auto; background:var(--panel2)}
+  input.headline{width:100%; font-size:19px; font-weight:700; background:transparent; border:none; border-bottom:2px solid var(--border); color:var(--text); padding:8px 2px; margin-bottom:12px}
+  input.headline::placeholder{color:var(--dim)}
+  input.headline:focus{outline:none; border-color:var(--cyan)}
+  textarea.article{width:100%; min-height:240px; background:var(--panel2); border:1px solid var(--border); border-radius:10px; color:var(--text); font-size:15px; line-height:1.6; padding:12px; resize:vertical; font-family:var(--sans)}
+  textarea.article:focus{outline:none; border-color:var(--cyan)}
+  .chipset{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px}
+  .ins{border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:12px; padding:5px 9px; border-radius:14px; cursor:pointer; transition:.15s; text-align:left}
+  .ins:hover{border-color:var(--cyan); transform:translateY(-1px)}
+  .ins .tt{color:var(--cyan); font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.5px; margin-right:5px}
+  .rlabel{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-weight:700; margin:16px 0 6px}
+  .rlabel:first-child{margin-top:0}
+  .check{display:flex; gap:9px; align-items:flex-start; font-size:12.5px; padding:6px 0; cursor:pointer; color:var(--muted)}
+  .check input{margin-top:2px; accent-color:var(--green); flex-shrink:0}
+  .check.done{color:var(--text)}
+  .facts{font-size:12.5px; color:var(--muted); line-height:1.5; margin:0; padding-left:18px}
+  .facts li{margin-bottom:6px}
+  .sfoot{display:flex; align-items:center; gap:9px; flex-wrap:wrap; padding:11px 18px; border-top:1px solid var(--border); background:var(--panel2)}
+  .wc{font-family:var(--mono); font-size:12px; color:var(--muted); margin-right:auto}
+  .recdot{display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--red); margin-right:6px; animation:pulse 1.2s infinite}
+  #recWrap{display:none; align-items:center; gap:10px; width:100%; margin-top:8px}
+  #recWrap audio{height:34px}
+  .recmsg{font-size:12px; color:var(--amber)}
+
+  /* teleprompter */
+  .prompter{position:fixed; inset:0; z-index:140; background:#04070a; display:none; padding:30px; overflow:auto}
+  .prompter.open{display:block}
+  .prompter .pinner{max-width:820px; margin:0 auto}
+  .prompter h2{font-size:30px; line-height:1.2; color:var(--amber)}
+  .prompter .pbody{font-size:26px; line-height:1.7; color:var(--text); white-space:pre-wrap}
+  .prompter .pclose{position:fixed; top:16px; right:18px}
+
+  /* ---------- Role missions & tasks ---------- */
+  .mission{margin-top:9px; font-size:12.5px; color:var(--text); background:var(--panel2); border-radius:7px; padding:7px 9px}
+  .mission b{color:var(--cyan)}
+  .rtask{display:flex; gap:8px; align-items:flex-start; font-size:12.5px; color:var(--muted); padding:5px 0; cursor:pointer}
+  .rtask input{margin-top:2px; accent-color:var(--green); flex-shrink:0}
+  .rtask.done{color:var(--text)}
+  .rnotes{width:100%; margin-top:6px; background:var(--panel2); border:1px solid var(--border); border-radius:7px; color:var(--text); font-size:12.5px; padding:7px; resize:vertical; min-height:54px; font-family:var(--sans)}
+  .rnotes:focus{outline:none; border-color:var(--cyan)}
+
+  /* ---------- Two-question flag panel ---------- */
+  .twoq{display:flex; flex-direction:column; gap:9px}
+  .twoq .q{display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:12.5px}
+  .twoq .q>span{flex:1 1 100%; color:var(--muted); font-weight:600}
+  .qb{border:1px solid var(--border); background:var(--panel2); color:var(--text); font-size:12px; padding:5px 12px; border-radius:6px; cursor:pointer; transition:.12s}
+  .qb:hover{border-color:var(--cyan)}
+  .qb.on{background:rgba(57,197,207,.16); border-color:var(--cyan); color:#a7ecf2}
+  .vres{margin-top:4px; padding:10px 12px; border-radius:9px; font-size:13px; animation:slide .3s ease}
+  .vres.good{background:rgba(63,185,80,.1); border:1px solid rgba(63,185,80,.4)}
+  .vres.bad{background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.4)}
+  .vres .vh{font-weight:700; margin-bottom:3px}
+
+  /* ---------- Debrief inside studio ---------- */
+  .debrief details{border:1px solid var(--border); background:var(--panel); border-radius:9px; margin-bottom:8px; overflow:hidden}
+  .debrief summary{cursor:pointer; padding:9px 11px; font-weight:600; font-size:12.5px; list-style:none}
+  .debrief summary::-webkit-details-marker{display:none}
+  .debrief summary::before{content:"▸ "; color:var(--cyan)}
+  .debrief details[open] summary::before{content:"▾ "}
+  .debrief .dc{padding:0 12px 11px; font-size:12.5px; color:var(--muted); line-height:1.55}
+  .debrief .dc b{color:var(--text)}
+  .debrief .refl{margin-bottom:9px}
+  .debrief .refl label{display:block; font-size:12.5px; margin-bottom:4px; color:var(--text)}
+  .debrief .refl textarea{width:100%; background:var(--panel); border:1px solid var(--border); border-radius:7px; color:var(--text); font-size:12.5px; padding:7px; min-height:50px; resize:vertical; font-family:var(--sans)}
+  .debrief .refl textarea:focus{outline:none; border-color:var(--cyan)}
+  .rubric{width:100%; border-collapse:collapse; font-size:11px; margin-top:2px}
+  .rubric th,.rubric td{border:1px solid var(--border); padding:5px 6px; text-align:left; vertical-align:top}
+  .rubric th{background:var(--panel); color:var(--muted); font-weight:700}
+  .rubric td:first-child{color:var(--text); font-weight:600}
+
+  /* ---------- Difficulty ---------- */
+  .selbtn{border:1px solid var(--border); background:var(--panel); color:var(--text); padding:9px 10px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer}
+  body[data-diff="advanced"] .hint-row{display:none}
+  body[data-diff="advanced"] .relmeta{display:none}
+  body[data-diff="beginner"] .grambox{box-shadow:0 0 0 2px rgba(57,197,207,.18)}
+
+  /* ---------- Vocabulary ---------- */
+  .vocab .vhint{font-size:11.5px; color:var(--dim); margin-bottom:11px}
+  .vocab .vc{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:10px 12px; margin-bottom:8px; cursor:pointer; transition:.15s}
+  .vocab .vc:hover{border-color:var(--cyan)}
+  .vocab .vw{font-weight:700; font-size:14px; display:flex; align-items:baseline; gap:8px}
+  .vocab .vw .pos{font-size:11px; color:var(--dim); font-style:italic; font-weight:400}
+  .vocab .vw .rev{margin-left:auto; font-size:11px; color:var(--cyan)}
+  .vocab .vdef{font-size:12.5px; color:var(--muted); margin-top:6px; display:none; line-height:1.5}
+  .vocab .vc.open .vdef{display:block}
+  .vocab .vex{font-family:var(--mono); font-size:12px; color:var(--text); border-left:2px solid var(--cyan); padding-left:8px; margin-top:6px}
+
+  /* ---------- Interview mode ---------- */
+  .interview{position:fixed; inset:0; z-index:130; background:rgba(4,7,10,.96); backdrop-filter:blur(6px); display:none; padding:16px}
+  .interview.open{display:flex}
+  .ivsheet{max-width:1000px; width:100%; margin:auto; background:var(--panel); border:1px solid var(--border); border-radius:16px; max-height:95vh; display:flex; flex-direction:column; overflow:auto; box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .ivstage{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:16px}
+  @media(max-width:700px){ .ivstage{grid-template-columns:1fr} }
+  .ivwin{position:relative; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#05070b; transition:.2s}
+  .ivwin.talking{border-color:var(--red); box-shadow:0 0 0 1px var(--red)}
+  .ivwin svg{display:block; width:100%; height:170px}
+  .idle{animation:idlebob 3.4s ease-in-out infinite}
+  @keyframes idlebob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .ivlower{position:absolute; left:0; right:0; bottom:0; background:linear-gradient(0deg,rgba(0,0,0,.92),transparent); padding:20px 12px 9px; color:#fff; transform:translateY(0); animation:lowerin .5s ease}
+  @keyframes lowerin{from{transform:translateY(20px); opacity:0}to{transform:translateY(0); opacity:1}}
+  .ivlower .who{font-weight:800; font-size:14px}
+  .ivlower .role{font-size:10px; color:var(--cyan); text-transform:uppercase; letter-spacing:1.5px}
+  .wave{display:flex; align-items:flex-end; gap:3px; height:20px; margin-top:6px}
+  .wbar{width:3px; height:3px; background:var(--red); border-radius:2px; animation:wave .8s ease-in-out infinite; animation-play-state:paused}
+  .talking .wave .wbar{animation-play-state:running}
+  @keyframes wave{0%,100%{height:3px}50%{height:18px}}
+  .ivq{margin:0 16px; padding:16px; border:1px solid var(--border); border-radius:12px; background:var(--panel2); text-align:center}
+  .ivq .qtag{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--cyan); font-weight:700}
+  .ivq .qtext{font-size:23px; font-weight:700; margin:9px 0; line-height:1.3; text-wrap:balance}
+  .ivq .qnav{display:flex; justify-content:center; align-items:center; gap:12px; margin-top:8px; font-size:12px; color:var(--muted)}
+  .ivspk{display:flex; gap:8px; justify-content:center; padding:12px 16px 0}
+  .ivspk .sk{border:1px solid var(--border); background:var(--panel2); color:var(--text); padding:7px 13px; border-radius:20px; font-size:12.5px; font-weight:600; cursor:pointer}
+  .ivspk .sk.on{border-color:var(--red); background:rgba(229,72,77,.14); color:#ffb4b6}
+  .ivpicklabel{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-weight:700; padding:14px 16px 0}
+  .ivpick{display:flex; flex-wrap:wrap; gap:8px; padding:8px 16px 0}
+  .ivpick .pk{border:1px solid var(--border); background:var(--panel2); color:var(--text); padding:7px 11px; border-radius:8px; font-size:12.5px; cursor:pointer}
+  .ivpick .pk.on{border-color:var(--cyan); background:rgba(57,197,207,.14)}
+  .ivback{margin:12px 16px; padding:10px 12px; font-size:13px; color:var(--text); background:var(--panel2); border-left:2px solid var(--cyan); border-radius:6px}
+  .ivback b{color:var(--cyan)}
+  .ivfoot{display:flex; align-items:center; gap:9px; flex-wrap:wrap; padding:12px 16px 16px; border-top:1px solid var(--border)}
+  #recWrapIv{display:none; align-items:center; gap:10px; width:100%; margin-top:6px}
+  #recWrapIv audio{height:34px}
+
+  @media(prefers-reduced-motion:reduce){
+    .drop,.flare,.sweep,.flick,.rise,.steam,.sink,.idle,.wbar,.ivlower,.flag,.pin .pdot{animation:none}
+  }
+
+  /* ---------- Print / PDF worksheet ---------- */
+  #printDoc{display:none}
+  @media print{
+    body{background:#fff; color:#000}
+    body>header, body>.wrap, body>.studio, body>.prompter, body>.interview, body>.overlay, body>footer, body>svg{display:none !important}
+    #printDoc{display:block; max-width:720px; margin:0 auto; color:#000; font-size:12pt; line-height:1.5}
+    #printDoc h1{font-size:20pt; margin:0 0 4pt}
+    #printDoc h2{font-size:13pt; border-bottom:1.5pt solid #000; padding-bottom:2pt; margin:18pt 0 6pt}
+    #printDoc .sub{color:#444; font-style:italic; margin:0 0 10pt}
+    #printDoc table{width:100%; border-collapse:collapse; font-size:10pt}
+    #printDoc th,#printDoc td{border:1pt solid #999; padding:4pt 6pt; text-align:left; vertical-align:top}
+    #printDoc .writelines{border:1pt solid #999; height:180pt; border-radius:4pt; margin-top:4pt}
+    #printDoc .role{margin-bottom:6pt}
+    #printDoc .role b{display:block}
+    #printDoc .key{border:1.5pt dashed #999; padding:8pt 10pt; border-radius:4pt; page-break-before:always}
+    #printDoc .muted{color:#555; font-size:10pt}
+    #printDoc ul{margin:4pt 0; padding-left:16pt}
+  }
+
+  footer{max-width:1280px; margin:0 auto; padding:0 18px 40px; color:var(--dim); font-size:12px; text-align:center}
+
+  /* ================= LIGHT THEME — chrome lifts, scenes stay dark ================= */
+  header{background:linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,255,255,.82))}
+  .logo .c24{color:#fff}
+  .onair.live{background:var(--red); color:#fff}
+  .onair.live .dot{background:#fff}
+  /* source-type chips: darker ink so they read on white */
+  .k-eyewitness{color:#1a8038}
+  .k-official{color:#2f66c6}
+  .k-wire{color:#0d7a8b}
+  .k-rumor{color:#a86c0a}
+  .k-log{color:#586576}
+  .k-testimony{color:#1a8038; background:rgba(63,185,80,.14)}
+  .k-record{color:#586576; background:rgba(139,150,166,.16)}
+  .k-playbill{color:#0d7a8b; background:rgba(57,197,207,.14)}
+  .k-rumour{color:#a86c0a; background:rgba(245,166,35,.16)}
+  .k-forgery{color:#fff; background:var(--red)}
+  .k-manuscript{color:#8a6a2a; background:rgba(200,160,60,.16)}
+  .k-handbill{color:#0d7a8b; background:rgba(57,197,207,.14)}
+  .chip.pub.active{color:#1a8038}
+  .chip.flag.active{color:#6a3fc0}
+  .lb.pub{color:#1a8038}
+  .lb.flag{color:#6a3fc0}
+  .qb.on{color:#0d7a8b}
+  .ivspk .sk.on{color:#b23238}
+  /* lower-thirds sit on the dark scene windows, so keep their text light */
+  .ivlower .role{color:#4fd0dc}
+  /* the dramatic intro alert stays dark — force its text light */
+  .alert h1{color:#fff}
+  .alert p{color:#c2ccd8}
+  .alert .loc{color:#5fd0da}
+  .alert .msg{color:#fff; background:rgba(255,255,255,.07); border-left-color:#f5a623}
+  .alert .hint{color:#8b98a6}
+  /* teleprompter stays dark for reading aloud */
+  .prompter .pbody{color:#e6edf3}
+  .prompter h2{color:#f5b942}
+
+  /* ---------- How-it-works instruction card ---------- */
+  .howto{position:fixed; inset:0; z-index:135; background:rgba(18,26,36,.55); backdrop-filter:blur(4px); display:none; padding:18px; overflow:auto}
+  .howto.open{display:flex}
+  .hcard{max-width:660px; width:100%; margin:auto; background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .hcard .hh{background:var(--cyan); color:#fff; padding:12px 18px; font-weight:800; letter-spacing:.4px; display:flex; align-items:center; gap:10px; font-size:15px}
+  .hcard .hb{padding:14px 20px 20px}
+  .hcard ol{margin:0; padding:0; list-style:none; counter-reset:step}
+  .hcard li{counter-increment:step; position:relative; padding:10px 0 10px 42px; font-size:14px; line-height:1.5; border-bottom:1px solid var(--border); color:var(--muted)}
+  .hcard li:last-child{border-bottom:none}
+  .hcard li b{color:var(--text)}
+  .hcard li::before{content:counter(step); position:absolute; left:0; top:9px; width:27px; height:27px; border-radius:50%; background:var(--cyan); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center}
+  .hcard .two{margin-top:13px; font-size:13px; color:var(--text); background:var(--panel2); border-radius:9px; padding:11px 13px; line-height:1.5}
+  .hcard .two b{color:var(--cyan)}
+  .btn.hclose{background:rgba(255,255,255,.22); border-color:transparent; color:#fff}
+
+  /* ---------- Map of London 1606 ---------- */
+  .map{position:relative; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#0e1a26; margin-bottom:20px; box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .map svg{display:block; width:100%; height:300px}
+  @media(max-width:600px){ .map svg{height:230px} }
+  #pins{position:absolute; inset:0}
+  .pin{position:absolute; transform:translate(-50%,-50%); background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px; padding:0; pointer-events:none}
+  .pin .plabel{pointer-events:none}
+  .pin .pdot{pointer-events:auto; cursor:pointer; width:17px; height:17px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--amber); border:2px solid #fff; box-shadow:0 2px 5px rgba(0,0,0,.4); transition:.15s; animation:pinpulse 2s ease-in-out infinite}
+  @keyframes pinpulse{0%,100%{box-shadow:0 2px 5px rgba(0,0,0,.4)}50%{box-shadow:0 2px 5px rgba(0,0,0,.4), 0 0 0 6px rgba(245,166,35,.18)}}
+  .pin:hover .pdot{transform:rotate(-45deg) scale(1.18)}
+  .pin .plabel{font-size:10.5px; font-weight:700; color:#fff; background:rgba(10,16,22,.72); padding:2px 7px; border-radius:5px; white-space:nowrap; letter-spacing:.2px}
+  .pin.visited .pdot{background:var(--green); animation:none; border-radius:50%; transform:rotate(0)}
+  .pin.visited:hover .pdot{transform:scale(1.12)}
+  .pin.visited .plabel{opacity:.72}
+  .pin.trap.visited .pdot{background:var(--violet)}
+  .flag{transform-box:fill-box; transform-origin:left center; animation:flagwave 1.6s ease-in-out infinite}
+  @keyframes flagwave{0%,100%{transform:skewY(0) scaleX(1)}50%{transform:skewY(-7deg) scaleX(.9)}}
+</style>
+</head>
+<body>
+
+<!-- shared SVG gradients used by all scenes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1524"/><stop offset="1" stop-color="#0d2136"/></linearGradient>
+  <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c2233"/><stop offset="1" stop-color="#04101a"/></linearGradient>
+  <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12455f"/><stop offset="1" stop-color="#071c28"/></linearGradient>
+  <radialGradient id="glowGrad" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".8"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+</defs></svg>
+
+<!-- ================= INTRO OVERLAY ================= -->
+<div class="overlay" id="overlay">
+  <div class="alert">
+    <div class="ah"><span>⚠</span> Temporal Alert · Cold Case</div>
+    <div class="ab">
+      <h1>CHRONICLE 24 — Shakespeare Is Missing</h1>
+      <div class="loc">LONDON · 1606 · THE CITY DESK</div>
+      <p>You work for the only newsroom that can travel through time. This afternoon, <b>Macbeth</b> has its premiere at the Globe — but the playwright, <b>William Shakespeare</b>, has vanished, and the final scene is gone with him.</p>
+      <div class="msg">Sources from other centuries have leaked into 1606. Explore the <b>map of London</b>, gather evidence, and work out what happened — <b>before</b> the curtain rises. Two questions never change: is it true, and can the source be real in 1606?</div>
+      <p>Episode 2: <b>Shakespeare Is Missing.</b> Open the case. Follow the clues.</p>
+      <div class="go">
+        <button class="btn primary" onclick="startBroadcast()">▶ Open the case</button>
+        <button class="btn" onclick="openHowto()">❓ How it works</button>
+        <span class="hint">Teacher: open the case when the class is ready.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HEADER / CONSOLE ================= -->
+<header>
+  <div class="bar">
+    <div class="logo">
+      <span class="c24">C24</span>
+      <span class="tag">News&nbsp;Across&nbsp;Time</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="clockbox">
+      <div>
+        <div class="clock" id="clock">2:00</div>
+        <div class="date" id="date">CURTAIN · 1606</div>
+      </div>
+      <span class="onair" id="onair"><span class="dot"></span>Case closed</span>
+    </div>
+    <div class="controls">
+      <button class="btn primary" id="verdictBtn" onclick="showPane('headline', document.querySelector('.tab[data-pane=headline]'))">⚖ File verdict</button>
+      <button class="btn ghost" id="ivBtn" onclick="openInterview()">🎤 Interview</button>
+      <button class="btn ghost" id="taskBtn" onclick="openStudio()">✍ Report</button>
+      <button class="btn ghost" onclick="printPack()" title="Print / save as PDF">🖨 Print</button>
+      <button class="btn ghost" onclick="openHowto()" title="How it works">❓</button>
+      <select class="selbtn" id="diffSel" onchange="setDifficulty(this.value)" title="Difficulty">
+        <option value="beginner">Beginner</option>
+        <option value="standard" selected>Standard</option>
+        <option value="advanced">Advanced</option>
+      </select>
+      <button class="btn ghost" id="soundBtn" onclick="toggleSound()" title="Sound on/off">🔊</button>
+      <button class="btn ghost" onclick="resetBroadcast()">Reset</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<div class="wrap">
+  <!-- LEFT: map + evidence board -->
+  <main>
+    <h2 class="section">Map of London · 1606 — click a location to investigate</h2>
+    <div class="map" id="map">
+      <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="220" fill="#0e1a26"/>
+        <!-- Thames -->
+        <path d="M-10 150 Q 90 128 200 150 T 410 148 L410 178 Q 300 160 200 178 T -10 176 Z" fill="#123246"/>
+        <path d="M-10 152 Q 90 130 200 152 T 410 150" fill="none" stroke="#1f5570" stroke-width="1" opacity=".6"/>
+        <!-- London Bridge -->
+        <rect x="150" y="146" width="40" height="34" fill="#20303c"/>
+        <g fill="#2a3b48"><rect x="153" y="140" width="5" height="8"/><rect x="163" y="140" width="5" height="8"/><rect x="173" y="140" width="5" height="8"/><rect x="183" y="140" width="5" height="8"/></g>
+        <!-- north bank blocks -->
+        <g fill="#182734" stroke="#243644" stroke-width="1">
+          <rect x="30" y="60" width="70" height="46" rx="2"/><rect x="120" y="44" width="60" height="60" rx="2"/>
+          <rect x="200" y="66" width="66" height="40" rx="2"/><rect x="286" y="50" width="80" height="56" rx="2"/>
+        </g>
+        <!-- St Paul's spire -->
+        <path d="M150 44 L156 20 L162 44 Z" fill="#2a3b48"/><rect x="153" y="44" width="6" height="10" fill="#2a3b48"/>
+        <!-- south bank (Bankside) -->
+        <g fill="#152430" stroke="#22333f" stroke-width="1"><rect x="60" y="186" width="70" height="30" rx="2"/><rect x="230" y="188" width="90" height="28" rx="2"/></g>
+        <text x="12" y="86" fill="#3a5568" font-family="monospace" font-size="9">N O R T H   B A N K</text>
+        <text x="12" y="206" fill="#3a5568" font-family="monospace" font-size="9">B A N K S I D E</text>
+        <text x="360" y="196" fill="#294a5e" font-family="monospace" font-size="8" text-anchor="end">R. THAMES</text>
+      </svg>
+      <div id="pins"></div>
+    </div>
+    <h2 class="section">Evidence board · <span id="feedCount">0</span> of <span id="feedTotal">0</span> gathered</h2>
+    <div class="feed" id="feed">
+      <div class="empty" id="feedEmpty">
+        <strong>No evidence yet.</strong>
+        Click a marker on the map above to visit that place. Read the clue aloud, examine the source, then tag it.
+      </div>
+    </div>
+  </main>
+
+  <!-- RIGHT: console -->
+  <aside class="side">
+    <div class="tabs">
+      <div class="tab active" data-pane="roles" onclick="showPane('roles',this)">Roles</div>
+      <div class="tab" data-pane="grammar" onclick="showPane('grammar',this)">Grammar</div>
+      <div class="tab" data-pane="vocab" onclick="showPane('vocab',this)">Vocab</div>
+      <div class="tab" data-pane="headline" onclick="showPane('headline',this)">Verdict</div>
+      <div class="tab" data-pane="log" onclick="showPane('log',this)">Log</div>
+    </div>
+
+    <!-- ROLES -->
+    <div class="pane active" id="pane-roles">
+      <h2 class="section">Who does what in the newsroom?</h2>
+      <div id="roles"></div>
+    </div>
+
+    <!-- GRAMMAR -->
+    <div class="pane" id="pane-grammar">
+      <h2 class="section">Grammar = a journalist's tool</h2>
+      <div id="grammar"></div>
+    </div>
+
+    <!-- VOCAB -->
+    <div class="pane vocab" id="pane-vocab">
+      <h2 class="section">Pre-teach: newsroom vocabulary</h2>
+      <div class="vhint">Tap a word to reveal its meaning and an example. Try to use a few in your report.</div>
+      <div id="vocab"></div>
+    </div>
+
+    <!-- VERDICT -->
+    <div class="pane hb" id="pane-headline">
+      <h2 class="section">File your verdict — what happened to Shakespeare?</h2>
+      <div id="headline"></div>
+    </div>
+
+    <!-- LOG -->
+    <div class="pane" id="pane-log">
+      <h2 class="section">Your evidence log</h2>
+      <div id="log"><div class="logempty">No decisions yet. On any report, click <b>Publish</b>, <b>Hold</b> or <b>🚩 Flag</b>.</div></div>
+    </div>
+  </aside>
+</div>
+
+<!-- ================= END-TASK STUDIO ================= -->
+<div class="studio" id="studio">
+  <div class="sheet">
+    <div class="sbar">
+      <span class="st"><span class="em">●</span> THE FRONT PAGE — write &amp; file your report</span>
+      <div class="spacer"></div>
+      <button class="btn ghost" onclick="openPrompter()">📖 Teleprompter</button>
+      <button class="btn" onclick="closeStudio()">✕ Close</button>
+    </div>
+    <div class="sgrid">
+      <div class="sleft">
+        <input class="headline" id="headlineBox" placeholder="Headline — e.g. PLAYWRIGHT VANISHES ON EVE OF PREMIERE" oninput="updateWC()">
+        <textarea class="article" id="articleBox" placeholder="Write your case report or front-page story here. Use the sentence starters and the phrasebook on the right. Remember the three tenses: simple past for confirmed facts, present continuous for what is happening live at the Globe, simple present (say/claim) for rumours you cannot prove." oninput="updateWC()"></textarea>
+
+        <div class="rlabel">Sentence starters (click to insert)</div>
+        <div class="chipset" id="starters"></div>
+
+        <div class="rlabel">Newsroom phrasebook — attribution &amp; uncertainty</div>
+        <div class="chipset" id="phrasebook"></div>
+      </div>
+      <div class="sright debrief">
+        <div class="rlabel">What came in? (confirmed facts)</div>
+        <ul class="facts" id="factsList"></ul>
+        <div class="rlabel">Self-check before you publish</div>
+        <div id="checklist"></div>
+
+        <div class="rlabel">Reflection</div>
+        <div class="refl"><label>1 · Which explanation did the evidence best support — and why?</label><textarea id="refl1" oninput="saveDraft()"></textarea></div>
+        <div class="refl"><label>2 · What gave the forged ‘lost scene’ away, even though the words sounded right?</label><textarea id="refl2" oninput="saveDraft()"></textarea></div>
+        <div class="refl"><label>3 · Which clue was the hardest to report honestly?</label><textarea id="refl3" oninput="saveDraft()"></textarea></div>
+
+        <div class="rlabel">More</div>
+        <details>
+          <summary>📋 Assessment rubric</summary>
+          <div class="dc"><table class="rubric">
+            <tr><th>Criterion</th><th>Not yet</th><th>Getting there</th><th>Strong</th></tr>
+            <tr><td>Task completion</td><td>incomplete report</td><td>main points covered</td><td>clear, complete, engaging</td></tr>
+            <tr><td>Tenses</td><td>tenses are mixed up</td><td>mostly correct</td><td>past/continuous/present correct and matched to certainty</td></tr>
+            <tr><td>Attribution &amp; certainty</td><td>rumour = fact</td><td>sometimes attributed</td><td>consistent say/claim + honest uncertainty</td></tr>
+            <tr><td>Source criticism</td><td>forgery printed as real</td><td>doubt expressed</td><td>forgery &amp; anachronism spotted and explained</td></tr>
+            <tr><td>Register &amp; word choice</td><td>very informal</td><td>simple news register</td><td>fluent news register using phrasebook chunks</td></tr>
+          </table></div>
+        </details>
+        <details>
+          <summary>📄 Model report (open only when you are done)</summary>
+          <div class="dc">
+            <b>PLAYWRIGHT VANISHES ON EVE OF PREMIERE</b><br><br>
+            William Shakespeare <b>left</b> his Silver Street lodgings last night and <b>did not return</b>. This afternoon his company, the King’s Men, <b>are rehearsing</b> Macbeth at the Globe — but the final scene <b>is</b> missing.<br><br>
+            His landlady <b>says</b> his candle <b>is</b> still burning. The King’s censor <b>says</b> the play <b>is</b> dangerous and <b>wants</b> the ending changed. In the taverns, some <b>claim</b> a rival is behind it, but nobody has proof.<br><br>
+            A pedlar <b>is selling</b> a “lost scene”, yet the page <b>is</b> written in modern English on lined paper — a forgery this newsroom will not print. What is certain is small; what is rumour is large. The curtain rises at two o’clock.
+          </div>
+        </details>
+        <details>
+          <summary>🕵 Debrief: what was planted?</summary>
+          <div class="dc">
+            <b>The pedlar’s ‘lost scene’.</b> The words may sound like Shakespeare, but modern English and lined paper give it away. Real forgeries happened: <b>William-Henry Ireland</b> faked Shakespeare papers in the 1790s and fooled experts. True ≠ authentic.<br><br>
+            <b>The ‘coffee-house’ (Stationers’ Hall).</b> Coffee-houses only reached London around 1650 — over forty years too late for 1606 → anachronism.<br><br>
+            <b>Why records matter.</b> Macbeth and half of Shakespeare’s plays survive only because friends printed the <b>First Folio</b> in 1623. Without that source, the story would have been lost — which is exactly why a newsroom guards its sources.
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="sfoot">
+      <span class="wc" id="wc">0 words</span>
+      <button class="btn ghost" onclick="saveDraft(true)">💾 Save</button>
+      <button class="btn ghost" onclick="downloadArticle()">⬇ Download .txt</button>
+      <button class="btn primary" id="recBtn" onclick="toggleRecord()">🎙 Record</button>
+      <span class="recmsg" id="recMsg"></span>
+      <div id="recWrap"><span style="font-size:12px;color:var(--muted)">Your broadcast:</span> <audio id="playback" controls></audio> <a class="btn ghost" id="dlAudio">⬇ audio</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TELEPROMPTER ================= -->
+<div class="prompter" id="prompter">
+  <button class="btn pclose" onclick="closePrompter()">✕ close</button>
+  <div class="pinner"><h2 id="prompterHead"></h2><div class="pbody" id="prompterBody"></div></div>
+</div>
+
+<!-- ================= LIVE INTERVIEW ================= -->
+<div class="interview" id="interview">
+  <div class="ivsheet">
+    <div class="sbar">
+      <span class="st"><span class="em">●</span> LIVE INTERVIEW — on air</span>
+      <div class="spacer"></div>
+      <button class="btn" onclick="closeInterview()">✕ Close</button>
+    </div>
+
+    <div class="ivstage">
+      <div class="ivwin" id="ivReporterWin">
+        <div id="ivReporter"></div>
+        <div class="ivlower"><div class="role">Reporter</div><div class="who">You — CHRONICLE 24</div><div class="wave" id="waveR"></div></div>
+      </div>
+      <div class="ivwin" id="ivWitnessWin">
+        <div id="ivWitness"></div>
+        <div class="ivlower"><div class="role" id="ivWitRole">Witness</div><div class="who" id="ivWitName">—</div><div class="wave" id="waveW"></div></div>
+      </div>
+    </div>
+
+    <div class="ivspk">
+      <button class="sk" id="spkR" onclick="setSpeaker('reporter')">🎙 Reporter speaking</button>
+      <button class="sk" id="spkW" onclick="setSpeaker('witness')">🗣 Witness speaking</button>
+    </div>
+
+    <div class="ivpicklabel">Choose who you interview</div>
+    <div class="ivpick" id="ivPick"></div>
+    <div class="ivback" id="ivBack"></div>
+
+    <div class="ivq">
+      <div class="qtag" id="ivQTag">Question</div>
+      <div class="qtext" id="ivQText">—</div>
+      <div class="qnav">
+        <button class="btn ghost" onclick="ivStep(-1)">◂ prev</button>
+        <span id="ivQCount">1 / 8</span>
+        <button class="btn ghost" onclick="ivStep(1)">next ▸</button>
+      </div>
+    </div>
+
+    <div class="ivfoot">
+      <span style="font-size:12px;color:var(--muted);margin-right:auto">Reporter asks in English · Witness answers in role. Swap the “speaking” button as you take turns.</span>
+      <button class="btn primary" id="recBtnIv" onclick="toggleRecordIv()">🎙 Record</button>
+      <span class="recmsg" id="recMsgIv"></span>
+      <div id="recWrapIv"><span style="font-size:12px;color:var(--muted)">Your interview:</span> <audio id="playbackIv" controls></audio> <a class="btn ghost" id="dlAudioIv">⬇ audio</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<div class="howto" id="howto">
+  <div class="hcard">
+    <div class="hh">🗞 How this newsroom works <div class="spacer" style="flex:1"></div><button class="btn hclose" onclick="closeHowto()">✕ Close</button></div>
+    <div class="hb">
+      <ol id="howtoSteps"></ol>
+      <div class="two"><b>Golden rule — two questions for every source:</b><br>1) Is the information true? &nbsp;&nbsp; 2) Can the source be real in 1912?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRINTABLE WORKSHEET ================= -->
+<div id="printDoc"></div>
+
+<footer>
+  CHRONICLE 24 — The Time-Travel Newsroom · Episode 2: <em>Shakespeare Is Missing</em> · London, 1606<br>
+  Two questions, always: <b>1.</b> Is the information true? &nbsp; <b>2.</b> Can the source be authentic to 1606?
+</footer>
+
+<script>
+/* =========================================================
+   DATA — de rollen
+   ========================================================= */
+const ROLES = [
+  {em:"🗞️", name:"Lead Reporter", desc:"Runs the investigation and keeps the overview. Sets the story.", g:"Simple present · simple past",
+    mission:"Lead the case; sum up what the team does and does not know for sure.",
+    tasks:["Write an opening line for the front page.","Name 1 thing that is certain and 1 thing that is still a rumour."]},
+  {em:"🎭", name:"Playhouse Reporter", desc:"Reports live from the Globe. Describes what is happening now.", g:"Present continuous",
+    mission:"Describe live what is happening at the Globe right now, in the present continuous.",
+    tasks:["Describe 1 scene live (‘… is/are + -ing’).","Use at least two -ing forms."]},
+  {em:"🎤", name:"Interviewer", desc:"Questions witnesses and suspects. Asks sharp questions.", g:"Present continuous · simple past",
+    mission:"Interview a witness or suspect with sharp questions.",
+    tasks:["Write 3 questions for a witness (below).","Ask at least 1 question in the simple past (‘When did you last see him?’)."], notes:true},
+  {em:"📜", name:"Records Clerk", desc:"Checks registers and looks for contradictions. Confirms or rejects.", g:"Simple past",
+    mission:"Compare the sources and track down contradictions before anything is printed.",
+    tasks:["Find the contradiction between two sources.","Mark 1 clue as ‘rumour’ and say why."]},
+  {em:"🖨️", name:"Editor / Printer", desc:"Decides what goes on the broadsheet. Weighs the evidence.", g:"Simple present · simple past",
+    mission:"Decide on each clue: reliable, rumour, or forged — and why.",
+    tasks:["Tag each clue on the board.","Justify why you would NOT print the ‘lost scene’."]},
+  {em:"⏳", name:"Time Analyst", desc:"Spots things that do not belong in 1606. Guards the timeline.", g:"Simple past · present continuous",
+    mission:"Guard the timeline: which source does not belong in 1606?",
+    tasks:["Flag the 2 sources that cannot come from 1606.","Explain why each one is impossible."]},
+];
+function saveNotes(i,val){ try{ localStorage.setItem('c24_note_'+i, val); }catch(e){} }
+function loadNotes(i){ try{ return localStorage.getItem('c24_note_'+i)||''; }catch(e){ return ''; } }
+
+/* =========================================================
+   DATA — grammatica-toolkit
+   ========================================================= */
+const GRAMMAR = [
+  {name:"Present continuous",
+    form:"am / is / are + verb + -ing",
+    use:"Live reporting — what is happening right now, as you watch.",
+    signal:"now · at the moment · right now · currently",
+    ex:"The actors <em>are rehearsing</em> the last scene.",
+    tip:"In the newsroom: for the Playhouse Reporter, live from the Globe."},
+  {name:"Simple past",
+    form:"2nd form (left, saw, went) · regular verb + -ed",
+    use:"Reconstruction & confirmed facts — it is over and certain.",
+    signal:"last night · yesterday · ago · then · at two o'clock",
+    ex:"He <em>left</em> the theatre and <em>did not return</em>.",
+    tip:"In the case file: once something is confirmed and finished."},
+  {name:"Simple present",
+    form:"base form (he / she / it + -s)",
+    use:"Headlines, general facts, and attribution (say / claim / report).",
+    signal:"says · claims · reports · according to",
+    ex:"The landlady <em>says</em> his candle <em>is</em> still burning.",
+    tip:"In the case file: to pass on a claim without proving it yourself."},
+];
+const GRAMMAR_INTRO = "The tense you choose shows how sure you are: present continuous = happening live · say/claim (simple present) = an unconfirmed claim · simple past = a confirmed, finished fact.";
+
+/* =========================================================
+   DATA — de wire (binnenkomende berichten, op volgorde)
+   kind: eyewitness | official | wire | rumor | log | anachronism
+   trap: null  OF  {good, bad}  -> feedback wanneer geflagd
+   rel: 1..3 betrouwbaarheid
+   ========================================================= */
+const UPDATES = [
+  {
+    time:"THE GLOBE", src:"Playhouse Reporter · Bankside", kind:"testimony", rel:3, viz:"globe", sound:"crowd", tense:"continuous",
+    grammar:"Present continuous — live report",
+    text:'The company <span class="hl">is rehearsing</span> on the stage. The actors <span class="hl">are waiting</span> for Master Shakespeare, but the final scene <span class="hl">is</span> missing. The flag above the theatre <span class="hl">is flying</span> — the play still goes on this afternoon.',
+    trap:null,
+    note:"Live from the Globe. Present continuous = what is happening now."
+  },
+  {
+    time:"LODGINGS", src:"Marie Mountjoy · Silver Street", kind:"testimony", rel:3, viz:"desk", sound:"quill", tense:"past",
+    grammar:"Simple past — reconstruction",
+    text:'His landlady says he <span class="hl">left</span> the house last night and <span class="hl">did not return</span>. She <span class="hl">found</span> his candle still burning and a page <span class="hl">torn</span> from his manuscript. His quill <span class="hl">was</span> still wet.',
+    trap:null,
+    note:"Reconstruction of last night, in the simple past: it is over and certain."
+  },
+  {
+    time:"REVELS OFFICE", src:"Master of the Revels · the King's censor", kind:"official", rel:2, viz:"seal", sound:"stamp", tense:"present",
+    grammar:"Simple present — statement & attribution",
+    text:'The Master of the Revels <span class="hl">says</span> the play <span class="hl">is</span> dangerous. “Witches and a murdered king <span class="hl">are</span> not welcome so soon after the Gunpowder Plot,” he <span class="hl">warns</span>. He <span class="hl">wants</span> the ending changed.',
+    trap:null,
+    note:"Official — but the censor has an interest. ‘He says / warns…’ = attribution, not proof."
+  },
+  {
+    time:"THE MERMAID", src:"Tavern talk · unconfirmed", kind:"rumour", rel:1, viz:"tavern", sound:"tavern", tense:"present",
+    grammar:"Simple present — attribution (say/claim)",
+    text:'Some drinkers <span class="hl">say</span> a rival playwright <span class="hl">is</span> glad he is gone. Others <span class="hl">claim</span> he <span class="hl">fled</span> the city in shame. Nobody <span class="hl">agrees</span>, and nobody has proof.',
+    trap:null,
+    note:"Rumour, not fact. ‘say / claim’ keeps it honest — you are not making it true."
+  },
+  {
+    time:"PEDLAR'S STALL", src:"A pedlar · “the lost scene”", kind:"manuscript", rel:1, viz:"forged", sound:"camera", tense:"present", impossible:true,
+    grammar:"The big twist",
+    text:'A pedlar <span class="hl">is selling</span> a page of the missing final scene. It <span class="hl">looks</span> convincing — but the lines <span class="hl">are</span> written in modern English (“don’t”, “gonna”) on smooth, lined paper, in a strange even ink.',
+    trap:{
+      good:"✅ The key find. The scene might sound like Shakespeare — but the source cannot be authentic: no lined paper, ballpoint ink, or “don’t/gonna” existed in 1606. Two questions: (1) Could it be true? Maybe. (2) Could the source be real in 1606? No. Never print this as a genuine 1606 page — that is a forgery. (Real forgeries happened: William-Henry Ireland faked Shakespeare papers in the 1790s.)",
+      bad:"⚠️ This is the twist you had to flag. The language and the paper are modern. Even if the words sound right, the source is impossible for 1606 — printing it would be a forgery."
+    },
+    note:"Two questions: could it be true? — could this source be real in 1606?"
+  },
+  {
+    time:"STATIONERS' HALL", src:"The register · records clerk", kind:"record", rel:1, viz:"ledger", sound:"typewriter", tense:"past", impossible:true,
+    grammar:"Simple past — reconstruction",
+    text:'The register <span class="hl">shows</span> the play <span class="hl">was entered</span> for printing. A note <span class="hl">claims</span> the deal <span class="hl">was made</span> in a <span class="hl">coffee-house</span> near St Paul’s, over a hot cup of coffee.',
+    trap:{
+      good:"✅ Well spotted. Coffee-houses only reached London around 1650 — over forty years too late. The register entry may be genuine, but the ‘coffee-house’ detail cannot be from 1606. Anachronism.",
+      bad:"⚠️ You should have flagged this. There were no coffee-houses in London in 1606 — they appeared around 1650. The detail does not belong in this period."
+    },
+    note:"Time Analyst: does a ‘coffee-house’ fit 1606?"
+  },
+  {
+    time:"THE PLAYBILL", src:"Printed playbill · the Globe", kind:"playbill", rel:3, viz:"playbill", sound:"press", tense:"present",
+    grammar:"Simple present — announcement",
+    text:'The playbill <span class="hl">announces</span> THE TRAGEDIE OF MACBETH this afternoon at two o’clock. The King’s Men <span class="hl">perform</span>, it <span class="hl">says</span>, “with or without their author”.',
+    trap:null,
+    note:"This is your deadline: the curtain rises at two o’clock. Decide before then."
+  },
+];
+
+const LOCATIONS = [
+  {i:0, name:"The Globe",        x:20, y:82},
+  {i:1, name:"Lodgings",         x:42, y:30},
+  {i:2, name:"Revels Office",    x:78, y:26},
+  {i:3, name:"The Mermaid",      x:60, y:52},
+  {i:4, name:"Pedlar's stall",   x:30, y:55, trap:true},
+  {i:5, name:"Stationers' Hall", x:40, y:15, trap:true},
+  {i:6, name:"The playbill",     x:14, y:60},
+];
+
+/* explanation per core tense — appears the first time that tense reaches the screen */
+const TENSE_INFO = {
+  continuous:{label:"Present continuous",
+    form:"am / is / are + verb + -ing",
+    use:"For what is happening right now, at this moment — live reporting from the scene.",
+    signal:"now · at the moment · right now · currently",
+    ex:'The actors <b>are rehearsing</b> the last scene.',
+    tip:"Careful: it says the action is really happening. Don't use it for something you can't yet confirm."},
+  past:{label:"Simple past",
+    form:"2nd form (left, saw, went) · regular verb + -ed",
+    use:"For a confirmed, finished fact: it is over and certain.",
+    signal:"last night · yesterday · ago · then · at two o'clock",
+    ex:'He <b>left</b> the theatre and <b>did not return</b>.',
+    tip:"Use this once an event is confirmed and complete (e.g. ‘He vanished last night.’)."},
+  present:{label:"Simple present",
+    form:"base form (he / she / it + -s)",
+    use:"For headlines and general facts, and to attribute a claim: say / claim / report.",
+    signal:"says · claims · reports · according to",
+    ex:'The landlady <b>says</b> his candle <b>is</b> still burning.',
+    tip:"With say/claim you pass a claim on to the reader without proving it true yourself."},
+};
+const introduced = new Set();
+function grammarCallout(u){
+  if(!u.tense || introduced.has(u.tense)) return '';
+  introduced.add(u.tense);
+  const t = TENSE_INFO[u.tense]; if(!t) return '';
+  return `<div class="grambox">
+    <div class="gh"><span class="tag">NEW</span> Grammar on screen</div>
+    <div class="gname">${t.label}</div>
+    <div class="gform">${t.form}</div>
+    <div class="guse">${t.use}</div>
+    <div class="gsignal"><b>Signal words:</b> ${t.signal}</div>
+    <div class="gex">${t.ex}</div>
+    <div class="gtip">${t.tip}</div>
+  </div>`;
+}
+
+/* =========================================================
+   AUDIO ENGINE — alle geluiden live gesynthetiseerd (Web Audio)
+   ========================================================= */
+const SFX = (()=>{
+  let ctx=null, master=null, muted=false;
+  function ac(){
+    if(!ctx){
+      const AC = window.AudioContext||window.webkitAudioContext; if(!AC) return null;
+      ctx=new AC(); master=ctx.createGain(); master.gain.value=0.5; master.connect(ctx.destination);
+    }
+    return ctx;
+  }
+  function unlock(){ ac(); if(ctx && ctx.state==='suspended') ctx.resume(); }
+  function setMuted(m){ muted=m; if(master) master.gain.value=m?0:0.5; }
+  function isMuted(){ return muted; }
+  function tone(o){
+    if(muted||!ac()) return;
+    const t=ctx.currentTime+(o.delay||0);
+    const osc=ctx.createOscillator(), g=ctx.createGain();
+    osc.type=o.type||'sine'; osc.frequency.setValueAtTime(o.freq||440,t);
+    if(o.glideTo) osc.frequency.exponentialRampToValueAtTime(o.glideTo,t+(o.dur||0.2));
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(o.gain||0.25,t+0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+(o.dur||0.2));
+    osc.connect(g).connect(master); osc.start(t); osc.stop(t+(o.dur||0.2)+0.03);
+  }
+  function noise(o){
+    if(muted||!ac()) return;
+    const dur=o.dur||0.4, t=ctx.currentTime+(o.delay||0);
+    const src=ctx.createBufferSource();
+    const buf=ctx.createBuffer(1, Math.max(1,(ctx.sampleRate*dur)|0), ctx.sampleRate);
+    const d=buf.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1;
+    src.buffer=buf;
+    const f=ctx.createBiquadFilter(); f.type=o.filter||'lowpass'; f.frequency.value=o.freq||1000; f.Q.value=o.q||1;
+    const g=ctx.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(o.gain||0.2,t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    src.connect(f).connect(g).connect(master); src.start(t); src.stop(t+dur);
+  }
+  function morse(str){
+    const map={C:'-.-.',Q:'--.-',D:'-..',S:'...',O:'---',K:'-.-'};
+    let t=0;
+    for(const ch of str){ const code=map[ch]||''; for(const s of code){ const d=s==='-'?0.17:0.07;
+      tone({freq:640,dur:d,type:'square',gain:0.22,delay:t}); t+=d+0.06; } t+=0.16; }
+  }
+  const cues={
+    crowd(){ noise({dur:1.6,gain:0.12,filter:'lowpass',freq:500}); noise({dur:1.6,gain:0.06,filter:'bandpass',freq:1100,q:0.6,delay:0.1});
+             tone({freq:330,dur:0.5,type:'triangle',gain:0.08,delay:0.2}); tone({freq:494,dur:0.6,type:'triangle',gain:0.07,delay:0.45}); },
+    quill(){ for(let i=0;i<8;i++) noise({dur:0.05,gain:0.10,filter:'bandpass',freq:2600,q:1.5,delay:i*0.11}); },
+    stamp(){ noise({dur:0.25,gain:0.30,filter:'lowpass',freq:300}); tone({freq:90,glideTo:60,dur:0.25,type:'square',gain:0.16}); },
+    tavern(){ noise({dur:1.8,gain:0.13,filter:'lowpass',freq:520}); tone({freq:1600,dur:0.12,type:'sine',gain:0.13,delay:0.5}); tone({freq:1500,dur:0.12,type:'sine',gain:0.10,delay:0.66}); },
+    camera(){ noise({dur:0.03,gain:0.28,filter:'highpass',freq:2000}); noise({dur:0.05,gain:0.22,filter:'highpass',freq:1500,delay:0.06}); tone({freq:2000,dur:0.04,type:'square',gain:0.12,delay:0.06}); },
+    typewriter(){ for(let i=0;i<7;i++) noise({dur:0.03,gain:0.20,filter:'bandpass',freq:1800,q:2,delay:i*0.09}); tone({freq:1500,dur:0.12,type:'sine',gain:0.18,delay:0.7}); },
+    press(){ for(let i=0;i<11;i++) noise({dur:0.05,gain:0.15,filter:'bandpass',freq:300,delay:i*0.13}); },
+    fanfare(){ [523,659,784].forEach((f,i)=>tone({freq:f,dur:0.4,type:'triangle',gain:0.18,delay:i*0.18})); tone({freq:1046,dur:0.6,type:'triangle',gain:0.20,delay:0.62}); },
+    bell(){ tone({freq:300,dur:1.6,type:'sine',gain:0.24}); tone({freq:150,dur:1.6,type:'sine',gain:0.11}); },
+  };
+  return { unlock, setMuted, isMuted, play(name){ try{ if(cues[name]) cues[name](); }catch(e){} } };
+})();
+
+function toggleSound(){
+  const m=!SFX.isMuted(); SFX.setMuted(m);
+  const b=document.getElementById('soundBtn'); b.textContent=m?'🔇':'🔊';
+  if(!m) SFX.unlock();
+}
+
+/* =========================================================
+   DIFFICULTY — beginner shows all hints & goes slower;
+   advanced hides the 💭 hints and reliability, and runs faster
+   ========================================================= */
+let difficulty = 'standard';
+function setDifficulty(v){
+  difficulty = v;
+  document.body.dataset.diff = v;
+  document.getElementById('diffSel').value = v;
+}
+
+/* =========================================================
+   VISUAL SCENES — één per berichttype, alles inline SVG/HTML
+   ========================================================= */
+function S(inner){ return `<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">${inner}</svg>`; }
+function stars(n){ let s=''; for(let i=0;i<n;i++){ s+=`<circle cx="${(Math.random()*400)|0}" cy="${(Math.random()*95)|0}" r="${Math.random()<.3?1.4:0.9}" fill="#dfeaff" opacity="${(0.4+Math.random()*0.6).toFixed(2)}"/>`; } return s; }
+function rain(n){ let s='<g>'; for(let i=0;i<n;i++){ const x=(Math.random()*430)|0; const len=(8+Math.random()*11).toFixed(0);
+  s+=`<line class="drop" x1="${x}" y1="-18" x2="${x-6}" y2="${-18-len}" style="animation-delay:-${(Math.random()*0.85).toFixed(2)}s"/>`; } return s+'</g>'; }
+function ship(t){ return `<g ${t}>
+  <path d="M -70 6 Q -64 20 -40 22 L 54 22 Q 76 20 76 2 L 70 -6 Q 30 -10 -34 -6 Q -64 -2 -70 6 Z" fill="#0f1a24" stroke="#2a3a4a" stroke-width="1.2"/>
+  <rect x="-52" y="-16" width="98" height="11" rx="2" fill="#14212d" stroke="#2a3a4a" stroke-width=".8"/>
+  <g fill="#1b2a38" stroke="#33475a" stroke-width=".8"><rect x="-34" y="-30" width="9" height="16" rx="1.5"/><rect x="-17" y="-31" width="9" height="17" rx="1.5"/><rect x="1" y="-31" width="9" height="17" rx="1.5"/><rect x="19" y="-30" width="9" height="16" rx="1.5"/></g>
+  <g fill="#ffdf9e"><circle cx="-46" cy="14" r="1.6"/><circle cx="-36" cy="15" r="1.6"/><circle cx="-26" cy="15" r="1.6"/><circle cx="-16" cy="15" r="1.6"/><circle cx="-6" cy="15" r="1.6"/><circle cx="4" cy="15" r="1.6"/><circle cx="14" cy="15" r="1.6"/><circle cx="24" cy="14" r="1.6"/><circle cx="34" cy="13" r="1.6"/></g>
+</g>`; }
+
+const VIZ = {
+  globe:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>${stars(16)}
+    <rect x="0" y="168" width="400" height="32" fill="#15170f"/>
+    <ellipse cx="200" cy="152" rx="112" ry="34" fill="#241a12"/>
+    <path d="M90 152 L90 96 Q200 70 310 96 L310 152 Z" fill="#3a2c1e" stroke="#5a4630" stroke-width="1.5"/>
+    <g stroke="#6a5238" stroke-width="1.3" opacity=".65">${[120,150,180,210,240,270].map(x=>`<line x1="${x}" y1="98" x2="${x}" y2="152"/>`).join('')}<line x1="90" y1="123" x2="310" y2="123"/></g>
+    <path d="M90 96 Q200 66 310 96 Q200 82 90 96 Z" fill="#8a6a3a"/>
+    <path d="M150 152 L150 116 Q200 106 250 116 L250 152 Z" fill="#1a130c"/>
+    <rect x="176" y="126" width="48" height="26" fill="#4a3826"/>
+    <g fill="#0a0a08"><circle cx="120" cy="182" r="3"/><circle cx="150" cy="184" r="3"/><circle cx="250" cy="184" r="3"/><circle cx="280" cy="182" r="3"/><circle cx="200" cy="186" r="3"/></g>
+    <line x1="200" y1="70" x2="200" y2="48" stroke="#5a4630" stroke-width="1.5"/>
+    <path class="flag" d="M200 50 L228 55 L200 63 Z" fill="#c23a3a"/>
+    <text x="200" y="196" fill="#8896a6" font-family="monospace" font-size="9" text-anchor="middle">THE GLOBE · flag flying = playing today</text>`),
+
+  desk:()=>S(`<rect width="400" height="200" fill="#0e0a06"/>
+    <rect x="0" y="150" width="400" height="50" fill="#1c130a"/><rect x="30" y="150" width="340" height="7" fill="#2a1c10"/>
+    <circle cx="306" cy="120" r="66" fill="#ffcf6a" opacity=".07"/>
+    <rect x="300" y="112" width="11" height="40" rx="2" fill="#d8cbb0"/>
+    <g class="flare" transform="translate(305,104)"><ellipse rx="6" ry="11" fill="#ffcf6a"/><ellipse rx="3" ry="6" fill="#fff2c0"/></g>
+    <rect x="240" y="132" width="22" height="20" rx="3" fill="#1a1a24"/><ellipse cx="251" cy="132" rx="11" ry="4" fill="#0a0a12"/>
+    <path d="M251 132 Q262 96 300 78" fill="none" stroke="#e8e0cf" stroke-width="3" stroke-linecap="round"/>
+    <path d="M300 78 Q289 84 293 92 Q299 86 300 78Z" fill="#e8e0cf"/>
+    <path d="M96 150 L96 108 L150 106 L170 118 L168 150 Z" fill="#efe6d2"/>
+    <g stroke="#b9ad8e" stroke-width="1">${[116,124,132,140].map(y=>`<line x1="104" y1="${y}" x2="158" y2="${y}"/>`).join('')}</g>
+    <path d="M150 106 L170 118 L158 118 Z" fill="#d8cbb0"/>
+    <text x="30" y="176" fill="#8896a6" font-family="monospace" font-size="9">SILVER STREET · his candle still burns</text>`),
+
+  seal:()=>S(`<rect width="400" height="200" fill="#12100c"/>
+    <g transform="translate(200,100) rotate(-4)">
+      <rect x="-120" y="-64" width="240" height="128" rx="4" fill="#e9dcc0" stroke="#c9b98f" stroke-width="1.5"/>
+      <g stroke="#b7a67f" stroke-width="1.3">${[-40,-24,-8,8,24].map(y=>`<line x1="-100" y1="${y}" x2="60" y2="${y}"/>`).join('')}</g>
+      <text x="-100" y="-46" fill="#4a3c22" font-family="Georgia,serif" font-size="12" font-style="italic">By the Master of the Revels…</text>
+      <circle cx="80" cy="40" r="22" fill="#8a1f22" stroke="#5a1416" stroke-width="2"/>
+      <path d="M80 28 L84 38 L94 38 L86 44 L89 54 L80 48 L71 54 L74 44 L66 38 L76 38 Z" fill="#a83236"/>
+    </g>
+    <text x="200" y="190" fill="#8896a6" font-family="monospace" font-size="9" text-anchor="middle">THE REVELS OFFICE · the King's censor</text>`),
+
+  tavern:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>${stars(10)}
+    <rect x="0" y="150" width="400" height="50" fill="#140f0a"/>
+    <rect x="70" y="70" width="260" height="82" fill="#241a10"/>
+    <g stroke="#4a3420" stroke-width="2">${[110,150,190,230,270,310].map(x=>`<line x1="${x}" y1="70" x2="${x}" y2="150"/>`).join('')}<line x1="70" y1="110" x2="330" y2="110"/></g>
+    <g class="flick" fill="#ffcf6a"><rect x="120" y="80" width="26" height="22" rx="2" opacity=".85"/><rect x="254" y="80" width="26" height="22" rx="2" opacity=".85"/></g>
+    <rect x="188" y="112" width="34" height="40" fill="#3a2a18"/>
+    <line x1="60" y1="72" x2="60" y2="96" stroke="#4a3420" stroke-width="2"/>
+    <rect x="40" y="96" width="40" height="26" rx="2" fill="#1c2a2a" stroke="#3a5a5a"/>
+    <path d="M52 116 Q60 104 68 116" fill="none" stroke="#6fb3b3" stroke-width="1.5"/>
+    <text x="200" y="176" fill="#8896a6" font-family="monospace" font-size="9" text-anchor="middle">THE MERMAID TAVERN</text>`),
+
+  forged:()=>S(`<rect width="400" height="200" fill="#12100c"/>
+    <g transform="translate(200,98) rotate(3)">
+      <rect x="-110" y="-70" width="220" height="140" rx="3" fill="#fbfaf5" stroke="#d8d8d8" stroke-width="1"/>
+      <line x1="-84" y1="-70" x2="-84" y2="70" stroke="#e79aa0" stroke-width="1.2"/>
+      <g stroke="#9fc0e0" stroke-width="1">${[-52,-38,-24,-10,4,18,32,46].map(y=>`<line x1="-104" y1="${y}" x2="104" y2="${y}"/>`).join('')}</g>
+      <g stroke="#2a3a8a" stroke-width="1.6" stroke-linecap="round" opacity=".8">${[-36,-22,-8,6,20].map((y,i)=>`<line x1="-78" y1="${y}" x2="${-78+(70+i*6)}" y2="${y}"/>`).join('')}</g>
+      <text x="-78" y="-54" fill="#2a3a8a" font-family="monospace" font-size="9">don't... gonna...</text>
+    </g>
+    <g transform="translate(250,152) rotate(-38)"><rect x="0" y="0" width="70" height="7" rx="3.5" fill="#1a4a8a"/><line x1="0" y1="3.5" x2="-9" y2="3.5" stroke="#c0c0c0" stroke-width="2"/><rect x="52" y="-1" width="10" height="9" rx="2" fill="#0e2a52"/></g>
+    <text x="200" y="192" fill="#e5484d" font-family="monospace" font-size="9" text-anchor="middle">lined paper · ballpoint ink · “don't / gonna”</text>`),
+
+  ledger:()=>S(`<rect width="400" height="200" fill="#0e0a06"/>
+    <path d="M60 60 L200 74 L340 60 L340 160 L200 174 L60 160 Z" fill="#3a2a18"/>
+    <path d="M70 66 L196 78 L196 168 L70 156 Z" fill="#efe6d2"/>
+    <path d="M330 66 L204 78 L204 168 L330 156 Z" fill="#e7ddc7"/>
+    <path d="M200 74 L200 174" stroke="#1a120a" stroke-width="3"/>
+    <g stroke="#b9ad8e" stroke-width="1">${[92,104,116,128,140].map(y=>`<line x1="80" y1="${y}" x2="188" y2="${y-1}"/>`).join('')}${[92,104,116,128,140].map(y=>`<line x1="212" y1="${y-1}" x2="322" y2="${y}"/>`).join('')}</g>
+    <text x="80" y="88" fill="#4a3c22" font-family="Georgia,serif" font-size="8.5" font-style="italic">Entred: The Tragedie of Macbeth</text>
+    <rect x="214" y="112" width="70" height="12" fill="#c9302c" opacity=".18"/>
+    <text x="200" y="192" fill="#8896a6" font-family="monospace" font-size="9" text-anchor="middle">STATIONERS' HALL · the register</text>`),
+
+  playbill:()=>`<div class="docwrap"><div class="letter" style="max-width:360px">
+    <div class="lh" style="justify-content:center; letter-spacing:1px">THE GLOBE · BANKSIDE</div>
+    <div class="lb" style="text-align:center; font-family:Georgia,serif">
+      <div style="font-size:11px; letter-spacing:2px; color:#6b5f3d">THIS AFTERNOON AT TWO</div>
+      <div style="font-size:20px; font-weight:800; margin:6px 0; line-height:1.1">THE TRAGEDIE<br>OF MACBETH</div>
+      <div style="font-size:12px">Newly performed by <b>THE KING'S MEN</b></div>
+      <div class="sig" style="margin-top:8px">— with or without their author —</div>
+    </div></div></div>`,
+};
+function renderViz(u){ try{ return (u.viz && VIZ[u.viz]) ? `<div class="viz">${VIZ[u.viz]()}</div>` : ''; }catch(e){ return ''; } }
+
+/* =========================================================
+   STATE
+   ========================================================= */
+let idx = 0;          // hoeveel updates zijn binnen
+let live = false;
+let autoTimer = null;
+const decisions = {}; // per update-index: {pub|hold, flag}
+
+/* =========================================================
+   RENDER — statische panelen
+   ========================================================= */
+function renderRoles(){
+  document.getElementById('roles').innerHTML = ROLES.map((r,i)=>`
+    <div class="card">
+      <h3><span class="role-em">${r.em}</span> ${r.name}</h3>
+      <p>${r.desc}</p>
+      <div class="g">▸ ${r.g}</div>
+      <div class="mission"><b>Your mission:</b> ${r.mission}</div>
+      ${r.tasks.map(t=>`<label class="rtask"><input type="checkbox" onchange="this.closest('.rtask').classList.toggle('done',this.checked)"><span>${t}</span></label>`).join('')}
+      ${r.notes?`<textarea class="rnotes" placeholder="Your 3 questions…" oninput="saveNotes(${i},this.value)">${loadNotes(i)}</textarea>`:''}
+    </div>`).join('');
+}
+function renderGrammar(){
+  document.getElementById('grammar').innerHTML =
+    `<div class="gnote">${GRAMMAR_INTRO}</div>` +
+    GRAMMAR.map(g=>`
+    <div class="gram">
+      <div class="name">${g.name}</div>
+      <div class="gform2">${g.form}</div>
+      <div class="use">${g.use}</div>
+      <div class="ex">${g.ex}</div>
+      <div class="gsig"><b>Signal words:</b> ${g.signal}</div>
+      <div class="gtip">${g.tip}</div>
+    </div>`).join('');
+}
+
+/* =========================================================
+   INVESTIGATION controls (map-driven, non-linear)
+   ========================================================= */
+const visited = new Set();
+function startBroadcast(){   // "Open the case"
+  SFX.unlock();
+  document.getElementById('overlay').classList.add('hide');
+  live = true;
+  document.getElementById('onair').classList.add('live');
+  document.getElementById('onair').innerHTML = '<span class="dot"></span>Case open';
+}
+function renderMap(){
+  document.getElementById('pins').innerHTML = LOCATIONS.map(l=>
+    `<button class="pin" id="pin-${l.i}" style="left:${l.x}%;top:${l.y}%" onclick="visit(${l.i})">
+       <span class="pdot"></span><span class="plabel">${l.name}</span>
+     </button>`).join('');
+}
+function visit(i){
+  if(!live) return;                       // open the case first
+  if(visited.has(i)){                      // already gathered — jump to it
+    const el=document.getElementById('wire-'+i);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  visited.add(i);
+  const pin=document.getElementById('pin-'+i); if(pin) pin.classList.add('visited');
+  addWire(UPDATES[i], i);
+  document.getElementById('feedCount').textContent = visited.size;
+  document.getElementById('feedEmpty').style.display = 'none';
+  if(visited.size >= 5){
+    const tb=document.getElementById('taskBtn'); tb.classList.add('primary'); tb.textContent='✍ Write your report';
+    document.getElementById('verdictBtn').classList.add('primary');
+  }
+}
+
+function addWire(u, i){
+  const feed = document.getElementById('feed');
+  const el = document.createElement('div');
+  el.className = 'wire';
+  el.id = 'wire-'+i;
+  const rel = '<span class="rel">'+[1,2,3].map(n=>`<span class="${n<=u.rel?'on':''}">●</span>`).join('')+'</span>';
+  const flagBtn = `<button class="chip flag" onclick="flag(${i})">🔍 Examine source</button>`;
+  el.innerHTML = `
+    ${renderViz(u)}
+    <div class="top">
+      <span class="wtime">${u.time}</span>
+      <span class="src">${u.src}</span>
+      <span class="kind k-${u.kind}">${u.kind}</span>
+    </div>
+    ${grammarCallout(u)}
+    <div class="body">
+      <div class="quote">${u.text}</div>
+      <div class="meta">
+        <span><b>Grammar:</b> ${u.grammar}</span>
+        <span class="relmeta"><b>Reliability:</b> ${rel}</span>
+      </div>
+      <div class="meta hint-row"><span>💭 ${u.note}</span></div>
+    </div>
+    <div class="wactions">
+      <button class="chip pub"  onclick="decide(${i},'pub')">✓ Reliable</button>
+      <button class="chip hold" onclick="decide(${i},'hold')">◦ Rumour</button>
+      ${flagBtn}
+    </div>
+    <div class="verdict" id="verdict-${i}"></div>`;
+  // nieuwste bovenaan
+  feed.insertBefore(el, feed.firstChild);
+  if(u.sound) SFX.play(u.sound);
+}
+
+function decide(i, kind){
+  decisions[i] = decisions[i] || {};
+  decisions[i].dec = kind;
+  const el = document.getElementById('wire-'+i);
+  el.querySelector('.chip.pub').classList.toggle('active', kind==='pub');
+  el.querySelector('.chip.hold').classList.toggle('active', kind==='hold');
+  renderLog();
+}
+
+function flag(i){
+  decisions[i] = decisions[i] || {};
+  decisions[i].flagged = !decisions[i].flagged;
+  const el = document.getElementById('wire-'+i);
+  el.querySelector('.chip.flag').classList.toggle('active', decisions[i].flagged);
+  const v = document.getElementById('verdict-'+i);
+  if(decisions[i].flagged){ v.className = 'verdict show'; renderFlagPanel(i); }
+  else { v.className = 'verdict'; v.innerHTML = ''; }
+  renderLog();
+}
+function setQ(i, q, val){ decisions[i][q] = val; renderFlagPanel(i); }
+function renderFlagPanel(i){
+  const d = decisions[i];
+  const v = document.getElementById('verdict-'+i);
+  const q1 = [['ja','Yes'],['onzeker','Unsure'],['nee','No']];
+  const q2 = [['ja','Yes'],['nee','No']];
+  let html = `<div class="twoq">
+    <div class="q"><span>1 · Could the information be true?</span>${q1.map(o=>`<button class="qb ${d.q1===o[0]?'on':''}" onclick="setQ(${i},'q1','${o[0]}')">${o[1]}</button>`).join('')}</div>
+    <div class="q"><span>2 · Could the source be real in 1606?</span>${q2.map(o=>`<button class="qb ${d.q2===o[0]?'on':''}" onclick="setQ(${i},'q2','${o[0]}')">${o[1]}</button>`).join('')}</div>`;
+  if(d.q1 && d.q2) html += flagVerdict(i);
+  v.innerHTML = html + `</div>`;
+}
+function flagVerdict(i){
+  const u = UPDATES[i], d = decisions[i];
+  if(u.trap){
+    let lead;
+    if(u.impossible){
+      lead = d.q2==='nee' ? 'You saw it: this source cannot be authentic to 1606. '
+                          : 'Look again at question 2 — could this source really exist in 1606? ';
+    } else {
+      lead = (d.q1==='nee'||d.q1==='onzeker') ? 'You were right to doubt the content itself. '
+                          : 'Look again at question 1 — can this really be true? ';
+    }
+    return `<div class="vres good"><div class="vh">🎯 Well investigated</div>${lead}${u.trap.good}</div>`;
+  }
+  return `<div class="vres bad"><div class="vh">⚠️ Period-authentic source</div>This source <b>could</b> genuinely come from 1606. Tagging it as false wrongly can bury a true lead. Ask whether it is more likely <b>a rumour or biased</b> than impossible — that is different from an anachronism.</div>`;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+function resetBroadcast(){
+  live = false;
+  introduced.clear();
+  visited.clear();
+  const tb=document.getElementById('taskBtn'); tb.classList.remove('primary'); tb.textContent='✍ Report';
+  document.getElementById('verdictBtn').classList.remove('primary');
+  for(const k in decisions) delete decisions[k];
+  document.querySelectorAll('#pins .pin').forEach(p=>p.classList.remove('visited'));
+  document.getElementById('feed').innerHTML = '<div class="empty" id="feedEmpty"><strong>No evidence yet.</strong>Click a marker on the map above to visit that place. Read the clue aloud, examine the source, then tag it.</div>';
+  document.getElementById('feedCount').textContent = '0';
+  document.getElementById('onair').classList.remove('live');
+  document.getElementById('onair').innerHTML = '<span class="dot"></span>Case closed';
+  document.getElementById('overlay').classList.remove('hide');
+  renderLog();
+  showPane('roles', document.querySelector('.tab'));
+}
+
+/* =========================================================
+   LOG
+   ========================================================= */
+function renderLog(){
+  const rows = [];
+  UPDATES.forEach((u,i)=>{
+    const d = decisions[i]; if(!d) return;
+    if(d.dec){
+      rows.push({t:u.time, cls:d.dec==='pub'?'pub':'hold', lbl:d.dec==='pub'?'RELIABLE':'RUMOUR', src:u.src});
+    }
+    if(d.flagged){
+      rows.push({t:u.time, cls:'flag', lbl:'EXAMINED', src:u.src});
+    }
+  });
+  const box = document.getElementById('log');
+  if(rows.length===0){
+    box.innerHTML = '<div class="logempty">No entries yet. On any clue, tag it <b>Reliable</b> / <b>Rumour</b>, or <b>🔍 Examine</b> the source.</div>';
+    return;
+  }
+  box.innerHTML = rows.map(r=>`
+    <div class="logrow">
+      <span class="lt">${r.t}</span>
+      <span class="lb ${r.cls}">${r.lbl}</span>
+      <span>${r.src}</span>
+    </div>`).join('');
+}
+
+/* =========================================================
+   HEADLINE BUILDER
+   ========================================================= */
+const SCENARIOS = [
+  {
+    lbl:"File your verdict · before the curtain",
+    facts:"Weigh what you gathered. Which explanation does the reliable evidence best support — and what must you NOT print?",
+    opts:[
+      {t:"He was kept away by plague / quarantine.", cls:"strong", fb:"Well supported and cautious. Plague repeatedly closed the London theatres; a mundane cause fits the evidence and invents nothing."},
+      {t:"The King's censor stopped the play.", cls:"strong", fb:"Defensible. The Master of the Revels really did pressure plays about witches and killing a king, just after the Gunpowder Plot. Attribute it: ‘the censor says…’."},
+      {t:"A rival kidnapped him.", cls:"weak", fb:"Speculation. This rests only on tavern rumour (‘some say…’). You may report it as a claim, but never as fact."},
+      {t:"Print the pedlar's ‘lost scene’ as our scoop.", cls:"weak", fb:"No. The page is a forgery — modern English and lined paper. Printing it would spread a fake, exactly what a careful newsroom must refuse."},
+    ]
+  }
+];
+let scnIdx = 0;
+function renderHeadline(){
+  const s = SCENARIOS[scnIdx];
+  document.getElementById('headline').innerHTML = `
+    <div class="scn">
+      <div class="lbl">${s.lbl}</div>
+      <div class="facts">${s.facts}</div>
+      ${s.opts.map((o,i)=>`
+        <button class="opt ${o.cls}" onclick="pickOpt(${i},this)">
+          ${o.t}
+          <div class="opt-fb">${o.fb}</div>
+        </button>`).join('')}
+      <div class="nav"><span>Pick the best-supported verdict — and justify it in your report.</span></div>
+    </div>`;
+}
+function pickOpt(i, btn){
+  btn.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('picked'));
+  btn.classList.add('picked');
+}
+
+/* =========================================================
+   TABS
+   ========================================================= */
+function showPane(name, tab){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById('pane-'+name).classList.add('active');
+}
+
+/* =========================================================
+   END-TASK STUDIO
+   ========================================================= */
+const STARTERS = [
+  {t:'past', s:'William Shakespeare left the Globe last night and did not return.'},
+  {t:'past', s:"The King's Men found that the final scene was missing."},
+  {t:'continuous', s:'The company is rehearsing without its author.'},
+  {t:'continuous', s:'Crowds are gathering for the premiere this afternoon.'},
+  {t:'present', s:'The landlady says his candle is still burning.'},
+  {t:'present', s:'A pedlar claims to be selling the lost scene, but the page looks modern.'},
+];
+const PHRASES = [
+  {c:'report', s:'says that'},{c:'report', s:'claims that'},{c:'report', s:'reports that'},
+  {c:'report', s:'denies that'},{c:'report', s:'confirms that'},{c:'report', s:'According to'},
+  {c:'doubt', s:'reportedly'},{c:'doubt', s:'apparently'},{c:'doubt', s:'It appears that'},
+  {c:'doubt', s:'Unconfirmed reports say'},
+  {c:'linking', s:'However,'},{c:'linking', s:'Meanwhile,'},{c:'linking', s:'Last night,'},
+];
+const CHECKS = [
+  'I use the simple past for confirmed facts (left, did not return, found).',
+  'I use the present continuous for what is happening live (are rehearsing).',
+  'I attribute rumours with say / claim (simple present).',
+  'I did NOT print the forged ‘lost scene’ as real.',
+  'I did NOT report the ‘coffee-house’ detail (impossible in 1606).',
+  'My headline promises no more than the evidence shows.',
+];
+function stripTags(s){ return s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim(); }
+let studioBuilt = false;
+function buildStudio(){
+  if(studioBuilt) return; studioBuilt = true;
+  document.getElementById('starters').innerHTML = STARTERS.map((x,i)=>
+    `<button class="ins" onclick="insertPhrase(STARTERS[${i}].s)"><span class="tt">${x.t}</span>${x.s}</button>`).join('');
+  document.getElementById('phrasebook').innerHTML = PHRASES.map((x,i)=>
+    `<button class="ins" onclick="insertPhrase(PHRASES[${i}].s+' ')"><span class="tt">${x.c}</span>${x.s}</button>`).join('');
+  const facts = UPDATES.filter(u=> u.rel>=3);
+  document.getElementById('factsList').innerHTML = facts.map(u=>`<li><b>${u.time}</b> — ${stripTags(u.text)}</li>`).join('');
+  document.getElementById('checklist').innerHTML = CHECKS.map((c,i)=>
+    `<label class="check" id="chk-${i}"><input type="checkbox" onchange="this.closest('.check').classList.toggle('done',this.checked)"><span>${c}</span></label>`).join('');
+}
+function openStudio(){ buildStudio(); loadDraft(); document.getElementById('studio').classList.add('open'); }
+function closeStudio(){ document.getElementById('studio').classList.remove('open'); }
+function insertPhrase(txt){
+  const ta=document.getElementById('articleBox'); const v=ta.value;
+  ta.value = v + (v && !/\s$/.test(v) ? ' ' : '') + txt;
+  ta.focus(); updateWC(); saveDraft();
+}
+function updateWC(){
+  const t=document.getElementById('articleBox').value.trim();
+  const n=t? t.split(/\s+/).length : 0;
+  document.getElementById('wc').textContent = n+' word'+(n===1?'':'s');
+  saveDraft();
+}
+function saveDraft(flash){
+  try{
+    localStorage.setItem('c24_head', document.getElementById('headlineBox').value);
+    localStorage.setItem('c24_art', document.getElementById('articleBox').value);
+    ['refl1','refl2','refl3'].forEach(id=>{ const el=document.getElementById(id); if(el) localStorage.setItem('c24_'+id, el.value); });
+  }catch(e){}
+  if(flash===true){ const b=event&&event.target; if(b){ const o=b.textContent; b.textContent='✓ Saved'; setTimeout(()=>b.textContent=o,1200);} }
+}
+function loadDraft(){
+  try{
+    document.getElementById('headlineBox').value = localStorage.getItem('c24_head')||'';
+    document.getElementById('articleBox').value = localStorage.getItem('c24_art')||'';
+    ['refl1','refl2','refl3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value = localStorage.getItem('c24_'+id)||''; });
+  }catch(e){}
+  updateWC();
+}
+function downloadArticle(){
+  const h=document.getElementById('headlineBox').value||'(no headline)';
+  const a=document.getElementById('articleBox').value||'';
+  const txt='CHRONICLE 24 — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
+  const blob=new Blob([txt],{type:'text/plain'}); const url=URL.createObjectURL(blob);
+  const el=document.createElement('a'); el.href=url; el.download='chronicle24-article.txt'; el.click();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+/* teleprompter */
+function openPrompter(){
+  document.getElementById('prompterHead').textContent = document.getElementById('headlineBox').value || '';
+  document.getElementById('prompterBody').textContent = document.getElementById('articleBox').value || 'Nothing written yet…';
+  document.getElementById('prompter').classList.add('open');
+}
+function closePrompter(){ document.getElementById('prompter').classList.remove('open'); }
+/* recording (microphone) — one reusable recorder per set of element ids */
+function createRecorder(btnId, wrapId, audioId, dlId, msgId, fileName){
+  let rec=null, chunks=[];
+  return async function(){
+    const btn=document.getElementById(btnId), msg=document.getElementById(msgId);
+    if(rec && rec.state==='recording'){ rec.stop(); return; }
+    if(msg) msg.textContent='';
+    if(!navigator.mediaDevices || !window.MediaRecorder){
+      if(msg) msg.textContent='🎤 Recording is not available here — open the file locally and allow microphone access.'; return;
+    }
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      chunks=[]; rec=new MediaRecorder(stream);
+      rec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
+      rec.onstop=()=>{
+        const blob=new Blob(chunks,{type:'audio/webm'}); const url=URL.createObjectURL(blob);
+        document.getElementById(audioId).src=url;
+        const dl=document.getElementById(dlId); dl.href=url; dl.download=fileName;
+        document.getElementById(wrapId).style.display='flex';
+        stream.getTracks().forEach(t=>t.stop());
+        btn.innerHTML='🎙 Record'; btn.classList.remove('primary'); btn.classList.add('ghost');
+      };
+      rec.start();
+      btn.innerHTML='<span class="recdot"></span>Stop recording'; btn.classList.remove('ghost'); btn.classList.add('primary');
+    }catch(e){
+      if(msg) msg.textContent='🎤 Microphone denied or unavailable. You can still write and use the teleprompter.';
+    }
+  };
+}
+const toggleRecord   = createRecorder('recBtn','recWrap','playback','dlAudio','recMsg','chronicle24-broadcast.webm');
+const toggleRecordIv = createRecorder('recBtnIv','recWrapIv','playbackIv','dlAudioIv','recMsgIv','chronicle24-interview.webm');
+
+/* =========================================================
+   VOCABULARY — pre-teach word bank (tap to reveal)
+   ========================================================= */
+const VOCAB = [
+  {w:"playwright", pos:"n.", def:"A person who writes plays.", ex:"Shakespeare was the most famous playwright in London."},
+  {w:"the Globe", pos:"n.", def:"The open-air theatre where the King's Men performed.", ex:"The play is on this afternoon at the Globe."},
+  {w:"the King's Men", pos:"n.", def:"Shakespeare's acting company, under the King's patronage.", ex:"The King's Men are rehearsing without their author."},
+  {w:"quill", pos:"n.", def:"A pen made from a feather, dipped in ink.", ex:"His quill was still wet on the desk."},
+  {w:"manuscript", pos:"n.", def:"A text written by hand, before printing.", ex:"A page was torn from his manuscript."},
+  {w:"censor", pos:"n.", def:"An official who decides what may be shown or printed (the Master of the Revels).", ex:"The censor wanted the ending changed."},
+  {w:"premiere", pos:"n.", def:"The first public performance of a play.", ex:"The premiere begins at two o'clock."},
+  {w:"groundlings", pos:"n.", def:"Poorer people who stood in the yard to watch a play.", ex:"The groundlings are gathering already."},
+  {w:"forgery", pos:"n.", def:"A fake made to look real, to deceive people.", ex:"The ‘lost scene’ is a forgery."},
+  {w:"plague", pos:"n.", def:"A deadly disease that often closed the theatres.", ex:"Plague may close the playhouses again."},
+  {w:"playbill", pos:"n.", def:"A printed notice advertising a play.", ex:"The playbill announces Macbeth this afternoon."},
+  {w:"the Stationers' Register", pos:"n.", def:"The record book where printed works were entered.", ex:"The play was entered in the Stationers' Register."},
+  {w:"the First Folio", pos:"n.", def:"The 1623 book that saved half of Shakespeare's plays, including Macbeth.", ex:"Macbeth survives thanks to the First Folio."},
+  {w:"Early Modern English", pos:"—", def:"The English of 1606: thou = you, art = are, hast = have, doth = does, -eth/-est endings, wherefore = why.", ex:"A page in modern English cannot be from 1606."},
+];
+function renderVocab(){
+  document.getElementById('vocab').innerHTML = VOCAB.map((v,i)=>`
+    <div class="vc" onclick="this.classList.toggle('open')">
+      <div class="vw">${v.w} <span class="pos">${v.pos}</span><span class="rev">tap ⇕</span></div>
+      <div class="vdef">${v.def}<div class="vex">${v.ex}</div></div>
+    </div>`).join('');
+}
+
+/* =========================================================
+   LIVE INTERVIEW — animated role-play (Reporter × Witness)
+   ========================================================= */
+const REPORTER = {k:'r', coat:"#1e3a55", skin:"#e6b98c", hair:"short", hairCol:"#3a2a1c", hat:"none", mic:true};
+const WITNESSES = [
+  {k:0, name:"Marie Mountjoy", role:"His landlady, Silver Street", coat:"#5a4636", skin:"#e8c6a2", hat:"coif", hatCol:"#efe7d6",
+   hair:"none", cheeks:true,
+   back:"He lodges in your house. Last night he went out and never came home. His candle is still burning and a page is torn from his papers."},
+  {k:1, name:"Richard Burbage", role:"Lead actor, the King's Men", coat:"#3a2450", skin:"#dcae86", hat:"none",
+   hair:"short", hairCol:"#241a12", facial:"beard", earrings:true, ruff:true,
+   back:"You are to play Macbeth this afternoon. The company is ready — but the final scene, and its author, have vanished. The house will be full."},
+  {k:2, name:"Ben Jonson", role:"Rival playwright", coat:"#2c3a26", skin:"#d8b48c", hat:"flatcap", hatCol:"#3a3020",
+   hair:"short", hairCol:"#2a2016", facial:"beard",
+   back:"You write plays too, and you are sharp-tongued about his. People whisper that you are glad he is gone — but you say you know nothing of it."},
+  {k:3, name:"Master of the Revels", role:"The King's censor", coat:"#1f2a40", skin:"#dcae86", hat:"flatcap", hatCol:"#141c2b",
+   hair:"none", facial:"mustache", ruff:true,
+   back:"You license every play. Witches and a murdered king, so soon after the Gunpowder Plot, alarm you. You wanted the ending changed before today."},
+  {k:4, name:"The pedlar", role:"Street seller", coat:"#4a3a2c", skin:"#c98a5a", hat:"flatcap", hatCol:"#5a4632",
+   hair:"short", hairCol:"#241a12", facial:"stubble",
+   back:"You are selling a page you call ‘the lost scene’ for good coin. Where you got it, you will not say — and the paper feels oddly smooth."},
+];
+const IVQUESTIONS = [
+  {t:"past", q:"When did you last see Master Shakespeare?"},
+  {t:"past", q:"What did you see at the theatre last night?"},
+  {t:"continuous", q:"What is happening at the Globe right now?"},
+  {t:"present", q:"What are people saying in the city?"},
+  {t:"past", q:"Why did he leave?"},
+  {t:"continuous", q:"What are the King's Men doing about the missing scene?"},
+  {t:"past", q:"Did anyone wish him harm?"},
+  {t:"present", q:"Do you believe the ‘lost scene’ is real?"},
+];
+let ivWit=0, ivQ=0, ivBuilt=false;
+function personSVG(o){
+  const skin=o.skin, coat=o.coat, hairCol=o.hairCol||'#2b2118';
+  let back='', hat='', facial='', extra='';
+  // hair behind/around the head
+  if(o.hair==='curls') back=`<circle cx="76" cy="56" r="11" fill="${hairCol}"/><circle cx="124" cy="56" r="11" fill="${hairCol}"/><circle cx="70" cy="72" r="10" fill="${hairCol}"/><circle cx="130" cy="72" r="10" fill="${hairCol}"/><circle cx="80" cy="86" r="8" fill="${hairCol}"/><circle cx="120" cy="86" r="8" fill="${hairCol}"/>`;
+  else if(o.hair==='short') back=`<path d="M72 72 Q69 44 100 44 Q131 44 128 72 Q120 57 100 56 Q80 57 72 72 Z" fill="${hairCol}"/>`;
+  // facial hair
+  if(o.facial==='mustache') facial=`<path d="M88 81 Q100 86 112 81 Q106 87 100 87 Q94 87 88 81 Z" fill="${hairCol}"/>`;
+  else if(o.facial==='stubble') facial=`<path d="M79 80 Q80 99 100 101 Q120 99 121 80 Q116 93 100 94 Q84 93 79 80 Z" fill="${hairCol}" opacity=".22"/>`;
+  else if(o.facial==='beard') facial=`<path d="M76 76 Q78 104 100 108 Q122 104 124 76 Q120 96 100 98 Q80 96 76 76 Z" fill="${hairCol}"/><path d="M88 81 Q100 85 112 81 Q106 86 100 86 Q94 86 88 81 Z" fill="${hairCol}"/>`;
+  // hats
+  if(o.hat==='flatcap') hat=`<path d="M69 47 Q100 21 131 47 Q100 37 69 47 Z" fill="${o.hatCol}"/><path d="M127 46 q20 1 23 8 q-17 0 -27 -3 z" fill="${o.hatCol}"/>`;
+  else if(o.hat==='peaked') hat=`<path d="M68 45 L132 45 L128 27 Q100 20 72 27 Z" fill="${o.hatCol}"/><rect x="63" y="44" width="74" height="8" rx="4" fill="${o.hatCol}"/><rect x="85" y="33" width="30" height="8" rx="2" fill="#c9a227"/><circle cx="100" cy="30" r="3.4" fill="#e8cf6a"/>`;
+  else if(o.hat==='wide') hat=`<ellipse cx="100" cy="46" rx="57" ry="10" fill="${o.hatCol}"/><path d="M74 46 Q100 13 126 46 Z" fill="${o.hatCol}"/><path d="M123 41 q27 -15 40 -4 q-19 11 -34 13 z" fill="#f0a9c9"/>`;
+  else if(o.hat==='coif') hat=`<path d="M70 76 Q64 42 100 42 Q136 42 130 76 Q130 54 100 52 Q70 54 70 76 Z" fill="${o.hatCol}"/>`;
+  // extras
+  if(o.ruff) extra+=`<ellipse cx="100" cy="108" rx="34" ry="10" fill="#f2efe6" stroke="#d6d0c2" stroke-width="1"/><g stroke="#d6d0c2" stroke-width="1">${[-26,-13,0,13,26].map(dx=>`<line x1="${100+dx}" y1="100" x2="${100+dx*1.05}" y2="116"/>`).join('')}</g>`;
+  if(o.cheeks) extra+=`<circle cx="83" cy="78" r="4.5" fill="#e8899f" opacity=".5"/><circle cx="117" cy="78" r="4.5" fill="#e8899f" opacity=".5"/>`;
+  if(o.soot) extra+=`<circle cx="112" cy="83" r="5.5" fill="#20242a" opacity=".33"/><circle cx="85" cy="88" r="3.5" fill="#20242a" opacity=".28"/>`;
+  if(o.earrings) extra+=`<circle cx="72" cy="80" r="2.6" fill="#e8cf6a"/><circle cx="128" cy="80" r="2.6" fill="#e8cf6a"/>`;
+  if(o.necklace) extra+=`<path d="M85 110 Q100 120 115 110" fill="none" stroke="#e8cf6a" stroke-width="2"/>`;
+  if(o.collar) extra+=`<path d="M88 112 L100 122 L112 112" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>`;
+  if(o.buttons) extra+=`<path d="M100 116 L92 128 M100 116 L108 128" stroke="#0e1726" stroke-width="3" fill="none"/><circle cx="100" cy="130" r="2.4" fill="#e8cf6a"/><circle cx="100" cy="142" r="2.4" fill="#e8cf6a"/>`;
+  const mic = o.mic ? `<rect x="150" y="98" width="7" height="34" rx="3.5" fill="#2a2a2a"/><circle cx="153.5" cy="96" r="10" fill="#333" stroke="#5a5a5a"/><circle cx="153.5" cy="96" r="4" fill="#c9302c"/>` : '';
+  return `<svg viewBox="0 0 200 170" preserveAspectRatio="xMidYMid slice">
+    <defs><radialGradient id="vg${o.k}" cx="0.5" cy="0.4" r="0.65"><stop offset="0" stop-color="#17293b"/><stop offset="1" stop-color="#0b1622"/></radialGradient></defs>
+    <rect width="200" height="170" fill="url(#vg${o.k})"/>
+    <g class="idle">
+      <path d="M32 170 Q32 111 100 111 Q168 111 168 170 Z" fill="${coat}"/>
+      <rect x="88" y="88" width="24" height="26" rx="7" fill="${skin}"/>
+      ${back}
+      <circle cx="100" cy="70" r="27" fill="${skin}"/>
+      <circle cx="90" cy="68" r="2.6" fill="#20303a"/><circle cx="110" cy="68" r="2.6" fill="#20303a"/>
+      <path d="M91 82 Q100 87 109 82" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="2" stroke-linecap="round"/>
+      ${facial}
+      <g stroke="rgba(230,237,243,.28)" stroke-width="1">${hat}</g>
+      ${extra}
+    </g>${mic}</svg>`;
+}
+function waveBars(){ let s=''; for(let i=0;i<18;i++){ s+=`<span class="wbar" style="animation-delay:-${(Math.random()*0.8).toFixed(2)}s"></span>`; } return s; }
+function openInterview(){ if(!ivBuilt){ buildInterview(); ivBuilt=true; } document.getElementById('interview').classList.add('open'); }
+function closeInterview(){ document.getElementById('interview').classList.remove('open'); }
+function buildInterview(){
+  document.getElementById('ivReporter').innerHTML = personSVG(REPORTER);
+  document.getElementById('waveR').innerHTML = waveBars();
+  document.getElementById('waveW').innerHTML = waveBars();
+  document.getElementById('ivPick').innerHTML = WITNESSES.map((w,i)=>
+    `<button class="pk ${i===0?'on':''}" onclick="setWitness(${i})">${w.name}</button>`).join('');
+  setWitness(0); renderIvQ(); setSpeaker('reporter');
+}
+function setWitness(i){
+  ivWit=i; const w=WITNESSES[i];
+  document.getElementById('ivWitness').innerHTML = personSVG(w);
+  document.getElementById('ivWitName').textContent = w.name;
+  document.getElementById('ivWitRole').textContent = w.role;
+  document.getElementById('ivBack').innerHTML = `<b>In role:</b> ${w.back}`;
+  document.querySelectorAll('#ivPick .pk').forEach((b,j)=>b.classList.toggle('on', j===i));
+  setSpeaker('witness');
+}
+function renderIvQ(){
+  const q=IVQUESTIONS[ivQ];
+  document.getElementById('ivQTag').textContent = q.t==='past' ? 'Ask in the simple past' : 'Ask in the present continuous';
+  document.getElementById('ivQText').textContent = q.q;
+  document.getElementById('ivQCount').textContent = (ivQ+1)+' / '+IVQUESTIONS.length;
+  setSpeaker('reporter');
+}
+function ivStep(d){ ivQ=(ivQ+d+IVQUESTIONS.length)%IVQUESTIONS.length; renderIvQ(); }
+function setSpeaker(who){
+  const r=document.getElementById('ivReporterWin'), w=document.getElementById('ivWitnessWin');
+  r.classList.toggle('talking', who==='reporter'); w.classList.toggle('talking', who==='witness');
+  document.getElementById('spkR').classList.toggle('on', who==='reporter');
+  document.getElementById('spkW').classList.toggle('on', who==='witness');
+}
+
+/* =========================================================
+   HOW IT WORKS — step-by-step instruction card (simple English)
+   ========================================================= */
+const STEPS = [
+  'You are a reporter in a newsroom that can travel through time. Today you are in <b>London, 1606</b>: Shakespeare has vanished before the premiere of Macbeth.',
+  'Pick your role on the <b>Roles</b> tab and read your job. Everyone has a task.',
+  'Explore the <b>map of London</b>: click a marker to visit that place and collect a clue. Read it out loud.',
+  'For every clue, ask two questions, then tag it: <b>✓ Reliable</b>, <b>◦ Rumour</b>, or <b>🔍 Examine source</b>.',
+  'Watch out! Some sources do not belong in 1606 — a forged “lost scene” in modern English, or a “coffee-house” (too early). Examine them.',
+  'Stuck for words? Open the <b>Grammar</b> and <b>Vocab</b> tabs to help you.',
+  'Try a <b>🎤 Interview</b>: one of you is the reporter, one is a witness or suspect. Ask the questions and take turns.',
+  'When you have enough, open <b>⚖ File verdict</b> to choose the best-supported explanation.',
+  'At the end, open <b>✍ Report</b> and write your front-page story. Read it out loud — you can even record it.',
+  'Use the right tense: <b>simple past</b> for facts, <b>is/are + -ing</b> for live action at the Globe, <b>say/claim</b> for rumours you cannot prove.',
+];
+let howtoBuilt=false;
+function openHowto(){
+  if(!howtoBuilt){ document.getElementById('howtoSteps').innerHTML = STEPS.map(s=>`<li>${s}</li>`).join(''); howtoBuilt=true; }
+  document.getElementById('howto').classList.add('open');
+}
+function closeHowto(){ document.getElementById('howto').classList.remove('open'); }
+
+/* =========================================================
+   PRINT / PDF — build a clean worksheet, then print
+   ========================================================= */
+function printPack(){
+  const roles = ROLES.map(r=>`<div class="role"><b>${r.name} — <span class="muted">${r.g}</span></b>${r.mission}<ul>${r.tasks.map(t=>`<li>${t}</li>`).join('')}</ul></div>`).join('');
+  const gram = GRAMMAR.map(g=>`<tr><td><b>${g.name}</b><br><span class="muted">${g.form}</span></td><td>${g.use}<br><span class="muted">Signal: ${g.signal}</span></td><td>${g.ex.replace(/<\/?em>/g,'')}</td></tr>`).join('');
+  const phr = PHRASES.map(p=>p.s).join(' · ');
+  const timeline = UPDATES.map(u=>`<tr><td>${u.time}</td><td>${u.src}</td><td>${stripTags(u.text)}</td></tr>`).join('');
+  const traps = UPDATES.map((u,i)=>u.trap?`<li><b>${u.src} (${u.time}):</b> ${u.impossible?'source impossible in 1606 (forgery / anachronism)':'period-authentic source, but false (manipulation)'}</li>`:'').join('');
+  document.getElementById('printDoc').innerHTML = `
+    <h1>CHRONICLE 24 — Shakespeare Is Missing</h1>
+    <div class="sub">Episode 2: Shakespeare Is Missing · London, 1606 · Student worksheet</div>
+    <p>You are a journalist in the only newsroom that can travel through time. Shakespeare has vanished before the premiere of Macbeth, and sources from other centuries have leaked into 1606. Before you print, always ask: <b>(1)</b> Is the information true? <b>(2)</b> Can the source be authentic to 1606?</p>
+
+    <h2>How this lesson works</h2>
+    <ol>${STEPS.map(s=>`<li>${s}</li>`).join('')}</ol>
+
+    <h2>Your role</h2>${roles}
+
+    <h2>Grammar you will use</h2>
+    <table><tr><th>Tense</th><th>When to use it</th><th>Example</th></tr>${gram}</table>
+
+    <h2>Newsroom phrasebook</h2><p class="muted">${phr}</p>
+
+    <h2>The clues (across the city)</h2>
+    <table><tr><th>Place</th><th>Source</th><th>Clue</th></tr>${timeline}</table>
+
+    <h2>Write your report</h2>
+    <p class="muted">Headline:</p><div class="writelines" style="height:24pt"></div>
+    <p class="muted" style="margin-top:8pt">Front-page story / case report:</p><div class="writelines"></div>
+
+    <h2>Reflection</h2>
+    <ul><li>Which explanation did the evidence best support — and why?</li><li>What gave the forged ‘lost scene’ away, even though the words sounded right?</li><li>Which clue was the hardest to report honestly?</li></ul>
+
+    <div class="key"><h2 style="page-break-before:auto">Teacher key — the planted sources</h2><ul>${traps}</ul>
+      <p class="muted">All other clues are period-authentic; tagging them false would bury a true lead. Best-supported verdicts: plague/quarantine and the censor's pressure. The tavern claim is rumour; the pedlar's ‘lost scene’ is a forgery and must not be printed.</p></div>`;
+  window.print();
+}
+
+/* =========================================================
+   INIT
+   ========================================================= */
+renderRoles();
+renderGrammar();
+renderVocab();
+renderHeadline();
+renderLog();
+renderMap();
+document.body.dataset.diff = difficulty;
+document.getElementById('feedTotal').textContent = LOCATIONS.length;
+</script>
+</body>
+</html>

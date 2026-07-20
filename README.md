@@ -11,6 +11,22 @@ uit elkaar houden:
 1. **Is de informatie waar?**
 2. **Kan de bron authentiek zijn?** (past de bron wel in 1912?)
 
+## Twee afleveringen
+
+- **`index.html` — Aflevering 1: Titanic (The Final Broadcast).** Een live
+  nieuwsuitzending: berichten stromen binnen, de klas beslist snel.
+- **`shakespeare.html` — Aflevering 2: Shakespeare Is Missing (Londen 1606).**
+  Een *onderzoek*: de klas verkent een **klikbare kaart van Londen**, verzamelt
+  bewijs op een **evidence board**, onderzoekt elke bron (twee-vragen-check),
+  tagt ze (Reliable / Rumour / Forged) en **kiest een verdict**. Zelfde
+  omkadering (rollen, grammar-boxes, vocab, interview, eindtaak, print, niveau,
+  instructiekaart), andere spelvorm. De grote val is een **vervalste "lost
+  scene"** (modern Engels op gelinieerd papier) plus een **anachronisme** (een
+  "coffee-house" in 1606).
+
+De uitleg hieronder gaat over aflevering 1; aflevering 2 werkt hetzelfde, met
+de kaart in plaats van de binnenstromende feed.
+
 ## Kerngrammatica die geoefend wordt
 
 Bewust beperkt tot drie tijden, gekoppeld aan zekerheid:
