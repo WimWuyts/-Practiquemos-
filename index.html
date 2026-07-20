@@ -120,6 +120,15 @@
   .gram .use{font-size:12px; color:var(--muted); margin:2px 0 6px}
   .gram .ex{font-family:var(--mono); font-size:12.5px; background:var(--panel2); border-left:2px solid var(--cyan); padding:6px 9px; border-radius:5px; color:var(--text)}
   .gram .ex em{color:var(--amber); font-style:normal; font-weight:700}
+  .gram .gform2{font-family:var(--mono); font-size:11.5px; color:var(--cyan); margin:0 0 6px}
+  .gram .gsig{font-size:11.5px; color:var(--muted); margin-top:7px}
+  .gram .gsig b{color:var(--text); font-weight:600}
+  .gram .gtip{font-size:11.5px; color:var(--dim); font-style:italic; margin-top:4px}
+  .gnote{font-size:12.5px; color:var(--muted); line-height:1.5; border:1px solid rgba(57,197,207,.35); background:rgba(57,197,207,.06); border-radius:9px; padding:9px 11px; margin-bottom:11px}
+  /* expanded just-in-time grammar callout */
+  .grambox .gsignal{font-size:11.5px; color:var(--muted); margin-top:6px}
+  .grambox .gsignal b{color:var(--text); font-weight:600}
+  .grambox .gtip{font-size:11.5px; color:var(--dim); font-style:italic; margin-top:5px}
 
   /* ---------- Headline builder ---------- */
   .hb .scn{border:1px solid var(--border); background:var(--panel); border-radius:11px; padding:13px 14px}
@@ -331,7 +340,7 @@
       <p>Tonight's episode: <b>Titanic — The Final Broadcast.</b> Take your positions. The clock is about to start.</p>
       <div class="go">
         <button class="btn primary" onclick="startBroadcast()">▶ Take positions &amp; go live</button>
-        <span class="hint">Docent: druk hierop wanneer de klas klaar is.</span>
+        <span class="hint">Teacher: press this when the class is ready.</span>
       </div>
     </div>
   </div>
@@ -355,8 +364,8 @@
     <div class="controls">
       <button class="btn primary" id="nextBtn" onclick="nextUpdate()" disabled>Next update ▸</button>
       <button class="btn ghost" id="autoBtn" onclick="toggleAuto()" disabled>Auto ⏱</button>
-      <button class="btn ghost" id="taskBtn" onclick="openStudio()">✍ Artikel</button>
-      <button class="btn ghost" id="soundBtn" onclick="toggleSound()" title="Geluid aan/uit">🔊</button>
+      <button class="btn ghost" id="taskBtn" onclick="openStudio()">✍ Article</button>
+      <button class="btn ghost" id="soundBtn" onclick="toggleSound()" title="Sound on/off">🔊</button>
       <button class="btn ghost" onclick="resetBroadcast()">Reset</button>
     </div>
   </div>
@@ -378,34 +387,34 @@
   <!-- RIGHT: console -->
   <aside class="side">
     <div class="tabs">
-      <div class="tab active" data-pane="roles" onclick="showPane('roles',this)">Rollen</div>
-      <div class="tab" data-pane="grammar" onclick="showPane('grammar',this)">Grammatica</div>
-      <div class="tab" data-pane="headline" onclick="showPane('headline',this)">Kop&nbsp;bouwen</div>
-      <div class="tab" data-pane="log" onclick="showPane('log',this)">Logboek</div>
+      <div class="tab active" data-pane="roles" onclick="showPane('roles',this)">Roles</div>
+      <div class="tab" data-pane="grammar" onclick="showPane('grammar',this)">Grammar</div>
+      <div class="tab" data-pane="headline" onclick="showPane('headline',this)">Headline</div>
+      <div class="tab" data-pane="log" onclick="showPane('log',this)">Log</div>
     </div>
 
     <!-- ROLES -->
     <div class="pane active" id="pane-roles">
-      <h2 class="section">Wie doet wat in de redactie?</h2>
+      <h2 class="section">Who does what in the newsroom?</h2>
       <div id="roles"></div>
     </div>
 
     <!-- GRAMMAR -->
     <div class="pane" id="pane-grammar">
-      <h2 class="section">Grammatica = journalistiek gereedschap</h2>
+      <h2 class="section">Grammar = a journalist's tool</h2>
       <div id="grammar"></div>
     </div>
 
     <!-- HEADLINE BUILDER -->
     <div class="pane hb" id="pane-headline">
-      <h2 class="section">Hoe zeker mag de kop zijn?</h2>
+      <h2 class="section">How certain may the headline be?</h2>
       <div id="headline"></div>
     </div>
 
     <!-- LOG -->
     <div class="pane" id="pane-log">
-      <h2 class="section">Beslissingen van de Editor</h2>
-      <div id="log"><div class="logempty">Nog geen beslissingen. Klik bij een bericht op <b>Publish</b>, <b>Hold</b> of <b>🚩 Flag</b>.</div></div>
+      <h2 class="section">The Editor's decisions</h2>
+      <div id="log"><div class="logempty">No decisions yet. On any report, click <b>Publish</b>, <b>Hold</b> or <b>🚩 Flag</b>.</div></div>
     </div>
   </aside>
 </div>
@@ -414,47 +423,47 @@
 <div class="studio" id="studio">
   <div class="sheet">
     <div class="sbar">
-      <span class="st"><span class="em">●</span> ON AIR — schrijf &amp; zend je verhaal uit</span>
+      <span class="st"><span class="em">●</span> ON AIR — write &amp; broadcast your story</span>
       <div class="spacer"></div>
       <button class="btn ghost" onclick="openPrompter()">📖 Teleprompter</button>
-      <button class="btn" onclick="closeStudio()">✕ Sluiten</button>
+      <button class="btn" onclick="closeStudio()">✕ Close</button>
     </div>
     <div class="sgrid">
       <div class="sleft">
-        <input class="headline" id="headlineBox" placeholder="Kop / Headline — bv. TITANIC SINKS IN THE NORTH ATLANTIC" oninput="updateWC()">
-        <textarea class="article" id="articleBox" placeholder="Schrijf hier je nieuwsartikel of je uitzend-script. Gebruik de zin-starters en de phrasebook rechts. Denk aan de drie tijden: past voor bevestigde feiten, present continuous voor wat live gebeurt, simple present (say/claim) voor beweringen." oninput="updateWC()"></textarea>
+        <input class="headline" id="headlineBox" placeholder="Headline — e.g. TITANIC SINKS IN THE NORTH ATLANTIC" oninput="updateWC()">
+        <textarea class="article" id="articleBox" placeholder="Write your news article or broadcast script here. Use the sentence starters and the phrasebook on the right. Remember the three tenses: simple past for confirmed facts, present continuous for what is happening live, simple present (say/claim) for claims." oninput="updateWC()"></textarea>
 
-        <div class="rlabel">Zin-starters (klik om in te voegen)</div>
+        <div class="rlabel">Sentence starters (click to insert)</div>
         <div class="chipset" id="starters"></div>
 
-        <div class="rlabel">Newsroom phrasebook — attributie &amp; onzekerheid</div>
+        <div class="rlabel">Newsroom phrasebook — attribution &amp; uncertainty</div>
         <div class="chipset" id="phrasebook"></div>
       </div>
       <div class="sright debrief">
-        <div class="rlabel">Wat kwam er binnen? (bevestigde feiten)</div>
+        <div class="rlabel">What came in? (confirmed facts)</div>
         <ul class="facts" id="factsList"></ul>
-        <div class="rlabel">Zelf-check vóór je publiceert</div>
+        <div class="rlabel">Self-check before you publish</div>
         <div id="checklist"></div>
 
-        <div class="rlabel">Reflectie</div>
-        <div class="refl"><label>1 · Welke bron vertrouwde je het meest — en waarom?</label><textarea id="refl1" oninput="saveDraft()"></textarea></div>
-        <div class="refl"><label>2 · Wat maakte de smartphonefoto onmogelijk, ook al klopte het beeld?</label><textarea id="refl2" oninput="saveDraft()"></textarea></div>
-        <div class="refl"><label>3 · Welke kop was het moeilijkst om eerlijk te formuleren?</label><textarea id="refl3" oninput="saveDraft()"></textarea></div>
+        <div class="rlabel">Reflection</div>
+        <div class="refl"><label>1 · Which source did you trust most — and why?</label><textarea id="refl1" oninput="saveDraft()"></textarea></div>
+        <div class="refl"><label>2 · What made the smartphone photo impossible, even though the image looked right?</label><textarea id="refl2" oninput="saveDraft()"></textarea></div>
+        <div class="refl"><label>3 · Which headline was the hardest to phrase honestly?</label><textarea id="refl3" oninput="saveDraft()"></textarea></div>
 
-        <div class="rlabel">Meer</div>
+        <div class="rlabel">More</div>
         <details>
-          <summary>📋 Beoordelingsrubric</summary>
+          <summary>📋 Assessment rubric</summary>
           <div class="dc"><table class="rubric">
-            <tr><th>Criterium</th><th>Nog niet</th><th>Op weg</th><th>Sterk</th></tr>
-            <tr><td>Taakvervulling</td><td>onvolledig verslag</td><td>hoofdzaken erin</td><td>helder, volledig, boeiend</td></tr>
-            <tr><td>Tijden</td><td>tijden lopen door elkaar</td><td>meestal correct</td><td>past/continuous/present kloppen en passen bij de zekerheid</td></tr>
-            <tr><td>Attributie &amp; zekerheid</td><td>gerucht = feit</td><td>soms toegeschreven</td><td>consequent say/claim + eerlijke onzekerheid</td></tr>
-            <tr><td>Bronnenkritiek</td><td>anachronisme gepubliceerd</td><td>twijfel geuit</td><td>anachronismen herkend én uitgelegd</td></tr>
-            <tr><td>Register &amp; woordkeus</td><td>spreektaal</td><td>eenvoudig nieuwsregister</td><td>vlot nieuwsregister met phrasebook-chunks</td></tr>
+            <tr><th>Criterion</th><th>Not yet</th><th>Getting there</th><th>Strong</th></tr>
+            <tr><td>Task completion</td><td>incomplete report</td><td>main points covered</td><td>clear, complete, engaging</td></tr>
+            <tr><td>Tenses</td><td>tenses are mixed up</td><td>mostly correct</td><td>past/continuous/present correct and matched to certainty</td></tr>
+            <tr><td>Attribution &amp; certainty</td><td>rumour = fact</td><td>sometimes attributed</td><td>consistent say/claim + honest uncertainty</td></tr>
+            <tr><td>Source criticism</td><td>anachronism published</td><td>doubt expressed</td><td>anachronisms spotted and explained</td></tr>
+            <tr><td>Register &amp; word choice</td><td>very informal</td><td>simple news register</td><td>fluent news register using phrasebook chunks</td></tr>
           </table></div>
         </details>
         <details>
-          <summary>📄 Voorbeeldartikel (kijk pas als je klaar bent)</summary>
+          <summary>📄 Model article (open only when you are done)</summary>
           <div class="dc">
             <b>TITANIC SINKS ON HER MAIDEN VOYAGE</b><br><br>
             The Titanic <b>struck</b> an iceberg at 23:40 on 14 April 1912 and <b>sank</b> less than three hours later. At 02:20 the ship <b>went</b> under; hundreds of people <b>were</b> in the water.<br><br>
@@ -463,35 +472,35 @@
           </div>
         </details>
         <details>
-          <summary>🕵 Nabespreking: wat was er mis?</summary>
+          <summary>🕵 Debrief: what was wrong?</summary>
           <div class="dc">
-            <b>De radar (00:12).</b> Radar werd pas rond de Tweede Wereldoorlog gebruikt. Het wóórd alleen al hoort niet in 1912 → anachronisme.<br><br>
-            <b>De smartphonefoto (01:20).</b> Het beeld kán kloppen, maar smartphones bestonden niet. Waar ≠ authentiek: de bron kan onmogelijk echt zijn.<br><br>
-            <b>“Everyone is safe” (08:30).</b> Dit is écht gebeurd: de eerste kranten in april 1912 meldden dat iedereen gered was. Een tijd-echte bron met een belang kan gewoon liegen → manipulatie, geen anachronisme.
+            <b>The radar (00:12).</b> Radar was only used from around the Second World War. The word alone does not belong in 1912 → anachronism.<br><br>
+            <b>The smartphone photo (01:20).</b> The image may be right, but smartphones did not exist. True ≠ authentic: the source cannot possibly be real.<br><br>
+            <b>“Everyone is safe” (08:30).</b> This really happened: the first newspapers in April 1912 reported that everyone had been saved. A period-authentic source with an interest can simply lie → manipulation, not an anachronism.
           </div>
         </details>
       </div>
     </div>
     <div class="sfoot">
-      <span class="wc" id="wc">0 woorden</span>
-      <button class="btn ghost" onclick="saveDraft(true)">💾 Bewaar</button>
+      <span class="wc" id="wc">0 words</span>
+      <button class="btn ghost" onclick="saveDraft(true)">💾 Save</button>
       <button class="btn ghost" onclick="downloadArticle()">⬇ Download .txt</button>
-      <button class="btn primary" id="recBtn" onclick="toggleRecord()">🎙 Opnemen</button>
+      <button class="btn primary" id="recBtn" onclick="toggleRecord()">🎙 Record</button>
       <span class="recmsg" id="recMsg"></span>
-      <div id="recWrap"><span style="font-size:12px;color:var(--muted)">Jouw uitzending:</span> <audio id="playback" controls></audio> <a class="btn ghost" id="dlAudio">⬇ audio</a></div>
+      <div id="recWrap"><span style="font-size:12px;color:var(--muted)">Your broadcast:</span> <audio id="playback" controls></audio> <a class="btn ghost" id="dlAudio">⬇ audio</a></div>
     </div>
   </div>
 </div>
 
 <!-- ================= TELEPROMPTER ================= -->
 <div class="prompter" id="prompter">
-  <button class="btn pclose" onclick="closePrompter()">✕ sluiten</button>
+  <button class="btn pclose" onclick="closePrompter()">✕ close</button>
   <div class="pinner"><h2 id="prompterHead"></h2><div class="pbody" id="prompterBody"></div></div>
 </div>
 
 <footer>
-  CHRONICLE 24 — The Time-Travel Newsroom · Aflevering 1: <em>Titanic — The Final Broadcast</em><br>
-  Twee vragen, altijd: <b>1.</b> Is de informatie waar? &nbsp; <b>2.</b> Kan de bron authentiek zijn?
+  CHRONICLE 24 — The Time-Travel Newsroom · Episode 1: <em>Titanic — The Final Broadcast</em><br>
+  Two questions, always: <b>1.</b> Is the information true? &nbsp; <b>2.</b> Can the source be authentic?
 </footer>
 
 <script>
@@ -499,24 +508,24 @@
    DATA — de rollen
    ========================================================= */
 const ROLES = [
-  {em:"🎙️", name:"News Anchor", desc:"Presenteert de uitzending en houdt overzicht. Bepaalt de toon.", g:"Simple present · simple past",
-    mission:"Open en sluit de uitzending; vat samen wat de redactie wél en niet zeker weet.",
-    tasks:["Schrijf een openingszin voor de uitzending.","Benoem 1 ding dat zeker is én 1 ding dat nog onbevestigd is."]},
-  {em:"📡", name:"Field Reporter", desc:"Doet live verslag ‘vanaf het schip’. Beschrijft wat er nú gebeurt.", g:"Present continuous",
-    mission:"Beschrijf live wat er op dit moment gebeurt, in de present continuous.",
-    tasks:["Beschrijf 1 scène live (‘… is/are + -ing’).","Gebruik minstens twee -ing-vormen."]},
-  {em:"🎤", name:"Interviewer", desc:"Ondervraagt passagiers en bemanning. Stelt scherpe vragen.", g:"Present continuous · simple past",
-    mission:"Ondervraag een passagier of bemanningslid met scherpe vragen.",
-    tasks:["Schrijf 3 vragen aan een getuige (hieronder).","Stel minstens 1 vraag in de simple past (‘What did you see?’)."], notes:true},
-  {em:"🔍", name:"Fact-checker", desc:"Controleert bronnen en zoekt tegenstrijdigheden. Bevestigt of verwerpt.", g:"Simple past",
-    mission:"Vergelijk de bronnen en spoor tegenspraak op vóór er iets gepubliceerd wordt.",
-    tasks:["Vind de tegenspraak tussen de rederij en een ooggetuige.","Markeer 1 bericht als ‘onbevestigd’."]},
-  {em:"🗞️", name:"Editor", desc:"Beslist wat gepubliceerd mag worden. Weegt zekerheid tegen snelheid.", g:"Simple present · simple past",
-    mission:"Beslis bij elk bericht: publiceren of vasthouden — en waarom.",
-    tasks:["Kies bij elk bericht Publish of Hold.","Motiveer één Hold-beslissing hardop."]},
-  {em:"⏳", name:"Time Analyst", desc:"Spoort informatie op die niet in 1912 thuishoort. Bewaakt de tijdlijn.", g:"Simple past · present continuous",
-    mission:"Bewaak de tijdlijn: welke bron hoort niet in 1912 thuis?",
-    tasks:["Flag de 2 berichten die niet uit 1912 kunnen komen.","Leg uit waaróm de bron onmogelijk is."]},
+  {em:"🎙️", name:"News Anchor", desc:"Presents the broadcast and keeps the overview. Sets the tone.", g:"Simple present · simple past",
+    mission:"Open and close the broadcast; sum up what the newsroom does and does not know for sure.",
+    tasks:["Write an opening line for the broadcast.","Name 1 thing that is certain and 1 thing that is still unconfirmed."]},
+  {em:"📡", name:"Field Reporter", desc:"Reports live ‘from the ship’. Describes what is happening now.", g:"Present continuous",
+    mission:"Describe live what is happening at this moment, in the present continuous.",
+    tasks:["Describe 1 scene live (‘… is/are + -ing’).","Use at least two -ing forms."]},
+  {em:"🎤", name:"Interviewer", desc:"Questions passengers and crew. Asks sharp questions.", g:"Present continuous · simple past",
+    mission:"Interview a passenger or crew member with sharp questions.",
+    tasks:["Write 3 questions for a witness (below).","Ask at least 1 question in the simple past (‘What did you see?’)."], notes:true},
+  {em:"🔍", name:"Fact-checker", desc:"Checks sources and looks for contradictions. Confirms or rejects.", g:"Simple past",
+    mission:"Compare the sources and track down contradictions before anything is published.",
+    tasks:["Find the contradiction between the company and an eyewitness.","Mark 1 report as ‘unconfirmed’."]},
+  {em:"🗞️", name:"Editor", desc:"Decides what may be published. Weighs certainty against speed.", g:"Simple present · simple past",
+    mission:"Decide on each report: publish or hold — and why.",
+    tasks:["Choose Publish or Hold on each report.","Justify one Hold decision out loud."]},
+  {em:"⏳", name:"Time Analyst", desc:"Spots information that does not belong in 1912. Guards the timeline.", g:"Simple past · present continuous",
+    mission:"Guard the timeline: which source does not belong in 1912?",
+    tasks:["Flag the 2 reports that cannot come from 1912.","Explain why the source is impossible."]},
 ];
 function saveNotes(i,val){ try{ localStorage.setItem('c24_note_'+i, val); }catch(e){} }
 function loadNotes(i){ try{ return localStorage.getItem('c24_note_'+i)||''; }catch(e){ return ''; } }
@@ -525,14 +534,26 @@ function loadNotes(i){ try{ return localStorage.getItem('c24_note_'+i)||''; }cat
    DATA — grammatica-toolkit
    ========================================================= */
 const GRAMMAR = [
-  {name:"Present continuous", use:"Live verslag — wat er nú, op dit moment, gebeurt.", ex:"Passengers <em>are entering</em> the lifeboats."},
-  {name:"Simple past", use:"Reconstructie & bevestigde feiten — het is voorbij en zeker.", ex:"The ship <em>struck</em> an iceberg at 23:40."},
-  {name:"Simple present", use:"Koppen, algemene feiten én attributie (say / claim / report).", ex:"The company <em>says</em> there <em>is</em> no danger."},
+  {name:"Present continuous",
+    form:"am / is / are + verb + -ing",
+    use:"Live reporting — what is happening right now, as you watch.",
+    signal:"now · at the moment · right now · currently",
+    ex:"Passengers <em>are entering</em> the lifeboats.",
+    tip:"In the newsroom: for the Field Reporter, live from the scene."},
+  {name:"Simple past",
+    form:"2nd form (struck, sent, went) · regular verb + -ed",
+    use:"Reconstruction & confirmed facts — it is over and certain.",
+    signal:"at 23:40 · last night · ago · then · yesterday",
+    ex:"The ship <em>struck</em> an iceberg at 23:40.",
+    tip:"In the newsroom: once something is confirmed and finished."},
+  {name:"Simple present",
+    form:"base form (he / she / it + -s)",
+    use:"Headlines, general facts, and attribution (say / claim / report).",
+    signal:"says · claims · reports · according to",
+    ex:"The company <em>says</em> there <em>is</em> no danger.",
+    tip:"In the newsroom: to pass on a claim without proving it yourself."},
 ];
-/* Zo hangt de zekerheid aan de tijd:
-   • present continuous → het gebeurt live (nog bezig, nog niet af)
-   • simple present + say/claim → een bewéring van een bron (onbevestigd)
-   • simple past → bevestigd, afgesloten feit                                  */
+const GRAMMAR_INTRO = "The tense you choose shows how sure you are: present continuous = happening live · say/claim (simple present) = an unconfirmed claim · simple past = a confirmed, finished fact.";
 
 /* =========================================================
    DATA — de wire (binnenkomende berichten, op volgorde)
@@ -543,103 +564,103 @@ const GRAMMAR = [
 const UPDATES = [
   {
     time:"23:39", date:"14 APRIL 1912", src:"Bridge log · Officer of the watch", kind:"log", rel:2,
-    grammar:"Simple past — reconstructie",
+    grammar:"Simple past — reconstruction",
     text:'The lookout <span class="hl">rang</span> the bell three times and <span class="hl">reported</span> an iceberg dead ahead. The officer <span class="hl">turned</span> the wheel hard, but the ship <span class="hl">did not answer</span> in time.',
     trap:null,
-    note:"Officiële bron, kort en zakelijk. Alles in simple past: het is voorbij en zeker."
+    note:"Official source, short and factual. All in the simple past: it is over and certain."
   },
   {
     time:"23:41", date:"14 APRIL 1912", src:"Field Reporter · Boat Deck", kind:"eyewitness", rel:3,
-    grammar:"Present continuous — live verslag",
+    grammar:"Present continuous — live report",
     text:'The ship <span class="hl">is shaking</span>. Ice <span class="hl">is scattering</span> across the forward deck. Some passengers <span class="hl">are laughing</span> and <span class="hl">are throwing</span> snowballs — nobody looks worried yet.',
     trap:null,
-    note:"Ooggetuige ter plaatse. Present continuous = wat er nú, live, gebeurt."
+    note:"Eyewitness on the scene. Present continuous = what is happening now, live."
   },
   {
     time:"23:58", date:"14 APRIL 1912", src:"White Star Line · Press Office", kind:"official", rel:2,
-    grammar:"Simple present — statement & attributie",
+    grammar:"Simple present — statement & attribution",
     text:'The company <span class="hl">says</span> the Titanic <span class="hl">is</span> unsinkable. “There <span class="hl">is</span> no danger to passengers,” a spokesman <span class="hl">says</span>. He <span class="hl">calls</span> the reports of flooding “greatly exaggerated”.',
     trap:null,
-    note:"Officieel — maar de rederij heeft een belang. ‘The company says…’ = attributie, geen eigen conclusie."
+    note:"Official — but the company has an interest. ‘The company says…’ = attribution, not your own conclusion."
   },
   {
     time:"00:05", date:"15 APRIL 1912", src:"Passenger · Third-class corridor", kind:"eyewitness", rel:2,
-    grammar:"Present continuous — live verslag",
+    grammar:"Present continuous — live report",
     text:'“Water <span class="hl">is coming</span> under the doors. The corridors down here <span class="hl">are filling</span> fast. The crew <span class="hl">is not telling</span> us anything.”',
     trap:null,
-    note:"Spreekt de rederij tegen. Wie geloof je — en hoe schrijf je dat voorzichtig op?"
+    note:"Contradicts the company. Who do you believe — and how do you write it carefully?"
   },
   {
     time:"00:12", date:"15 APRIL 1912", src:"Weather Desk · Ice report", kind:"anachronism", rel:1,
     grammar:"Simple present — statement",
     text:'The weather station <span class="hl">says</span> its <span class="hl">radar</span> shows the ice field forty miles east. It <span class="hl">detected</span> the bergs hours ago and <span class="hl">warned</span> every ship in the area.',
     trap:{
-      good:"✅ Goed gezien. Radar bestond nog niet in 1912 — het werd pas rond WO II gebruikt. Dit bericht is uit de tijd gevallen. Bovendien: als schepen ‘uren geleden’ gewaarschuwd waren, zou het verhaal anders lopen. Anachronisme + manipulatie.",
-      bad:"⚠️ Dit had je moeten flaggen. Radar bestond niet in 1912. Zo’n detail klinkt geloofwaardig, maar hoort niet in deze tijd thuis."
+      good:"✅ Well spotted. Radar did not exist yet in 1912 — it was only used from around WWII. This report has fallen out of its time. On top of that: if ships had really been warned ‘hours ago’, the story would have gone differently. Anachronism + manipulation.",
+      bad:"⚠️ You should have flagged this. Radar did not exist in 1912. A detail like this sounds convincing, but it does not belong in this period."
     },
-    note:"Time Analyst: klopt het woord ‘radar’ met 1912?"
+    note:"Time Analyst: does the word ‘radar’ fit 1912?"
   },
   {
     time:"00:15", date:"15 APRIL 1912", src:"Wireless · CQD distress call", kind:"wire", rel:3,
-    grammar:"Simple past — bevestigd feit",
+    grammar:"Simple past — confirmed fact",
     text:'The Titanic <span class="hl">sent</span> the distress signal CQD. The operator <span class="hl">gave</span> her position as 41°46′N, 50°14′W. On deck the crew <span class="hl">is firing</span> white rockets now.',
     trap:null,
-    note:"Simple past voor het bevestigde feit (‘sent’, ‘gave’), present continuous voor wat nú gebeurt (‘is firing’)."
+    note:"Simple past for the confirmed fact (‘sent’, ‘gave’), present continuous for what is happening now (‘is firing’)."
   },
   {
     time:"00:25", date:"15 APRIL 1912", src:"Field Reporter · Lifeboat 6", kind:"eyewitness", rel:3,
-    grammar:"Present continuous — live verslag",
+    grammar:"Present continuous — live report",
     text:'The crew <span class="hl">are loading</span> the lifeboats. Women and children <span class="hl">are boarding</span> first. Some boats <span class="hl">are leaving</span> only half full.',
     trap:null,
-    note:"Detail voor later feitencheck: half-lege boten."
+    note:"A detail to fact-check later: half-empty boats."
   },
   {
     time:"00:48", date:"15 APRIL 1912", src:"Unconfirmed · Passenger rumour", kind:"rumor", rel:1,
-    grammar:"Simple present — attributie (say/claim)",
+    grammar:"Simple present — attribution (say/claim)",
     text:'Some passengers <span class="hl">say</span> the lights of another ship <span class="hl">are</span> visible on the horizon. Others <span class="hl">claim</span> it <span class="hl">is</span> only a star.',
     trap:null,
-    note:"Onbevestigd (het ‘mystery ship’). Publiceren of niet? Let op ‘say / claim’ = je maakt het niet waar."
+    note:"Unconfirmed (the ‘mystery ship’). Publish or not? Note ‘say / claim’ = you are not making it true."
   },
   {
     time:"01:20", date:"15 APRIL 1912", src:"Anonymous source · Uploaded image", kind:"anachronism", rel:1,
-    grammar:"De grote twist",
+    grammar:"The big twist",
     text:'A source <span class="hl">sent</span> a photograph “taken on a smartphone”. It <span class="hl">shows</span> the stern rising into the air, lit by bright electric flares. The picture <span class="hl">looks</span> real — the ship, the angle and the ice all <span class="hl">match</span>.',
     trap:{
-      good:"✅ De sleutelvondst. De foto kan echt zijn — het beeld klopt met wat er gebeurt — maar de bron kan onmogelijk authentiek zijn: er waren geen smartphones in 1912. Twee losse vragen: (1) Is de informatie waar? Misschien wel. (2) Kan de bron authentiek zijn? Nee. Je mag zoiets nooit publiceren als ‘ooggetuigefoto uit 1912’.",
-      bad:"⚠️ Dit is dé twist die je moest flaggen. Een smartphone in 1912 bestaat niet. Zelfs als het beeld klopt, is de bron onmogelijk authentiek — publiceren zou een vervalsing zijn."
+      good:"✅ The key find. The photo may be real — the image matches what is happening — but the source cannot possibly be authentic: there were no smartphones in 1912. Two separate questions: (1) Is the information true? Maybe. (2) Can the source be authentic? No. You must never publish this as an ‘eyewitness photo from 1912’.",
+      bad:"⚠️ This is the twist you had to flag. A smartphone in 1912 does not exist. Even if the image is right, the source is impossible to authenticate — publishing it would be a forgery."
     },
-    note:"Twee vragen scheiden: is het waar? — kan de bron echt zijn?"
+    note:"Separate two questions: is it true? — can the source be real?"
   },
   {
     time:"01:42", date:"15 APRIL 1912", src:"Wireless · RMS Carpathia", kind:"wire", rel:3,
     grammar:"Simple past + present continuous",
     text:'The Carpathia <span class="hl">picked</span> up the distress call and <span class="hl">turned</span> around. She <span class="hl">is steaming</span> at full speed now, but she <span class="hl">is</span> still about four hours away.',
     trap:null,
-    note:"Wat gebeurde (past) + wat nú gebeurt (continuous). Redding onderweg — maar ver weg."
+    note:"What happened (past) + what is happening now (continuous). Rescue on the way — but far off."
   },
   {
     time:"02:20", date:"15 APRIL 1912", src:"Field Reporter · final transmission", kind:"eyewitness", rel:3,
-    grammar:"Simple past — het bevestigde feit",
+    grammar:"Simple past — the confirmed fact",
     text:'The ship <span class="hl">went</span> under. The stern <span class="hl">rose</span> almost straight up and then <span class="hl">disappeared</span>. Hundreds of people <span class="hl">are</span> in the water. The wireless <span class="hl">is</span> silent now.',
     trap:null,
-    note:"Het keerpunt. Nu pas mag de kop ‘The ship sank’ worden. Voel je het verschil met ‘is sinking’?"
+    note:"The turning point. Only now may the headline become ‘The ship sank’. Feel the difference from ‘is sinking’?"
   },
   {
     time:"08:30", date:"15 APRIL 1912", src:"White Star Line · Second statement", kind:"official", rel:1,
-    grammar:"Simple present — statement (met belang)",
+    grammar:"Simple present — statement (with an interest)",
     text:'The company <span class="hl">says</span> everyone <span class="hl">is</span> safe. “The Titanic <span class="hl">is</span> under tow to Halifax and there <span class="hl">are</span> no casualties,” the office <span class="hl">says</span>.',
     trap:{
-      good:"✅ Terecht geflagd. Dit is historisch echt gebeurd: de eerste berichten meldden dat iedereen gered was. Het is aantoonbaar onwaar en spreekt jullie eigen ooggetuige van 02:20 tegen. Bron met belang + tegenspraak = niet publiceren zonder controle.",
-      bad:"⚠️ Dit had geflagd moeten worden. Het spreekt jullie eigen verslag van 02:20 (‘hundreds in the water’) recht tegen. De rederij heeft er belang bij het klein te houden — manipulatie, geen anachronisme."
+      good:"✅ Rightly flagged. This really happened in history: the first reports claimed everyone had been saved. It is demonstrably false and contradicts your own eyewitness from 02:20. A source with an interest + a contradiction = do not publish without checking.",
+      bad:"⚠️ This should have been flagged. It flatly contradicts your own report from 02:20 (‘hundreds in the water’). The company has an interest in playing it down — manipulation, not an anachronism."
     },
-    note:"Fact-checker: zoek de tegenspraak met een eerder bericht."
+    note:"Fact-checker: find the contradiction with an earlier report."
   },
   {
     time:"09:15", date:"15 APRIL 1912", src:"Wireless · Carpathia survivor count", kind:"wire", rel:3,
-    grammar:"Simple past — bevestigde cijfers",
+    grammar:"Simple past — confirmed figures",
     text:'The Carpathia <span class="hl">says</span> it <span class="hl">rescued</span> about 705 people. More than 1,500 passengers <span class="hl">are</span> still missing. The survivors <span class="hl">are going</span> to New York, not Halifax.',
     trap:null,
-    note:"Betrouwbare bron — vergelijk met het bericht van 08:30. Welke kop klopt?"
+    note:"Reliable source — compare with the 08:30 report. Which headline is right?"
   },
 ];
 
@@ -650,17 +671,26 @@ const UPDATES = [
  ['carpathia','carpathia','past'],['sinking','sinking','past'],['press','press','present'],
  ['tally','tally','past']].forEach((v,i)=>{ if(UPDATES[i]){ UPDATES[i].viz=v[0]; UPDATES[i].sound=v[1]; UPDATES[i].tense=v[2]; } });
 
-/* uitleg per kern-tijd — verschijnt de eerste keer dat die tijd op het scherm komt */
+/* explanation per core tense — appears the first time that tense reaches the screen */
 const TENSE_INFO = {
-  continuous:{label:"Present continuous", form:"am / is / are + werkwoord + -ing",
-    use:"Voor wat er nú, op dit moment, gebeurt — live verslag vanaf de plek.",
-    ex:'Passengers <b>are entering</b> the lifeboats.'},
-  past:{label:"Simple past", form:"2e vorm (struck, sent, went) of regelmatig + -ed",
-    use:"Voor een bevestigd, afgesloten feit: het is voorbij en zeker.",
-    ex:'The ship <b>struck</b> an iceberg at 23:40.'},
-  present:{label:"Simple present", form:"basisvorm (hij/zij/het + -s)",
-    use:"Voor koppen en feiten, én om een bewering toe te schrijven: say / claim / report.",
-    ex:'The company <b>says</b> there <b>is</b> no danger.'},
+  continuous:{label:"Present continuous",
+    form:"am / is / are + verb + -ing",
+    use:"For what is happening right now, at this moment — live reporting from the scene.",
+    signal:"now · at the moment · right now · currently",
+    ex:'Passengers <b>are entering</b> the lifeboats.',
+    tip:"Careful: it says the action is really happening. Don't use it for something you can't yet confirm."},
+  past:{label:"Simple past",
+    form:"2nd form (struck, sent, went) · regular verb + -ed",
+    use:"For a confirmed, finished fact: it is over and certain.",
+    signal:"at 23:40 · last night · ago · then · yesterday",
+    ex:'The ship <b>struck</b> an iceberg at 23:40.',
+    tip:"Only switch to this once an event is confirmed and complete (e.g. ‘The ship sank.’)."},
+  present:{label:"Simple present",
+    form:"base form (he / she / it + -s)",
+    use:"For headlines and general facts, and to attribute a claim: say / claim / report.",
+    signal:"says · claims · reports · according to",
+    ex:'The company <b>says</b> there <b>is</b> no danger.',
+    tip:"With say/claim you pass a claim on to the reader without proving it true yourself."},
 };
 const introduced = new Set();
 function grammarCallout(u){
@@ -668,11 +698,13 @@ function grammarCallout(u){
   introduced.add(u.tense);
   const t = TENSE_INFO[u.tense]; if(!t) return '';
   return `<div class="grambox">
-    <div class="gh"><span class="tag">NIEUW</span> Grammatica in beeld</div>
+    <div class="gh"><span class="tag">NEW</span> Grammar on screen</div>
     <div class="gname">${t.label}</div>
     <div class="gform">${t.form}</div>
     <div class="guse">${t.use}</div>
+    <div class="gsignal"><b>Signal words:</b> ${t.signal}</div>
     <div class="gex">${t.ex}</div>
+    <div class="gtip">${t.tip}</div>
   </div>`;
 }
 
@@ -871,17 +903,22 @@ function renderRoles(){
       <h3><span class="role-em">${r.em}</span> ${r.name}</h3>
       <p>${r.desc}</p>
       <div class="g">▸ ${r.g}</div>
-      <div class="mission"><b>Jouw missie:</b> ${r.mission}</div>
+      <div class="mission"><b>Your mission:</b> ${r.mission}</div>
       ${r.tasks.map(t=>`<label class="rtask"><input type="checkbox" onchange="this.closest('.rtask').classList.toggle('done',this.checked)"><span>${t}</span></label>`).join('')}
-      ${r.notes?`<textarea class="rnotes" placeholder="Jouw 3 vragen…" oninput="saveNotes(${i},this.value)">${loadNotes(i)}</textarea>`:''}
+      ${r.notes?`<textarea class="rnotes" placeholder="Your 3 questions…" oninput="saveNotes(${i},this.value)">${loadNotes(i)}</textarea>`:''}
     </div>`).join('');
 }
 function renderGrammar(){
-  document.getElementById('grammar').innerHTML = GRAMMAR.map(g=>`
+  document.getElementById('grammar').innerHTML =
+    `<div class="gnote">${GRAMMAR_INTRO}</div>` +
+    GRAMMAR.map(g=>`
     <div class="gram">
       <div class="name">${g.name}</div>
+      <div class="gform2">${g.form}</div>
       <div class="use">${g.use}</div>
       <div class="ex">${g.ex}</div>
+      <div class="gsig"><b>Signal words:</b> ${g.signal}</div>
+      <div class="gtip">${g.tip}</div>
     </div>`).join('');
 }
 
@@ -917,7 +954,7 @@ function nextUpdate(){
   if(idx >= UPDATES.length){
     document.getElementById('nextBtn').textContent = 'End of broadcast';
     document.getElementById('nextBtn').disabled = true;
-    const tb=document.getElementById('taskBtn'); tb.classList.add('primary'); tb.textContent='✍ Schrijf het artikel';
+    const tb=document.getElementById('taskBtn'); tb.classList.add('primary'); tb.textContent='✍ Write the article';
     stopAuto();
   }
   document.getElementById('feedEmpty').style.display = 'none';
@@ -980,11 +1017,11 @@ function setQ(i, q, val){ decisions[i][q] = val; renderFlagPanel(i); }
 function renderFlagPanel(i){
   const d = decisions[i];
   const v = document.getElementById('verdict-'+i);
-  const q1 = [['ja','Ja'],['onzeker','Onzeker'],['nee','Nee']];
-  const q2 = [['ja','Ja'],['nee','Nee']];
+  const q1 = [['ja','Yes'],['onzeker','Unsure'],['nee','No']];
+  const q2 = [['ja','Yes'],['nee','No']];
   let html = `<div class="twoq">
-    <div class="q"><span>1 · Kan de informatie waar zijn?</span>${q1.map(o=>`<button class="qb ${d.q1===o[0]?'on':''}" onclick="setQ(${i},'q1','${o[0]}')">${o[1]}</button>`).join('')}</div>
-    <div class="q"><span>2 · Kan de bron echt zijn in 1912?</span>${q2.map(o=>`<button class="qb ${d.q2===o[0]?'on':''}" onclick="setQ(${i},'q2','${o[0]}')">${o[1]}</button>`).join('')}</div>`;
+    <div class="q"><span>1 · Could the information be true?</span>${q1.map(o=>`<button class="qb ${d.q1===o[0]?'on':''}" onclick="setQ(${i},'q1','${o[0]}')">${o[1]}</button>`).join('')}</div>
+    <div class="q"><span>2 · Could the source be real in 1912?</span>${q2.map(o=>`<button class="qb ${d.q2===o[0]?'on':''}" onclick="setQ(${i},'q2','${o[0]}')">${o[1]}</button>`).join('')}</div>`;
   if(d.q1 && d.q2) html += flagVerdict(i);
   v.innerHTML = html + `</div>`;
 }
@@ -993,15 +1030,15 @@ function flagVerdict(i){
   if(u.trap){
     let lead;
     if(u.kind==='anachronism'){
-      lead = d.q2==='nee' ? 'Je zag het: deze bron kan onmogelijk uit 1912 komen. '
-                          : 'Kijk nog eens naar vraag 2 — kón deze bron in 1912 al bestaan? ';
+      lead = d.q2==='nee' ? 'You saw it: this source cannot possibly come from 1912. '
+                          : 'Look again at question 2 — could this source already exist in 1912? ';
     } else {
-      lead = (d.q1==='nee'||d.q1==='onzeker') ? 'Je twijfelde terecht aan de inhoud zelf. '
-                          : 'Kijk nog eens naar vraag 1 — kán dit echt waar zijn? ';
+      lead = (d.q1==='nee'||d.q1==='onzeker') ? 'You were right to doubt the content itself. '
+                          : 'Look again at question 1 — can this really be true? ';
     }
-    return `<div class="vres good"><div class="vh">🎯 Goed onderzocht</div>${lead}${u.trap.good}</div>`;
+    return `<div class="vres good"><div class="vh">🎯 Well investigated</div>${lead}${u.trap.good}</div>`;
   }
-  return `<div class="vres bad"><div class="vh">⚠️ Tijd-echte bron</div>Deze bron <b>kán</b> echt uit 1912 komen. Onterecht flaggen kan een waar verhaal onderdrukken. Vraag je af of de bron eerder <b>onvolledig of bevooroordeeld</b> is dan onmogelijk — dat is iets anders dan een anachronisme.</div>`;
+  return `<div class="vres bad"><div class="vh">⚠️ Period-authentic source</div>This source <b>could</b> genuinely come from 1912. Flagging it wrongly can suppress a true story. Ask yourself whether the source is more likely <b>incomplete or biased</b> than impossible — that is something different from an anachronism.</div>`;
 }
 
 /* =========================================================
@@ -1027,7 +1064,7 @@ function resetBroadcast(){
   stopAuto();
   idx = 0; live = false;
   introduced.clear();
-  const tb=document.getElementById('taskBtn'); tb.classList.remove('primary'); tb.textContent='✍ Artikel';
+  const tb=document.getElementById('taskBtn'); tb.classList.remove('primary'); tb.textContent='✍ Article';
   for(const k in decisions) delete decisions[k];
   document.getElementById('feed').innerHTML = '<div class="empty" id="feedEmpty"><strong>The wire is silent.</strong>Press <b>“Next update”</b> to let the next report come in. Read it aloud, then let the newsroom decide.</div>';
   document.getElementById('clock').textContent = '--:--';
@@ -1059,7 +1096,7 @@ function renderLog(){
   });
   const box = document.getElementById('log');
   if(rows.length===0){
-    box.innerHTML = '<div class="logempty">Nog geen beslissingen. Klik bij een bericht op <b>Publish</b>, <b>Hold</b> of <b>🚩 Flag</b>.</div>';
+    box.innerHTML = '<div class="logempty">No decisions yet. On any report, click <b>Publish</b>, <b>Hold</b> or <b>🚩 Flag</b>.</div>';
     return;
   }
   box.innerHTML = rows.map(r=>`
@@ -1075,33 +1112,33 @@ function renderLog(){
    ========================================================= */
 const SCENARIOS = [
   {
-    lbl:"Situatie · 00:05",
-    facts:"Ooggetuigen melden binnenstromend water. De rederij ontkent elk gevaar. Officieel is er nog niets bevestigd.",
+    lbl:"Situation · 00:05",
+    facts:"Eyewitnesses report water coming in. The company denies any danger. Officially, nothing is confirmed yet.",
     opts:[
-      {t:"The Titanic is sinking.", cls:"weak", fb:"Present continuous stelt het als een feit dat nú echt gebeurt — maar het is nog niet bevestigd. Te stellig."},
-      {t:"Passengers say the ship is taking on water.", cls:"strong", fb:"Simple present + attributie (‘passengers say’). Je geeft de claim door zónder ‘m zelf waar te maken. Veilig en eerlijk."},
-      {t:"The Titanic sank.", cls:"weak", fb:"Simple past claimt een afgesloten feit — maar dit is (nog) niet gebeurd. Onwaar."},
-      {t:"Water is coming into the lower decks.", cls:"strong", fb:"Present continuous voor wat een ooggetuige nú concreet ziet. Verifieerbaar, zonder meteen de hele ramp te claimen."},
+      {t:"The Titanic is sinking.", cls:"weak", fb:"Present continuous states it as a fact that is really happening now — but it is not yet confirmed. Too strong."},
+      {t:"Passengers say the ship is taking on water.", cls:"strong", fb:"Simple present + attribution (‘passengers say’). You pass the claim on without making it true yourself. Safe and honest."},
+      {t:"The Titanic sank.", cls:"weak", fb:"Simple past claims a finished fact — but this has not (yet) happened. Untrue."},
+      {t:"Water is coming into the lower decks.", cls:"strong", fb:"Present continuous for what an eyewitness concretely sees now. Verifiable, without claiming the whole disaster at once."},
     ]
   },
   {
-    lbl:"Situatie · 00:48",
-    facts:"Sommige passagiers zeggen de lichten van een ander schip te zien. Anderen zeggen dat het een ster is. Niets is bevestigd.",
+    lbl:"Situation · 00:48",
+    facts:"Some passengers say they can see the lights of another ship. Others say it is only a star. Nothing is confirmed.",
     opts:[
-      {t:"A rescue ship is coming.", cls:"weak", fb:"Present continuous verandert een gerucht in een geruststelling die vals kan zijn. Gevaarlijk."},
-      {t:"Some passengers say they see a ship on the horizon.", cls:"strong", fb:"Simple present + attributie: je meldt wie het zegt, zonder het waar te maken. Precies goed."},
-      {t:"A ship appeared on the horizon.", cls:"weak", fb:"Simple past presenteert het als bevestigd, afgesloten feit — dat is het niet."},
-      {t:"Passengers are pointing at lights on the horizon.", cls:"strong", fb:"Present continuous voor wat waarneembaar gebeurt, zónder te beweren dát het een reddingsschip is."},
+      {t:"A rescue ship is coming.", cls:"weak", fb:"Present continuous turns a rumour into reassurance that may be false. Dangerous."},
+      {t:"Some passengers say they see a ship on the horizon.", cls:"strong", fb:"Simple present + attribution: you report who says it, without making it true. Just right."},
+      {t:"A ship appeared on the horizon.", cls:"weak", fb:"Simple past presents it as a confirmed, finished fact — which it is not."},
+      {t:"Passengers are pointing at lights on the horizon.", cls:"strong", fb:"Present continuous for what is observably happening, without claiming that it is a rescue ship."},
     ]
   },
   {
-    lbl:"Situatie · 02:20",
-    facts:"Jullie eigen field reporter meldt: de boeg is verdwenen, honderden mensen liggen in het water, de radio zwijgt.",
+    lbl:"Situation · 02:20",
+    facts:"Your own field reporter reports: the bow is gone, hundreds of people are in the water, the wireless is silent.",
     opts:[
-      {t:"The Titanic sank.", cls:"strong", fb:"Nú klopt het. Bevestigd door een directe ooggetuige — een afgesloten feit, dus simple past."},
-      {t:"The Titanic is sinking.", cls:"weak", fb:"Achterhaald. Present continuous (‘nog bezig’) klopt niet meer — het schip is al onder."},
-      {t:"Passengers say the ship is in trouble.", cls:"weak", fb:"Nu te voorzichtig. Je hebt een betrouwbare ooggetuige; afstandelijke attributie verzwakt het bericht onnodig."},
-      {t:"Everyone is safe.", cls:"weak", fb:"Onwaar — dit spreekt je eigen verslag recht tegen."},
+      {t:"The Titanic sank.", cls:"strong", fb:"Now it is right. Confirmed by a direct eyewitness — a finished fact, so simple past."},
+      {t:"The Titanic is sinking.", cls:"weak", fb:"Out of date. Present continuous (‘still in progress’) no longer fits — the ship is already under."},
+      {t:"Passengers say the ship is in trouble.", cls:"weak", fb:"Now too cautious. You have a reliable eyewitness; distant attribution weakens the report needlessly."},
+      {t:"Everyone is safe.", cls:"weak", fb:"Untrue — this flatly contradicts your own report."},
     ]
   }
 ];
@@ -1118,8 +1155,8 @@ function renderHeadline(){
           <div class="opt-fb">${o.fb}</div>
         </button>`).join('')}
       <div class="nav">
-        <span>Kop ${scnIdx+1} / ${SCENARIOS.length}</span>
-        <a href="#" onclick="cycleScn(event)">volgende situatie →</a>
+        <span>Headline ${scnIdx+1} / ${SCENARIOS.length}</span>
+        <a href="#" onclick="cycleScn(event)">next situation →</a>
       </div>
     </div>`;
 }
@@ -1153,17 +1190,17 @@ const STARTERS = [
 const PHRASES = [
   {c:'report', s:'says that'},{c:'report', s:'claims that'},{c:'report', s:'reports that'},
   {c:'report', s:'denies that'},{c:'report', s:'confirms that'},{c:'report', s:'According to'},
-  {c:'twijfel', s:'reportedly'},{c:'twijfel', s:'apparently'},{c:'twijfel', s:'It appears that'},
-  {c:'twijfel', s:'Unconfirmed reports say'},
-  {c:'verband', s:'However,'},{c:'verband', s:'Meanwhile,'},{c:'verband', s:'At 02:20,'},
+  {c:'doubt', s:'reportedly'},{c:'doubt', s:'apparently'},{c:'doubt', s:'It appears that'},
+  {c:'doubt', s:'Unconfirmed reports say'},
+  {c:'linking', s:'However,'},{c:'linking', s:'Meanwhile,'},{c:'linking', s:'At 02:20,'},
 ];
 const CHECKS = [
-  'Ik gebruik simple past voor bevestigde feiten (struck, sank, sent).',
-  'Ik gebruik present continuous voor wat live gebeurt (are boarding).',
-  'Ik schrijf beweringen toe met say / claim (simple present).',
-  'Ik heb de anachronismen (radar, smartphonefoto) NIET als echt gepubliceerd.',
-  'Mijn tekst maakt verschil tussen wat zeker is en wat onbevestigd is.',
-  'Mijn kop belooft niet méér dan ik echt weet.',
+  'I use the simple past for confirmed facts (struck, sank, sent).',
+  'I use the present continuous for what is happening live (are boarding).',
+  'I attribute claims with say / claim (simple present).',
+  'I did NOT publish the anachronisms (radar, smartphone photo) as real.',
+  'My text distinguishes what is certain from what is unconfirmed.',
+  'My headline promises no more than I actually know.',
 ];
 function stripTags(s){ return s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim(); }
 let studioBuilt = false;
@@ -1188,7 +1225,7 @@ function insertPhrase(txt){
 function updateWC(){
   const t=document.getElementById('articleBox').value.trim();
   const n=t? t.split(/\s+/).length : 0;
-  document.getElementById('wc').textContent = n+' woord'+(n===1?'':'en');
+  document.getElementById('wc').textContent = n+' word'+(n===1?'':'s');
   saveDraft();
 }
 function saveDraft(flash){
@@ -1197,7 +1234,7 @@ function saveDraft(flash){
     localStorage.setItem('c24_art', document.getElementById('articleBox').value);
     ['refl1','refl2','refl3'].forEach(id=>{ const el=document.getElementById(id); if(el) localStorage.setItem('c24_'+id, el.value); });
   }catch(e){}
-  if(flash===true){ const b=event&&event.target; if(b){ const o=b.textContent; b.textContent='✓ Bewaard'; setTimeout(()=>b.textContent=o,1200);} }
+  if(flash===true){ const b=event&&event.target; if(b){ const o=b.textContent; b.textContent='✓ Saved'; setTimeout(()=>b.textContent=o,1200);} }
 }
 function loadDraft(){
   try{
@@ -1208,7 +1245,7 @@ function loadDraft(){
   updateWC();
 }
 function downloadArticle(){
-  const h=document.getElementById('headlineBox').value||'(geen kop)';
+  const h=document.getElementById('headlineBox').value||'(no headline)';
   const a=document.getElementById('articleBox').value||'';
   const txt='CHRONICLE 24 — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
   const blob=new Blob([txt],{type:'text/plain'}); const url=URL.createObjectURL(blob);
@@ -1218,7 +1255,7 @@ function downloadArticle(){
 /* teleprompter */
 function openPrompter(){
   document.getElementById('prompterHead').textContent = document.getElementById('headlineBox').value || '';
-  document.getElementById('prompterBody').textContent = document.getElementById('articleBox').value || 'Nog niets geschreven…';
+  document.getElementById('prompterBody').textContent = document.getElementById('articleBox').value || 'Nothing written yet…';
   document.getElementById('prompter').classList.add('open');
 }
 function closePrompter(){ document.getElementById('prompter').classList.remove('open'); }
@@ -1229,7 +1266,7 @@ async function toggleRecord(){
   if(mediaRec && mediaRec.state==='recording'){ mediaRec.stop(); return; }
   msg.textContent='';
   if(!navigator.mediaDevices || !window.MediaRecorder){
-    msg.textContent='🎤 Opnemen kan hier niet — open het bestand lokaal en geef microfoontoegang.'; return;
+    msg.textContent='🎤 Recording is not available here — open the file locally and allow microphone access.'; return;
   }
   try{
     const stream=await navigator.mediaDevices.getUserMedia({audio:true});
@@ -1241,12 +1278,12 @@ async function toggleRecord(){
       const dl=document.getElementById('dlAudio'); dl.href=url; dl.download='chronicle24-broadcast.webm';
       document.getElementById('recWrap').style.display='flex';
       stream.getTracks().forEach(t=>t.stop());
-      btn.innerHTML='🎙 Opnemen'; btn.classList.remove('primary'); btn.classList.add('ghost');
+      btn.innerHTML='🎙 Record'; btn.classList.remove('primary'); btn.classList.add('ghost');
     };
     mediaRec.start();
-    btn.innerHTML='<span class="recdot"></span>Stop opname'; btn.classList.remove('ghost'); btn.classList.add('primary');
+    btn.innerHTML='<span class="recdot"></span>Stop recording'; btn.classList.remove('ghost'); btn.classList.add('primary');
   }catch(e){
-    msg.textContent='🎤 Microfoon geweigerd of niet beschikbaar. Je kunt wél schrijven en de teleprompter gebruiken.';
+    msg.textContent='🎤 Microphone denied or unavailable. You can still write and use the teleprompter.';
   }
 }
 

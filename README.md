@@ -51,7 +51,7 @@ past** (bericht 1), **present continuous** (bericht 2), **simple present**
 
 ## Eindtaak — schrijven & inspreken
 
-Via de knop **✍ Artikel** (licht op zodra de uitzending klaar is) opent de
+Via de knop **✍ Article** (licht op zodra de uitzending klaar is) opent de
 studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
 
 - **Schrijven** met kop + tekstvak;
@@ -67,7 +67,7 @@ studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
 
 ## Actieve rollen, bronnencheck & nabespreking
 
-- **Rollen met taken.** Op het tabblad *Rollen* heeft elke rol nu een eigen
+- **Rollen met taken.** Op het tabblad *Roles* heeft elke rol nu een eigen
   missie met afvinkbare taken (de Interviewer typt bv. 3 vragen in), zodat elke
   leerling steeds iets te dóén heeft.
 - **Twee-vragen-bronnencheck.** De 🚩-knop bij elk bericht opent twee vragen —
@@ -84,7 +84,7 @@ studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
 
 1. **Open `index.html`** in een browser (dubbelklikken volstaat; werkt ook op
    het smartboard). Geen installatie, geen internet nodig.
-2. Verdeel de **6 rollen** (tabblad *Rollen*): News Anchor, Field Reporter,
+2. Verdeel de **6 rollen** (tabblad *Roles*): News Anchor, Field Reporter,
    Interviewer, Fact-checker, Editor, Time Analyst.
 3. Klik op **"Take positions & go live"**. De klok gaat lopen.
 4. Klik telkens op **"Next update ▸"** om het volgende bericht binnen te laten
@@ -92,7 +92,7 @@ studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
    - **✔ Publish** / **⏸ Hold** (de Editor beslist),
    - **🚩 Flag** (de Time Analyst denkt dat iets niet klopt). Na het flaggen
      verschijnt uitleg of het terecht was.
-5. Wissel naar het tabblad **"Kop bouwen"** om de klas een kop te laten kiezen
+5. Wissel naar het tabblad **"Headline"** om de klas een kop te laten kiezen
    met de juiste zekerheid.
 6. **Auto ⏱** laat elke 25 seconden vanzelf een bericht binnenkomen (spanning!).
    **Reset** begint opnieuw.
