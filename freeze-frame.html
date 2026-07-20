@@ -196,6 +196,14 @@
   .ptip{display:none; font-size:12px; margin-top:8px; line-height:1.5}
   .ptip.show{display:block; animation:rise .25s ease}
   .ptip.good{color:#3a7a2a} .ptip.bad{color:#a8720a}
+  .pmenu{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+  .pmode{border:1px solid var(--border); background:var(--panel); color:var(--muted); font-size:12px; font-weight:700; padding:5px 11px; border-radius:16px; cursor:pointer; transition:.12s}
+  .pmode:hover{border-color:var(--cyan)}
+  .pmode.active{background:var(--cyan); border-color:var(--cyan); color:#fff}
+  .mword{border:1px solid transparent; background:transparent; color:var(--text); font-size:13.5px; font-family:inherit; padding:2px 4px; border-radius:5px; cursor:pointer; line-height:1.9}
+  .mword:hover{background:var(--panel2); border-color:var(--border)}
+  .mword.bad{background:rgba(224,146,26,.18); color:#a8720a}
+  .mword:disabled{cursor:default}
 
   .vhint{font-size:11.5px; color:var(--dim); margin-bottom:11px}
   .vc{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:10px 12px; margin-bottom:8px; cursor:pointer}
@@ -385,7 +393,7 @@
       <div class="tab" data-pane="log" onclick="showPane('log',this)">Log</div>
     </div>
     <div class="pane active" id="pane-grammar"><h2 class="section">Past continuous &amp; simple past</h2><div id="grammar"></div></div>
-    <div class="pane" id="pane-practice"><div class="pracbar"><h2 class="section" style="margin:0">Grammar practice</h2><span id="pracScore">0 / 0</span></div><div class="prachint">Fill each gap: <b>was/were</b>, the right <b>verb form</b>, or <b>when/while</b>. Tap an answer.</div><div id="practice"></div></div>
+    <div class="pane" id="pane-practice"><div class="pracbar"><h2 class="section" style="margin:0">Grammar practice</h2><span id="pracScore">0 / 0</span></div><div class="pmenu" id="pracMenu"></div><div class="prachint" id="pracHint"></div><div id="practice"></div></div>
     <div class="pane" id="pane-vocab"><h2 class="section">Vocabulary</h2><div class="vhint">Tap a word to reveal its meaning and an example.</div><div id="vocab"></div></div>
     <div class="pane" id="pane-log"><h2 class="section">Your reports</h2><div id="log"><div class="logempty">No reports yet. Trigger the event, then build a sentence for each witness.</div></div></div>
   </aside>
@@ -569,6 +577,28 @@ const SCENES=[
     {q:'___ the raptors were chasing their prey, the sky turned red.', opts:['While','When'], a:'While', tip:'while + the longer background action.'},
     {q:'This time that morning, the herd ___ near the lake. (rest)', opts:['was resting','rested'], a:'was resting', tip:'In the middle of an action at a past moment → past continuous.'},
   ],
+  tenseEx:[
+    {q:'While the herd ___ , a bright light appeared. (graze)', opts:['was grazing','grazed'], a:'was grazing', tip:'Ongoing background action → past continuous.'},
+    {q:'The meteor ___ and the ground shook. (hit)', opts:['hit','was hitting'], a:'hit', tip:'One sudden, finished action → simple past.'},
+    {q:'The T-Rex ___ its prey when the sky went dark. (chase)', opts:['was chasing','chased'], a:'was chasing', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'This time that morning, the pterosaurs ___ over the sea. (fly)', opts:['were flying','flew'], a:'were flying', tip:'In the middle of an action at a past moment → past continuous.'},
+    {q:'When the light appeared, all the animals ___ up. (look)', opts:['looked','were looking'], a:'looked', tip:'A short, quick reaction → simple past.'},
+  ],
+  ing:[
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Short vowel + one consonant → double it: running.'},
+    {q:'swim → ___', opts:['swimming','swiming'], a:'swimming', tip:'Double the final consonant: swimming.'},
+    {q:'hide → ___', opts:['hiding','hideing'], a:'hiding', tip:'Drop the silent -e: hiding.'},
+    {q:'lie → ___', opts:['lying','lieing'], a:'lying', tip:'-ie becomes -ying: lying.'},
+    {q:'sit → ___', opts:['sitting','siting'], a:'sitting', tip:'Double the final consonant: sitting.'},
+    {q:'chase → ___', opts:['chasing','chaseing'], a:'chasing', tip:'Drop the silent -e: chasing.'},
+  ],
+  mistakes:[
+    {q:'The Triceratops were drinking at the river.', bad:'were', fix:'was', tip:'One animal → was.'},
+    {q:'The pterosaurs was flying over the valley.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The T-Rex was hunt when the light appeared.', bad:'hunt', fix:'hunting', tip:'was + -ing → was hunting.'},
+    {q:'The meteor was striking the Earth and stopped.', bad:'striking', fix:'struck', tip:'One finished action → simple past: struck.'},
+    {q:'The dinosaurs was grazing peacefully.', bad:'was', fix:'were', tip:'More than one → were.'},
+  ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0e0"/><stop offset="1" stop-color="#e7e3b8"/></linearGradient>
@@ -674,6 +704,28 @@ const SCENES=[
     {q:'Everyone stood up ___ the alarm went off.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
     {q:'___ the teacher was explaining, a phone started to buzz.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
     {q:'The boy by the window ___ the answer. (not know)', opts:['didn\'t know','wasn\'t knowing'], a:'didn\'t know', tip:'“know” is a state verb — no -ing form.'},
+  ],
+  tenseEx:[
+    {q:'The teacher ___ the lesson when the alarm rang. (explain)', opts:['was explaining','explained'], a:'was explaining', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The alarm ___ and everyone jumped. (ring)', opts:['rang','was ringing'], a:'rang', tip:'One sudden, finished action → simple past.'},
+    {q:'While I ___ , my friend was drawing. (write)', opts:['was writing','wrote'], a:'was writing', tip:'Two actions going on together → while + past continuous.'},
+    {q:'The whole class ___ into the corridor. (go)', opts:['went','was going'], a:'went', tip:'One completed action → simple past.'},
+    {q:'At nine o’clock, the students ___ a test. (do)', opts:['were doing','did'], a:'were doing', tip:'In the middle of it at that time → past continuous.'},
+  ],
+  ing:[
+    {q:'write → ___', opts:['writing','writeing'], a:'writing', tip:'Drop the silent -e: writing.'},
+    {q:'sit → ___', opts:['sitting','siting'], a:'sitting', tip:'Double the final consonant: sitting.'},
+    {q:'chat → ___', opts:['chatting','chating'], a:'chatting', tip:'Double the final consonant: chatting.'},
+    {q:'read → ___', opts:['reading','readding'], a:'reading', tip:'Long vowel sound — no doubling: reading.'},
+    {q:'begin → ___', opts:['beginning','begining'], a:'beginning', tip:'Stress on the last syllable → double: beginning.'},
+    {q:'daydream → ___', opts:['daydreaming','daydreamming'], a:'daydreaming', tip:'Ends in two consonants already — no doubling.'},
+  ],
+  mistakes:[
+    {q:'The teacher were writing on the board.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The two friends was whispering.', bad:'was', fix:'were', tip:'Two people → were.'},
+    {q:'I was read my book when the bell rang.', bad:'read', fix:'reading', tip:'was + -ing → was reading.'},
+    {q:'The boy was know the answer.', bad:'know', fix:'knew', tip:'“know” is a state verb — no -ing. Use knew.'},
+    {q:'Everyone stood up while the alarm rang.', bad:'while', fix:'when', tip:'A short, sudden action → when.'},
   ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="cwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaeff4"/><stop offset="1" stop-color="#d7dfe7"/></linearGradient></defs>
@@ -782,6 +834,28 @@ const SCENES=[
     {q:'The porter was washing the dishes ___ the fire started.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
     {q:'___ the chef was cooking, smoke filled the room.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
     {q:'___ the cook frying eggs when the fire started? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The chef ___ the soup when the pan caught fire. (stir)', opts:['was stirring','stirred'], a:'was stirring', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The pan ___ fire very quickly. (catch)', opts:['caught','was catching'], a:'caught', tip:'One sudden, finished action → simple past.'},
+    {q:'While the cook ___ , the waiter dropped a plate. (fry)', opts:['was frying','fried'], a:'was frying', tip:'Two actions together → while + past continuous.'},
+    {q:'The manager ___ the fire brigade. (call)', opts:['called','was calling'], a:'called', tip:'One completed action → simple past.'},
+    {q:'At that moment, the waiters ___ dinner to table five. (carry)', opts:['were carrying','carried'], a:'were carrying', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'fry → ___', opts:['frying','fring'], a:'frying', tip:'Keep the -y and add -ing: frying.'},
+    {q:'stir → ___', opts:['stirring','stiring'], a:'stirring', tip:'Double the final consonant: stirring.'},
+    {q:'chop → ___', opts:['chopping','choping'], a:'chopping', tip:'Double the final consonant: chopping.'},
+    {q:'make → ___', opts:['making','makeing'], a:'making', tip:'Drop the silent -e: making.'},
+    {q:'cut → ___', opts:['cutting','cuting'], a:'cutting', tip:'Double the final consonant: cutting.'},
+    {q:'boil → ___', opts:['boiling','boilling'], a:'boiling', tip:'Two vowels together — no doubling: boiling.'},
+  ],
+  mistakes:[
+    {q:'The chef were stirring the soup.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The waiters was carrying plates.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The cook was fry the eggs.', bad:'fry', fix:'frying', tip:'was + -ing → was frying.'},
+    {q:'The pan was catching fire and burned.', bad:'catching', fix:'caught', tip:'One finished action → caught.'},
+    {q:'The cat were sleeping on the shelf.', bad:'were', fix:'was', tip:'One animal → was.'},
   ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="ktile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7ecef"/><stop offset="1" stop-color="#d3dade"/></linearGradient></defs>
@@ -894,6 +968,28 @@ const SCENES=[
     {q:'The merchant was carrying jars ___ the ground began to shake.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
     {q:'___ people were shopping in the forum, ash began to fall.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
     {q:'The people ___ from the ash. (flee)', opts:['fled','were fleeing'], a:'fled', tip:'A completed action after the eruption → simple past.'},
+  ],
+  tenseEx:[
+    {q:'The baker ___ bread when the mountain shook. (sell)', opts:['was selling','sold'], a:'was selling', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'Vesuvius ___ with a huge roar. (erupt)', opts:['erupted','was erupting'], a:'erupted', tip:'One sudden, finished event → simple past.'},
+    {q:'While the children ___ , ash began to fall. (play)', opts:['were playing','played'], a:'were playing', tip:'Two actions together → while + past continuous.'},
+    {q:'The frightened people ___ out of the city. (run)', opts:['ran','were running'], a:'ran', tip:'One completed action → simple past.'},
+    {q:'That morning, the merchant ___ jars across the forum. (carry)', opts:['was carrying','carried'], a:'was carrying', tip:'In the middle of it at that time → past continuous.'},
+  ],
+  ing:[
+    {q:'sell → ___', opts:['selling','seling'], a:'selling', tip:'Double the final -l: selling.'},
+    {q:'carry → ___', opts:['carrying','caring'], a:'carrying', tip:'Keep the -y and add -ing: carrying.'},
+    {q:'trade → ___', opts:['trading','tradeing'], a:'trading', tip:'Drop the silent -e: trading.'},
+    {q:'dig → ___', opts:['digging','diging'], a:'digging', tip:'Double the final consonant: digging.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'tie → ___', opts:['tying','tieing'], a:'tying', tip:'-ie becomes -ying: tying.'},
+  ],
+  mistakes:[
+    {q:'The baker were selling bread.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The children was playing in the street.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The woman was fetch water.', bad:'fetch', fix:'fetching', tip:'was + -ing → was fetching.'},
+    {q:'Vesuvius was erupt in 79 AD.', bad:'erupt', fix:'erupted', tip:'One finished event → simple past: erupted.'},
+    {q:'The people was fleeing from the ash.', bad:'was', fix:'were', tip:'More than one → were.'},
   ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs>
@@ -1088,22 +1184,40 @@ function renderVocab(){
   document.getElementById('vocab').innerHTML=S.vocab.map(v=>
     `<div class="vc" onclick="this.classList.toggle('open')"><div class="vw">${v.w} <span class="pos">${v.pos}</span><span class="rev">tap ⇕</span></div><div class="vdef">${v.def}<div class="vex">${v.ex}</div></div></div>`).join('');
 }
-/* ===== PRACTICE (fill-in) ===== */
-let pracState={};
+/* ===== PRACTICE (multi-mode) ===== */
+const PRAC_MODES=[
+  {key:'gap',     label:'Gap-fill', field:'practice', type:'mc',      hint:'Fill each gap: <b>was/were</b>, the right <b>verb form</b>, or <b>when/while</b>. Tap an answer.'},
+  {key:'tense',   label:'Tense',    field:'tenseEx',  type:'mc',      hint:'Choose the correct tense — <b>past simple</b> or <b>past continuous</b>.'},
+  {key:'mistake', label:'Mistake',  field:'mistakes', type:'mistake', hint:'Each sentence has <b>one</b> wrong word. Tap it to correct it.'},
+  {key:'ing',     label:'-ing',     field:'ing',      type:'mc',      hint:'Choose the correct <b>-ing</b> spelling (double the consonant? drop the -e?).'},
+];
+let pracState={}, pracMode=null, curItems=[];
 function fmtQ(q){
   return q.replace('___','<span class="gap">_____</span>').replace(/\(([^)]+)\)\s*$/,'<span class="cue">($1)</span>');
 }
 function renderPractice(){
-  pracState={};
-  const items=S.practice||[];
+  const avail=PRAC_MODES.filter(m=>(S[m.field]||[]).length);
+  if(!avail.length){document.getElementById('pracMenu').innerHTML='';document.getElementById('practice').innerHTML='';document.getElementById('pracHint').innerHTML='';document.getElementById('pracScore').textContent='0 / 0';return;}
+  if(!avail.find(m=>m.key===pracMode)) pracMode=avail[0].key;
+  document.getElementById('pracMenu').innerHTML=avail.map(m=>`<button class="pmode${m.key===pracMode?' active':''}" onclick="setPracMode('${m.key}')">${m.label}</button>`).join('');
+  renderPracMode();
+}
+function setPracMode(k){ pracMode=k; renderPractice(); }
+function renderPracMode(){
+  const m=PRAC_MODES.find(x=>x.key===pracMode); if(!m)return;
+  pracState={}; curItems=S[m.field]||[];
+  document.getElementById('pracHint').innerHTML=m.hint;
+  if(m.type==='mistake') renderMistakes(curItems); else renderMC(curItems);
+  updatePracScore();
+}
+function renderMC(items){
   document.getElementById('practice').innerHTML=items.map((it,i)=>{
     const opts=it.opts.map((o,j)=>`<button class="pch" id="pr-${i}-${j}" onclick="pickPrac(${i},${j})">${o}</button>`).join('');
     return `<div class="prac" id="prac-${i}"><div class="pq" id="pq-${i}">${i+1}. ${fmtQ(it.q)}</div><div class="chips">${opts}</div><div class="ptip" id="ptip-${i}"></div></div>`;
   }).join('');
-  updatePracScore();
 }
 function pickPrac(i,j){
-  const it=S.practice[i]; if(!it||(pracState[i]&&pracState[i].done)) return;
+  const it=curItems[i]; if(!it||(pracState[i]&&pracState[i].done)) return;
   const ok=it.opts[j]===it.a;
   const btn=document.getElementById('pr-'+i+'-'+j), tip=document.getElementById('ptip-'+i);
   if(ok){
@@ -1118,8 +1232,30 @@ function pickPrac(i,j){
   }
   updatePracScore();
 }
+function renderMistakes(items){
+  document.getElementById('practice').innerHTML=items.map((it,i)=>{
+    const toks=it.q.split(' '); it._tok=toks;
+    const words=toks.map((w,wi)=>`<button class="mword" id="mw-${i}-${wi}" onclick="pickMistake(${i},${wi})">${w}</button>`).join(' ');
+    return `<div class="prac" id="prac-${i}"><div class="pq" id="pq-${i}" style="margin-bottom:9px">${i+1}. ${words}</div><div class="ptip" id="ptip-${i}"></div></div>`;
+  }).join('');
+}
+function pickMistake(i,wi){
+  const it=curItems[i]; if(!it||(pracState[i]&&pracState[i].done)) return;
+  const raw=it._tok[wi], clean=raw.replace(/[.,?!;:]/g,''), punct=raw.slice(clean.length);
+  const tip=document.getElementById('ptip-'+i);
+  if(clean===it.bad){
+    pracState[i]={done:true};
+    it._tok.forEach((w,k)=>{const b=document.getElementById('mw-'+i+'-'+k); if(b) b.disabled=true;});
+    document.getElementById('mw-'+i+'-'+wi).outerHTML='<b class="fill">'+it.fix+'</b>'+punct;
+    tip.className='ptip show good'; tip.innerHTML='✓ '+(it.tip||('“'+it.bad+'” → “'+it.fix+'”.'));
+    updatePracScore();
+  } else {
+    const b=document.getElementById('mw-'+i+'-'+wi); b.classList.add('bad');
+    tip.className='ptip show bad'; tip.innerHTML='✗ That word is fine — keep looking for the mistake.';
+  }
+}
 function updatePracScore(){
-  const total=(S.practice||[]).length;
+  const total=curItems.length;
   const done=Object.keys(pracState).filter(k=>pracState[k]&&pracState[k].done).length;
   const el=document.getElementById('pracScore'); if(el) el.textContent=done+' / '+total;
 }
