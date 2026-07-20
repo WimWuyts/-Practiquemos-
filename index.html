@@ -264,6 +264,44 @@
   .prompter .pbody{font-size:26px; line-height:1.7; color:var(--text); white-space:pre-wrap}
   .prompter .pclose{position:fixed; top:16px; right:18px}
 
+  /* ---------- Role missions & tasks ---------- */
+  .mission{margin-top:9px; font-size:12.5px; color:var(--text); background:var(--panel2); border-radius:7px; padding:7px 9px}
+  .mission b{color:var(--cyan)}
+  .rtask{display:flex; gap:8px; align-items:flex-start; font-size:12.5px; color:var(--muted); padding:5px 0; cursor:pointer}
+  .rtask input{margin-top:2px; accent-color:var(--green); flex-shrink:0}
+  .rtask.done{color:var(--text)}
+  .rnotes{width:100%; margin-top:6px; background:var(--panel2); border:1px solid var(--border); border-radius:7px; color:var(--text); font-size:12.5px; padding:7px; resize:vertical; min-height:54px; font-family:var(--sans)}
+  .rnotes:focus{outline:none; border-color:var(--cyan)}
+
+  /* ---------- Two-question flag panel ---------- */
+  .twoq{display:flex; flex-direction:column; gap:9px}
+  .twoq .q{display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:12.5px}
+  .twoq .q>span{flex:1 1 100%; color:var(--muted); font-weight:600}
+  .qb{border:1px solid var(--border); background:var(--panel2); color:var(--text); font-size:12px; padding:5px 12px; border-radius:6px; cursor:pointer; transition:.12s}
+  .qb:hover{border-color:var(--cyan)}
+  .qb.on{background:rgba(57,197,207,.16); border-color:var(--cyan); color:#a7ecf2}
+  .vres{margin-top:4px; padding:10px 12px; border-radius:9px; font-size:13px; animation:slide .3s ease}
+  .vres.good{background:rgba(63,185,80,.1); border:1px solid rgba(63,185,80,.4)}
+  .vres.bad{background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.4)}
+  .vres .vh{font-weight:700; margin-bottom:3px}
+
+  /* ---------- Debrief inside studio ---------- */
+  .debrief details{border:1px solid var(--border); background:var(--panel); border-radius:9px; margin-bottom:8px; overflow:hidden}
+  .debrief summary{cursor:pointer; padding:9px 11px; font-weight:600; font-size:12.5px; list-style:none}
+  .debrief summary::-webkit-details-marker{display:none}
+  .debrief summary::before{content:"▸ "; color:var(--cyan)}
+  .debrief details[open] summary::before{content:"▾ "}
+  .debrief .dc{padding:0 12px 11px; font-size:12.5px; color:var(--muted); line-height:1.55}
+  .debrief .dc b{color:var(--text)}
+  .debrief .refl{margin-bottom:9px}
+  .debrief .refl label{display:block; font-size:12.5px; margin-bottom:4px; color:var(--text)}
+  .debrief .refl textarea{width:100%; background:var(--panel); border:1px solid var(--border); border-radius:7px; color:var(--text); font-size:12.5px; padding:7px; min-height:50px; resize:vertical; font-family:var(--sans)}
+  .debrief .refl textarea:focus{outline:none; border-color:var(--cyan)}
+  .rubric{width:100%; border-collapse:collapse; font-size:11px; margin-top:2px}
+  .rubric th,.rubric td{border:1px solid var(--border); padding:5px 6px; text-align:left; vertical-align:top}
+  .rubric th{background:var(--panel); color:var(--muted); font-weight:700}
+  .rubric td:first-child{color:var(--text); font-weight:600}
+
   @media(prefers-reduced-motion:reduce){
     .drop,.flare,.sweep,.flick,.rise,.steam,.sink{animation:none}
   }
@@ -392,11 +430,46 @@
         <div class="rlabel">Newsroom phrasebook — attributie &amp; onzekerheid</div>
         <div class="chipset" id="phrasebook"></div>
       </div>
-      <div class="sright">
+      <div class="sright debrief">
         <div class="rlabel">Wat kwam er binnen? (bevestigde feiten)</div>
         <ul class="facts" id="factsList"></ul>
         <div class="rlabel">Zelf-check vóór je publiceert</div>
         <div id="checklist"></div>
+
+        <div class="rlabel">Reflectie</div>
+        <div class="refl"><label>1 · Welke bron vertrouwde je het meest — en waarom?</label><textarea id="refl1" oninput="saveDraft()"></textarea></div>
+        <div class="refl"><label>2 · Wat maakte de smartphonefoto onmogelijk, ook al klopte het beeld?</label><textarea id="refl2" oninput="saveDraft()"></textarea></div>
+        <div class="refl"><label>3 · Welke kop was het moeilijkst om eerlijk te formuleren?</label><textarea id="refl3" oninput="saveDraft()"></textarea></div>
+
+        <div class="rlabel">Meer</div>
+        <details>
+          <summary>📋 Beoordelingsrubric</summary>
+          <div class="dc"><table class="rubric">
+            <tr><th>Criterium</th><th>Nog niet</th><th>Op weg</th><th>Sterk</th></tr>
+            <tr><td>Taakvervulling</td><td>onvolledig verslag</td><td>hoofdzaken erin</td><td>helder, volledig, boeiend</td></tr>
+            <tr><td>Tijden</td><td>tijden lopen door elkaar</td><td>meestal correct</td><td>past/continuous/present kloppen en passen bij de zekerheid</td></tr>
+            <tr><td>Attributie &amp; zekerheid</td><td>gerucht = feit</td><td>soms toegeschreven</td><td>consequent say/claim + eerlijke onzekerheid</td></tr>
+            <tr><td>Bronnenkritiek</td><td>anachronisme gepubliceerd</td><td>twijfel geuit</td><td>anachronismen herkend én uitgelegd</td></tr>
+            <tr><td>Register &amp; woordkeus</td><td>spreektaal</td><td>eenvoudig nieuwsregister</td><td>vlot nieuwsregister met phrasebook-chunks</td></tr>
+          </table></div>
+        </details>
+        <details>
+          <summary>📄 Voorbeeldartikel (kijk pas als je klaar bent)</summary>
+          <div class="dc">
+            <b>TITANIC SINKS ON HER MAIDEN VOYAGE</b><br><br>
+            The Titanic <b>struck</b> an iceberg at 23:40 on 14 April 1912 and <b>sank</b> less than three hours later. At 02:20 the ship <b>went</b> under; hundreds of people <b>were</b> in the water.<br><br>
+            Earlier, the White Star Line <b>said</b> there <b>was</b> no danger, but passengers <b>reported</b> that water <b>was coming</b> into the lower decks. The Carpathia <b>picked</b> up the distress call and <b>turned</b> around, but she <b>was</b> still four hours away.<br><br>
+            The Carpathia now <b>says</b> it <b>rescued</b> about 705 people. More than 1,500 <b>are</b> still missing. (A “radar” report and a “smartphone” photograph <b>arrived</b> too, but the newsroom did not publish them — neither source could be real in 1912.)
+          </div>
+        </details>
+        <details>
+          <summary>🕵 Nabespreking: wat was er mis?</summary>
+          <div class="dc">
+            <b>De radar (00:12).</b> Radar werd pas rond de Tweede Wereldoorlog gebruikt. Het wóórd alleen al hoort niet in 1912 → anachronisme.<br><br>
+            <b>De smartphonefoto (01:20).</b> Het beeld kán kloppen, maar smartphones bestonden niet. Waar ≠ authentiek: de bron kan onmogelijk echt zijn.<br><br>
+            <b>“Everyone is safe” (08:30).</b> Dit is écht gebeurd: de eerste kranten in april 1912 meldden dat iedereen gered was. Een tijd-echte bron met een belang kan gewoon liegen → manipulatie, geen anachronisme.
+          </div>
+        </details>
       </div>
     </div>
     <div class="sfoot">
@@ -426,13 +499,27 @@
    DATA — de rollen
    ========================================================= */
 const ROLES = [
-  {em:"🎙️", name:"News Anchor", desc:"Presenteert de uitzending en houdt overzicht. Bepaalt de toon.", g:"Simple present · simple past"},
-  {em:"📡", name:"Field Reporter", desc:"Doet live verslag ‘vanaf het schip’. Beschrijft wat er nú gebeurt.", g:"Present continuous"},
-  {em:"🎤", name:"Interviewer", desc:"Ondervraagt passagiers en bemanning. Stelt scherpe vragen.", g:"Present continuous · simple past"},
-  {em:"🔍", name:"Fact-checker", desc:"Controleert bronnen en zoekt tegenstrijdigheden. Bevestigt of verwerpt.", g:"Simple past"},
-  {em:"🗞️", name:"Editor", desc:"Beslist wat gepubliceerd mag worden. Weegt zekerheid tegen snelheid.", g:"Simple present · simple past"},
-  {em:"⏳", name:"Time Analyst", desc:"Spoort informatie op die niet in 1912 thuishoort. Bewaakt de tijdlijn.", g:"Simple past · present continuous"},
+  {em:"🎙️", name:"News Anchor", desc:"Presenteert de uitzending en houdt overzicht. Bepaalt de toon.", g:"Simple present · simple past",
+    mission:"Open en sluit de uitzending; vat samen wat de redactie wél en niet zeker weet.",
+    tasks:["Schrijf een openingszin voor de uitzending.","Benoem 1 ding dat zeker is én 1 ding dat nog onbevestigd is."]},
+  {em:"📡", name:"Field Reporter", desc:"Doet live verslag ‘vanaf het schip’. Beschrijft wat er nú gebeurt.", g:"Present continuous",
+    mission:"Beschrijf live wat er op dit moment gebeurt, in de present continuous.",
+    tasks:["Beschrijf 1 scène live (‘… is/are + -ing’).","Gebruik minstens twee -ing-vormen."]},
+  {em:"🎤", name:"Interviewer", desc:"Ondervraagt passagiers en bemanning. Stelt scherpe vragen.", g:"Present continuous · simple past",
+    mission:"Ondervraag een passagier of bemanningslid met scherpe vragen.",
+    tasks:["Schrijf 3 vragen aan een getuige (hieronder).","Stel minstens 1 vraag in de simple past (‘What did you see?’)."], notes:true},
+  {em:"🔍", name:"Fact-checker", desc:"Controleert bronnen en zoekt tegenstrijdigheden. Bevestigt of verwerpt.", g:"Simple past",
+    mission:"Vergelijk de bronnen en spoor tegenspraak op vóór er iets gepubliceerd wordt.",
+    tasks:["Vind de tegenspraak tussen de rederij en een ooggetuige.","Markeer 1 bericht als ‘onbevestigd’."]},
+  {em:"🗞️", name:"Editor", desc:"Beslist wat gepubliceerd mag worden. Weegt zekerheid tegen snelheid.", g:"Simple present · simple past",
+    mission:"Beslis bij elk bericht: publiceren of vasthouden — en waarom.",
+    tasks:["Kies bij elk bericht Publish of Hold.","Motiveer één Hold-beslissing hardop."]},
+  {em:"⏳", name:"Time Analyst", desc:"Spoort informatie op die niet in 1912 thuishoort. Bewaakt de tijdlijn.", g:"Simple past · present continuous",
+    mission:"Bewaak de tijdlijn: welke bron hoort niet in 1912 thuis?",
+    tasks:["Flag de 2 berichten die niet uit 1912 kunnen komen.","Leg uit waaróm de bron onmogelijk is."]},
 ];
+function saveNotes(i,val){ try{ localStorage.setItem('c24_note_'+i, val); }catch(e){} }
+function loadNotes(i){ try{ return localStorage.getItem('c24_note_'+i)||''; }catch(e){ return ''; } }
 
 /* =========================================================
    DATA — grammatica-toolkit
@@ -779,11 +866,14 @@ const decisions = {}; // per update-index: {pub|hold, flag}
    RENDER — statische panelen
    ========================================================= */
 function renderRoles(){
-  document.getElementById('roles').innerHTML = ROLES.map(r=>`
+  document.getElementById('roles').innerHTML = ROLES.map((r,i)=>`
     <div class="card">
       <h3><span class="role-em">${r.em}</span> ${r.name}</h3>
       <p>${r.desc}</p>
       <div class="g">▸ ${r.g}</div>
+      <div class="mission"><b>Jouw missie:</b> ${r.mission}</div>
+      ${r.tasks.map(t=>`<label class="rtask"><input type="checkbox" onchange="this.closest('.rtask').classList.toggle('done',this.checked)"><span>${t}</span></label>`).join('')}
+      ${r.notes?`<textarea class="rnotes" placeholder="Jouw 3 vragen…" oninput="saveNotes(${i},this.value)">${loadNotes(i)}</textarea>`:''}
     </div>`).join('');
 }
 function renderGrammar(){
@@ -882,20 +972,36 @@ function flag(i){
   const el = document.getElementById('wire-'+i);
   el.querySelector('.chip.flag').classList.toggle('active', decisions[i].flagged);
   const v = document.getElementById('verdict-'+i);
-  const u = UPDATES[i];
-  if(decisions[i].flagged){
-    if(u.trap){
-      v.className = 'verdict good show';
-      v.innerHTML = `<div class="vh">🎯 Time Analyst was right</div>${u.trap.good}`;
-    } else {
-      v.className = 'verdict bad show';
-      v.innerHTML = `<div class="vh">🤔 Careful</div>Deze bron is <b>wél</b> tijd-echt (period-authentic). Onterecht flaggen kan een waar verhaal onderdrukken. Bespreek: waaróm leek het verdacht? Soms is een echte bron gewoon onvolledig of bevooroordeeld — dat is iets anders dan een anachronisme.`;
-    }
-  } else {
-    v.className = 'verdict';
-    v.innerHTML = '';
-  }
+  if(decisions[i].flagged){ v.className = 'verdict show'; renderFlagPanel(i); }
+  else { v.className = 'verdict'; v.innerHTML = ''; }
   renderLog();
+}
+function setQ(i, q, val){ decisions[i][q] = val; renderFlagPanel(i); }
+function renderFlagPanel(i){
+  const d = decisions[i];
+  const v = document.getElementById('verdict-'+i);
+  const q1 = [['ja','Ja'],['onzeker','Onzeker'],['nee','Nee']];
+  const q2 = [['ja','Ja'],['nee','Nee']];
+  let html = `<div class="twoq">
+    <div class="q"><span>1 · Kan de informatie waar zijn?</span>${q1.map(o=>`<button class="qb ${d.q1===o[0]?'on':''}" onclick="setQ(${i},'q1','${o[0]}')">${o[1]}</button>`).join('')}</div>
+    <div class="q"><span>2 · Kan de bron echt zijn in 1912?</span>${q2.map(o=>`<button class="qb ${d.q2===o[0]?'on':''}" onclick="setQ(${i},'q2','${o[0]}')">${o[1]}</button>`).join('')}</div>`;
+  if(d.q1 && d.q2) html += flagVerdict(i);
+  v.innerHTML = html + `</div>`;
+}
+function flagVerdict(i){
+  const u = UPDATES[i], d = decisions[i];
+  if(u.trap){
+    let lead;
+    if(u.kind==='anachronism'){
+      lead = d.q2==='nee' ? 'Je zag het: deze bron kan onmogelijk uit 1912 komen. '
+                          : 'Kijk nog eens naar vraag 2 — kón deze bron in 1912 al bestaan? ';
+    } else {
+      lead = (d.q1==='nee'||d.q1==='onzeker') ? 'Je twijfelde terecht aan de inhoud zelf. '
+                          : 'Kijk nog eens naar vraag 1 — kán dit echt waar zijn? ';
+    }
+    return `<div class="vres good"><div class="vh">🎯 Goed onderzocht</div>${lead}${u.trap.good}</div>`;
+  }
+  return `<div class="vres bad"><div class="vh">⚠️ Tijd-echte bron</div>Deze bron <b>kán</b> echt uit 1912 komen. Onterecht flaggen kan een waar verhaal onderdrukken. Vraag je af of de bron eerder <b>onvolledig of bevooroordeeld</b> is dan onmogelijk — dat is iets anders dan een anachronisme.</div>`;
 }
 
 /* =========================================================
@@ -1089,13 +1195,15 @@ function saveDraft(flash){
   try{
     localStorage.setItem('c24_head', document.getElementById('headlineBox').value);
     localStorage.setItem('c24_art', document.getElementById('articleBox').value);
+    ['refl1','refl2','refl3'].forEach(id=>{ const el=document.getElementById(id); if(el) localStorage.setItem('c24_'+id, el.value); });
   }catch(e){}
-  if(flash){ const b=event&&event.target; if(b){ const o=b.textContent; b.textContent='✓ Bewaard'; setTimeout(()=>b.textContent=o,1200);} }
+  if(flash===true){ const b=event&&event.target; if(b){ const o=b.textContent; b.textContent='✓ Bewaard'; setTimeout(()=>b.textContent=o,1200);} }
 }
 function loadDraft(){
   try{
     document.getElementById('headlineBox').value = localStorage.getItem('c24_head')||'';
     document.getElementById('articleBox').value = localStorage.getItem('c24_art')||'';
+    ['refl1','refl2','refl3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value = localStorage.getItem('c24_'+id)||''; });
   }catch(e){}
   updateWC();
 }

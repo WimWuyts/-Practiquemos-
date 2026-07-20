@@ -65,6 +65,21 @@ studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
 - **Bewaar** (lokaal) en **Download .txt**. Opnemen werkt het betrouwbaarst
   wanneer je het bestand lokaal opent en microfoontoegang geeft.
 
+## Actieve rollen, bronnencheck & nabespreking
+
+- **Rollen met taken.** Op het tabblad *Rollen* heeft elke rol nu een eigen
+  missie met afvinkbare taken (de Interviewer typt bv. 3 vragen in), zodat elke
+  leerling steeds iets te dóén heeft.
+- **Twee-vragen-bronnencheck.** De 🚩-knop bij elk bericht opent twee vragen —
+  *Kan de informatie waar zijn?* en *Kan de bron echt zijn in 1912?* — en geeft
+  daarna feedback. Zo leren leerlingen het verschil tussen *anachronisme* (bron
+  onmogelijk) en *manipulatie* (bron echt, maar liegt). De vragen staan op élk
+  bericht, zodat niet verklapt wordt welke besmet zijn.
+- **Nabespreking in de studio.** Onderin de eindtaak-studio zitten
+  reflectievragen, een **beoordelingsrubric**, een **voorbeeldartikel** (pas
+  openklappen als je klaar bent) en een **historische onthulling** (o.a. dat
+  echte kranten in 1912 ook "iedereen gered" meldden).
+
 ## Zo gebruik je het in de klas
 
 1. **Open `index.html`** in een browser (dubbelklikken volstaat; werkt ook op
