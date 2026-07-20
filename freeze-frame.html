@@ -204,6 +204,86 @@
   .mword:hover{background:var(--panel2); border-color:var(--border)}
   .mword.bad{background:rgba(224,146,26,.18); color:#a8720a}
   .mword:disabled{cursor:default}
+  /* click the character */
+  .clickq{font-size:13.5px; font-weight:600; margin-bottom:8px; line-height:1.5}
+  .clickq b{color:var(--cyan)}
+  .clickscene{position:relative; border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:10px}
+  .clickscene svg{display:block; width:100%; height:auto}
+  .hotspot{position:absolute; width:12%; padding-bottom:12%; height:0; border-radius:50%; transform:translate(-50%,-50%); border:2px dashed rgba(255,255,255,.85); background:rgba(42,143,111,.18); cursor:pointer; box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+  .hotspot:hover{background:rgba(42,143,111,.4)}
+  .hotspot.good{border-color:#fff; background:rgba(79,154,58,.6)}
+  .hotspot.bad{border-color:#fff; background:rgba(224,146,26,.55)}
+  /* match the halves */
+  .matchwrap{display:flex; gap:9px; margin-bottom:8px}
+  .mcol{flex:1; display:flex; flex-direction:column; gap:6px}
+  .mcolh{font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); font-weight:700; margin-bottom:2px}
+  .mitem{border:1px solid var(--border); background:var(--panel); border-radius:8px; padding:8px 9px; font-size:12px; cursor:pointer; line-height:1.35; transition:.12s}
+  .mitem:hover{border-color:var(--cyan)}
+  .mitem.sel{border-color:var(--cyan); background:rgba(42,143,111,.14)}
+  .mitem.done{border-color:var(--green); background:rgba(79,154,58,.14); cursor:default; color:#3a7a2a}
+  .mitem.badflash{border-color:var(--amber); background:rgba(224,146,26,.14)}
+  /* word-order scramble */
+  .scrq{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:11px 13px; margin-bottom:10px}
+  .scrline{min-height:32px; border-bottom:2px dashed var(--border); margin-bottom:9px; display:flex; flex-wrap:wrap; gap:5px; padding:4px 0}
+  .scrbank{display:flex; flex-wrap:wrap; gap:5px}
+  .stok{border:1px solid var(--border); background:var(--panel2); border-radius:7px; padding:5px 9px; font-size:12.5px; cursor:pointer; font-family:var(--mono)}
+  .stok.used{opacity:.28; pointer-events:none}
+  .stok.placed{background:rgba(42,143,111,.12); border-color:var(--cyan)}
+  .scrfoot{display:flex; gap:7px; align-items:center; margin-top:4px}
+  .scrmini{font-size:11px; padding:4px 9px}
+  /* story cloze */
+  .storytabs{display:flex; gap:6px; margin-bottom:9px}
+  .storyt{border:1px solid var(--border); background:var(--panel); color:var(--muted); font-size:12px; font-weight:700; padding:5px 11px; border-radius:16px; cursor:pointer}
+  .storyt.active{background:var(--cyan); border-color:var(--cyan); color:#fff}
+  .story{font-size:13.5px; line-height:2.05; border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:12px 14px}
+  .story .sttl{font-weight:700; font-size:14px; margin-bottom:6px; line-height:1.3}
+  .gsel{font-family:var(--mono); font-size:12px; border:1px solid var(--cyan); border-radius:5px; padding:2px 3px; background:var(--panel2); color:var(--text)}
+  .gsel.good{border-color:var(--green); background:rgba(79,154,58,.16); color:#3a7a2a}
+  .gsel.bad{border-color:var(--amber); background:rgba(224,146,26,.16); color:#a8720a}
+  /* listening */
+  .lqrow{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:11px 13px; margin-bottom:10px}
+  .lqhead{display:flex; align-items:center; gap:10px; margin-bottom:9px}
+  .lplay{border:1px solid var(--cyan); background:rgba(42,143,111,.1); color:#1c6b53; font-weight:700; font-size:13px; padding:7px 13px; border-radius:8px; cursor:pointer}
+  .lplay:hover{background:rgba(42,143,111,.2)}
+  .lopts{display:flex; flex-direction:column; gap:6px}
+  .lopt{border:1px solid var(--border); background:var(--panel2); text-align:left; font-size:12.5px; padding:7px 10px; border-radius:8px; cursor:pointer; line-height:1.35}
+  .lopt:hover{border-color:var(--cyan)}
+  .lopt.good{border-color:var(--green); background:rgba(79,154,58,.16); color:#3a7a2a}
+  .lopt.bad{border-color:var(--amber); background:rgba(224,146,26,.14); color:#a8720a}
+  /* quiz show (kahoot-style) */
+  #quiz{position:fixed; inset:0; z-index:130; background:linear-gradient(160deg,#2b0f52,#0f2a5e); display:none; flex-direction:column; color:#fff; padding:18px}
+  #quiz.open{display:flex}
+  .qbar{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+  .qbrand{font-weight:800; letter-spacing:1px; font-size:15px; display:flex; align-items:center; gap:8px}
+  .qmeta{margin-left:auto; display:flex; gap:16px; align-items:center; font-family:var(--mono); font-size:13px}
+  .qclose{border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.1); color:#fff; padding:7px 12px; border-radius:8px; cursor:pointer; font-weight:600}
+  .qstage{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; max-width:1000px; width:100%; margin:0 auto; min-height:0}
+  .qstart h2{font-size:30px; margin:0 0 6px} .qstart p{color:#cdd6ea; font-size:15px; max-width:560px; margin:6px auto}
+  .qmodes{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:18px}
+  .qmode{width:230px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); border-radius:14px; padding:18px; cursor:pointer; text-align:left; color:#fff}
+  .qmode:hover{background:rgba(255,255,255,.16)}
+  .qmode .qm-t{font-weight:800; font-size:17px; margin-bottom:5px}
+  .qmode .qm-d{font-size:12.5px; color:#cdd6ea; line-height:1.45}
+  .qtimerwrap{width:100%; max-width:760px; height:10px; background:rgba(255,255,255,.15); border-radius:6px; overflow:hidden; margin-bottom:14px}
+  .qtimerbar{height:100%; width:100%; background:linear-gradient(90deg,#26e08a,#e0d21a,#e21b3c); transition:width .1s linear}
+  .qprog{font-family:var(--mono); font-size:13px; color:#cdd6ea; margin-bottom:8px}
+  .qquestion{font-size:26px; font-weight:800; line-height:1.3; margin:6px 0 20px; max-width:820px}
+  .qtiles{display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; max-width:760px}
+  .qtiles.two{grid-template-columns:1fr 1fr}
+  .qtile{border:none; border-radius:12px; color:#fff; font-size:18px; font-weight:800; padding:20px 16px; cursor:pointer; display:flex; align-items:center; gap:12px; text-align:left; min-height:74px; transition:.1s}
+  .qtile:hover{filter:brightness(1.07)} .qtile:disabled{cursor:default}
+  .qtile .qshape{font-size:22px}
+  .qtile.red{background:#e21b3c} .qtile.blue{background:#1368ce} .qtile.yellow{background:#d89e00} .qtile.green{background:#26890c}
+  .qtile.dim{opacity:.35} .qtile.win{outline:4px solid #fff; box-shadow:0 0 0 3px #26e08a}
+  .qtile.lose{opacity:.4}
+  .qfeed{font-size:22px; font-weight:800; margin:10px 0}
+  .qbtn{border:none; background:#fff; color:#20261a; font-weight:800; font-size:15px; padding:12px 22px; border-radius:10px; cursor:pointer; margin-top:6px}
+  .qbtn.ghostw{background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.35)}
+  .qtypein{font-size:22px; padding:12px 16px; border-radius:10px; border:2px solid rgba(255,255,255,.5); background:rgba(255,255,255,.12); color:#fff; text-align:center; width:280px; max-width:80%}
+  .qtypein::placeholder{color:#aab6d4}
+  .qscore h2{font-size:34px; margin:0 0 8px}
+  .qscore .qbig{font-size:64px; font-weight:800; font-family:var(--mono); color:#26e08a}
+  @media(max-width:640px){ .qtiles{grid-template-columns:1fr} .qquestion{font-size:20px} }
 
   .vhint{font-size:11.5px; color:var(--dim); margin-bottom:11px}
   .vc{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:10px 12px; margin-bottom:8px; cursor:pointer}
@@ -393,7 +473,7 @@
       <div class="tab" data-pane="log" onclick="showPane('log',this)">Log</div>
     </div>
     <div class="pane active" id="pane-grammar"><h2 class="section">Past continuous &amp; simple past</h2><div id="grammar"></div></div>
-    <div class="pane" id="pane-practice"><div class="pracbar"><h2 class="section" style="margin:0">Grammar practice</h2><span id="pracScore">0 / 0</span></div><div class="pmenu" id="pracMenu"></div><div class="prachint" id="pracHint"></div><div id="practice"></div></div>
+    <div class="pane" id="pane-practice"><div class="pracbar"><h2 class="section" style="margin:0">Grammar practice</h2><span id="pracScore">0 / 0</span></div><div class="pmenu" id="pracMenu"></div><div class="prachint" id="pracHint"></div><div id="practice"></div><button class="btn primary" style="width:100%;margin-top:12px" onclick="quizOpen()">🎮 Play the Quiz Show</button></div>
     <div class="pane" id="pane-vocab"><h2 class="section">Vocabulary</h2><div class="vhint">Tap a word to reveal its meaning and an example.</div><div id="vocab"></div></div>
     <div class="pane" id="pane-log"><h2 class="section">Your reports</h2><div id="log"><div class="logempty">No reports yet. Trigger the event, then build a sentence for each witness.</div></div></div>
   </aside>
@@ -435,6 +515,16 @@
 <!-- DOELEN -->
 <div class="modal" id="doelen"><div class="hcard"><div class="hh">🎓 Leerplandoelen (docent)<div class="spacer" style="flex:1"></div><button class="btn hclose" onclick="closeDoelen()">✕ Sluiten</button></div>
   <div class="hb"><div class="doelhead">II-EngS-d · 2de graad D-finaliteit · Moderne talen · ERK-richtsnoer B1</div><div id="doelenList"></div></div></div></div>
+
+<!-- QUIZ SHOW (Kahoot-style) -->
+<div id="quiz">
+  <div class="qbar">
+    <div class="qbrand">▣ FREEZE FRAME QUIZ <span id="qSceneName" style="opacity:.7;font-weight:600"></span></div>
+    <div class="qmeta" id="qMeta"></div>
+    <button class="qclose" onclick="quizClose()">✕ Close</button>
+  </div>
+  <div class="qstage" id="qStage"></div>
+</div>
 
 <div id="printDoc"></div>
 
@@ -599,6 +689,52 @@ const SCENES=[
     {q:'The meteor was striking the Earth and stopped.', bad:'striking', fix:'struck', tip:'One finished action → simple past: struck.'},
     {q:'The dinosaurs was grazing peacefully.', bad:'was', fix:'were', tip:'More than one → were.'},
   ],
+  spots:{trike:[58,172], stego:[150,150], ptero:[135,44], trex:[330,138], brachi:[232,108], raptors:[220,188]},
+  match:[
+    {a:'The Triceratops was drinking at the river', b:'when it heard a loud roar'},
+    {a:'The T-Rex was hunting near the trees', b:'when its prey suddenly froze'},
+    {a:'The pterosaurs were flying over the valley', b:'when the sky lit up'},
+    {a:'The Stegosaurus was eating ferns', b:'when the ground began to shake'},
+    {a:'The raptors were chasing a small dinosaur', b:'when the meteor struck'},
+  ],
+  scramble:[
+    {answer:'The Stegosaurus was eating ferns when the meteor struck.'},
+    {answer:'The pterosaurs were flying over the valley.'},
+    {answer:'The T-Rex was hunting when the light appeared.'},
+  ],
+  stories:[
+    {title:'A quiet morning', text:'It was a warm morning in the Cretaceous. The sun {0} and the herds {1} peacefully by the river. A group of Triceratops {2} water, while two Stegosaurus {3} ferns near the rocks. High above, the pterosaurs {4} over the valley. Suddenly, a bright light {5} in the sky. While everyone {6} up, the ground {7} to shake. The great meteor {8} the Earth, and in that moment the world {9} forever.', gaps:[
+      {opts:['was shining','shone'], a:'was shining'},
+      {opts:['were grazing','grazed'], a:'were grazing'},
+      {opts:['were drinking','drank'], a:'were drinking'},
+      {opts:['were eating','ate'], a:'were eating'},
+      {opts:['were flying','flew'], a:'were flying'},
+      {opts:['appeared','was appearing'], a:'appeared'},
+      {opts:['was looking','looked'], a:'was looking'},
+      {opts:['began','was beginning'], a:'began'},
+      {opts:['struck','was striking'], a:'struck'},
+      {opts:['changed','was changing'], a:'changed'},
+    ]},
+    {title:'The last hunt', text:'That afternoon, a hungry T-Rex {0} through the forest. It {1} for food when it saw a herd of Triceratops. The Triceratops {2} water and {3} not see the danger. While the T-Rex {4} closer, the pterosaurs above {5} a warning. Suddenly the sky {6} bright orange. The other animals {7} in fear. The T-Rex {8} its hunt and looked up. A huge meteor {9} towards the Earth.', gaps:[
+      {opts:['was walking','walked'], a:'was walking'},
+      {opts:['was looking','looked'], a:'was looking'},
+      {opts:['were drinking','drank'], a:'were drinking'},
+      {opts:['did','were'], a:'did'},
+      {opts:['was coming','came'], a:'was coming'},
+      {opts:['gave','were giving'], a:'gave'},
+      {opts:['turned','was turning'], a:'turned'},
+      {opts:['froze','were freezing'], a:'froze'},
+      {opts:['stopped','was stopping'], a:'stopped'},
+      {opts:['was falling','fell'], a:'was falling'},
+    ]},
+  ],
+  listen:[
+    {say:'The Triceratops was drinking at the river.', opts:['The Triceratops was drinking at the river.','The Triceratops were drinking at the river.','The Triceratops drank at the river.'], a:'The Triceratops was drinking at the river.'},
+    {say:'The pterosaurs were flying over the valley.', opts:['The pterosaurs was flying over the valley.','The pterosaurs were flying over the valley.','The pterosaurs flew over the valley.'], a:'The pterosaurs were flying over the valley.'},
+    {say:'The meteor struck the Earth.', opts:['The meteor struck the Earth.','The meteor was striking the Earth.','The meteor strikes the Earth.'], a:'The meteor struck the Earth.'},
+    {say:'The T-Rex was hunting when the light appeared.', opts:['The T-Rex hunted when the light appeared.','The T-Rex was hunting when the light appeared.','The T-Rex was hunting when the light appears.'], a:'The T-Rex was hunting when the light appeared.'},
+    {say:'While the raptors were chasing their prey, the sky turned red.', opts:['While the raptors were chasing their prey, the sky turned red.','While the raptors chased their prey, the sky was turning red.','When the raptors were chasing their prey, the sky turned red.'], a:'While the raptors were chasing their prey, the sky turned red.'},
+  ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0e0"/><stop offset="1" stop-color="#e7e3b8"/></linearGradient>
@@ -726,6 +862,52 @@ const SCENES=[
     {q:'I was read my book when the bell rang.', bad:'read', fix:'reading', tip:'was + -ing → was reading.'},
     {q:'The boy was know the answer.', bad:'know', fix:'knew', tip:'“know” is a state verb — no -ing. Use knew.'},
     {q:'Everyone stood up while the alarm rang.', bad:'while', fix:'when', tip:'A short, sudden action → when.'},
+  ],
+  spots:{teacher:[48,120], front:[190,138], text:[258,138], window:[330,138], friends:[120,138]},
+  match:[
+    {a:'The teacher was writing on the board', b:'when the fire alarm went off'},
+    {a:'The girl at the front was reading', b:'when the bell started to ring'},
+    {a:'The boy by the window was daydreaming', b:'when he heard the alarm'},
+    {a:'The two friends were whispering', b:'when the teacher looked round'},
+    {a:'One student was texting', b:'when everyone stood up'},
+  ],
+  scramble:[
+    {answer:'The teacher was writing on the board when the alarm went off.'},
+    {answer:'The two friends were whispering at the back.'},
+    {answer:'I was reading my book when the bell rang.'},
+  ],
+  stories:[
+    {title:'A normal Monday', text:'It was Monday morning and the class {0} quietly. The teacher {1} the grammar at the board. At the front, Mia {2} her book, while two friends at the back {3} to each other. One boy {4} on his phone under the desk, and another boy {5} out of the window. Suddenly, the fire alarm {6}. Everyone {7} up quickly. While the students {8} into the corridor, the teacher {9} the door.', gaps:[
+      {opts:['was working','worked'], a:'was working'},
+      {opts:['was explaining','explained'], a:'was explaining'},
+      {opts:['was reading','read'], a:'was reading'},
+      {opts:['were whispering','whispered'], a:'were whispering'},
+      {opts:['was texting','texted'], a:'was texting'},
+      {opts:['was looking','looked'], a:'was looking'},
+      {opts:['went off','was going off'], a:'went off'},
+      {opts:['stood','was standing'], a:'stood'},
+      {opts:['were walking','walked'], a:'were walking'},
+      {opts:['opened','was opening'], a:'opened'},
+    ]},
+    {title:'The fire drill', text:'Last week we {0} a surprise fire drill. I {1} a test when the alarm {2}. The girl next to me {3} her essay, and she jumped. While we {4} out, the teachers {5} everyone to stay calm. Outside, it {6}, so we {7} under the shelter. The head teacher {8} our names. After ten minutes we {9} back inside.', gaps:[
+      {opts:['had','were having'], a:'had'},
+      {opts:['was doing','did'], a:'was doing'},
+      {opts:['rang','was ringing'], a:'rang'},
+      {opts:['was writing','wrote'], a:'was writing'},
+      {opts:['were walking','walked'], a:'were walking'},
+      {opts:['told','were telling'], a:'told'},
+      {opts:['was raining','rained'], a:'was raining'},
+      {opts:['waited','were waiting'], a:'waited'},
+      {opts:['checked','was checking'], a:'checked'},
+      {opts:['went','were going'], a:'went'},
+    ]},
+  ],
+  listen:[
+    {say:'The teacher was writing on the board.', opts:['The teacher was writing on the board.','The teacher were writing on the board.','The teacher wrote on the board.'], a:'The teacher was writing on the board.'},
+    {say:'The two friends were whispering.', opts:['The two friends was whispering.','The two friends were whispering.','The two friends whispered.'], a:'The two friends were whispering.'},
+    {say:'The fire alarm went off.', opts:['The fire alarm went off.','The fire alarm was going off.','The fire alarm goes off.'], a:'The fire alarm went off.'},
+    {say:'I was reading when the bell rang.', opts:['I read when the bell rang.','I was reading when the bell rang.','I was reading when the bell rings.'], a:'I was reading when the bell rang.'},
+    {say:'While the teacher was explaining, a phone buzzed.', opts:['While the teacher was explaining, a phone buzzed.','While the teacher explained, a phone was buzzing.','When the teacher was explaining, a phone buzzed.'], a:'While the teacher was explaining, a phone buzzed.'},
   ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="cwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaeff4"/><stop offset="1" stop-color="#d7dfe7"/></linearGradient></defs>
@@ -856,6 +1038,52 @@ const SCENES=[
     {q:'The cook was fry the eggs.', bad:'fry', fix:'frying', tip:'was + -ing → was frying.'},
     {q:'The pan was catching fire and burned.', bad:'catching', fix:'caught', tip:'One finished action → caught.'},
     {q:'The cat were sleeping on the shelf.', bad:'were', fix:'was', tip:'One animal → was.'},
+  ],
+  spots:{chef:[62,138], cook:[150,146], waiter:[224,150], porter:[330,142], cat:[352,48]},
+  match:[
+    {a:'The chef was stirring the soup', b:'when the pan caught fire'},
+    {a:'The cook was frying eggs', b:'when the flames appeared'},
+    {a:'The waiter was carrying plates', b:'when he heard a shout'},
+    {a:'The kitchen porter was washing up', b:'when the smoke alarm rang'},
+    {a:'The cat was sleeping on the shelf', b:'when it woke up suddenly'},
+  ],
+  scramble:[
+    {answer:'The chef was stirring the soup when the pan caught fire.'},
+    {answer:'The waiter was carrying plates to the tables.'},
+    {answer:'While the porter was washing the dishes smoke filled the room.'},
+  ],
+  stories:[
+    {title:'A busy Friday night', text:'It was a busy Friday night and the kitchen {0} full of noise. The chef {1} a huge pot of soup. Next to him, the cook {2} eggs on the stove. Two waiters {3} plates to the tables, while the porter {4} the dishes. On a warm shelf, the cat {5} quietly. Suddenly, a pan {6} fire. The cook {7} loudly. While everyone {8}, the manager {9} the fire brigade.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was stirring','stirred'], a:'was stirring'},
+      {opts:['was frying','fried'], a:'was frying'},
+      {opts:['were carrying','carried'], a:'were carrying'},
+      {opts:['was washing','washed'], a:'was washing'},
+      {opts:['was sleeping','slept'], a:'was sleeping'},
+      {opts:['caught','was catching'], a:'caught'},
+      {opts:['shouted','was shouting'], a:'shouted'},
+      {opts:['was panicking','panicked'], a:'was panicking'},
+      {opts:['called','was calling'], a:'called'},
+    ]},
+    {title:'The birthday cake', text:'Yesterday the kitchen {0} a big birthday cake. The baker {1} the cake when the lights went out. It {2} completely dark. While the staff {3} for candles, the cat {4} onto the table. The chef {5} the cat, but it {6} away. Everyone {7} when the lights came back on. Luckily, the cake {8} fine. The waiter {9} it to the happy customer.', gaps:[
+      {opts:['was making','made'], a:'was making'},
+      {opts:['was decorating','decorated'], a:'was decorating'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['were looking','looked'], a:'were looking'},
+      {opts:['jumped','was jumping'], a:'jumped'},
+      {opts:['grabbed','was grabbing'], a:'grabbed'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['was laughing','laughed'], a:'was laughing'},
+      {opts:['was','were'], a:'was'},
+      {opts:['carried','was carrying'], a:'carried'},
+    ]},
+  ],
+  listen:[
+    {say:'The chef was stirring the soup.', opts:['The chef was stirring the soup.','The chef were stirring the soup.','The chef stirred the soup.'], a:'The chef was stirring the soup.'},
+    {say:'The waiters were carrying plates.', opts:['The waiters was carrying plates.','The waiters were carrying plates.','The waiters carried plates.'], a:'The waiters were carrying plates.'},
+    {say:'The pan caught fire.', opts:['The pan caught fire.','The pan was catching fire.','The pan catches fire.'], a:'The pan caught fire.'},
+    {say:'The cook was frying eggs when the fire started.', opts:['The cook fried eggs when the fire started.','The cook was frying eggs when the fire started.','The cook was frying eggs when the fire starts.'], a:'The cook was frying eggs when the fire started.'},
+    {say:'While the porter was washing up, smoke filled the room.', opts:['While the porter was washing up, smoke filled the room.','While the porter washed up, smoke was filling the room.','When the porter was washing up, smoke filled the room.'], a:'While the porter was washing up, smoke filled the room.'},
   ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="ktile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7ecef"/><stop offset="1" stop-color="#d3dade"/></linearGradient></defs>
@@ -990,6 +1218,52 @@ const SCENES=[
     {q:'The woman was fetch water.', bad:'fetch', fix:'fetching', tip:'was + -ing → was fetching.'},
     {q:'Vesuvius was erupt in 79 AD.', bad:'erupt', fix:'erupted', tip:'One finished event → simple past: erupted.'},
     {q:'The people was fleeing from the ash.', bad:'was', fix:'were', tip:'More than one → were.'},
+  ],
+  spots:{baker:[60,120], merchant:[150,150], children:[214,172], woman:[288,150], dog:[348,192]},
+  match:[
+    {a:'The baker was selling bread', b:'when the mountain shook'},
+    {a:'The merchant was carrying jars', b:'when the sky went dark'},
+    {a:'The children were playing', b:'when ash began to fall'},
+    {a:'The woman was fetching water', b:'when she heard the roar'},
+    {a:'The dog was sleeping in the sun', b:'when it suddenly ran away'},
+  ],
+  scramble:[
+    {answer:'The baker was selling bread when Vesuvius erupted.'},
+    {answer:'The children were playing in the street.'},
+    {answer:'While the woman was fetching water the ground began to shake.'},
+  ],
+  stories:[
+    {title:'Market day', text:'It was a warm morning in Pompeii and the market {0} full of people. The baker {1} fresh bread at his stall. A merchant {2} heavy jars across the forum. In the street, some children {3} with a ball, while a woman {4} water from the well. A dog {5} lazily in the sun. Suddenly, the ground {6} and Vesuvius {7}. While the people {8}, ash {9} from the sky.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was selling','sold'], a:'was selling'},
+      {opts:['was carrying','carried'], a:'was carrying'},
+      {opts:['were playing','played'], a:'were playing'},
+      {opts:['was fetching','fetched'], a:'was fetching'},
+      {opts:['was sleeping','slept'], a:'was sleeping'},
+      {opts:['shook','was shaking'], a:'shook'},
+      {opts:['erupted','was erupting'], a:'erupted'},
+      {opts:['were running','ran'], a:'were running'},
+      {opts:['was falling','fell'], a:'was falling'},
+    ]},
+    {title:'The escape', text:'That afternoon, a family {0} in their house when they heard a loud roar. The father {1} outside and saw the black cloud. The children {2} afraid, so they {3} their things quickly. While they {4} through the streets, ash {5} everywhere. Many people {6} towards the sea. An old man {7} his dog under his arm. The family {8} a small boat and {9} away from the city.', gaps:[
+      {opts:['was sitting','sat'], a:'was sitting'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['were','was'], a:'were'},
+      {opts:['packed','were packing'], a:'packed'},
+      {opts:['were walking','walked'], a:'were walking'},
+      {opts:['was falling','fell'], a:'was falling'},
+      {opts:['ran','were running'], a:'ran'},
+      {opts:['was carrying','carried'], a:'was carrying'},
+      {opts:['found','were finding'], a:'found'},
+      {opts:['sailed','were sailing'], a:'sailed'},
+    ]},
+  ],
+  listen:[
+    {say:'The baker was selling bread.', opts:['The baker was selling bread.','The baker were selling bread.','The baker sold bread.'], a:'The baker was selling bread.'},
+    {say:'The children were playing in the street.', opts:['The children was playing in the street.','The children were playing in the street.','The children played in the street.'], a:'The children were playing in the street.'},
+    {say:'Vesuvius erupted in 79 AD.', opts:['Vesuvius erupted in 79 AD.','Vesuvius was erupting in 79 AD.','Vesuvius erupts in 79 AD.'], a:'Vesuvius erupted in 79 AD.'},
+    {say:'The woman was fetching water when the ground shook.', opts:['The woman fetched water when the ground shook.','The woman was fetching water when the ground shook.','The woman was fetching water when the ground shakes.'], a:'The woman was fetching water when the ground shook.'},
+    {say:'While the children were playing, ash began to fall.', opts:['While the children were playing, ash began to fall.','While the children played, ash was beginning to fall.','When the children were playing, ash began to fall.'], a:'While the children were playing, ash began to fall.'},
   ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs>
@@ -1186,10 +1460,15 @@ function renderVocab(){
 }
 /* ===== PRACTICE (multi-mode) ===== */
 const PRAC_MODES=[
-  {key:'gap',     label:'Gap-fill', field:'practice', type:'mc',      hint:'Fill each gap: <b>was/were</b>, the right <b>verb form</b>, or <b>when/while</b>. Tap an answer.'},
-  {key:'tense',   label:'Tense',    field:'tenseEx',  type:'mc',      hint:'Choose the correct tense — <b>past simple</b> or <b>past continuous</b>.'},
-  {key:'mistake', label:'Mistake',  field:'mistakes', type:'mistake', hint:'Each sentence has <b>one</b> wrong word. Tap it to correct it.'},
-  {key:'ing',     label:'-ing',     field:'ing',      type:'mc',      hint:'Choose the correct <b>-ing</b> spelling (double the consonant? drop the -e?).'},
+  {key:'gap',     label:'Gap-fill', field:'practice', type:'mc',       hint:'Fill each gap: <b>was/were</b>, the right <b>verb form</b>, or <b>when/while</b>. Tap an answer.'},
+  {key:'tense',   label:'Tense',    field:'tenseEx',  type:'mc',       hint:'Choose the correct tense — <b>past simple</b> or <b>past continuous</b>.'},
+  {key:'mistake', label:'Mistake',  field:'mistakes', type:'mistake',  hint:'Each sentence has <b>one</b> wrong word. Tap it to correct it.'},
+  {key:'ing',     label:'-ing',     field:'ing',      type:'mc',       hint:'Choose the correct <b>-ing</b> spelling (double the consonant? drop the -e?).'},
+  {key:'click',   label:'Who?',     field:'witnesses',type:'click',    hint:'Read the question and <b>click the right character</b> in the frozen scene.'},
+  {key:'match',   label:'Match',    field:'match',    type:'match',    hint:'Tap a beginning on the left, then its ending on the right, to build a sentence.'},
+  {key:'scramble',label:'Order',    field:'scramble', type:'scramble', hint:'Tap the words in the right order to build the sentence.'},
+  {key:'cloze',   label:'Story',    field:'stories',  type:'cloze',    hint:'Read the story and choose the right form in every gap.'},
+  {key:'listen',  label:'Listen',   field:'listen',   type:'listen',   hint:'Press ▶ to hear the sentence, then choose the one you heard.'},
 ];
 let pracState={}, pracMode=null, curItems=[];
 function fmtQ(q){
@@ -1207,9 +1486,16 @@ function renderPracMode(){
   const m=PRAC_MODES.find(x=>x.key===pracMode); if(!m)return;
   pracState={}; curItems=S[m.field]||[];
   document.getElementById('pracHint').innerHTML=m.hint;
-  if(m.type==='mistake') renderMistakes(curItems); else renderMC(curItems);
-  updatePracScore();
+  const box=document.getElementById('practice');
+  if(m.type==='mistake'){ renderMistakes(curItems); updatePracScore(); }
+  else if(m.type==='mc'){ renderMC(curItems); updatePracScore(); }
+  else if(m.type==='click') renderClick();
+  else if(m.type==='match') renderMatch();
+  else if(m.type==='scramble') renderScramble();
+  else if(m.type==='cloze') renderCloze();
+  else if(m.type==='listen') renderListen();
 }
+function setScore(done,total){const el=document.getElementById('pracScore'); if(el) el.textContent=done+' / '+total;}
 function renderMC(items){
   document.getElementById('practice').innerHTML=items.map((it,i)=>{
     const opts=it.opts.map((o,j)=>`<button class="pch" id="pr-${i}-${j}" onclick="pickPrac(${i},${j})">${o}</button>`).join('');
@@ -1257,7 +1543,270 @@ function pickMistake(i,wi){
 function updatePracScore(){
   const total=curItems.length;
   const done=Object.keys(pracState).filter(k=>pracState[k]&&pracState[k].done).length;
-  const el=document.getElementById('pracScore'); if(el) el.textContent=done+' / '+total;
+  setScore(done,total);
+}
+function shuffled(a){const r=a.slice();for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];}return r;}
+function esc(s){return s.replace(/'/g,"\\'");}
+
+/* ----- Who? (click the character) ----- */
+let clickQs=[], clickIdx=0, clickDone=0;
+function renderClick(){
+  const spots=S.spots||{};
+  clickQs=(S.witnesses||[]).filter(w=>spots[w.id]);
+  clickIdx=0; clickDone=0;
+  const dots=clickQs.map(w=>{const[x,y]=spots[w.id];return `<button class="hotspot" id="hs-${w.id}" style="left:${x/4}%; top:${y/2.2}%" onclick="clickAnswer('${w.id}')" title=""></button>`;}).join('');
+  document.getElementById('practice').innerHTML=
+    `<div class="clickq" id="clickQ"></div>
+     <div class="clickscene">${S.svg()}${dots}</div>
+     <div class="ptip" id="clickTip"></div>`;
+  // freeze the mini scene
+  const sc=document.querySelector('#practice .clickscene'); if(sc){const svg=sc.querySelector('svg'); if(svg){}}
+  nextClick();
+}
+function nextClick(){
+  setScore(clickDone,clickQs.length);
+  if(clickIdx>=clickQs.length){ document.getElementById('clickQ').innerHTML='🎉 All found! Great job.'; return; }
+  const w=clickQs[clickIdx];
+  document.getElementById('clickQ').innerHTML=`Question ${clickIdx+1}/${clickQs.length} — Who ${w.aux} <b>${w.verb}</b>? <span style="color:var(--dim)">(click the scene)</span>`;
+}
+function clickAnswer(id){
+  if(clickIdx>=clickQs.length) return;
+  const w=clickQs[clickIdx], el=document.getElementById('hs-'+id), tip=document.getElementById('clickTip');
+  if(id===w.id){
+    el.classList.add('good'); clickDone++;
+    tip.className='ptip show good'; tip.innerHTML=`✓ Yes — ${w.subj} ${w.aux} ${w.verb} ${w.tail}.`;
+    clickIdx++;
+    setTimeout(()=>{ el.classList.remove('good'); tip.className='ptip'; nextClick(); }, 900);
+  } else {
+    el.classList.add('bad'); tip.className='ptip show bad'; tip.innerHTML='✗ Not that one — look again.';
+    setTimeout(()=>el.classList.remove('bad'), 500);
+  }
+}
+
+/* ----- Match the halves ----- */
+let matchSel=null, matchDone=0;
+function renderMatch(){
+  const pairs=S.match||[]; matchSel=null; matchDone=0;
+  const left=pairs.map((p,i)=>({i,t:p.a})), right=shuffled(pairs.map((p,i)=>({i,t:p.b})));
+  const L=left.map(o=>`<button class="mitem" id="ml-${o.i}" onclick="matchPick('L',${o.i})">${o.t}…</button>`).join('');
+  const R=right.map(o=>`<button class="mitem" id="mr-${o.i}" onclick="matchPick('R',${o.i})">…${o.t}</button>`).join('');
+  document.getElementById('practice').innerHTML=
+    `<div class="matchwrap"><div class="mcol"><div class="mcolh">Was / were + -ing</div>${L}</div><div class="mcol"><div class="mcolh">…when + past simple</div>${R}</div></div><div class="ptip" id="matchTip"></div>`;
+  setScore(0,pairs.length);
+}
+function matchPick(side,i){
+  const el=document.getElementById((side==='L'?'ml-':'mr-')+i);
+  if(el.classList.contains('done')) return;
+  const tip=document.getElementById('matchTip');
+  if(side==='L'){
+    document.querySelectorAll('.mcol:first-child .mitem').forEach(x=>x.classList.remove('sel'));
+    matchSel=i; el.classList.add('sel'); return;
+  }
+  if(matchSel===null){ tip.className='ptip show bad'; tip.innerHTML='Pick a beginning on the left first.'; return; }
+  const l=document.getElementById('ml-'+matchSel);
+  if(i===matchSel){
+    l.classList.remove('sel'); l.classList.add('done'); el.classList.add('done'); matchDone++;
+    const p=S.match[i]; tip.className='ptip show good'; tip.innerHTML=`✓ ${p.a} ${p.b}.`;
+    setScore(matchDone,S.match.length); matchSel=null;
+  } else {
+    el.classList.add('badflash'); tip.className='ptip show bad'; tip.innerHTML='✗ Those two don’t go together — try again.';
+    setTimeout(()=>el.classList.remove('badflash'),500);
+  }
+}
+
+/* ----- Word-order scramble ----- */
+let scrState={};
+function renderScramble(){
+  const items=S.scramble||[]; scrState={};
+  document.getElementById('practice').innerHTML=items.map((it,i)=>{
+    const words=it.answer.replace(/\.$/,'').split(' ');
+    scrState[i]={words, order:shuffled(words.map((w,j)=>j)), placed:[], done:false};
+    const bank=scrState[i].order.map(j=>`<button class="stok" id="sk-${i}-${j}" onclick="scrPlace(${i},${j})">${words[j]}</button>`).join('');
+    return `<div class="scrq" id="scr-${i}"><div class="scrline" id="sl-${i}"></div><div class="scrbank" id="sb-${i}">${bank}</div><div class="scrfoot"><button class="btn ghost scrmini" onclick="scrClear(${i})">↺ clear</button><span class="ptip" id="stip-${i}" style="margin:0"></span></div></div>`;
+  }).join('');
+  setScore(0,items.length);
+}
+function scrPlace(i,j){
+  const st=scrState[i]; if(st.done) return;
+  if(st.placed.includes(j)) return;
+  st.placed.push(j); document.getElementById('sk-'+i+'-'+j).classList.add('used');
+  scrRenderLine(i); scrMaybeCheck(i);
+}
+function scrRenderLine(i){
+  const st=scrState[i];
+  document.getElementById('sl-'+i).innerHTML=st.placed.map(j=>`<button class="stok placed" onclick="scrRemove(${i},${j})">${st.words[j]}</button>`).join('');
+}
+function scrRemove(i,j){
+  const st=scrState[i]; if(st.done) return;
+  st.placed=st.placed.filter(x=>x!==j); document.getElementById('sk-'+i+'-'+j).classList.remove('used');
+  scrRenderLine(i); document.getElementById('stip-'+i).className='ptip';
+}
+function scrClear(i){ const st=scrState[i]; if(st.done) return; st.placed.forEach(j=>document.getElementById('sk-'+i+'-'+j).classList.remove('used')); st.placed=[]; scrRenderLine(i); document.getElementById('stip-'+i).className='ptip'; }
+function scrMaybeCheck(i){
+  const st=scrState[i]; if(st.placed.length!==st.words.length) return;
+  const got=st.placed.map(j=>st.words[j]).join(' ');
+  const want=st.words.join(' ');
+  const tip=document.getElementById('stip-'+i);
+  if(got===want){ st.done=true; tip.className='ptip show good'; tip.innerHTML='✓ '+got+'.'; document.getElementById('sl-'+i).querySelectorAll('.stok').forEach(b=>b.style.pointerEvents='none');
+    setScore(Object.values(scrState).filter(x=>x.done).length, S.scramble.length);
+  } else { tip.className='ptip show bad'; tip.innerHTML='✗ Not the right order yet — tap a word to remove it.'; }
+}
+
+/* ----- Story cloze ----- */
+let clozeStory=0;
+function renderCloze(){
+  const stories=S.stories||[]; if(!stories.length){document.getElementById('practice').innerHTML='';return;}
+  if(clozeStory>=stories.length) clozeStory=0;
+  const tabs=stories.map((s,i)=>`<button class="storyt${i===clozeStory?' active':''}" onclick="clozeSwitch(${i})">Story ${i+1}</button>`).join('');
+  const st=stories[clozeStory];
+  let html=st.text;
+  st.gaps.forEach((g,gi)=>{
+    const opts=g.opts.map(o=>`<option value="${o}">${o}</option>`).join('');
+    html=html.replace('{'+gi+'}',`<select class="gsel" id="cz-${gi}" onchange="clozePick(${gi},this)"><option value="">— choose —</option>${opts}</select>`);
+  });
+  document.getElementById('practice').innerHTML=`<div class="storytabs">${tabs}</div><div class="story"><div class="sttl">${st.title}</div>${html}</div><div class="ptip" id="clozeTip" style="margin-top:8px"></div>`;
+  clozeScore();
+}
+function clozeSwitch(i){ clozeStory=i; renderCloze(); }
+function clozePick(gi,sel){
+  const st=S.stories[clozeStory], g=st.gaps[gi];
+  if(sel.value===g.a){ sel.className='gsel good'; } else if(sel.value===''){ sel.className='gsel'; } else { sel.className='gsel bad'; }
+  clozeScore();
+}
+function clozeScore(){
+  const st=S.stories[clozeStory];
+  let done=0; st.gaps.forEach((g,gi)=>{const s=document.getElementById('cz-'+gi); if(s&&s.value===g.a) done++;});
+  setScore(done, st.gaps.length);
+  const tip=document.getElementById('clozeTip');
+  if(tip && done===st.gaps.length){ tip.className='ptip show good'; tip.innerHTML='✓ Whole story correct — well done!'; }
+  else if(tip){ tip.className='ptip'; }
+}
+
+/* ----- Listening ----- */
+function speak(text){
+  try{ if(!('speechSynthesis' in window)) return; speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text); u.lang='en-GB'; u.rate=.92; u.pitch=1; speechSynthesis.speak(u);
+  }catch(e){}
+}
+function renderListen(){
+  const items=S.listen||[];
+  document.getElementById('practice').innerHTML=items.map((it,i)=>{
+    const opts=it.opts.map((o,j)=>`<button class="lopt" id="lo-${i}-${j}" onclick="listenPick(${i},${j})">${o}</button>`).join('');
+    return `<div class="lqrow" id="lq-${i}"><div class="lqhead"><button class="lplay" onclick="speak('${esc(it.say)}')">▶ Play</button><span style="font-size:12px;color:var(--dim)">Sentence ${i+1}</span></div><div class="lopts">${opts}</div><div class="ptip" id="ltip-${i}"></div></div>`;
+  }).join('');
+  setScore(0,items.length);
+}
+function listenPick(i,j){
+  const it=S.listen[i]; if(pracState['l'+i]) return;
+  const btn=document.getElementById('lo-'+i+'-'+j), tip=document.getElementById('ltip-'+i);
+  if(it.opts[j]===it.a){ btn.classList.add('good'); pracState['l'+i]=true; tip.className='ptip show good'; tip.innerHTML='✓ Correct!';
+    it.opts.forEach((o,k)=>document.getElementById('lo-'+i+'-'+k).disabled=true);
+    setScore(Object.keys(pracState).filter(k=>k[0]==='l').length, S.listen.length);
+  } else { btn.classList.add('bad'); btn.disabled=true; tip.className='ptip show bad'; tip.innerHTML='✗ Listen again and try another.'; }
+}
+
+/* ===== QUIZ SHOW (Kahoot-style) ===== */
+const QCOLORS=[['red','▲'],['blue','◆'],['yellow','●'],['green','■']];
+let quizQs=[], quizIdx=0, quizScore=0, quizStreak=0, quizMode='classic', quizTimer=null, quizT=0, quizAnswered=false;
+function buildQuizPool(){
+  const pool=[];
+  (S.practice||[]).concat(S.tenseEx||[]).forEach(it=>{ if(it.opts&&it.a) pool.push({type:'mc', q:it.q.replace('___','_____'), opts:it.opts, a:it.a}); });
+  (S.ing||[]).forEach(it=>{ const base=it.q.replace(' → ___',''); pool.push({type:'type', q:'Type the -ing form of: '+base, a:it.a}); });
+  (S.mistakes||[]).forEach(it=>{ pool.push({type:'tf', q:'Correct English? — “'+it.q+'”', opts:['Correct','Wrong'], a:'Wrong'}); });
+  (S.witnesses||[]).forEach(w=>{ pool.push({type:'tf', q:'Correct English? — “'+w.subj+' '+w.aux+' '+w.verb+' '+w.tail+'.”', opts:['Correct','Wrong'], a:'Correct'}); });
+  return shuffled(pool).slice(0,10);
+}
+function quizOpen(){
+  document.getElementById('qSceneName').textContent='· '+S.name;
+  document.getElementById('quiz').classList.add('open');
+  quizStart();
+}
+function quizClose(){ if(quizTimer){clearInterval(quizTimer);quizTimer=null;} try{speechSynthesis.cancel();}catch(e){} document.getElementById('quiz').classList.remove('open'); }
+function quizStart(){
+  document.getElementById('qMeta').innerHTML='';
+  document.getElementById('qStage').innerHTML=
+    `<div class="qstart"><h2>🎮 Quiz Show</h2><p>Ten questions on <b>${S.name}</b> — past continuous &amp; simple past. Choose a mode:</p>
+      <div class="qmodes">
+        <button class="qmode" onclick="quizBegin('classic')"><div class="qm-t">⏱ Classic</div><div class="qm-d">Solo, against the clock. Faster correct answers score more points, and streaks add a bonus.</div></button>
+        <button class="qmode" onclick="quizBegin('class')"><div class="qm-t">🏫 Class mode</div><div class="qm-d">For the smartboard. Big question, four colours, no timer — the class answers, then you reveal.</div></button>
+      </div></div>`;
+}
+function quizBegin(mode){
+  quizMode=mode; quizQs=buildQuizPool(); quizIdx=0; quizScore=0; quizStreak=0;
+  quizShow();
+}
+function quizShow(){
+  if(quizTimer){clearInterval(quizTimer);quizTimer=null;}
+  quizAnswered=false;
+  if(quizIdx>=quizQs.length){ return quizEnd(); }
+  const q=quizQs[quizIdx];
+  document.getElementById('qMeta').innerHTML = quizMode==='classic'
+    ? `<span>Q ${quizIdx+1}/${quizQs.length}</span><span>🔥 ${quizStreak}</span><span>⭐ ${quizScore}</span>`
+    : `<span>Q ${quizIdx+1}/${quizQs.length}</span>`;
+  let body='';
+  if(quizMode==='classic') body+=`<div class="qtimerwrap"><div class="qtimerbar" id="qTimerBar"></div></div>`;
+  body+=`<div class="qprog">Question ${quizIdx+1} of ${quizQs.length} · ${labelType(q.type)}</div><div class="qquestion">${q.q}</div>`;
+  if(q.type==='type'){
+    body+=`<input class="qtypein" id="qType" placeholder="type here…" autocomplete="off"><div style="margin-top:14px"><button class="qbtn" onclick="quizSubmitType()">Submit</button></div><div class="qfeed" id="qFeed"></div>`;
+  } else {
+    const two=(q.opts.length===2)?' two':'';
+    const tiles=q.opts.map((o,j)=>{const[c,sh]=QCOLORS[j%4];return `<button class="qtile ${c}" id="qt-${j}" onclick="quizAnswer(${j})"><span class="qshape">${sh}</span><span>${o}</span></button>`;}).join('');
+    body+=`<div class="qtiles${two}" id="qTiles">${tiles}</div><div class="qfeed" id="qFeed"></div>`;
+  }
+  if(quizMode==='class') body+=`<div id="qCtrl" style="margin-top:14px"><button class="qbtn" onclick="quizReveal()">Reveal answer</button></div>`;
+  document.getElementById('qStage').innerHTML=body;
+  if(quizMode==='classic' && q.type!=='type'){ quizT=100; quizTimer=setInterval(quizTick,120); }
+  else if(quizMode==='classic' && q.type==='type'){ const inp=document.getElementById('qType'); if(inp) inp.focus(); }
+}
+function labelType(t){return t==='tf'?'True or false':t==='type'?'Type the answer':'Multiple choice';}
+function quizTick(){
+  quizT-=1.6; const bar=document.getElementById('qTimerBar'); if(bar) bar.style.width=Math.max(0,quizT)+'%';
+  if(quizT<=0){ clearInterval(quizTimer); quizTimer=null; if(!quizAnswered) quizAnswer(-1); }
+}
+function quizAnswer(j){
+  const q=quizQs[quizIdx]; if(quizAnswered && quizMode==='classic') return;
+  if(quizMode==='class'){ return; } // class mode reveals via button
+  quizAnswered=true; if(quizTimer){clearInterval(quizTimer);quizTimer=null;}
+  const correct=q.opts.indexOf(q.a);
+  document.querySelectorAll('.qtile').forEach((t,k)=>{ t.disabled=true; if(k===correct) t.classList.add('win'); else t.classList.add('lose'); });
+  const feed=document.getElementById('qFeed');
+  if(j===correct){ const gain=500+Math.round(quizT*4)+quizStreak*50; quizScore+=gain; quizStreak++;
+    feed.innerHTML=`✅ +${gain} points`; feed.style.color='#26e08a';
+  } else { quizStreak=0; feed.innerHTML=(j===-1?'⏰ Time!':'❌')+' The answer: '+q.a; feed.style.color='#ffb1b1'; }
+  document.getElementById('qMeta').innerHTML=`<span>Q ${quizIdx+1}/${quizQs.length}</span><span>🔥 ${quizStreak}</span><span>⭐ ${quizScore}</span>`;
+  setTimeout(()=>{ quizIdx++; quizShow(); }, 1600);
+}
+function quizSubmitType(){
+  const q=quizQs[quizIdx]; const inp=document.getElementById('qType'); if(!inp) return;
+  quizAnswered=true; if(quizTimer){clearInterval(quizTimer);quizTimer=null;}
+  const ok=inp.value.trim().toLowerCase()===q.a.toLowerCase();
+  const feed=document.getElementById('qFeed');
+  if(quizMode==='class'){ feed.innerHTML='Answer: <b>'+q.a+'</b>'; feed.style.color='#fff'; inp.disabled=true;
+    document.getElementById('qStage').insertAdjacentHTML('beforeend','<div style="margin-top:12px"><button class="qbtn" onclick="quizNext()">Next →</button></div>'); return; }
+  if(ok){ const gain=500+quizStreak*50; quizScore+=gain; quizStreak++; feed.innerHTML=`✅ +${gain} — “${q.a}”`; feed.style.color='#26e08a'; }
+  else { quizStreak=0; feed.innerHTML='❌ The answer: '+q.a; feed.style.color='#ffb1b1'; }
+  inp.disabled=true;
+  setTimeout(()=>{ quizIdx++; quizShow(); }, 1600);
+}
+function quizReveal(){
+  const q=quizQs[quizIdx];
+  if(q.type==='type'){ return quizSubmitType(); }
+  const correct=q.opts.indexOf(q.a);
+  document.querySelectorAll('.qtile').forEach((t,k)=>{ t.disabled=true; if(k===correct) t.classList.add('win'); else t.classList.add('dim'); });
+  document.getElementById('qFeed').innerHTML='Answer: '+q.a; document.getElementById('qFeed').style.color='#fff';
+  document.getElementById('qCtrl').innerHTML='<button class="qbtn" onclick="quizNext()">Next question →</button>';
+}
+function quizNext(){ quizIdx++; quizShow(); }
+function quizEnd(){
+  if(quizMode==='class'){
+    document.getElementById('qMeta').innerHTML='';
+    document.getElementById('qStage').innerHTML=`<div class="qscore"><h2>✔ End of the quiz</h2><p style="color:#cdd6ea">Nicely done, class!</p><button class="qbtn" onclick="quizStart()">Play again</button> <button class="qbtn ghostw" onclick="quizClose()">Close</button></div>`;
+    return;
+  }
+  const max=quizQs.length* 900;
+  const pct=Math.round(quizScore/max*100);
+  document.getElementById('qMeta').innerHTML='';
+  document.getElementById('qStage').innerHTML=`<div class="qscore"><h2>🏁 Final score</h2><div class="qbig">${quizScore}</div><p style="color:#cdd6ea">${pct>=80?'Brilliant!':pct>=50?'Well done!':'Keep practising!'}</p><button class="qbtn" onclick="quizStart()">Play again</button> <button class="qbtn ghostw" onclick="quizClose()">Close</button></div>`;
 }
 function showPane(name,tab){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById('pane-'+name).classList.add('active');}
 
@@ -1315,6 +1864,13 @@ function printPack(){
   const key=S.witnesses.map(w=>`<li><b>${w.subj}</b> ${w.aux} ${w.verb} ${w.tail} ${S.event.clause}.</li>`).join('');
   const prac=(S.practice||[]).map(p=>`<li>${p.q.replace('___','______')} <span class="muted">(${p.opts.join(' / ')})</span></li>`).join('');
   const pracKey=(S.practice||[]).map(p=>`<li>${p.q.replace('___','<b>'+p.a+'</b>')}</li>`).join('');
+  const tense=(S.tenseEx||[]).map(p=>`<li>${p.q.replace('___','______')} <span class="muted">(${p.opts.join(' / ')})</span></li>`).join('');
+  const tenseKey=(S.tenseEx||[]).map(p=>`<li>${p.q.replace('___','<b>'+p.a+'</b>')}</li>`).join('');
+  const st0=(S.stories||[])[0];
+  let storyGap='', storyKey='';
+  if(st0){ storyGap=st0.text; storyKey=st0.text;
+    st0.gaps.forEach((g,i)=>{ storyGap=storyGap.replace('{'+i+'}','___('+(i+1)+')___ <span class="muted">['+g.opts.join(' / ')+']</span>'); storyKey=storyKey.replace('{'+i+'}','<b>'+g.a+'</b>'); });
+  }
   document.getElementById('printDoc').innerHTML=`
     <h1>FREEZE FRAME — ${S.name}</h1>
     <div class="sub">Past continuous &amp; simple past · ${S.era[0]}</div>
@@ -1325,12 +1881,17 @@ function printPack(){
     <p class="muted">Fill in was/were and the -ing verb:</p><ol>${witness}</ol>
     <h2>Grammar practice — fill in the gap</h2>
     <p class="muted">Choose was/were, the right verb form, or when/while:</p><ol>${prac}</ol>
+    <h2>Choose the tense — past simple or past continuous</h2>
+    <ol>${tense}</ol>
+    ${st0?`<h2>Story — fill in every gap</h2><p class="muted"><b>${st0.title}.</b> Choose the correct form for each number:</p><p style="line-height:1.9">${storyGap}</p>`:''}
     <h2>Write your eyewitness account</h2>
     <p class="muted">Title:</p><div class="writelines" style="height:22pt"></div>
     <p class="muted" style="margin-top:8pt">What happened:</p><div class="writelines"></div>
     <h2 style="page-break-before:always">Answer key (teacher)</h2>
     <p class="muted">Witness reports:</p><ol>${key}</ol>
     <p class="muted">Grammar practice:</p><ol>${pracKey}</ol>
+    <p class="muted">Choose the tense:</p><ol>${tenseKey}</ol>
+    ${st0?`<p class="muted">Story — ${st0.title}:</p><p style="line-height:1.8">${storyKey}</p>`:''}
     <h2>Leerplandoelen (docent) · II-EngS-d · 2de graad · Moderne talen · ERK B1</h2>
     <table><tr><th>Leerplandoel</th><th>Wat de leerling doet</th></tr>${DOELEN.map(d=>`<tr><td><b>${d.code}</b> — ${d.doel}</td><td>${d.hoe}</td></tr>`).join('')}</table>`;
   window.print();
