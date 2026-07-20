@@ -128,6 +128,24 @@
   #alarmwash{opacity:0}
   .stage[data-fx="alarm"].striking #alarmwash,.stage[data-fx="alarm"].impact #alarmwash{animation:alarmPulse 1s ease-in-out infinite}
   @keyframes alarmPulse{0%,100%{opacity:0}50%{opacity:.34}}
+  /* fx: storm (lightning + rain) */
+  .stage[data-fx="storm"].impact #darken{opacity:.55}
+  #rain{opacity:0}
+  .stage[data-fx="storm"].impact #rain{opacity:.75; animation:rainfall .5s linear infinite}
+  @keyframes rainfall{0%{transform:translateY(-14px)}100%{transform:translateY(14px)}}
+  /* fx: blackout (lights out) */
+  .stage[data-fx="blackout"].impact #darken{opacity:.82}
+  .stage[data-fx="blackout"].striking #flash{animation:flick 1.2s steps(2) .4s 3}
+  @keyframes flick{0%,100%{opacity:0}50%{opacity:.5}}
+  /* fx: quake (earthquake shake) */
+  .stage[data-fx="quake"].impact #darken{opacity:.5}
+  .stage[data-fx="quake"].striking .quakebox{animation:shake .3s ease-in-out 7}
+  @keyframes shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-4px,2px)}75%{transform:translate(4px,-2px)}}
+  /* fx: steam (train) */
+  #steamcloud{opacity:0; transform-box:fill-box; transform-origin:bottom center}
+  .stage[data-fx="steam"].striking #steamcloud{animation:eruptUp 1.6s ease-out forwards}
+  .stage[data-fx="steam"].impact #steamcloud{opacity:1}
+  .stage[data-fx="steam"].impact #darken{opacity:.4}
 
   @media(prefers-reduced-motion:reduce){ .graze,.breathe,.stomp,.fly,.flap,.dash,.plume,.sun,.sway,.bob,.wave,.stir,.float,.walk,.steam{animation:none} }
 
@@ -1327,6 +1345,1947 @@ const SCENES=[
     <rect id="flash" width="400" height="220" fill="#fff"/>
   </svg>
   ${pin(60,150,'The baker')}${pin(150,168,'The merchant')}${pin(214,196,'The children')}${pin(288,172,'The woman')}${pin(348,205,'The dog')}`,
+},
+
+{
+  id:'beach', emo:'🏖️', name:'Beach Storm', tag:'Beach&nbsp;Storm',
+  era:['SEASIDE','SUMMER'], statusAfter:'Storm',
+  fx:'storm', darkFill:'#20304a',
+  sceneTitle:'The scene · watch what everyone is doing on the sunny beach',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ BEACH STORM — write your eyewitness account',
+  headlinePH:'Title — e.g. THE DAY THE STORM BROKE OVER THE BEACH',
+  fileslug:'beach-storm',
+  event:{ btn:'⛈️ The storm breaks', clause:'when the storm broke', sfx:'rumble', after:'boom',
+    promptWatch:'Watch closely… what is everyone doing on the sunny beach? When you are ready, press <b>“The storm breaks”</b>.',
+    promptAfter:'⛈️ The storm <b>broke</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The lifeguard <b>was watching</b> the sea <b>when</b> the storm <b>broke</b>." },
+  witnesses:[
+    {id:'swimmers', subj:'The two friends',     aux:'were', verb:'swimming', tail:'in the sea',            opts:['swimming','reading','flying']},
+    {id:'child',    subj:'The child',           aux:'was',  verb:'building',  tail:'a sandcastle',         opts:['building','cooking','driving']},
+    {id:'seller',   subj:'The ice-cream seller',aux:'was',  verb:'selling',   tail:'ice creams at the stall',opts:['selling','sleeping','skiing']},
+    {id:'lifeguard',subj:'The lifeguard',       aux:'was',  verb:'watching',  tail:'the sea from his chair',opts:['watching','painting','dancing']},
+    {id:'gulls',    subj:'The seagulls',        aux:'were', verb:'flying',     tail:'over the waves',       opts:['flying','writing','digging']},
+  ],
+  vocab:[
+    {w:"to swim", pos:"v.", def:"To move through water using your arms and legs.", ex:"The friends were swimming in the sea."},
+    {w:"a wave", pos:"n.", def:"A moving line of water on the surface of the sea.", ex:"The waves were getting bigger."},
+    {w:"the shore", pos:"n.", def:"The land at the edge of the sea.", ex:"People ran back to the shore."},
+    {w:"a sandcastle", pos:"n.", def:"A little castle made of wet sand.", ex:"The child was building a sandcastle."},
+    {w:"lifeguard", pos:"n.", def:"A person who keeps swimmers safe at the beach.", ex:"The lifeguard was watching the sea."},
+    {w:"a stall", pos:"n.", def:"A small open shop that sells things outdoors.", ex:"The seller had an ice-cream stall."},
+    {w:"a seagull", pos:"n.", def:"A grey and white bird that lives near the sea.", ex:"The seagulls were flying overhead."},
+    {w:"a storm", pos:"n.", def:"Very bad weather with wind, rain and thunder.", ex:"A storm broke over the beach."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a hot afternoon and the beach was full of people.'},
+    {t:'past cont', s:'The lifeguard was watching the calm blue sea.'},
+    {t:'simple past', s:'Suddenly, dark clouds appeared and the storm broke.'},
+    {t:'simple past', s:'Thunder crashed and everyone ran for cover.'},
+    {t:'when', s:'The child was building a sandcastle when the first rain fell.'},
+    {t:'while', s:'While the friends were swimming, the wind grew stronger.'},
+  ],
+  wordbank:['swimming','building','selling','watching','flying','the sea','a wave','the sand','a sandcastle','ice cream','seagulls','the storm','suddenly','when','while','broke'],
+  practice:[
+    {q:'The lifeguard ___ watching the sea.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The two friends ___ swimming in the sea.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The child ___ a sandcastle when the storm broke. (build)', opts:['was building','built'], a:'was building', tip:'Action in progress → past continuous.'},
+    {q:'The storm ___ very suddenly. (break)', opts:['broke','was breaking'], a:'broke', tip:'One sudden, finished action → simple past.'},
+    {q:'The seller was working ___ the rain started.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the friends were swimming, the sky went dark.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the lifeguard watching the sea when it happened? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The lifeguard ___ the sea when the storm broke. (watch)', opts:['was watching','watched'], a:'was watching', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The storm ___ very suddenly. (break)', opts:['broke','was breaking'], a:'broke', tip:'One sudden, finished action → simple past.'},
+    {q:'While the seller ___ ice creams, the wind rose. (sell)', opts:['was selling','sold'], a:'was selling', tip:'Two actions together → while + past continuous.'},
+    {q:'The child ___ back to her mother. (run)', opts:['ran','was running'], a:'ran', tip:'One completed action → simple past.'},
+    {q:'At that moment, the seagulls ___ over the waves. (fly)', opts:['were flying','flew'], a:'were flying', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'swim → ___', opts:['swimming','swiming'], a:'swimming', tip:'Double the final consonant: swimming.'},
+    {q:'build → ___', opts:['building','builling'], a:'building', tip:'Just add -ing: building.'},
+    {q:'dig → ___', opts:['digging','diging'], a:'digging', tip:'Double the final consonant: digging.'},
+    {q:'make → ___', opts:['making','makeing'], a:'making', tip:'Drop the silent -e: making.'},
+    {q:'lie → ___', opts:['lying','lieing'], a:'lying', tip:'-ie becomes -y before -ing: lying.'},
+    {q:'watch → ___', opts:['watching','watchhing'], a:'watching', tip:'Just add -ing: watching.'},
+  ],
+  mistakes:[
+    {q:'The lifeguard were watching the sea.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The two friends was swimming in the sea.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The child was build a sandcastle.', bad:'build', fix:'building', tip:'was + -ing → was building.'},
+    {q:'The storm was breaking and the rain fell.', bad:'breaking', fix:'broke', tip:'One finished action → broke.'},
+    {q:'The seagulls was flying over the waves.', bad:'was', fix:'were', tip:'More than one bird → were.'},
+  ],
+  spots:{swimmers:[252,116], child:[196,168], seller:[62,138], lifeguard:[338,116], gulls:[120,44]},
+  match:[
+    {a:'The two friends were swimming', b:'when the storm broke'},
+    {a:'The child was building a sandcastle', b:'when the first rain fell'},
+    {a:'The ice-cream seller was serving a queue', b:'when the thunder crashed'},
+    {a:'The lifeguard was watching the sea', b:'when the wind grew strong'},
+    {a:'The seagulls were flying over the waves', b:'when the sky went dark'},
+  ],
+  scramble:[
+    {answer:'The lifeguard was watching the sea when the storm broke.'},
+    {answer:'The two friends were swimming in the sea.'},
+    {answer:'While the child was building a sandcastle the rain began.'},
+  ],
+  stories:[
+    {title:'A hot day at the beach', text:'It was a hot afternoon and the beach {0} full of people. In the sea, two friends {1} together. Near the water, a small child {2} a sandcastle. On the promenade, the ice-cream seller {3} cold ice creams to a long queue. From his tall chair, the lifeguard {4} the sea carefully. Above the waves, the seagulls {5} in the wind. Suddenly, the sky {6} dark and a storm {7} over the beach. While everyone {8} for cover, the lifeguard {9} them to leave the water.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['were swimming','swam'], a:'were swimming'},
+      {opts:['was building','built'], a:'was building'},
+      {opts:['was selling','sold'], a:'was selling'},
+      {opts:['was watching','watched'], a:'was watching'},
+      {opts:['were flying','flew'], a:'were flying'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['broke','was breaking'], a:'broke'},
+      {opts:['was running','ran'], a:'was running'},
+      {opts:['told','was telling'], a:'told'},
+    ]},
+  ],
+  listen:[
+    {say:'The lifeguard was watching the sea.', opts:['The lifeguard was watching the sea.','The lifeguard were watching the sea.','The lifeguard watched the sea.'], a:'The lifeguard was watching the sea.'},
+    {say:'The two friends were swimming in the sea.', opts:['The two friends was swimming in the sea.','The two friends were swimming in the sea.','The two friends swam in the sea.'], a:'The two friends were swimming in the sea.'},
+    {say:'The storm broke over the beach.', opts:['The storm broke over the beach.','The storm was breaking over the beach.','The storm breaks over the beach.'], a:'The storm broke over the beach.'},
+    {say:'The child was building a sandcastle when the rain fell.', opts:['The child built a sandcastle when the rain fell.','The child was building a sandcastle when the rain fell.','The child was building a sandcastle when the rain falls.'], a:'The child was building a sandcastle when the rain fell.'},
+    {say:'While the seller was working, the wind grew strong.', opts:['While the seller was working, the wind grew strong.','While the seller worked, the wind was growing strong.','When the seller was working, the wind grew strong.'], a:'While the seller was working, the wind grew strong.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="beachsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe4f4"/><stop offset="1" stop-color="#eaf6fb"/></linearGradient>
+      <linearGradient id="beachsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aa6c8"/><stop offset="1" stop-color="#6fc3dc"/></linearGradient>
+      <linearGradient id="beachsand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3dfa8"/><stop offset="1" stop-color="#e6cd8a"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#beachsky)"/>
+    <circle class="sun" cx="330" cy="40" r="20" fill="#ffe27a"/>
+    <rect x="0" y="92" width="400" height="60" fill="url(#beachsea)"/>
+    <g stroke="#bfe9f4" stroke-width="2" fill="none" opacity=".8"><path d="M0 108 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/><path d="M0 128 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/></g>
+    <rect x="0" y="150" width="400" height="70" fill="url(#beachsand)"/>
+    <path d="M0 150 q40 8 80 2 t80 2 t80 -2 t80 2 t80 -2 v-4 H0z" fill="#f6ead0" opacity=".6"/>
+    <!-- SEAGULLS (top, flying) -->
+    <g class="fly"><g transform="translate(120,44)" stroke="#5a6670" stroke-width="2.4" fill="none" stroke-linecap="round">
+      <path d="M-10 0 q6 -7 12 0 q6 -7 12 0"/><path d="M20 -6 q5 -6 10 0 q5 -6 10 0"/><path d="M-30 -4 q4 -5 8 0 q4 -5 8 0"/>
+    </g></g>
+    <!-- ICE-CREAM SELLER + stall (left, on sand) -->
+    <g transform="translate(62,132)">
+      <rect x="-28" y="18" width="56" height="34" rx="3" fill="#f4f0e6"/><rect x="-28" y="18" width="56" height="6" fill="#d8542a"/>
+      <path d="M-34 6 h68 l-6 12 h-56z" fill="#e46a4a"/>
+      <g stroke="#c9c2b2" stroke-width="2"><path d="M-30 18 v-6"/><path d="M30 18 v-6"/></g>
+      <circle cx="0" cy="2" r="9" fill="#e3ad82"/>
+      <path d="M-9 1 a9 9 0 0 1 18 0 v-3 a9 9 0 0 0 -18 0z" fill="#2a1c14"/>
+      <path d="M-10 -6 h20 v-3 a10 6 0 0 0 -20 0z" fill="#fff"/>
+      <rect x="-11" y="10" width="22" height="26" rx="7" fill="#4a9ec0"/>
+      <rect x="-11" y="26" width="22" height="12" fill="#fff"/>
+      <g class="wave"><rect x="8" y="12" width="18" height="5" rx="2.5" fill="#e3ad82"/><path d="M27 8 l6 -4 l2 6z" fill="#f2c14a"/><path d="M28 6 a5 5 0 0 1 8 0z" fill="#fff"/></g>
+    </g>
+    <!-- CHILD building a sandcastle (center, on sand) -->
+    <g transform="translate(196,168)">
+      <ellipse cx="0" cy="30" rx="16" ry="4" fill="#00000012"/>
+      <path d="M14 24 h18 v-10 h-4 v-4 h-4 v4 h-2 v-4 h-4 v4 h-4 v4h4z" fill="#d8b56a"/>
+      <rect x="-12" y="6" width="20" height="22" rx="7" fill="#e85d8a"/>
+      <circle cx="-2" cy="0" r="8" fill="#f0c9a0"/>
+      <path d="M-10 0 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#e0a020"/>
+      <path d="M4 -8 q7 3 5 12 q-4 -3 -6 -1 q3 -6 1 -11z" fill="#e0a020"/>
+      <g class="stir"><rect x="6" y="10" width="12" height="4" rx="2" fill="#e85d8a"/><rect x="16" y="8" width="7" height="8" rx="1.5" fill="#3a8ca0"/></g>
+    </g>
+    <!-- LIFEGUARD on a tall chair (right, on sand) -->
+    <g transform="translate(338,150)">
+      <g stroke="#a5793f" stroke-width="4" stroke-linecap="round"><path d="M-14 60 l6 -40"/><path d="M14 60 l-6 -40"/><path d="M-10 40 h22"/></g>
+      <rect x="-14" y="6" width="28" height="16" rx="2" fill="#d8542a"/>
+      <g transform="translate(0,-2)">
+        <rect x="-10" y="0" width="20" height="24" rx="7" fill="#e8442a"/>
+        <path d="M-3 4 v18 M3 4 v18" stroke="#fff" stroke-width="2"/>
+        <circle cx="0" cy="-10" r="9" fill="#a2683f"/>
+        <path d="M-9 -11 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#1a120c"/>
+        <path d="M-10 -12 h20 v-2 a10 6 0 0 0 -20 0z" fill="#e8442a"/>
+        <g class="bob"><rect x="-16" y="-8" width="16" height="5" rx="2.5" fill="#e8442a"/><rect x="-22" y="-11" width="8" height="6" rx="1.5" fill="#2a2a2a"/><rect x="-14" y="-11" width="8" height="6" rx="1.5" fill="#2a2a2a"/></g>
+      </g>
+    </g>
+    <!-- TWO FRIENDS swimming in the sea -->
+    <g class="bob"><g transform="translate(238,116)">
+      <ellipse cx="0" cy="6" rx="16" ry="4" fill="#3a94b6" opacity=".6"/>
+      <circle cx="0" cy="0" r="8" fill="#e3ad82"/>
+      <path d="M-8 -1 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#2a1c14"/>
+      <path d="M-14 2 q-5 -5 -3 -9 q4 1 6 6z" fill="#e3ad82"/>
+    </g></g>
+    <g class="bob"><g transform="translate(266,120)">
+      <ellipse cx="0" cy="6" rx="16" ry="4" fill="#3a94b6" opacity=".6"/>
+      <circle cx="0" cy="0" r="8" fill="#c98a5a"/>
+      <path d="M-8 -1 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#5a3a1a"/>
+      <path d="M14 2 q5 -5 3 -9 q-4 1 -6 6z" fill="#c98a5a"/>
+    </g></g>
+    <rect id="darken" width="400" height="220" fill="#20304a" opacity="0"/>
+    <g id="rain">
+      <line x1="24" y1="60" x2="18" y2="104" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="52" y1="70" x2="46" y2="118" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="80" y1="62" x2="74" y2="112" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="108" y1="74" x2="102" y2="126" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="136" y1="60" x2="130" y2="108" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="164" y1="72" x2="158" y2="124" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="192" y1="64" x2="186" y2="114" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="220" y1="70" x2="214" y2="120" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="248" y1="60" x2="242" y2="110" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="276" y1="74" x2="270" y2="126" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="304" y1="62" x2="298" y2="116" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="332" y1="70" x2="326" y2="118" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="360" y1="60" x2="354" y2="108" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="388" y1="72" x2="382" y2="122" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+    </g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+  </svg>
+  ${pin(62,132,'The ice-cream seller')}${pin(196,168,'The child')}${pin(338,116,'The lifeguard')}${pin(252,116,'The two friends')}${pin(120,44,'The seagulls')}`,
+},
+{
+  id:'football', emo:'⚽', name:'The Big Match', tag:'The&nbsp;Big&nbsp;Match',
+  era:['STADIUM','MATCH DAY'], statusAfter:'Blackout',
+  fx:'blackout', darkFill:'#0e1420',
+  sceneTitle:'The scene · watch what everyone is doing at the big match',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE BIG MATCH — write your eyewitness account',
+  headlinePH:'Title — e.g. THE NIGHT THE FLOODLIGHTS FAILED',
+  fileslug:'the-big-match',
+  event:{ btn:'💡 The floodlights go out', clause:'when the floodlights went out', sfx:'boom', after:'buzz',
+    promptWatch:'Watch closely… what is everyone doing at the big match? When you are ready, press <b>“The floodlights go out”</b>.',
+    promptAfter:'💡 The floodlights <b>went out</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The striker <b>was dribbling</b> the ball <b>when</b> the floodlights <b>went out</b>." },
+  witnesses:[
+    {id:'striker',subj:'The striker',   aux:'was', verb:'dribbling', tail:'the ball towards goal', opts:['dribbling','sleeping','flying']},
+    {id:'keeper', subj:'The goalkeeper',aux:'was', verb:'diving',    tail:'to save the shot',     opts:['diving','reading','cooking']},
+    {id:'ref',    subj:'The referee',   aux:'was', verb:'blowing',   tail:'his whistle loudly',   opts:['blowing','swimming','painting']},
+    {id:'fans',   subj:'The fans',      aux:'were',verb:'cheering',  tail:'in the stand',         opts:['cheering','digging','drawing']},
+    {id:'coach',  subj:'The coach',     aux:'was', verb:'shouting',  tail:'from the touchline',   opts:['shouting','dancing','fishing']},
+  ],
+  vocab:[
+    {w:"to dribble", pos:"v.", def:"To run with the ball at your feet in football.", ex:"The striker was dribbling past the defender."},
+    {w:"to dive", pos:"v.", def:"To jump and stretch out, usually to stop the ball.", ex:"The goalkeeper was diving to make a save."},
+    {w:"floodlights", pos:"n.", def:"The big bright lights that light up a stadium at night.", ex:"The floodlights went out during the match."},
+    {w:"striker", pos:"n.", def:"An attacking player whose job is to score goals.", ex:"The striker was running towards goal."},
+    {w:"whistle", pos:"n.", def:"A small object the referee blows to stop or start play.", ex:"The referee blew his whistle."},
+    {w:"the stand", pos:"n.", def:"The area with seats where the fans watch the match.", ex:"The fans were cheering in the stand."},
+    {w:"touchline", pos:"n.", def:"The white line at the side of the pitch.", ex:"The coach was shouting from the touchline."},
+    {w:"to save", pos:"v.", def:"To stop the ball from going into the goal.", ex:"The keeper was trying to save the shot."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a cold evening and the stadium was full of noise.'},
+    {t:'past cont', s:'The striker was dribbling the ball towards the goal.'},
+    {t:'simple past', s:'Suddenly, all the floodlights went out.'},
+    {t:'simple past', s:'The referee blew his whistle and the game stopped.'},
+    {t:'when', s:'The goalkeeper was diving for the ball when the lights failed.'},
+    {t:'while', s:'While the fans were cheering, the whole stadium went dark.'},
+  ],
+  wordbank:['dribbling','diving','blowing','cheering','shouting','the pitch','the goal','a whistle','the stand','the ball','floodlights','suddenly','when','while','went out','shouted'],
+  practice:[
+    {q:'The striker ___ dribbling the ball.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The fans ___ cheering in the stand.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The goalkeeper ___ when the lights went out. (dive)', opts:['was diving','dived'], a:'was diving', tip:'Action in progress → past continuous.'},
+    {q:'All the floodlights ___ very suddenly. (go)', opts:['went','were going'], a:'went', tip:'One sudden, finished action → simple past.'},
+    {q:'The referee was blowing his whistle ___ the lights failed.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the coach was shouting, the game carried on.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the keeper diving when the lights went out? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The striker ___ the ball when the floodlights went out. (dribble)', opts:['was dribbling','dribbled'], a:'was dribbling', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The floodlights ___ out very quickly. (go)', opts:['went','were going'], a:'went', tip:'One sudden, finished action → simple past.'},
+    {q:'While the goalkeeper ___ , the crowd gasped. (dive)', opts:['was diving','dived'], a:'was diving', tip:'Two actions together → while + past continuous.'},
+    {q:'The referee ___ his whistle. (blow)', opts:['blew','was blowing'], a:'blew', tip:'One completed action → simple past.'},
+    {q:'At that moment, the fans ___ loudly in the stand. (cheer)', opts:['were cheering','cheered'], a:'were cheering', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'dribble → ___', opts:['dribbling','dribbleing'], a:'dribbling', tip:'Drop the silent -e: dribbling.'},
+    {q:'dive → ___', opts:['diving','diveing'], a:'diving', tip:'Drop the silent -e: diving.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'cheer → ___', opts:['cheering','cheerring'], a:'cheering', tip:'Two vowels together — no doubling: cheering.'},
+    {q:'shout → ___', opts:['shouting','shoutting'], a:'shouting', tip:'Two vowels together — no doubling: shouting.'},
+    {q:'tie → ___', opts:['tying','tieing'], a:'tying', tip:'-ie changes to -ying: tying.'},
+  ],
+  mistakes:[
+    {q:'The striker were dribbling the ball.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The fans was cheering in the stand.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The goalkeeper was dive for the ball.', bad:'dive', fix:'diving', tip:'was + -ing → was diving.'},
+    {q:'The floodlights were going out and it went dark.', bad:'going', fix:'went', tip:'One finished action → went.'},
+    {q:'The coach were shouting from the touchline.', bad:'were', fix:'was', tip:'One person → was.'},
+  ],
+  spots:{striker:[120,150], keeper:[300,140], ref:[210,146], fans:[60,52], coach:[350,150]},
+  match:[
+    {a:'The striker was dribbling the ball', b:'when the floodlights went out'},
+    {a:'The goalkeeper was diving to save', b:'when the stadium went dark'},
+    {a:'The referee was blowing his whistle', b:'when the lights failed'},
+    {a:'The fans were cheering in the stand', b:'when everything went black'},
+    {a:'The coach was shouting instructions', b:'when the match stopped'},
+  ],
+  scramble:[
+    {answer:'The striker was dribbling the ball when the floodlights went out.'},
+    {answer:'The goalkeeper was diving to save the shot.'},
+    {answer:'While the fans were cheering the stadium went completely dark.'},
+  ],
+  stories:[
+    {title:'The night of the big match', text:'It was a cold evening and the stadium {0} full of noise. The striker {1} the ball towards goal. In front of him, the goalkeeper {2} from side to side. Thousands of fans {3} in the stand, while the coach {4} from the touchline. The referee {5} the game carefully. Suddenly, all the floodlights {6} out. The crowd {7} loudly. While everyone {8} in the dark, the announcer {9} calm.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was dribbling','dribbled'], a:'was dribbling'},
+      {opts:['was diving','dived'], a:'was diving'},
+      {opts:['were cheering','cheered'], a:'were cheering'},
+      {opts:['was shouting','shouted'], a:'was shouting'},
+      {opts:['was watching','watched'], a:'was watching'},
+      {opts:['went','were going'], a:'went'},
+      {opts:['gasped','was gasping'], a:'gasped'},
+      {opts:['was waiting','waited'], a:'was waiting'},
+      {opts:['stayed','was staying'], a:'stayed'},
+    ]},
+    {title:'The penalty', text:'Yesterday the two teams {0} the final. The striker {1} for a penalty when the referee blew his whistle. It {2} very quiet. While the keeper {3} his gloves, the fans {4} their flags. The striker {5} the ball hard, but the keeper {6} it away. Everyone {7} when the ball hit the post. Luckily, the score {8} still level. The coach {9} his players onto the pitch.', gaps:[
+      {opts:['were playing','played'], a:'were playing'},
+      {opts:['was waiting','waited'], a:'was waiting'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['was fixing','fixed'], a:'was fixing'},
+      {opts:['were waving','waved'], a:'were waving'},
+      {opts:['kicked','was kicking'], a:'kicked'},
+      {opts:['pushed','was pushing'], a:'pushed'},
+      {opts:['was shouting','shouted'], a:'was shouting'},
+      {opts:['was','were'], a:'was'},
+      {opts:['sent','was sending'], a:'sent'},
+    ]},
+  ],
+  listen:[
+    {say:'The striker was dribbling the ball.', opts:['The striker was dribbling the ball.','The striker were dribbling the ball.','The striker dribbled the ball.'], a:'The striker was dribbling the ball.'},
+    {say:'The fans were cheering in the stand.', opts:['The fans was cheering in the stand.','The fans were cheering in the stand.','The fans cheered in the stand.'], a:'The fans were cheering in the stand.'},
+    {say:'The floodlights went out.', opts:['The floodlights went out.','The floodlights were going out.','The floodlights go out.'], a:'The floodlights went out.'},
+    {say:'The goalkeeper was diving when the lights failed.', opts:['The goalkeeper dived when the lights failed.','The goalkeeper was diving when the lights failed.','The goalkeeper was diving when the lights fail.'], a:'The goalkeeper was diving when the lights failed.'},
+    {say:'While the coach was shouting, the game carried on.', opts:['While the coach was shouting, the game carried on.','While the coach shouted, the game was carrying on.','When the coach was shouting, the game carried on.'], a:'While the coach was shouting, the game carried on.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="footsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1730"/><stop offset="1" stop-color="#243a5a"/></linearGradient>
+      <linearGradient id="footpitch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8f3e"/><stop offset="1" stop-color="#1f6b2c"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#footsky)"/>
+    <!-- stand with crowd dots (top left) -->
+    <rect x="0" y="30" width="150" height="52" fill="#2a3550"/>
+    <rect x="0" y="30" width="150" height="8" fill="#1c2740"/>
+    <g fill="#e8d9b0"><circle cx="14" cy="46" r="3"/><circle cx="30" cy="44" r="3"/><circle cx="46" cy="47" r="3"/><circle cx="62" cy="44" r="3"/><circle cx="78" cy="47" r="3"/><circle cx="94" cy="44" r="3"/><circle cx="110" cy="47" r="3"/><circle cx="126" cy="45" r="3"/><circle cx="142" cy="47" r="3"/></g>
+    <g fill="#d59a6a"><circle cx="22" cy="60" r="3"/><circle cx="38" cy="58" r="3"/><circle cx="54" cy="61" r="3"/><circle cx="70" cy="58" r="3"/><circle cx="86" cy="61" r="3"/><circle cx="102" cy="58" r="3"/><circle cx="118" cy="61" r="3"/><circle cx="134" cy="59" r="3"/></g>
+    <g fill="#c98a5a"><circle cx="14" cy="72" r="3"/><circle cx="46" cy="72" r="3"/><circle cx="78" cy="72" r="3"/><circle cx="110" cy="72" r="3"/><circle cx="142" cy="72" r="3"/></g>
+    <!-- floodlight towers -->
+    <g stroke="#6a7280" stroke-width="3"><path d="M40 30 v-18"/></g>
+    <rect x="26" y="2" width="30" height="12" rx="2" fill="#3a4250"/>
+    <g fill="#ffe98a"><circle cx="32" cy="8" r="2.4"/><circle cx="41" cy="8" r="2.4"/><circle cx="50" cy="8" r="2.4"/></g>
+    <g stroke="#6a7280" stroke-width="3"><path d="M360 30 v-18"/></g>
+    <rect x="346" y="2" width="30" height="12" rx="2" fill="#3a4250"/>
+    <g fill="#ffe98a"><circle cx="352" cy="8" r="2.4"/><circle cx="361" cy="8" r="2.4"/><circle cx="370" cy="8" r="2.4"/></g>
+    <!-- pitch -->
+    <rect x="0" y="82" width="400" height="138" fill="url(#footpitch)"/>
+    <g stroke="#eaf3ea" stroke-width="2" fill="none" opacity=".85"><path d="M0 100 h400"/><path d="M200 100 v120"/><circle cx="200" cy="160" r="26"/><path d="M330 120 h60 v56 h-60"/><path d="M356 138 h34 v20 h-34"/></g>
+    <!-- goal (right) -->
+    <g stroke="#f4f8f8" stroke-width="2.5" fill="none"><path d="M388 116 v64"/><path d="M388 116 h10 M388 180 h10"/></g>
+    <!-- FANS flag waver (front of stand) -->
+    <g transform="translate(60,96)">
+      <ellipse cx="0" cy="10" rx="12" ry="4" fill="#00000018"/>
+      <rect x="-8" y="-14" width="16" height="26" rx="6" fill="#c0453a"/>
+      <circle cx="0" cy="-22" r="8" fill="#e3ad82"/><path d="M-8 -24 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#2a2a2a"/>
+      <g class="wave"><rect x="8" y="-16" width="4" height="20" rx="2" fill="#8a6a4a"/><path d="M12 -16 h20 v10 h-20z" fill="#f2c23a"/></g>
+    </g>
+    <!-- STRIKER dribbling (center-left) -->
+    <g class="dash"><g transform="translate(120,150)">
+      <ellipse cx="0" cy="12" rx="14" ry="4" fill="#00000020"/>
+      <rect x="-9" y="-14" width="18" height="26" rx="7" fill="#f0f0f0"/>
+      <rect x="-9" y="6" width="8" height="12" rx="3" fill="#1e50a0"/><rect x="1" y="6" width="8" height="12" rx="3" fill="#1e50a0"/>
+      <circle cx="0" cy="-22" r="8.5" fill="#f0c9a0"/><path d="M-8.5 -23 a8.5 8.5 0 0 1 17 0 v-3 a8.5 8.5 0 0 0 -17 0z" fill="#3a2a1a"/>
+      <circle cx="18" cy="16" r="7" fill="#fff" stroke="#222" stroke-width="1.4"/><path d="M18 16 l3 -4 l4 2 M18 16 l-4 2 l1 4" stroke="#222" stroke-width="1.2" fill="none"/>
+    </g></g>
+    <!-- REFEREE blowing whistle (center) -->
+    <g transform="translate(210,152)">
+      <ellipse cx="0" cy="10" rx="12" ry="4" fill="#00000020"/>
+      <rect x="-8" y="-12" width="16" height="24" rx="6" fill="#2a2a2a"/>
+      <rect x="-8" y="-12" width="16" height="6" fill="#f2d24a"/>
+      <circle cx="0" cy="-20" r="8" fill="#8a5a3a"/><path d="M-8 -21 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#1a1a1a"/>
+      <g class="wave"><rect x="6" y="-16" width="12" height="4" rx="2" fill="#2a2a2a"/><circle cx="20" cy="-16" r="3" fill="#d8d8d8"/></g>
+    </g>
+    <!-- GOALKEEPER diving (right) -->
+    <g class="bob"><g transform="translate(300,140)">
+      <ellipse cx="0" cy="22" rx="18" ry="4" fill="#00000020"/>
+      <rect x="-16" y="-2" width="34" height="16" rx="8" fill="#2fae74" transform="rotate(-18)"/>
+      <circle cx="-18" cy="-10" r="8" fill="#a2683f"/><path d="M-26 -11 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#2a2018"/>
+      <rect x="16" y="-14" width="8" height="8" rx="2" fill="#e8e8e8"/>
+      <rect x="-30" y="-8" width="8" height="8" rx="2" fill="#e8e8e8"/>
+    </g></g>
+    <!-- COACH shouting (touchline, far right) -->
+    <g transform="translate(350,150)">
+      <ellipse cx="0" cy="12" rx="12" ry="4" fill="#00000020"/>
+      <rect x="-9" y="-12" width="18" height="26" rx="7" fill="#2f3a44"/>
+      <circle cx="0" cy="-20" r="8" fill="#e3ad82"/><path d="M-8 -22 a8 8 0 0 1 16 0 v-1 a8 8 0 0 0 -16 0z" fill="#5a4030"/>
+      <path d="M-8 -20 h16 v-2 h-16z" fill="#3a3a3a"/><rect x="-9" y="-25" width="18" height="4" rx="2" fill="#c0453a"/>
+      <g class="wave"><rect x="7" y="-16" width="14" height="4" rx="2" fill="#2f3a44"/></g>
+      <path d="M-9 -20 q-8 -3 -10 2 q6 1 10 3z" fill="#e3ad82"/>
+    </g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#0e1420" opacity="0"/>
+  </svg>
+  ${pin(120,150,'The striker')}${pin(300,140,'The goalkeeper')}${pin(210,152,'The referee')}${pin(60,96,'The fans')}${pin(350,150,'The coach')}`,
+},
+{
+  id:'space', emo:'🛰️', name:'The Space Station', tag:'Space&nbsp;Station',
+  era:['ORBIT','ISS'], statusAfter:'Alert',
+  fx:'alarm', darkFill:'#0a0f1e',
+  sceneTitle:'The scene · watch what everyone is doing on the space station',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE SPACE STATION — write your eyewitness account',
+  headlinePH:'Title — e.g. THE MORNING THE ALARM WOKE THE CREW',
+  fileslug:'the-space-station',
+  event:{ btn:'🚨 The alarm sounds', clause:'when the alarm sounded', sfx:'bell', after:'bell',
+    promptWatch:'Watch closely… what is everyone doing on the space station? When you are ready, press <b>“The alarm sounds”</b>.',
+    promptAfter:'🚨 The alarm <b>sounded</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The astronaut <b>was floating</b> in the cabin <b>when</b> the alarm <b>sounded</b>." },
+  witnesses:[
+    {id:'floater',   subj:'The astronaut', aux:'was', verb:'floating', tail:'in the middle of the cabin', opts:['floating','swimming','digging']},
+    {id:'scientist', subj:'The scientist', aux:'was', verb:'checking', tail:'the data on a screen',        opts:['checking','sleeping','cooking']},
+    {id:'engineer',  subj:'The engineer',  aux:'was', verb:'fixing',   tail:'a broken control panel',      opts:['fixing','dancing','painting']},
+    {id:'commander', subj:'The commander', aux:'was', verb:'drinking', tail:'a floating ball of water',    opts:['drinking','flying','singing']},
+    {id:'robot',     subj:'The robot arm', aux:'was', verb:'moving',   tail:'a metal box slowly',          opts:['moving','sleeping','baking']},
+  ],
+  vocab:[
+    {w:"to float", pos:"v.", def:"To move gently through the air without falling.", ex:"The astronaut was floating in the cabin."},
+    {w:"weightless", pos:"adj.", def:"Having no weight, so everything drifts around.", ex:"In space, the crew felt weightless."},
+    {w:"orbit", pos:"n.", def:"The curved path an object takes around a planet.", ex:"The station travels in orbit around Earth."},
+    {w:"spacesuit", pos:"n.", def:"The protective white suit an astronaut wears.", ex:"She was putting on her spacesuit."},
+    {w:"control panel", pos:"n.", def:"A board of buttons and screens that controls the station.", ex:"The engineer was fixing the control panel."},
+    {w:"oxygen", pos:"n.", def:"The gas that people need to breathe.", ex:"The alarm warned about low oxygen."},
+    {w:"astronaut", pos:"n.", def:"A person who is trained to travel in space.", ex:"The astronaut was drinking floating water."},
+    {w:"gravity", pos:"n.", def:"The force that pulls things down towards a planet.", ex:"There is almost no gravity on the station."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a quiet morning and the station was orbiting high above Earth.'},
+    {t:'past cont', s:'The astronaut was floating slowly across the cabin.'},
+    {t:'simple past', s:'Suddenly, the alarm sounded through every module.'},
+    {t:'simple past', s:'The commander shouted and everyone stopped moving.'},
+    {t:'when', s:'The engineer was fixing a panel when the red light flashed.'},
+    {t:'while', s:'While the scientist was checking the data, the whole crew looked up.'},
+  ],
+  wordbank:['floating','checking','fixing','drinking','moving','the cabin','a screen','a panel','weightless','the alarm','orbit','suddenly','when','while','sounded','the space station'],
+  practice:[
+    {q:'The astronaut ___ floating in the cabin.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'Two astronauts ___ working near the window.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The scientist ___ the data when the alarm sounded. (check)', opts:['was checking','checked'], a:'was checking', tip:'Action in progress → past continuous.'},
+    {q:'The alarm ___ very suddenly. (sound)', opts:['sounded','was sounding'], a:'sounded', tip:'One sudden, finished action → simple past.'},
+    {q:'The engineer was fixing the panel ___ the alarm sounded.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the commander was drinking water, the light started flashing.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the engineer fixing the panel when the alarm sounded? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The astronaut ___ across the cabin when the alarm sounded. (float)', opts:['was floating','floated'], a:'was floating', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The alarm ___ very loudly. (sound)', opts:['sounded','was sounding'], a:'sounded', tip:'One sudden, finished action → simple past.'},
+    {q:'While the engineer ___ , the robot arm moved a box. (fix)', opts:['was fixing','fixed'], a:'was fixing', tip:'Two actions together → while + past continuous.'},
+    {q:'The commander ___ the control centre on Earth. (call)', opts:['called','was calling'], a:'called', tip:'One completed action → simple past.'},
+    {q:'At that moment, two astronauts ___ the solar panels. (repair)', opts:['were repairing','repaired'], a:'were repairing', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'float → ___', opts:['floating','floatting'], a:'floating', tip:'Two vowels together — no doubling: floating.'},
+    {q:'move → ___', opts:['moving','moveing'], a:'moving', tip:'Drop the silent -e: moving.'},
+    {q:'spin → ___', opts:['spinning','spining'], a:'spinning', tip:'Double the final consonant: spinning.'},
+    {q:'fix → ___', opts:['fixing','fixxing'], a:'fixing', tip:'Never double the x: fixing.'},
+    {q:'tie → ___', opts:['tying','tieing'], a:'tying', tip:'-ie becomes -ying: tying.'},
+    {q:'drink → ___', opts:['drinking','drinkking'], a:'drinking', tip:'Two consonants at the end — no doubling: drinking.'},
+  ],
+  mistakes:[
+    {q:'The astronaut were floating in the cabin.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The two astronauts was repairing the panel.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The engineer was fix the control panel.', bad:'fix', fix:'fixing', tip:'was + -ing → was fixing.'},
+    {q:'The alarm was sounding and then everyone froze.', bad:'sounding', fix:'sounded', tip:'One finished action → sounded.'},
+    {q:'The engineer was fixing the panel while the alarm sounded.', bad:'while', fix:'when', tip:'A short, sudden action → when.'},
+  ],
+  spots:{floater:[80,74], scientist:[150,140], engineer:[245,140], commander:[326,94], robot:[364,120]},
+  match:[
+    {a:'The astronaut was floating in the cabin', b:'when the alarm sounded'},
+    {a:'The scientist was checking the data', b:'when the screen turned red'},
+    {a:'The engineer was fixing a panel', b:'when the light started flashing'},
+    {a:'The commander was drinking some water', b:'when he heard the alarm'},
+    {a:'The robot arm was moving a box', b:'when the power cut out'},
+  ],
+  scramble:[
+    {answer:'The astronaut was floating in the cabin when the alarm sounded.'},
+    {answer:'The engineer was fixing a broken control panel.'},
+    {answer:'While the scientist was checking the data the crew looked up.'},
+  ],
+  stories:[
+    {title:'A quiet morning in orbit', text:'It was a quiet morning and the space station {0} calmly around Earth. The astronaut {1} slowly across the cabin. Near the window, the scientist {2} the data on a bright screen. The engineer {3} a broken control panel, while the commander {4} a floating ball of water. In the corner, the robot arm {5} a metal box. Suddenly, the alarm {6}. The commander {7} at once. While the crew {8} to the controls, the pilot {9} the centre on Earth.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was floating','floated'], a:'was floating'},
+      {opts:['was checking','checked'], a:'was checking'},
+      {opts:['was fixing','fixed'], a:'was fixing'},
+      {opts:['was drinking','drank'], a:'was drinking'},
+      {opts:['was moving','moved'], a:'was moving'},
+      {opts:['sounded','was sounding'], a:'sounded'},
+      {opts:['reacted','was reacting'], a:'reacted'},
+      {opts:['were rushing','rushed'], a:'were rushing'},
+      {opts:['called','was calling'], a:'called'},
+    ]},
+  ],
+  listen:[
+    {say:'The astronaut was floating in the cabin.', opts:['The astronaut was floating in the cabin.','The astronaut were floating in the cabin.','The astronaut floated in the cabin.'], a:'The astronaut was floating in the cabin.'},
+    {say:'Two astronauts were repairing the panel.', opts:['Two astronauts was repairing the panel.','Two astronauts were repairing the panel.','Two astronauts repaired the panel.'], a:'Two astronauts were repairing the panel.'},
+    {say:'The alarm sounded.', opts:['The alarm sounded.','The alarm was sounding.','The alarm sounds.'], a:'The alarm sounded.'},
+    {say:'The scientist was checking the data when the alarm sounded.', opts:['The scientist checked the data when the alarm sounded.','The scientist was checking the data when the alarm sounded.','The scientist was checking the data when the alarm sounds.'], a:'The scientist was checking the data when the alarm sounded.'},
+    {say:'While the engineer was fixing the panel, the light flashed.', opts:['While the engineer was fixing the panel, the light flashed.','While the engineer fixed the panel, the light was flashing.','When the engineer was fixing the panel, the light flashed.'], a:'While the engineer was fixing the panel, the light flashed.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="spacesky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05070f"/><stop offset="1" stop-color="#0a0f1e"/></linearGradient>
+      <radialGradient id="spaceearth" cx="0.5" cy="0.3" r="0.9"><stop offset="0" stop-color="#5aa0e0"/><stop offset="0.6" stop-color="#2f6fb0"/><stop offset="1" stop-color="#1a3f6a"/></radialGradient>
+      <linearGradient id="spacehull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd6dd"/><stop offset="1" stop-color="#aab2ba"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#spacesky)"/>
+    <g fill="#ffffff"><circle cx="24" cy="30" r="1.3"/><circle cx="60" cy="16" r="1"/><circle cx="98" cy="40" r="1.4"/><circle cx="140" cy="22" r="1"/><circle cx="182" cy="48" r="1.2"/><circle cx="212" cy="18" r="1"/><circle cx="256" cy="36" r="1.4"/><circle cx="300" cy="20" r="1"/><circle cx="336" cy="44" r="1.2"/><circle cx="372" cy="24" r="1"/><circle cx="40" cy="70" r="1"/><circle cx="122" cy="78" r="1.2"/><circle cx="288" cy="70" r="1"/><circle cx="360" cy="84" r="1.3"/></g>
+    <circle cx="200" cy="360" r="230" fill="url(#spaceearth)"/>
+    <g fill="#3f8a5a" opacity="0.75"><path d="M120 150 q30 -14 62 -4 q18 8 6 22 q-30 10 -58 0 q-18 -8 -10 -18z"/><path d="M232 138 q26 -6 44 6 q10 10 -6 16 q-26 6 -42 -6 q-8 -10 4 -22z"/><circle cx="96" cy="176" r="14"/></g>
+    <g stroke="#7f8891" stroke-width="4"><path d="M8 120 h44"/><path d="M348 120 h44"/></g>
+    <rect x="18" y="104" width="34" height="16" rx="2" fill="#3a6fa0"/><rect x="348" y="104" width="34" height="16" rx="2" fill="#3a6fa0"/>
+    <rect x="40" y="96" width="320" height="8" rx="4" fill="url(#spacehull)"/>
+    <rect x="120" y="60" width="70" height="34" rx="6" fill="#0c1122" stroke="#8b939b" stroke-width="3"/><rect x="126" y="66" width="58" height="22" rx="4" fill="#1a2a44"/>
+    <circle cx="150" cy="42" r="6" fill="#ffd24a"/>
+    <g class="float"><g transform="translate(80,80)">
+      <ellipse cx="0" cy="42" rx="16" ry="5" fill="#00000018"/>
+      <rect x="-12" y="4" width="24" height="34" rx="11" fill="#eef2f6"/>
+      <rect x="-12" y="16" width="24" height="6" fill="#c9d0d7"/>
+      <rect x="-10" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/><rect x="2" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/>
+      <rect x="-22" y="8" width="12" height="6" rx="3" fill="#e4e9ee"/><rect x="10" y="8" width="12" height="6" rx="3" fill="#e4e9ee"/>
+      <circle cx="0" cy="-9" r="11" fill="#f4f6f9"/>
+      <path d="M-8 -11 a8 7 0 0 1 16 0 a8 7 0 0 1 -16 0z" fill="#3a7fd0" opacity="0.85"/>
+    </g></g>
+    <rect x="128" y="128" width="34" height="26" rx="3" fill="#111a2e" stroke="#8b939b" stroke-width="2"/><rect x="132" y="132" width="26" height="18" rx="2" fill="#2ad0a0"/>
+    <g class="bob"><g transform="translate(150,150)">
+      <ellipse cx="0" cy="42" rx="16" ry="5" fill="#00000018"/>
+      <rect x="-12" y="4" width="24" height="34" rx="11" fill="#eef2f6"/>
+      <rect x="-12" y="16" width="24" height="6" fill="#c9d0d7"/>
+      <rect x="-10" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/><rect x="2" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/>
+      <rect x="6" y="6" width="16" height="6" rx="3" fill="#e4e9ee"/>
+      <circle cx="0" cy="-9" r="11" fill="#f4f6f9"/>
+      <path d="M-8 -11 a8 7 0 0 1 16 0 a8 7 0 0 1 -16 0z" fill="#c85a2a" opacity="0.85"/>
+    </g></g>
+    <rect x="228" y="124" width="34" height="34" rx="3" fill="#0e1728" stroke="#8b939b" stroke-width="2"/><g fill="#f2c94c"><circle cx="236" cy="132" r="2.4"/><circle cx="246" cy="132" r="2.4"/></g><rect x="232" y="140" width="26" height="5" rx="2" fill="#e05a4a"/><rect x="232" y="148" width="26" height="5" rx="2" fill="#4a7fd0"/>
+    <g transform="translate(245,150)">
+      <ellipse cx="0" cy="42" rx="16" ry="5" fill="#00000018"/>
+      <rect x="-12" y="4" width="24" height="34" rx="11" fill="#eef2f6"/>
+      <rect x="-12" y="16" width="24" height="6" fill="#c9d0d7"/>
+      <rect x="-10" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/><rect x="2" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/>
+      <circle cx="0" cy="-9" r="11" fill="#f4f6f9"/>
+      <path d="M-8 -11 a8 7 0 0 1 16 0 a8 7 0 0 1 -16 0z" fill="#2ea06a" opacity="0.85"/>
+      <g class="stir"><rect x="-30" y="6" width="20" height="5" rx="2.5" fill="#e4e9ee"/><rect x="-34" y="4" width="6" height="9" rx="2" fill="#c9d0d7"/></g>
+    </g>
+    <g class="float"><g transform="translate(326,100)">
+      <ellipse cx="0" cy="42" rx="15" ry="5" fill="#00000018"/>
+      <rect x="-12" y="4" width="24" height="34" rx="11" fill="#eef2f6"/>
+      <rect x="-12" y="16" width="24" height="6" fill="#c9d0d7"/>
+      <rect x="-10" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/><rect x="2" y="36" width="8" height="12" rx="4" fill="#e4e9ee"/>
+      <rect x="10" y="6" width="14" height="6" rx="3" fill="#e4e9ee"/>
+      <circle cx="0" cy="-9" r="11" fill="#f4f6f9"/>
+      <path d="M-8 -11 a8 7 0 0 1 16 0 a8 7 0 0 1 -16 0z" fill="#a05ad0" opacity="0.85"/>
+      <circle cx="18" cy="-4" r="4.5" fill="#6fb4ec" opacity="0.85"/><circle cx="25" cy="-9" r="2.5" fill="#6fb4ec" opacity="0.7"/>
+    </g></g>
+    <rect x="356" y="150" width="14" height="30" rx="3" fill="#5a636c"/>
+    <g class="wave"><g transform="translate(363,150)">
+      <rect x="-3" y="-30" width="6" height="32" rx="3" fill="#8b939b"/>
+      <rect x="-3" y="-30" width="6" height="18" rx="3" fill="#a7afb7" transform="rotate(-30)"/>
+      <rect x="-16" y="-40" width="18" height="12" rx="2" fill="#c0563a"/>
+      <circle cx="0" cy="-30" r="3.5" fill="#f2c94c"/>
+    </g></g>
+    <rect id="alarmwash" width="400" height="220" fill="#d8542a"/>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#0a0f1e" opacity="0"/>
+  </svg>
+  ${pin(80,74,'The astronaut')}${pin(150,150,'The scientist')}${pin(245,150,'The engineer')}${pin(326,96,'The commander')}${pin(364,120,'The robot arm')}`,
+},
+{
+  id:'museum', emo:'🖼️', name:'Night at the Museum', tag:'The&nbsp;Museum',
+  era:['MUSEUM','MIDNIGHT'], statusAfter:'Alarm',
+  fx:'alarm', darkFill:'#141018',
+  sceneTitle:'The scene · watch what everyone is doing in the gallery',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE MUSEUM — write your eyewitness account',
+  headlinePH:'Title — e.g. THE NIGHT THE ALARM WOKE THE MUSEUM',
+  fileslug:'the-museum',
+  event:{ btn:'🚨 The alarm goes off', clause:'when the alarm went off', sfx:'bell', after:'bell',
+    promptWatch:'Watch closely… what is everyone doing in the silent gallery? When you are ready, press <b>“The alarm goes off”</b>.',
+    promptAfter:'🚨 The alarm <b>went off</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The guard <b>was patrolling</b> the gallery <b>when</b> the alarm <b>went off</b>." },
+  witnesses:[
+    {id:'guard',   subj:'The night guard', aux:'was', verb:'patrolling', tail:'the gallery with a torch', opts:['patrolling','swimming','baking']},
+    {id:'cleaner', subj:'The cleaner',     aux:'was', verb:'mopping',    tail:'the marble floor',         opts:['mopping','dancing','fishing']},
+    {id:'curator', subj:'The curator',     aux:'was', verb:'writing',    tail:'notes at her desk',        opts:['writing','flying','digging']},
+    {id:'cat',     subj:'The museum cat',  aux:'was', verb:'walking',    tail:'along the wall',           opts:['walking','cooking','painting']},
+    {id:'mouse',   subj:'The mouse',       aux:'was', verb:'running',    tail:'across the floor',         opts:['running','reading','singing']},
+  ],
+  vocab:[
+    {w:"to patrol", pos:"v.", def:"To walk around a place to keep it safe.", ex:"The guard was patrolling the gallery."},
+    {w:"gallery", pos:"n.", def:"A large room where paintings are shown.", ex:"The gallery was quiet and dark."},
+    {w:"to mop", pos:"v.", def:"To clean a floor with a wet mop.", ex:"The cleaner was mopping the floor."},
+    {w:"curator", pos:"n.", def:"The person who looks after a museum's collection.", ex:"The curator was writing her notes."},
+    {w:"statue", pos:"n.", def:"A stone or metal figure of a person or animal.", ex:"A marble statue stood on a plinth."},
+    {w:"exhibit", pos:"n.", def:"An object shown to the public in a museum.", ex:"The exhibit was locked in a glass case."},
+    {w:"alarm", pos:"n.", def:"A loud device that warns of danger.", ex:"The alarm went off at midnight."},
+    {w:"torch", pos:"n.", def:"A small light you hold in your hand.", ex:"The guard shone his torch on the wall."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was midnight and the museum was completely silent.'},
+    {t:'past cont', s:'The night guard was patrolling the dark gallery.'},
+    {t:'simple past', s:'Suddenly, the alarm went off with a loud ring.'},
+    {t:'simple past', s:'Everyone stopped and looked at the display case.'},
+    {t:'when', s:'The cleaner was mopping the floor when the alarm rang.'},
+    {t:'while', s:'While the curator was writing her notes, a light flashed.'},
+  ],
+  wordbank:['patrolling','mopping','writing','walking','running','the gallery','a statue','a painting','the display case','a torch','midnight','the alarm','suddenly','when','while','went off'],
+  practice:[
+    {q:'The night guard ___ patrolling the gallery.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The visitors ___ leaving the museum at closing time.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The curator ___ notes when the alarm went off. (write)', opts:['was writing','wrote'], a:'was writing', tip:'Action in progress → past continuous.'},
+    {q:'The alarm ___ off very suddenly. (go)', opts:['went','was going'], a:'went', tip:'One sudden, finished action → simple past.'},
+    {q:'The cleaner was mopping the floor ___ the alarm rang.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the guard was patrolling, the lights flickered.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the cat sleeping when the alarm went off? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The guard ___ the gallery when the alarm went off. (patrol)', opts:['was patrolling','patrolled'], a:'was patrolling', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The alarm ___ off very loudly. (go)', opts:['went','was going'], a:'went', tip:'One sudden, finished action → simple past.'},
+    {q:'While the cleaner ___ , a shadow moved. (mop)', opts:['was mopping','mopped'], a:'was mopping', tip:'Two actions together → while + past continuous.'},
+    {q:'The curator ___ the police at once. (call)', opts:['called','was calling'], a:'called', tip:'One completed action → simple past.'},
+    {q:'At that moment, the visitors ___ towards the door. (walk)', opts:['were walking','walked'], a:'were walking', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'mop → ___', opts:['mopping','moping'], a:'mopping', tip:'Double the final consonant: mopping.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'patrol → ___', opts:['patrolling','patroling'], a:'patrolling', tip:'Double the final consonant: patrolling.'},
+    {q:'write → ___', opts:['writing','writeing'], a:'writing', tip:'Drop the silent -e: writing.'},
+    {q:'shine → ___', opts:['shining','shineing'], a:'shining', tip:'Drop the silent -e: shining.'},
+    {q:'walk → ___', opts:['walking','walkking'], a:'walking', tip:'Two consonants already — no doubling: walking.'},
+  ],
+  mistakes:[
+    {q:'The guard were patrolling the gallery.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The visitors was leaving the museum.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The curator was write her notes.', bad:'write', fix:'writing', tip:'was + -ing → was writing.'},
+    {q:'The alarm was going off and then stopped.', bad:'going', fix:'went', tip:'One finished action → went.'},
+    {q:'The cat were walking along the wall.', bad:'were', fix:'was', tip:'One animal → was.'},
+  ],
+  spots:{guard:[55,120], cleaner:[138,122], curator:[228,120], cat:[312,150], mouse:[360,188]},
+  match:[
+    {a:'The night guard was patrolling the gallery', b:'when the alarm went off'},
+    {a:'The cleaner was mopping the floor', b:'when the lights flickered'},
+    {a:'The curator was writing her notes', b:'when she heard the ring'},
+    {a:'The museum cat was walking along the wall', b:'when it froze in fright'},
+    {a:'The mouse was running across the floor', b:'when everyone looked up'},
+  ],
+  scramble:[
+    {answer:'The night guard was patrolling the gallery when the alarm went off.'},
+    {answer:'The cleaner was mopping the marble floor.'},
+    {answer:'While the curator was writing her notes a shadow moved.'},
+  ],
+  stories:[
+    {title:'Midnight in the museum', text:'It was midnight and the museum {0} completely silent. The night guard {1} the dark gallery with his torch. Near the statue, the cleaner {2} the marble floor. At her desk, the curator {3} some notes about a painting. The museum cat {4} slowly along the wall, while a little mouse {5} across the floor. Suddenly, the alarm {6} off. The guard {7} loudly for help. While everyone {8}, the curator {9} the police.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was patrolling','patrolled'], a:'was patrolling'},
+      {opts:['was mopping','mopped'], a:'was mopping'},
+      {opts:['was writing','wrote'], a:'was writing'},
+      {opts:['was walking','walked'], a:'was walking'},
+      {opts:['was running','ran'], a:'was running'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['shouted','was shouting'], a:'shouted'},
+      {opts:['was panicking','panicked'], a:'was panicking'},
+      {opts:['called','was calling'], a:'called'},
+    ]},
+    {title:'The missing painting', text:'Last night the museum {0} a very valuable painting. The curator {1} the exhibit when the room went dark. It {2} completely black for a moment. While the guards {3} for the switch, a thief {4} into the gallery. The cat {5} at the stranger, but he {6} away. Everyone {7} when the lights came back on. Luckily, the painting {8} still there. The guard {9} it to a safe room.', gaps:[
+      {opts:['was showing','showed'], a:'was showing'},
+      {opts:['was checking','checked'], a:'was checking'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['were looking','looked'], a:'were looking'},
+      {opts:['crept','was creeping'], a:'crept'},
+      {opts:['hissed','was hissing'], a:'hissed'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['was staring','stared'], a:'was staring'},
+      {opts:['was','were'], a:'was'},
+      {opts:['moved','was moving'], a:'moved'},
+    ]},
+  ],
+  listen:[
+    {say:'The night guard was patrolling the gallery.', opts:['The night guard was patrolling the gallery.','The night guard were patrolling the gallery.','The night guard patrolled the gallery.'], a:'The night guard was patrolling the gallery.'},
+    {say:'The visitors were leaving the museum.', opts:['The visitors was leaving the museum.','The visitors were leaving the museum.','The visitors left the museum.'], a:'The visitors were leaving the museum.'},
+    {say:'The alarm went off.', opts:['The alarm went off.','The alarm was going off.','The alarm goes off.'], a:'The alarm went off.'},
+    {say:'The curator was writing notes when the alarm rang.', opts:['The curator wrote notes when the alarm rang.','The curator was writing notes when the alarm rang.','The curator was writing notes when the alarm rings.'], a:'The curator was writing notes when the alarm rang.'},
+    {say:'While the cleaner was mopping, the lights flickered.', opts:['While the cleaner was mopping, the lights flickered.','While the cleaner mopped, the lights were flickering.','When the cleaner was mopping, the lights flickered.'], a:'While the cleaner was mopping, the lights flickered.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="museumwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2436"/><stop offset="1" stop-color="#3a3146"/></linearGradient>
+      <linearGradient id="museumfloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#463a52"/><stop offset="1" stop-color="#312838"/></linearGradient>
+      <radialGradient id="museumglow" cx="0.5" cy="0" r="1"><stop offset="0" stop-color="#5a4a66"/><stop offset="1" stop-color="#2b2436"/></radialGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#museumwall)"/>
+    <rect width="400" height="150" fill="url(#museumglow)" opacity="0.5"/>
+    <rect y="150" width="400" height="70" fill="url(#museumfloor)"/>
+    <g stroke="#2a2233" stroke-width="1.2" opacity="0.6"><path d="M0 178 h400"/><path d="M120 150 l-40 70 M240 150 l0 70 M320 150 l40 70"/></g>
+    <!-- dim ceiling spotlights -->
+    <g fill="#6a5a76" opacity="0.7"><circle cx="70" cy="10" r="4"/><circle cx="200" cy="10" r="4"/><circle cx="330" cy="10" r="4"/></g>
+    <g fill="#4a3f56" opacity="0.35"><path d="M62 14 l16 0 l24 120 l-64 0z"/><path d="M192 14 l16 0 l20 120 l-56 0z"/><path d="M322 14 l16 0 l24 120 l-64 0z"/></g>
+    <!-- paintings on the wall -->
+    <g transform="translate(96,54)"><rect x="-24" y="-20" width="48" height="40" rx="1" fill="#c9a24a"/><rect x="-19" y="-15" width="38" height="30" fill="#3a6a8a"/><circle cx="0" cy="-3" r="7" fill="#e8d24a"/><path d="M-19 8 l12 -12 l8 7 l10 -10 l8 15z" fill="#2a5a3a"/></g>
+    <g transform="translate(300,54)"><rect x="-22" y="-22" width="44" height="44" rx="1" fill="#b58a3a"/><rect x="-17" y="-17" width="34" height="34" fill="#7a3a4a"/><circle cx="0" cy="-4" r="8" fill="#e8c49a"/><rect x="-6" y="2" width="12" height="12" fill="#3a2a4a"/></g>
+    <!-- statue on a plinth (center) -->
+    <g transform="translate(200,150)">
+      <rect x="-16" y="-2" width="32" height="20" fill="#5a5060"/><rect x="-18" y="16" width="36" height="6" fill="#4a4050"/>
+      <g fill="#cfc7d6"><rect x="-7" y="-40" width="14" height="40" rx="6"/><circle cx="0" cy="-48" r="8"/><path d="M-7 -34 q-10 4 -12 16" stroke="#cfc7d6" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M7 -34 q10 4 12 16" stroke="#cfc7d6" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+    </g>
+    <!-- display case (center-right, near curator) -->
+    <g transform="translate(262,150)">
+      <rect x="-16" y="-30" width="32" height="30" fill="#8fd0ff" opacity="0.18" stroke="#8aa0c0" stroke-width="1.4"/>
+      <rect x="-16" y="0" width="32" height="10" fill="#4a4050"/>
+      <g class="float"><circle cx="0" cy="-14" r="6" fill="#f2d24a"/><path d="M-6 -14 h12 M0 -20 v12" stroke="#c9a24a" stroke-width="1.4"/></g>
+    </g>
+    <!-- GUARD + torch (left) -->
+    <g transform="translate(55,150)">
+      <ellipse cx="0" cy="50" rx="16" ry="5" fill="#00000025"/>
+      <rect x="-11" y="4" width="22" height="46" rx="7" fill="#2a3550"/>
+      <circle cx="0" cy="-6" r="9" fill="#c98a5a"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#1a2238"/>
+      <path d="M-10 -13 h20 v3 h-20z" fill="#141c30"/><rect x="-11" y="-11" width="4" height="2" fill="#c9a24a"/>
+      <g class="wave"><rect x="8" y="8" width="16" height="5" rx="2.5" fill="#2a3550"/><rect x="22" y="7" width="7" height="7" rx="1.5" fill="#333"/><ellipse cx="32" cy="10" rx="8" ry="6" fill="#f2e08a" opacity="0.85"/></g>
+    </g>
+    <!-- CLEANER + mop (center-left) -->
+    <g transform="translate(138,152)">
+      <ellipse cx="0" cy="48" rx="15" ry="5" fill="#00000022"/>
+      <rect x="-10" y="4" width="20" height="44" rx="7" fill="#3a9a6a"/>
+      <circle cx="0" cy="-6" r="9" fill="#a2683f"/><path d="M-9 -9 a9 9 0 0 1 18 0 v-1 a9 9 0 0 0 -18 0z" fill="#2a1a12"/>
+      <path d="M9 -8 q7 2 6 12 q-4 -2 -7 -1 q3 -5 1 -11z" fill="#2a1a12"/>
+      <g class="stir"><rect x="10" y="-2" width="4" height="30" rx="2" fill="#a06a3a"/><ellipse cx="12" cy="30" rx="9" ry="5" fill="#d8d2c2"/></g>
+    </g>
+    <!-- CURATOR + desk (center-right) -->
+    <g transform="translate(228,150)">
+      <ellipse cx="0" cy="50" rx="17" ry="5" fill="#00000022"/>
+      <rect x="-11" y="6" width="22" height="44" rx="7" fill="#8a7a9a"/>
+      <circle cx="0" cy="-5" r="9" fill="#f0c9a0"/><path d="M-9 -7 a9 9 0 0 1 18 0 v-3 a9 6 0 0 0 -18 0z" fill="#5a3a2a"/>
+      <path d="M-9 -6 q-3 8 -1 16 h4 q-2 -9 0 -16z" fill="#5a3a2a"/>
+      <g stroke="#2a2233" stroke-width="1.2" fill="none"><circle cx="-3.5" cy="-6" r="2.4"/><circle cx="3.5" cy="-6" r="2.4"/><path d="M-1.1 -6 h2.2"/></g>
+      <rect x="6" y="24" width="26" height="4" fill="#6a4a2a"/><rect x="10" y="28" width="4" height="20" fill="#5a3a20"/><rect x="26" y="28" width="4" height="20" fill="#5a3a20"/>
+      <rect x="12" y="18" width="14" height="10" rx="1" fill="#f2efe6"/>
+      <g class="wave"><rect x="6" y="10" width="14" height="5" rx="2.5" fill="#8a7a9a"/></g>
+    </g>
+    <!-- CAT walking (right) -->
+    <g class="walk"><g transform="translate(312,150)">
+      <ellipse cx="0" cy="8" rx="16" ry="5" fill="#00000022"/>
+      <ellipse cx="0" cy="-3" rx="15" ry="7" fill="#5a5560"/>
+      <circle cx="14" cy="-8" r="6" fill="#5a5560"/><path d="M10 -13 q-2 -6 3 -6 q1 4 0 6z" fill="#4a4550"/><path d="M18 -13 q2 -6 -3 -6 q-1 4 0 6z" fill="#4a4550"/>
+      <path d="M-14 -3 q-8 0 -8 -10" stroke="#5a5560" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <g stroke="#5a5560" stroke-width="3" stroke-linecap="round"><path d="M-8 2 v6"/><path d="M8 2 v6"/></g>
+      <circle cx="16" cy="-9" r="1.2" fill="#f2d24a"/>
+    </g></g>
+    <!-- MOUSE running (floor, far right) -->
+    <g class="dash"><g transform="translate(360,190)">
+      <ellipse cx="0" cy="4" rx="8" ry="3" fill="#00000022"/>
+      <ellipse cx="0" cy="0" rx="7" ry="4" fill="#8a828e"/>
+      <circle cx="6" cy="-2" r="3" fill="#8a828e"/><circle cx="5" cy="-6" r="2" fill="#9a929e"/>
+      <path d="M-7 0 q-9 1 -12 6" stroke="#8a828e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <circle cx="8" cy="-2" r="0.7" fill="#201a26"/>
+    </g></g>
+    <rect id="alarmwash" width="400" height="220" fill="#d8542a"/>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#141018" opacity="0"/>
+  </svg>
+  ${pin(55,150,'The night guard')}${pin(138,152,'The cleaner')}${pin(228,150,'The curator')}${pin(312,150,'The museum cat')}${pin(360,190,'The mouse')}`,
+},
+{
+  id:'airport', emo:'✈️', name:'The Airport', tag:'The&nbsp;Airport',
+  era:['AIRPORT','DEPARTURES'], statusAfter:'Power cut',
+  fx:'blackout', darkFill:'#101622',
+  sceneTitle:'The scene · watch what everyone is doing in the departures hall',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE AIRPORT — write your eyewitness account',
+  headlinePH:'Title — e.g. THE NIGHT THE AIRPORT WENT DARK',
+  fileslug:'the-airport',
+  event:{ btn:'💡 The power goes out', clause:'when the power went out', sfx:'boom', after:'buzz',
+    promptWatch:'Watch closely… what is everyone doing in the busy departures hall? When you are ready, press <b>“The power goes out”</b>.',
+    promptAfter:'💡 The power <b>went out</b>. Everyone froze in the dark. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The pilot <b>was walking</b> to the gate <b>when</b> the power <b>went out</b>." },
+  witnesses:[
+    {id:'passengers', subj:'The passengers',   aux:'were', verb:'queuing', tail:'at the check-in desk',   opts:['queuing','swimming','flying']},
+    {id:'pilot',      subj:'The pilot',         aux:'was',  verb:'walking', tail:'with a small case',       opts:['walking','sleeping','cooking']},
+    {id:'cleaner',    subj:'The cleaner',       aux:'was',  verb:'mopping', tail:'the shiny floor',         opts:['mopping','painting','dancing']},
+    {id:'agent',      subj:'The check-in agent',aux:'was',  verb:'typing',  tail:'at her desk',             opts:['typing','fishing','singing']},
+    {id:'child',      subj:'The child',         aux:'was',  verb:'pushing', tail:'a big suitcase',          opts:['pushing','reading','driving']},
+  ],
+  vocab:[
+    {w:"departures", pos:"n.", def:"The part of an airport where planes leave from.", ex:"They waited in the departures hall."},
+    {w:"to check in", pos:"v.", def:"To show your ticket and give your bags before a flight.", ex:"She was checking in for her flight."},
+    {w:"a gate", pos:"n.", def:"The door where you get on the plane.", ex:"The pilot walked to the gate."},
+    {w:"a suitcase", pos:"n.", def:"A large bag with wheels for your clothes.", ex:"The child was pushing a suitcase."},
+    {w:"a runway", pos:"n.", def:"The long strip where planes take off and land.", ex:"A plane waited on the runway."},
+    {w:"to board", pos:"v.", def:"To get on a plane, train or bus.", ex:"Passengers were boarding the plane."},
+    {w:"a trolley", pos:"n.", def:"A metal cart on wheels for heavy bags.", ex:"He pushed his bags on a trolley."},
+    {w:"a power cut", pos:"n.", def:"A moment when the electricity suddenly stops.", ex:"The power cut left the hall dark."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a busy evening and the departures hall was full of travellers.'},
+    {t:'past cont', s:'The passengers were queuing at the check-in desk.'},
+    {t:'simple past', s:'Suddenly, all the lights went out.'},
+    {t:'simple past', s:'A loud beep sounded and everyone stopped.'},
+    {t:'when', s:'The pilot was walking to the gate when the hall went dark.'},
+    {t:'while', s:'While the cleaner was mopping the floor, the screens turned black.'},
+  ],
+  wordbank:['queuing','walking','mopping','typing','pushing','boarding','the gate','a suitcase','the runway','a plane','suddenly','when','while','went out','dark','beeped'],
+  practice:[
+    {q:'The pilot ___ walking to the gate.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The passengers ___ queuing at the desk.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The agent ___ tickets when the power went out. (type)', opts:['was typing','typed'], a:'was typing', tip:'Action in progress → past continuous.'},
+    {q:'The power ___ out very suddenly. (go)', opts:['went','was going'], a:'went', tip:'One sudden, finished action → simple past.'},
+    {q:'The cleaner was mopping the floor ___ the lights failed.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the child was pushing a suitcase, the hall went dark.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the pilot walking to the gate? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The agent ___ at her desk when the power went out. (type)', opts:['was typing','typed'], a:'was typing', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The power ___ out very suddenly. (go)', opts:['went','was going'], a:'went', tip:'One sudden, finished action → simple past.'},
+    {q:'While the cleaner ___ , a bag fell over. (mop)', opts:['was mopping','mopped'], a:'was mopping', tip:'Two actions together → while + past continuous.'},
+    {q:'The manager ___ the engineers at once. (call)', opts:['called','was calling'], a:'called', tip:'One completed action → simple past.'},
+    {q:'At that moment, the passengers ___ at the check-in desk. (queue)', opts:['were queuing','queued'], a:'were queuing', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'mop → ___', opts:['mopping','moping'], a:'mopping', tip:'Double the final consonant: mopping.'},
+    {q:'queue → ___', opts:['queuing','queueing'], a:'queuing', tip:'Drop the silent -e: queuing.'},
+    {q:'type → ___', opts:['typing','typeing'], a:'typing', tip:'Drop the silent -e: typing.'},
+    {q:'push → ___', opts:['pushing','pushhing'], a:'pushing', tip:'Just add -ing: pushing.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'walk → ___', opts:['walking','walkking'], a:'walking', tip:'Two consonants already — no doubling: walking.'},
+  ],
+  mistakes:[
+    {q:'The pilot were walking to the gate.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The passengers was queuing at the desk.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The agent was type the tickets.', bad:'type', fix:'typing', tip:'was + -ing → was typing.'},
+    {q:'The power was going out and everything stopped.', bad:'going', fix:'went', tip:'One finished action → went.'},
+    {q:'The child were pushing a suitcase.', bad:'were', fix:'was', tip:'One child → was.'},
+  ],
+  spots:{passengers:[70,150], pilot:[150,150], cleaner:[224,152], agent:[318,150], child:[356,158]},
+  match:[
+    {a:'The passengers were queuing at the desk', b:'when the power went out'},
+    {a:'The pilot was walking to the gate', b:'when the lights failed'},
+    {a:'The cleaner was mopping the floor', b:'when the hall went dark'},
+    {a:'The check-in agent was typing', b:'when her screen turned black'},
+    {a:'The child was pushing a suitcase', b:'when everything stopped'},
+  ],
+  scramble:[
+    {answer:'The pilot was walking to the gate when the power went out.'},
+    {answer:'The passengers were queuing at the check-in desk.'},
+    {answer:'While the cleaner was mopping the floor the lights failed.'},
+  ],
+  stories:[
+    {title:'A busy evening flight', text:'It was a busy evening and the departures hall {0} full of noise. The passengers {1} at the check-in desk. Near the window, the pilot {2} to the gate with a small case. The cleaner {3} the shiny floor, while the agent {4} at her desk. A tired child {5} a big suitcase behind his mother. Suddenly, all the lights {6} out. A loud beep {7}. While everyone {8} in the dark, the manager {9} the engineers.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['were queuing','queued'], a:'were queuing'},
+      {opts:['was walking','walked'], a:'was walking'},
+      {opts:['was mopping','mopped'], a:'was mopping'},
+      {opts:['was typing','typed'], a:'was typing'},
+      {opts:['was pushing','pushed'], a:'was pushing'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['sounded','was sounding'], a:'sounded'},
+      {opts:['was waiting','waited'], a:'was waiting'},
+      {opts:['called','was calling'], a:'called'},
+    ]},
+    {title:'The delayed flight', text:'Yesterday the airport {0} very crowded. The agent {1} a ticket when the screen went black. It {2} completely dark. While the staff {3} for torches, a child {4} onto a suitcase. The pilot {5} the passengers to stay calm, but a dog {6} away. Everyone {7} when the power came back on. Luckily, the plane {8} still ready. The passengers {9} onto the plane at last.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was printing','printed'], a:'was printing'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['were looking','looked'], a:'were looking'},
+      {opts:['jumped','was jumping'], a:'jumped'},
+      {opts:['told','was telling'], a:'told'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['was cheering','cheered'], a:'was cheering'},
+      {opts:['was','were'], a:'was'},
+      {opts:['walked','were walking'], a:'walked'},
+    ]},
+  ],
+  listen:[
+    {say:'The pilot was walking to the gate.', opts:['The pilot was walking to the gate.','The pilot were walking to the gate.','The pilot walked to the gate.'], a:'The pilot was walking to the gate.'},
+    {say:'The passengers were queuing at the desk.', opts:['The passengers was queuing at the desk.','The passengers were queuing at the desk.','The passengers queued at the desk.'], a:'The passengers were queuing at the desk.'},
+    {say:'The power went out.', opts:['The power went out.','The power was going out.','The power goes out.'], a:'The power went out.'},
+    {say:'The agent was typing when the lights failed.', opts:['The agent typed when the lights failed.','The agent was typing when the lights failed.','The agent was typing when the lights fail.'], a:'The agent was typing when the lights failed.'},
+    {say:'While the cleaner was mopping, the hall went dark.', opts:['While the cleaner was mopping, the hall went dark.','While the cleaner mopped, the hall was going dark.','When the cleaner was mopping, the hall went dark.'], a:'While the cleaner was mopping, the hall went dark.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="airportsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26344a"/><stop offset="1" stop-color="#5a7290"/></linearGradient>
+      <linearGradient id="airportfloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6dbe2"/><stop offset="1" stop-color="#bcc3cc"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="#e9edf1"/>
+    <!-- ceiling -->
+    <rect x="0" y="0" width="400" height="20" fill="#cfd6de"/>
+    <g stroke="#b7c0ca" stroke-width="1.4"><path d="M0 10 h400"/><path d="M80 0 v20 M160 0 v20 M240 0 v20 M320 0 v20"/></g>
+    <!-- big windows with plane + runway outside -->
+    <rect x="14" y="24" width="252" height="88" rx="4" fill="url(#airportsky)"/>
+    <g stroke="#9aa8ba" stroke-width="2.4"><path d="M98 24 v88 M182 24 v88 M14 68 h252"/></g>
+    <rect x="14" y="96" width="252" height="16" fill="#7a8a70"/>
+    <circle cx="60" cy="44" r="7" fill="#f4f0d8" opacity=".85"/>
+    <!-- plane outside on the runway -->
+    <g transform="translate(150,86)">
+      <ellipse cx="0" cy="0" rx="46" ry="10" fill="#f2f4f6"/>
+      <path d="M40 -1 q16 0 22 -6 q-2 8 -10 9 l-12 -1z" fill="#dfe4e9"/>
+      <path d="M4 -6 l24 -18 l6 2 l-14 20z" fill="#c9d0d8"/>
+      <path d="M-2 6 l-12 12 l4 1 l14 -9z" fill="#c9d0d8"/>
+      <path d="M14 -22 l6 -1 l3 8 l-6 1z" fill="#3a6fae"/>
+      <g fill="#7fb0e0"><circle cx="-24" cy="-1" r="2"/><circle cx="-14" cy="-1" r="2"/><circle cx="-4" cy="-1" r="2"/><circle cx="6" cy="-1" r="2"/></g>
+    </g>
+    <!-- departures board -->
+    <rect x="278" y="24" width="108" height="52" rx="3" fill="#12202f"/>
+    <rect x="284" y="29" width="96" height="9" rx="1.5" fill="#1c3550"/>
+    <g fill="#f2c23a"><rect x="286" y="43" width="34" height="4"/><rect x="286" y="51" width="46" height="4"/><rect x="286" y="59" width="30" height="4"/><rect x="286" y="67" width="52" height="4"/></g>
+    <g fill="#4fae6a"><rect x="342" y="43" width="34" height="4"/><rect x="350" y="51" width="26" height="4"/><rect x="344" y="59" width="32" height="4"/><rect x="340" y="67" width="36" height="4"/></g>
+    <!-- floor -->
+    <rect x="0" y="112" width="400" height="108" fill="url(#airportfloor)"/>
+    <g stroke="#aab2bc" stroke-width="1"><path d="M0 148 h400"/><path d="M0 184 h400"/></g>
+    <!-- rows of seats (right) -->
+    <g transform="translate(292,150)">
+      <rect x="0" y="0" width="86" height="8" rx="2" fill="#3a6fae"/>
+      <rect x="2" y="-14" width="18" height="14" rx="3" fill="#4f86c8"/><rect x="24" y="-14" width="18" height="14" rx="3" fill="#4f86c8"/><rect x="46" y="-14" width="18" height="14" rx="3" fill="#4f86c8"/><rect x="68" y="-14" width="16" height="14" rx="3" fill="#4f86c8"/>
+      <rect x="6" y="8" width="4" height="16" fill="#6a7580"/><rect x="76" y="8" width="4" height="16" fill="#6a7580"/>
+    </g>
+    <!-- check-in desk (right centre) -->
+    <rect x="300" y="120" width="80" height="10" rx="2" fill="#8a939c"/>
+    <rect x="300" y="130" width="80" height="18" fill="#aab2bc"/>
+    <rect x="336" y="112" width="30" height="10" rx="2" fill="#12202f"/>
+    <!-- PASSENGERS queuing (left) -->
+    <g class="sway"><g transform="translate(60,150)">
+      <ellipse cx="0" cy="46" rx="14" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="42" rx="7" fill="#c0453a"/>
+      <circle cx="0" cy="-6" r="9" fill="#f0c9a0"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-3 a9 6 0 0 0 -18 0z" fill="#3a2a1a"/>
+      <rect x="10" y="14" width="9" height="18" rx="2" fill="#4a4a52"/>
+    </g></g>
+    <g class="bob"><g transform="translate(92,152)">
+      <ellipse cx="0" cy="44" rx="13" ry="5" fill="#00000015"/>
+      <rect x="-9" y="4" width="18" height="40" rx="7" fill="#e0a11c"/>
+      <circle cx="0" cy="-6" r="8.5" fill="#c98a5a"/><path d="M-8.5 -7 a8.5 8.5 0 0 1 17 0 v-4 a8.5 5 0 0 0 -17 0z" fill="#2a2a30"/><rect x="-8.5" y="-13" width="17" height="4" rx="2" fill="#20201f"/>
+      <rect x="-20" y="16" width="9" height="16" rx="2" fill="#6a4a2a"/>
+    </g></g>
+    <!-- PILOT walking with a small case (centre-left) -->
+    <g class="walk"><g transform="translate(150,152)">
+      <ellipse cx="0" cy="46" rx="14" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="42" rx="7" fill="#1f3550"/>
+      <rect x="-10" y="4" width="20" height="8" fill="#16283e"/>
+      <circle cx="0" cy="-6" r="9" fill="#e3ad82"/><path d="M-9 -9 a9 9 0 0 1 18 0 v-1 a9 6 0 0 0 -18 0z" fill="#20334a"/><path d="M-11 -6 h22 v-2 a11 4 0 0 0 -22 0z" fill="#101e2e"/><rect x="-3" y="-9" width="6" height="3" fill="#e6c24a"/>
+      <rect x="11" y="16" width="7" height="16" rx="2" fill="#2a2a30"/><rect x="16" y="12" width="12" height="14" rx="2" fill="#3a3a44"/>
+    </g></g>
+    <!-- CLEANER mopping (centre) -->
+    <g transform="translate(224,152)">
+      <ellipse cx="0" cy="46" rx="14" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="42" rx="7" fill="#3a9a6a"/>
+      <circle cx="0" cy="-6" r="9" fill="#a2683f"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-2 a9 6 0 0 0 -18 0z" fill="#2a1a10"/>
+      <g class="stir"><rect x="10" y="-2" width="4" height="34" rx="2" fill="#b08a50" transform="rotate(18 12 15)"/></g>
+      <path d="M20 34 q10 4 18 0 l-2 6 h-14z" fill="#f0d060"/>
+    </g>
+    <!-- AGENT typing at the desk (right) -->
+    <g transform="translate(318,150)">
+      <ellipse cx="0" cy="0" rx="15" ry="5" fill="#00000012"/>
+      <rect x="-10" y="-34" width="20" height="34" rx="7" fill="#5a6a9a"/>
+      <circle cx="0" cy="-44" r="9" fill="#f0c9a0"/><path d="M-9 -46 a9 9 0 0 1 18 0 v-2 a9 8 0 0 0 -18 0z" fill="#4a2a1a"/><path d="M-9 -44 q-2 8 1 14 q-6 -4 -4 -14z" fill="#4a2a1a"/>
+      <g class="wave"><rect x="8" y="-26" width="14" height="5" rx="2.5" fill="#5a6a9a"/></g>
+      <rect x="-14" y="-14" width="16" height="10" rx="1.5" fill="#22303f"/>
+    </g>
+    <!-- CHILD pushing a suitcase (far right) -->
+    <g class="sway"><g transform="translate(356,158)">
+      <ellipse cx="0" cy="38" rx="11" ry="4" fill="#00000015"/>
+      <rect x="-8" y="4" width="16" height="34" rx="6" fill="#e05a8a"/>
+      <circle cx="0" cy="-4" r="7.5" fill="#f0c9a0"/><path d="M-7.5 -5 a7.5 7.5 0 0 1 15 0 v-3 a7.5 5 0 0 0 -15 0z" fill="#c9a020"/><path d="M-7.5 -6 q7.5 -3 15 0 v-2 h-15z" fill="#b89018"/>
+      <g class="wave"><rect x="-22" y="6" width="16" height="4" rx="2" fill="#e05a8a"/></g>
+      <rect x="-30" y="8" width="14" height="20" rx="3" fill="#3a6fae"/><rect x="-30" y="6" width="4" height="4" rx="1" fill="#2a4f80"/>
+    </g></g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#101622" opacity="0"/>
+  </svg>
+  ${pin(60,150,'The passengers')}${pin(150,150,'The pilot')}${pin(224,152,'The cleaner')}${pin(318,150,'The check-in agent')}${pin(356,158,'The child')}`,
+},
+{
+  id:'farm', emo:'🚜', name:'The Farm', tag:'The&nbsp;Farm',
+  era:['FARM','DAWN'], statusAfter:'Storm',
+  fx:'storm', darkFill:'#22303f',
+  sceneTitle:'The scene · watch what everyone is doing on the farm at dawn',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE FARM — write your eyewitness account',
+  headlinePH:'Title — e.g. THE MORNING THE STORM HIT THE FARM',
+  fileslug:'the-farm',
+  event:{ btn:'⛈️ The storm breaks', clause:'when the storm broke', sfx:'rumble', after:'boom',
+    promptWatch:'Watch closely… what is everyone doing on the quiet farm at dawn? When you are ready, press <b>“The storm breaks”</b>.',
+    promptAfter:'⛈️ The storm <b>broke</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The farmer <b>was milking</b> the cow <b>when</b> the storm <b>broke</b>." },
+  witnesses:[
+    {id:'farmer', subj:'The farmer', aux:'was', verb:'milking',  tail:'the cow in the yard',      opts:['milking','swimming','flying']},
+    {id:'hens',   subj:'The hens',   aux:'were',verb:'pecking',  tail:'grain by the barn',        opts:['pecking','reading','driving']},
+    {id:'dog',    subj:'The sheepdog',aux:'was',verb:'running',  tail:'after the sheep',          opts:['running','cooking','painting']},
+    {id:'girl',   subj:'The girl',   aux:'was', verb:'feeding',  tail:'the chickens near the fence',opts:['feeding','sleeping','dancing']},
+    {id:'cat',    subj:'The cat',    aux:'was', verb:'sitting',  tail:'on the stone wall',        opts:['sitting','digging','singing']},
+  ],
+  vocab:[
+    {w:"to milk", pos:"v.", def:"To take milk from a cow or goat.", ex:"The farmer was milking the cow."},
+    {w:"to peck", pos:"v.", def:"(of a bird) to hit or pick up food with its beak.", ex:"The hens were pecking grain."},
+    {w:"barn", pos:"n.", def:"A large farm building for animals or crops.", ex:"The hay was kept in the barn."},
+    {w:"a hen", pos:"n.", def:"A female chicken.", ex:"The hens laid eggs every morning."},
+    {w:"sheepdog", pos:"n.", def:"A dog trained to guide and guard sheep.", ex:"The sheepdog ran after the sheep."},
+    {w:"a fence", pos:"n.", def:"A wooden or wire barrier around a field.", ex:"The girl leaned on the fence."},
+    {w:"tractor", pos:"n.", def:"A powerful farm vehicle that pulls machines.", ex:"The tractor stood by the field."},
+    {w:"storm", pos:"n.", def:"Very bad weather with wind, rain and thunder.", ex:"A sudden storm broke over the farm."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a quiet morning and the sun was rising over the farm.'},
+    {t:'past cont', s:'The farmer was milking the cow in the yard.'},
+    {t:'simple past', s:'Suddenly, dark clouds gathered and the storm broke.'},
+    {t:'simple past', s:'Thunder crashed and everyone ran for cover.'},
+    {t:'when', s:'The girl was feeding the chickens when the first drops fell.'},
+    {t:'while', s:'While the sheepdog was running after the sheep, the wind grew stronger.'},
+  ],
+  wordbank:['milking','pecking','running','feeding','sitting','the barn','a fence','a tractor','the field','thunder','rain','suddenly','when','while','broke','ran'],
+  practice:[
+    {q:'The farmer ___ milking the cow.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The hens ___ pecking grain by the barn.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The girl ___ the chickens when the storm broke. (feed)', opts:['was feeding','fed'], a:'was feeding', tip:'Action in progress → past continuous.'},
+    {q:'The storm ___ very suddenly. (break)', opts:['broke','was breaking'], a:'broke', tip:'One sudden, finished action → simple past.'},
+    {q:'The sheepdog was running after the sheep ___ the rain started.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the cat was sitting on the wall, the clouds turned black.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the farmer milking the cow when the storm broke? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The farmer ___ the cow when the storm broke. (milk)', opts:['was milking','milked'], a:'was milking', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The storm ___ very suddenly. (break)', opts:['broke','was breaking'], a:'broke', tip:'One sudden, finished action → simple past.'},
+    {q:'While the girl ___ the chickens, the dog barked. (feed)', opts:['was feeding','fed'], a:'was feeding', tip:'Two actions together → while + past continuous.'},
+    {q:'The farmer ___ the barn door quickly. (shut)', opts:['shut','was shutting'], a:'shut', tip:'One completed action → simple past.'},
+    {q:'At that moment, the hens ___ grain by the barn. (peck)', opts:['were pecking','pecked'], a:'were pecking', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'milk → ___', opts:['milking','milkking'], a:'milking', tip:'One vowel before one consonant here needs no doubling: milking.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'sit → ___', opts:['sitting','siting'], a:'sitting', tip:'Double the final consonant: sitting.'},
+    {q:'chase → ___', opts:['chasing','chaseing'], a:'chasing', tip:'Drop the silent -e: chasing.'},
+    {q:'dig → ___', opts:['digging','diging'], a:'digging', tip:'Double the final consonant: digging.'},
+    {q:'feed → ___', opts:['feeding','feedding'], a:'feeding', tip:'Two vowels together — no doubling: feeding.'},
+  ],
+  mistakes:[
+    {q:'The farmer were milking the cow.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The hens was pecking grain.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The girl was feed the chickens.', bad:'feed', fix:'feeding', tip:'was + -ing → was feeding.'},
+    {q:'The storm was breaking and flooded the field.', bad:'breaking', fix:'broke', tip:'One finished action → broke.'},
+    {q:'The cat were sitting on the wall.', bad:'were', fix:'was', tip:'One animal → was.'},
+  ],
+  spots:{farmer:[70,150], hens:[150,180], dog:[210,168], girl:[290,150], cat:[352,120]},
+  match:[
+    {a:'The farmer was milking the cow', b:'when the storm broke'},
+    {a:'The hens were pecking grain', b:'when the thunder crashed'},
+    {a:'The sheepdog was running after the sheep', b:'when the rain started'},
+    {a:'The girl was feeding the chickens', b:'when the sky turned black'},
+    {a:'The cat was sitting on the wall', b:'when it jumped down suddenly'},
+  ],
+  scramble:[
+    {answer:'The farmer was milking the cow when the storm broke.'},
+    {answer:'The girl was feeding the chickens near the fence.'},
+    {answer:'While the sheepdog was running the rain began to fall.'},
+  ],
+  stories:[
+    {title:'A morning on the farm', text:'It was a quiet morning and the sun {0} slowly over the hills. The farmer {1} the cow in the yard. Near the barn, the hens {2} grain in the mud. The sheepdog {3} after three sheep, while the girl {4} the chickens by the fence. On the stone wall, the cat {5} lazily in the light. Suddenly, the sky {6} dark. Thunder {7} loudly. While everyone {8} for shelter, the farmer {9} the barn door.', gaps:[
+      {opts:['was rising','rose'], a:'was rising'},
+      {opts:['was milking','milked'], a:'was milking'},
+      {opts:['were pecking','pecked'], a:'were pecking'},
+      {opts:['was running','ran'], a:'was running'},
+      {opts:['was feeding','fed'], a:'was feeding'},
+      {opts:['was sitting','sat'], a:'was sitting'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['crashed','was crashing'], a:'crashed'},
+      {opts:['was running','ran'], a:'was running'},
+      {opts:['shut','was shutting'], a:'shut'},
+    ]},
+    {title:'The lost lamb', text:'Yesterday the whole farm {0} for a lost lamb. The girl {1} the chickens when she heard it crying. It {2} stuck in the mud by the field. While the farmer {3} the tractor, the sheepdog {4} straight to the sound. The dog {5} beside the lamb and barked. The girl {6} across the wet grass. Everyone {7} when the lamb came free. Luckily, it {8} fine. The farmer {9} it back to its mother.', gaps:[
+      {opts:['was searching','searched'], a:'was searching'},
+      {opts:['was feeding','fed'], a:'was feeding'},
+      {opts:['was','were'], a:'was'},
+      {opts:['was starting','started'], a:'was starting'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['stopped','was stopping'], a:'stopped'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['was cheering','cheered'], a:'cheered'},
+      {opts:['was','were'], a:'was'},
+      {opts:['carried','was carrying'], a:'carried'},
+    ]},
+  ],
+  listen:[
+    {say:'The farmer was milking the cow.', opts:['The farmer was milking the cow.','The farmer were milking the cow.','The farmer milked the cow.'], a:'The farmer was milking the cow.'},
+    {say:'The hens were pecking grain.', opts:['The hens was pecking grain.','The hens were pecking grain.','The hens pecked grain.'], a:'The hens were pecking grain.'},
+    {say:'The storm broke.', opts:['The storm broke.','The storm was breaking.','The storm breaks.'], a:'The storm broke.'},
+    {say:'The girl was feeding the chickens when the rain started.', opts:['The girl fed the chickens when the rain started.','The girl was feeding the chickens when the rain started.','The girl was feeding the chickens when the rain starts.'], a:'The girl was feeding the chickens when the rain started.'},
+    {say:'While the sheepdog was running, the wind grew stronger.', opts:['While the sheepdog was running, the wind grew stronger.','While the sheepdog ran, the wind was growing stronger.','When the sheepdog was running, the wind grew stronger.'], a:'While the sheepdog was running, the wind grew stronger.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="farmsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d59a"/><stop offset="0.6" stop-color="#f0b17a"/><stop offset="1" stop-color="#e9c69a"/></linearGradient>
+      <linearGradient id="farmfield" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb35a"/><stop offset="1" stop-color="#6f9a42"/></linearGradient>
+    </defs>
+    <rect width="400" height="150" fill="url(#farmsky)"/>
+    <rect y="150" width="400" height="70" fill="url(#farmfield)"/>
+    <!-- low sun -->
+    <g class="sun"><circle cx="70" cy="70" r="26" fill="#ffe08a"/><circle cx="70" cy="70" r="18" fill="#fff0c0"/></g>
+    <!-- distant hills -->
+    <path d="M0 150 q60 -30 130 -6 q70 -22 140 -2 q70 -18 130 4 v14 H0z" fill="#7ea84e" opacity=".7"/>
+    <!-- field furrows -->
+    <g stroke="#5f8a38" stroke-width="1.4" opacity=".5"><path d="M0 172 h400"/><path d="M0 190 h400"/><path d="M0 208 h400"/></g>
+    <!-- red barn -->
+    <g transform="translate(300,92)">
+      <rect x="0" y="24" width="86" height="58" fill="#b5402f"/>
+      <path d="M-4 24 L43 0 L90 24z" fill="#8f2f22"/>
+      <rect x="34" y="46" width="20" height="36" fill="#f2e2c2"/>
+      <path d="M34 46 h20 v36 M44 46 v36 M34 64 h20" stroke="#8f2f22" stroke-width="2" fill="none"/>
+      <path d="M-4 24 L43 0 L90 24" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+    </g>
+    <!-- fence -->
+    <g stroke="#9c7a4a" stroke-width="3"><path d="M0 172 v22 M36 168 v24 M72 172 v22"/><path d="M-4 176 h84 M-4 186 h84"/></g>
+    <!-- tractor -->
+    <g transform="translate(150,120)">
+      <rect x="0" y="6" width="34" height="18" rx="3" fill="#2f7d4a"/>
+      <rect x="24" y="-6" width="16" height="16" rx="3" fill="#2f7d4a"/>
+      <rect x="27" y="-3" width="10" height="9" fill="#bfe0d0"/>
+      <circle cx="34" cy="30" r="12" fill="#333"/><circle cx="34" cy="30" r="5" fill="#888"/>
+      <circle cx="8" cy="30" r="7" fill="#333"/><circle cx="8" cy="30" r="3" fill="#888"/>
+    </g>
+    <!-- FARMER milking a cow (left) -->
+    <g transform="translate(70,150)">
+      <!-- cow -->
+      <g transform="translate(24,4)"><ellipse cx="0" cy="26" rx="24" ry="4" fill="#00000015"/><rect x="-22" y="0" width="44" height="22" rx="10" fill="#f2efe8"/><path d="M-14 2 a6 6 0 0 1 12 3 q-8 4 -12 -3z" fill="#3a3530"/><path d="M6 10 a5 5 0 0 1 10 2 q-7 3 -10 -2z" fill="#3a3530"/><circle cx="22" cy="6" r="8" fill="#f2efe8"/><path d="M28 0 v-4 M18 0 v-4" stroke="#c9b58a" stroke-width="2"/><rect x="-22" y="18" width="4" height="10" fill="#d8d2c6"/><rect x="16" y="18" width="4" height="10" fill="#d8d2c6"/></g>
+      <!-- farmer on stool -->
+      <g class="sway"><rect x="-14" y="6" width="16" height="20" rx="6" fill="#3f6da0"/><circle cx="-6" cy="-2" r="8" fill="#e3ad82"/><path d="M-15 -4 h18 v-3 a9 5 0 0 0 -18 0z" fill="#8a6a3a"/><rect x="-15" y="-6" width="18" height="3" fill="#6f5228"/><g class="stir"><rect x="0" y="10" width="12" height="4" rx="2" fill="#e3ad82"/></g></g>
+      <rect x="-14" y="26" width="14" height="5" fill="#7a5a2a"/>
+    </g>
+    <!-- HENS pecking grain -->
+    <g transform="translate(150,182)">
+      <g class="graze"><ellipse cx="0" cy="2" rx="9" ry="7" fill="#e8e2d6"/><circle cx="8" cy="-4" r="4.5" fill="#e8e2d6"/><path d="M11 -4 l5 1 l-5 2z" fill="#e0a13a"/><path d="M8 -8 q3 -3 5 0z" fill="#c0453a"/><circle cx="9" cy="-5" r="0.9" fill="#2a2530"/><path d="M-8 6 l-2 4 M-4 7 l0 4" stroke="#e0a13a" stroke-width="1.6"/></g>
+      <g class="graze" transform="translate(20,4)"><ellipse cx="0" cy="2" rx="8" ry="6" fill="#c98a5a"/><circle cx="7" cy="-3" r="4" fill="#c98a5a"/><path d="M10 -3 l5 1 l-5 2z" fill="#e0a13a"/><path d="M7 -6 q3 -3 4 0z" fill="#c0453a"/><circle cx="8" cy="-4" r="0.8" fill="#2a2530"/></g>
+      <g fill="#e0a13a"><circle cx="-4" cy="12" r="1"/><circle cx="4" cy="14" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="24" cy="14" r="1"/></g>
+    </g>
+    <!-- SHEEPDOG running after sheep -->
+    <g transform="translate(210,170)">
+      <!-- sheep ahead -->
+      <g transform="translate(40,-2)"><ellipse cx="0" cy="8" rx="12" ry="4" fill="#00000012"/><ellipse cx="0" cy="0" rx="12" ry="9" fill="#f0eee8"/><circle cx="10" cy="-2" r="5" fill="#4a4540"/><path d="M-6 8 v6 M4 8 v6" stroke="#4a4540" stroke-width="2"/></g>
+      <!-- dog -->
+      <g class="dash"><ellipse cx="0" cy="10" rx="14" ry="4" fill="#00000015"/><ellipse cx="0" cy="0" rx="13" ry="7" fill="#3a2f26"/><path d="M0 4 q-4 6 6 4z" fill="#e8e2d6"/><circle cx="12" cy="-4" r="5.5" fill="#3a2f26"/><path d="M12 -12 q-3 3 0 6z" fill="#241c16"/><path d="M16 -3 l5 0 l-4 3z" fill="#241c16"/><circle cx="14" cy="-5" r="1" fill="#fff"/><path d="M-13 -1 q-8 -3 -6 -8" stroke="#3a2f26" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M-8 6 l-3 6 M-2 7 l2 6 M8 5 l3 6" stroke="#3a2f26" stroke-width="2.4"/></g>
+    </g>
+    <!-- GIRL feeding chickens (right, near fence) -->
+    <g transform="translate(290,150)">
+      <g class="sway"><ellipse cx="0" cy="28" rx="12" ry="4" fill="#00000015"/><path d="M-11 28 l4 -26 h14 l4 26z" fill="#d64f8a"/><rect x="-7" y="2" width="14" height="6" fill="#f0c86a"/><circle cx="0" cy="-6" r="8" fill="#f0c9a0"/><path d="M-8 -8 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#6b4a2a"/><path d="M-8 -6 q-3 8 -1 14 M8 -6 q3 8 1 14" stroke="#6b4a2a" stroke-width="3" fill="none"/><g class="wave"><rect x="6" y="2" width="14" height="4" rx="2" fill="#f0c9a0"/></g></g>
+      <!-- little chickens -->
+      <g fill="#f2e2b0"><g class="graze" transform="translate(16,26)"><ellipse cx="0" cy="0" rx="5" ry="4"/><circle cx="4" cy="-3" r="2.4"/><path d="M6 -3 l3 1 l-3 1z" fill="#e0a13a"/></g><g class="graze" transform="translate(26,28)"><ellipse cx="0" cy="0" rx="4.5" ry="3.5"/><circle cx="4" cy="-2" r="2.2"/><path d="M6 -2 l3 1 l-3 1z" fill="#e0a13a"/></g></g>
+    </g>
+    <!-- CAT sitting on stone wall (far right) -->
+    <rect x="320" y="128" width="80" height="12" fill="#b0a894"/>
+    <g stroke="#9a917c" stroke-width="1"><path d="M340 128 v12 M360 128 v12 M380 128 v12 M330 134 h70"/></g>
+    <g transform="translate(352,128)"><g class="breathe"><ellipse cx="0" cy="-2" rx="10" ry="7" fill="#4a4550"/><path d="M-8 -6 q-3 -8 2 -9 q2 5 2 8z" fill="#4a4550"/><path d="M8 -6 q3 -8 -2 -9 q-2 5 -2 8z" fill="#4a4550"/><path d="M10 -1 q9 2 8 9 q-6 -2 -8 -6z" fill="#3a3540"/><circle cx="-3" cy="-5" r="1" fill="#e0d24a"/><circle cx="3" cy="-5" r="1" fill="#e0d24a"/></g></g>
+    <rect id="darken" width="400" height="220" fill="#22303f" opacity="0"/>
+    <g id="rain">
+      <line x1="20" y1="60" x2="14" y2="90" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="52" y1="70" x2="46" y2="104" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="84" y1="62" x2="78" y2="96" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="116" y1="74" x2="110" y2="110" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="148" y1="64" x2="142" y2="100" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="180" y1="72" x2="174" y2="108" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="212" y1="60" x2="206" y2="98" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="244" y1="76" x2="238" y2="112" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="276" y1="66" x2="270" y2="102" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="308" y1="70" x2="302" y2="106" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="340" y1="62" x2="334" y2="98" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="372" y1="74" x2="366" y2="110" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="132" y1="150" x2="126" y2="186" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="260" y1="150" x2="254" y2="186" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+    </g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+  </svg>
+  ${pin(70,150,'The farmer')}${pin(150,182,'The hens')}${pin(210,168,'The sheepdog')}${pin(290,150,'The girl')}${pin(352,124,'The cat')}`,
+},
+{
+  id:'concert', emo:'🎸', name:'The Concert', tag:'The&nbsp;Concert',
+  era:['ARENA','LIVE'], statusAfter:'Power cut',
+  fx:'blackout', darkFill:'#160e26',
+  sceneTitle:'The scene · watch what everyone is doing at the concert',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE CONCERT — write your eyewitness account',
+  headlinePH:'Title — e.g. THE NIGHT THE LIGHTS WENT OUT',
+  fileslug:'the-concert',
+  event:{ btn:'💡 The power dies', clause:'when the power died', sfx:'boom', after:'buzz',
+    promptWatch:'Watch closely… what is everyone doing at the concert? When you are ready, press <b>“The power dies”</b>.',
+    promptAfter:'💡 The power <b>died</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The singer <b>was singing</b> a song <b>when</b> the power <b>died</b>." },
+  witnesses:[
+    {id:'singer',    subj:'The singer',    aux:'was',  verb:'singing',  tail:'into the microphone',    opts:['singing','swimming','flying']},
+    {id:'guitarist', subj:'The guitarist', aux:'was',  verb:'playing',  tail:'his electric guitar',     opts:['playing','sleeping','cooking']},
+    {id:'drummer',   subj:'The drummer',   aux:'was',  verb:'drumming', tail:'behind the drum kit',     opts:['drumming','reading','painting']},
+    {id:'fans',      subj:'The fans',      aux:'were', verb:'dancing',  tail:'in the crowd',            opts:['dancing','driving','digging']},
+    {id:'roadie',    subj:'The roadie',    aux:'was',  verb:'fixing',   tail:'a cable at the side',     opts:['fixing','singing','running']},
+  ],
+  vocab:[
+    {w:"to perform", pos:"v.", def:"To sing or play music for an audience.", ex:"The band was performing on stage."},
+    {w:"a microphone", pos:"n.", def:"A device you sing or speak into to be louder.", ex:"The singer held the microphone."},
+    {w:"the stage", pos:"n.", def:"The raised platform where a band plays.", ex:"They walked onto the stage."},
+    {w:"a spotlight", pos:"n.", def:"A strong beam of light aimed at a performer.", ex:"A spotlight followed the singer."},
+    {w:"a speaker", pos:"n.", def:"A box that makes the music loud.", ex:"The speakers were very loud."},
+    {w:"the crowd", pos:"n.", def:"A large group of people watching together.", ex:"The crowd was cheering."},
+    {w:"a roadie", pos:"n.", def:"A worker who sets up and fixes the band's gear.", ex:"The roadie fixed a cable."},
+    {w:"power cut", pos:"n.", def:"A moment when the electricity suddenly stops.", ex:"A power cut stopped the show."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a loud Saturday night and the arena was full of fans.'},
+    {t:'past cont', s:'The singer was singing her biggest hit into the microphone.'},
+    {t:'simple past', s:'Suddenly, the power died and the whole arena went dark.'},
+    {t:'simple past', s:'The music stopped and the crowd gasped.'},
+    {t:'when', s:'The guitarist was playing a solo when the lights went out.'},
+    {t:'while', s:'While the drummer was drumming, the stage suddenly went black.'},
+  ],
+  wordbank:['singing','playing','drumming','dancing','fixing','the stage','a microphone','a spotlight','a speaker','the crowd','suddenly','when','while','the power died','went dark','cheered'],
+  practice:[
+    {q:'The singer ___ singing into the microphone.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The fans ___ dancing in the crowd.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The guitarist ___ a solo when the power died. (play)', opts:['was playing','played'], a:'was playing', tip:'Action in progress → past continuous.'},
+    {q:'The power ___ very suddenly. (die)', opts:['died','was dying'], a:'died', tip:'One sudden, finished action → simple past.'},
+    {q:'The drummer was drumming ___ the lights went out.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the singer was singing, the stage went dark.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the roadie fixing a cable when the power died? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The singer ___ a song when the power died. (sing)', opts:['was singing','sang'], a:'was singing', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The power ___ very suddenly. (die)', opts:['died','was dying'], a:'died', tip:'One sudden, finished action → simple past.'},
+    {q:'While the drummer ___ , the singer dropped the mic. (drum)', opts:['was drumming','drummed'], a:'was drumming', tip:'Two actions together → while + past continuous.'},
+    {q:'The manager ___ the electrician. (call)', opts:['called','was calling'], a:'called', tip:'One completed action → simple past.'},
+    {q:'At that moment, the fans ___ near the stage. (dance)', opts:['were dancing','danced'], a:'were dancing', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'sing → ___', opts:['singing','singging'], a:'singing', tip:'Just add -ing: singing.'},
+    {q:'drum → ___', opts:['drumming','druming'], a:'drumming', tip:'Double the final consonant: drumming.'},
+    {q:'dance → ___', opts:['dancing','danceing'], a:'dancing', tip:'Drop the silent -e: dancing.'},
+    {q:'play → ___', opts:['playing','plaing'], a:'playing', tip:'Two vowels together — no doubling: playing.'},
+    {q:'tie → ___', opts:['tying','tieing'], a:'tying', tip:'-ie changes to -ying: tying.'},
+    {q:'fix → ___', opts:['fixing','fixxing'], a:'fixing', tip:'Never double -x: fixing.'},
+  ],
+  mistakes:[
+    {q:'The singer were singing into the microphone.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The fans was dancing in the crowd.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The guitarist was play his guitar.', bad:'play', fix:'playing', tip:'was + -ing → was playing.'},
+    {q:'The power was dying and the show stopped.', bad:'dying', fix:'died', tip:'One finished action → died.'},
+    {q:'The drummer were drumming behind the kit.', bad:'were', fix:'was', tip:'One person → was.'},
+  ],
+  spots:{singer:[132,150], guitarist:[62,150], drummer:[210,120], fans:[70,208], roadie:[344,150]},
+  match:[
+    {a:'The singer was singing into the mic', b:'when the power died'},
+    {a:'The guitarist was playing a solo', b:'when the lights went out'},
+    {a:'The drummer was drumming loudly', b:'when the stage went dark'},
+    {a:'The fans were dancing in the crowd', b:'when the music stopped'},
+    {a:'The roadie was fixing a cable', b:'when everything went black'},
+  ],
+  scramble:[
+    {answer:'The singer was singing into the microphone when the power died.'},
+    {answer:'The guitarist was playing his electric guitar on stage.'},
+    {answer:'While the drummer was drumming the crowd was dancing.'},
+  ],
+  stories:[
+    {title:'The night the lights went out', text:'It was a loud Saturday night and the arena {0} full of fans. On stage, the singer {1} her biggest hit. Next to her, the guitarist {2} a fast solo. Behind them, the drummer {3} loudly. In front of the stage, the fans {4} and cheering. At the side, a roadie {5} a broken cable. Suddenly, the power {6}. The whole arena {7} dark. While everyone {8} in shock, the manager {9} for help.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was singing','sang'], a:'was singing'},
+      {opts:['was playing','played'], a:'was playing'},
+      {opts:['was drumming','drummed'], a:'was drumming'},
+      {opts:['were dancing','danced'], a:'were dancing'},
+      {opts:['was fixing','fixed'], a:'was fixing'},
+      {opts:['died','was dying'], a:'died'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['was standing','stood'], a:'was standing'},
+      {opts:['shouted','was shouting'], a:'shouted'},
+    ]},
+    {title:'The encore', text:'Last night the band {0} an amazing encore. The singer {1} the crowd to clap when a string snapped. The guitarist {2} a new guitar quickly. While the roadies {3} the cables, the drummer {4} a short solo. The fans {5} louder and louder. Then the singer {6} back to the microphone. Everyone {7} when the music started again. It {8} the best show of the year. The crowd {9} home very happy.', gaps:[
+      {opts:['was playing','played'], a:'was playing'},
+      {opts:['was asking','asked'], a:'was asking'},
+      {opts:['grabbed','was grabbing'], a:'grabbed'},
+      {opts:['were fixing','fixed'], a:'were fixing'},
+      {opts:['played','was playing'], a:'played'},
+      {opts:['were cheering','cheered'], a:'were cheering'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['was smiling','smiled'], a:'was smiling'},
+      {opts:['was','were'], a:'was'},
+      {opts:['went','was going'], a:'went'},
+    ]},
+  ],
+  listen:[
+    {say:'The singer was singing into the microphone.', opts:['The singer was singing into the microphone.','The singer were singing into the microphone.','The singer sang into the microphone.'], a:'The singer was singing into the microphone.'},
+    {say:'The fans were dancing in the crowd.', opts:['The fans was dancing in the crowd.','The fans were dancing in the crowd.','The fans danced in the crowd.'], a:'The fans were dancing in the crowd.'},
+    {say:'The power died.', opts:['The power died.','The power was dying.','The power dies.'], a:'The power died.'},
+    {say:'The guitarist was playing a solo when the power died.', opts:['The guitarist played a solo when the power died.','The guitarist was playing a solo when the power died.','The guitarist was playing a solo when the power dies.'], a:'The guitarist was playing a solo when the power died.'},
+    {say:'While the drummer was drumming, the stage went dark.', opts:['While the drummer was drumming, the stage went dark.','While the drummer drummed, the stage was going dark.','When the drummer was drumming, the stage went dark.'], a:'While the drummer was drumming, the stage went dark.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="concertsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1230"/><stop offset="1" stop-color="#2a1c46"/></linearGradient>
+      <linearGradient id="concertstage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a52"/><stop offset="1" stop-color="#241636"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#concertsky)"/>
+    <!-- light beams -->
+    <g opacity=".45">
+      <path d="M60 8 L18 130 L102 130z" fill="#ff4d8d"/>
+      <path d="M150 6 L118 132 L200 132z" fill="#3ad1ff"/>
+      <path d="M250 6 L214 132 L296 132z" fill="#8a5cff"/>
+      <path d="M340 8 L300 130 L384 130z" fill="#ffd24d"/>
+    </g>
+    <!-- truss with spotlights -->
+    <rect x="0" y="8" width="400" height="8" fill="#15101f"/>
+    <g fill="#f4e58a"><circle cx="60" cy="20" r="4"/><circle cx="150" cy="20" r="4"/><circle cx="250" cy="20" r="4"/><circle cx="340" cy="20" r="4"/></g>
+    <!-- stage floor -->
+    <rect x="0" y="128" width="400" height="34" fill="url(#concertstage)"/>
+    <rect x="0" y="128" width="400" height="4" fill="#5a3f7a"/>
+    <!-- speakers -->
+    <g fill="#1b1526" stroke="#0e0a16" stroke-width="1.5">
+      <rect x="6" y="70" width="26" height="58" rx="3"/>
+      <rect x="368" y="70" width="26" height="58" rx="3"/>
+    </g>
+    <g fill="#3a3346"><circle cx="19" cy="86" r="7"/><circle cx="19" cy="110" r="9"/><circle cx="381" cy="86" r="7"/><circle cx="381" cy="110" r="9"/></g>
+    <!-- crowd of dots -->
+    <g fill="#0d0918" class="sway">
+      <circle cx="40" cy="196" r="8"/><circle cx="70" cy="204" r="9"/><circle cx="100" cy="194" r="8"/><circle cx="132" cy="206" r="9"/><circle cx="164" cy="196" r="8"/><circle cx="196" cy="205" r="9"/><circle cx="228" cy="195" r="8"/><circle cx="260" cy="206" r="9"/><circle cx="292" cy="196" r="8"/><circle cx="324" cy="205" r="9"/><circle cx="356" cy="196" r="8"/>
+    </g>
+    <g stroke="#241a34" stroke-width="3" stroke-linecap="round" class="wave">
+      <path d="M40 190 v-12"/><path d="M100 188 v-12"/><path d="M164 190 v-12"/><path d="M228 189 v-12"/><path d="M292 190 v-12"/><path d="M356 190 v-12"/>
+    </g>
+    <!-- GUITARIST (left) -->
+    <g class="bob"><g transform="translate(62,128)">
+      <ellipse cx="0" cy="34" rx="15" ry="4" fill="#00000025"/>
+      <rect x="-10" y="-8" width="20" height="40" rx="7" fill="#c0453a"/>
+      <circle cx="0" cy="-18" r="9" fill="#e3ad82"/><path d="M-9 -20 a9 9 0 0 1 18 0 v-3 a9 6 0 0 0 -18 0z" fill="#2a2a2a"/><path d="M8 -22 q6 8 2 16 l-3 -1 q3 -8 -2 -15z" fill="#2a2a2a"/>
+      <rect x="6" y="0" width="30" height="9" rx="4" fill="#3a2a1a" transform="rotate(18 6 4)"/><circle cx="8" cy="4" r="6" fill="#e8b23a"/>
+    </g></g>
+    <!-- SINGER (centre) with mic -->
+    <g transform="translate(132,128)">
+      <rect x="-2" y="-2" width="3" height="34" fill="#5a5560"/><circle cx="0" cy="-6" r="4" fill="#8a8590"/>
+    </g>
+    <g class="sway"><g transform="translate(132,126)">
+      <ellipse cx="0" cy="36" rx="15" ry="4" fill="#00000025"/>
+      <rect x="-10" y="-6" width="20" height="42" rx="7" fill="#d13a7a"/>
+      <circle cx="0" cy="-18" r="9" fill="#f0c9a0"/><path d="M-9 -18 a9 9 0 0 1 18 0 v-6 q-9 -5 -18 0z" fill="#e8b23a"/><path d="M-9 -14 q-4 8 -1 16 l3 -1 q-3 -8 1 -14z" fill="#e8b23a"/>
+      <rect x="-12" y="2" width="8" height="4" rx="2" fill="#d13a7a" transform="rotate(-30 -8 4)"/>
+    </g></g>
+    <!-- DRUMMER (centre-right, behind kit) -->
+    <g transform="translate(210,120)">
+      <g class="stomp"><circle cx="0" cy="-16" r="8" fill="#a2683f"/><path d="M-8 -18 a8 8 0 0 1 16 0 v-2 a8 5 0 0 0 -16 0z" fill="#1f1f1f"/><rect x="-9" y="-8" width="18" height="18" rx="6" fill="#2f7a8a"/></g>
+      <rect x="-22" y="10" width="18" height="16" rx="3" fill="#e0e4ea"/><ellipse cx="-13" cy="10" rx="10" ry="3" fill="#c9a24a"/>
+      <rect x="6" y="12" width="18" height="14" rx="3" fill="#e0e4ea"/><ellipse cx="15" cy="12" rx="10" ry="3" fill="#c9a24a"/>
+      <path d="M-24 4 l-8 -8" stroke="#c9c2b2" stroke-width="1.5"/><ellipse cx="-34" cy="-6" rx="9" ry="3" fill="#d9b44a"/>
+      <g class="stir" stroke="#caa06a" stroke-width="2" stroke-linecap="round"><path d="M-2 -4 l-10 8"/><path d="M2 -4 l10 8"/></g>
+    </g>
+    <!-- ROADIE (right side) -->
+    <g transform="translate(344,132)">
+      <ellipse cx="0" cy="30" rx="14" ry="4" fill="#00000025"/>
+      <rect x="-9" y="-4" width="18" height="34" rx="6" fill="#e6a23a"/>
+      <circle cx="0" cy="-15" r="8" fill="#8a5a3a"/><path d="M-8 -17 a8 8 0 0 1 16 0 v-1 h-16z" fill="#1b1b1b"/><path d="M-9 -16 h18 v-2 a9 4 0 0 0 -18 0z" fill="#2a2a2a"/>
+      <g class="stir"><rect x="-4" y="0" width="7" height="12" rx="3" fill="#e6a23a" transform="rotate(35 0 4)"/></g>
+      <path d="M-6 24 q-16 6 -26 2" stroke="#111" stroke-width="2.4" fill="none"/>
+    </g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#160e26" opacity="0"/>
+  </svg>
+  ${pin(132,150,'The singer')}${pin(62,150,'The guitarist')}${pin(210,120,'The drummer')}${pin(70,208,'The fans')}${pin(344,150,'The roadie')}`,
+},
+{
+  id:'jungle', emo:'🌴', name:'The Jungle Expedition', tag:'The&nbsp;Jungle',
+  era:['JUNGLE','EXPEDITION'], statusAfter:'Earthquake',
+  fx:'quake', darkFill:'#101a12',
+  sceneTitle:'The scene · watch what everyone is doing in the jungle',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE JUNGLE — write your eyewitness account',
+  headlinePH:'Title — e.g. THE DAY THE JUNGLE SHOOK',
+  fileslug:'the-jungle',
+  event:{ btn:'🌋 The ground shakes', clause:'when the ground shook', sfx:'rumble', after:'boom',
+    promptWatch:'Watch closely… what is everyone doing on the jungle expedition? When you are ready, press <b>“The ground shakes”</b>.',
+    promptAfter:'🌋 The ground <b>shook</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The explorer <b>was hacking</b> through the leaves <b>when</b> the ground <b>shook</b>." },
+  witnesses:[
+    {id:'explorer',  subj:'The explorer',  aux:'was', verb:'hacking',  tail:'through the leaves with a machete', opts:['hacking','sleeping','flying']},
+    {id:'porter',    subj:'The porter',    aux:'was', verb:'carrying',  tail:'a heavy wooden crate',            opts:['carrying','reading','dancing']},
+    {id:'scientist', subj:'The scientist', aux:'was', verb:'writing',   tail:'notes in her notebook',           opts:['writing','swimming','digging']},
+    {id:'monkey',    subj:'The monkey',    aux:'was', verb:'swinging',  tail:'from a long vine',                opts:['swinging','cooking','singing']},
+    {id:'parrot',    subj:'The parrot',    aux:'was', verb:'flying',     tail:'over the green canopy',           opts:['flying','washing','running']},
+  ],
+  vocab:[
+    {w:"jungle", pos:"n.", def:"A thick tropical forest with many plants and animals.", ex:"They were walking through the jungle."},
+    {w:"machete", pos:"n.", def:"A large knife for cutting plants and branches.", ex:"He was hacking the leaves with a machete."},
+    {w:"vine", pos:"n.", def:"A long climbing plant that hangs from trees.", ex:"The monkey was swinging from a vine."},
+    {w:"canopy", pos:"n.", def:"The thick top layer of leaves and branches in a forest.", ex:"The parrot flew over the canopy."},
+    {w:"to hack", pos:"v.", def:"To cut something roughly with heavy blows.", ex:"She was hacking through the plants."},
+    {w:"crate", pos:"n.", def:"A large wooden box for carrying things.", ex:"The porter was carrying a crate."},
+    {w:"expedition", pos:"n.", def:"A long journey made for exploring or research.", ex:"They joined an expedition into the jungle."},
+    {w:"earthquake", pos:"n.", def:"A sudden strong shaking of the ground.", ex:"The earthquake made the trees shake."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a hot morning and the jungle was full of strange sounds.'},
+    {t:'past cont', s:'The explorer was hacking a path through the thick leaves.'},
+    {t:'simple past', s:'Suddenly, the ground shook beneath their feet.'},
+    {t:'simple past', s:'The scientist dropped her pen and everyone stopped.'},
+    {t:'when', s:'The porter was carrying a crate when the trees began to move.'},
+    {t:'while', s:'While the monkey was swinging from a vine, birds flew everywhere.'},
+  ],
+  wordbank:['hacking','carrying','writing','swinging','flying','a machete','a vine','the canopy','a crate','leaves','suddenly','when','while','shook','earthquake','river'],
+  practice:[
+    {q:'The explorer ___ hacking through the leaves.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The porters ___ carrying the crates through the mud.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The scientist ___ notes when the ground shook. (write)', opts:['was writing','wrote'], a:'was writing', tip:'Action in progress → past continuous.'},
+    {q:'The ground ___ very suddenly. (shake)', opts:['shook','was shaking'], a:'shook', tip:'One sudden, finished action → simple past.'},
+    {q:'The monkey was swinging from a vine ___ the earthquake started.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the parrot was flying, the ground shook.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the scientist writing notes when the trees moved? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The explorer ___ through the leaves when the ground shook. (hack)', opts:['was hacking','hacked'], a:'was hacking', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The ground ___ very hard for a moment. (shake)', opts:['shook','was shaking'], a:'shook', tip:'One sudden, finished action → simple past.'},
+    {q:'While the porter ___ the crate, a snake appeared. (carry)', opts:['was carrying','carried'], a:'was carrying', tip:'Two actions together → while + past continuous.'},
+    {q:'The scientist ___ the camp on the radio. (call)', opts:['called','was calling'], a:'called', tip:'One completed action → simple past.'},
+    {q:'At that moment, the birds ___ over the canopy. (fly)', opts:['were flying','flew'], a:'were flying', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'hack → ___', opts:['hacking','hackking'], a:'hacking', tip:'Two consonants already — just add -ing: hacking.'},
+    {q:'swing → ___', opts:['swinging','swingging'], a:'swinging', tip:'Ends in two consonants — just add -ing: swinging.'},
+    {q:'write → ___', opts:['writing','writeing'], a:'writing', tip:'Drop the silent -e: writing.'},
+    {q:'dig → ___', opts:['digging','diging'], a:'digging', tip:'Double the final consonant: digging.'},
+    {q:'carry → ___', opts:['carrying','caring'], a:'carrying', tip:'Keep the -y and add -ing: carrying.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+  ],
+  mistakes:[
+    {q:'The explorer were hacking the leaves.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The porters was carrying the crates.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The scientist was write her notes.', bad:'write', fix:'writing', tip:'was + -ing → was writing.'},
+    {q:'The ground was shaking and stopped.', bad:'shaking', fix:'shook', tip:'One finished action → shook.'},
+    {q:'The monkey were swinging from a vine.', bad:'were', fix:'was', tip:'One animal → was.'},
+  ],
+  spots:{explorer:[60,138], porter:[150,146], scientist:[248,150], monkey:[330,70], parrot:[196,44]},
+  match:[
+    {a:'The explorer was hacking the leaves', b:'when the ground shook'},
+    {a:'The porter was carrying a crate', b:'when the trees began to move'},
+    {a:'The scientist was writing notes', b:'when her pen fell'},
+    {a:'The monkey was swinging from a vine', b:'when the branch trembled'},
+    {a:'The parrot was flying over the canopy', b:'when the earthquake struck'},
+  ],
+  scramble:[
+    {answer:'The explorer was hacking through the leaves when the ground shook.'},
+    {answer:'The porter was carrying a heavy wooden crate.'},
+    {answer:'While the monkey was swinging the parrot was flying overhead.'},
+  ],
+  stories:[
+    {title:'Deep in the jungle', text:'It was a hot morning and the jungle {0} full of noise. The explorer {1} a path through the thick leaves. Behind him, the porter {2} a heavy crate. The scientist {3} notes about a rare plant. High in the trees, the monkey {4} from a vine, while a parrot {5} over the canopy. Suddenly, the ground {6} hard. The scientist {7} loudly. While everyone {8}, the guide {9} the camp on the radio.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was hacking','hacked'], a:'was hacking'},
+      {opts:['was carrying','carried'], a:'was carrying'},
+      {opts:['was writing','wrote'], a:'was writing'},
+      {opts:['was swinging','swung'], a:'was swinging'},
+      {opts:['was flying','flew'], a:'was flying'},
+      {opts:['shook','was shaking'], a:'shook'},
+      {opts:['shouted','was shouting'], a:'shouted'},
+      {opts:['was panicking','panicked'], a:'was panicking'},
+      {opts:['called','was calling'], a:'called'},
+    ]},
+    {title:'The hidden temple', text:'Yesterday the team {0} an old temple in the jungle. The scientist {1} the ancient wall when a loud roar came. It {2} suddenly very dark. While the porters {3} for torches, the monkey {4} onto a rock. The explorer {5} the map, but the wind {6} it away. Everyone {7} when the light returned. Luckily, the temple door {8} open. The parrot {9} inside before them.', gaps:[
+      {opts:['was exploring','explored'], a:'was exploring'},
+      {opts:['was studying','studied'], a:'was studying'},
+      {opts:['went','was going'], a:'went'},
+      {opts:['were looking','looked'], a:'were looking'},
+      {opts:['jumped','was jumping'], a:'jumped'},
+      {opts:['grabbed','was grabbing'], a:'grabbed'},
+      {opts:['blew','was blowing'], a:'blew'},
+      {opts:['was laughing','laughed'], a:'laughed'},
+      {opts:['was','were'], a:'was'},
+      {opts:['flew','was flying'], a:'flew'},
+    ]},
+  ],
+  listen:[
+    {say:'The explorer was hacking the leaves.', opts:['The explorer was hacking the leaves.','The explorer were hacking the leaves.','The explorer hacked the leaves.'], a:'The explorer was hacking the leaves.'},
+    {say:'The porters were carrying the crates.', opts:['The porters was carrying the crates.','The porters were carrying the crates.','The porters carried the crates.'], a:'The porters were carrying the crates.'},
+    {say:'The ground shook.', opts:['The ground shook.','The ground was shaking.','The ground shakes.'], a:'The ground shook.'},
+    {say:'The scientist was writing notes when the ground shook.', opts:['The scientist wrote notes when the ground shook.','The scientist was writing notes when the ground shook.','The scientist was writing notes when the ground shakes.'], a:'The scientist was writing notes when the ground shook.'},
+    {say:'While the monkey was swinging, the parrot flew away.', opts:['While the monkey was swinging, the parrot flew away.','While the monkey swung, the parrot was flying away.','When the monkey was swinging, the parrot flew away.'], a:'While the monkey was swinging, the parrot flew away.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <g class="quakebox">
+    <defs>
+      <linearGradient id="junglesky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3a6"/><stop offset="1" stop-color="#7bbf6a"/></linearGradient>
+      <linearGradient id="jungleground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f6a34"/><stop offset="1" stop-color="#2c4a26"/></linearGradient>
+      <linearGradient id="jungleriver" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fc7d6"/><stop offset="1" stop-color="#4f9ab0"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#junglesky)"/>
+    <!-- green canopy of leaves at the top -->
+    <g fill="#2f7a3a"><ellipse cx="40" cy="10" rx="60" ry="34"/><ellipse cx="130" cy="6" rx="66" ry="32"/><ellipse cx="230" cy="8" rx="70" ry="34"/><ellipse cx="330" cy="6" rx="66" ry="32"/><ellipse cx="392" cy="12" rx="48" ry="30"/></g>
+    <g fill="#3f9a48"><ellipse cx="86" cy="18" rx="40" ry="22"/><ellipse cx="188" cy="16" rx="44" ry="22"/><ellipse cx="292" cy="18" rx="42" ry="22"/></g>
+    <!-- hanging vines -->
+    <g stroke="#4a7a34" stroke-width="3" fill="none"><path d="M60 30 q6 40 -2 70"/><path d="M200 24 q8 50 0 96"/><path d="M300 28 q-8 40 2 78"/></g>
+    <!-- ground -->
+    <rect x="0" y="120" width="400" height="100" fill="url(#jungleground)"/>
+    <!-- small river across the lower ground -->
+    <path d="M0 176 q60 -12 120 0 q60 12 120 0 q60 -12 160 0 v44 h-400z" fill="url(#jungleriver)"/>
+    <path d="M0 176 q60 -12 120 0 q60 12 120 0 q60 -12 160 0" stroke="#bfeaf0" stroke-width="1.4" fill="none" opacity=".6"/>
+    <!-- big foreground leaves -->
+    <g fill="#2b6f30"><path d="M10 210 q-4 -34 30 -44 q-6 24 -30 44z"/><path d="M40 214 q-2 -30 34 -40 q-8 22 -34 40z"/></g>
+    <path d="M40 170 q0 -34 30 -44" stroke="#1f5824" stroke-width="1.2" fill="none"/>
+    <g fill="#2b6f30"><path d="M392 210 q6 -34 -30 -46 q6 26 30 46z"/><path d="M360 214 q4 -30 -34 -42 q8 24 34 42z"/></g>
+    <!-- EXPLORER + machete (left) -->
+    <g transform="translate(62,150)">
+      <ellipse cx="0" cy="46" rx="15" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="42" rx="7" fill="#c2b24a"/>
+      <circle cx="0" cy="-6" r="9" fill="#e3ad82"/>
+      <path d="M-10 -10 a10 6 0 0 1 20 0z" fill="#8a6a3a"/><rect x="-11" y="-11" width="22" height="3" rx="1.5" fill="#7a5a2a"/>
+      <g class="wave"><rect x="8" y="-4" width="5" height="20" rx="2" fill="#c2b24a"/><rect x="12" y="-20" width="3" height="18" rx="1.5" fill="#c9ced2"/></g>
+    </g>
+    <!-- PORTER + crate (center-left) -->
+    <g class="bob"><g transform="translate(150,152)">
+      <ellipse cx="0" cy="44" rx="15" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="40" rx="7" fill="#a85a3a"/>
+      <circle cx="0" cy="-6" r="9" fill="#8a5a3a"/>
+      <path d="M-9 -9 a9 9 0 0 1 18 0z" fill="#2a2a2a"/>
+      <rect x="-14" y="-30" width="28" height="20" rx="2" fill="#9c7040" stroke="#7a5630" stroke-width="1.5"/>
+      <path d="M-14 -20 h28 M0 -30 v20" stroke="#7a5630" stroke-width="1.2"/>
+      <rect x="-12" y="-12" width="8" height="6" rx="1.5" fill="#a85a3a"/><rect x="4" y="-12" width="8" height="6" rx="1.5" fill="#a85a3a"/>
+    </g></g>
+    <!-- SCIENTIST + notebook (center-right) -->
+    <g transform="translate(248,152)">
+      <ellipse cx="0" cy="46" rx="15" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="42" rx="7" fill="#e6e6df"/>
+      <circle cx="0" cy="-6" r="9" fill="#f0c9a0"/>
+      <path d="M-10 -8 q10 -12 20 0 q-2 -14 -10 -14 q-8 0 -10 14z" fill="#5a3d22"/>
+      <path d="M4 -8 l8 3 l-8 3z" fill="#4a2f18"/>
+      <circle cx="-3" cy="-6" r="2.4" fill="none" stroke="#2a2a2a" stroke-width="1"/><circle cx="4" cy="-6" r="2.4" fill="none" stroke="#2a2a2a" stroke-width="1"/><path d="M-0.6 -6 h1.2" stroke="#2a2a2a" stroke-width="1"/>
+      <rect x="-16" y="6" width="12" height="9" rx="1.5" fill="#fff" stroke="#b0b0a8"/>
+      <g class="stir"><rect x="-6" y="2" width="3" height="10" rx="1.5" fill="#3a5a8a"/></g>
+    </g>
+    <!-- MONKEY swinging from a vine (right) -->
+    <g transform="translate(330,70)">
+      <path d="M0 -46 q-6 22 2 42" stroke="#4a7a34" stroke-width="3" fill="none"/>
+      <g class="sway"><g transform="translate(0,4)">
+        <ellipse cx="0" cy="8" rx="11" ry="14" fill="#7a5230"/>
+        <circle cx="0" cy="-6" r="9" fill="#7a5230"/>
+        <circle cx="0" cy="-3" r="6" fill="#d9b48a"/>
+        <circle cx="-9" cy="-8" r="3.5" fill="#7a5230"/><circle cx="9" cy="-8" r="3.5" fill="#7a5230"/>
+        <circle cx="-3" cy="-5" r="1.3" fill="#2a2a2a"/><circle cx="3" cy="-5" r="1.3" fill="#2a2a2a"/>
+        <path d="M0 -30 q-4 -14 -8 -16" stroke="#7a5230" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M8 14 q16 6 18 -8" stroke="#7a5230" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g></g>
+    </g>
+    <!-- PARROT flying over the canopy (top center) -->
+    <g class="fly"><g transform="translate(196,46)">
+      <ellipse cx="0" cy="0" rx="9" ry="6" fill="#d43a3a"/>
+      <circle cx="8" cy="-3" r="4.5" fill="#e64a4a"/>
+      <path d="M11 -3 l6 2 l-6 2z" fill="#f2c23a"/>
+      <circle cx="9" cy="-4" r="1.1" fill="#2a2a2a"/>
+      <path d="M-8 -2 l-14 -8 l4 10z" fill="#2f9a4a"/>
+      <path d="M-8 2 l-16 6 l6 4z" fill="#3aa8d6"/>
+      <path d="M-9 0 l-16 0 l14 4z" fill="#f2c23a"/>
+    </g></g>
+    </g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#101a12" opacity="0"/>
+  </svg>
+  ${pin(62,150,'The explorer')}${pin(150,150,'The porter')}${pin(248,152,'The scientist')}${pin(330,72,'The monkey')}${pin(196,46,'The parrot')}`,
+},
+{
+  id:'ship', emo:'🚢', name:"The Ship's Deck", tag:'The&nbsp;Ship',
+  era:['OCEAN','1912'], statusAfter:'Storm',
+  fx:'storm', darkFill:'#1a2636',
+  sceneTitle:'The scene · watch what everyone is doing on the deck',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:"✍ THE SHIP'S DECK — write your eyewitness account",
+  headlinePH:'Title — e.g. THE NIGHT THE STORM HIT THE LINER',
+  fileslug:'the-ships-deck',
+  event:{ btn:'⛈️ The storm hits', clause:'when the storm hit', sfx:'rumble', after:'boom',
+    promptWatch:'Watch closely… what is everyone doing on the ship’s deck? When you are ready, press <b>“The storm hits”</b>.',
+    promptAfter:'⛈️ The storm <b>hit</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The captain <b>was steering</b> the ship <b>when</b> the storm <b>hit</b>." },
+  witnesses:[
+    {id:'sailors',   subj:'The two sailors', aux:'were', verb:'scrubbing', tail:'the wooden deck',        opts:['scrubbing','flying','sleeping']},
+    {id:'captain',   subj:'The captain',     aux:'was',  verb:'steering',  tail:'the ship at the wheel',   opts:['steering','swimming','painting']},
+    {id:'passenger', subj:'The passenger',   aux:'was',  verb:'reading',   tail:'a book in a deck chair',  opts:['reading','cooking','digging']},
+    {id:'boy',       subj:'The boy',         aux:'was',  verb:'watching',  tail:'the sea at the rail',     opts:['watching','driving','dancing']},
+    {id:'steward',   subj:'The steward',     aux:'was',  verb:'carrying',  tail:'a tray of tea',           opts:['carrying','singing','fishing']},
+  ],
+  vocab:[
+    {w:"deck", pos:"n.", def:"The flat floor on the top of a ship where people walk.", ex:"The sailors were scrubbing the deck."},
+    {w:"to steer", pos:"v.", def:"To control the direction a ship or car goes in.", ex:"The captain was steering the ship."},
+    {w:"railing", pos:"n.", def:"A bar or fence along the edge of a ship to stop people falling.", ex:"The boy was leaning on the railing."},
+    {w:"funnel", pos:"n.", def:"The tall chimney on a ship that lets out smoke.", ex:"Dark smoke rose from the funnel."},
+    {w:"to scrub", pos:"v.", def:"To clean something hard by rubbing it with a brush.", ex:"They were scrubbing the floor."},
+    {w:"steward", pos:"n.", def:"A person who serves food and drinks to passengers on a ship.", ex:"The steward was carrying tea."},
+    {w:"horizon", pos:"n.", def:"The line far away where the sea seems to meet the sky.", ex:"Dark clouds rose over the horizon."},
+    {w:"to hit", pos:"v.", def:"To arrive suddenly and with force, like a storm.", ex:"The storm hit the ship."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a calm morning and the great liner was sailing across the ocean.'},
+    {t:'past cont', s:'The captain was steering the ship from the wheel.'},
+    {t:'simple past', s:'Suddenly, a huge storm hit the deck.'},
+    {t:'simple past', s:'The captain shouted and everyone held on tight.'},
+    {t:'when', s:'The steward was carrying the tea when the first wave crashed over the rail.'},
+    {t:'while', s:'While the sailors were scrubbing the deck, dark clouds filled the sky.'},
+  ],
+  wordbank:['scrubbing','steering','reading','watching','carrying','the deck','the wheel','the railing','the funnel','the sea','a wave','suddenly','when','while','the storm hit','shouted'],
+  practice:[
+    {q:'The captain ___ steering the ship.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The two sailors ___ scrubbing the deck.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The steward ___ tea when the storm hit. (carry)', opts:['was carrying','carried'], a:'was carrying', tip:'Action in progress → past continuous.'},
+    {q:'The storm ___ the ship very suddenly. (hit)', opts:['hit','was hitting'], a:'hit', tip:'One sudden, finished action → simple past.'},
+    {q:'The boy was watching the sea ___ the storm started.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the passenger was reading, the wind grew stronger.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the captain steering the ship when the wave hit? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'The captain ___ the ship when the storm hit. (steer)', opts:['was steering','steered'], a:'was steering', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The storm ___ the deck very quickly. (hit)', opts:['hit','was hitting'], a:'hit', tip:'One sudden, finished action → simple past.'},
+    {q:'While the boy ___ the sea, a wave crashed over the rail. (watch)', opts:['was watching','watched'], a:'was watching', tip:'Two actions together → while + past continuous.'},
+    {q:'The captain ___ an order to the crew. (shout)', opts:['shouted','was shouting'], a:'shouted', tip:'One completed action → simple past.'},
+    {q:'At that moment, the two sailors ___ the deck. (scrub)', opts:['were scrubbing','scrubbed'], a:'were scrubbing', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'scrub → ___', opts:['scrubbing','scrubing'], a:'scrubbing', tip:'Double the final consonant: scrubbing.'},
+    {q:'steer → ___', opts:['steering','steerring'], a:'steering', tip:'Two vowels together — no doubling: steering.'},
+    {q:'read → ___', opts:['reading','reding'], a:'reading', tip:'Two vowels together — no doubling: reading.'},
+    {q:'sail → ___', opts:['sailing','sailling'], a:'sailing', tip:'Two vowels together — no doubling: sailing.'},
+    {q:'wave → ___', opts:['waving','waveing'], a:'waving', tip:'Drop the silent -e: waving.'},
+    {q:'tie → ___', opts:['tying','tieing'], a:'tying', tip:'-ie → -ying: tying.'},
+  ],
+  mistakes:[
+    {q:'The captain were steering the ship.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The two sailors was scrubbing the deck.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The steward was carry the tea.', bad:'carry', fix:'carrying', tip:'was + -ing → was carrying.'},
+    {q:'The storm was hitting the ship and passed.', bad:'hitting', fix:'hit', tip:'One finished action → hit.'},
+    {q:'The boy were watching the sea.', bad:'were', fix:'was', tip:'One person → was.'},
+  ],
+  spots:{sailors:[70,150], captain:[196,120], passenger:[288,150], boy:[350,132], steward:[136,146]},
+  match:[
+    {a:'The captain was steering the ship', b:'when the storm hit'},
+    {a:'The two sailors were scrubbing the deck', b:'when the first wave crashed'},
+    {a:'The passenger was reading a book', b:'when the wind grew stronger'},
+    {a:'The boy was watching the sea', b:'when he saw the dark clouds'},
+    {a:'The steward was carrying the tea', b:'when the ship rolled suddenly'},
+  ],
+  scramble:[
+    {answer:'The captain was steering the ship when the storm hit.'},
+    {answer:'The steward was carrying a tray of tea to the passengers.'},
+    {answer:'While the sailors were scrubbing the deck dark clouds filled the sky.'},
+  ],
+  stories:[
+    {title:'The morning the storm came', text:'It was a calm morning and the great liner {0} smoothly across the ocean. The captain {1} the ship from the wheel. On the deck below, two sailors {2} the wooden planks. A passenger {3} a book in a deck chair, while a young boy {4} the sea at the rail. The steward {5} a tray of tea to the cabins. Suddenly, a huge storm {6} the ship. The captain {7} an order to the crew. While everyone {8} for the railing, the first wave {9} over the deck.', gaps:[
+      {opts:['was sailing','sailed'], a:'was sailing'},
+      {opts:['was steering','steered'], a:'was steering'},
+      {opts:['were scrubbing','scrubbed'], a:'were scrubbing'},
+      {opts:['was reading','read'], a:'was reading'},
+      {opts:['was watching','watched'], a:'was watching'},
+      {opts:['was carrying','carried'], a:'was carrying'},
+      {opts:['hit','was hitting'], a:'hit'},
+      {opts:['shouted','was shouting'], a:'shouted'},
+      {opts:['was reaching','reached'], a:'was reaching'},
+      {opts:['crashed','was crashing'], a:'crashed'},
+    ]},
+    {title:'The lost hat', text:'Yesterday the passengers {0} the sunshine on the top deck. An old gentleman {1} his newspaper when a gust of wind blew in. It {2} very strong. While the boy {3} at the seagulls, his cap {4} off his head. The steward {5} the cap, but the wind {6} it into the sea. Everyone {7} when the hat disappeared. Luckily, the boy {8} not upset. The captain {9} him a brand new cap.', gaps:[
+      {opts:['were enjoying','enjoyed'], a:'were enjoying'},
+      {opts:['was reading','read'], a:'was reading'},
+      {opts:['grew','was growing'], a:'grew'},
+      {opts:['was pointing','pointed'], a:'was pointing'},
+      {opts:['flew','was flying'], a:'flew'},
+      {opts:['grabbed','was grabbing'], a:'grabbed'},
+      {opts:['carried','was carrying'], a:'carried'},
+      {opts:['was laughing','laughed'], a:'was laughing'},
+      {opts:['was','were'], a:'was'},
+      {opts:['gave','was giving'], a:'gave'},
+    ]},
+  ],
+  listen:[
+    {say:'The captain was steering the ship.', opts:['The captain was steering the ship.','The captain were steering the ship.','The captain steered the ship.'], a:'The captain was steering the ship.'},
+    {say:'The two sailors were scrubbing the deck.', opts:['The two sailors was scrubbing the deck.','The two sailors were scrubbing the deck.','The two sailors scrubbed the deck.'], a:'The two sailors were scrubbing the deck.'},
+    {say:'The storm hit the ship.', opts:['The storm hit the ship.','The storm was hitting the ship.','The storm hits the ship.'], a:'The storm hit the ship.'},
+    {say:'The steward was carrying tea when the storm hit.', opts:['The steward carried tea when the storm hit.','The steward was carrying tea when the storm hit.','The steward was carrying tea when the storm hits.'], a:'The steward was carrying tea when the storm hit.'},
+    {say:'While the boy was watching the sea, dark clouds appeared.', opts:['While the boy was watching the sea, dark clouds appeared.','While the boy watched the sea, dark clouds were appearing.','When the boy was watching the sea, dark clouds appeared.'], a:'While the boy was watching the sea, dark clouds appeared.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="shipsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c6dc"/><stop offset="1" stop-color="#dce9ee"/></linearGradient>
+      <linearGradient id="shipsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f7f93"/><stop offset="1" stop-color="#37647a"/></linearGradient>
+      <linearGradient id="shipdeck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#caa46a"/><stop offset="1" stop-color="#b08a50"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#shipsky)"/>
+    <!-- sea horizon -->
+    <rect x="0" y="78" width="400" height="40" fill="url(#shipsea)"/>
+    <g stroke="#6a99ad" stroke-width="1.2" opacity=".6"><path d="M0 92 h400"/><path d="M0 104 h400"/><path d="M0 114 h400"/></g>
+    <!-- seagulls -->
+    <g stroke="#3a4750" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M40 44 q6 -6 12 0 q6 -6 12 0"/><path d="M300 34 q5 -5 10 0 q5 -5 10 0"/><path d="M240 56 q4 -4 8 0 q4 -4 8 0"/></g>
+    <!-- funnel / smokestack -->
+    <rect x="182" y="20" width="34" height="60" rx="4" fill="#e6d9c2"/><rect x="182" y="20" width="34" height="12" rx="4" fill="#3a3a3a"/>
+    <g class="plume" fill="#b9bec4" opacity=".8"><ellipse cx="200" cy="16" rx="12" ry="8"/><ellipse cx="214" cy="8" rx="9" ry="6"/></g>
+    <!-- deck floor -->
+    <rect x="0" y="118" width="400" height="102" fill="url(#shipdeck)"/>
+    <g stroke="#9a774284" stroke-width="1.6"><path d="M0 140 h400"/><path d="M0 162 h400"/><path d="M0 184 h400"/><path d="M0 206 h400"/><path d="M52 118 v102 M120 118 v102 M188 118 v102 M256 118 v102 M324 118 v102"/></g>
+    <!-- railing along the front -->
+    <rect x="0" y="112" width="400" height="6" fill="#8a6a44"/>
+    <g stroke="#8a6a44" stroke-width="3"><path d="M24 112 v-16"/><path d="M96 112 v-16"/><path d="M168 112 v-16"/><path d="M240 112 v-16"/><path d="M312 112 v-16"/><path d="M384 112 v-16"/></g>
+    <rect x="0" y="96" width="400" height="4" fill="#9a774a"/>
+    <!-- TWO SAILORS scrubbing (left) -->
+    <g transform="translate(52,150)">
+      <ellipse cx="0" cy="46" rx="14" ry="5" fill="#00000015"/>
+      <rect x="-10" y="6" width="20" height="40" rx="7" fill="#c9c2b2"/>
+      <circle cx="0" cy="-5" r="9" fill="#f0c9a0"/><path d="M-9 -6 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#3a2a1a"/>
+      <path d="M-9 -8 h18 v-2 a9 6 0 0 0 -18 0z" fill="#2f4a6a"/>
+      <g class="stir"><rect x="6" y="18" width="14" height="5" rx="2.5" fill="#8a5a3a"/><rect x="18" y="16" width="8" height="8" rx="2" fill="#d9d2c2"/></g>
+    </g>
+    <g transform="translate(88,152)">
+      <ellipse cx="0" cy="44" rx="13" ry="5" fill="#00000015"/>
+      <rect x="-9" y="6" width="18" height="38" rx="7" fill="#b7b0a0"/>
+      <circle cx="0" cy="-5" r="8.5" fill="#c98a5a"/><path d="M-8.5 -6 a8.5 8.5 0 0 1 17 0 v-2 a8.5 8.5 0 0 0 -17 0z" fill="#5a3d22"/>
+      <path d="M-8.5 -7 h17 v-2 a8.5 6 0 0 0 -17 0z" fill="#2f4a6a"/>
+      <g class="wave"><rect x="-24" y="16" width="14" height="5" rx="2.5" fill="#8a5a3a"/><rect x="-32" y="14" width="8" height="8" rx="2" fill="#d9d2c2"/></g>
+    </g>
+    <!-- STEWARD with tea (center-left) -->
+    <g class="walk"><g transform="translate(136,150)">
+      <ellipse cx="0" cy="46" rx="14" ry="5" fill="#00000015"/>
+      <rect x="-10" y="4" width="20" height="42" rx="7" fill="#e2e2de"/><rect x="-10" y="26" width="20" height="20" rx="4" fill="#2f3a44"/>
+      <circle cx="0" cy="-6" r="9" fill="#e3ad82"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#20140a"/>
+      <rect x="6" y="-6" width="18" height="4" rx="2" fill="#c9c2b2"/><circle cx="14" cy="-9" r="3.5" fill="#fff" stroke="#c9c2b2"/><circle cx="21" cy="-9" r="3.5" fill="#fff" stroke="#c9c2b2"/>
+    </g></g>
+    <!-- CAPTAIN at the wheel (center) -->
+    <g transform="translate(196,124)">
+      <ellipse cx="0" cy="50" rx="15" ry="5" fill="#00000015"/>
+      <circle cx="0" cy="34" r="16" fill="none" stroke="#7a5a34" stroke-width="4"/>
+      <g stroke="#7a5a34" stroke-width="3"><path d="M0 18 v32 M-16 34 h32 M-11 23 l22 22 M-11 45 l22 -22"/></g>
+      <rect x="-10" y="4" width="20" height="44" rx="7" fill="#20303f"/>
+      <g stroke="#d9b64a" stroke-width="2"><path d="M-10 30 h20"/></g>
+      <circle cx="0" cy="-6" r="9" fill="#a2683f"/><path d="M-6 -6 q6 3 12 0" stroke="#2a1a10" stroke-width="2" fill="none"/>
+      <path d="M-10 -9 h20 v-2 a10 6 0 0 0 -20 0z" fill="#20303f"/><rect x="-11" y="-11" width="22" height="3" rx="1.5" fill="#d9b64a"/>
+    </g>
+    <!-- PASSENGER reading in a deck chair (center-right) -->
+    <g transform="translate(288,150)">
+      <ellipse cx="0" cy="44" rx="18" ry="5" fill="#00000015"/>
+      <path d="M-16 40 l10 -30 l6 0 l-6 30z" fill="#9a7a4a"/>
+      <rect x="-12" y="8" width="26" height="16" rx="6" fill="#b0533a" transform="rotate(-14)"/>
+      <circle cx="10" cy="-4" r="9" fill="#8a5a3a"/><path d="M1 -6 a9 9 0 0 1 18 0 v-3 a9 9 0 0 0 -18 0z" fill="#d8d2c8"/>
+      <g class="bob"><rect x="-6" y="2" width="18" height="12" rx="2" fill="#f2ede0" transform="rotate(-14)"/><path d="M-6 8 h18" stroke="#c9c2b2" stroke-width="1" transform="rotate(-14)"/></g>
+    </g>
+    <!-- BOY at the rail (right) -->
+    <g transform="translate(350,138)">
+      <ellipse cx="0" cy="40" rx="12" ry="5" fill="#00000015"/>
+      <rect x="-8" y="4" width="16" height="36" rx="6" fill="#c0453a"/>
+      <circle cx="0" cy="-5" r="8" fill="#e3ad82"/><path d="M-8 -6 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#c98a2a"/>
+      <path d="M-8 -7 h16 v-2 a8 5 0 0 0 -16 0z" fill="#2f6a4a"/>
+      <g class="wave"><rect x="6" y="2" width="14" height="5" rx="2.5" fill="#c0453a"/></g>
+    </g>
+    <!-- STORM OVERLAY -->
+    <rect id="darken" width="400" height="220" fill="#1a2636" opacity="0"/>
+    <g id="rain">
+      <line x1="24" y1="64" x2="18" y2="120" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="52" y1="72" x2="46" y2="150" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="84" y1="60" x2="78" y2="130" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="112" y1="80" x2="106" y2="170" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="146" y1="66" x2="140" y2="140" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="178" y1="74" x2="172" y2="160" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="208" y1="62" x2="202" y2="128" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="240" y1="82" x2="234" y2="180" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="272" y1="64" x2="266" y2="138" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="300" y1="76" x2="294" y2="160" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="330" y1="60" x2="324" y2="126" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="356" y1="80" x2="350" y2="178" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="382" y1="66" x2="376" y2="150" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+      <line x1="396" y1="78" x2="390" y2="200" stroke="#cde3ee" stroke-width="1.4" opacity=".7"/>
+    </g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+  </svg>
+  ${pin(70,150,'The two sailors')}${pin(136,150,'The steward')}${pin(196,120,'The captain')}${pin(288,150,'The passenger')}${pin(350,132,'The boy')}`,
+},
+{
+  id:'train', emo:'🚂', name:'The Station, 1925', tag:'The&nbsp;Station',
+  era:['STATION','1925'], statusAfter:'Departure',
+  fx:'steam', darkFill:'#241c14',
+  sceneTitle:'The scene · watch what everyone is doing on the platform',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ THE STATION — write your eyewitness account',
+  headlinePH:'Title — e.g. THE DAY THE MORNING TRAIN LEFT',
+  fileslug:'the-station',
+  event:{ btn:'🚂 The whistle blows', clause:'when the whistle blew', sfx:'sizzle', after:'bell',
+    promptWatch:'Watch closely… what is everyone doing on the busy platform? When you are ready, press <b>“The whistle blows”</b>.',
+    promptAfter:'🚂 The whistle <b>blew</b>. Everyone froze. Now report what each person <b>was doing</b>.' },
+  tenseBox:{ ex:"The porter <b>was carrying</b> the suitcases <b>when</b> the whistle <b>blew</b>." },
+  witnesses:[
+    {id:'porter',    subj:'The porter',          aux:'was', verb:'carrying', tail:'heavy suitcases to the train', opts:['carrying','sleeping','flying']},
+    {id:'seller',    subj:'The newspaper seller', aux:'was', verb:'selling',  tail:'papers at his stand',         opts:['selling','swimming','dancing']},
+    {id:'woman',     subj:'The young woman',      aux:'was', verb:'waving',   tail:'goodbye to a friend',         opts:['waving','painting','digging']},
+    {id:'conductor', subj:'The conductor',        aux:'was', verb:'checking', tail:'his pocket watch',            opts:['checking','singing','fishing']},
+    {id:'boy',       subj:'The boy',              aux:'was', verb:'watching', tail:'the great locomotive',        opts:['watching','cooking','climbing']},
+  ],
+  vocab:[
+    {w:"to carry", pos:"v.", def:"To hold something and take it somewhere.", ex:"The porter was carrying the suitcases."},
+    {w:"platform", pos:"n.", def:"The raised area beside the track where you wait for a train.", ex:"The passengers were waiting on the platform."},
+    {w:"locomotive", pos:"n.", def:"The engine that pulls the train.", ex:"A huge steam locomotive stood at the platform."},
+    {w:"luggage", pos:"n.", def:"The bags and cases you take on a journey.", ex:"He was loading the luggage onto the train."},
+    {w:"to wave", pos:"v.", def:"To move your hand to say hello or goodbye.", ex:"She was waving goodbye."},
+    {w:"conductor", pos:"n.", def:"The railway worker who checks the tickets and times.", ex:"The conductor blew his whistle."},
+    {w:"pocket watch", pos:"n.", def:"A small round clock kept on a chain in a pocket.", ex:"He was checking his pocket watch."},
+    {w:"whistle", pos:"n.", def:"A small device that makes a sharp, high sound.", ex:"The whistle blew loudly."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a cold morning in 1925 and the station was full of people.'},
+    {t:'past cont', s:'A great steam locomotive was waiting at the platform.'},
+    {t:'simple past', s:'Suddenly, the whistle blew loudly.'},
+    {t:'simple past', s:'The conductor closed the last door.'},
+    {t:'when', s:'The porter was carrying the suitcases when the whistle blew.'},
+    {t:'while', s:'While the woman was waving goodbye, the train began to move.'},
+  ],
+  wordbank:['carrying','selling','waving','checking','watching','the platform','the locomotive','a suitcase','a newspaper','the whistle','steam','suddenly','when','while','blew','goodbye'],
+  practice:[
+    {q:'The porter ___ carrying the suitcases.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The passengers ___ waiting on the platform.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The seller ___ newspapers when the whistle blew. (sell)', opts:['was selling','sold'], a:'was selling', tip:'Action in progress → past continuous.'},
+    {q:'The whistle ___ very suddenly. (blow)', opts:['blew','was blowing'], a:'blew', tip:'One sudden, finished action → simple past.'},
+    {q:'The conductor was checking his watch ___ the train left.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the boy was watching, the engine let out steam.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+  ],
+  tenseEx:[
+    {q:'The porter ___ the suitcases when the whistle blew. (carry)', opts:['was carrying','carried'], a:'was carrying', tip:'Action in progress, then interrupted → past continuous.'},
+    {q:'The whistle ___ loudly. (blow)', opts:['was blowing','blew'], a:'blew', tip:'One sudden, finished action → simple past.'},
+    {q:'While the woman ___ , the train started to move. (wave)', opts:['was waving','waved'], a:'was waving', tip:'Two actions together → while + past continuous.'},
+    {q:'The conductor ___ the last door. (close)', opts:['was closing','closed'], a:'closed', tip:'One completed action → simple past.'},
+    {q:'At that moment, the boy ___ the great locomotive. (watch)', opts:['was watching','watched'], a:'was watching', tip:'In the middle of it at that moment → past continuous.'},
+  ],
+  ing:[
+    {q:'wave → ___', opts:['waving','waveing'], a:'waving', tip:'Drop the silent -e: waving.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'carry → ___', opts:['carrying','carriing'], a:'carrying', tip:'Keep the -y and add -ing: carrying.'},
+    {q:'sell → ___', opts:['selling','seling'], a:'selling', tip:'Just add -ing: selling.'},
+    {q:'travel → ___', opts:['travelling','traveling'], a:'travelling', tip:'British English doubles the -l: travelling.'},
+    {q:'wait → ___', opts:['waiting','waitting'], a:'waiting', tip:'Two vowels together — no doubling: waiting.'},
+  ],
+  mistakes:[
+    {q:'The porter were carrying the suitcases.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The passengers was waiting on the platform.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The seller was sell newspapers.', bad:'sell', fix:'selling', tip:'was + -ing → was selling.'},
+    {q:'The whistle was blowing suddenly and the train left.', bad:'blowing', fix:'blew', tip:'One finished action → blew.'},
+    {q:'The young woman were waving goodbye.', bad:'were', fix:'was', tip:'One person → was.'},
+  ],
+  spots:{porter:[158,142], seller:[208,142], woman:[262,142], conductor:[318,142], boy:[365,150]},
+  match:[
+    {a:'The porter was carrying the suitcases', b:'when the whistle blew'},
+    {a:'The seller was selling newspapers', b:'when the train arrived'},
+    {a:'The woman was waving goodbye', b:'when the engine moved off'},
+    {a:'The conductor was checking his watch', b:'when the last door closed'},
+    {a:'The boy was watching the locomotive', b:'when the steam burst out'},
+  ],
+  scramble:[
+    {answer:'The porter was carrying the suitcases when the whistle blew.'},
+    {answer:'The conductor was checking his pocket watch on the platform.'},
+    {answer:'While the woman was waving the train began to move.'},
+  ],
+  stories:[
+    {title:'The morning train', text:'It was a cold morning in 1925 and the station {0} full of people. On the platform, the porter {1} heavy suitcases to the train. At his stand, the newspaper seller {2} the morning papers. A young woman {3} goodbye to a friend at a window. Near the front, the conductor {4} his pocket watch. A small boy {5} the great locomotive with wide eyes. Suddenly, the whistle {6} loudly. The engine {7} out a huge cloud of steam. While the wheels slowly {8}, everyone {9} at the departing train.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was carrying','carried'], a:'was carrying'},
+      {opts:['was selling','sold'], a:'was selling'},
+      {opts:['was waving','waved'], a:'was waving'},
+      {opts:['was checking','checked'], a:'was checking'},
+      {opts:['was watching','watched'], a:'was watching'},
+      {opts:['blew','was blowing'], a:'blew'},
+      {opts:['let','was letting'], a:'let'},
+      {opts:['were turning','turned'], a:'were turning'},
+      {opts:['waved','was waving'], a:'waved'},
+    ]},
+  ],
+  listen:[
+    {say:'The porter was carrying the suitcases.', opts:['The porter was carrying the suitcases.','The porter were carrying the suitcases.','The porter carried the suitcases.'], a:'The porter was carrying the suitcases.'},
+    {say:'The passengers were waiting on the platform.', opts:['The passengers was waiting on the platform.','The passengers were waiting on the platform.','The passengers waited on the platform.'], a:'The passengers were waiting on the platform.'},
+    {say:'The whistle blew loudly.', opts:['The whistle blew loudly.','The whistle was blowing loudly.','The whistle blows loudly.'], a:'The whistle blew loudly.'},
+    {say:'The seller was selling papers when the train arrived.', opts:['The seller sold papers when the train arrived.','The seller was selling papers when the train arrived.','The seller was selling papers when the train arrives.'], a:'The seller was selling papers when the train arrived.'},
+    {say:'While the woman was waving, the train moved off.', opts:['While the woman was waving, the train moved off.','While the woman waved, the train was moving off.','When the woman was waving, the train moved off.'], a:'While the woman was waving, the train moved off.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="trainsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9d6dd"/><stop offset="1" stop-color="#e7e1d4"/></linearGradient>
+      <linearGradient id="trainplat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9b1a4"/><stop offset="1" stop-color="#9c9488"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#trainsky)"/>
+    <!-- station roof beams -->
+    <rect x="0" y="18" width="400" height="9" fill="#6a5a48"/>
+    <g stroke="#7a6a54" stroke-width="3"><path d="M40 27 v10"/><path d="M140 27 v10"/><path d="M240 27 v10"/><path d="M340 27 v10"/></g>
+    <!-- station clock on a post -->
+    <rect x="245" y="34" width="6" height="40" fill="#4a4038"/>
+    <circle cx="248" cy="30" r="14" fill="#f4efe2" stroke="#2a2018" stroke-width="2"/>
+    <g stroke="#2a2018" stroke-width="2" stroke-linecap="round"><path d="M248 30 v-8"/><path d="M248 30 l6 3"/></g>
+    <circle cx="248" cy="30" r="1.6" fill="#2a2018"/>
+    <!-- platform -->
+    <rect x="0" y="160" width="400" height="60" fill="url(#trainplat)"/>
+    <rect x="0" y="160" width="400" height="4" fill="#c9b24a"/>
+    <rect x="0" y="176" width="150" height="3" fill="#7a726a"/>
+    <!-- STEAM LOCOMOTIVE (left) -->
+    <g>
+      <rect x="8" y="80" width="34" height="70" rx="4" fill="#26402f"/>
+      <rect x="14" y="88" width="22" height="20" rx="2" fill="#aebfc4"/>
+      <rect x="14" y="88" width="22" height="20" rx="2" fill="none" stroke="#1c2c22" stroke-width="2"/>
+      <rect x="34" y="96" width="86" height="54" rx="16" fill="#2f4a3a"/>
+      <rect x="34" y="96" width="86" height="12" fill="#3a5a47"/>
+      <ellipse cx="82" cy="96" rx="9" ry="7" fill="#c9a24a"/>
+      <rect x="47" y="70" width="16" height="26" fill="#1c1c1c"/>
+      <rect x="43" y="62" width="24" height="9" rx="2" fill="#141414"/>
+      <circle cx="116" cy="126" r="17" fill="#1a1a1a"/>
+      <circle cx="116" cy="126" r="6" fill="#c9a24a"/>
+      <rect x="120" y="112" width="6" height="8" fill="#8a2a20"/>
+      <rect x="120" y="132" width="6" height="8" fill="#8a2a20"/>
+      <g fill="#141414" stroke="#3a3a3a" stroke-width="2"><circle cx="52" cy="150" r="15"/><circle cx="86" cy="150" r="15"/><circle cx="20" cy="150" r="10"/></g>
+      <g stroke="#c9a24a" stroke-width="1.4" fill="none"><circle cx="52" cy="150" r="6"/><circle cx="86" cy="150" r="6"/></g>
+      <rect x="8" y="150" width="118" height="6" fill="#1c1c1c"/>
+    </g>
+    <!-- PORTER carrying suitcases -->
+    <g class="walk"><g transform="translate(158,150)">
+      <ellipse cx="0" cy="52" rx="16" ry="5" fill="#00000018"/>
+      <rect x="-16" y="30" width="13" height="18" rx="2" fill="#6b4a2a"/><rect x="3" y="30" width="13" height="18" rx="2" fill="#7a5a34"/>
+      <rect x="-11" y="4" width="22" height="46" rx="7" fill="#2f3a55"/>
+      <rect x="-11" y="20" width="22" height="4" fill="#1f2a40"/>
+      <path d="M-11 6 l-6 26 M11 6 l6 26" stroke="#2f3a55" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="0" cy="-6" r="9" fill="#e3ad82"/>
+      <path d="M-9 -9 a9 9 0 0 1 18 0 v-1 a9 9 0 0 0 -18 0z" fill="#1f2a40"/>
+      <path d="M6 -9 l8 1 l-2 4 l-6 -1z" fill="#1f2a40"/>
+    </g></g>
+    <!-- NEWSPAPER STAND + SELLER -->
+    <rect x="188" y="130" width="44" height="30" fill="#7a5a34"/>
+    <rect x="188" y="126" width="44" height="6" fill="#8a6a40"/>
+    <g fill="#e8e2d2" stroke="#b8b0a0"><rect x="192" y="118" width="12" height="10"/><rect x="206" y="116" width="12" height="12"/><rect x="220" y="118" width="10" height="10"/></g>
+    <g transform="translate(208,150)">
+      <ellipse cx="0" cy="52" rx="15" ry="5" fill="#00000015"/>
+      <rect x="-11" y="4" width="22" height="46" rx="7" fill="#5a4a3a"/>
+      <rect x="-11" y="24" width="22" height="20" fill="#8a7a5a"/>
+      <circle cx="0" cy="-6" r="9" fill="#c98a5a"/>
+      <path d="M-9 -8 a9 9 0 0 1 18 0 v-1 a9 6 0 0 0 -18 0z" fill="#3a2f22"/>
+      <path d="M8 -12 l7 -1 l0 4 l-7 0z" fill="#3a2f22"/>
+      <g class="wave"><rect x="8" y="6" width="16" height="5" rx="2.5" fill="#5a4a3a"/><rect x="20" y="0" width="10" height="12" fill="#efe9d8" stroke="#bbb"/></g>
+    </g>
+    <!-- YOUNG WOMAN waving goodbye -->
+    <g transform="translate(262,150)">
+      <ellipse cx="0" cy="52" rx="15" ry="5" fill="#00000015"/>
+      <path d="M-12 50 l3 -44 h18 l3 44z" fill="#8a3a5a"/>
+      <path d="M-11 6 l-2 20" stroke="#8a3a5a" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="0" cy="-6" r="9" fill="#f0c9a0"/>
+      <path d="M-10 -6 a10 10 0 0 1 20 0 v-4 a10 6 0 0 0 -20 0z" fill="#9a4a6a"/>
+      <path d="M-9 -8 a9 9 0 0 1 18 0 v-2 a9 8 0 0 0 -18 0z" fill="#6a4a3a"/>
+      <path d="M-10 -6 a10 10 0 0 1 20 0 v-4 a10 6 0 0 0 -20 0z" fill="#9a4a6a"/>
+      <g class="wave"><path d="M8 2 q10 -10 8 -22" stroke="#8a3a5a" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="16" cy="-22" r="3.5" fill="#f0c9a0"/></g>
+    </g>
+    <!-- CONDUCTOR checking pocket watch -->
+    <g transform="translate(318,150)">
+      <ellipse cx="0" cy="52" rx="15" ry="5" fill="#00000015"/>
+      <rect x="-11" y="4" width="22" height="46" rx="7" fill="#22303a"/>
+      <rect x="-11" y="6" width="22" height="4" fill="#c9a24a"/>
+      <circle cx="-6" cy="16" r="1.4" fill="#c9a24a"/><circle cx="-6" cy="24" r="1.4" fill="#c9a24a"/>
+      <circle cx="0" cy="-6" r="9" fill="#a2683f"/>
+      <path d="M-9 -8 a9 9 0 0 1 18 0 v-1 a9 6 0 0 0 -18 0z" fill="#141c22"/>
+      <rect x="-9" y="-9" width="18" height="3" rx="1.5" fill="#c9a24a"/>
+      <path d="M8 -11 l7 0 l-1 4 l-6 0z" fill="#141c22"/>
+      <g class="bob"><path d="M-8 8 q-6 6 -2 14" stroke="#22303a" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="-10" cy="24" r="4" fill="#e6e2d4" stroke="#8a7a3a"/><path d="M-10 20 v-3" stroke="#8a7a3a" stroke-width="1.4"/></g>
+    </g>
+    <!-- BOY watching the train -->
+    <g class="bob"><g transform="translate(365,156)">
+      <ellipse cx="0" cy="40" rx="12" ry="4" fill="#00000015"/>
+      <rect x="-8" y="6" width="16" height="34" rx="6" fill="#4a6a5a"/>
+      <circle cx="0" cy="-4" r="7.5" fill="#8a5a3a"/>
+      <path d="M-7.5 -6 a7.5 7.5 0 0 1 15 0 v-1 a7.5 5 0 0 0 -15 0z" fill="#2a3a30"/>
+      <path d="M-9 -5 h6 l-1 3 l-5 0z" fill="#2a3a30"/>
+    </g></g>
+    <rect id="darken" width="400" height="220" fill="#241c14" opacity="0"/>
+    <g transform="translate(55,70)"><g id="steamcloud">
+      <ellipse cx="0" cy="-4" rx="12" ry="9" fill="#f2f2ee"/>
+      <ellipse cx="-9" cy="-18" rx="14" ry="11" fill="#e4e4e0"/>
+      <ellipse cx="8" cy="-30" rx="13" ry="10" fill="#f4f4f0"/>
+      <ellipse cx="-5" cy="-46" rx="16" ry="12" fill="#dcdcda"/>
+      <ellipse cx="7" cy="-62" rx="12" ry="9" fill="#ececec"/>
+    </g></g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+  </svg>
+  ${pin(158,150,'The porter')}${pin(208,150,'The newspaper seller')}${pin(262,150,'The young woman')}${pin(318,150,'The conductor')}${pin(365,155,'The boy')}`,
 },
 ];
 
