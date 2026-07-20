@@ -160,10 +160,73 @@
   .alert .go{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; align-items:center}
   .alert .hint{font-size:12px; color:var(--dim)}
 
+  /* ---------- Visual scenes on each wire ---------- */
+  .viz{position:relative; border-bottom:1px solid var(--border); background:#05070b; line-height:0; overflow:hidden}
+  .scene{display:block; width:100%; height:196px}
+  @media(max-width:600px){ .scene{height:150px} }
+
+  /* rain */
+  .drop{stroke:#a8c8e8; stroke-width:1.2; opacity:.4; animation:rainfall .85s linear infinite}
+  @keyframes rainfall{from{transform:translateY(-24px)}to{transform:translateY(232px)}}
+  /* pulsing flare / distress light */
+  .flare{transform-box:fill-box; transform-origin:center; animation:flarePulse 1.3s ease-in-out infinite}
+  @keyframes flarePulse{0%,100%{opacity:.25; transform:scale(.6)}50%{opacity:1; transform:scale(1.15)}}
+  /* radar sweep */
+  .sweep{animation:spin 2.6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  /* flickering distant lights */
+  .flick{animation:flick 2.4s steps(1) infinite}
+  @keyframes flick{0%,42%{opacity:.15}46%,54%{opacity:1}60%,100%{opacity:.25}}
+  /* rising water */
+  .rise{animation:rise 7s ease-in forwards}
+  @keyframes rise{from{transform:translateY(48px)}to{transform:translateY(0)}}
+  /* drifting steam */
+  .steam{animation:steam 3s ease-out infinite}
+  @keyframes steam{0%{opacity:.55; transform:translate(0,0) scale(1)}100%{opacity:0; transform:translate(-22px,-26px) scale(1.7)}}
+  /* the sinking climax */
+  .sink{transform-box:fill-box; transform-origin:68% 78%; animation:sinkAnim 8s ease-in forwards}
+  @keyframes sinkAnim{0%{transform:rotate(0)}35%{transform:rotate(-30deg)}70%{transform:rotate(-68deg) translateY(16px)}100%{transform:rotate(-80deg) translateY(130px); opacity:.12}}
+
+  /* document register (letterhead / newspaper) */
+  .docwrap{display:flex; justify-content:center; padding:16px; background:#070b11}
+  .letter{max-width:420px; width:100%; background:#efe7d4; color:#3a3323; border-radius:4px; overflow:hidden; font-family:Georgia,serif; box-shadow:0 10px 26px rgba(0,0,0,.5)}
+  .letter .lh{background:#0b2a4a; color:#efe7d4; padding:9px 14px; font-weight:800; letter-spacing:2px; font-size:14px; display:flex; align-items:center; gap:9px}
+  .letter .burgee{color:#e5aa4d; font-size:16px}
+  .letter .lb{padding:12px 16px 16px; font-size:13px; line-height:1.5}
+  .letter .lb p{margin:0 0 8px}
+  .letter .sig{font-style:italic; color:#6b5f3d; margin-top:10px}
+  .news{max-width:440px; width:100%; background:#e8e2d2; color:#20201a; border:1px solid #b9b096; border-radius:3px; padding:14px 18px 18px; font-family:Georgia,serif; box-shadow:0 10px 26px rgba(0,0,0,.5)}
+  .news .nmast{text-align:center; font-weight:900; font-size:26px; letter-spacing:1px; border-bottom:3px double #20201a; padding-bottom:4px; font-family:"Times New Roman",Georgia,serif}
+  .news .nsub{text-align:center; font-size:10px; letter-spacing:3px; text-transform:uppercase; margin:5px 0 10px; color:#5a5445}
+  .news .nhead{text-align:center; font-weight:900; font-size:22px; line-height:1.1; margin-bottom:8px}
+  .news .ncol{font-size:12px; line-height:1.5; column-count:2; column-gap:16px; text-align:justify; color:#33301f}
+
+  /* fake smartphone */
+  .phonewrap{display:flex; justify-content:center; padding:14px; background:#05070b}
+  .phone{width:206px; background:#000; border-radius:24px; padding:8px; box-shadow:0 16px 40px rgba(0,0,0,.6); border:1px solid #2a2f36}
+  .phone .screen{border-radius:17px; overflow:hidden; position:relative; background:#05070b}
+  .phone .statusbar{position:absolute; top:0; left:0; right:0; height:22px; display:flex; justify-content:space-between; align-items:center; padding:0 13px; font-size:10.5px; font-weight:700; color:#fff; z-index:3}
+  .phone .notch{position:absolute; top:5px; left:50%; transform:translateX(-50%); width:50px; height:13px; background:#000; border-radius:8px; z-index:4}
+  .phone .plive{position:absolute; top:27px; left:9px; z-index:3; background:var(--red); color:#fff; font-size:9px; font-weight:800; padding:3px 6px; border-radius:4px; letter-spacing:1px; display:flex; align-items:center; gap:4px}
+  .phone .plive::before{content:""; width:5px; height:5px; background:#fff; border-radius:50%}
+  .phone .pcap{position:absolute; bottom:0; left:0; right:0; z-index:3; padding:9px 11px; font-size:10.5px; background:linear-gradient(0deg,rgba(0,0,0,.85),transparent); color:#fff}
+
+  @media(prefers-reduced-motion:reduce){
+    .drop,.flare,.sweep,.flick,.rise,.steam,.sink{animation:none}
+  }
+
   footer{max-width:1280px; margin:0 auto; padding:0 18px 40px; color:var(--dim); font-size:12px; text-align:center}
 </style>
 </head>
 <body>
+
+<!-- shared SVG gradients used by all scenes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1524"/><stop offset="1" stop-color="#0d2136"/></linearGradient>
+  <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c2233"/><stop offset="1" stop-color="#04101a"/></linearGradient>
+  <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12455f"/><stop offset="1" stop-color="#071c28"/></linearGradient>
+  <radialGradient id="glowGrad" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".8"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+</defs></svg>
 
 <!-- ================= INTRO OVERLAY ================= -->
 <div class="overlay" id="overlay">
@@ -201,6 +264,7 @@
     <div class="controls">
       <button class="btn primary" id="nextBtn" onclick="nextUpdate()" disabled>Next update ▸</button>
       <button class="btn ghost" id="autoBtn" onclick="toggleAuto()" disabled>Auto ⏱</button>
+      <button class="btn ghost" id="soundBtn" onclick="toggleSound()" title="Geluid aan/uit">🔊</button>
       <button class="btn ghost" onclick="resetBroadcast()">Reset</button>
     </div>
   </div>
@@ -394,6 +458,190 @@ const UPDATES = [
   },
 ];
 
+/* koppel een beeld + geluid aan elk bericht (op volgorde) */
+[['strike','strike'],['ice','ice'],['statement','statement'],['flood','flood'],
+ ['radar','radar'],['cqd','cqd'],['lifeboats','lifeboats'],['mystery','mystery'],
+ ['phone','phone'],['carpathia','carpathia'],['sinking','sinking'],['press','press'],
+ ['tally','tally']].forEach((v,i)=>{ if(UPDATES[i]){ UPDATES[i].viz=v[0]; UPDATES[i].sound=v[1]; } });
+
+/* =========================================================
+   AUDIO ENGINE — alle geluiden live gesynthetiseerd (Web Audio)
+   ========================================================= */
+const SFX = (()=>{
+  let ctx=null, master=null, muted=false;
+  function ac(){
+    if(!ctx){
+      const AC = window.AudioContext||window.webkitAudioContext; if(!AC) return null;
+      ctx=new AC(); master=ctx.createGain(); master.gain.value=0.5; master.connect(ctx.destination);
+    }
+    return ctx;
+  }
+  function unlock(){ ac(); if(ctx && ctx.state==='suspended') ctx.resume(); }
+  function setMuted(m){ muted=m; if(master) master.gain.value=m?0:0.5; }
+  function isMuted(){ return muted; }
+  function tone(o){
+    if(muted||!ac()) return;
+    const t=ctx.currentTime+(o.delay||0);
+    const osc=ctx.createOscillator(), g=ctx.createGain();
+    osc.type=o.type||'sine'; osc.frequency.setValueAtTime(o.freq||440,t);
+    if(o.glideTo) osc.frequency.exponentialRampToValueAtTime(o.glideTo,t+(o.dur||0.2));
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(o.gain||0.25,t+0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+(o.dur||0.2));
+    osc.connect(g).connect(master); osc.start(t); osc.stop(t+(o.dur||0.2)+0.03);
+  }
+  function noise(o){
+    if(muted||!ac()) return;
+    const dur=o.dur||0.4, t=ctx.currentTime+(o.delay||0);
+    const src=ctx.createBufferSource();
+    const buf=ctx.createBuffer(1, Math.max(1,(ctx.sampleRate*dur)|0), ctx.sampleRate);
+    const d=buf.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1;
+    src.buffer=buf;
+    const f=ctx.createBiquadFilter(); f.type=o.filter||'lowpass'; f.frequency.value=o.freq||1000; f.Q.value=o.q||1;
+    const g=ctx.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(o.gain||0.2,t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    src.connect(f).connect(g).connect(master); src.start(t); src.stop(t+dur);
+  }
+  function morse(str){
+    const map={C:'-.-.',Q:'--.-',D:'-..',S:'...',O:'---',K:'-.-'};
+    let t=0;
+    for(const ch of str){ const code=map[ch]||''; for(const s of code){ const d=s==='-'?0.17:0.07;
+      tone({freq:640,dur:d,type:'square',gain:0.22,delay:t}); t+=d+0.06; } t+=0.16; }
+  }
+  const cues={
+    strike(){ [0,0.34,0.68].forEach(dl=>tone({freq:1350,dur:0.5,type:'sine',gain:0.22,delay:dl}));
+              noise({dur:1.3,gain:0.22,filter:'bandpass',freq:230,q:2,delay:0.9});
+              tone({freq:80,glideTo:48,dur:1.3,type:'sawtooth',gain:0.14,delay:0.9}); },
+    ice(){ for(let i=0;i<7;i++) tone({freq:1900+Math.random()*1600,dur:0.07,type:'triangle',gain:0.12,delay:i*0.09}); },
+    statement(){ for(let i=0;i<9;i++) noise({dur:0.03,gain:0.22,filter:'highpass',freq:1600,delay:i*0.11});
+                 tone({freq:1200,dur:0.05,type:'square',gain:0.12,delay:1.0}); },
+    flood(){ noise({dur:1.8,gain:0.22,filter:'lowpass',freq:620}); noise({dur:1.8,gain:0.1,filter:'bandpass',freq:1300,q:0.6}); },
+    radar(){ tone({freq:920,dur:0.45,type:'sine',gain:0.3}); tone({freq:920,dur:0.45,type:'sine',gain:0.16,delay:0.65});
+             tone({freq:920,dur:0.45,type:'sine',gain:0.09,delay:1.3}); },
+    cqd(){ morse('CQD'); },
+    lifeboats(){ tone({freq:120,glideTo:90,dur:0.9,type:'sawtooth',gain:0.12}); noise({dur:0.9,gain:0.08,filter:'bandpass',freq:420});
+                 tone({freq:1750,dur:0.5,type:'sine',gain:0.16,delay:1.0}); },
+    mystery(){ noise({dur:2.4,gain:0.16,filter:'lowpass',freq:480}); },
+    phone(){ tone({freq:880,dur:0.12,type:'sine',gain:0.26}); tone({freq:1320,dur:0.2,type:'sine',gain:0.26,delay:0.12}); },
+    carpathia(){ morse('OK'); noise({dur:1.4,gain:0.12,filter:'lowpass',freq:700,delay:0.2}); },
+    sinking(){ tone({freq:72,glideTo:38,dur:2.4,type:'sawtooth',gain:0.22}); noise({dur:2.4,gain:0.12,filter:'lowpass',freq:200});
+               noise({dur:0.9,gain:0.3,filter:'lowpass',freq:900,delay:2.4}); noise({dur:1.2,gain:0.15,filter:'bandpass',freq:500,delay:2.6}); },
+    press(){ for(let i=0;i<11;i++) noise({dur:0.05,gain:0.15,filter:'bandpass',freq:300,delay:i*0.13}); },
+    tally(){ tone({freq:300,dur:1.6,type:'sine',gain:0.24}); tone({freq:150,dur:1.6,type:'sine',gain:0.11}); },
+  };
+  return { unlock, setMuted, isMuted, play(name){ try{ if(cues[name]) cues[name](); }catch(e){} } };
+})();
+
+function toggleSound(){
+  const m=!SFX.isMuted(); SFX.setMuted(m);
+  const b=document.getElementById('soundBtn'); b.textContent=m?'🔇':'🔊';
+  if(!m) SFX.unlock();
+}
+
+/* =========================================================
+   VISUAL SCENES — één per berichttype, alles inline SVG/HTML
+   ========================================================= */
+function S(inner){ return `<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">${inner}</svg>`; }
+function stars(n){ let s=''; for(let i=0;i<n;i++){ s+=`<circle cx="${(Math.random()*400)|0}" cy="${(Math.random()*95)|0}" r="${Math.random()<.3?1.4:0.9}" fill="#dfeaff" opacity="${(0.4+Math.random()*0.6).toFixed(2)}"/>`; } return s; }
+function rain(n){ let s='<g>'; for(let i=0;i<n;i++){ const x=(Math.random()*430)|0; const len=(8+Math.random()*11).toFixed(0);
+  s+=`<line class="drop" x1="${x}" y1="-18" x2="${x-6}" y2="${-18-len}" style="animation-delay:-${(Math.random()*0.85).toFixed(2)}s"/>`; } return s+'</g>'; }
+function ship(t){ return `<g ${t}>
+  <path d="M -70 6 Q -64 20 -40 22 L 54 22 Q 76 20 76 2 L 70 -6 Q 30 -10 -34 -6 Q -64 -2 -70 6 Z" fill="#0f1a24" stroke="#2a3a4a" stroke-width="1.2"/>
+  <rect x="-52" y="-16" width="98" height="11" rx="2" fill="#14212d" stroke="#2a3a4a" stroke-width=".8"/>
+  <g fill="#1b2a38" stroke="#33475a" stroke-width=".8"><rect x="-34" y="-30" width="9" height="16" rx="1.5"/><rect x="-17" y="-31" width="9" height="17" rx="1.5"/><rect x="1" y="-31" width="9" height="17" rx="1.5"/><rect x="19" y="-30" width="9" height="16" rx="1.5"/></g>
+  <g fill="#ffdf9e"><circle cx="-46" cy="14" r="1.6"/><circle cx="-36" cy="15" r="1.6"/><circle cx="-26" cy="15" r="1.6"/><circle cx="-16" cy="15" r="1.6"/><circle cx="-6" cy="15" r="1.6"/><circle cx="4" cy="15" r="1.6"/><circle cx="14" cy="15" r="1.6"/><circle cx="24" cy="14" r="1.6"/><circle cx="34" cy="13" r="1.6"/></g>
+</g>`; }
+
+const VIZ = {
+  strike:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>${stars(22)}
+    <g transform="translate(305,150)"><path d="M-42 22 L-20 -36 L-4 -8 L14 -42 L46 24 Z" fill="#1d3a4a" stroke="#3f6b82" stroke-width="1.2"/><path d="M-20 -36 L-4 -8 L14 -42 Z" fill="#2b5468"/></g>
+    <path d="M0 150 Q100 142 200 150 T400 150 L400 200 L0 200 Z" fill="url(#seaGrad)"/>
+    ${ship('transform="translate(120,138) scale(.9)"')}
+    <g class="flare" transform="translate(232,140)"><circle r="6" fill="#bfe6ff"/></g>${rain(16)}`),
+
+  ice:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>${stars(16)}
+    <rect x="0" y="138" width="400" height="62" fill="#0d1722"/><line x1="0" y1="138" x2="400" y2="138" stroke="#243544" stroke-width="1.5"/>
+    <g stroke="#33475a" stroke-width="2"><line x1="0" y1="118" x2="400" y2="118"/><line x1="60" y1="118" x2="60" y2="138"/><line x1="150" y1="118" x2="150" y2="138"/><line x1="250" y1="118" x2="250" y2="138"/><line x1="340" y1="118" x2="340" y2="138"/></g>
+    <g fill="#22475a" stroke="#4a86a0" stroke-width=".6"><path d="M70 150 l12 -10 8 10 -6 8 z"/><path d="M160 158 l10 -8 9 7 -5 7 z"/><path d="M255 150 l14 -11 9 11 -7 8z"/><path d="M330 160 l9 -7 8 6 -4 6z"/></g>${rain(12)}`),
+
+  statement:()=>`<div class="docwrap"><div class="letter">
+    <div class="lh"><span class="burgee">◤</span> WHITE STAR LINE</div>
+    <div class="lb"><p><b>OFFICIAL STATEMENT</b></p>
+      <p>The R.M.S. Titanic is unsinkable. There is no danger to the passengers aboard. Reports of flooding are greatly exaggerated.</p>
+      <p class="sig">— Press Office, Liverpool</p></div></div></div>`,
+
+  flood:()=>S(`<rect width="400" height="200" fill="#0a1119"/>
+    <polygon points="0,0 400,0 300,138 100,138" fill="#0d1a24"/><polygon points="100,138 300,138 400,200 0,200" fill="#101d28"/>
+    <g stroke="#1f3444" stroke-width="1"><line x1="0" y1="0" x2="100" y2="138"/><line x1="400" y1="0" x2="300" y2="138"/><line x1="150" y1="18" x2="172" y2="138"/><line x1="250" y1="18" x2="228" y2="138"/></g>
+    <rect x="152" y="56" width="22" height="70" fill="#182833"/><rect x="226" y="56" width="22" height="70" fill="#182833"/>
+    <g class="rise"><rect x="0" y="150" width="400" height="60" fill="url(#waterGrad)" opacity=".9"/><path d="M0 150 Q100 145 200 150 T400 150" stroke="#3f7fa0" stroke-width="1.5" fill="none" opacity=".7"/></g>`),
+
+  radar:()=>S(`<rect width="400" height="200" fill="#04120a"/>
+    <circle cx="200" cy="102" r="84" fill="#05230f" stroke="#1f7a3a" stroke-width="1.5"/>
+    <circle cx="200" cy="102" r="56" fill="none" stroke="#166b30"/><circle cx="200" cy="102" r="28" fill="none" stroke="#166b30"/>
+    <line x1="116" y1="102" x2="284" y2="102" stroke="#166b30"/><line x1="200" y1="18" x2="200" y2="186" stroke="#166b30"/>
+    <g class="sweep" style="transform-box:view-box; transform-origin:200px 102px">
+      <path d="M200 102 L284 84 A84 84 0 0 1 284 108 Z" fill="#39ff88" opacity=".22"/>
+      <line x1="200" y1="102" x2="284" y2="102" stroke="#39ff88" stroke-width="2"/></g>
+    <circle cx="238" cy="74" r="3" fill="#7dffb0" class="flare"/><circle cx="152" cy="126" r="2.5" fill="#7dffb0"/>
+    <text x="200" y="196" fill="#39ff88" font-family="monospace" font-size="10" text-anchor="middle" opacity=".75">RADAR · ICE FIELD 40 NM</text>`),
+
+  cqd:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>
+    <g stroke="#12303f" stroke-width="1">${[40,120,200,280,360].map(x=>`<line x1="${x}" y1="0" x2="${x}" y2="200"/>`).join('')}${[45,95,145,190].map(y=>`<line x1="0" y1="${y}" x2="400" y2="${y}"/>`).join('')}</g>
+    <g transform="translate(206,108)"><circle class="flare" r="11" fill="#e5484d" opacity=".5"/><circle r="4" fill="#e5484d"/><text x="11" y="4" fill="#e5aa4d" font-family="monospace" font-size="10">41°46'N 50°14'W</text></g>
+    <text x="30" y="170" fill="#8896a6" font-family="monospace" font-size="9">C Q D · DISTRESS SIGNAL SENT</text>
+    <g transform="translate(30,176)" fill="#39c5cf"><rect x="0" width="12" height="5" rx="1"/><rect x="16" width="5" height="5" rx="1"/><rect x="25" width="12" height="5" rx="1"/><rect x="41" width="5" height="5" rx="1"/><rect x="52" width="12" height="5" rx="1"/><rect x="68" width="12" height="5" rx="1"/><rect x="84" width="5" height="5" rx="1"/><rect x="93" width="12" height="5" rx="1"/></g>`),
+
+  lifeboats:()=>S(`<rect width="400" height="200" fill="#0a121a"/>
+    <path d="M40 100 Q40 60 120 58 L300 58 Q360 60 372 100 Q360 140 300 142 L120 142 Q40 140 40 100 Z" fill="#101d28" stroke="#2a3a4a" stroke-width="1.5"/>
+    <line x1="60" y1="100" x2="352" y2="100" stroke="#243544" stroke-width="1"/>
+    <g fill="#16303e" stroke="#4a86a0" stroke-width="1">${[90,150,210,270,320].map((x,i)=>`<ellipse cx="${x}" cy="66" rx="15" ry="6" opacity="${i%2?0.4:1}"/>`).join('')}${[90,150,210,270,320].map((x,i)=>`<ellipse cx="${x}" cy="134" rx="15" ry="6" opacity="${i===1?0.4:1}"/>`).join('')}</g>
+    <text x="200" y="104" fill="#8896a6" font-family="monospace" font-size="9" text-anchor="middle">BOAT DECK · women &amp; children first</text>${rain(8)}`),
+
+  mystery:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>${stars(28)}
+    <path d="M0 132 L400 132 L400 200 L0 200 Z" fill="url(#seaGrad)"/><line x1="0" y1="132" x2="400" y2="132" stroke="#1a3a4c" stroke-width="1"/>
+    <g class="flick"><circle cx="300" cy="126" r="2.4" fill="#ffe6a0"/><circle cx="308" cy="126" r="2" fill="#ffe6a0"/><circle cx="293" cy="127" r="1.6" fill="#ffe6a0"/></g>
+    <text x="300" y="114" fill="#8896a6" font-family="monospace" font-size="9" text-anchor="middle">a ship… or a star?</text>${rain(14)}`),
+
+  phone:()=>`<div class="phonewrap"><div class="phone"><div class="screen">
+    <div class="notch"></div><div class="statusbar"><span>1:20 AM</span><span>✦ 5G ▮▮▯</span></div><div class="plive">LIVE</div>
+    <svg viewBox="0 0 220 220" width="190" style="display:block">
+      <rect width="220" height="220" fill="url(#skyGrad)"/>${stars(12)}
+      <g transform="translate(110,116) rotate(-18)"><ellipse rx="82" ry="28" fill="url(#glowGrad)"/>${ship('transform="scale(.82)"')}</g>
+      <circle cx="170" cy="70" r="3" fill="#fff"/><circle cx="170" cy="70" r="9" fill="#fff" opacity=".18"/>
+      <path d="M0 168 Q60 160 110 168 T220 168 L220 220 L0 220 Z" fill="url(#seaGrad)"/>${rain(12)}
+    </svg><div class="pcap">Titanic — sinking now?? 😱</div>
+  </div></div></div>`,
+
+  carpathia:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>
+    <g stroke="#12303f" stroke-width="1">${[80,160,240,320].map(x=>`<line x1="${x}" y1="0" x2="${x}" y2="200"/>`).join('')}</g>
+    <path d="M0 150 L400 150 L400 200 L0 200 Z" fill="url(#seaGrad)"/>
+    <path d="M100 118 Q200 106 292 118" stroke="#3fb950" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+    <g transform="translate(300,118)"><circle class="flare" r="9" fill="#e5484d" opacity=".5"/><circle r="3.5" fill="#e5484d"/></g>
+    <g transform="translate(92,118)">${ship('transform="scale(.55)"')}<g class="steam"><circle cx="-18" cy="-22" r="7" fill="#5a6b7c" opacity=".5"/></g></g>
+    <text x="200" y="94" fill="#3fb950" font-family="monospace" font-size="9" text-anchor="middle">CARPATHIA → ~4 hrs away</text>`),
+
+  sinking:()=>S(`<rect width="400" height="200" fill="url(#skyGrad)"/>${stars(18)}
+    <path d="M0 140 Q100 134 200 140 T400 140 L400 200 L0 200 Z" fill="url(#seaGrad)"/>
+    <g class="sink">${ship('transform="translate(232,120) scale(1)"')}</g>
+    <g fill="#0a1a24">${Array.from({length:13}).map(()=>`<circle cx="${(60+Math.random()*180)|0}" cy="${(150+Math.random()*30)|0}" r="1.6"/>`).join('')}</g>
+    <g class="flare" transform="translate(150,58)"><circle r="4" fill="#fff"/></g>${rain(20)}`),
+
+  press:()=>`<div class="docwrap"><div class="news">
+    <div class="nmast">THE DAILY WIRE</div><div class="nsub">15 April 1912 · Special Edition</div>
+    <div class="nhead">ALL PASSENGERS SAVED</div>
+    <div class="ncol">The White Star Line confirms that every soul aboard the Titanic is safe and well. The vessel, the company says, is under tow to Halifax under her own arrangements. There are, the office states plainly, no casualties of any kind to report to anxious families waiting on either shore.</div></div></div>`,
+
+  tally:()=>S(`<rect width="400" height="200" fill="#0a121a"/>
+    <text x="30" y="48" fill="#3fb950" font-family="monospace" font-size="12">RESCUED</text>
+    <text x="30" y="82" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="30" font-weight="800">705</text>
+    <text x="222" y="48" fill="#e5484d" font-family="monospace" font-size="12">STILL MISSING</text>
+    <text x="222" y="82" fill="#e6edf3" font-family="system-ui,sans-serif" font-size="30" font-weight="800">1,500+</text>
+    <rect x="30" y="98" width="342" height="14" rx="3" fill="#e5484d" opacity=".45"/><rect x="30" y="98" width="108" height="14" rx="3" fill="#3fb950"/>
+    <text x="30" y="150" fill="#39c5cf" font-family="monospace" font-size="11">→ bound for NEW YORK, not Halifax</text>
+    <text x="30" y="172" fill="#8896a6" font-family="monospace" font-size="9">Carpathia · 09:15</text>`),
+};
+function renderViz(u){ try{ return (u.viz && VIZ[u.viz]) ? `<div class="viz">${VIZ[u.viz]()}</div>` : ''; }catch(e){ return ''; } }
+
 /* =========================================================
    STATE
    ========================================================= */
@@ -426,6 +674,7 @@ function renderGrammar(){
    BROADCAST controls
    ========================================================= */
 function startBroadcast(){
+  SFX.unlock();
   document.getElementById('overlay').classList.add('hide');
   live = true;
   document.getElementById('onair').classList.add('live');
@@ -466,6 +715,7 @@ function addWire(u, i){
   const rel = '<span class="rel">'+[1,2,3].map(n=>`<span class="${n<=u.rel?'on':''}">●</span>`).join('')+'</span>';
   const flagBtn = `<button class="chip flag" onclick="flag(${i})">🚩 Flag</button>`;
   el.innerHTML = `
+    ${renderViz(u)}
     <div class="top">
       <span class="wtime">${u.time}</span>
       <span class="src">${u.src}</span>
@@ -487,6 +737,7 @@ function addWire(u, i){
     <div class="verdict" id="verdict-${i}"></div>`;
   // nieuwste bovenaan
   feed.insertBefore(el, feed.firstChild);
+  if(u.sound) SFX.play(u.sound);
 }
 
 function decide(i, kind){

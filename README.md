@@ -24,6 +24,23 @@ Bewust beperkt tot drie tijden, gekoppeld aan zekerheid:
 De rode draad: *is sinking* (live) → *passengers say…* (bewering) → *sank*
 (bevestigd). Dat kleine taalverschil bepaalt of een kop klopt.
 
+## Beeld en geluid
+
+Elk bericht krijgt bovenaan een **getekend beeld** (inline SVG/CSS, geen externe
+bestanden) dat *laat zien* wat er binnenkomt: de ijsberg-aanvaring, de
+overstromende gang met stijgend water, een zeekaart met CQD-coördinaten, de
+reddingsboten op het dek, het kantelende, zinkende schip, en de twee "besmette"
+beelden — een te moderne **radar-scope** en een **smartphonefoto**. Er zijn
+**uitgesproken animaties** (regen, radarsweep, knipperende lichten, stijgend
+water, het schip dat wegzakt).
+
+Bij elk bericht klinkt een **gesynthetiseerd geluid** (Web Audio, ook volledig
+in het bestand): morse voor CQD, scheepsgekreun + plons bij het zinken, en
+bewust *foute* moderne geluiden bij de vallen (sonar-ping bij "radar", een
+telefoontoon bij de smartphonefoto). Geluid start pas na de klik op
+**"Take positions & go live"** (browserregel). Met de **🔊-knop** in de balk
+zet je het geluid aan/uit.
+
 ## Zo gebruik je het in de klas
 
 1. **Open `index.html`** in een browser (dubbelklikken volstaat; werkt ook op
