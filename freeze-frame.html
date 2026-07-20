@@ -175,6 +175,27 @@
   .gram .ex{font-family:var(--mono); font-size:12.5px; background:var(--panel2); border-left:2px solid var(--cyan); padding:6px 9px; border-radius:5px; margin-top:6px}
   .gram .ex em{color:var(--amber); font-style:normal; font-weight:700}
   .gnote{font-size:12.5px; color:var(--muted); line-height:1.5; border:1px solid rgba(42,143,111,.35); background:rgba(42,143,111,.06); border-radius:9px; padding:9px 11px; margin-bottom:11px}
+  .gram .gnoteS{font-size:12px; color:var(--muted); line-height:1.5; background:var(--panel2); border-radius:7px; padding:7px 9px; margin-top:7px}
+  .gram .gnoteS b{color:var(--text)} .gram .gnoteS em{color:var(--cyan); font-style:normal}
+  .gram .ex{margin-top:5px}
+
+  /* practice / fill-in */
+  .pracbar{display:flex; align-items:center; gap:8px; margin-bottom:6px}
+  #pracScore{margin-left:auto; font-family:var(--mono); font-size:12px; color:var(--cyan); font-weight:700}
+  .prachint{font-size:11.5px; color:var(--dim); margin-bottom:11px}
+  .prac{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:11px 13px; margin-bottom:10px}
+  .prac .pq{font-size:13.5px; margin-bottom:9px; line-height:1.55}
+  .prac .pq .gap{font-family:var(--mono); color:var(--dim); letter-spacing:1px}
+  .prac .pq .fill{font-family:var(--mono); color:var(--green); font-weight:700}
+  .prac .pq .cue{color:var(--dim); font-style:italic; font-size:12px}
+  .pch{border:1px solid var(--border); background:var(--panel2); color:var(--text); font-size:13px; font-weight:600; padding:6px 12px; border-radius:8px; cursor:pointer; font-family:var(--mono); transition:.12s}
+  .pch:hover{border-color:var(--cyan)}
+  .pch.good{border-color:var(--green); background:rgba(79,154,58,.16); color:#3a7a2a}
+  .pch.bad{border-color:var(--amber); background:rgba(224,146,26,.14); color:#a8720a; opacity:.75}
+  .pch:disabled{cursor:default}
+  .ptip{display:none; font-size:12px; margin-top:8px; line-height:1.5}
+  .ptip.show{display:block; animation:rise .25s ease}
+  .ptip.good{color:#3a7a2a} .ptip.bad{color:#a8720a}
 
   .vhint{font-size:11.5px; color:var(--dim); margin-bottom:11px}
   .vc{border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:10px 12px; margin-bottom:8px; cursor:pointer}
@@ -359,10 +380,12 @@
   <aside class="side">
     <div class="tabs">
       <div class="tab active" data-pane="grammar" onclick="showPane('grammar',this)">Grammar</div>
+      <div class="tab" data-pane="practice" onclick="showPane('practice',this)">Practice</div>
       <div class="tab" data-pane="vocab" onclick="showPane('vocab',this)">Vocab</div>
       <div class="tab" data-pane="log" onclick="showPane('log',this)">Log</div>
     </div>
     <div class="pane active" id="pane-grammar"><h2 class="section">Past continuous &amp; simple past</h2><div id="grammar"></div></div>
+    <div class="pane" id="pane-practice"><div class="pracbar"><h2 class="section" style="margin:0">Grammar practice</h2><span id="pracScore">0 / 0</span></div><div class="prachint">Fill each gap: <b>was/were</b>, the right <b>verb form</b>, or <b>when/while</b>. Tap an answer.</div><div id="practice"></div></div>
     <div class="pane" id="pane-vocab"><h2 class="section">Vocabulary</h2><div class="vhint">Tap a word to reveal its meaning and an example.</div><div id="vocab"></div></div>
     <div class="pane" id="pane-log"><h2 class="section">Your reports</h2><div id="log"><div class="logempty">No reports yet. Trigger the event, then build a sentence for each witness.</div></div></div>
   </aside>
@@ -435,12 +458,47 @@ function toggleSound(){const m=!SFX.isMuted();SFX.setMuted(m);document.getElemen
 
 /* ===== SHARED CONTENT ===== */
 const GRAMMAR=[
-  {name:"Past continuous", form:"was / were + verb + -ing", use:"An action that was going on — the background.", ex:"The children <em>were playing</em> outside."},
-  {name:"Simple past", form:"2nd form (rang, struck) · regular + -ed", use:"A finished action — often the sudden event that interrupts.", ex:"The alarm <em>rang</em> at ten o'clock."},
-  {name:"when vs while", form:"when + simple past · while + past continuous", use:"‘when’ marks the interruption; ‘while’ the ongoing action.", ex:"She <em>was reading</em> <em>when</em> the lights went out."},
-  {name:"was or were?", form:"I / he / she / it → was · you / we / they → were", use:"Match the auxiliary to the subject.", ex:"They <em>were</em> talking; the teacher <em>was</em> writing."},
+  {name:"Past continuous — was/were + -ing",
+   form:"I/he/she/it was doing · we/you/they were doing",
+   use:"You were in the <b>middle of an action</b> at a past moment: it had already started but had not finished yet.",
+   ex:["This time last year I <em>was living</em> in Brazil.",
+       "What <em>were</em> you <em>doing</em> at 10 o'clock last night?",
+       "When I got up, the sun <em>was shining</em>."],
+   note:"Negative: <b>wasn't / weren't</b> + -ing. Question: <b>Was/Were</b> + subject + -ing? — “<em>Was she working?</em>”"},
+  {name:"Simple past — the completed action",
+   form:"regular: worked, played · irregular: rang, struck, went",
+   use:"A <b>finished action</b> in the past — the sudden event, or one thing after another.",
+   ex:["The alarm <em>rang</em> at ten o'clock.",
+       "She <em>got up</em>, <em>had</em> breakfast and <em>left</em>."],
+   note:"Negative: <b>didn't</b> + base verb. Question: <b>Did</b> + subject + base verb? — “<em>Did it rain?</em>”"},
+  {name:"Past continuous vs simple past",
+   form:"was/were + -ing  ⟷  simple past",
+   use:"Past continuous = the <b>longer action already in progress</b>; simple past = the <b>shorter, finished</b> action that happens (often interrupting it).",
+   ex:["I <em>was walking</em> home <em>when</em> I <em>met</em> Dan.",
+       "Jane <em>was watching</em> TV when the phone <em>rang</em>."],
+   note:"“<em>When Karen arrived, we were having dinner</em>” = we had started before she came. “<em>When Karen arrived, we had dinner</em>” = she came first, then we started."},
+  {name:"Two actions together — while",
+   form:"while + past continuous",
+   use:"For two actions going on at the same time, use <b>while</b> with the past continuous.",
+   ex:["<em>While</em> I <em>was studying</em>, the others <em>were watching</em> TV.",
+       "It <em>started</em> to rain <em>while</em> we <em>were walking</em> home."]},
+  {name:"when vs while",
+   form:"when + simple past · while + past continuous",
+   use:"<b>when</b> introduces the short, sudden action; <b>while</b> introduces the longer, ongoing one.",
+   ex:["The lights <em>went out</em> <em>when</em> she was reading.",
+       "<em>While</em> he was cooking, the doorbell <em>rang</em>."]},
+  {name:"was or were?",
+   form:"I / he / she / it → was · you / we / they → were",
+   use:"Match the auxiliary to the subject. A group name (“the class”, “the herd”) is singular → <b>was</b>.",
+   ex:["The teacher <em>was</em> writing; the students <em>were</em> talking.",
+       "The herd <em>was</em> drinking (one group)."]},
+  {name:"State verbs — normally no -ing",
+   form:"know · want · like · love · need · believe · remember",
+   use:"Some verbs describe a <b>state</b>, not an action, and are not usually used in the continuous.",
+   ex:["I <em>wanted</em> to go home. (not “was wanting”)",
+       "She <em>knew</em> the answer. (not “was knowing”)"]},
 ];
-const GRAMMAR_INTRO="Two tenses work together: past continuous (was/were + -ing) sets the scene, and the simple past drops the sudden event into it — joined by when / while.";
+const GRAMMAR_INTRO="Past continuous (was/were + -ing) sets the scene — the action already in progress; the simple past drops the sudden, finished event into it. Join them with <b>when</b> and <b>while</b>. <span style='opacity:.65'>Based on R. Murphy, <em>English Grammar in Use</em>.</span>";
 const CHECKS=[
   'I used was/were + -ing for the actions that were going on.',
   'I used the simple past for what suddenly happened.',
@@ -502,6 +560,15 @@ const SCENES=[
     {t:'while', s:'While the raptors were chasing their prey, the sky turned red.'},
   ],
   wordbank:['grazing','hunting','drinking','roaring','flying','running','the herd','the valley','a bright light','dust','ash','suddenly','when','while','struck','shook'],
+  practice:[
+    {q:'The Triceratops ___ drinking at the river. (one animal)', opts:['was','were'], a:'was', tip:'One animal → was.'},
+    {q:'The pterosaurs ___ flying over the valley.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The T-Rex ___ its prey when the light appeared. (hunt)', opts:['was hunting','hunted'], a:'was hunting', tip:'The action was already in progress → past continuous.'},
+    {q:'The meteor ___ the Earth and everything went dark. (strike)', opts:['struck','was striking'], a:'struck', tip:'One sudden, finished action → simple past.'},
+    {q:'The dinosaurs were grazing ___ the meteor struck.', opts:['when','while'], a:'when', tip:'when + the short, sudden event.'},
+    {q:'___ the raptors were chasing their prey, the sky turned red.', opts:['While','When'], a:'While', tip:'while + the longer background action.'},
+    {q:'This time that morning, the herd ___ near the lake. (rest)', opts:['was resting','rested'], a:'was resting', tip:'In the middle of an action at a past moment → past continuous.'},
+  ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0e0"/><stop offset="1" stop-color="#e7e3b8"/></linearGradient>
@@ -599,6 +666,15 @@ const SCENES=[
     {t:'while', s:'While two friends were whispering, the bell started to ring.'},
   ],
   wordbank:['writing','reading','explaining','daydreaming','whispering','texting','the board','the corridor','a loud bell','suddenly','when','while','went off','stood up','lined up'],
+  practice:[
+    {q:'The teacher ___ writing on the board.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The two friends at the back ___ whispering.', opts:['was','were'], a:'were', tip:'Two people → were.'},
+    {q:'I ___ my book when the alarm went off. (read)', opts:['was reading','read'], a:'was reading', tip:'Action in progress → past continuous.'},
+    {q:'The fire alarm ___ very suddenly. (ring)', opts:['rang','was ringing'], a:'rang', tip:'One sudden, finished action → simple past.'},
+    {q:'Everyone stood up ___ the alarm went off.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the teacher was explaining, a phone started to buzz.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'The boy by the window ___ the answer. (not know)', opts:['didn\'t know','wasn\'t knowing'], a:'didn\'t know', tip:'“know” is a state verb — no -ing form.'},
+  ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="cwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaeff4"/><stop offset="1" stop-color="#d7dfe7"/></linearGradient></defs>
     <rect width="400" height="220" fill="url(#cwall)"/>
@@ -614,36 +690,42 @@ const SCENES=[
     <rect x="326" y="26" width="52" height="50" rx="2" fill="#bfe0ee" stroke="#9aa6b0" stroke-width="2"/><path d="M352 26 v50 M326 51 h52" stroke="#9aa6b0" stroke-width="2"/>
     <!-- clock -->
     <circle cx="208" cy="44" r="12" fill="#fff" stroke="#6b7684" stroke-width="2"/><path d="M208 44 v-7 M208 44 l5 3" stroke="#20261a" stroke-width="1.6" stroke-linecap="round"/>
-    <!-- teacher -->
+    <!-- teacher: dark hair in a bun + glasses -->
     <g transform="translate(48,118)">
       <ellipse cx="0" cy="58" rx="16" ry="5" fill="#00000015"/>
-      <rect x="-10" y="16" width="20" height="42" rx="8" fill="#3a6d8c"/>
-      <circle cx="0" cy="5" r="9" fill="#e3ad82"/><path d="M-9 4 a9 9 0 0 1 18 0 v-4 a9 9 0 0 0 -18 0z" fill="#4a3526"/>
-      <g class="wave"><rect x="7" y="18" width="20" height="6" rx="3" fill="#3a6d8c"/><circle cx="28" cy="21" r="3.4" fill="#e3ad82"/></g>
+      <rect x="-10" y="16" width="20" height="42" rx="8" fill="#2f7d6a"/>
+      <circle cx="0" cy="5" r="9" fill="#c98a5a"/>
+      <path d="M-9 4 a9 9 0 0 1 18 0 v-4 a9 9 0 0 0 -18 0z" fill="#2a1c14"/>
+      <circle cx="0" cy="-6" r="4.4" fill="#2a1c14"/>
+      <g stroke="#20261a" stroke-width="1" fill="none"><circle cx="-3.6" cy="4.5" r="2.6"/><circle cx="3.6" cy="4.5" r="2.6"/><path d="M-1 4.5 h2"/></g>
+      <g class="wave"><rect x="7" y="18" width="20" height="6" rx="3" fill="#2f7d6a"/><circle cx="28" cy="21" r="3.4" fill="#c98a5a"/></g>
     </g>
     <!-- desks + students: friends(120) reading(190) texting(258) window(330) -->
     <g transform="translate(120,150)">
       <rect x="-30" y="20" width="60" height="26" rx="2" fill="#b98a5a"/><rect x="-30" y="20" width="60" height="5" fill="#9c7040"/>
-      <g transform="translate(-11,0)"><rect x="-9" y="-1" width="18" height="24" rx="7" fill="#8a5ca8"/><circle cx="0" cy="-11" r="8" fill="#d99a6a"/><path d="M-8 -12 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#2a1c12"/></g>
-      <g transform="translate(13,1)"><rect x="-9" y="-1" width="18" height="24" rx="7" fill="#4f9a3a"/><circle cx="0" cy="-11" r="8" fill="#e8b98f"/><path d="M-8 -12 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#6b4a2a"/></g>
+      <g transform="translate(-11,0)"><rect x="-9" y="-1" width="18" height="24" rx="7" fill="#8a5ca8"/><circle cx="0" cy="-12" r="10" fill="#241a12"/><circle cx="0" cy="-9.5" r="7.5" fill="#7a4a2a"/></g>
+      <g transform="translate(13,1)"><rect x="-9" y="-1" width="18" height="24" rx="7" fill="#4f9a3a"/><circle cx="0" cy="-11" r="8" fill="#f0c9a0"/><path d="M-8 -12 a8 8 0 0 1 16 0 v-3 a8 8 0 0 0 -16 0z" fill="#dcb257"/></g>
     </g>
     <g transform="translate(190,150)">
       <rect x="-26" y="20" width="52" height="26" rx="2" fill="#b98a5a"/><rect x="-26" y="20" width="52" height="5" fill="#9c7040"/>
       <rect x="-11" y="-2" width="22" height="26" rx="8" fill="#c65b7a"/>
-      <circle cx="0" cy="-12" r="9" fill="#e3ad82"/><path d="M-9 -13 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#3a2a1e"/>
+      <circle cx="0" cy="-12" r="9" fill="#b07a4a"/><path d="M-9 -13 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#3a2416"/>
+      <path d="M8 -15 q8 4 6 14 q-4 -3 -7 -2 q4 -6 1 -12z" fill="#3a2416"/>
       <rect x="-12" y="12" width="24" height="9" rx="1.5" fill="#fff" stroke="#c9c2b2"/>
       <g class="wave"><rect x="6" y="4" width="15" height="5" rx="2.5" fill="#c65b7a"/></g>
     </g>
     <g transform="translate(258,150)">
       <rect x="-26" y="20" width="52" height="26" rx="2" fill="#b98a5a"/><rect x="-26" y="20" width="52" height="5" fill="#9c7040"/>
       <rect x="-11" y="-2" width="22" height="26" rx="8" fill="#3a8ca0"/>
-      <circle cx="0" cy="-12" r="9" fill="#c98a5a"/><path d="M-9 -14 a9 9 0 0 1 18 2 h-18z" fill="#1c140c"/>
+      <circle cx="0" cy="-12" r="9" fill="#8a5a3a"/><path d="M-9 -13 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#140f0a"/>
+      <path d="M-10 -14 h20 v-2 a10 6 0 0 0 -20 0z" fill="#d8542a"/><rect x="-15" y="-15.5" width="7" height="3" rx="1.5" fill="#c0451f"/>
       <rect x="3" y="10" width="8" height="12" rx="1.5" fill="#222"/><rect x="4" y="11.5" width="6" height="8" fill="#8fd0ff"/>
     </g>
     <g transform="translate(330,150)">
       <rect x="-26" y="20" width="52" height="26" rx="2" fill="#b98a5a"/><rect x="-26" y="20" width="52" height="5" fill="#9c7040"/>
       <rect x="-11" y="-2" width="22" height="26" rx="8" fill="#e0921a"/>
-      <circle cx="0" cy="-12" r="9" fill="#e3ad82"/><path d="M-9 -13 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#3a2a1e"/>
+      <circle cx="0" cy="-12" r="9" fill="#f0c9a0"/><path d="M-9 -13 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0z" fill="#b5502a"/>
+      <g fill="#d59a6a"><circle cx="-3.5" cy="-9.5" r=".8"/><circle cx="3.5" cy="-9.5" r=".8"/><circle cx="0" cy="-8.5" r=".8"/></g>
       <g class="float"><circle cx="15" cy="-26" r="2.5" fill="#fff"/><circle cx="20" cy="-33" r="4" fill="#fff"/><circle cx="27" cy="-41" r="6.5" fill="#fff"/><path d="M23 -41 l3 3 l4 -6" stroke="#7aa0c0" stroke-width="1.4" fill="none"/></g>
     </g>
     <rect id="alarmwash" width="400" height="220" fill="#d8542a"/>
@@ -692,6 +774,15 @@ const SCENES=[
     {t:'while', s:'While the porter was washing the dishes, smoke filled the room.'},
   ],
   wordbank:['stirring','frying','carrying','washing','chopping','boiling','the stove','a saucepan','a tray','smoke','flames','suddenly','when','while','caught fire','shouted'],
+  practice:[
+    {q:'The chef ___ stirring the soup.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The waiters ___ carrying plates to the tables.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The cook ___ eggs when the pan caught fire. (fry)', opts:['was frying','fried'], a:'was frying', tip:'Action in progress → past continuous.'},
+    {q:'The pan ___ fire very suddenly. (catch)', opts:['caught','was catching'], a:'caught', tip:'One sudden, finished action → simple past.'},
+    {q:'The porter was washing the dishes ___ the fire started.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ the chef was cooking, smoke filled the room.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ the cook frying eggs when the fire started? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question → Was + subject + -ing?'},
+  ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="ktile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7ecef"/><stop offset="1" stop-color="#d3dade"/></linearGradient></defs>
     <rect width="400" height="220" fill="url(#ktile)"/>
@@ -711,6 +802,7 @@ const SCENES=[
       <ellipse cx="0" cy="52" rx="18" ry="5" fill="#00000018"/>
       <rect x="-12" y="6" width="24" height="46" rx="7" fill="#f2f2ee"/><rect x="-12" y="30" width="24" height="22" fill="#e6e6df"/>
       <circle cx="0" cy="-5" r="9" fill="#c98a5a"/>
+      <path d="M-4.5 -2.5 q4.5 3 9 0" stroke="#4a3020" stroke-width="2.2" fill="none" stroke-linecap="round"/>
       <path d="M-9 -9 h18 v-3 a9 6 0 0 0 -18 0z" fill="#fff"/><ellipse cx="0" cy="-18" rx="10" ry="7" fill="#fff"/>
       <g class="stir"><rect x="7" y="2" width="4" height="22" rx="2" fill="#9c7040"/></g>
     </g>
@@ -722,14 +814,15 @@ const SCENES=[
     <g transform="translate(150,152)">
       <ellipse cx="0" cy="50" rx="16" ry="5" fill="#00000015"/>
       <rect x="-11" y="6" width="22" height="44" rx="7" fill="#5aa0b0"/>
-      <circle cx="0" cy="-5" r="9" fill="#e3ad82"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-3 a9 9 0 0 0 -18 0z" fill="#2a1c12"/>
+      <circle cx="0" cy="-5" r="9" fill="#b07a4a"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-1 a9 9 0 0 0 -18 0z" fill="#c0453a"/><path d="M8 -10 l7 -1 l-3 6z" fill="#c0453a"/><path d="M-9 -9 h18 v2 h-18z" fill="#a83a30"/>
       <g class="bob"><rect x="8" y="10" width="18" height="4" rx="2" fill="#3a3a3a"/><ellipse cx="30" cy="12" rx="9" ry="3.5" fill="#4a4a4a"/><circle cx="27" cy="10" r="2" fill="#f2d24a"/><circle cx="33" cy="11" r="2" fill="#f2d24a"/></g>
     </g>
     <!-- WAITER + tray (center) -->
     <g class="walk"><g transform="translate(224,158)">
       <ellipse cx="0" cy="46" rx="15" ry="5" fill="#00000015"/>
       <rect x="-10" y="4" width="20" height="42" rx="7" fill="#2f3a44"/>
-      <circle cx="0" cy="-6" r="9" fill="#d99a6a"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-3 a9 9 0 0 0 -18 0z" fill="#3a2a1e"/>
+      <circle cx="0" cy="-6" r="9" fill="#e8c49a"/><path d="M-9 -9 a9 9 0 0 1 18 0 v-2 a9 9 0 0 0 -18 0 z" fill="#6b4a2a"/><path d="M-9 -8 q9 -3 18 0 v-2 h-18z" fill="#5a3d22"/>
+      <path d="M-4 4 l4 2 l-4 2z M4 4 l-4 2 l4 2z" fill="#20261a"/>
       <rect x="6" y="2" width="6" height="10" rx="2" fill="#2f3a44"/>
       <rect x="0" y="-16" width="30" height="4" rx="2" fill="#c9c2b2"/><circle cx="10" cy="-18" r="4" fill="#fff" stroke="#c9c2b2"/><circle cx="22" cy="-18" r="4" fill="#fff" stroke="#c9c2b2"/>
     </g></g>
@@ -739,7 +832,7 @@ const SCENES=[
     <g transform="translate(330,150)">
       <ellipse cx="0" cy="50" rx="16" ry="5" fill="#00000015"/>
       <rect x="-11" y="4" width="22" height="46" rx="7" fill="#7a6aa8"/>
-      <circle cx="0" cy="-6" r="9" fill="#8a5a3a"/><path d="M-9 -8 a9 9 0 0 1 18 0 v-3 a9 9 0 0 0 -18 0z" fill="#1c140c"/>
+      <circle cx="0" cy="-6" r="9" fill="#a2683f"/><path d="M-9.5 -7 a9.5 9.5 0 0 1 19 0 v-3 a9.5 6 0 0 0 -19 0z" fill="#4f9a3a"/><rect x="-9.5" y="-8" width="19" height="3" rx="1.5" fill="#3a7a2a"/>
       <g class="wave"><rect x="-24" y="6" width="18" height="5" rx="2.5" fill="#7a6aa8"/></g>
     </g>
     <rect id="darken" width="400" height="220" fill="#2a2420" opacity="0"/>
@@ -793,6 +886,15 @@ const SCENES=[
     {t:'while', s:'While the woman was fetching water, the sky turned black.'},
   ],
   wordbank:['selling','carrying','playing','fetching','buying','trading','the forum','the market','ash','lava','a jar','suddenly','when','while','erupted','fled'],
+  practice:[
+    {q:'The baker ___ selling bread at his stall.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The children ___ playing in the street.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'The woman ___ water when the mountain shook. (fetch)', opts:['was fetching','fetched'], a:'was fetching', tip:'Action in progress → past continuous.'},
+    {q:'Vesuvius ___ in the year 79 AD. (erupt)', opts:['erupted','was erupting'], a:'erupted', tip:'One finished historical event → simple past.'},
+    {q:'The merchant was carrying jars ___ the ground began to shake.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ people were shopping in the forum, ash began to fall.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'The people ___ from the ash. (flee)', opts:['fled','were fleeing'], a:'fled', tip:'A completed action after the eruption → simple past.'},
+  ],
   svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
     <defs>
       <linearGradient id="psky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc4d8"/><stop offset="1" stop-color="#f0dcb0"/></linearGradient>
@@ -815,26 +917,26 @@ const SCENES=[
       <rect x="-30" y="6" width="60" height="24" fill="#b98a5a"/>
       <path d="M-34 6 h68 l-6 -12 h-56z" fill="#c0453a"/><path d="M-34 6 h68 l-6 -12 h-56z" fill="url(#pground)" opacity="0"/>
       <g fill="#e0a94a"><ellipse cx="-16" cy="4" rx="7" ry="4"/><ellipse cx="0" cy="4" rx="7" ry="4"/><ellipse cx="16" cy="4" rx="7" ry="4"/></g>
-      <g transform="translate(0,-6)"><rect x="-9" y="-16" width="18" height="20" rx="6" fill="#c9b28a"/><circle cx="0" cy="-24" r="8" fill="#c98a5a"/><path d="M-8 -25 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#3a2a1e"/></g>
+      <g transform="translate(0,-6)"><rect x="-9" y="-16" width="18" height="20" rx="6" fill="#c9b28a"/><circle cx="0" cy="-24" r="8" fill="#c98a5a"/><path d="M-7 -22 a7 7 0 0 0 14 0 q-2 8 -7 8 q-5 0 -7 -8z" fill="#5a4030"/><path d="M-8 -25 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#5a4030"/></g>
     </g>
     <!-- merchant carrying jars (center-left) -->
     <g class="sway"><g transform="translate(150,166)">
       <ellipse cx="0" cy="34" rx="14" ry="4" fill="#00000015"/>
       <rect x="-10" y="-6" width="20" height="40" rx="7" fill="#7a5c8a"/>
-      <circle cx="0" cy="-16" r="8" fill="#b07a4a"/><path d="M-8 -17 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#2a1c12"/>
+      <circle cx="0" cy="-16" r="8" fill="#8a5a3a"/><path d="M-7 -14 a7 7 0 0 0 14 0 q-2 7 -7 7 q-5 0 -7 -7z" fill="#c9c2b2"/><path d="M-8 -17 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#b9b2a6"/>
       <path d="M12 -2 q10 -2 12 6 q-2 10 -12 8 q4 -8 0 -14z" fill="#a86a3a"/>
     </g></g>
     <!-- children playing (center) -->
     <g class="stomp"><g transform="translate(214,182)">
-      <g transform="translate(-8,0)"><rect x="-6" y="-2" width="12" height="16" rx="5" fill="#4f9a3a"/><circle cx="0" cy="-9" r="6" fill="#e3ad82"/></g>
-      <g transform="translate(10,-2)"><rect x="-6" y="-2" width="12" height="16" rx="5" fill="#e0921a"/><circle cx="0" cy="-9" r="6" fill="#c98a5a"/></g>
+      <g transform="translate(-8,0)"><rect x="-6" y="-2" width="12" height="16" rx="5" fill="#4f9a3a"/><circle cx="0" cy="-9" r="6" fill="#e3ad82"/><path d="M-6 -9 a6 6 0 0 1 12 0 v-2 a6 6 0 0 0 -12 0z" fill="#3a2416"/></g>
+      <g transform="translate(10,-2)"><rect x="-6" y="-2" width="12" height="16" rx="5" fill="#e0921a"/><circle cx="0" cy="-9" r="6" fill="#8a5a3a"/><circle cx="0" cy="-11" r="6.5" fill="#241a12"/><circle cx="0" cy="-9" r="5" fill="#8a5a3a"/></g>
       <circle cx="1" cy="10" r="4" fill="#d8542a"/>
     </g></g>
     <!-- woman fetching water (center-right) -->
     <g class="sway"><g transform="translate(288,168)">
       <ellipse cx="0" cy="32" rx="13" ry="4" fill="#00000015"/>
-      <path d="M-10 32 L-7 -4 h14 L10 32 Z" fill="#c65b7a"/>
-      <circle cx="0" cy="-14" r="8" fill="#e3ad82"/><path d="M-8 -15 a8 8 0 0 1 16 0 v-2 a8 8 0 0 0 -16 0z" fill="#3a2a1e"/>
+      <path d="M-10 32 L-7 -4 h14 L10 32 Z" fill="#5f8a6a"/>
+      <circle cx="0" cy="-14" r="8" fill="#c98a5a"/><path d="M-9 -14 a9 9 0 0 1 18 0 q1 8 -3 12 l-2 -2 q3 -6 -6 -10 q-9 4 -6 10 l-2 2 q-4 -4 -3 -12z" fill="#d8c49a"/>
       <ellipse cx="0" cy="-24" rx="7" ry="9" fill="#b08a5a"/>
     </g></g>
     <!-- dog sleeping (right front) -->
@@ -888,7 +990,7 @@ function loadScene(id){
   document.getElementById('state').className='state'; document.getElementById('state').innerHTML='<span class="dot"></span>Peaceful';
   document.getElementById('eventBtn').disabled=!entered;
   const tb=document.getElementById('taskBtn'); tb.classList.remove('primary'); tb.textContent='✍ Account';
-  renderVocab(); renderLog();
+  renderVocab(); renderPractice(); renderLog();
   studioBuilt=false; howtoBuilt=false;
   showPane('grammar', document.querySelector('.tab'));
   if(entered) SFX.play('chirp');
@@ -976,12 +1078,50 @@ function renderLog(){
 
 /* ===== SIDEBAR ===== */
 function renderGrammar(){
-  document.getElementById('grammar').innerHTML=`<div class="gnote">${GRAMMAR_INTRO}</div>`+GRAMMAR.map(g=>
-    `<div class="card gram"><div class="name">${g.name}</div><div class="gform2">${g.form}</div><div class="use">${g.use}</div><div class="ex">${g.ex}</div></div>`).join('');
+  document.getElementById('grammar').innerHTML=`<div class="gnote">${GRAMMAR_INTRO}</div>`+GRAMMAR.map(g=>{
+    const ex=(Array.isArray(g.ex)?g.ex:[g.ex]).map(e=>`<div class="ex">${e}</div>`).join('');
+    const note=g.note?`<div class="gnoteS">${g.note}</div>`:'';
+    return `<div class="card gram"><div class="name">${g.name}</div><div class="gform2">${g.form}</div><div class="use">${g.use}</div>${ex}${note}</div>`;
+  }).join('');
 }
 function renderVocab(){
   document.getElementById('vocab').innerHTML=S.vocab.map(v=>
     `<div class="vc" onclick="this.classList.toggle('open')"><div class="vw">${v.w} <span class="pos">${v.pos}</span><span class="rev">tap ⇕</span></div><div class="vdef">${v.def}<div class="vex">${v.ex}</div></div></div>`).join('');
+}
+/* ===== PRACTICE (fill-in) ===== */
+let pracState={};
+function fmtQ(q){
+  return q.replace('___','<span class="gap">_____</span>').replace(/\(([^)]+)\)\s*$/,'<span class="cue">($1)</span>');
+}
+function renderPractice(){
+  pracState={};
+  const items=S.practice||[];
+  document.getElementById('practice').innerHTML=items.map((it,i)=>{
+    const opts=it.opts.map((o,j)=>`<button class="pch" id="pr-${i}-${j}" onclick="pickPrac(${i},${j})">${o}</button>`).join('');
+    return `<div class="prac" id="prac-${i}"><div class="pq" id="pq-${i}">${i+1}. ${fmtQ(it.q)}</div><div class="chips">${opts}</div><div class="ptip" id="ptip-${i}"></div></div>`;
+  }).join('');
+  updatePracScore();
+}
+function pickPrac(i,j){
+  const it=S.practice[i]; if(!it||(pracState[i]&&pracState[i].done)) return;
+  const ok=it.opts[j]===it.a;
+  const btn=document.getElementById('pr-'+i+'-'+j), tip=document.getElementById('ptip-'+i);
+  if(ok){
+    btn.classList.add('good'); pracState[i]={done:true};
+    it.opts.forEach((o,k)=>document.getElementById('pr-'+i+'-'+k).disabled=true);
+    document.getElementById('pq-'+i).innerHTML=(i+1)+'. '+fmtQ(it.q).replace('<span class="gap">_____</span>','<b class="fill">'+it.a+'</b>');
+    tip.className='ptip show good'; tip.innerHTML='✓ '+(it.tip||'Correct!');
+  } else {
+    btn.classList.add('bad'); btn.disabled=true;
+    tip.className='ptip show bad'; tip.innerHTML='✗ Not this one — try again.';
+    pracState[i]=pracState[i]||{}; pracState[i].tries=(pracState[i].tries||0)+1;
+  }
+  updatePracScore();
+}
+function updatePracScore(){
+  const total=(S.practice||[]).length;
+  const done=Object.keys(pracState).filter(k=>pracState[k]&&pracState[k].done).length;
+  const el=document.getElementById('pracScore'); if(el) el.textContent=done+' / '+total;
 }
 function showPane(name,tab){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById('pane-'+name).classList.add('active');}
 
@@ -1033,21 +1173,28 @@ const toggleRecord=createRecorder('recBtn','recWrap','playback','dlAudio','recMs
 
 /* ===== PRINT ===== */
 function printPack(){
-  const gram=GRAMMAR.map(g=>`<tr><td><b>${g.name}</b><br><span class="muted">${g.form}</span></td><td>${g.use}</td><td>${g.ex.replace(/<\/?em>/g,'')}</td></tr>`).join('');
+  const stripHtml=s=>s.replace(/<[^>]+>/g,'');
+  const gram=GRAMMAR.map(g=>{const ex=(Array.isArray(g.ex)?g.ex:[g.ex]).map(stripHtml).join(' · ');return `<tr><td><b>${g.name}</b><br><span class="muted">${g.form}</span></td><td>${stripHtml(g.use)}</td><td>${ex}</td></tr>`;}).join('');
   const witness=S.witnesses.map(w=>`<li>${w.subj} ______ ______ ${w.tail} ${S.event.clause}.</li>`).join('');
   const key=S.witnesses.map(w=>`<li><b>${w.subj}</b> ${w.aux} ${w.verb} ${w.tail} ${S.event.clause}.</li>`).join('');
+  const prac=(S.practice||[]).map(p=>`<li>${p.q.replace('___','______')} <span class="muted">(${p.opts.join(' / ')})</span></li>`).join('');
+  const pracKey=(S.practice||[]).map(p=>`<li>${p.q.replace('___','<b>'+p.a+'</b>')}</li>`).join('');
   document.getElementById('printDoc').innerHTML=`
     <h1>FREEZE FRAME — ${S.name}</h1>
     <div class="sub">Past continuous &amp; simple past · ${S.era[0]}</div>
     <p>Watch the scene: what was each character doing? Then something happened. Report each one with <b>was/were + -ing</b> (past continuous) + <b>${S.event.clause}</b> (simple past).</p>
     <h2>How this lesson works</h2><ol>${stepsFor().map(s=>`<li>${stripTags(s)}</li>`).join('')}</ol>
-    <h2>Grammar</h2><table><tr><th>Tense</th><th>When to use it</th><th>Example</th></tr>${gram}</table>
+    <h2>Grammar (based on Murphy, English Grammar in Use)</h2><table><tr><th>Rule</th><th>When to use it</th><th>Examples</th></tr>${gram}</table>
     <h2>Complete the witness reports</h2>
     <p class="muted">Fill in was/were and the -ing verb:</p><ol>${witness}</ol>
+    <h2>Grammar practice — fill in the gap</h2>
+    <p class="muted">Choose was/were, the right verb form, or when/while:</p><ol>${prac}</ol>
     <h2>Write your eyewitness account</h2>
     <p class="muted">Title:</p><div class="writelines" style="height:22pt"></div>
     <p class="muted" style="margin-top:8pt">What happened:</p><div class="writelines"></div>
-    <h2 style="page-break-before:always">Answer key (teacher)</h2><ol>${key}</ol>
+    <h2 style="page-break-before:always">Answer key (teacher)</h2>
+    <p class="muted">Witness reports:</p><ol>${key}</ol>
+    <p class="muted">Grammar practice:</p><ol>${pracKey}</ol>
     <h2>Leerplandoelen (docent) · II-EngS-d · 2de graad · Moderne talen · ERK B1</h2>
     <table><tr><th>Leerplandoel</th><th>Wat de leerling doet</th></tr>${DOELEN.map(d=>`<tr><td><b>${d.code}</b> — ${d.doel}</td><td>${d.hoe}</td></tr>`).join('')}</table>`;
   window.print();
@@ -1066,6 +1213,7 @@ renderScene();
 applySceneChrome();
 renderGrammar();
 renderVocab();
+renderPractice();
 renderLog();
 document.body.dataset.diff=difficulty;
 </script>
