@@ -41,6 +41,30 @@ telefoontoon bij de smartphonefoto). Geluid start pas na de klik op
 **"Take positions & go live"** (browserregel). Met de **🔊-knop** in de balk
 zet je het geluid aan/uit.
 
+## Grammar-boxes "just-in-time"
+
+Zodra een kern-tijd voor het eerst op het scherm verschijnt, klapt er in dat
+bericht een klein uitlegkaartje open (vorm + gebruik + voorbeeld). Zo krijgen
+leerlingen de uitleg precies op het moment dat ze de tijd tegenkomen: **simple
+past** (bericht 1), **present continuous** (bericht 2), **simple present**
+(bericht 3). Elke tijd wordt maar één keer geïntroduceerd.
+
+## Eindtaak — schrijven & inspreken
+
+Via de knop **✍ Artikel** (licht op zodra de uitzending klaar is) opent de
+studio waarin leerlingen hun nieuwsartikel of uitzend-script maken:
+
+- **Schrijven** met kop + tekstvak;
+- **Zin-starters** per tijd en een **newsroom phrasebook** (attributie &
+  onzekerheid: *says that, claims that, reportedly, According to…*) die je met
+  één klik invoegt;
+- een **feitenoverzicht** van wat er tijdens de uitzending binnenkwam;
+- een **zelf-checklist** vóór publiceren;
+- **Inspreken**: neem je uitzending op met de microfoon (📖 teleprompter om van
+  af te lezen), speel af en download als audiobestand;
+- **Bewaar** (lokaal) en **Download .txt**. Opnemen werkt het betrouwbaarst
+  wanneer je het bestand lokaal opent en microfoontoegang geeft.
+
 ## Zo gebruik je het in de klas
 
 1. **Open `index.html`** in een browser (dubbelklikken volstaat; werkt ook op

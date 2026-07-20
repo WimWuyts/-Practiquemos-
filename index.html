@@ -211,6 +211,59 @@
   .phone .plive::before{content:""; width:5px; height:5px; background:#fff; border-radius:50%}
   .phone .pcap{position:absolute; bottom:0; left:0; right:0; z-index:3; padding:9px 11px; font-size:10.5px; background:linear-gradient(0deg,rgba(0,0,0,.85),transparent); color:#fff}
 
+  /* ---------- Just-in-time grammar callout ---------- */
+  .grambox{margin:12px 14px 0; border:1px solid rgba(57,197,207,.45);
+    background:linear-gradient(180deg, rgba(57,197,207,.10), rgba(57,197,207,.02)); border-radius:10px; padding:11px 13px}
+  .grambox .gh{display:flex; align-items:center; gap:8px; font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--cyan)}
+  .grambox .gh .tag{background:var(--cyan); color:#04212a; padding:1px 7px; border-radius:4px; font-size:10px; letter-spacing:1px}
+  .grambox .gname{font-weight:700; font-size:15px; margin:7px 0 3px}
+  .grambox .gform{font-family:var(--mono); font-size:12px; color:var(--text); background:var(--panel2); border-radius:5px; padding:4px 9px; display:inline-block; margin:2px 0 7px}
+  .grambox .guse{font-size:12.5px; color:var(--muted)}
+  .grambox .gex{font-family:var(--mono); font-size:12.5px; margin-top:7px; border-left:2px solid var(--cyan); padding-left:9px; line-height:1.5}
+  .grambox .gex b{color:var(--amber)}
+
+  /* ---------- End-task studio ---------- */
+  .studio{position:fixed; inset:0; z-index:120; background:rgba(4,7,10,.94); backdrop-filter:blur(6px); display:none; padding:16px}
+  .studio.open{display:flex}
+  .sheet{max-width:1120px; width:100%; margin:auto; background:var(--panel); border:1px solid var(--border); border-radius:16px; max-height:95vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .sbar{display:flex; align-items:center; gap:12px; padding:12px 18px; border-bottom:1px solid var(--border); background:var(--panel2)}
+  .sbar .st{font-weight:800; letter-spacing:.5px; font-size:15px}
+  .sbar .st .em{color:var(--red); font-family:var(--mono)}
+  .sgrid{display:grid; grid-template-columns:1fr 330px; overflow:hidden; flex:1; min-height:0}
+  @media(max-width:820px){ .sgrid{grid-template-columns:1fr} .studio .right{display:none} }
+  .sleft{padding:16px 18px; overflow:auto}
+  .sright{padding:16px; border-left:1px solid var(--border); overflow:auto; background:var(--panel2)}
+  input.headline{width:100%; font-size:19px; font-weight:700; background:transparent; border:none; border-bottom:2px solid var(--border); color:var(--text); padding:8px 2px; margin-bottom:12px}
+  input.headline::placeholder{color:var(--dim)}
+  input.headline:focus{outline:none; border-color:var(--cyan)}
+  textarea.article{width:100%; min-height:240px; background:var(--panel2); border:1px solid var(--border); border-radius:10px; color:var(--text); font-size:15px; line-height:1.6; padding:12px; resize:vertical; font-family:var(--sans)}
+  textarea.article:focus{outline:none; border-color:var(--cyan)}
+  .chipset{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px}
+  .ins{border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:12px; padding:5px 9px; border-radius:14px; cursor:pointer; transition:.15s; text-align:left}
+  .ins:hover{border-color:var(--cyan); transform:translateY(-1px)}
+  .ins .tt{color:var(--cyan); font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.5px; margin-right:5px}
+  .rlabel{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-weight:700; margin:16px 0 6px}
+  .rlabel:first-child{margin-top:0}
+  .check{display:flex; gap:9px; align-items:flex-start; font-size:12.5px; padding:6px 0; cursor:pointer; color:var(--muted)}
+  .check input{margin-top:2px; accent-color:var(--green); flex-shrink:0}
+  .check.done{color:var(--text)}
+  .facts{font-size:12.5px; color:var(--muted); line-height:1.5; margin:0; padding-left:18px}
+  .facts li{margin-bottom:6px}
+  .sfoot{display:flex; align-items:center; gap:9px; flex-wrap:wrap; padding:11px 18px; border-top:1px solid var(--border); background:var(--panel2)}
+  .wc{font-family:var(--mono); font-size:12px; color:var(--muted); margin-right:auto}
+  .recdot{display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--red); margin-right:6px; animation:pulse 1.2s infinite}
+  #recWrap{display:none; align-items:center; gap:10px; width:100%; margin-top:8px}
+  #recWrap audio{height:34px}
+  .recmsg{font-size:12px; color:var(--amber)}
+
+  /* teleprompter */
+  .prompter{position:fixed; inset:0; z-index:140; background:#04070a; display:none; padding:30px; overflow:auto}
+  .prompter.open{display:block}
+  .prompter .pinner{max-width:820px; margin:0 auto}
+  .prompter h2{font-size:30px; line-height:1.2; color:var(--amber)}
+  .prompter .pbody{font-size:26px; line-height:1.7; color:var(--text); white-space:pre-wrap}
+  .prompter .pclose{position:fixed; top:16px; right:18px}
+
   @media(prefers-reduced-motion:reduce){
     .drop,.flare,.sweep,.flick,.rise,.steam,.sink{animation:none}
   }
@@ -264,6 +317,7 @@
     <div class="controls">
       <button class="btn primary" id="nextBtn" onclick="nextUpdate()" disabled>Next update ▸</button>
       <button class="btn ghost" id="autoBtn" onclick="toggleAuto()" disabled>Auto ⏱</button>
+      <button class="btn ghost" id="taskBtn" onclick="openStudio()">✍ Artikel</button>
       <button class="btn ghost" id="soundBtn" onclick="toggleSound()" title="Geluid aan/uit">🔊</button>
       <button class="btn ghost" onclick="resetBroadcast()">Reset</button>
     </div>
@@ -316,6 +370,50 @@
       <div id="log"><div class="logempty">Nog geen beslissingen. Klik bij een bericht op <b>Publish</b>, <b>Hold</b> of <b>🚩 Flag</b>.</div></div>
     </div>
   </aside>
+</div>
+
+<!-- ================= END-TASK STUDIO ================= -->
+<div class="studio" id="studio">
+  <div class="sheet">
+    <div class="sbar">
+      <span class="st"><span class="em">●</span> ON AIR — schrijf &amp; zend je verhaal uit</span>
+      <div class="spacer"></div>
+      <button class="btn ghost" onclick="openPrompter()">📖 Teleprompter</button>
+      <button class="btn" onclick="closeStudio()">✕ Sluiten</button>
+    </div>
+    <div class="sgrid">
+      <div class="sleft">
+        <input class="headline" id="headlineBox" placeholder="Kop / Headline — bv. TITANIC SINKS IN THE NORTH ATLANTIC" oninput="updateWC()">
+        <textarea class="article" id="articleBox" placeholder="Schrijf hier je nieuwsartikel of je uitzend-script. Gebruik de zin-starters en de phrasebook rechts. Denk aan de drie tijden: past voor bevestigde feiten, present continuous voor wat live gebeurt, simple present (say/claim) voor beweringen." oninput="updateWC()"></textarea>
+
+        <div class="rlabel">Zin-starters (klik om in te voegen)</div>
+        <div class="chipset" id="starters"></div>
+
+        <div class="rlabel">Newsroom phrasebook — attributie &amp; onzekerheid</div>
+        <div class="chipset" id="phrasebook"></div>
+      </div>
+      <div class="sright">
+        <div class="rlabel">Wat kwam er binnen? (bevestigde feiten)</div>
+        <ul class="facts" id="factsList"></ul>
+        <div class="rlabel">Zelf-check vóór je publiceert</div>
+        <div id="checklist"></div>
+      </div>
+    </div>
+    <div class="sfoot">
+      <span class="wc" id="wc">0 woorden</span>
+      <button class="btn ghost" onclick="saveDraft(true)">💾 Bewaar</button>
+      <button class="btn ghost" onclick="downloadArticle()">⬇ Download .txt</button>
+      <button class="btn primary" id="recBtn" onclick="toggleRecord()">🎙 Opnemen</button>
+      <span class="recmsg" id="recMsg"></span>
+      <div id="recWrap"><span style="font-size:12px;color:var(--muted)">Jouw uitzending:</span> <audio id="playback" controls></audio> <a class="btn ghost" id="dlAudio">⬇ audio</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= TELEPROMPTER ================= -->
+<div class="prompter" id="prompter">
+  <button class="btn pclose" onclick="closePrompter()">✕ sluiten</button>
+  <div class="pinner"><h2 id="prompterHead"></h2><div class="pbody" id="prompterBody"></div></div>
 </div>
 
 <footer>
@@ -458,11 +556,38 @@ const UPDATES = [
   },
 ];
 
-/* koppel een beeld + geluid aan elk bericht (op volgorde) */
-[['strike','strike'],['ice','ice'],['statement','statement'],['flood','flood'],
- ['radar','radar'],['cqd','cqd'],['lifeboats','lifeboats'],['mystery','mystery'],
- ['phone','phone'],['carpathia','carpathia'],['sinking','sinking'],['press','press'],
- ['tally','tally']].forEach((v,i)=>{ if(UPDATES[i]){ UPDATES[i].viz=v[0]; UPDATES[i].sound=v[1]; } });
+/* koppel een beeld + geluid + kern-tijd aan elk bericht (op volgorde) */
+[['strike','strike','past'],['ice','ice','continuous'],['statement','statement','present'],
+ ['flood','flood','continuous'],['radar','radar','present'],['cqd','cqd','past'],
+ ['lifeboats','lifeboats','continuous'],['mystery','mystery','present'],['phone','phone','past'],
+ ['carpathia','carpathia','past'],['sinking','sinking','past'],['press','press','present'],
+ ['tally','tally','past']].forEach((v,i)=>{ if(UPDATES[i]){ UPDATES[i].viz=v[0]; UPDATES[i].sound=v[1]; UPDATES[i].tense=v[2]; } });
+
+/* uitleg per kern-tijd — verschijnt de eerste keer dat die tijd op het scherm komt */
+const TENSE_INFO = {
+  continuous:{label:"Present continuous", form:"am / is / are + werkwoord + -ing",
+    use:"Voor wat er nú, op dit moment, gebeurt — live verslag vanaf de plek.",
+    ex:'Passengers <b>are entering</b> the lifeboats.'},
+  past:{label:"Simple past", form:"2e vorm (struck, sent, went) of regelmatig + -ed",
+    use:"Voor een bevestigd, afgesloten feit: het is voorbij en zeker.",
+    ex:'The ship <b>struck</b> an iceberg at 23:40.'},
+  present:{label:"Simple present", form:"basisvorm (hij/zij/het + -s)",
+    use:"Voor koppen en feiten, én om een bewering toe te schrijven: say / claim / report.",
+    ex:'The company <b>says</b> there <b>is</b> no danger.'},
+};
+const introduced = new Set();
+function grammarCallout(u){
+  if(!u.tense || introduced.has(u.tense)) return '';
+  introduced.add(u.tense);
+  const t = TENSE_INFO[u.tense]; if(!t) return '';
+  return `<div class="grambox">
+    <div class="gh"><span class="tag">NIEUW</span> Grammatica in beeld</div>
+    <div class="gname">${t.label}</div>
+    <div class="gform">${t.form}</div>
+    <div class="guse">${t.use}</div>
+    <div class="gex">${t.ex}</div>
+  </div>`;
+}
 
 /* =========================================================
    AUDIO ENGINE — alle geluiden live gesynthetiseerd (Web Audio)
@@ -702,6 +827,7 @@ function nextUpdate(){
   if(idx >= UPDATES.length){
     document.getElementById('nextBtn').textContent = 'End of broadcast';
     document.getElementById('nextBtn').disabled = true;
+    const tb=document.getElementById('taskBtn'); tb.classList.add('primary'); tb.textContent='✍ Schrijf het artikel';
     stopAuto();
   }
   document.getElementById('feedEmpty').style.display = 'none';
@@ -721,6 +847,7 @@ function addWire(u, i){
       <span class="src">${u.src}</span>
       <span class="kind k-${u.kind}">${u.kind}</span>
     </div>
+    ${grammarCallout(u)}
     <div class="body">
       <div class="quote">${u.text}</div>
       <div class="meta">
@@ -793,6 +920,8 @@ function stopAuto(){
 function resetBroadcast(){
   stopAuto();
   idx = 0; live = false;
+  introduced.clear();
+  const tb=document.getElementById('taskBtn'); tb.classList.remove('primary'); tb.textContent='✍ Artikel';
   for(const k in decisions) delete decisions[k];
   document.getElementById('feed').innerHTML = '<div class="empty" id="feedEmpty"><strong>The wire is silent.</strong>Press <b>“Next update”</b> to let the next report come in. Read it aloud, then let the newsroom decide.</div>';
   document.getElementById('clock').textContent = '--:--';
@@ -902,6 +1031,115 @@ function showPane(name, tab){
   document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
   tab.classList.add('active');
   document.getElementById('pane-'+name).classList.add('active');
+}
+
+/* =========================================================
+   END-TASK STUDIO
+   ========================================================= */
+const STARTERS = [
+  {t:'past', s:'The Titanic struck an iceberg at 23:40 on 14 April 1912.'},
+  {t:'past', s:'The ship sank at 02:20, and hundreds of people were in the water.'},
+  {t:'continuous', s:'Rescue ships are racing to the scene.'},
+  {t:'continuous', s:'Women and children are boarding the lifeboats first.'},
+  {t:'present', s:'The White Star Line says there is no danger.'},
+  {t:'present', s:'Survivors say the ship went down within hours.'},
+];
+const PHRASES = [
+  {c:'report', s:'says that'},{c:'report', s:'claims that'},{c:'report', s:'reports that'},
+  {c:'report', s:'denies that'},{c:'report', s:'confirms that'},{c:'report', s:'According to'},
+  {c:'twijfel', s:'reportedly'},{c:'twijfel', s:'apparently'},{c:'twijfel', s:'It appears that'},
+  {c:'twijfel', s:'Unconfirmed reports say'},
+  {c:'verband', s:'However,'},{c:'verband', s:'Meanwhile,'},{c:'verband', s:'At 02:20,'},
+];
+const CHECKS = [
+  'Ik gebruik simple past voor bevestigde feiten (struck, sank, sent).',
+  'Ik gebruik present continuous voor wat live gebeurt (are boarding).',
+  'Ik schrijf beweringen toe met say / claim (simple present).',
+  'Ik heb de anachronismen (radar, smartphonefoto) NIET als echt gepubliceerd.',
+  'Mijn tekst maakt verschil tussen wat zeker is en wat onbevestigd is.',
+  'Mijn kop belooft niet méér dan ik echt weet.',
+];
+function stripTags(s){ return s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim(); }
+let studioBuilt = false;
+function buildStudio(){
+  if(studioBuilt) return; studioBuilt = true;
+  document.getElementById('starters').innerHTML = STARTERS.map((x,i)=>
+    `<button class="ins" onclick="insertPhrase(STARTERS[${i}].s)"><span class="tt">${x.t}</span>${x.s}</button>`).join('');
+  document.getElementById('phrasebook').innerHTML = PHRASES.map((x,i)=>
+    `<button class="ins" onclick="insertPhrase(PHRASES[${i}].s+' ')"><span class="tt">${x.c}</span>${x.s}</button>`).join('');
+  const facts = UPDATES.filter(u=> u.rel>=2 && !['official','rumor','anachronism'].includes(u.kind));
+  document.getElementById('factsList').innerHTML = facts.map(u=>`<li><b>${u.time}</b> — ${stripTags(u.text)}</li>`).join('');
+  document.getElementById('checklist').innerHTML = CHECKS.map((c,i)=>
+    `<label class="check" id="chk-${i}"><input type="checkbox" onchange="this.closest('.check').classList.toggle('done',this.checked)"><span>${c}</span></label>`).join('');
+}
+function openStudio(){ buildStudio(); loadDraft(); document.getElementById('studio').classList.add('open'); }
+function closeStudio(){ document.getElementById('studio').classList.remove('open'); }
+function insertPhrase(txt){
+  const ta=document.getElementById('articleBox'); const v=ta.value;
+  ta.value = v + (v && !/\s$/.test(v) ? ' ' : '') + txt;
+  ta.focus(); updateWC(); saveDraft();
+}
+function updateWC(){
+  const t=document.getElementById('articleBox').value.trim();
+  const n=t? t.split(/\s+/).length : 0;
+  document.getElementById('wc').textContent = n+' woord'+(n===1?'':'en');
+  saveDraft();
+}
+function saveDraft(flash){
+  try{
+    localStorage.setItem('c24_head', document.getElementById('headlineBox').value);
+    localStorage.setItem('c24_art', document.getElementById('articleBox').value);
+  }catch(e){}
+  if(flash){ const b=event&&event.target; if(b){ const o=b.textContent; b.textContent='✓ Bewaard'; setTimeout(()=>b.textContent=o,1200);} }
+}
+function loadDraft(){
+  try{
+    document.getElementById('headlineBox').value = localStorage.getItem('c24_head')||'';
+    document.getElementById('articleBox').value = localStorage.getItem('c24_art')||'';
+  }catch(e){}
+  updateWC();
+}
+function downloadArticle(){
+  const h=document.getElementById('headlineBox').value||'(geen kop)';
+  const a=document.getElementById('articleBox').value||'';
+  const txt='CHRONICLE 24 — The Time-Travel Newsroom\n\n'+h.toUpperCase()+'\n\n'+a+'\n';
+  const blob=new Blob([txt],{type:'text/plain'}); const url=URL.createObjectURL(blob);
+  const el=document.createElement('a'); el.href=url; el.download='chronicle24-article.txt'; el.click();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+/* teleprompter */
+function openPrompter(){
+  document.getElementById('prompterHead').textContent = document.getElementById('headlineBox').value || '';
+  document.getElementById('prompterBody').textContent = document.getElementById('articleBox').value || 'Nog niets geschreven…';
+  document.getElementById('prompter').classList.add('open');
+}
+function closePrompter(){ document.getElementById('prompter').classList.remove('open'); }
+/* opnemen (microfoon) */
+let mediaRec=null, chunks=[];
+async function toggleRecord(){
+  const btn=document.getElementById('recBtn'), msg=document.getElementById('recMsg');
+  if(mediaRec && mediaRec.state==='recording'){ mediaRec.stop(); return; }
+  msg.textContent='';
+  if(!navigator.mediaDevices || !window.MediaRecorder){
+    msg.textContent='🎤 Opnemen kan hier niet — open het bestand lokaal en geef microfoontoegang.'; return;
+  }
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    chunks=[]; mediaRec=new MediaRecorder(stream);
+    mediaRec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
+    mediaRec.onstop=()=>{
+      const blob=new Blob(chunks,{type:'audio/webm'}); const url=URL.createObjectURL(blob);
+      document.getElementById('playback').src=url;
+      const dl=document.getElementById('dlAudio'); dl.href=url; dl.download='chronicle24-broadcast.webm';
+      document.getElementById('recWrap').style.display='flex';
+      stream.getTracks().forEach(t=>t.stop());
+      btn.innerHTML='🎙 Opnemen'; btn.classList.remove('primary'); btn.classList.add('ghost');
+    };
+    mediaRec.start();
+    btn.innerHTML='<span class="recdot"></span>Stop opname'; btn.classList.remove('ghost'); btn.classList.add('primary');
+  }catch(e){
+    msg.textContent='🎤 Microfoon geweigerd of niet beschikbaar. Je kunt wél schrijven en de teleprompter gebruiken.';
+  }
 }
 
 /* =========================================================
