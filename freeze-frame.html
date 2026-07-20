@@ -146,6 +146,8 @@
   .stage[data-fx="steam"].striking #steamcloud{animation:eruptUp 1.6s ease-out forwards}
   .stage[data-fx="steam"].impact #steamcloud{opacity:1}
   .stage[data-fx="steam"].impact #darken{opacity:.4}
+  /* fx: freeze (meanwhile — gentle snapshot, no disaster) */
+  .stage[data-fx="freeze"].impact #darken{opacity:.22}
 
   @media(prefers-reduced-motion:reduce){ .graze,.breathe,.stomp,.fly,.flap,.dash,.plume,.sun,.sway,.bob,.wave,.stir,.float,.walk,.steam{animation:none} }
 
@@ -3287,6 +3289,347 @@ const SCENES=[
   </svg>
   ${pin(158,150,'The porter')}${pin(208,150,'The newspaper seller')}${pin(262,150,'The young woman')}${pin(318,150,'The conductor')}${pin(365,155,'The boy')}`,
 },
+{
+  id:'meanwhile', emo:'🏠', name:'Meanwhile at Home', tag:'Meanwhile',
+  era:['HOME','ONE EVENING'], statusAfter:'Snapshot',
+  fx:'freeze', darkFill:'#20222e',
+  sceneTitle:'The scene · watch what everyone is doing at the same time',
+  reportTitle:'Witness reports · what WAS each person doing?',
+  studioTitle:'✍ MEANWHILE AT HOME — write your eyewitness account',
+  headlinePH:'Title — e.g. ONE QUIET EVENING AT HOME',
+  fileslug:'meanwhile-at-home',
+  event:{ btn:'⏸ Freeze the moment', clause:'at the same time', sfx:'bell', after:'bell',
+    promptWatch:'Watch closely… everyone in the house is doing something at the same time. When you are ready, press <b>“Freeze the moment”</b>.',
+    promptAfter:'⏸ Freeze! Now report what everyone <b>was doing</b> — all at the same time.' },
+  tenseBox:{ ex:"While the father <b>was cooking</b>, the children <b>were playing</b> upstairs." },
+  witnesses:[
+    {id:'father',   subj:'The father',   aux:'was',  verb:'cooking',  tail:'dinner in the kitchen',        opts:['cooking','swimming','flying']},
+    {id:'mother',   subj:'The mother',   aux:'was',  verb:'working',  tail:'on her laptop in the living room', opts:['working','skiing','painting']},
+    {id:'children', subj:'The children', aux:'were', verb:'playing',  tail:'a game upstairs',              opts:['playing','cooking','driving']},
+    {id:'baby',     subj:'The baby',     aux:'was',  verb:'sleeping', tail:'peacefully in its cot',        opts:['sleeping','running','reading']},
+    {id:'dog',      subj:'The dog',      aux:'was',  verb:'digging',  tail:'a hole in the garden',         opts:['digging','singing','writing']},
+  ],
+  vocab:[
+    {w:"evening", pos:"n.", def:"The time of day after the afternoon and before night.", ex:"One quiet evening, the family was at home."},
+    {w:"to cook", pos:"v.", def:"To prepare hot food to eat.", ex:"The father was cooking dinner."},
+    {w:"laptop", pos:"n.", def:"A small computer you can carry and open like a book.", ex:"The mother was working on her laptop."},
+    {w:"cot", pos:"n.", def:"A small bed with high sides for a baby.", ex:"The baby was sleeping in its cot."},
+    {w:"to dig", pos:"v.", def:"To make a hole in the ground.", ex:"The dog was digging in the garden."},
+    {w:"upstairs", pos:"adv.", def:"On a higher floor of the house.", ex:"The children were playing upstairs."},
+    {w:"living room", pos:"n.", def:"The room where a family sits and relaxes together.", ex:"The mother was in the living room."},
+    {w:"garden", pos:"n.", def:"The area of ground next to a house with grass and plants.", ex:"The dog ran into the garden."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was a quiet evening and the whole house was busy.'},
+    {t:'past cont', s:'In the kitchen, the father was cooking dinner.'},
+    {t:'while', s:'While the father was cooking, the mother was working on her laptop.'},
+    {t:'while', s:'While the children were playing upstairs, the baby was sleeping in its cot.'},
+    {t:'past cont', s:'Outside, the dog was digging a hole in the garden.'},
+    {t:'simple past', s:'Suddenly, the doorbell rang and everyone stopped.'},
+  ],
+  wordbank:['cooking','working','playing','sleeping','digging','upstairs','the kitchen','the living room','a laptop','the garden','a cot','dinner','while','at the same time','meanwhile','quietly'],
+  practice:[
+    {q:'The father ___ cooking dinner in the kitchen.', opts:['was','were'], a:'was', tip:'One person → was.'},
+    {q:'The children ___ playing a game upstairs.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'While the mother ___ on her laptop, the baby slept. (work)', opts:['was working','worked'], a:'was working', tip:'Two things at the same time → while + past continuous.'},
+    {q:'While the father was cooking, the dog ___ a hole. (dig)', opts:['was digging','dug'], a:'was digging', tip:'Both actions in progress together → past continuous.'},
+    {q:'The baby was sleeping ___ the phone suddenly rang.', opts:['when','while'], a:'when', tip:'when + the sudden event that interrupts.'},
+    {q:'___ the mother working on her laptop? (question)', opts:['Was','Did'], a:'Was', tip:'Past continuous question: Was + subject + -ing?'},
+  ],
+  tenseEx:[
+    {q:'While the father ___ dinner, the children played upstairs. (cook)', opts:['was cooking','cooked'], a:'was cooking', tip:'Ongoing action → past continuous.'},
+    {q:'The mother ___ on her laptop at eight o clock. (work)', opts:['was working','worked'], a:'was working', tip:'In the middle of it at that moment → past continuous.'},
+    {q:'The baby suddenly ___ up and cried. (wake)', opts:['woke','was waking'], a:'woke', tip:'One sudden, finished action → simple past.'},
+    {q:'While the dog ___ , the children watched from the window. (dig)', opts:['was digging','dug'], a:'was digging', tip:'Two actions together → while + past continuous.'},
+    {q:'At that moment, the children ___ a board game. (play)', opts:['were playing','played'], a:'were playing', tip:'In the middle of the action → past continuous.'},
+  ],
+  ing:[
+    {q:'dig → ___', opts:['digging','diging'], a:'digging', tip:'Double the final consonant: digging.'},
+    {q:'cook → ___', opts:['cooking','cookking'], a:'cooking', tip:'Two vowels together — no doubling: cooking.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'make → ___', opts:['making','makeing'], a:'making', tip:'Drop the silent -e: making.'},
+    {q:'play → ___', opts:['playing','plaing'], a:'playing', tip:'Keep the -y and add -ing: playing.'},
+    {q:'lie → ___', opts:['lying','lieing'], a:'lying', tip:'-ie becomes -y before -ing: lying.'},
+  ],
+  mistakes:[
+    {q:'The children was playing a game upstairs.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'The father were cooking dinner in the kitchen.', bad:'were', fix:'was', tip:'One person → was.'},
+    {q:'The mother was work on her laptop.', bad:'work', fix:'working', tip:'was + -ing → was working.'},
+    {q:'The baby were sleeping in its cot.', bad:'were', fix:'was', tip:'One baby → was.'},
+    {q:'When the father was cooking, the mother was working at the same time.', bad:'When', fix:'While', tip:'Two ongoing actions together → While.'},
+  ],
+  spots:{father:[90,150], mother:[242,152], children:[95,92], baby:[248,86], dog:[360,168]},
+  match:[
+    {a:'While the father was cooking', b:'the mother was working on her laptop'},
+    {a:'While the children were playing', b:'the baby was sleeping in its cot'},
+    {a:'While the dog was digging outside', b:'the father was cooking dinner'},
+    {a:'While the mother was typing', b:'the children were playing a game'},
+    {a:'While the baby was sleeping', b:'the dog was digging in the garden'},
+  ],
+  scramble:[
+    {answer:'While the father was cooking the children were playing upstairs.'},
+    {answer:'The mother was working on her laptop in the living room.'},
+    {answer:'The dog was digging a hole in the garden at the same time.'},
+  ],
+  stories:[
+    {title:'One quiet evening', text:'One quiet evening, the whole house {0} busy. In the kitchen, the father {1} dinner. While he cooked, the mother {2} on her laptop in the living room. Upstairs, the two children {3} a noisy game, and next door the baby {4} peacefully in its cot. Outside, the dog {5} a hole in the garden. Everything {6} at the same time. Suddenly, the doorbell {7}. The dog {8} to the door while the children {9} down the stairs.', gaps:[
+      {opts:['was','were'], a:'was'},
+      {opts:['was cooking','cooked'], a:'was cooking'},
+      {opts:['was working','worked'], a:'was working'},
+      {opts:['were playing','played'], a:'were playing'},
+      {opts:['was sleeping','slept'], a:'was sleeping'},
+      {opts:['was digging','dug'], a:'was digging'},
+      {opts:['was happening','happened'], a:'was happening'},
+      {opts:['rang','was ringing'], a:'rang'},
+      {opts:['ran','was running'], a:'ran'},
+      {opts:['were running','ran'], a:'were running'},
+    ]},
+  ],
+  listen:[
+    {say:'The father was cooking dinner in the kitchen.', opts:['The father was cooking dinner in the kitchen.','The father were cooking dinner in the kitchen.','The father cooked dinner in the kitchen.'], a:'The father was cooking dinner in the kitchen.'},
+    {say:'The children were playing a game upstairs.', opts:['The children was playing a game upstairs.','The children were playing a game upstairs.','The children played a game upstairs.'], a:'The children were playing a game upstairs.'},
+    {say:'The baby was sleeping in its cot.', opts:['The baby was sleeping in its cot.','The baby were sleeping in its cot.','The baby slept in its cot.'], a:'The baby was sleeping in its cot.'},
+    {say:'While the mother was working, the baby was sleeping.', opts:['While the mother was working, the baby was sleeping.','When the mother was working, the baby slept.','While the mother worked, the baby was sleeping.'], a:'While the mother was working, the baby was sleeping.'},
+    {say:'The dog was digging a hole in the garden.', opts:['The dog was digging a hole in the garden.','The dog were digging a hole in the garden.','The dog dug a hole in the garden.'], a:'The dog was digging a hole in the garden.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="meanwhilesky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3358"/><stop offset="0.7" stop-color="#6b5a7a"/><stop offset="1" stop-color="#c98a6a"/></linearGradient>
+      <linearGradient id="meanwhilegrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a7a3a"/><stop offset="1" stop-color="#356030"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#meanwhilesky)"/>
+    <circle cx="60" cy="46" r="16" fill="#f6e2a0" opacity="0.8"/>
+    <rect x="0" y="188" width="400" height="32" fill="url(#meanwhilegrass)"/>
+    <!-- house outer wall + roof -->
+    <path d="M14 42 L174 6 L334 42 Z" fill="#7a4638"/>
+    <path d="M174 6 L334 42 L334 34 L174 0 Z" fill="#653830"/>
+    <rect x="30" y="42" width="288" height="148" fill="#cdbfa8"/>
+    <!-- room fills -->
+    <rect x="34" y="46" width="138" height="68" fill="#e7d5c0"/>
+    <rect x="176" y="46" width="138" height="68" fill="#dbe4d6"/>
+    <rect x="34" y="120" width="138" height="66" fill="#ece7d2"/>
+    <rect x="176" y="120" width="138" height="66" fill="#ddd6e6"/>
+    <g stroke="#b3a78f" stroke-width="3"><path d="M30 116 h288"/><path d="M174 42 v148"/></g>
+    <rect x="30" y="42" width="288" height="148" fill="none" stroke="#b3a78f" stroke-width="3"/>
+    <!-- garden tree + dug hole -->
+    <rect x="352" y="150" width="6" height="30" fill="#5a3a26"/>
+    <ellipse cx="355" cy="146" rx="20" ry="16" fill="#3f7030"/>
+    <ellipse cx="372" cy="185" rx="16" ry="5" fill="#3a2a1a"/>
+    <!-- CHILDREN (bedroom, top-left) -->
+    <rect x="40" y="96" width="30" height="14" rx="3" fill="#8a5aa0"/>
+    <g class="bob"><g transform="translate(70,96)">
+      <ellipse cx="0" cy="18" rx="12" ry="4" fill="#00000018"/>
+      <rect x="-8" y="0" width="16" height="18" rx="6" fill="#d94a6a"/>
+      <circle cx="0" cy="-8" r="7" fill="#f0c9a0"/>
+      <path d="M-7 -9 a7 7 0 0 1 14 0 v-2 a7 7 0 0 0 -14 0z" fill="#e0a83a"/>
+    </g></g>
+    <g class="sway"><g transform="translate(112,98)">
+      <ellipse cx="0" cy="16" rx="12" ry="4" fill="#00000018"/>
+      <rect x="-8" y="-2" width="16" height="18" rx="6" fill="#3a8a5a"/>
+      <circle cx="0" cy="-10" r="7" fill="#a2683f"/>
+      <path d="M-7 -11 a7 7 0 0 1 14 0 v-1 a7 7 0 0 0 -14 0z" fill="#2a2020"/>
+      <rect x="-8" y="-13" width="16" height="3" rx="1.5" fill="#c04a3a"/>
+    </g></g>
+    <circle cx="92" cy="110" r="5" fill="#f2b43a" stroke="#c98a20"/>
+    <!-- BABY (nursery, top-right) -->
+    <rect x="220" y="86" width="56" height="24" rx="4" fill="#c9b48a"/>
+    <g stroke="#a68a5a" stroke-width="2"><path d="M226 86 v-8 M234 86 v-8 M242 86 v-8 M250 86 v-8 M258 86 v-8 M266 86 v-8"/></g>
+    <rect x="224" y="96" width="48" height="12" rx="3" fill="#f2eee6"/>
+    <g class="breathe"><g transform="translate(248,96)">
+      <ellipse cx="0" cy="0" rx="10" ry="6" fill="#f7d9c0"/>
+      <circle cx="6" cy="-2" r="6" fill="#e3ad82"/>
+      <path d="M6 -6 a6 6 0 0 1 0 8" fill="#3a2a20"/>
+      <path d="M3 -3 q1 1 2 0" stroke="#5a3a2a" stroke-width="1" fill="none"/>
+    </g></g>
+    <!-- FATHER (kitchen, bottom-left) -->
+    <rect x="120" y="150" width="40" height="8" fill="#8a8a90"/>
+    <g transform="translate(140,152)">
+      <ellipse cx="0" cy="30" rx="10" ry="4" fill="#00000018"/>
+      <rect x="-11" y="4" width="22" height="30" rx="7" fill="#c94a3a"/>
+      <rect x="-11" y="14" width="22" height="20" fill="#f2f2ee"/>
+      <circle cx="0" cy="-6" r="9" fill="#c98a5a"/>
+      <path d="M-9 -8 a9 9 0 0 1 18 0 v-3 a9 6 0 0 0 -18 0z" fill="#2a2018"/>
+      <path d="M-5 -3 q5 3 10 0" stroke="#3a2818" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <g class="stir"><rect x="8" y="2" width="4" height="16" rx="2" fill="#9c7040"/></g>
+    </g>
+    <g class="steam" fill="#ffffff" opacity="0.7"><ellipse cx="128" cy="140" rx="4" ry="7"/></g>
+    <rect x="118" y="146" width="20" height="8" rx="3" fill="#6a727a"/>
+    <!-- MOTHER (living room, bottom-right) -->
+    <rect x="210" y="156" width="52" height="22" rx="5" fill="#7a6aa0"/>
+    <g transform="translate(240,150)">
+      <ellipse cx="0" cy="30" rx="12" ry="4" fill="#00000018"/>
+      <rect x="-11" y="4" width="22" height="28" rx="7" fill="#3a6a9a"/>
+      <circle cx="0" cy="-6" r="9" fill="#e3ad82"/>
+      <path d="M-9 -7 a9 9 0 0 1 18 0 v-3 a9 8 0 0 0 -18 0z" fill="#5a3a24"/>
+      <path d="M9 -8 q9 6 5 18 q-3 -10 -7 -12z" fill="#5a3a24"/>
+      <g class="wave"><rect x="6" y="6" width="12" height="4" rx="2" fill="#3a6a9a"/></g>
+    </g>
+    <rect x="256" y="152" width="18" height="12" rx="1.5" fill="#3a3a3a"/>
+    <rect x="257" y="153" width="16" height="9" fill="#8ad0e0"/>
+    <rect x="254" y="164" width="22" height="3" rx="1" fill="#2a2a2a"/>
+    <!-- DOG (garden, right) -->
+    <g class="dash"><g transform="translate(360,172)">
+      <ellipse cx="0" cy="10" rx="14" ry="4" fill="#00000018"/>
+      <ellipse cx="0" cy="0" rx="14" ry="8" fill="#a2683f"/>
+      <circle cx="13" cy="-4" r="7" fill="#8a5a30"/>
+      <path d="M8 -8 l-2 -7 l5 4z" fill="#6a4020"/>
+      <circle cx="15" cy="-5" r="1.4" fill="#2a1a10"/>
+      <path d="M-14 0 q-8 -2 -10 3" stroke="#8a5a30" stroke-width="3" fill="none"/>
+      <rect x="-8" y="6" width="3" height="8" fill="#8a5a30"/><rect x="4" y="6" width="3" height="8" fill="#8a5a30"/>
+    </g></g>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#20222e" opacity="0"/>
+  </svg>
+  ${pin(90,150,'The father')}${pin(242,152,'The mother')}${pin(95,92,'The children')}${pin(248,86,'The baby')}${pin(360,168,'The dog')}`,
+},
+{
+  id:'review', emo:'🎓', name:'Mixed Review', tag:'Mixed&nbsp;Review',
+  era:['REVIEW','MIXED'], statusAfter:'Review',
+  review:true,
+  reviewPrompt:'A mixed review — everyday sentences, not from the scenes. Work through every exercise type here in Practice, then play the Quiz Show.',
+  fx:'freeze', darkFill:'#1e2430',
+  sceneTitle:'Mixed review · past continuous & simple past',
+  reportTitle:'Review',
+  studioTitle:'✍ Mixed Review',
+  headlinePH:'Title…',
+  fileslug:'mixed-review',
+  event:{ btn:'Review', clause:'when it happened', sfx:'bell', after:'bell', promptWatch:'', promptAfter:'' },
+  tenseBox:{ ex:"I <b>was watching</b> TV <b>when</b> the phone <b>rang</b>." },
+  witnesses:[],
+  spots:{},
+  vocab:[
+    {w:"while", pos:"conj.", def:"During the time that something else was happening (with a long action).", ex:"While I was cooking, the phone rang."},
+    {w:"when", pos:"conj.", def:"At the time that; often before a short, sudden action.", ex:"I was reading when the lights went out."},
+    {w:"as", pos:"conj.", def:"At the same moment that; just like 'while' for two actions together.", ex:"As we were leaving, it started to rain."},
+    {w:"suddenly", pos:"adv.", def:"Quickly and unexpectedly.", ex:"Suddenly, the door slammed shut."},
+    {w:"meanwhile", pos:"adv.", def:"At the same time, in another place.", ex:"Dad cooked dinner. Meanwhile, we set the table."},
+    {w:"during", pos:"prep.", def:"All through a period of time.", ex:"The phone rang during the film."},
+    {w:"just", pos:"adv.", def:"A very short time before; exactly at that time.", ex:"I had just sat down when the bell rang."},
+    {w:"at that moment", pos:"phrase", def:"Exactly then, at that point in time.", ex:"At that moment, the bus arrived."},
+  ],
+  starters:[
+    {t:'past cont', s:'It was Monday morning and everyone was rushing to get ready.'},
+    {t:'past cont', s:'I was still lying in bed when my alarm went off.'},
+    {t:'simple past', s:'Suddenly, the school bus drove past my window.'},
+    {t:'simple past', s:'I jumped up and got dressed in two minutes.'},
+    {t:'when', s:'My mum was making coffee when I ran into the kitchen.'},
+    {t:'while', s:'While she was driving me to school, I ate my toast.'},
+  ],
+  wordbank:['getting up','waiting','playing','cooking','talking','was','were','when','while','suddenly','meanwhile','the bus','the phone','a party','rang','arrived'],
+  practice:[
+    {q:'I ___ having breakfast when the postman knocked.', opts:['was','were'], a:'was', tip:'I → was.'},
+    {q:'The children ___ playing in the park all afternoon.', opts:['was','were'], a:'were', tip:'More than one → were.'},
+    {q:'She ___ for the bus when it started to rain. (wait)', opts:['was waiting','waited'], a:'was waiting', tip:'Action in progress → past continuous.'},
+    {q:'The phone ___ three times and then stopped. (ring)', opts:['rang','was ringing'], a:'rang', tip:'One finished action → simple past.'},
+    {q:'We were watching a film ___ the lights went out.', opts:['when','while'], a:'when', tip:'when + the sudden event.'},
+    {q:'___ I was cooking dinner, my brother laid the table.', opts:['While','When'], a:'While', tip:'while + the ongoing action.'},
+    {q:'___ you sleeping when I called last night? (question)', opts:['Were','Did'], a:'Were', tip:'Past continuous question → Were + subject + -ing?'},
+    {q:'I ___ the answer, so I put my hand up. (know)', opts:['knew','was knowing'], a:'knew', tip:'State verbs like know → simple past, not continuous.'},
+  ],
+  tenseEx:[
+    {q:'I ___ my teeth when the water suddenly went cold. (brush)', opts:['was brushing','brushed'], a:'was brushing', tip:'In the middle of it when interrupted → past continuous.'},
+    {q:'The bus ___ ten minutes late this morning. (arrive)', opts:['arrived','was arriving'], a:'arrived', tip:'One completed action → simple past.'},
+    {q:'While we ___ football, it began to snow. (play)', opts:['were playing','played'], a:'were playing', tip:'Longer action in progress → past continuous.'},
+    {q:'She ___ the door and went outside. (open)', opts:['opened','was opening'], a:'opened', tip:'One quick finished action → simple past.'},
+    {q:'At eight o clock, I ___ ready for school. (get)', opts:['was getting','got'], a:'was getting', tip:'In progress at that time → past continuous.'},
+    {q:'My dad ___ the dinner while we set the table. (cook)', opts:['was cooking','cooked'], a:'was cooking', tip:'Background action in progress → past continuous.'},
+    {q:'When the film ___ , everyone clapped. (finish)', opts:['finished','was finishing'], a:'finished', tip:'One point in time → simple past.'},
+    {q:'The dog ___ loudly when the doorbell rang. (bark)', opts:['was barking','barked'], a:'was barking', tip:'Ongoing when interrupted → past continuous.'},
+  ],
+  ing:[
+    {q:'get → ___', opts:['getting','geting'], a:'getting', tip:'Double the final consonant: getting.'},
+    {q:'run → ___', opts:['running','runing'], a:'running', tip:'Double the final consonant: running.'},
+    {q:'make → ___', opts:['making','makeing'], a:'making', tip:'Drop the silent -e: making.'},
+    {q:'wait → ___', opts:['waiting','waitting'], a:'waiting', tip:'Two vowels together — no doubling: waiting.'},
+    {q:'lie → ___', opts:['lying','lieing'], a:'lying', tip:'-ie changes to -ying: lying.'},
+    {q:'travel → ___', opts:['travelling','traveling'], a:'travelling', tip:'British English doubles the l: travelling.'},
+    {q:'have → ___', opts:['having','haveing'], a:'having', tip:'Drop the silent -e: having.'},
+    {q:'play → ___', opts:['playing','plaing'], a:'playing', tip:'Keep the -y: playing.'},
+  ],
+  mistakes:[
+    {q:'I were getting up when the alarm rang.', bad:'were', fix:'was', tip:'I → was.'},
+    {q:'The students was listening to the teacher.', bad:'was', fix:'were', tip:'More than one → were.'},
+    {q:'She was wait for the bus at the stop.', bad:'wait', fix:'waiting', tip:'was + -ing → was waiting.'},
+    {q:'The phone was ringing three times and then stopped.', bad:'ringing', fix:'rang', tip:'A finished, counted action → rang.'},
+    {q:'We were watching TV while the lights went out.', bad:'while', fix:'when', tip:'A sudden event → when.'},
+    {q:'My brother was lay the table for dinner.', bad:'lay', fix:'laying', tip:'was + -ing → was laying.'},
+    {q:'I was knowing the answer to the question.', bad:'knowing', fix:'knew', tip:'State verb → knew, not continuous.'},
+    {q:'While we was walking to school, it rained.', bad:'was', fix:'were', tip:'We → were.'},
+  ],
+  match:[
+    {a:'I was getting dressed', b:'when the doorbell rang'},
+    {a:'We were waiting at the bus stop', b:'when the bus finally arrived'},
+    {a:'She was talking on the phone', b:'when the battery died'},
+    {a:'They were playing football', b:'when it started to rain'},
+    {a:'Dad was cooking dinner', b:'when the smoke alarm beeped'},
+    {a:'The guests were dancing', b:'when the music stopped'},
+  ],
+  scramble:[
+    {answer:'I was having breakfast when the postman knocked on the door.'},
+    {answer:'We were waiting for the bus when it started to rain.'},
+    {answer:'She was talking on the phone when the doorbell rang.'},
+    {answer:'While the children were playing outside their mother was cooking dinner.'},
+  ],
+  stories:[
+    {title:'A terrible morning', text:'Yesterday morning everything went wrong. When my alarm {0}, I {1} deeply and did not hear it. While I {2} in bed, the school bus {3} without me. I {4} out of bed and quickly {5} dressed. Downstairs, my mum {6} coffee when I ran in. She {7} me a lift to school. While she {8} me there, I ate a piece of toast. Luckily, we {9} just in time.', gaps:[
+      {opts:['rang','was ringing'], a:'rang'},
+      {opts:['was sleeping','slept'], a:'was sleeping'},
+      {opts:['was lying','lay'], a:'was lying'},
+      {opts:['left','was leaving'], a:'left'},
+      {opts:['jumped','was jumping'], a:'jumped'},
+      {opts:['got','was getting'], a:'got'},
+      {opts:['was making','made'], a:'was making'},
+      {opts:['offered','was offering'], a:'offered'},
+      {opts:['was driving','drove'], a:'was driving'},
+      {opts:['arrived','were arriving'], a:'arrived'},
+    ]},
+    {title:'The birthday party', text:'Last Saturday we {0} a party for my best friend. While we {1} the room with balloons, the first guests {2}. Everyone {3} and laughed for hours. At nine o clock, we {4} the cake in when the lights suddenly went out. While my friend {5} out the candles, someone {6} a photo. At that moment her phone {7} loudly: it was her grandmother. She {8} to say happy birthday. When the call {9}, we all sang together.', gaps:[
+      {opts:['had','were having'], a:'had'},
+      {opts:['were decorating','decorated'], a:'were decorating'},
+      {opts:['arrived','were arriving'], a:'arrived'},
+      {opts:['danced','was dancing'], a:'danced'},
+      {opts:['were carrying','carried'], a:'were carrying'},
+      {opts:['was blowing','blew'], a:'was blowing'},
+      {opts:['took','was taking'], a:'took'},
+      {opts:['rang','was ringing'], a:'rang'},
+      {opts:['called','was calling'], a:'called'},
+      {opts:['ended','was ending'], a:'ended'},
+    ]},
+  ],
+  listen:[
+    {say:'I was getting up when the alarm rang.', opts:['I was getting up when the alarm rang.','I got up when the alarm rang.','I was getting up when the alarm rings.'], a:'I was getting up when the alarm rang.'},
+    {say:'The children were playing in the park.', opts:['The children was playing in the park.','The children were playing in the park.','The children played in the park.'], a:'The children were playing in the park.'},
+    {say:'The bus arrived late this morning.', opts:['The bus arrived late this morning.','The bus was arriving late this morning.','The bus arrives late this morning.'], a:'The bus arrived late this morning.'},
+    {say:'She was cooking dinner when the phone rang.', opts:['She cooked dinner when the phone rang.','She was cooking dinner when the phone rang.','She was cooking dinner when the phone rings.'], a:'She was cooking dinner when the phone rang.'},
+    {say:'While we were walking home, it started to rain.', opts:['While we were walking home, it started to rain.','When we were walking home, it started to rain.','While we walked home, it was starting to rain.'], a:'While we were walking home, it started to rain.'},
+    {say:'We were dancing when the music stopped.', opts:['We danced when the music stopped.','We were dancing when the music stopped.','We were dancing when the music stops.'], a:'We were dancing when the music stopped.'},
+  ],
+  svg:()=>`<svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="revwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe6d6"/><stop offset="1" stop-color="#e3d7c2"/></linearGradient>
+      <linearGradient id="revboard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f5d47"/><stop offset="1" stop-color="#264c3a"/></linearGradient>
+    </defs>
+    <rect width="400" height="220" fill="url(#revwall)"/>
+    <rect x="14" y="14" width="372" height="176" rx="7" fill="#8a5a34"/>
+    <rect x="17" y="17" width="366" height="170" rx="5" fill="#6f4626"/>
+    <rect x="22" y="22" width="356" height="160" rx="3" fill="url(#revboard)"/>
+    <text x="200" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#fff7e0" font-weight="bold">Mixed Review</text>
+    <line x1="118" y1="55" x2="282" y2="55" stroke="#fff7e0" stroke-width="1.5" opacity=".7"/>
+    <g font-family="Segoe UI,Arial,sans-serif" fill="#eaf3ea">
+      <text x="42" y="88" font-size="16">was / were + <tspan fill="#ffe27a">-ing</tspan></text>
+      <text x="42" y="114" font-size="13"><tspan fill="#ffe27a">when</tspan> + past simple  (short action)</text>
+      <text x="42" y="134" font-size="13"><tspan fill="#ffe27a">while</tspan> + past continuous  (long action)</text>
+      <text x="42" y="164" font-size="12" font-style="italic" fill="#dfeede">"I was watching TV when the phone rang."</text>
+    </g>
+    <g transform="translate(332,148)" stroke="#eaf3ea" stroke-width="2" fill="none"><circle cx="0" cy="0" r="17"/><path d="M0 0 v-10 M0 0 l8 5"/></g>
+    <g transform="translate(320,88)"><path d="M-15 0 h15 v20 h-15z" fill="none" stroke="#eaf3ea" stroke-width="2"/><path d="M0 0 h15 v20 h-15z" fill="none" stroke="#eaf3ea" stroke-width="2"/><path d="M0 0 v20" stroke="#eaf3ea" stroke-width="2"/></g>
+    <rect x="22" y="182" width="356" height="6" fill="#5c3a1f"/>
+    <rect x="296" y="183" width="22" height="4" rx="2" fill="#f4f0e6"/>
+    <rect x="324" y="183" width="14" height="4" rx="2" fill="#ffe27a"/>
+    <rect id="flash" width="400" height="220" fill="#fff"/>
+    <rect id="darken" width="400" height="220" fill="#1e2430" opacity="0"/>
+  </svg>`,
+},
 ];
 
 /* ===== ENGINE ===== */
@@ -3300,14 +3643,18 @@ function renderScenePicker(){
 }
 function renderScene(){ document.getElementById('sceneHost').innerHTML=S.svg(); document.getElementById('stage').setAttribute('data-fx',S.fx); }
 function applySceneChrome(){
+  const rv=!!S.review;
   document.getElementById('hdrTag').innerHTML=S.tag;
   document.getElementById('hdrEra').innerHTML=S.era[0]+'<br>'+S.era[1];
   document.getElementById('sceneTitle').textContent=S.sceneTitle;
   document.getElementById('reportTitle').textContent=S.reportTitle;
   document.getElementById('studioTitle').textContent=S.studioTitle;
   document.getElementById('headlineBox').placeholder=S.headlinePH;
-  document.getElementById('eventBtn').textContent=S.event.btn;
-  document.getElementById('prompt').innerHTML=S.event.promptWatch;
+  document.getElementById('eventBtn').style.display=rv?'none':'';
+  document.getElementById('taskBtn').style.display=rv?'none':'';
+  const sb=document.querySelector('.scenebtns'); if(sb) sb.style.display=rv?'none':'';
+  if(!rv) document.getElementById('eventBtn').textContent=S.event.btn;
+  document.getElementById('prompt').innerHTML=rv?(S.reviewPrompt||'A mixed review — no scene to watch. Open the <b>Practice</b> tab and work through every exercise type, then try the <b>Quiz Show</b>.'):S.event.promptWatch;
 }
 function loadScene(id){
   const sc=SCENES.find(x=>x.id===id); if(!sc)return;
@@ -3321,7 +3668,8 @@ function loadScene(id){
   const tb=document.getElementById('taskBtn'); tb.classList.remove('primary'); tb.textContent='✍ Account';
   renderVocab(); renderPractice(); renderLog();
   studioBuilt=false; howtoBuilt=false;
-  showPane('grammar', document.querySelector('.tab'));
+  if(S.review) showPane('practice', document.querySelector('.tab[data-pane="practice"]'));
+  else showPane('grammar', document.querySelector('.tab'));
   if(entered) SFX.play('chirp');
 }
 function replayScene(){
