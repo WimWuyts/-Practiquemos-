@@ -29,6 +29,7 @@ window.M = window.M || {};
     document.body.appendChild(main);
     liveRegion = el("div", { class: "sr-only", "aria-live": "polite" });
     document.body.appendChild(liveRegion);
+    if (M.reviewMode()) document.body.appendChild(el("div", { class: "reviewbadge", text: "REVIEWER — Skip enabled" }));
   }
 
   function setActive(screen) {

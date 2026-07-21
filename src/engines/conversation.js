@@ -22,6 +22,13 @@ window.M = window.M || {};
       ]));
       mount.appendChild(chat);
       mount.appendChild(interact);
+      // Reviewer mode: skip the whole dialogue and move straight on (advance the lesson
+      // / leave the Talk screen) rather than showing the finished screen.
+      if (M.reviewMode()) {
+        mount.appendChild(el("div", { class: "btn-row", style: "justify-content:flex-end" }, [
+          el("button", { class: "btn ghost small", style: "opacity:.7;font-size:.85rem", onclick: function () { done(true); } }, ["Skip ▸"]),
+        ]));
+      }
 
       function who(id) { return CHAR[id] || id; }
       function bubble(side, name, text, charId) {

@@ -175,6 +175,10 @@ body:not([data-motion="reduce"]) .rec-dot.on{animation:pulse 1s infinite}
 .hero h1{font-family:var(--font-display)}
 .recommend{box-shadow:var(--elev-2),var(--hairline)}
 .recommend h2{font-family:var(--font-display)}
+/* reviewer/demo badge */
+.reviewbadge{position:fixed;right:10px;bottom:10px;z-index:50;background:var(--accent-2);color:#fff;
+  font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:.35rem .7rem;border-radius:999px;
+  box-shadow:var(--elev-2);pointer-events:none;opacity:.9}
 /* completion check draw */
 .done-badge{width:64px;height:64px;border-radius:50%;background:var(--good-bg);display:grid;place-items:center;color:var(--good);margin:0 auto .4rem}
 body:not([data-motion="reduce"]) .done-badge{animation:popCheck .4s var(--ease) both}

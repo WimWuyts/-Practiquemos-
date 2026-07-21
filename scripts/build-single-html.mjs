@@ -82,3 +82,10 @@ const out = join(ROOT, "dist", "Marta_English.html");
 writeFileSync(out, html, "utf8");
 const kb = (Buffer.byteLength(html, "utf8") / 1024).toFixed(0);
 console.log("BUILT", out, kb + " KB");
+
+// Reviewer/demo build — identical app with a "Skip ▸" on every activity so a helper can
+// page through everything without answering. Enabled by baking in window.MARTA_REVIEW.
+const reviewHtml = html.replace("<body>", '<body>\n<script>window.MARTA_REVIEW=true;</script>');
+const rout = join(ROOT, "dist", "Marta_English_REVIEW.html");
+writeFileSync(rout, reviewHtml, "utf8");
+console.log("BUILT", rout, (Buffer.byteLength(reviewHtml, "utf8") / 1024).toFixed(0) + " KB (reviewer)");

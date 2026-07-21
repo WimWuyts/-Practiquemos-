@@ -14,6 +14,12 @@ window.M = window.M || {};
     (children || []).forEach(function (c) { if (c == null) return; n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
     return n;
   }
+  // Reviewer/demo mode: lets a helper page through every activity without answering.
+  // On when the file bakes in window.MARTA_REVIEW, or when the URL carries ?review / #review.
+  M.reviewMode = function () {
+    try { return window.MARTA_REVIEW === true || /[?#&]review\b/i.test(location.href || ""); }
+    catch (e) { return false; }
+  };
   M.dom = {
     el: el,
     clear: function (node) { while (node.firstChild) node.removeChild(node.firstChild); return node; },

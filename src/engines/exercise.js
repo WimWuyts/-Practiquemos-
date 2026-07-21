@@ -969,7 +969,17 @@ window.M = window.M || {};
       var fn = R[act.type];
       if (!fn) { mount.appendChild(el("p", { class: "muted", text: "…" })); return done(true); }
       M.store.recordAttempt(act.id, true);
-      fn(mount, act, function (ok) { done(ok); });
+      var finished = false;
+      function finish(ok) { if (finished) return; finished = true; done(ok); }
+      fn(mount, act, finish);
+      // Reviewer mode: one Skip button covers EVERY activity type — page through without answering.
+      // (Conversations add their own Skip inside the dialogue, so don't double up.)
+      if (M.reviewMode() && act.type !== "conversation") {
+        mount.appendChild(el("div", { class: "btn-row", style: "margin-top:.3rem;justify-content:flex-end" }, [
+          el("button", { class: "btn ghost small", style: "opacity:.7;font-size:.85rem", title: "Reviewer: skip without answering", onclick: function () { finish(true); } },
+            ["Skip ▸"]),
+        ]));
+      }
     },
     types: Object.keys(R),
   };
