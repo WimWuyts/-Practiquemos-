@@ -3,6 +3,7 @@ window.M = window.M || {};
 (function (M) {
   var el, dom;
   function init() { el = M.dom.el; dom = M.dom; }
+  function escapeHtml(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
   function avatar(cls) { return el("span", { class: "avatar " + (cls || ""), html: M.data.avatarSvg, role: "img", "aria-label": "Marta" }); }
 
@@ -141,34 +142,44 @@ window.M = window.M || {};
     var lesson = M.get.lesson(lessonId);
     if (!lesson) { mount.appendChild(el("p", { text: "…" })); return; }
     var acts = lesson.activities, idx = 0;
-    var head = el("div", {});
-    var bar = el("div", { class: "progress" }, [el("span", {})]);
-    var stage = el("div", { class: "stage card" });
     mount.appendChild(el("div", { class: "btn-row" }, [
       el("button", { class: "btn ghost small", onclick: function () { M.router.go("lessons"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.back")]),
     ]));
-    mount.appendChild(head); mount.appendChild(bar); mount.appendChild(stage);
-    function drawHead() {
-      dom.clear(head);
-      head.appendChild(el("h1", { text: lesson.title.en }));
-      head.appendChild(el("p", { class: "muted", text: lesson.canDo.en + (M.i18n.helpAvailable() ? " · " + lesson.canDo.hu : "") }));
-      bar.firstChild.style.width = Math.round((idx / acts.length) * 100) + "%";
+    // themed scene band — drawn once, gives the lesson a sense of place
+    if (M.scenes) {
+      mount.appendChild(el("div", { class: "scene", html: M.scenes.band(lesson.unitId) + '<span class="label">' +
+        escapeHtml(lesson.title.en) + '<span class="sub">' + escapeHtml(lesson.canDo.en) + '</span></span>' }));
+    } else {
+      mount.appendChild(el("h1", { text: lesson.title.en }));
+    }
+    // one persistent progress spine + one persistent stage (no title flashing per step)
+    var bar = el("div", { class: "progress" }, [el("span", {})]);
+    var stage = el("div", { class: "stage card" });
+    mount.appendChild(bar); mount.appendChild(stage);
+    function setBar() { bar.firstChild.style.width = Math.round((idx / acts.length) * 100) + "%"; }
+    function fadeStage() {
+      if (document.body.dataset.motion === "reduce") return;
+      stage.style.animation = "none"; void stage.offsetWidth; stage.style.animation = "";
     }
     function run() {
-      drawHead();
+      setBar();
       dom.clear(stage);
+      fadeStage();
       if (idx >= acts.length) return complete();
       M.exercise.render(stage, acts[idx], function () {
         idx++;
-        bar.firstChild.style.width = Math.round((idx / acts.length) * 100) + "%";
+        setBar();
         run();
       });
     }
     function complete() {
       M.store.completeLesson(lessonId);
       dom.clear(stage);
-      stage.appendChild(el("div", { class: "avatar-row" }, [avatar("small"), el("h2", { text: M.i18n.t("lesson.complete") })]));
-      stage.appendChild(el("p", { text: M.i18n.t("lesson.complete.msg") }));
+      fadeStage();
+      setBar();
+      stage.appendChild(el("div", { class: "done-badge", "aria-hidden": "true", html: dom.icon("check") }));
+      stage.appendChild(el("div", { class: "avatar-row", style: "justify-content:center" }, [avatar("small"), el("h2", { style: "margin:0", text: M.i18n.t("lesson.complete") })]));
+      stage.appendChild(el("p", { style: "text-align:center", text: M.i18n.t("lesson.complete.msg") }));
       if (M.i18n.helpAvailable()) stage.appendChild(el("p", { class: "muted", text: M.i18n.hu("lesson.complete.msg") }));
       var next = pickRecommended();
       // deep-link to practise what was just learned, or talk to the family

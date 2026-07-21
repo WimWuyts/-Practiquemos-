@@ -3,6 +3,20 @@ window.M = window.M || {};
 (function (M) {
   var el = null, dom = null;
   function ready() { el = M.dom.el; dom = M.dom; }
+  function reduceMotion() { return document.body.dataset.motion === "reduce"; }
+  // After an answer: on a correct recognition, auto-advance after a short reveal beat
+  // (with a manual escape); on a wrong answer, always wait for a deliberate tap.
+  function advance(mount, ok, goNext) {
+    if (ok && !reduceMotion()) {
+      var row = el("div", { class: "btn-row" }, [
+        el("button", { class: "btn ghost small", onclick: function () { clearTimeout(t); goNext(); } }, [M.i18n.t("btn.continue")]),
+      ]);
+      mount.appendChild(row);
+      var t = setTimeout(function () { if (document.body.contains(row)) goNext(); }, 900);
+    } else {
+      mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: goNext }, [M.i18n.t("btn.continue")])]));
+    }
+  }
 
   // shared UI bits ------------------------------------------------------------
   function speakBtn(text, label) {
@@ -90,10 +104,7 @@ window.M = window.M || {};
           Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
           feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.listen") + " — " + target.headword));
           if (ok) correctCount++;
-          mount.appendChild(el("div", { class: "btn-row" }, [
-            el("button", { class: "btn", onclick: function () { idx++; if (idx < items.length) round(); else done(true); } },
-              [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
-          ]));
+          advance(mount, ok, function () { idx++; if (idx < items.length) round(); else done(true); });
         });
         opts.appendChild(b);
       });
@@ -133,7 +144,7 @@ window.M = window.M || {};
           h.classList.add("correct"); h.appendChild(el("span", { class: "mark", html: dom.icon("check") }));
           M.store.touchItem(lx.id, "meaning", true); matched++;
           selectedEn = null;
-          if (matched === items.length) { feedback(mount, true, M.i18n.t("fb.correct")); mount.appendChild(nextBtn(done)); }
+          if (matched === items.length) { feedback(mount, true, M.i18n.t("fb.correct")); advance(mount, true, function () { done(true); }); }
         } else {
           h.classList.add("wrong"); setTimeout(function () { h.classList.remove("wrong"); }, 600);
         }
@@ -413,7 +424,7 @@ window.M = window.M || {};
           M.store.touchItem(target.id, "meaning", ok);
           Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
           feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost") + " — " + target.headword));
-          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < items.length) round(); else done(true); } }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+          advance(mount, ok, function () { idx++; if (idx < items.length) round(); else done(true); });
         });
         opts.appendChild(b);
       });
@@ -449,7 +460,7 @@ window.M = window.M || {};
           b.classList.add(ok ? "correct" : "wrong");
           Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
           feedback(stage, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.listen") + " — " + target));
-          stage.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < pairs.length) { dom.clear(mount); rebuild(); round(); } else done(true); } }, [idx < pairs.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+          advance(stage, ok, function () { idx++; if (idx < pairs.length) { dom.clear(mount); rebuild(); round(); } else done(true); });
         });
         opts.appendChild(b);
       });
@@ -519,7 +530,7 @@ window.M = window.M || {};
           Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
           if (ok) M.audio.speak(it.text.replace("___", it.answer));
           feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost") + " — " + it.answer));
-          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < items.length) round(); else done(true); } }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+          advance(mount, ok, function () { idx++; if (idx < items.length) round(); else done(true); });
         });
         opts.appendChild(b);
       });
@@ -608,7 +619,7 @@ window.M = window.M || {};
           b.classList.add(ok ? "correct" : "wrong");
           Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
           feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost")));
-          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < groups.length) round(); else done(true); } }, [idx < groups.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+          advance(mount, ok, function () { idx++; if (idx < groups.length) round(); else done(true); });
         });
         opts.appendChild(b);
       });

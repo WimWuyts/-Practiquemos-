@@ -33,26 +33,47 @@ window.M = window.M || {};
         chat.appendChild(turn); turn.scrollIntoView({ block: "nearest" });
         return turn.querySelector(".bubble");
       }
+      // a short "typing…" beat before the partner speaks — makes the chat feel alive
+      function typingBubble(name, charId) {
+        var turn = el("div", { class: "turn them", "aria-hidden": "true" }, [
+          el("span", { class: "face", html: M.avatarFor(charId || dlg.characterId) }),
+          el("div", { class: "bubble" }, [
+            el("div", { class: "who", text: name }),
+            el("div", { class: "typing" }, [el("i", {}), el("i", {}), el("i", {})]),
+          ]),
+        ]);
+        chat.appendChild(turn); turn.scrollIntoView({ block: "nearest" });
+        return turn;
+      }
 
       function go(nodeId) {
         dom.clear(interact);
         var node = dlg.nodes[nodeId];
         if (!node) return finish();
+        if (!node.speaker) return proceed(node);
         // character line (with optional variation for non-identical repeats)
-        if (node.speaker) {
-          var line = node.text;
-          if (node.alts && node.alts.length) {
-            M._seed = (M._seed * 9301 + 49297) % 233280;
-            line = node.alts[Math.floor(M._seed / 233280 * node.alts.length)] || node.text;
-          }
-          node = Object.assign({}, node, { text: line, tts: line.en });
-          var bb = bubble("them", who(node.speaker), node.text.en, node.speaker);
-          M.audio.speak(node.tts || node.text.en);
-          if (M.i18n.helpAvailable() && node.text.hu) bb.appendChild(el("div", { class: "muted", style: "margin-top:.3rem;font-size:.9rem", text: node.text.hu }));
+        var line = node.text;
+        if (node.alts && node.alts.length) {
+          M._seed = (M._seed * 9301 + 49297) % 233280;
+          line = node.alts[Math.floor(M._seed / 233280 * node.alts.length)] || node.text;
         }
+        node = Object.assign({}, node, { text: line, tts: line.en });
+        if (document.body.dataset.motion === "reduce") { emit(node); proceed(node); return; }
+        var typing = typingBubble(who(node.speaker), node.speaker);
+        setTimeout(function () {
+          if (typing.parentNode) typing.parentNode.removeChild(typing);
+          emit(node); proceed(node);
+        }, 700);
+      }
+      function emit(node) {
+        var bb = bubble("them", who(node.speaker), node.text.en, node.speaker);
+        M.audio.speak(node.tts || node.text.en);
+        if (M.i18n.helpAvailable() && node.text.hu) bb.appendChild(el("div", { class: "muted", style: "margin-top:.3rem;font-size:.9rem", text: node.text.hu }));
+      }
+      function proceed(node) {
         var r = node.response || { mode: "end" };
         if (r.mode === "end") return finish();
-        interact.appendChild(el("p", { class: "prompt", text: M.i18n.t("conv.your_turn") }));
+        // gentle "listen again" affordance — no jarring "Your turn" banner
         interact.appendChild(el("div", { class: "btn-row" }, [
           el("button", { class: "btn ghost small", onclick: function () { M.audio.speak(node.tts || node.text.en); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")]),
         ]));

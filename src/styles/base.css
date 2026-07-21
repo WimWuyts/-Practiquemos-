@@ -1,43 +1,76 @@
 /* Base design system — warm, adult, calm. Designed for a 70+ learner. */
 :root{
-  /* Direction C — "Rustig & modern": off-white ground, one deep teal accent, soft blush support */
-  --bg:#f5f6f4;            /* soft off-white with a faint green bias */
+  /* Warm, layered "paper" ground — deep teal accent + honey warm secondary */
+  --bg:#edefe8;            /* warmer, slightly darker so white cards lift */
   --surface:#ffffff;
-  --surface-2:#eef1ee;
-  --ink:#20241f;           /* deep readable ink */
-  --ink-soft:#5b615a;
+  --surface-2:#e7ebe2;
+  --surface-sunk:#e1e5db;
+  --warm-soft:#f7ecd8;     /* honey tint for alternating sections/scenes */
+  --warm-line:#ecdcc0;
+  --ink:#231f1a;           /* warm deep ink */
+  --ink-soft:#5c554c;
   --accent:#14746f;        /* deep calm teal */
   --accent-ink:#ffffff;
-  --accent-soft:#eaf4f3;   /* teal tint for chips/icon wells */
-  --accent-2:#c06a4a;      /* warm clay support (used sparingly) */
-  --blush:#e7b6a0;
-  --line:#e3e6e2;
+  --accent-soft:#e6f2f0;   /* teal tint for chips/icon wells */
+  --accent-2:#a85436;      /* darkened clay → AA on white */
+  --warm:#c8842b;          /* honey/amber secondary accent */
+  --blush:#e7b6a0;         /* decorative only */
+  --line:#e2ddd3;          /* warm hairline */
   --good:#14746f;
   --good-bg:#e7f1f0;
   --gentle:#9a6a2b;
   --gentle-bg:#f6eede;
   --focus:#14746f;
-  --radius:18px;
-  --shadow:0 10px 30px -18px rgba(20,60,58,.45);
-  --shadow-soft:0 2px 10px rgba(30,50,45,.06);
+  --r-sm:12px; --r-md:16px; --r-lg:20px; --radius:18px;
+  --space:1.2rem;
+  --elev-1:0 1px 2px rgba(30,50,45,.05), 0 2px 8px -4px rgba(20,60,58,.12);
+  --elev-2:0 4px 10px -4px rgba(20,60,58,.14), 0 14px 30px -16px rgba(20,60,58,.30);
+  --hairline:inset 0 1px 0 rgba(255,255,255,.65);
+  --shadow:var(--elev-2);
+  --shadow-soft:var(--elev-1);
   --tap:48px;
+  --ease:cubic-bezier(.22,.61,.36,1);
   --font: ui-sans-serif, system-ui, "Segoe UI", "Helvetica Neue", "Avenir Next", Roboto, Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Palatino", "Book Antiqua", Georgia, ui-serif, serif;
   --fs:20px;
 }
 *{box-sizing:border-box}
 html{font-size:var(--fs)}
 body{
-  margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  margin:0;color:var(--ink);font-family:var(--font);
   line-height:1.6;font-size:1rem;-webkit-text-size-adjust:100%;
+  /* layered warm ground so the surface reads as a calm place, not blank paper */
+  background:
+    radial-gradient(1100px 560px at 100% -8%, rgba(200,132,43,.07), transparent 60%),
+    radial-gradient(900px 520px at -10% 108%, rgba(20,116,111,.06), transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
 }
 body[data-textsize="large"]{--fs:23px}
 body[data-textsize="xlarge"]{--fs:26px}
-body[data-motion="reduce"] *{animation:none !important;transition:none !important}
-h1,h2,h3{line-height:1.25;color:var(--ink);margin:0 0 .5rem}
-h1{font-size:1.7rem}h2{font-size:1.35rem}h3{font-size:1.15rem}
+body[data-motion="reduce"] *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+h1,h2,h3{line-height:1.22;color:var(--ink);margin:0 0 .5rem}
+h1{font-size:1.9rem;font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:1.45rem}h3{font-size:1.18rem}
+
+/* ---- motion system (all auto-gated by the reduce rules above) ---- */
+@property --p{syntax:'<number>';inherits:true;initial-value:0}
+@keyframes stageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes bubbleIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes nudge{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@keyframes popCheck{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes typingDot{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+body:not([data-motion="reduce"]) .stage,
+body:not([data-motion="reduce"]) .card,
+body:not([data-motion="reduce"]) .wordcard,
+body:not([data-motion="reduce"]) .chat{animation:stageIn .28s var(--ease) both}
 p{margin:0 0 .8rem}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+/* the main region is a programmatic focus target for screen-reader/keyboard reset on
+   navigation — keep the focus for a11y, but don't paint a full-width box around it */
+#main:focus,#main:focus-visible{outline:none}
 button{font-family:inherit}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .container{max-width:920px;margin:0 auto;padding:1rem 1.1rem 4rem}
@@ -50,7 +83,9 @@ button{font-family:inherit}
   border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);
   font-size:1.02rem;font-weight:600;cursor:pointer;text-decoration:none;
 }
-.btn:hover{filter:brightness(1.05)}
+.btn{transition:transform .08s var(--ease), filter .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease}
+.btn:hover{filter:brightness(1.04)}
+.btn:not(.ghost):not(.secondary){box-shadow:var(--elev-1)}
 .btn:active{transform:translateY(1px)}
 .btn.secondary{background:var(--surface);color:var(--accent);}
 .btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
@@ -61,8 +96,9 @@ button{font-family:inherit}
 
 /* Cards */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:var(--shadow-soft);padding:1.4rem;margin:0 0 1.1rem}
-.card.raised{box-shadow:var(--shadow)}
+  box-shadow:var(--elev-1),var(--hairline);padding:1.4rem;margin:0 0 1.1rem}
+.card.raised{box-shadow:var(--elev-2),var(--hairline)}
+.card.warm{background:linear-gradient(180deg,#fffdf9,var(--warm-soft));border-color:var(--warm-line)}
 .card h2{margin-top:0}
 .muted{color:var(--ink-soft)}
 .pill{display:inline-block;padding:.2rem .7rem;border-radius:999px;background:var(--surface-2);

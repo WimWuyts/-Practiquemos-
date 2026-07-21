@@ -2,6 +2,26 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.7.0] — 2026-07 — De-clunk & flow: 11-agent "feel" review acted on
+
+The content was good, but the app felt *houterig* (clunky/stiff) and the layout a bit boring. An 11-agent review focused entirely on **feel, flow, motion and visual craft** (see `docs/REVIEW_TEAM_v2.md` and `docs/REVIEW_FINDINGS_AND_ACTIONS.md`) drove this release.
+
+### Flow (the headline)
+- **Auto-advance on correct recognition.** The six recognition activities (listen-choose, match, icon-choice, minimal-pair, gap-fill, odd-one-out) now move on ~0.9 s after a right answer, with a manual "Continue" escape — this removes about half the dead taps in every lesson and turns the stop-start *click-Continue-blank-new-screen* rhythm into a continuous flow. Wrong answers still wait for a deliberate tap. (Auto-advance is disabled under reduced-motion.)
+- **One persistent lesson surface.** The lesson runner now draws its header once and **cross-fades each activity into the same stage** instead of wiping and rebuilding the whole screen — no more title flashing between steps.
+
+### Feel & motion
+- **A tasteful, reduced-motion-respecting motion system**: cards/stages fade-and-rise in, answer marks pop, wrong options nudge, the progress spine and progress ring ease, chat bubbles float in. Every animation is double-gated behind `prefers-reduced-motion` and the app's `data-motion="reduce"` setting.
+- **Conversations feel alive.** Each partner line is now preceded by a short **"typing…" beat**, avatars are larger, and the jarring "Your turn" banner is gone in favour of a quiet "listen again" affordance.
+
+### Visual craft (the "boring layout")
+- **Warmer, layered visual identity**: a warm paper ground with soft radial light, elevated white cards with a hairline highlight, a serif display face (system fonts only) for headings, and a darkened clay accent that meets AA.
+- **Illustrated scene bands.** New offline SVG header illustrations per theme (welcome, greeting/home, family table, travel, outdoors, online/teaching, airport sky) give each lesson a sense of *place* rather than a form.
+- **Warmer lesson completion** with an animated check badge.
+
+### Fixes
+- The focused `<main>` no longer paints a stray full-width outline on navigation (focus kept for screen readers).
+
 ## [1.6.0] — 2026-07 — Speaking-first: 5-agent review acted on
 
 A 5-agent critical review (pedagogy, exercises, speaking, UX, relevance) drove this release — see `docs/REVIEW_FINDINGS_AND_ACTIONS.md`.

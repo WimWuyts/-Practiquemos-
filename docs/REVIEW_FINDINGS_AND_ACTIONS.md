@@ -1,4 +1,36 @@
-# Critical review (5-agent panel) & actions — v1.6
+# Critical review panels & actions
+
+---
+
+## v1.7 — "De-clunk & flow" panel (11 agents)
+
+Brief: the content was good, but the app felt **houterig** (clunky/stiff), lacked the *natural flow* that makes Rosetta Stone feel good, and the **layout was a bit boring**. Eleven read-only reviewers examined feel, flow, motion and visual craft (see `docs/REVIEW_TEAM_v2.md` for the full briefings). Their findings converged; the highest-impact, non-conflicting recommendations were implemented in one coherent pass and shipped as **v1.7**.
+
+### Converged findings → actions
+
+1. **Stop-start rhythm (P0, cluster A + C).** Every recognition step ended with a manual *Continue → blank → new screen* beat, doubling the taps and killing momentum.
+   - **Done:** `advance(mount, ok, goNext)` helper auto-advances ~0.9 s after a correct recognition answer (manual "Continue" escape kept; wrong answers still wait). Wired into all six recognition renderers. Disabled under reduced-motion.
+
+2. **Whole-screen wipes between activities (P0, cluster A4).** The lesson runner cleared and rebuilt the header + stage on every step, so the title flashed and the surface never felt continuous.
+   - **Done:** Header drawn once; each activity **cross-fades into a single persistent stage**; the progress spine and ring ease rather than jump.
+
+3. **No motion / static & abrupt (P0, cluster A2).**
+   - **Done:** A reduced-motion-respecting motion system — stage/card fade-and-rise, answer-mark pop, wrong-option nudge, bubble-in for chat, eased progress ring (`@property --p`). Double-gated behind `prefers-reduced-motion` **and** `data-motion="reduce"`.
+
+4. **Dialogues felt like a quiz, not a conversation (P1, cluster C2).**
+   - **Done:** A short **"typing…" beat** before each partner line, **larger avatars**, and the jarring "Your turn" banner replaced with a quiet "listen again" affordance.
+
+5. **Boring, flat layout (P1, cluster B).**
+   - **Done:** Warm layered paper ground with soft radial light; elevated cards with a hairline highlight; a **serif display face** for headings (system fonts only); AA-safe clay accent; **illustrated per-theme SVG scene bands** (welcome, greeting, family, travel, outdoors, online, sky) so a lesson reads as a *place*; animated completion badge.
+
+6. **Focus/scroll jank (P2, cluster A4).**
+   - **Done:** The focused `<main>` no longer paints a stray full-width outline on navigation (focus kept for screen readers via `#main:focus{outline:none}`).
+
+All fixes preserve the hard constraints: offline single file, no external fonts/CDN, reduced-motion support, 70+ contrast & target sizes, bilingual Hungarian help.
+
+---
+
+## v1.6 — Speaking-first panel (5 agents)
 
 A panel of five independent reviewers examined the whole app against the founding premise (speaking confidence for Marta to connect with her family, teach online, travel, and beat fear of flying). Below: what they found, and what was changed.
 

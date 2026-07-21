@@ -54,6 +54,7 @@ const dataScript =
 const SCRIPT_FILES = [
   "assets/icons.js",
   "assets/avatars.js",
+  "assets/scenes.js",
   "app/dom.js",
   "app/store.js",
   "app/i18n.js",

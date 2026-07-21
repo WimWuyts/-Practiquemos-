@@ -55,7 +55,7 @@ await page.evaluate(() => (location.hash = "conversations"));
 await page.waitForTimeout(300);
 check("conversations listed", await page.locator(".card").count() >= 5);
 await page.evaluate(() => (location.hash = "talk/dlg_endika_first"));
-await page.waitForTimeout(300);
+await page.waitForTimeout(1100); // allow the "typing…" beat before the first line + choices appear
 check("dialogue renders bubble", await page.locator(".turn.them .bubble").count() >= 1);
 check("dialogue shows a character face", await page.locator(".turn.them .face svg").count() >= 1);
 const firstChoice = page.locator(".option").first();
