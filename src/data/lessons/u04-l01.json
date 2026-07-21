@@ -36,7 +36,9 @@
     "lex_sit",
     "lex_stand",
     "lex_out",
-    "lex_every"
+    "lex_every",
+    "lex_move",
+    "lex_feed"
   ],
   "reviewItems": [
     "lex_hello",
@@ -135,7 +137,9 @@
   "chunks": [
     "chunk_dl_getup",
     "chunk_dl_usually",
-    "chunk_dl_everyday"
+    "chunk_dl_everyday",
+    "chunk_sm_howwasday",
+    "chunk_sm_goodnight"
   ],
   "grammarCards": [
     "gr_presentsimple",
@@ -269,7 +273,9 @@
       "items": [
         "chunk_dl_getup",
         "chunk_dl_usually",
-        "chunk_dl_everyday"
+        "chunk_dl_everyday",
+        "chunk_sm_howwasday",
+        "chunk_sm_goodnight"
       ]
     },
     {

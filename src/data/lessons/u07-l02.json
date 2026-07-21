@@ -37,7 +37,10 @@
     "chunk_sm_takecare",
     "chunk_sm_seeyou",
     "chunk_ph_seeyoulater",
-    "chunk_ph_sendmessage"
+    "chunk_ph_sendmessage",
+    "chunk_nm_myphone",
+    "chunk_ph_callback",
+    "chunk_rp_whatmeans"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -46,7 +49,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_173",
+      "id": "act_174",
       "type": "intro",
       "items": [
         "lex_me",
@@ -60,7 +63,7 @@
       ]
     },
     {
-      "id": "act_174",
+      "id": "act_175",
       "type": "listen-choose",
       "items": [
         "lex_me",
@@ -72,7 +75,7 @@
       ]
     },
     {
-      "id": "act_175",
+      "id": "act_176",
       "type": "icon-choice",
       "items": [
         "lex_me",
@@ -83,7 +86,7 @@
       ]
     },
     {
-      "id": "act_176",
+      "id": "act_177",
       "type": "match",
       "items": [
         "lex_me",
@@ -95,7 +98,7 @@
       ]
     },
     {
-      "id": "act_177",
+      "id": "act_178",
       "type": "gapfill",
       "items": [
         {
@@ -141,7 +144,7 @@
       ]
     },
     {
-      "id": "act_178",
+      "id": "act_179",
       "type": "phrase-match",
       "items": [
         "chunk_repair_howsay",
@@ -153,7 +156,7 @@
       ]
     },
     {
-      "id": "act_179",
+      "id": "act_180",
       "type": "reorder",
       "sentences": [
         {
@@ -171,7 +174,7 @@
       ]
     },
     {
-      "id": "act_180",
+      "id": "act_181",
       "type": "typed",
       "items": [
         "lex_me",
@@ -181,17 +184,17 @@
       ]
     },
     {
-      "id": "act_181",
+      "id": "act_182",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_182",
+      "id": "act_183",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_183",
+      "id": "act_184",
       "type": "odd-one-out",
       "groups": [
         {
@@ -203,6 +206,21 @@
           "odd": "I"
         }
       ]
+    },
+    {
+      "id": "act_185",
+      "type": "listen-comprehension",
+      "passage": "Hello Marta, this is a short message. I will call you at seven o'clock this evening. Talk soon!",
+      "question": {
+        "en": "What time will the call be?",
+        "hu": "Hánykor lesz a hívás?"
+      },
+      "options": [
+        "Seven in the evening",
+        "Seven in the morning",
+        "Nine in the evening"
+      ],
+      "answer": "Seven in the evening"
     }
   ],
   "completionRule": {

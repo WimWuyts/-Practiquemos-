@@ -21,7 +21,8 @@
     "lex_tourist",
     "lex_journey",
     "lex_guide",
-    "lex_decide"
+    "lex_decide",
+    "lex_return"
   ],
   "reviewItems": [
     "lex_restaurant",
@@ -62,12 +63,21 @@
     "lex_spend",
     "lex_last",
     "lex_almost",
-    "lex_closed"
+    "lex_closed",
+    "lex_break",
+    "lex_comfortable",
+    "lex_already",
+    "lex_still"
   ],
   "chunks": [
     "chunk_plan_going",
     "chunk_tv_needto",
-    "chunk_tv_planto"
+    "chunk_tv_planto",
+    "chunk_fu_planto",
+    "chunk_fu_wouldliketo",
+    "chunk_fu_needto2",
+    "chunk_fu_lookingforward",
+    "chunk_fe_excited"
   ],
   "grammarCards": [
     "gr_needhaveto"
@@ -78,7 +88,7 @@
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_310",
+      "id": "act_314",
       "type": "intro",
       "items": [
         "lex_travel",
@@ -92,7 +102,7 @@
       ]
     },
     {
-      "id": "act_311",
+      "id": "act_315",
       "type": "listen-choose",
       "items": [
         "lex_travel",
@@ -104,7 +114,7 @@
       ]
     },
     {
-      "id": "act_312",
+      "id": "act_316",
       "type": "icon-choice",
       "items": [
         "lex_travel",
@@ -115,7 +125,7 @@
       ]
     },
     {
-      "id": "act_313",
+      "id": "act_317",
       "type": "match",
       "items": [
         "lex_travel",
@@ -127,12 +137,12 @@
       ]
     },
     {
-      "id": "act_314",
+      "id": "act_318",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_315",
+      "id": "act_319",
       "type": "gapfill",
       "items": [
         {
@@ -178,16 +188,19 @@
       ]
     },
     {
-      "id": "act_316",
+      "id": "act_320",
       "type": "phrase-match",
       "items": [
         "chunk_plan_going",
         "chunk_tv_needto",
-        "chunk_tv_planto"
+        "chunk_tv_planto",
+        "chunk_fu_planto",
+        "chunk_fu_wouldliketo",
+        "chunk_fu_needto2"
       ]
     },
     {
-      "id": "act_317",
+      "id": "act_321",
       "type": "reorder",
       "sentences": [
         {
@@ -205,7 +218,7 @@
       ]
     },
     {
-      "id": "act_318",
+      "id": "act_322",
       "type": "typed",
       "items": [
         "lex_travel",
@@ -215,12 +228,12 @@
       ]
     },
     {
-      "id": "act_319",
+      "id": "act_323",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_320",
+      "id": "act_324",
       "type": "odd-one-out",
       "groups": [
         {
@@ -234,12 +247,12 @@
       ]
     },
     {
-      "id": "act_321",
+      "id": "act_325",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_322",
+      "id": "act_326",
       "type": "review",
       "items": [
         "lex_restaurant",

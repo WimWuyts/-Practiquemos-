@@ -10,9 +10,9 @@ Vocabulary is anchored to the **English Vocabulary Profile (EVP)** A1 core, prio
 
 | Category | Count | Note |
 |---|---|---|
-| Productive individual words | 699 | A1: 623 · A2: 76 |
-| Productive chunks / frames | 137 | fully wired |
-| Additional receptive items | 76 | listening/reading support |
+| Productive individual words | 751 | A1: 646 · A2: 105 |
+| Productive chunks / frames | 246 | fully wired |
+| Additional receptive items | 331 | listening/reading support |
 
 Every item appears in real lessons, exercises and/or conversations. The vocabulary target (~700) is met; chunks and receptive items grow via the same generator pipeline (see `OPEN_IMPROVEMENTS.md`).
 
@@ -38,44 +38,44 @@ Each A1 grammar point (EGP) is paired with the vocabulary domains (EVP) that exe
 ## Coverage rules
 
 - Each productive word appears in first lesson + spiral review lessons + generated activities.
-- Productive items with fewer than 3 encounters: **18** (target: 0; addressed as the corpus grows).
+- Productive items with fewer than 3 encounters: **22** (target: 0; addressed as the corpus grows).
 - Every productive word has a Hungarian field and at least one example.
 
 ## By theme
 
 | Theme | Productive | Receptive |
 |---|---|---|
-| airport | 9 | 9 |
-| body | 13 | 0 |
-| clothes | 9 | 0 |
+| airport | 9 | 26 |
+| body | 13 | 8 |
+| clothes | 9 | 11 |
 | colours | 10 | 0 |
-| conversation | 52 | 1 |
+| conversation | 55 | 9 |
 | countries | 16 | 0 |
-| daily-life | 36 | 1 |
-| family | 50 | 5 |
-| feelings | 17 | 4 |
-| flying | 5 | 11 |
-| food | 57 | 2 |
+| daily-life | 40 | 1 |
+| family | 50 | 18 |
+| feelings | 20 | 8 |
+| flying | 5 | 24 |
+| food | 66 | 20 |
 | greetings | 19 | 0 |
-| health | 10 | 0 |
-| hobbies | 27 | 5 |
-| home | 26 | 3 |
-| hotel | 2 | 7 |
+| health | 10 | 17 |
+| hobbies | 33 | 11 |
+| home | 32 | 26 |
+| hotel | 2 | 25 |
 | identity | 32 | 0 |
 | numbers | 33 | 0 |
-| opinions | 40 | 1 |
+| opinions | 42 | 1 |
 | past | 8 | 0 |
-| phone | 7 | 2 |
+| phone | 8 | 2 |
 | plans | 7 | 0 |
-| services | 12 | 5 |
-| shopping | 14 | 1 |
-| teaching | 19 | 0 |
-| technology | 14 | 6 |
-| time | 40 | 1 |
-| town | 54 | 6 |
-| transport | 13 | 3 |
-| travel | 19 | 3 |
-| weather | 29 | 0 |
+| services | 12 | 16 |
+| shopping | 17 | 7 |
+| teaching | 19 | 10 |
+| technology | 15 | 18 |
+| time | 40 | 7 |
+| town | 60 | 26 |
+| transport | 16 | 16 |
+| travel | 21 | 12 |
+| weather | 32 | 12 |
 
 ## Distractor / spelling metadata
 

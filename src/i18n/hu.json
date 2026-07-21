@@ -54,6 +54,8 @@
   "act.expand.prompt": "Bővítsd a válaszodat, lépésről lépésre.",
   "act.expand.more": "Tegyél hozzá",
   "act.odd.prompt": "Melyik szó a kakukktojás? Válaszd ki, amelyik nem illik a többihez.",
+  "act.listencomp.prompt": "Hallgasd meg az üzenetet, majd válaszolj.",
+  "act.listencomp.again": "Játszd le újra",
   "act.grammar.check": "Gyors ellenőrzés",
   "conv.support.choose": "Válassz",
   "conv.support.build": "Építsd",

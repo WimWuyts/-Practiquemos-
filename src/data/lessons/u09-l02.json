@@ -21,14 +21,17 @@
     "lex_by",
     "lex_which",
     "lex_catch",
-    "lex_other"
+    "lex_other",
+    "lex_boat",
+    "lex_bicycle"
   ],
   "reviewItems": [],
   "chunks": [
     "chunk_trans_which",
     "chunk_tr_whichbus",
     "chunk_tr_oneticket",
-    "chunk_tr_getoff"
+    "chunk_tr_getoff",
+    "chunk_tr_lastbus"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -37,7 +40,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_226",
+      "id": "act_228",
       "type": "intro",
       "items": [
         "lex_ticket",
@@ -51,7 +54,7 @@
       ]
     },
     {
-      "id": "act_227",
+      "id": "act_229",
       "type": "listen-choose",
       "items": [
         "lex_ticket",
@@ -63,7 +66,7 @@
       ]
     },
     {
-      "id": "act_228",
+      "id": "act_230",
       "type": "icon-choice",
       "items": [
         "lex_ticket",
@@ -74,7 +77,7 @@
       ]
     },
     {
-      "id": "act_229",
+      "id": "act_231",
       "type": "match",
       "items": [
         "lex_ticket",
@@ -86,7 +89,7 @@
       ]
     },
     {
-      "id": "act_230",
+      "id": "act_232",
       "type": "gapfill",
       "items": [
         {
@@ -132,17 +135,18 @@
       ]
     },
     {
-      "id": "act_231",
+      "id": "act_233",
       "type": "phrase-match",
       "items": [
         "chunk_trans_which",
         "chunk_tr_whichbus",
         "chunk_tr_oneticket",
-        "chunk_tr_getoff"
+        "chunk_tr_getoff",
+        "chunk_tr_lastbus"
       ]
     },
     {
-      "id": "act_232",
+      "id": "act_234",
       "type": "reorder",
       "sentences": [
         {
@@ -160,7 +164,7 @@
       ]
     },
     {
-      "id": "act_233",
+      "id": "act_235",
       "type": "typed",
       "items": [
         "lex_ticket",
@@ -170,17 +174,17 @@
       ]
     },
     {
-      "id": "act_234",
+      "id": "act_236",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_235",
+      "id": "act_237",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_236",
+      "id": "act_238",
       "type": "odd-one-out",
       "groups": [
         {

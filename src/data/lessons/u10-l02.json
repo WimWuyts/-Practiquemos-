@@ -26,14 +26,22 @@
     "lex_rest",
     "lex_hurt",
     "lex_pharmacy",
-    "lex_fill"
+    "lex_fill",
+    "lex_break",
+    "lex_comfortable"
   ],
   "reviewItems": [],
   "chunks": [
     "chunk_serv_checkin",
     "chunk_sv_checkin",
     "chunk_sv_roomproblem",
-    "chunk_sv_whatstime_bf"
+    "chunk_sv_whatstime_bf",
+    "chunk_pm_doyoumind",
+    "chunk_he_notwell",
+    "chunk_he_headache",
+    "chunk_he_medicine",
+    "chunk_he_doctor",
+    "chunk_he_getwell"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -42,7 +50,7 @@
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_250",
+      "id": "act_252",
       "type": "intro",
       "items": [
         "lex_hotel",
@@ -56,7 +64,7 @@
       ]
     },
     {
-      "id": "act_251",
+      "id": "act_253",
       "type": "listen-choose",
       "items": [
         "lex_hotel",
@@ -68,7 +76,7 @@
       ]
     },
     {
-      "id": "act_252",
+      "id": "act_254",
       "type": "icon-choice",
       "items": [
         "lex_hotel",
@@ -79,7 +87,7 @@
       ]
     },
     {
-      "id": "act_253",
+      "id": "act_255",
       "type": "match",
       "items": [
         "lex_hotel",
@@ -91,7 +99,7 @@
       ]
     },
     {
-      "id": "act_254",
+      "id": "act_256",
       "type": "gapfill",
       "items": [
         {
@@ -137,17 +145,19 @@
       ]
     },
     {
-      "id": "act_255",
+      "id": "act_257",
       "type": "phrase-match",
       "items": [
         "chunk_serv_checkin",
         "chunk_sv_checkin",
         "chunk_sv_roomproblem",
-        "chunk_sv_whatstime_bf"
+        "chunk_sv_whatstime_bf",
+        "chunk_pm_doyoumind",
+        "chunk_he_notwell"
       ]
     },
     {
-      "id": "act_256",
+      "id": "act_258",
       "type": "reorder",
       "sentences": [
         {
@@ -165,7 +175,7 @@
       ]
     },
     {
-      "id": "act_257",
+      "id": "act_259",
       "type": "typed",
       "items": [
         "lex_hotel",
@@ -175,12 +185,12 @@
       ]
     },
     {
-      "id": "act_258",
+      "id": "act_260",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_259",
+      "id": "act_261",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

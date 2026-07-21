@@ -34,7 +34,11 @@
     "lex_draw",
     "lex_paint",
     "lex_win",
-    "lex_hate"
+    "lex_hate",
+    "lex_ride",
+    "lex_climb",
+    "lex_build",
+    "lex_grow"
   ],
   "reviewItems": [
     "lex_food",
@@ -136,12 +140,28 @@
     "lex_snack",
     "lex_talk",
     "lex_cut",
-    "lex_size"
+    "lex_size",
+    "lex_ring",
+    "lex_borrow",
+    "lex_wait_for",
+    "lex_cup",
+    "lex_pot",
+    "lex_pan",
+    "lex_basket",
+    "lex_list",
+    "lex_carrot",
+    "lex_lemon",
+    "lex_biscuit",
+    "lex_honey",
+    "lex_sweet",
+    "lex_fresh"
   ],
   "chunks": [
     "chunk_ask_hobbies",
     "chunk_op_love",
-    "chunk_op_ilike2"
+    "chunk_op_ilike2",
+    "chunk_ag_metoo",
+    "chunk_dl_freetime"
   ],
   "grammarCards": [
     "gr_likeing"
@@ -152,7 +172,7 @@
   "conversationId": "dlg_peter_dinner",
   "activities": [
     {
-      "id": "act_184",
+      "id": "act_186",
       "type": "intro",
       "items": [
         "lex_hobby",
@@ -166,7 +186,7 @@
       ]
     },
     {
-      "id": "act_185",
+      "id": "act_187",
       "type": "listen-choose",
       "items": [
         "lex_hobby",
@@ -178,7 +198,7 @@
       ]
     },
     {
-      "id": "act_186",
+      "id": "act_188",
       "type": "icon-choice",
       "items": [
         "lex_hobby",
@@ -189,7 +209,7 @@
       ]
     },
     {
-      "id": "act_187",
+      "id": "act_189",
       "type": "match",
       "items": [
         "lex_hobby",
@@ -201,18 +221,18 @@
       ]
     },
     {
-      "id": "act_188",
+      "id": "act_190",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "game"
     },
     {
-      "id": "act_189",
+      "id": "act_191",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_190",
+      "id": "act_192",
       "type": "gapfill",
       "items": [
         {
@@ -258,16 +278,18 @@
       ]
     },
     {
-      "id": "act_191",
+      "id": "act_193",
       "type": "phrase-match",
       "items": [
         "chunk_ask_hobbies",
         "chunk_op_love",
-        "chunk_op_ilike2"
+        "chunk_op_ilike2",
+        "chunk_ag_metoo",
+        "chunk_dl_freetime"
       ]
     },
     {
-      "id": "act_192",
+      "id": "act_194",
       "type": "reorder",
       "sentences": [
         {
@@ -285,7 +307,7 @@
       ]
     },
     {
-      "id": "act_193",
+      "id": "act_195",
       "type": "typed",
       "items": [
         "lex_hobby",
@@ -295,12 +317,12 @@
       ]
     },
     {
-      "id": "act_194",
+      "id": "act_196",
       "type": "pron-record",
       "focusId": "snd_r"
     },
     {
-      "id": "act_195",
+      "id": "act_197",
       "type": "odd-one-out",
       "groups": [
         {
@@ -314,12 +336,12 @@
       ]
     },
     {
-      "id": "act_196",
+      "id": "act_198",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_197",
+      "id": "act_199",
       "type": "review",
       "items": [
         "lex_food",

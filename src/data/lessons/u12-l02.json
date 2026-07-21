@@ -18,13 +18,19 @@
     "lex_try",
     "lex_end",
     "lex_spend",
-    "lex_almost"
+    "lex_almost",
+    "lex_already",
+    "lex_still"
   ],
   "reviewItems": [],
   "chunks": [
     "chunk_conv_expand",
     "chunk_pa_wasnice",
-    "chunk_pa_howwas"
+    "chunk_pa_howwas",
+    "chunk_pa_itwasgreat",
+    "chunk_pa_didyou",
+    "chunk_pa_wentto2",
+    "chunk_op_whatapity"
   ],
   "grammarCards": [
     "gr_pastsimple"
@@ -35,7 +41,7 @@
   "conversationId": "dlg_endika_followup",
   "activities": [
     {
-      "id": "act_298",
+      "id": "act_301",
       "type": "intro",
       "items": [
         "lex_ago",
@@ -44,11 +50,12 @@
         "lex_try",
         "lex_end",
         "lex_spend",
-        "lex_almost"
+        "lex_almost",
+        "lex_already"
       ]
     },
     {
-      "id": "act_299",
+      "id": "act_302",
       "type": "listen-choose",
       "items": [
         "lex_ago",
@@ -60,7 +67,7 @@
       ]
     },
     {
-      "id": "act_300",
+      "id": "act_303",
       "type": "icon-choice",
       "items": [
         "lex_ago",
@@ -71,7 +78,7 @@
       ]
     },
     {
-      "id": "act_301",
+      "id": "act_304",
       "type": "match",
       "items": [
         "lex_ago",
@@ -83,12 +90,12 @@
       ]
     },
     {
-      "id": "act_302",
+      "id": "act_305",
       "type": "grammar",
       "grammarId": "gr_pastsimple"
     },
     {
-      "id": "act_303",
+      "id": "act_306",
       "type": "gapfill",
       "items": [
         {
@@ -134,16 +141,19 @@
       ]
     },
     {
-      "id": "act_304",
+      "id": "act_307",
       "type": "phrase-match",
       "items": [
         "chunk_conv_expand",
         "chunk_pa_wasnice",
-        "chunk_pa_howwas"
+        "chunk_pa_howwas",
+        "chunk_pa_itwasgreat",
+        "chunk_pa_didyou",
+        "chunk_pa_wentto2"
       ]
     },
     {
-      "id": "act_305",
+      "id": "act_308",
       "type": "reorder",
       "sentences": [
         {
@@ -153,11 +163,15 @@
         {
           "en": "How was your weekend?",
           "hu": "Milyen volt a hétvégéd?"
+        },
+        {
+          "en": "It was really lovely.",
+          "hu": "Nagyon kedves volt."
         }
       ]
     },
     {
-      "id": "act_306",
+      "id": "act_309",
       "type": "typed",
       "items": [
         "lex_ago",
@@ -167,12 +181,27 @@
       ]
     },
     {
-      "id": "act_307",
+      "id": "act_310",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_308",
+      "id": "act_311",
+      "type": "listen-comprehension",
+      "passage": "Hi Marta! At the weekend I visited my sister. We cooked lunch and talked for hours. It was lovely.",
+      "question": {
+        "en": "What did she do at the weekend?",
+        "hu": "Mit csinált a hétvégén?"
+      },
+      "options": [
+        "Visited her sister",
+        "Went to the airport",
+        "Stayed at work"
+      ],
+      "answer": "Visited her sister"
+    },
+    {
+      "id": "act_312",
       "type": "expand",
       "question": {
         "en": "What did you do at the weekend?",
@@ -194,7 +223,7 @@
       ]
     },
     {
-      "id": "act_309",
+      "id": "act_313",
       "type": "conversation",
       "dialogueId": "dlg_endika_followup"
     }

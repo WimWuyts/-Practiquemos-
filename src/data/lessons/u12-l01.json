@@ -129,11 +129,22 @@
     "lex_west",
     "lex_pull",
     "lex_push",
-    "lex_let"
+    "lex_let",
+    "lex_follow",
+    "lex_fix",
+    "lex_enter",
+    "lex_look_for",
+    "lex_boat",
+    "lex_bicycle",
+    "lex_corner_shop",
+    "lex_bench",
+    "lex_wide"
   ],
   "chunks": [
     "chunk_pa_wasat",
-    "chunk_pa_wentto"
+    "chunk_pa_wentto",
+    "chunk_pa_lastnight",
+    "chunk_pa_bornin"
   ],
   "grammarCards": [
     "gr_waswere"
@@ -144,7 +155,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_286",
+      "id": "act_289",
       "type": "intro",
       "items": [
         "lex_was",
@@ -156,7 +167,7 @@
       ]
     },
     {
-      "id": "act_287",
+      "id": "act_290",
       "type": "listen-choose",
       "items": [
         "lex_was",
@@ -168,7 +179,7 @@
       ]
     },
     {
-      "id": "act_288",
+      "id": "act_291",
       "type": "icon-choice",
       "items": [
         "lex_was",
@@ -179,7 +190,7 @@
       ]
     },
     {
-      "id": "act_289",
+      "id": "act_292",
       "type": "match",
       "items": [
         "lex_was",
@@ -191,12 +202,12 @@
       ]
     },
     {
-      "id": "act_290",
+      "id": "act_293",
       "type": "grammar",
       "grammarId": "gr_waswere"
     },
     {
-      "id": "act_291",
+      "id": "act_294",
       "type": "gapfill",
       "items": [
         {
@@ -242,15 +253,17 @@
       ]
     },
     {
-      "id": "act_292",
+      "id": "act_295",
       "type": "phrase-match",
       "items": [
         "chunk_pa_wasat",
-        "chunk_pa_wentto"
+        "chunk_pa_wentto",
+        "chunk_pa_lastnight",
+        "chunk_pa_bornin"
       ]
     },
     {
-      "id": "act_293",
+      "id": "act_296",
       "type": "reorder",
       "sentences": [
         {
@@ -260,11 +273,15 @@
         {
           "en": "I went to the market.",
           "hu": "Elmentem a piacra."
+        },
+        {
+          "en": "Last night I watched a film.",
+          "hu": "Tegnap este filmet néztem."
         }
       ]
     },
     {
-      "id": "act_294",
+      "id": "act_297",
       "type": "typed",
       "items": [
         "lex_was",
@@ -274,12 +291,12 @@
       ]
     },
     {
-      "id": "act_295",
+      "id": "act_298",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_296",
+      "id": "act_299",
       "type": "odd-one-out",
       "groups": [
         {
@@ -293,7 +310,7 @@
       ]
     },
     {
-      "id": "act_297",
+      "id": "act_300",
       "type": "review",
       "items": [
         "lex_street",

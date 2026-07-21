@@ -78,7 +78,13 @@
     "lex_east",
     "lex_west",
     "lex_pull",
-    "lex_push"
+    "lex_push",
+    "lex_follow",
+    "lex_enter",
+    "lex_look_for",
+    "lex_corner_shop",
+    "lex_bench",
+    "lex_wide"
   ],
   "reviewItems": [
     "lex_time",
@@ -256,7 +262,18 @@
     "lex_prefer",
     "lex_agree",
     "lex_soft",
-    "lex_pretty"
+    "lex_pretty",
+    "lex_ride",
+    "lex_climb",
+    "lex_build",
+    "lex_grow",
+    "lex_hill",
+    "lex_duck",
+    "lex_rabbit",
+    "lex_bright",
+    "lex_famous",
+    "lex_modern",
+    "lex_deep"
   ],
   "chunks": [
     "chunk_ask_followup_where",
@@ -265,7 +282,15 @@
     "chunk_tw_wheretoilet",
     "chunk_tw_isitfar",
     "chunk_tw_lost",
-    "chunk_rp_writeit"
+    "chunk_rp_writeit",
+    "chunk_ds_verynice",
+    "chunk_tw_excusewhere",
+    "chunk_tw_straighton",
+    "chunk_tw_howfar",
+    "chunk_tw_overthere",
+    "chunk_rp_howspell",
+    "chunk_tw_isitclose",
+    "chunk_tw_canyoushow"
   ],
   "grammarCards": [
     "gr_imperatives"
@@ -276,7 +301,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_212",
+      "id": "act_214",
       "type": "intro",
       "items": [
         "lex_street",
@@ -290,7 +315,7 @@
       ]
     },
     {
-      "id": "act_213",
+      "id": "act_215",
       "type": "listen-choose",
       "items": [
         "lex_street",
@@ -302,7 +327,7 @@
       ]
     },
     {
-      "id": "act_214",
+      "id": "act_216",
       "type": "icon-choice",
       "items": [
         "lex_street",
@@ -313,7 +338,7 @@
       ]
     },
     {
-      "id": "act_215",
+      "id": "act_217",
       "type": "match",
       "items": [
         "lex_street",
@@ -325,18 +350,18 @@
       ]
     },
     {
-      "id": "act_216",
+      "id": "act_218",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "station"
     },
     {
-      "id": "act_217",
+      "id": "act_219",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_218",
+      "id": "act_220",
       "type": "gapfill",
       "items": [
         {
@@ -382,7 +407,7 @@
       ]
     },
     {
-      "id": "act_219",
+      "id": "act_221",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_where",
@@ -394,7 +419,7 @@
       ]
     },
     {
-      "id": "act_220",
+      "id": "act_222",
       "type": "reorder",
       "sentences": [
         {
@@ -412,7 +437,7 @@
       ]
     },
     {
-      "id": "act_221",
+      "id": "act_223",
       "type": "typed",
       "items": [
         "lex_street",
@@ -422,17 +447,17 @@
       ]
     },
     {
-      "id": "act_222",
+      "id": "act_224",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_223",
+      "id": "act_225",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_224",
+      "id": "act_226",
       "type": "odd-one-out",
       "groups": [
         {
@@ -446,7 +471,7 @@
       ]
     },
     {
-      "id": "act_225",
+      "id": "act_227",
       "type": "review",
       "items": [
         "lex_time",

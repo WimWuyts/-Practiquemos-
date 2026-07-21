@@ -17,7 +17,8 @@
     "lex_gate",
     "lex_check_in",
     "lex_security",
-    "lex_desk"
+    "lex_desk",
+    "lex_airport_bus"
   ],
   "reviewItems": [
     "lex_lesson",
@@ -79,7 +80,9 @@
     "lex_save",
     "lex_keep",
     "lex_let",
-    "lex_heavy"
+    "lex_heavy",
+    "lex_return",
+    "lex_fix"
   ],
   "chunks": [
     "chunk_air_gate",
@@ -87,7 +90,12 @@
     "chunk_air_help",
     "chunk_ai_wherecheckin2",
     "chunk_ai_myflight",
-    "chunk_ai_dontunderstand2"
+    "chunk_ai_dontunderstand2",
+    "chunk_ai_luggage",
+    "chunk_ai_whichgate",
+    "chunk_ai_help_bags",
+    "chunk_ai_iamnervous",
+    "chunk_ai_isthisright"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -98,7 +106,7 @@
   "conversationId": "dlg_airport",
   "activities": [
     {
-      "id": "act_332",
+      "id": "act_338",
       "type": "intro",
       "items": [
         "lex_airport",
@@ -106,11 +114,12 @@
         "lex_gate",
         "lex_check_in",
         "lex_security",
-        "lex_desk"
+        "lex_desk",
+        "lex_airport_bus"
       ]
     },
     {
-      "id": "act_333",
+      "id": "act_339",
       "type": "listen-choose",
       "items": [
         "lex_airport",
@@ -122,7 +131,7 @@
       ]
     },
     {
-      "id": "act_334",
+      "id": "act_340",
       "type": "icon-choice",
       "items": [
         "lex_airport",
@@ -133,7 +142,7 @@
       ]
     },
     {
-      "id": "act_335",
+      "id": "act_341",
       "type": "match",
       "items": [
         "lex_airport",
@@ -145,18 +154,18 @@
       ]
     },
     {
-      "id": "act_336",
+      "id": "act_342",
       "type": "spelling-build",
       "family": "sf_ar_or",
       "word": "airport"
     },
     {
-      "id": "act_337",
+      "id": "act_343",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_338",
+      "id": "act_344",
       "type": "gapfill",
       "items": [
         {
@@ -202,7 +211,7 @@
       ]
     },
     {
-      "id": "act_339",
+      "id": "act_345",
       "type": "phrase-match",
       "items": [
         "chunk_air_gate",
@@ -214,7 +223,7 @@
       ]
     },
     {
-      "id": "act_340",
+      "id": "act_346",
       "type": "reorder",
       "sentences": [
         {
@@ -232,7 +241,7 @@
       ]
     },
     {
-      "id": "act_341",
+      "id": "act_347",
       "type": "typed",
       "items": [
         "lex_airport",
@@ -242,12 +251,12 @@
       ]
     },
     {
-      "id": "act_342",
+      "id": "act_348",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_343",
+      "id": "act_349",
       "type": "odd-one-out",
       "groups": [
         {
@@ -261,12 +270,27 @@
       ]
     },
     {
-      "id": "act_344",
+      "id": "act_350",
+      "type": "listen-comprehension",
+      "passage": "Attention please. The flight to Copenhagen is now boarding at gate twelve. Please have your passport ready.",
+      "question": {
+        "en": "Which gate is the flight?",
+        "hu": "Melyik kapunál van a járat?"
+      },
+      "options": [
+        "Gate twelve",
+        "Gate two",
+        "Gate twenty"
+      ],
+      "answer": "Gate twelve"
+    },
+    {
+      "id": "act_351",
       "type": "conversation",
       "dialogueId": "dlg_airport"
     },
     {
-      "id": "act_345",
+      "id": "act_352",
       "type": "review",
       "items": [
         "lex_lesson",

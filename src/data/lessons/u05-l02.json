@@ -46,14 +46,24 @@
     "lex_spoon",
     "lex_fork",
     "lex_cut",
-    "lex_size"
+    "lex_size",
+    "lex_borrow",
+    "lex_cup",
+    "lex_pot",
+    "lex_pan",
+    "lex_basket",
+    "lex_list"
   ],
   "reviewItems": [],
   "chunks": [
     "chunk_op_wouldlike",
     "chunk_fd_recipe",
     "chunk_fd_howmuch2",
-    "chunk_fd_takeit"
+    "chunk_fd_takeit",
+    "chunk_pm_canihave",
+    "chunk_of_hereyouare",
+    "chunk_nm_howmuchtotal",
+    "chunk_nm_itcosts"
   ],
   "grammarCards": [
     "gr_wouldlike"
@@ -176,7 +186,9 @@
         "chunk_op_wouldlike",
         "chunk_fd_recipe",
         "chunk_fd_howmuch2",
-        "chunk_fd_takeit"
+        "chunk_fd_takeit",
+        "chunk_pm_canihave",
+        "chunk_of_hereyouare"
       ]
     },
     {

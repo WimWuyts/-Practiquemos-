@@ -553,6 +553,39 @@ window.M = window.M || {};
     draw();
   };
 
+  // Listening comprehension: hear a short passage (replayable), then answer one question.
+  R["listen-comprehension"] = function (mount, act, done) {
+    dom.clear(mount);
+    mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.listencomp.prompt") }));
+    mount.appendChild(el("div", { class: "card" }, [
+      el("div", { style: "display:flex;align-items:center;gap:.7rem" }, [
+        el("span", { class: "iconwell", html: dom.icon("chat"), "aria-hidden": "true" }),
+        el("div", { style: "flex:1" }, [
+          el("div", { class: "btn-row", style: "margin:0" }, [
+            el("button", { class: "btn secondary", onclick: function () { M.audio.speak(act.passage.en, { slow: true }); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")]),
+            el("button", { class: "btn ghost", onclick: function () { M.audio.speak(act.passage.en, { slow: true }); } }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("act.listencomp.again")]),
+          ]),
+        ]),
+      ]),
+    ]));
+    mount.appendChild(el("p", { class: "prompt", text: act.question.en }));
+    if (M.i18n.helpAvailable()) mount.appendChild(el("p", { class: "muted", style: "margin-top:-.6rem", text: act.question.hu }));
+    var opts = el("div", { class: "options" });
+    dom.shuffle(act.options).forEach(function (o) {
+      var b = el("button", { class: "option" }, [el("span", { text: o })]);
+      b.addEventListener("click", function () {
+        var ok = o === act.answer;
+        b.classList.add(ok ? "correct" : "wrong");
+        Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
+        feedback(mount, ok, ok ? M.i18n.t("fb.correct") : M.i18n.t("fb.listen"));
+        mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { done(true); } }, [M.i18n.t("btn.continue")])]));
+      });
+      opts.appendChild(b);
+    });
+    mount.appendChild(opts);
+    M.audio.speak(act.passage.en, { slow: true });
+  };
+
   // Odd one out: choose the word that does not belong to the group.
   R["odd-one-out"] = function (mount, act, done) {
     var groups = act.groups || [];

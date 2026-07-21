@@ -37,7 +37,9 @@
     "chunk_sm_howsfamily",
     "chunk_id_thisis",
     "chunk_fam_howmany",
-    "chunk_fam_married"
+    "chunk_fam_married",
+    "chunk_nm_whatsage",
+    "chunk_id_thisismy"
   ],
   "grammarCards": [
     "gr_have"
@@ -155,7 +157,8 @@
         "chunk_sm_howsfamily",
         "chunk_id_thisis",
         "chunk_fam_howmany",
-        "chunk_fam_married"
+        "chunk_fam_married",
+        "chunk_nm_whatsage"
       ]
     },
     {

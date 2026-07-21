@@ -15,10 +15,13 @@
     "lex_boarding",
     "lex_seat",
     "lex_late",
-    "lex_miss"
+    "lex_miss",
+    "lex_lose"
   ],
   "reviewItems": [],
-  "chunks": [],
+  "chunks": [
+    "chunk_ai_delayed"
+  ],
   "grammarCards": [],
   "pronunciationFocus": [
     "str_word"
@@ -26,53 +29,57 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_346",
+      "id": "act_353",
       "type": "intro",
       "items": [
         "lex_boarding",
         "lex_seat",
         "lex_late",
-        "lex_miss"
+        "lex_miss",
+        "lex_lose"
       ]
     },
     {
-      "id": "act_347",
+      "id": "act_354",
       "type": "listen-choose",
       "items": [
         "lex_boarding",
         "lex_seat",
         "lex_late",
-        "lex_miss"
+        "lex_miss",
+        "lex_lose"
       ]
     },
     {
-      "id": "act_348",
+      "id": "act_355",
       "type": "icon-choice",
       "items": [
         "lex_boarding",
         "lex_seat",
         "lex_late",
-        "lex_miss"
+        "lex_miss",
+        "lex_lose"
       ]
     },
     {
-      "id": "act_349",
+      "id": "act_356",
       "type": "match",
       "items": [
         "lex_boarding",
         "lex_seat",
         "lex_late",
-        "lex_miss"
+        "lex_miss",
+        "lex_lose"
       ]
     },
     {
-      "id": "act_350",
+      "id": "act_357",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "late"
     },
     {
-      "id": "act_351",
+      "id": "act_358",
       "type": "gapfill",
       "items": [
         {
@@ -118,7 +125,24 @@
       ]
     },
     {
-      "id": "act_352",
+      "id": "act_359",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ai_delayed"
+      ]
+    },
+    {
+      "id": "act_360",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Is the flight delayed?",
+          "hu": "Késik a járat?"
+        }
+      ]
+    },
+    {
+      "id": "act_361",
       "type": "typed",
       "items": [
         "lex_boarding",
@@ -128,12 +152,12 @@
       ]
     },
     {
-      "id": "act_353",
+      "id": "act_362",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_354",
+      "id": "act_363",
       "type": "odd-one-out",
       "groups": [
         {
@@ -145,6 +169,21 @@
           "odd": "name"
         }
       ]
+    },
+    {
+      "id": "act_364",
+      "type": "listen-comprehension",
+      "passage": "This is a final call for passenger Marta. Please go to gate twelve. The gate is closing soon.",
+      "question": {
+        "en": "What must the passenger do?",
+        "hu": "Mit kell tennie az utasnak?"
+      },
+      "options": [
+        "Go to the gate",
+        "Collect luggage",
+        "Buy a ticket"
+      ],
+      "answer": "Go to the gate"
     }
   ],
   "completionRule": {

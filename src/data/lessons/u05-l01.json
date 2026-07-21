@@ -49,7 +49,13 @@
     "lex_hungry",
     "lex_thirsty",
     "lex_meal",
-    "lex_snack"
+    "lex_snack",
+    "lex_carrot",
+    "lex_lemon",
+    "lex_biscuit",
+    "lex_honey",
+    "lex_sweet",
+    "lex_fresh"
   ],
   "reviewItems": [
     "lex_family",
@@ -163,12 +169,21 @@
     "lex_dirty",
     "lex_out",
     "lex_with",
-    "lex_every"
+    "lex_every",
+    "lex_move",
+    "lex_knock",
+    "lex_feed",
+    "lex_towel",
+    "lex_mirror",
+    "lex_outside",
+    "lex_inside"
   ],
   "chunks": [
     "chunk_op_like",
     "chunk_op_dontlike",
-    "chunk_fd_hungry"
+    "chunk_fd_hungry",
+    "chunk_fd_allergic",
+    "chunk_fd_favourite"
   ],
   "grammarCards": [
     "gr_someany"
@@ -290,7 +305,9 @@
       "items": [
         "chunk_op_like",
         "chunk_op_dontlike",
-        "chunk_fd_hungry"
+        "chunk_fd_hungry",
+        "chunk_fd_allergic",
+        "chunk_fd_favourite"
       ]
     },
     {

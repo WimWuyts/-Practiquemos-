@@ -31,7 +31,9 @@
     "lex_heavy"
   ],
   "reviewItems": [],
-  "chunks": [],
+  "chunks": [
+    "chunk_rp_letmecheck"
+  ],
   "grammarCards": [],
   "pronunciationFocus": [
     "snd_final_cons"
@@ -39,7 +41,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_323",
+      "id": "act_327",
       "type": "intro",
       "items": [
         "lex_luggage",
@@ -53,7 +55,7 @@
       ]
     },
     {
-      "id": "act_324",
+      "id": "act_328",
       "type": "listen-choose",
       "items": [
         "lex_luggage",
@@ -65,7 +67,7 @@
       ]
     },
     {
-      "id": "act_325",
+      "id": "act_329",
       "type": "icon-choice",
       "items": [
         "lex_luggage",
@@ -76,7 +78,7 @@
       ]
     },
     {
-      "id": "act_326",
+      "id": "act_330",
       "type": "match",
       "items": [
         "lex_luggage",
@@ -88,7 +90,7 @@
       ]
     },
     {
-      "id": "act_327",
+      "id": "act_331",
       "type": "gapfill",
       "items": [
         {
@@ -134,7 +136,24 @@
       ]
     },
     {
-      "id": "act_328",
+      "id": "act_332",
+      "type": "phrase-match",
+      "items": [
+        "chunk_rp_letmecheck"
+      ]
+    },
+    {
+      "id": "act_333",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Let me check.",
+          "hu": "Hadd nézzem meg."
+        }
+      ]
+    },
+    {
+      "id": "act_334",
       "type": "typed",
       "items": [
         "lex_luggage",
@@ -144,17 +163,17 @@
       ]
     },
     {
-      "id": "act_329",
+      "id": "act_335",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_330",
+      "id": "act_336",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_331",
+      "id": "act_337",
       "type": "odd-one-out",
       "groups": [
         {

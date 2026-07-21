@@ -40,7 +40,9 @@
     "chunk_intro_job",
     "chunk_sm_longtime",
     "chunk_id_age",
-    "chunk_id_job2"
+    "chunk_id_job2",
+    "chunk_sm_longtime2",
+    "chunk_id_pleased"
   ],
   "grammarCards": [
     "gr_pronouns"
@@ -164,7 +166,8 @@
         "chunk_intro_job",
         "chunk_sm_longtime",
         "chunk_id_age",
-        "chunk_id_job2"
+        "chunk_id_job2",
+        "chunk_sm_longtime2"
       ]
     },
     {
@@ -220,7 +223,7 @@
       ]
     },
     {
-      "id": "act_388",
+      "id": "act_399",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "night"

@@ -25,7 +25,10 @@
     "lex_feel",
     "lex_sad",
     "lex_worry",
-    "lex_hold"
+    "lex_hold",
+    "lex_fall",
+    "lex_drop",
+    "lex_sleepy"
   ],
   "reviewItems": [
     "lex_was",
@@ -50,7 +53,11 @@
     "lex_spend",
     "lex_last",
     "lex_almost",
-    "lex_miss"
+    "lex_miss",
+    "lex_lose",
+    "lex_airport_bus",
+    "lex_already",
+    "lex_still"
   ],
   "chunks": [
     "chunk_fly_afraid",
@@ -61,7 +68,10 @@
     "chunk_fly_toilet",
     "chunk_fe_tired",
     "chunk_fl_firsttime",
-    "chunk_fl_helpcalm"
+    "chunk_fl_helpcalm",
+    "chunk_fe_worried",
+    "chunk_fl_thankyou",
+    "chunk_fl_couldyourepeat"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -72,7 +82,7 @@
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_355",
+      "id": "act_365",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -86,7 +96,7 @@
       ]
     },
     {
-      "id": "act_356",
+      "id": "act_366",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -98,7 +108,7 @@
       ]
     },
     {
-      "id": "act_357",
+      "id": "act_367",
       "type": "icon-choice",
       "items": [
         "lex_plane",
@@ -109,7 +119,7 @@
       ]
     },
     {
-      "id": "act_358",
+      "id": "act_368",
       "type": "match",
       "items": [
         "lex_plane",
@@ -121,18 +131,18 @@
       ]
     },
     {
-      "id": "act_359",
+      "id": "act_369",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_360",
+      "id": "act_370",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_361",
+      "id": "act_371",
       "type": "gapfill",
       "items": [
         {
@@ -178,7 +188,7 @@
       ]
     },
     {
-      "id": "act_362",
+      "id": "act_372",
       "type": "phrase-match",
       "items": [
         "chunk_fly_afraid",
@@ -190,7 +200,7 @@
       ]
     },
     {
-      "id": "act_363",
+      "id": "act_373",
       "type": "reorder",
       "sentences": [
         {
@@ -208,7 +218,7 @@
       ]
     },
     {
-      "id": "act_364",
+      "id": "act_374",
       "type": "typed",
       "items": [
         "lex_plane",
@@ -218,12 +228,12 @@
       ]
     },
     {
-      "id": "act_365",
+      "id": "act_375",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_366",
+      "id": "act_376",
       "type": "odd-one-out",
       "groups": [
         {
@@ -237,12 +247,12 @@
       ]
     },
     {
-      "id": "act_367",
+      "id": "act_377",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_368",
+      "id": "act_378",
       "type": "review",
       "items": [
         "lex_was",

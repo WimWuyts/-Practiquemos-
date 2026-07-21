@@ -98,7 +98,8 @@
     "lex_address"
   ],
   "chunks": [
-    "chunk_fam_livesin"
+    "chunk_fam_livesin",
+    "chunk_fam_youngest"
   ],
   "grammarCards": [
     "gr_possadj",
@@ -224,7 +225,8 @@
       "id": "act_40",
       "type": "phrase-match",
       "items": [
-        "chunk_fam_livesin"
+        "chunk_fam_livesin",
+        "chunk_fam_youngest"
       ]
     },
     {
@@ -234,6 +236,10 @@
         {
           "en": "My niece lives in Denmark.",
           "hu": "Az unokahúgom Dániában él."
+        },
+        {
+          "en": "I'm the oldest in the family.",
+          "hu": "Én vagyok a legidősebb a családban."
         }
       ]
     },
@@ -284,7 +290,7 @@
       ]
     },
     {
-      "id": "act_389",
+      "id": "act_400",
       "type": "spelling-build",
       "family": "sf_wh",
       "word": "what"

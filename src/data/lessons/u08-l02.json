@@ -61,7 +61,11 @@
     "lex_prefer",
     "lex_agree",
     "lex_soft",
-    "lex_pretty"
+    "lex_pretty",
+    "lex_duck",
+    "lex_rabbit",
+    "lex_famous",
+    "lex_modern"
   ],
   "reviewItems": [],
   "chunks": [
@@ -70,7 +74,14 @@
     "chunk_op_agree",
     "chunk_op_notsure",
     "chunk_op_favourite",
-    "chunk_op_prefer"
+    "chunk_op_prefer",
+    "chunk_ds_bigger",
+    "chunk_ag_iagree",
+    "chunk_ag_notreally",
+    "chunk_ag_inmyopinion",
+    "chunk_ag_reallythink",
+    "chunk_rp_almostget",
+    "chunk_op_dependson"
   ],
   "grammarCards": [
     "gr_comparatives"
@@ -81,7 +92,7 @@
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_198",
+      "id": "act_200",
       "type": "intro",
       "items": [
         "lex_favourite",
@@ -95,7 +106,7 @@
       ]
     },
     {
-      "id": "act_199",
+      "id": "act_201",
       "type": "listen-choose",
       "items": [
         "lex_favourite",
@@ -107,7 +118,7 @@
       ]
     },
     {
-      "id": "act_200",
+      "id": "act_202",
       "type": "icon-choice",
       "items": [
         "lex_favourite",
@@ -118,7 +129,7 @@
       ]
     },
     {
-      "id": "act_201",
+      "id": "act_203",
       "type": "match",
       "items": [
         "lex_favourite",
@@ -130,18 +141,18 @@
       ]
     },
     {
-      "id": "act_202",
+      "id": "act_204",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "green"
     },
     {
-      "id": "act_203",
+      "id": "act_205",
       "type": "grammar",
       "grammarId": "gr_comparatives"
     },
     {
-      "id": "act_204",
+      "id": "act_206",
       "type": "gapfill",
       "items": [
         {
@@ -187,7 +198,7 @@
       ]
     },
     {
-      "id": "act_205",
+      "id": "act_207",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_why",
@@ -199,7 +210,7 @@
       ]
     },
     {
-      "id": "act_206",
+      "id": "act_208",
       "type": "reorder",
       "sentences": [
         {
@@ -217,7 +228,7 @@
       ]
     },
     {
-      "id": "act_207",
+      "id": "act_209",
       "type": "typed",
       "items": [
         "lex_favourite",
@@ -227,17 +238,17 @@
       ]
     },
     {
-      "id": "act_208",
+      "id": "act_210",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_209",
+      "id": "act_211",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_210",
+      "id": "act_212",
       "type": "odd-one-out",
       "groups": [
         {
@@ -251,7 +262,7 @@
       ]
     },
     {
-      "id": "act_211",
+      "id": "act_213",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

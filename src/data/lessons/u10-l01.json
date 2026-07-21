@@ -128,7 +128,17 @@
     "lex_east",
     "lex_west",
     "lex_pull",
-    "lex_push"
+    "lex_push",
+    "lex_follow",
+    "lex_ring",
+    "lex_enter",
+    "lex_wait_for",
+    "lex_look_for",
+    "lex_boat",
+    "lex_bicycle",
+    "lex_corner_shop",
+    "lex_bench",
+    "lex_wide"
   ],
   "chunks": [
     "chunk_serv_order",
@@ -139,7 +149,15 @@
     "chunk_sm_haveniceday",
     "chunk_sv_tablefor",
     "chunk_sv_recommend",
-    "chunk_sv_water"
+    "chunk_sv_water",
+    "chunk_of_canihelp",
+    "chunk_th_forhelp",
+    "chunk_rs_readyorder",
+    "chunk_rs_anythingelse",
+    "chunk_rs_cardorcash",
+    "chunk_rs_lovelymeal",
+    "chunk_rs_couldwehave",
+    "chunk_sv_wheretoilet2"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -150,7 +168,7 @@
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_237",
+      "id": "act_239",
       "type": "intro",
       "items": [
         "lex_restaurant",
@@ -164,7 +182,7 @@
       ]
     },
     {
-      "id": "act_238",
+      "id": "act_240",
       "type": "listen-choose",
       "items": [
         "lex_restaurant",
@@ -176,7 +194,7 @@
       ]
     },
     {
-      "id": "act_239",
+      "id": "act_241",
       "type": "icon-choice",
       "items": [
         "lex_restaurant",
@@ -187,7 +205,7 @@
       ]
     },
     {
-      "id": "act_240",
+      "id": "act_242",
       "type": "match",
       "items": [
         "lex_restaurant",
@@ -199,12 +217,12 @@
       ]
     },
     {
-      "id": "act_241",
+      "id": "act_243",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_242",
+      "id": "act_244",
       "type": "gapfill",
       "items": [
         {
@@ -250,7 +268,7 @@
       ]
     },
     {
-      "id": "act_243",
+      "id": "act_245",
       "type": "phrase-match",
       "items": [
         "chunk_serv_order",
@@ -262,7 +280,7 @@
       ]
     },
     {
-      "id": "act_244",
+      "id": "act_246",
       "type": "reorder",
       "sentences": [
         {
@@ -280,7 +298,7 @@
       ]
     },
     {
-      "id": "act_245",
+      "id": "act_247",
       "type": "typed",
       "items": [
         "lex_restaurant",
@@ -290,12 +308,12 @@
       ]
     },
     {
-      "id": "act_246",
+      "id": "act_248",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_247",
+      "id": "act_249",
       "type": "odd-one-out",
       "groups": [
         {
@@ -309,12 +327,12 @@
       ]
     },
     {
-      "id": "act_248",
+      "id": "act_250",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_249",
+      "id": "act_251",
       "type": "review",
       "items": [
         "lex_call",

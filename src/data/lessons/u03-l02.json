@@ -37,7 +37,10 @@
   "reviewItems": [],
   "chunks": [
     "chunk_ask_work",
-    "chunk_id_teachonline"
+    "chunk_id_teachonline",
+    "chunk_ds_tall",
+    "chunk_ds_looks",
+    "chunk_id_wherework"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -145,7 +148,10 @@
       "type": "phrase-match",
       "items": [
         "chunk_ask_work",
-        "chunk_id_teachonline"
+        "chunk_id_teachonline",
+        "chunk_ds_tall",
+        "chunk_ds_looks",
+        "chunk_id_wherework"
       ]
     },
     {
@@ -159,6 +165,10 @@
         {
           "en": "I teach Hungarian online.",
           "hu": "Magyart tanítok online."
+        },
+        {
+          "en": "She is tall and friendly.",
+          "hu": "Magas és barátságos."
         }
       ]
     },

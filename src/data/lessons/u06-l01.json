@@ -185,10 +185,24 @@
     "lex_meal",
     "lex_snack",
     "lex_cut",
-    "lex_size"
+    "lex_size",
+    "lex_borrow",
+    "lex_cup",
+    "lex_pot",
+    "lex_pan",
+    "lex_basket",
+    "lex_list",
+    "lex_carrot",
+    "lex_lemon",
+    "lex_biscuit",
+    "lex_honey",
+    "lex_sweet",
+    "lex_fresh"
   ],
   "chunks": [
-    "chunk_tm_whattime"
+    "chunk_tm_whattime",
+    "chunk_nm_whatsdate",
+    "chunk_tm_seeyouat"
   ],
   "grammarCards": [
     "gr_prepositions_time"
@@ -308,7 +322,9 @@
       "id": "act_140",
       "type": "phrase-match",
       "items": [
-        "chunk_tm_whattime"
+        "chunk_tm_whattime",
+        "chunk_nm_whatsdate",
+        "chunk_tm_seeyouat"
       ]
     },
     {
@@ -318,6 +334,14 @@
         {
           "en": "What time is it?",
           "hu": "Mennyi az idő?"
+        },
+        {
+          "en": "What's the date today?",
+          "hu": "Hányadika van ma?"
+        },
+        {
+          "en": "See you at three o'clock.",
+          "hu": "Háromkor találkozunk."
         }
       ]
     },

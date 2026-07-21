@@ -6,12 +6,16 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { PRODUCTIVE, RECEPTIVE } from "./lexicon-source.mjs";
 import { EXTRA, EXTRA_RECEPTIVE } from "./lexicon-extra.mjs";
+import { EXTRA2 } from "./lexicon-extra2.mjs";
+import { RECEPTIVE_BIG } from "./receptive-extra.mjs";
 import { CHUNKS } from "./chunks-source.mjs";
 import { EXTRA_CHUNKS } from "./chunks-extra.mjs";
+import { EXTRA_CHUNKS2 } from "./chunks-extra2.mjs";
 import { GRAMMAR } from "./grammar-source.mjs";
 import { SPELLING_FAMILIES, SOUND_FOCUS, PATH } from "./pronunciation-source.mjs";
 import { DIALOGUES } from "./dialogues-source.mjs";
 import { EXAMPLES } from "./examples-source.mjs";
+import { LISTENINGS } from "./listening-source.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "..", "src", "data");
@@ -108,7 +112,8 @@ function addProductive(list) {
 }
 addProductive(PRODUCTIVE);
 addProductive(EXTRA);
-for (const [h, hu, pos, theme] of RECEPTIVE.concat(EXTRA_RECEPTIVE || [])) {
+addProductive(EXTRA2);
+for (const [h, hu, pos, theme] of RECEPTIVE.concat(EXTRA_RECEPTIVE || [], RECEPTIVE_BIG || [])) {
   if (seenHead.has(h.toLowerCase())) continue; seenHead.add(h.toLowerCase());
   pushLex(h, hu, pos, theme, null, null, "receptive");
 }
@@ -136,7 +141,7 @@ write(join(DATA, "lexicon.json"), lexicon);
 
 // ---------- Chunks ----------
 const seenChunkId = new Set();
-const chunks = CHUNKS.concat(EXTRA_CHUNKS).map(([id, intention, en, hu, register, firstLesson, variants, slots]) => {
+const chunks = CHUNKS.concat(EXTRA_CHUNKS, EXTRA_CHUNKS2).map(([id, intention, en, hu, register, firstLesson, variants, slots]) => {
   let cid = "chunk_" + id;
   if (seenChunkId.has(cid)) return null; seenChunkId.add(cid);
   return {
@@ -333,6 +338,11 @@ function activitiesFor(lesson) {
     const sameTheme = newLex.filter((l) => l.themes[0] === theme).slice(0, 3).map((l) => l.headword);
     const other = lexicon.find((l) => l.status === "productive" && l.themes[0] !== theme && l.partOfSpeech === newLex[0].partOfSpeech);
     if (sameTheme.length === 3 && other) acts.push(A("odd-one-out", { groups: [{ words: sameTheme, odd: other.headword }] }));
+  }
+  // 13a. Listening comprehension (short passage + question, with replay)
+  const listens = LISTENINGS.filter((l) => l[0] === lesson.id);
+  for (const [, passage, question, options, answerIndex] of listens) {
+    acts.push(A("listen-comprehension", { passage, question, options, answer: options[answerIndex] }));
   }
   // 13. Grow-your-answer (speaking expansion)
   if (EXPAND[lesson.id]) acts.push(A("expand", EXPAND[lesson.id]));

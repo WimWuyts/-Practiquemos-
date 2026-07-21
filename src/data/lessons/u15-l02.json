@@ -26,14 +26,14 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_369",
+      "id": "act_379",
       "type": "intro",
       "items": [
         "lex_land"
       ]
     },
     {
-      "id": "act_370",
+      "id": "act_380",
       "type": "phrase-match",
       "items": [
         "chunk_fly_land",
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "id": "act_371",
+      "id": "act_381",
       "type": "reorder",
       "sentences": [
         {
@@ -55,16 +55,31 @@
       ]
     },
     {
-      "id": "act_372",
+      "id": "act_382",
       "type": "typed",
       "items": [
         "lex_land"
       ]
     },
     {
-      "id": "act_373",
+      "id": "act_383",
       "type": "pron-record",
       "focusId": "str_question"
+    },
+    {
+      "id": "act_384",
+      "type": "listen-comprehension",
+      "passage": "Ladies and gentlemen, we will land in about twenty minutes. Please fasten your seatbelt. Thank you.",
+      "question": {
+        "en": "When will the plane land?",
+        "hu": "Mikor száll le a repülő?"
+      },
+      "options": [
+        "In about twenty minutes",
+        "In two hours",
+        "It has landed"
+      ],
+      "answer": "In about twenty minutes"
     }
   ],
   "completionRule": {

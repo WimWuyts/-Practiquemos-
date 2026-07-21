@@ -53,7 +53,12 @@
     "lex_lamp",
     "lex_flat",
     "lex_look",
-    "lex_dirty"
+    "lex_dirty",
+    "lex_knock",
+    "lex_towel",
+    "lex_mirror",
+    "lex_outside",
+    "lex_inside"
   ],
   "reviewItems": [],
   "chunks": [],
