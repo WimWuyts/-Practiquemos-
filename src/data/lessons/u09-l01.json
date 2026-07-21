@@ -1,0 +1,191 @@
+{
+  "id": "u09-l01",
+  "unitId": "u09",
+  "order": 1,
+  "title": {
+    "en": "Where is it?",
+    "hu": "Merre van?"
+  },
+  "canDo": {
+    "en": "Ask for and give directions",
+    "hu": "Útbaigazítás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_street",
+    "lex_station",
+    "lex_bus",
+    "lex_train",
+    "lex_car",
+    "lex_taxi",
+    "lex_left",
+    "lex_right",
+    "lex_straight",
+    "lex_near",
+    "lex_far",
+    "lex_first",
+    "lex_then",
+    "lex_turn"
+  ],
+  "reviewItems": [
+    "lex_time",
+    "lex_hour",
+    "lex_minute",
+    "lex_today",
+    "lex_tomorrow",
+    "lex_yesterday",
+    "lex_week",
+    "lex_month",
+    "lex_year",
+    "lex_monday",
+    "lex_tuesday",
+    "lex_wednesday",
+    "lex_thursday",
+    "lex_friday",
+    "lex_saturday",
+    "lex_sunday",
+    "lex_weekend",
+    "lex_weather",
+    "lex_sunny",
+    "lex_rainy",
+    "lex_cold",
+    "lex_hot",
+    "lex_warm",
+    "lex_plan",
+    "lex_meet",
+    "lex_can",
+    "lex_going_to",
+    "lex_free",
+    "lex_busy",
+    "lex_hobby",
+    "lex_music",
+    "lex_book",
+    "lex_film",
+    "lex_sport",
+    "lex_garden_noun",
+    "lex_swim",
+    "lex_dance",
+    "lex_sing",
+    "lex_play",
+    "lex_love",
+    "lex_enjoy",
+    "lex_favourite",
+    "lex_interesting",
+    "lex_boring",
+    "lex_beautiful",
+    "lex_horse",
+    "lex_think",
+    "lex_eleven",
+    "lex_twelve",
+    "lex_twenty",
+    "lex_thirty",
+    "lex_hundred",
+    "lex_red",
+    "lex_blue",
+    "lex_green",
+    "lex_white",
+    "lex_black"
+  ],
+  "chunks": [
+    "chunk_ask_followup_where",
+    "chunk_town_where",
+    "chunk_town_howget"
+  ],
+  "grammarCards": [
+    "gr_imperatives"
+  ],
+  "pronunciationFocus": [
+    "pf_th"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_137",
+      "type": "intro",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train",
+        "lex_car",
+        "lex_taxi",
+        "lex_left",
+        "lex_right"
+      ]
+    },
+    {
+      "id": "act_138",
+      "type": "listen-choose",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train",
+        "lex_car",
+        "lex_taxi"
+      ]
+    },
+    {
+      "id": "act_139",
+      "type": "match",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train",
+        "lex_car",
+        "lex_taxi"
+      ]
+    },
+    {
+      "id": "act_140",
+      "type": "spelling-build",
+      "family": "sf_ight",
+      "word": "right"
+    },
+    {
+      "id": "act_141",
+      "type": "grammar",
+      "grammarId": "gr_imperatives"
+    },
+    {
+      "id": "act_142",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_followup_where",
+        "chunk_town_where",
+        "chunk_town_howget"
+      ]
+    },
+    {
+      "id": "act_143",
+      "type": "typed",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train"
+      ]
+    },
+    {
+      "id": "act_144",
+      "type": "pron-record",
+      "focusId": "pf_th"
+    },
+    {
+      "id": "act_145",
+      "type": "review",
+      "items": [
+        "lex_time",
+        "lex_hour",
+        "lex_minute",
+        "lex_today",
+        "lex_tomorrow",
+        "lex_yesterday"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

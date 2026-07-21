@@ -1,0 +1,108 @@
+{
+  "id": "u04-l02",
+  "unitId": "u04",
+  "order": 2,
+  "title": {
+    "en": "My home",
+    "hu": "Az otthonom"
+  },
+  "canDo": {
+    "en": "Describe your home",
+    "hu": "Az otthonod leírása"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_read",
+    "lex_watch",
+    "lex_walk",
+    "lex_home",
+    "lex_house",
+    "lex_room",
+    "lex_kitchen",
+    "lex_garden",
+    "lex_there_is",
+    "lex_there_are",
+    "lex_in",
+    "lex_on",
+    "lex_under",
+    "lex_next_to"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [
+    "gr_thereis"
+  ],
+  "pronunciationFocus": [
+    "pf_finals"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_62",
+      "type": "intro",
+      "items": [
+        "lex_read",
+        "lex_watch",
+        "lex_walk",
+        "lex_home",
+        "lex_house",
+        "lex_room",
+        "lex_kitchen",
+        "lex_garden"
+      ]
+    },
+    {
+      "id": "act_63",
+      "type": "listen-choose",
+      "items": [
+        "lex_read",
+        "lex_watch",
+        "lex_walk",
+        "lex_home",
+        "lex_house",
+        "lex_room"
+      ]
+    },
+    {
+      "id": "act_64",
+      "type": "match",
+      "items": [
+        "lex_read",
+        "lex_watch",
+        "lex_walk",
+        "lex_home",
+        "lex_house",
+        "lex_room"
+      ]
+    },
+    {
+      "id": "act_65",
+      "type": "spelling-build",
+      "family": "sf_ea",
+      "word": "read"
+    },
+    {
+      "id": "act_66",
+      "type": "grammar",
+      "grammarId": "gr_thereis"
+    },
+    {
+      "id": "act_67",
+      "type": "typed",
+      "items": [
+        "lex_read",
+        "lex_watch",
+        "lex_walk",
+        "lex_home"
+      ]
+    },
+    {
+      "id": "act_68",
+      "type": "pron-record",
+      "focusId": "pf_finals"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "u15-l02",
+  "unitId": "u15",
+  "order": 2,
+  "title": {
+    "en": "Arrival",
+    "hu": "Érkezés"
+  },
+  "canDo": {
+    "en": "Manage a simple arrival",
+    "hu": "Egyszerű érkezés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_land"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_fly_land"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_237",
+      "type": "intro",
+      "items": [
+        "lex_land"
+      ]
+    },
+    {
+      "id": "act_238",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fly_land"
+      ]
+    },
+    {
+      "id": "act_239",
+      "type": "typed",
+      "items": [
+        "lex_land"
+      ]
+    },
+    {
+      "id": "act_240",
+      "type": "pron-record",
+      "focusId": "pf_question"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

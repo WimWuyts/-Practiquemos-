@@ -1,0 +1,113 @@
+{
+  "id": "u05-l02",
+  "unitId": "u05",
+  "order": 2,
+  "title": {
+    "en": "Cooking & shopping",
+    "hu": "Főzés és vásárlás"
+  },
+  "canDo": {
+    "en": "Buy and cook simple things",
+    "hu": "Vásárlás, főzés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_cake",
+    "lex_cook",
+    "lex_make",
+    "lex_buy",
+    "lex_want",
+    "lex_shop",
+    "lex_price",
+    "lex_money",
+    "lex_much",
+    "lex_many"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_op_wouldlike"
+  ],
+  "grammarCards": [
+    "gr_wouldlike"
+  ],
+  "pronunciationFocus": [
+    "pf_ea"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_78",
+      "type": "intro",
+      "items": [
+        "lex_cake",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_want",
+        "lex_shop",
+        "lex_price",
+        "lex_money"
+      ]
+    },
+    {
+      "id": "act_79",
+      "type": "listen-choose",
+      "items": [
+        "lex_cake",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_want",
+        "lex_shop"
+      ]
+    },
+    {
+      "id": "act_80",
+      "type": "match",
+      "items": [
+        "lex_cake",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_want",
+        "lex_shop"
+      ]
+    },
+    {
+      "id": "act_81",
+      "type": "spelling-build",
+      "family": "sf_a_e",
+      "word": "cake"
+    },
+    {
+      "id": "act_82",
+      "type": "grammar",
+      "grammarId": "gr_wouldlike"
+    },
+    {
+      "id": "act_83",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_wouldlike"
+      ]
+    },
+    {
+      "id": "act_84",
+      "type": "typed",
+      "items": [
+        "lex_cake",
+        "lex_cook",
+        "lex_make",
+        "lex_buy"
+      ]
+    },
+    {
+      "id": "act_85",
+      "type": "pron-record",
+      "focusId": "pf_ea"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

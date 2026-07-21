@@ -1,0 +1,4 @@
+node_modules/
+*.log
+releases/_learner/
+releases/_source/

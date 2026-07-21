@@ -1,0 +1,77 @@
+{
+  "id": "u13-l02",
+  "unitId": "u13",
+  "order": 2,
+  "title": {
+    "en": "Packing & documents",
+    "hu": "Csomagolás és iratok"
+  },
+  "canDo": {
+    "en": "Talk about luggage and documents",
+    "hu": "Poggyász, iratok"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_luggage",
+    "lex_suitcase",
+    "lex_passport",
+    "lex_bring"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_finals"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_206",
+      "type": "intro",
+      "items": [
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_bring"
+      ]
+    },
+    {
+      "id": "act_207",
+      "type": "listen-choose",
+      "items": [
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_bring"
+      ]
+    },
+    {
+      "id": "act_208",
+      "type": "match",
+      "items": [
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_bring"
+      ]
+    },
+    {
+      "id": "act_209",
+      "type": "typed",
+      "items": [
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_bring"
+      ]
+    },
+    {
+      "id": "act_210",
+      "type": "pron-record",
+      "focusId": "pf_finals"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

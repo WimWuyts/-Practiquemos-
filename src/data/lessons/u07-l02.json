@@ -1,0 +1,83 @@
+{
+  "id": "u07-l02",
+  "unitId": "u07",
+  "order": 2,
+  "title": {
+    "en": "Video calls",
+    "hu": "Videóhívás"
+  },
+  "canDo": {
+    "en": "Check picture and give an update",
+    "hu": "Kép ellenőrzése, hírek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_me",
+    "lex_him",
+    "lex_them"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_repair_howsay",
+    "chunk_call_bye"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_th"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_114",
+      "type": "intro",
+      "items": [
+        "lex_me",
+        "lex_him",
+        "lex_them"
+      ]
+    },
+    {
+      "id": "act_115",
+      "type": "listen-choose",
+      "items": [
+        "lex_me",
+        "lex_him",
+        "lex_them"
+      ]
+    },
+    {
+      "id": "act_116",
+      "type": "match",
+      "items": [
+        "lex_me",
+        "lex_him",
+        "lex_them"
+      ]
+    },
+    {
+      "id": "act_117",
+      "type": "phrase-match",
+      "items": [
+        "chunk_repair_howsay",
+        "chunk_call_bye"
+      ]
+    },
+    {
+      "id": "act_118",
+      "type": "typed",
+      "items": [
+        "lex_me",
+        "lex_him",
+        "lex_them"
+      ]
+    },
+    {
+      "id": "act_119",
+      "type": "pron-record",
+      "focusId": "pf_th"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

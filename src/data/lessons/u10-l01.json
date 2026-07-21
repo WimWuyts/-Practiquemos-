@@ -1,0 +1,158 @@
+{
+  "id": "u10-l01",
+  "unitId": "u10",
+  "order": 1,
+  "title": {
+    "en": "At the restaurant",
+    "hu": "Az étteremben"
+  },
+  "canDo": {
+    "en": "Order food and ask for the bill",
+    "hu": "Rendelés, számla"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_restaurant",
+    "lex_menu",
+    "lex_table",
+    "lex_bill",
+    "lex_order",
+    "lex_help",
+    "lex_excuse_me"
+  ],
+  "reviewItems": [
+    "lex_call",
+    "lex_phone",
+    "lex_hear",
+    "lex_see",
+    "lex_repeat",
+    "lex_slowly",
+    "lex_again",
+    "lex_understand",
+    "lex_wait",
+    "lex_moment",
+    "lex_me",
+    "lex_him",
+    "lex_them",
+    "lex_street",
+    "lex_station",
+    "lex_bus",
+    "lex_train",
+    "lex_car",
+    "lex_taxi",
+    "lex_ticket",
+    "lex_platform",
+    "lex_left",
+    "lex_right",
+    "lex_straight",
+    "lex_near",
+    "lex_far",
+    "lex_first",
+    "lex_then",
+    "lex_turn"
+  ],
+  "chunks": [
+    "chunk_serv_order",
+    "chunk_serv_bill",
+    "chunk_serv_help",
+    "chunk_serv_howmuch",
+    "chunk_serv_excuse"
+  ],
+  "grammarCards": [
+    "gr_could_requests"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_restaurant",
+  "activities": [
+    {
+      "id": "act_151",
+      "type": "intro",
+      "items": [
+        "lex_restaurant",
+        "lex_menu",
+        "lex_table",
+        "lex_bill",
+        "lex_order",
+        "lex_help",
+        "lex_excuse_me"
+      ]
+    },
+    {
+      "id": "act_152",
+      "type": "listen-choose",
+      "items": [
+        "lex_restaurant",
+        "lex_menu",
+        "lex_table",
+        "lex_bill",
+        "lex_order",
+        "lex_help"
+      ]
+    },
+    {
+      "id": "act_153",
+      "type": "match",
+      "items": [
+        "lex_restaurant",
+        "lex_menu",
+        "lex_table",
+        "lex_bill",
+        "lex_order",
+        "lex_help"
+      ]
+    },
+    {
+      "id": "act_154",
+      "type": "grammar",
+      "grammarId": "gr_could_requests"
+    },
+    {
+      "id": "act_155",
+      "type": "phrase-match",
+      "items": [
+        "chunk_serv_order",
+        "chunk_serv_bill",
+        "chunk_serv_help",
+        "chunk_serv_howmuch",
+        "chunk_serv_excuse"
+      ]
+    },
+    {
+      "id": "act_156",
+      "type": "typed",
+      "items": [
+        "lex_restaurant",
+        "lex_menu",
+        "lex_table",
+        "lex_bill"
+      ]
+    },
+    {
+      "id": "act_157",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_158",
+      "type": "conversation",
+      "dialogueId": "dlg_restaurant"
+    },
+    {
+      "id": "act_159",
+      "type": "review",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see",
+        "lex_repeat",
+        "lex_slowly"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "u00-l01",
+  "unitId": "u00",
+  "order": 1,
+  "title": {
+    "en": "Welcome, sound & your start",
+    "hu": "Üdvözlünk, hang és a kezdésed"
+  },
+  "canDo": {
+    "en": "Test sound and find your starting point",
+    "hu": "Hang tesztelése, kezdőpont"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_1",
+      "type": "diagnostic"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

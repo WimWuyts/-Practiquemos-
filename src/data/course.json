@@ -1,0 +1,295 @@
+{
+  "id": "marta_english",
+  "version": "1.0.0",
+  "schemaVersion": 1,
+  "title": {
+    "en": "English with Marta",
+    "hu": "Angol Martával"
+  },
+  "units": [
+    {
+      "id": "u00",
+      "title": {
+        "en": "Welcome & first steps",
+        "hu": "Üdvözlünk & első lépések"
+      },
+      "canDo": {
+        "en": "Set up sound, voice and help; find your start",
+        "hu": "Hang, hang és segítség beállítása; kezdőpont keresése"
+      },
+      "recommended": true,
+      "lessons": [
+        "u00-l01"
+      ]
+    },
+    {
+      "id": "u01",
+      "title": {
+        "en": "Hello, I'm Marta",
+        "hu": "Szia, Marta vagyok"
+      },
+      "canDo": {
+        "en": "Greet, introduce yourself, ask simple questions",
+        "hu": "Köszönés, bemutatkozás, egyszerű kérdések"
+      },
+      "recommended": true,
+      "lessons": [
+        "u01-l01",
+        "u01-l02"
+      ]
+    },
+    {
+      "id": "u02",
+      "title": {
+        "en": "My family",
+        "hu": "A családom"
+      },
+      "canDo": {
+        "en": "Talk about family and who is who",
+        "hu": "Beszélj a családról, ki kicsoda"
+      },
+      "recommended": true,
+      "lessons": [
+        "u02-l01",
+        "u02-l02"
+      ]
+    },
+    {
+      "id": "u03",
+      "title": {
+        "en": "People, countries & languages",
+        "hu": "Emberek, országok, nyelvek"
+      },
+      "canDo": {
+        "en": "Say where people are from and describe them",
+        "hu": "Honnan jönnek az emberek, milyenek"
+      },
+      "recommended": true,
+      "lessons": [
+        "u03-l01",
+        "u03-l02"
+      ]
+    },
+    {
+      "id": "u04",
+      "title": {
+        "en": "My day & my home",
+        "hu": "A napom és az otthonom"
+      },
+      "canDo": {
+        "en": "Describe your routine and your home",
+        "hu": "A napirended és az otthonod"
+      },
+      "recommended": true,
+      "lessons": [
+        "u04-l01",
+        "u04-l02"
+      ]
+    },
+    {
+      "id": "u05",
+      "title": {
+        "en": "Food, cooking & shopping",
+        "hu": "Étel, főzés, vásárlás"
+      },
+      "canDo": {
+        "en": "Talk about food and buy simple things",
+        "hu": "Ételről beszélni, egyszerű vásárlás"
+      },
+      "recommended": true,
+      "lessons": [
+        "u05-l01",
+        "u05-l02"
+      ]
+    },
+    {
+      "id": "u06",
+      "title": {
+        "en": "Time, weather & plans",
+        "hu": "Idő, időjárás, tervek"
+      },
+      "canDo": {
+        "en": "Say times, weather and make plans",
+        "hu": "Időpontok, időjárás, tervek"
+      },
+      "recommended": true,
+      "lessons": [
+        "u06-l01",
+        "u06-l02"
+      ]
+    },
+    {
+      "id": "u07",
+      "title": {
+        "en": "Phone & video calls",
+        "hu": "Telefon és videóhívás"
+      },
+      "canDo": {
+        "en": "Start a call, check sound, ask to repeat",
+        "hu": "Hívás indítása, hang ellenőrzése, ismétléskérés"
+      },
+      "recommended": true,
+      "lessons": [
+        "u07-l01",
+        "u07-l02"
+      ]
+    },
+    {
+      "id": "u08",
+      "title": {
+        "en": "Hobbies, books & opinions",
+        "hu": "Hobbik, könyvek, vélemények"
+      },
+      "canDo": {
+        "en": "Talk about hobbies and give an opinion",
+        "hu": "Hobbikról beszélni, véleményt mondani"
+      },
+      "recommended": true,
+      "lessons": [
+        "u08-l01",
+        "u08-l02"
+      ]
+    },
+    {
+      "id": "u09",
+      "title": {
+        "en": "Around town: directions",
+        "hu": "A városban: útbaigazítás"
+      },
+      "canDo": {
+        "en": "Ask where places are and use transport",
+        "hu": "Merre van, közlekedés"
+      },
+      "recommended": true,
+      "lessons": [
+        "u09-l01",
+        "u09-l02"
+      ]
+    },
+    {
+      "id": "u10",
+      "title": {
+        "en": "Restaurant, hotel & services",
+        "hu": "Étterem, szálloda, szolgáltatások"
+      },
+      "canDo": {
+        "en": "Order, check in, ask for help",
+        "hu": "Rendelés, bejelentkezés, segítségkérés"
+      },
+      "recommended": true,
+      "lessons": [
+        "u10-l01",
+        "u10-l02"
+      ]
+    },
+    {
+      "id": "u11",
+      "title": {
+        "en": "Teaching Hungarian online",
+        "hu": "Magyartanítás online"
+      },
+      "canDo": {
+        "en": "Run an online lesson in English",
+        "hu": "Online óra angolul"
+      },
+      "recommended": true,
+      "lessons": [
+        "u11-l01",
+        "u11-l02"
+      ]
+    },
+    {
+      "id": "u12",
+      "title": {
+        "en": "Yesterday & past experiences",
+        "hu": "Tegnap és a múlt"
+      },
+      "canDo": {
+        "en": "Talk about the past",
+        "hu": "A múltról beszélni"
+      },
+      "recommended": true,
+      "lessons": [
+        "u12-l01",
+        "u12-l02"
+      ]
+    },
+    {
+      "id": "u13",
+      "title": {
+        "en": "Visits & future travel",
+        "hu": "Látogatások, jövőbeli utazás"
+      },
+      "canDo": {
+        "en": "Plan a visit and a trip",
+        "hu": "Látogatás és utazás tervezése"
+      },
+      "recommended": true,
+      "lessons": [
+        "u13-l01",
+        "u13-l02"
+      ]
+    },
+    {
+      "id": "u14",
+      "title": {
+        "en": "Airport confidence",
+        "hu": "Magabiztosság a reptéren"
+      },
+      "canDo": {
+        "en": "Manage the airport calmly",
+        "hu": "A reptér nyugodt kezelése"
+      },
+      "recommended": true,
+      "lessons": [
+        "u14-l01",
+        "u14-l02"
+      ]
+    },
+    {
+      "id": "u15",
+      "title": {
+        "en": "On the plane & arrival",
+        "hu": "A repülőn és érkezés"
+      },
+      "canDo": {
+        "en": "Ask for help and stay calm on the plane",
+        "hu": "Segítségkérés és nyugalom a repülőn"
+      },
+      "recommended": true,
+      "lessons": [
+        "u15-l01",
+        "u15-l02"
+      ]
+    },
+    {
+      "id": "u16",
+      "title": {
+        "en": "Family occasions",
+        "hu": "Családi alkalmak"
+      },
+      "canDo": {
+        "en": "Join a family conversation",
+        "hu": "Bekapcsolódni a családi beszélgetésbe"
+      },
+      "recommended": true,
+      "lessons": [
+        "u16-l01"
+      ]
+    }
+  ],
+  "monthlyLessons": [
+    "month-01",
+    "month-02",
+    "month-03",
+    "month-04",
+    "month-05",
+    "month-06",
+    "month-07",
+    "month-08",
+    "month-09",
+    "month-10",
+    "month-11",
+    "month-12"
+  ]
+}

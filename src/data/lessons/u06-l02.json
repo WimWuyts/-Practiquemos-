@@ -1,0 +1,134 @@
+{
+  "id": "u06-l02",
+  "unitId": "u06",
+  "order": 2,
+  "title": {
+    "en": "Weather & plans",
+    "hu": "Időjárás és tervek"
+  },
+  "canDo": {
+    "en": "Talk about weather and make plans",
+    "hu": "Időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_weekend",
+    "lex_weather",
+    "lex_sunny",
+    "lex_rainy",
+    "lex_cold",
+    "lex_hot",
+    "lex_warm",
+    "lex_plan",
+    "lex_meet",
+    "lex_can",
+    "lex_going_to",
+    "lex_free",
+    "lex_busy"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_plan_free",
+    "chunk_plan_suggest",
+    "chunk_plan_accept",
+    "chunk_plan_decline"
+  ],
+  "grammarCards": [
+    "gr_can",
+    "gr_goingto",
+    "gr_presentcont"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_94",
+      "type": "intro",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold",
+        "lex_hot",
+        "lex_warm",
+        "lex_plan"
+      ]
+    },
+    {
+      "id": "act_95",
+      "type": "listen-choose",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold",
+        "lex_hot"
+      ]
+    },
+    {
+      "id": "act_96",
+      "type": "match",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold",
+        "lex_hot"
+      ]
+    },
+    {
+      "id": "act_97",
+      "type": "spelling-build",
+      "family": "sf_ee",
+      "word": "meet"
+    },
+    {
+      "id": "act_98",
+      "type": "grammar",
+      "grammarId": "gr_can"
+    },
+    {
+      "id": "act_99",
+      "type": "grammar",
+      "grammarId": "gr_goingto"
+    },
+    {
+      "id": "act_100",
+      "type": "grammar",
+      "grammarId": "gr_presentcont"
+    },
+    {
+      "id": "act_101",
+      "type": "phrase-match",
+      "items": [
+        "chunk_plan_free",
+        "chunk_plan_suggest",
+        "chunk_plan_accept",
+        "chunk_plan_decline"
+      ]
+    },
+    {
+      "id": "act_102",
+      "type": "typed",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy"
+      ]
+    },
+    {
+      "id": "act_103",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

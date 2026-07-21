@@ -1,0 +1,132 @@
+{
+  "id": "u13-l01",
+  "unitId": "u13",
+  "order": 1,
+  "title": {
+    "en": "Planning a visit",
+    "hu": "Látogatás tervezése"
+  },
+  "canDo": {
+    "en": "Plan a visit and a trip",
+    "hu": "Látogatás, utazás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_travel",
+    "lex_trip",
+    "lex_visit_noun",
+    "lex_need"
+  ],
+  "reviewItems": [
+    "lex_restaurant",
+    "lex_hotel",
+    "lex_menu",
+    "lex_table",
+    "lex_bill",
+    "lex_order",
+    "lex_room_noun",
+    "lex_key",
+    "lex_night_noun",
+    "lex_book_verb",
+    "lex_help",
+    "lex_problem",
+    "lex_excuse_me",
+    "lex_was",
+    "lex_went",
+    "lex_saw",
+    "lex_visit",
+    "lex_yesterday_noun",
+    "lex_last_week",
+    "lex_ago",
+    "lex_holiday"
+  ],
+  "chunks": [
+    "chunk_plan_going"
+  ],
+  "grammarCards": [
+    "gr_needhaveto"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_mirella_travel",
+  "activities": [
+    {
+      "id": "act_197",
+      "type": "intro",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_visit_noun",
+        "lex_need"
+      ]
+    },
+    {
+      "id": "act_198",
+      "type": "listen-choose",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_visit_noun",
+        "lex_need"
+      ]
+    },
+    {
+      "id": "act_199",
+      "type": "match",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_visit_noun",
+        "lex_need"
+      ]
+    },
+    {
+      "id": "act_200",
+      "type": "grammar",
+      "grammarId": "gr_needhaveto"
+    },
+    {
+      "id": "act_201",
+      "type": "phrase-match",
+      "items": [
+        "chunk_plan_going"
+      ]
+    },
+    {
+      "id": "act_202",
+      "type": "typed",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_visit_noun",
+        "lex_need"
+      ]
+    },
+    {
+      "id": "act_203",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_204",
+      "type": "conversation",
+      "dialogueId": "dlg_mirella_travel"
+    },
+    {
+      "id": "act_205",
+      "type": "review",
+      "items": [
+        "lex_restaurant",
+        "lex_hotel",
+        "lex_menu",
+        "lex_table",
+        "lex_bill",
+        "lex_order"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

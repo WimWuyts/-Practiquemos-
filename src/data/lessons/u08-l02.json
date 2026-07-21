@@ -1,0 +1,116 @@
+{
+  "id": "u08-l02",
+  "unitId": "u08",
+  "order": 2,
+  "title": {
+    "en": "Books & opinions with Emma",
+    "hu": "Könyvek és vélemények Emmával"
+  },
+  "canDo": {
+    "en": "Give a simple opinion",
+    "hu": "Véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_favourite",
+    "lex_interesting",
+    "lex_boring",
+    "lex_beautiful",
+    "lex_horse",
+    "lex_think",
+    "lex_red",
+    "lex_blue",
+    "lex_green",
+    "lex_white",
+    "lex_black"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_ask_followup_why",
+    "chunk_op_ithink",
+    "chunk_op_agree"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_th"
+  ],
+  "conversationId": "dlg_emma_books",
+  "activities": [
+    {
+      "id": "act_129",
+      "type": "intro",
+      "items": [
+        "lex_favourite",
+        "lex_interesting",
+        "lex_boring",
+        "lex_beautiful",
+        "lex_horse",
+        "lex_think",
+        "lex_red",
+        "lex_blue"
+      ]
+    },
+    {
+      "id": "act_130",
+      "type": "listen-choose",
+      "items": [
+        "lex_favourite",
+        "lex_interesting",
+        "lex_boring",
+        "lex_beautiful",
+        "lex_horse",
+        "lex_think"
+      ]
+    },
+    {
+      "id": "act_131",
+      "type": "match",
+      "items": [
+        "lex_favourite",
+        "lex_interesting",
+        "lex_boring",
+        "lex_beautiful",
+        "lex_horse",
+        "lex_think"
+      ]
+    },
+    {
+      "id": "act_132",
+      "type": "spelling-build",
+      "family": "sf_ee",
+      "word": "green"
+    },
+    {
+      "id": "act_133",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_followup_why",
+        "chunk_op_ithink",
+        "chunk_op_agree"
+      ]
+    },
+    {
+      "id": "act_134",
+      "type": "typed",
+      "items": [
+        "lex_favourite",
+        "lex_interesting",
+        "lex_boring",
+        "lex_beautiful"
+      ]
+    },
+    {
+      "id": "act_135",
+      "type": "pron-record",
+      "focusId": "pf_th"
+    },
+    {
+      "id": "act_136",
+      "type": "conversation",
+      "dialogueId": "dlg_emma_books"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

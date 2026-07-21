@@ -1,0 +1,25 @@
+/* Responsive: laptop first, phone layer. Core screens survive 200% zoom without horizontal scroll. */
+@media (min-width:640px){
+  .options{grid-template-columns:1fr 1fr}
+}
+@media (max-width:639px){
+  .container{padding:.8rem .8rem 4rem}
+  .appbar{flex-wrap:wrap;gap:.4rem}
+  .appbar nav{width:100%;justify-content:space-between}
+  .navbtn{flex:1;padding:.4rem .3rem;font-size:.85rem}
+  h1{font-size:1.45rem}
+  .wordcard .en{font-size:1.7rem}
+  .bubble{max-width:100%}
+  .btn-row .btn{flex:1}
+}
+@media (max-width:380px){
+  :root{--fs:19px}
+  .navbtn{font-size:.8rem}
+}
+/* High-contrast / forced colours friendliness */
+@media (prefers-contrast:more){
+  :root{--line:#8a7d64;--ink-soft:#332e26}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+}

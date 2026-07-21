@@ -1,0 +1,69 @@
+{
+  "id": "u11-l02",
+  "unitId": "u11",
+  "order": 2,
+  "title": {
+    "en": "Talking with a parent",
+    "hu": "Beszélgetés a szülővel"
+  },
+  "canDo": {
+    "en": "Ask for a parent and speak with them",
+    "hu": "Szülő hívása, beszélgetés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_click"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_teach_parent"
+  ],
+  "grammarCards": [
+    "gr_can"
+  ],
+  "pronunciationFocus": [
+    "pf_question"
+  ],
+  "conversationId": "dlg_student_parent",
+  "activities": [
+    {
+      "id": "act_177",
+      "type": "intro",
+      "items": [
+        "lex_click"
+      ]
+    },
+    {
+      "id": "act_178",
+      "type": "grammar",
+      "grammarId": "gr_can"
+    },
+    {
+      "id": "act_179",
+      "type": "phrase-match",
+      "items": [
+        "chunk_teach_parent"
+      ]
+    },
+    {
+      "id": "act_180",
+      "type": "typed",
+      "items": [
+        "lex_click"
+      ]
+    },
+    {
+      "id": "act_181",
+      "type": "pron-record",
+      "focusId": "pf_question"
+    },
+    {
+      "id": "act_182",
+      "type": "conversation",
+      "dialogueId": "dlg_student_parent"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

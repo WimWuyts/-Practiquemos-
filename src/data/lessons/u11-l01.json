@@ -1,0 +1,173 @@
+{
+  "id": "u11-l01",
+  "unitId": "u11",
+  "order": 1,
+  "title": {
+    "en": "Starting an online lesson",
+    "hu": "Online óra indítása"
+  },
+  "canDo": {
+    "en": "Start a lesson, fix sound, praise",
+    "hu": "Óra indítása, hang, dicséret"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_lesson",
+    "lex_camera",
+    "lex_microphone",
+    "lex_screen",
+    "lex_computer",
+    "lex_internet",
+    "lex_start",
+    "lex_turn_on",
+    "lex_turn_off",
+    "lex_ready",
+    "lex_excellent",
+    "lex_student"
+  ],
+  "reviewItems": [
+    "lex_hobby",
+    "lex_music",
+    "lex_book",
+    "lex_film",
+    "lex_sport",
+    "lex_garden_noun",
+    "lex_swim",
+    "lex_dance",
+    "lex_sing",
+    "lex_play",
+    "lex_love",
+    "lex_enjoy",
+    "lex_favourite",
+    "lex_interesting",
+    "lex_boring",
+    "lex_beautiful",
+    "lex_horse",
+    "lex_think",
+    "lex_restaurant",
+    "lex_hotel",
+    "lex_menu",
+    "lex_table",
+    "lex_bill",
+    "lex_order",
+    "lex_room_noun",
+    "lex_key",
+    "lex_night_noun",
+    "lex_book_verb",
+    "lex_help",
+    "lex_problem",
+    "lex_excuse_me",
+    "lex_red",
+    "lex_blue",
+    "lex_green",
+    "lex_white",
+    "lex_black"
+  ],
+  "chunks": [
+    "chunk_call_camera",
+    "chunk_call_mic",
+    "chunk_call_start",
+    "chunk_teach_wait",
+    "chunk_teach_excellent",
+    "chunk_teach_repeat_me"
+  ],
+  "grammarCards": [
+    "gr_imperatives"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_student_mic",
+  "activities": [
+    {
+      "id": "act_168",
+      "type": "intro",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen",
+        "lex_computer",
+        "lex_internet",
+        "lex_start",
+        "lex_turn_on"
+      ]
+    },
+    {
+      "id": "act_169",
+      "type": "listen-choose",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen",
+        "lex_computer",
+        "lex_internet"
+      ]
+    },
+    {
+      "id": "act_170",
+      "type": "match",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen",
+        "lex_computer",
+        "lex_internet"
+      ]
+    },
+    {
+      "id": "act_171",
+      "type": "grammar",
+      "grammarId": "gr_imperatives"
+    },
+    {
+      "id": "act_172",
+      "type": "phrase-match",
+      "items": [
+        "chunk_call_camera",
+        "chunk_call_mic",
+        "chunk_call_start",
+        "chunk_teach_wait",
+        "chunk_teach_excellent",
+        "chunk_teach_repeat_me"
+      ]
+    },
+    {
+      "id": "act_173",
+      "type": "typed",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen"
+      ]
+    },
+    {
+      "id": "act_174",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_175",
+      "type": "conversation",
+      "dialogueId": "dlg_student_mic"
+    },
+    {
+      "id": "act_176",
+      "type": "review",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film",
+        "lex_sport",
+        "lex_garden_noun"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

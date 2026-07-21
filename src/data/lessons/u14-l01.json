@@ -1,0 +1,150 @@
+{
+  "id": "u14-l01",
+  "unitId": "u14",
+  "order": 1,
+  "title": {
+    "en": "At the airport",
+    "hu": "A reptéren"
+  },
+  "canDo": {
+    "en": "Find check-in and your gate",
+    "hu": "Check-in és kapu"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_airport",
+    "lex_flight",
+    "lex_gate",
+    "lex_check_in",
+    "lex_security",
+    "lex_desk"
+  ],
+  "reviewItems": [
+    "lex_lesson",
+    "lex_camera",
+    "lex_microphone",
+    "lex_screen",
+    "lex_computer",
+    "lex_internet",
+    "lex_start",
+    "lex_turn_on",
+    "lex_turn_off",
+    "lex_click",
+    "lex_ready",
+    "lex_excellent",
+    "lex_student",
+    "lex_travel",
+    "lex_trip",
+    "lex_visit_noun",
+    "lex_luggage",
+    "lex_suitcase",
+    "lex_passport",
+    "lex_need",
+    "lex_bring"
+  ],
+  "chunks": [
+    "chunk_air_gate",
+    "chunk_air_checkin",
+    "chunk_air_help"
+  ],
+  "grammarCards": [
+    "gr_could_requests"
+  ],
+  "pronunciationFocus": [
+    "pf_question"
+  ],
+  "conversationId": "dlg_airport",
+  "activities": [
+    {
+      "id": "act_211",
+      "type": "intro",
+      "items": [
+        "lex_airport",
+        "lex_flight",
+        "lex_gate",
+        "lex_check_in",
+        "lex_security",
+        "lex_desk"
+      ]
+    },
+    {
+      "id": "act_212",
+      "type": "listen-choose",
+      "items": [
+        "lex_airport",
+        "lex_flight",
+        "lex_gate",
+        "lex_check_in",
+        "lex_security",
+        "lex_desk"
+      ]
+    },
+    {
+      "id": "act_213",
+      "type": "match",
+      "items": [
+        "lex_airport",
+        "lex_flight",
+        "lex_gate",
+        "lex_check_in",
+        "lex_security",
+        "lex_desk"
+      ]
+    },
+    {
+      "id": "act_214",
+      "type": "spelling-build",
+      "family": "sf_ight",
+      "word": "flight"
+    },
+    {
+      "id": "act_215",
+      "type": "grammar",
+      "grammarId": "gr_could_requests"
+    },
+    {
+      "id": "act_216",
+      "type": "phrase-match",
+      "items": [
+        "chunk_air_gate",
+        "chunk_air_checkin",
+        "chunk_air_help"
+      ]
+    },
+    {
+      "id": "act_217",
+      "type": "typed",
+      "items": [
+        "lex_airport",
+        "lex_flight",
+        "lex_gate",
+        "lex_check_in"
+      ]
+    },
+    {
+      "id": "act_218",
+      "type": "pron-record",
+      "focusId": "pf_question"
+    },
+    {
+      "id": "act_219",
+      "type": "conversation",
+      "dialogueId": "dlg_airport"
+    },
+    {
+      "id": "act_220",
+      "type": "review",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen",
+        "lex_computer",
+        "lex_internet"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

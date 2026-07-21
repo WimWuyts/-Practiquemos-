@@ -1,0 +1,30 @@
+{
+  "name": "marta-english-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "English with Marta — a personal, local-first, bilingual (EN–HU) English course. Internal project name: Mirella tante.",
+  "type": "module",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "gen:data": "node scripts/generators/build-data.mjs",
+    "gen:i18n": "node scripts/generators/build-i18n.mjs",
+    "gen:docs": "node scripts/generators/build-docs.mjs",
+    "generate": "npm run gen:data && npm run gen:i18n && npm run gen:docs",
+    "validate": "node scripts/validate-content.mjs",
+    "build": "npm run generate && npm run validate && node scripts/build-single-html.mjs",
+    "test": "node tests/smoke.mjs",
+    "package": "node scripts/package-release.mjs",
+    "all": "npm run build && npm run test && npm run package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:41729/git/WimWuyts/-Practiquemos-"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "playwright-core": "^1.61.1"
+  }
+}

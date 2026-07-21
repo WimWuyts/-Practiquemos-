@@ -1,0 +1,184 @@
+{
+  "id": "u06-l01",
+  "unitId": "u06",
+  "order": 1,
+  "title": {
+    "en": "Days, times & numbers",
+    "hu": "Napok, idő, számok"
+  },
+  "canDo": {
+    "en": "Say days and times",
+    "hu": "Napok, időpontok"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_time",
+    "lex_hour",
+    "lex_minute",
+    "lex_today",
+    "lex_tomorrow",
+    "lex_yesterday",
+    "lex_week",
+    "lex_month",
+    "lex_year",
+    "lex_monday",
+    "lex_tuesday",
+    "lex_wednesday",
+    "lex_thursday",
+    "lex_friday",
+    "lex_saturday",
+    "lex_sunday",
+    "lex_eleven",
+    "lex_twelve",
+    "lex_twenty",
+    "lex_thirty",
+    "lex_hundred"
+  ],
+  "reviewItems": [
+    "lex_hungary",
+    "lex_hungarian",
+    "lex_england",
+    "lex_english",
+    "lex_spain",
+    "lex_spanish",
+    "lex_germany",
+    "lex_german",
+    "lex_denmark",
+    "lex_danish",
+    "lex_belgium",
+    "lex_switzerland",
+    "lex_language",
+    "lex_speak",
+    "lex_live",
+    "lex_work",
+    "lex_come",
+    "lex_tall",
+    "lex_short",
+    "lex_kind",
+    "lex_funny",
+    "lex_happy",
+    "lex_but",
+    "lex_because",
+    "lex_so",
+    "lex_very",
+    "lex_food",
+    "lex_water",
+    "lex_coffee",
+    "lex_tea",
+    "lex_milk",
+    "lex_bread",
+    "lex_cheese",
+    "lex_egg",
+    "lex_apple",
+    "lex_soup",
+    "lex_meat",
+    "lex_fish",
+    "lex_vegetable",
+    "lex_fruit",
+    "lex_cake",
+    "lex_breakfast",
+    "lex_lunch",
+    "lex_dinner",
+    "lex_cook",
+    "lex_make",
+    "lex_buy",
+    "lex_like",
+    "lex_want",
+    "lex_shop",
+    "lex_price",
+    "lex_money",
+    "lex_some",
+    "lex_any",
+    "lex_much",
+    "lex_many"
+  ],
+  "chunks": [],
+  "grammarCards": [
+    "gr_prepositions_time"
+  ],
+  "pronunciationFocus": [
+    "pf_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_86",
+      "type": "intro",
+      "items": [
+        "lex_time",
+        "lex_hour",
+        "lex_minute",
+        "lex_today",
+        "lex_tomorrow",
+        "lex_yesterday",
+        "lex_week",
+        "lex_month"
+      ]
+    },
+    {
+      "id": "act_87",
+      "type": "listen-choose",
+      "items": [
+        "lex_time",
+        "lex_hour",
+        "lex_minute",
+        "lex_today",
+        "lex_tomorrow",
+        "lex_yesterday"
+      ]
+    },
+    {
+      "id": "act_88",
+      "type": "match",
+      "items": [
+        "lex_time",
+        "lex_hour",
+        "lex_minute",
+        "lex_today",
+        "lex_tomorrow",
+        "lex_yesterday"
+      ]
+    },
+    {
+      "id": "act_89",
+      "type": "spelling-build",
+      "family": "sf_i_e",
+      "word": "time"
+    },
+    {
+      "id": "act_90",
+      "type": "grammar",
+      "grammarId": "gr_prepositions_time"
+    },
+    {
+      "id": "act_91",
+      "type": "typed",
+      "items": [
+        "lex_time",
+        "lex_hour",
+        "lex_minute",
+        "lex_today"
+      ]
+    },
+    {
+      "id": "act_92",
+      "type": "pron-record",
+      "focusId": "pf_question"
+    },
+    {
+      "id": "act_93",
+      "type": "review",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english",
+        "lex_spain",
+        "lex_spanish"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

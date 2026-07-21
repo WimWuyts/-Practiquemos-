@@ -1,0 +1,105 @@
+{
+  "id": "u10-l02",
+  "unitId": "u10",
+  "order": 2,
+  "title": {
+    "en": "Hotel check-in",
+    "hu": "Bejelentkezés a szállodában"
+  },
+  "canDo": {
+    "en": "Check in and explain a problem",
+    "hu": "Bejelentkezés, probléma"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_hotel",
+    "lex_room_noun",
+    "lex_key",
+    "lex_night_noun",
+    "lex_book_verb",
+    "lex_problem"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_serv_checkin"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_hotel",
+  "activities": [
+    {
+      "id": "act_160",
+      "type": "intro",
+      "items": [
+        "lex_hotel",
+        "lex_room_noun",
+        "lex_key",
+        "lex_night_noun",
+        "lex_book_verb",
+        "lex_problem"
+      ]
+    },
+    {
+      "id": "act_161",
+      "type": "listen-choose",
+      "items": [
+        "lex_hotel",
+        "lex_room_noun",
+        "lex_key",
+        "lex_night_noun",
+        "lex_book_verb",
+        "lex_problem"
+      ]
+    },
+    {
+      "id": "act_162",
+      "type": "match",
+      "items": [
+        "lex_hotel",
+        "lex_room_noun",
+        "lex_key",
+        "lex_night_noun",
+        "lex_book_verb",
+        "lex_problem"
+      ]
+    },
+    {
+      "id": "act_163",
+      "type": "spelling-build",
+      "family": "sf_oo",
+      "word": "room"
+    },
+    {
+      "id": "act_164",
+      "type": "phrase-match",
+      "items": [
+        "chunk_serv_checkin"
+      ]
+    },
+    {
+      "id": "act_165",
+      "type": "typed",
+      "items": [
+        "lex_hotel",
+        "lex_room_noun",
+        "lex_key",
+        "lex_night_noun"
+      ]
+    },
+    {
+      "id": "act_166",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_167",
+      "type": "conversation",
+      "dialogueId": "dlg_hotel"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "id": "u04-l01",
+  "unitId": "u04",
+  "order": 1,
+  "title": {
+    "en": "My daily routine",
+    "hu": "A napirendem"
+  },
+  "canDo": {
+    "en": "Describe your day",
+    "hu": "A napod leírása"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_day",
+    "lex_morning",
+    "lex_afternoon",
+    "lex_evening",
+    "lex_night",
+    "lex_get_up",
+    "lex_wake_up",
+    "lex_eat",
+    "lex_drink",
+    "lex_sleep",
+    "lex_go",
+    "lex_always",
+    "lex_usually",
+    "lex_often",
+    "lex_sometimes",
+    "lex_never",
+    "lex_every_day"
+  ],
+  "reviewItems": [
+    "lex_hello",
+    "lex_hi",
+    "lex_goodbye",
+    "lex_bye",
+    "lex_good_morning",
+    "lex_good_afternoon",
+    "lex_good_evening",
+    "lex_good_night",
+    "lex_please",
+    "lex_thank_you",
+    "lex_thanks",
+    "lex_yes",
+    "lex_no",
+    "lex_sorry",
+    "lex_name",
+    "lex_my",
+    "lex_your",
+    "lex_i",
+    "lex_you",
+    "lex_he",
+    "lex_she",
+    "lex_we",
+    "lex_they",
+    "lex_it",
+    "lex_be",
+    "lex_from",
+    "lex_country",
+    "lex_city",
+    "lex_teacher",
+    "lex_retired",
+    "lex_nice",
+    "lex_what",
+    "lex_where",
+    "lex_how",
+    "lex_who",
+    "lex_fine",
+    "lex_good",
+    "lex_well",
+    "lex_and",
+    "lex_a",
+    "lex_an",
+    "lex_the",
+    "lex_hungary",
+    "lex_hungarian",
+    "lex_england",
+    "lex_english",
+    "lex_spain",
+    "lex_spanish",
+    "lex_germany",
+    "lex_german",
+    "lex_denmark",
+    "lex_danish",
+    "lex_belgium",
+    "lex_switzerland",
+    "lex_language",
+    "lex_speak",
+    "lex_live",
+    "lex_work",
+    "lex_come",
+    "lex_tall",
+    "lex_short",
+    "lex_kind",
+    "lex_funny",
+    "lex_happy",
+    "lex_but",
+    "lex_because",
+    "lex_so",
+    "lex_very",
+    "lex_one",
+    "lex_two",
+    "lex_three",
+    "lex_four",
+    "lex_five",
+    "lex_six",
+    "lex_seven",
+    "lex_eight",
+    "lex_nine",
+    "lex_ten"
+  ],
+  "chunks": [],
+  "grammarCards": [
+    "gr_presentsimple",
+    "gr_dodoes",
+    "gr_frequency"
+  ],
+  "pronunciationFocus": [
+    "pf_ed"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_52",
+      "type": "intro",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening",
+        "lex_night",
+        "lex_get_up",
+        "lex_wake_up",
+        "lex_eat"
+      ]
+    },
+    {
+      "id": "act_53",
+      "type": "listen-choose",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening",
+        "lex_night",
+        "lex_get_up"
+      ]
+    },
+    {
+      "id": "act_54",
+      "type": "match",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening",
+        "lex_night",
+        "lex_get_up"
+      ]
+    },
+    {
+      "id": "act_55",
+      "type": "spelling-build",
+      "family": "sf_oo",
+      "word": "afternoon"
+    },
+    {
+      "id": "act_56",
+      "type": "grammar",
+      "grammarId": "gr_presentsimple"
+    },
+    {
+      "id": "act_57",
+      "type": "grammar",
+      "grammarId": "gr_dodoes"
+    },
+    {
+      "id": "act_58",
+      "type": "grammar",
+      "grammarId": "gr_frequency"
+    },
+    {
+      "id": "act_59",
+      "type": "typed",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening"
+      ]
+    },
+    {
+      "id": "act_60",
+      "type": "pron-record",
+      "focusId": "pf_ed"
+    },
+    {
+      "id": "act_61",
+      "type": "review",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye",
+        "lex_good_morning",
+        "lex_good_afternoon"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

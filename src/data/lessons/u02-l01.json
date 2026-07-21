@@ -1,0 +1,183 @@
+{
+  "id": "u02-l01",
+  "unitId": "u02",
+  "order": 1,
+  "title": {
+    "en": "This is my family",
+    "hu": "Ez a családom"
+  },
+  "canDo": {
+    "en": "Name family members",
+    "hu": "Családtagok megnevezése"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_family",
+    "lex_mother",
+    "lex_father",
+    "lex_mum",
+    "lex_dad",
+    "lex_parents",
+    "lex_sister",
+    "lex_brother",
+    "lex_daughter",
+    "lex_son",
+    "lex_husband",
+    "lex_niece",
+    "lex_nephew",
+    "lex_aunt",
+    "lex_uncle",
+    "lex_child",
+    "lex_his",
+    "lex_her"
+  ],
+  "reviewItems": [
+    "lex_hello",
+    "lex_hi",
+    "lex_goodbye",
+    "lex_bye",
+    "lex_good_morning",
+    "lex_good_afternoon",
+    "lex_good_evening",
+    "lex_good_night",
+    "lex_please",
+    "lex_thank_you",
+    "lex_thanks",
+    "lex_yes",
+    "lex_no",
+    "lex_sorry",
+    "lex_name",
+    "lex_my",
+    "lex_your",
+    "lex_i",
+    "lex_you",
+    "lex_he",
+    "lex_she",
+    "lex_we",
+    "lex_they",
+    "lex_it",
+    "lex_be",
+    "lex_from",
+    "lex_country",
+    "lex_city",
+    "lex_teacher",
+    "lex_retired",
+    "lex_nice",
+    "lex_what",
+    "lex_where",
+    "lex_how",
+    "lex_who",
+    "lex_fine",
+    "lex_good",
+    "lex_well",
+    "lex_and",
+    "lex_a",
+    "lex_an",
+    "lex_the",
+    "lex_one",
+    "lex_two",
+    "lex_three",
+    "lex_four",
+    "lex_five",
+    "lex_six",
+    "lex_seven",
+    "lex_eight",
+    "lex_nine",
+    "lex_ten"
+  ],
+  "chunks": [],
+  "grammarCards": [
+    "gr_possadj",
+    "gr_poss_s",
+    "gr_plural"
+  ],
+  "pronunciationFocus": [
+    "pf_finals"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_21",
+      "type": "intro",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad",
+        "lex_parents",
+        "lex_sister",
+        "lex_brother"
+      ]
+    },
+    {
+      "id": "act_22",
+      "type": "listen-choose",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad",
+        "lex_parents"
+      ]
+    },
+    {
+      "id": "act_23",
+      "type": "match",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad",
+        "lex_parents"
+      ]
+    },
+    {
+      "id": "act_24",
+      "type": "grammar",
+      "grammarId": "gr_possadj"
+    },
+    {
+      "id": "act_25",
+      "type": "grammar",
+      "grammarId": "gr_poss_s"
+    },
+    {
+      "id": "act_26",
+      "type": "grammar",
+      "grammarId": "gr_plural"
+    },
+    {
+      "id": "act_27",
+      "type": "typed",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum"
+      ]
+    },
+    {
+      "id": "act_28",
+      "type": "pron-record",
+      "focusId": "pf_finals"
+    },
+    {
+      "id": "act_29",
+      "type": "review",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye",
+        "lex_good_morning",
+        "lex_good_afternoon"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

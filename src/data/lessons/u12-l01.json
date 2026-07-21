@@ -1,0 +1,134 @@
+{
+  "id": "u12-l01",
+  "unitId": "u12",
+  "order": 1,
+  "title": {
+    "en": "Where were you?",
+    "hu": "Hol voltál?"
+  },
+  "canDo": {
+    "en": "Say where you were",
+    "hu": "Hol voltál"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_was",
+    "lex_went",
+    "lex_saw",
+    "lex_visit",
+    "lex_yesterday_noun",
+    "lex_last_week"
+  ],
+  "reviewItems": [
+    "lex_street",
+    "lex_station",
+    "lex_bus",
+    "lex_train",
+    "lex_car",
+    "lex_taxi",
+    "lex_ticket",
+    "lex_platform",
+    "lex_left",
+    "lex_right",
+    "lex_straight",
+    "lex_near",
+    "lex_far",
+    "lex_first",
+    "lex_then",
+    "lex_turn",
+    "lex_lesson",
+    "lex_camera",
+    "lex_microphone",
+    "lex_screen",
+    "lex_computer",
+    "lex_internet",
+    "lex_start",
+    "lex_turn_on",
+    "lex_turn_off",
+    "lex_click",
+    "lex_ready",
+    "lex_excellent",
+    "lex_student"
+  ],
+  "chunks": [],
+  "grammarCards": [
+    "gr_waswere"
+  ],
+  "pronunciationFocus": [
+    "pf_ed"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_183",
+      "type": "intro",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit",
+        "lex_yesterday_noun",
+        "lex_last_week"
+      ]
+    },
+    {
+      "id": "act_184",
+      "type": "listen-choose",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit",
+        "lex_yesterday_noun",
+        "lex_last_week"
+      ]
+    },
+    {
+      "id": "act_185",
+      "type": "match",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit",
+        "lex_yesterday_noun",
+        "lex_last_week"
+      ]
+    },
+    {
+      "id": "act_186",
+      "type": "grammar",
+      "grammarId": "gr_waswere"
+    },
+    {
+      "id": "act_187",
+      "type": "typed",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit"
+      ]
+    },
+    {
+      "id": "act_188",
+      "type": "pron-record",
+      "focusId": "pf_ed"
+    },
+    {
+      "id": "act_189",
+      "type": "review",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train",
+        "lex_car",
+        "lex_taxi"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

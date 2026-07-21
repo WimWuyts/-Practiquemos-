@@ -1,0 +1,124 @@
+{
+  "id": "u01-l02",
+  "unitId": "u01",
+  "order": 2,
+  "title": {
+    "en": "He, she & numbers",
+    "hu": "Ő és a számok"
+  },
+  "canDo": {
+    "en": "Talk about other people and count",
+    "hu": "Másokról beszélni, számolni"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_he",
+    "lex_she",
+    "lex_we",
+    "lex_they",
+    "lex_it",
+    "lex_be",
+    "lex_who",
+    "lex_and",
+    "lex_the",
+    "lex_one",
+    "lex_two",
+    "lex_three",
+    "lex_four",
+    "lex_five",
+    "lex_six",
+    "lex_seven",
+    "lex_eight",
+    "lex_nine",
+    "lex_ten"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_intro_nice",
+    "chunk_intro_job"
+  ],
+  "grammarCards": [
+    "gr_pronouns"
+  ],
+  "pronunciationFocus": [
+    "pf_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_13",
+      "type": "intro",
+      "items": [
+        "lex_he",
+        "lex_she",
+        "lex_we",
+        "lex_they",
+        "lex_it",
+        "lex_be",
+        "lex_who",
+        "lex_and"
+      ]
+    },
+    {
+      "id": "act_14",
+      "type": "listen-choose",
+      "items": [
+        "lex_he",
+        "lex_she",
+        "lex_we",
+        "lex_they",
+        "lex_it",
+        "lex_be"
+      ]
+    },
+    {
+      "id": "act_15",
+      "type": "match",
+      "items": [
+        "lex_he",
+        "lex_she",
+        "lex_we",
+        "lex_they",
+        "lex_it",
+        "lex_be"
+      ]
+    },
+    {
+      "id": "act_16",
+      "type": "spelling-build",
+      "family": "sf_ee",
+      "word": "three"
+    },
+    {
+      "id": "act_17",
+      "type": "grammar",
+      "grammarId": "gr_pronouns"
+    },
+    {
+      "id": "act_18",
+      "type": "phrase-match",
+      "items": [
+        "chunk_intro_nice",
+        "chunk_intro_job"
+      ]
+    },
+    {
+      "id": "act_19",
+      "type": "typed",
+      "items": [
+        "lex_he",
+        "lex_she",
+        "lex_we",
+        "lex_they"
+      ]
+    },
+    {
+      "id": "act_20",
+      "type": "pron-record",
+      "focusId": "pf_question"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

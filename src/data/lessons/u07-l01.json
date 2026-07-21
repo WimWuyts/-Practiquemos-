@@ -1,0 +1,207 @@
+{
+  "id": "u07-l01",
+  "unitId": "u07",
+  "order": 1,
+  "title": {
+    "en": "Phone call with Kira",
+    "hu": "Telefon Kirával"
+  },
+  "canDo": {
+    "en": "Start a call and check sound",
+    "hu": "Hívás, hangellenőrzés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_call",
+    "lex_phone",
+    "lex_hear",
+    "lex_see",
+    "lex_repeat",
+    "lex_slowly",
+    "lex_again",
+    "lex_understand",
+    "lex_wait",
+    "lex_moment"
+  ],
+  "reviewItems": [
+    "lex_day",
+    "lex_morning",
+    "lex_afternoon",
+    "lex_evening",
+    "lex_night",
+    "lex_get_up",
+    "lex_wake_up",
+    "lex_eat",
+    "lex_drink",
+    "lex_sleep",
+    "lex_go",
+    "lex_read",
+    "lex_watch",
+    "lex_walk",
+    "lex_home",
+    "lex_house",
+    "lex_room",
+    "lex_kitchen",
+    "lex_garden",
+    "lex_always",
+    "lex_usually",
+    "lex_often",
+    "lex_sometimes",
+    "lex_never",
+    "lex_every_day",
+    "lex_there_is",
+    "lex_there_are",
+    "lex_in",
+    "lex_on",
+    "lex_under",
+    "lex_next_to",
+    "lex_time",
+    "lex_hour",
+    "lex_minute",
+    "lex_today",
+    "lex_tomorrow",
+    "lex_yesterday",
+    "lex_week",
+    "lex_month",
+    "lex_year",
+    "lex_monday",
+    "lex_tuesday",
+    "lex_wednesday",
+    "lex_thursday",
+    "lex_friday",
+    "lex_saturday",
+    "lex_sunday",
+    "lex_weekend",
+    "lex_weather",
+    "lex_sunny",
+    "lex_rainy",
+    "lex_cold",
+    "lex_hot",
+    "lex_warm",
+    "lex_plan",
+    "lex_meet",
+    "lex_can",
+    "lex_going_to",
+    "lex_free",
+    "lex_busy",
+    "lex_eleven",
+    "lex_twelve",
+    "lex_twenty",
+    "lex_thirty",
+    "lex_hundred"
+  ],
+  "chunks": [
+    "chunk_repair_notunderstand",
+    "chunk_repair_repeat",
+    "chunk_repair_slower",
+    "chunk_repair_wait",
+    "chunk_repair_sorry",
+    "chunk_call_hearme",
+    "chunk_call_seeme"
+  ],
+  "grammarCards": [
+    "gr_object_pronouns"
+  ],
+  "pronunciationFocus": [
+    "pf_question"
+  ],
+  "conversationId": "dlg_kira_phone",
+  "activities": [
+    {
+      "id": "act_104",
+      "type": "intro",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see",
+        "lex_repeat",
+        "lex_slowly",
+        "lex_again",
+        "lex_understand"
+      ]
+    },
+    {
+      "id": "act_105",
+      "type": "listen-choose",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see",
+        "lex_repeat",
+        "lex_slowly"
+      ]
+    },
+    {
+      "id": "act_106",
+      "type": "match",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see",
+        "lex_repeat",
+        "lex_slowly"
+      ]
+    },
+    {
+      "id": "act_107",
+      "type": "spelling-build",
+      "family": "sf_o_e",
+      "word": "phone"
+    },
+    {
+      "id": "act_108",
+      "type": "grammar",
+      "grammarId": "gr_object_pronouns"
+    },
+    {
+      "id": "act_109",
+      "type": "phrase-match",
+      "items": [
+        "chunk_repair_notunderstand",
+        "chunk_repair_repeat",
+        "chunk_repair_slower",
+        "chunk_repair_wait",
+        "chunk_repair_sorry",
+        "chunk_call_hearme"
+      ]
+    },
+    {
+      "id": "act_110",
+      "type": "typed",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see"
+      ]
+    },
+    {
+      "id": "act_111",
+      "type": "pron-record",
+      "focusId": "pf_question"
+    },
+    {
+      "id": "act_112",
+      "type": "conversation",
+      "dialogueId": "dlg_kira_phone"
+    },
+    {
+      "id": "act_113",
+      "type": "review",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening",
+        "lex_night",
+        "lex_get_up"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "id": "u05-l01",
+  "unitId": "u05",
+  "order": 1,
+  "title": {
+    "en": "Food I like",
+    "hu": "Ételek, amiket szeretek"
+  },
+  "canDo": {
+    "en": "Talk about food you like",
+    "hu": "Kedvenc ételek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_food",
+    "lex_water",
+    "lex_coffee",
+    "lex_tea",
+    "lex_milk",
+    "lex_bread",
+    "lex_cheese",
+    "lex_egg",
+    "lex_apple",
+    "lex_soup",
+    "lex_meat",
+    "lex_fish",
+    "lex_vegetable",
+    "lex_fruit",
+    "lex_breakfast",
+    "lex_lunch",
+    "lex_dinner",
+    "lex_like",
+    "lex_some",
+    "lex_any"
+  ],
+  "reviewItems": [
+    "lex_family",
+    "lex_mother",
+    "lex_father",
+    "lex_mum",
+    "lex_dad",
+    "lex_parents",
+    "lex_sister",
+    "lex_brother",
+    "lex_daughter",
+    "lex_son",
+    "lex_husband",
+    "lex_wife",
+    "lex_partner",
+    "lex_boyfriend",
+    "lex_girlfriend",
+    "lex_niece",
+    "lex_nephew",
+    "lex_aunt",
+    "lex_uncle",
+    "lex_grandmother",
+    "lex_grandfather",
+    "lex_child",
+    "lex_friend",
+    "lex_have",
+    "lex_this",
+    "lex_that",
+    "lex_these",
+    "lex_those",
+    "lex_his",
+    "lex_her",
+    "lex_our",
+    "lex_their",
+    "lex_old",
+    "lex_young",
+    "lex_married",
+    "lex_day",
+    "lex_morning",
+    "lex_afternoon",
+    "lex_evening",
+    "lex_night",
+    "lex_get_up",
+    "lex_wake_up",
+    "lex_eat",
+    "lex_drink",
+    "lex_sleep",
+    "lex_go",
+    "lex_read",
+    "lex_watch",
+    "lex_walk",
+    "lex_home",
+    "lex_house",
+    "lex_room",
+    "lex_kitchen",
+    "lex_garden",
+    "lex_always",
+    "lex_usually",
+    "lex_often",
+    "lex_sometimes",
+    "lex_never",
+    "lex_every_day",
+    "lex_there_is",
+    "lex_there_are",
+    "lex_in",
+    "lex_on",
+    "lex_under",
+    "lex_next_to"
+  ],
+  "chunks": [
+    "chunk_op_like",
+    "chunk_op_dontlike"
+  ],
+  "grammarCards": [
+    "gr_someany"
+  ],
+  "pronunciationFocus": [
+    "pf_ea"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_69",
+      "type": "intro",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea",
+        "lex_milk",
+        "lex_bread",
+        "lex_cheese",
+        "lex_egg"
+      ]
+    },
+    {
+      "id": "act_70",
+      "type": "listen-choose",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea",
+        "lex_milk",
+        "lex_bread"
+      ]
+    },
+    {
+      "id": "act_71",
+      "type": "match",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea",
+        "lex_milk",
+        "lex_bread"
+      ]
+    },
+    {
+      "id": "act_72",
+      "type": "spelling-build",
+      "family": "sf_oo",
+      "word": "food"
+    },
+    {
+      "id": "act_73",
+      "type": "grammar",
+      "grammarId": "gr_someany"
+    },
+    {
+      "id": "act_74",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_like",
+        "chunk_op_dontlike"
+      ]
+    },
+    {
+      "id": "act_75",
+      "type": "typed",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea"
+      ]
+    },
+    {
+      "id": "act_76",
+      "type": "pron-record",
+      "focusId": "pf_ea"
+    },
+    {
+      "id": "act_77",
+      "type": "review",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad",
+        "lex_parents"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

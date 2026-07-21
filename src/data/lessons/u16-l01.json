@@ -1,0 +1,124 @@
+{
+  "id": "u16-l01",
+  "unitId": "u16",
+  "order": 1,
+  "title": {
+    "en": "Family party at Lake Balaton",
+    "hu": "Családi buli a Balatonnál"
+  },
+  "canDo": {
+    "en": "Join a family conversation",
+    "hu": "Családi beszélgetés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_tired",
+    "lex_glad",
+    "lex_welcome",
+    "lex_together"
+  ],
+  "reviewItems": [
+    "lex_travel",
+    "lex_trip",
+    "lex_visit_noun",
+    "lex_luggage",
+    "lex_suitcase",
+    "lex_passport",
+    "lex_need",
+    "lex_bring",
+    "lex_plane",
+    "lex_afraid",
+    "lex_nervous",
+    "lex_scared",
+    "lex_calm",
+    "lex_blanket",
+    "lex_toilet",
+    "lex_land",
+    "lex_safe",
+    "lex_okay"
+  ],
+  "chunks": [
+    "chunk_conv_thanks_visit",
+    "chunk_conv_tellmore"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_balaton",
+  "activities": [
+    {
+      "id": "act_241",
+      "type": "intro",
+      "items": [
+        "lex_tired",
+        "lex_glad",
+        "lex_welcome",
+        "lex_together"
+      ]
+    },
+    {
+      "id": "act_242",
+      "type": "listen-choose",
+      "items": [
+        "lex_tired",
+        "lex_glad",
+        "lex_welcome",
+        "lex_together"
+      ]
+    },
+    {
+      "id": "act_243",
+      "type": "match",
+      "items": [
+        "lex_tired",
+        "lex_glad",
+        "lex_welcome",
+        "lex_together"
+      ]
+    },
+    {
+      "id": "act_244",
+      "type": "phrase-match",
+      "items": [
+        "chunk_conv_thanks_visit",
+        "chunk_conv_tellmore"
+      ]
+    },
+    {
+      "id": "act_245",
+      "type": "typed",
+      "items": [
+        "lex_tired",
+        "lex_glad",
+        "lex_welcome",
+        "lex_together"
+      ]
+    },
+    {
+      "id": "act_246",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_247",
+      "type": "conversation",
+      "dialogueId": "dlg_balaton"
+    },
+    {
+      "id": "act_248",
+      "type": "review",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_visit_noun",
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

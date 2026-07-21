@@ -1,0 +1,68 @@
+{
+  "id": "u09-l02",
+  "unitId": "u09",
+  "order": 2,
+  "title": {
+    "en": "Buses & trains",
+    "hu": "Buszok és vonatok"
+  },
+  "canDo": {
+    "en": "Use transport words",
+    "hu": "Közlekedési szavak"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_ticket",
+    "lex_platform"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_trans_which"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_finals"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_146",
+      "type": "intro",
+      "items": [
+        "lex_ticket",
+        "lex_platform"
+      ]
+    },
+    {
+      "id": "act_147",
+      "type": "listen-choose",
+      "items": [
+        "lex_ticket",
+        "lex_platform"
+      ]
+    },
+    {
+      "id": "act_148",
+      "type": "phrase-match",
+      "items": [
+        "chunk_trans_which"
+      ]
+    },
+    {
+      "id": "act_149",
+      "type": "typed",
+      "items": [
+        "lex_ticket",
+        "lex_platform"
+      ]
+    },
+    {
+      "id": "act_150",
+      "type": "pron-record",
+      "focusId": "pf_finals"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

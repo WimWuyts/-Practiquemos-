@@ -1,0 +1,618 @@
+source_type,id,context_screen,english,hungarian,needs_review
+ui_string,app.title,interface,English with Marta,Angol Martával,yes
+ui_string,app.subtitle,interface,Learning English to connect with the people I love,"Angolul tanulni, hogy beszélhessek a szeretteimmel",yes
+ui_string,nav.home,interface,Home,Kezdőlap,yes
+ui_string,nav.lessons,interface,Lessons,Leckék,yes
+ui_string,nav.conversations,interface,Conversations,Beszélgetések,yes
+ui_string,nav.practice,interface,Practice,Gyakorlás,yes
+ui_string,nav.settings,interface,Settings,Beállítások,yes
+ui_string,nav.help,interface,Help,Segítség,yes
+ui_string,nav.back,interface,Back,Vissza,yes
+ui_string,home.welcome,interface,"Welcome back, Marta","Üdv újra, Marta",yes
+ui_string,home.continue,interface,Continue learning,Tanulás folytatása,yes
+ui_string,home.recommended,interface,Recommended for you,Neked ajánljuk,yes
+ui_string,home.start,interface,Start,Kezdés,yes
+ui_string,home.progress,interface,Your progress,A haladásod,yes
+ui_string,home.conversations,interface,Talk to your family,Beszélj a családoddal,yes
+ui_string,home.monthly,interface,Monthly lessons,Havi leckék,yes
+ui_string,home.monthly.note,interface,New monthly lessons can be added here later.,Ide később új havi leckék kerülhetnek.,yes
+ui_string,btn.next,interface,Next,Tovább,yes
+ui_string,btn.check,interface,Check,Ellenőrzés,yes
+ui_string,btn.continue,interface,Continue,Folytatás,yes
+ui_string,btn.tryagain,interface,Try again,Próbáld újra,yes
+ui_string,btn.listen,interface,Listen,Meghallgatás,yes
+ui_string,btn.listen.slow,interface,Listen slowly,Lassan meghallgatás,yes
+ui_string,btn.record,interface,Record,Felvétel,yes
+ui_string,btn.stop,interface,Stop,Állj,yes
+ui_string,btn.play,interface,Play my voice,A hangom lejátszása,yes
+ui_string,btn.skip,interface,Skip,Kihagyás,yes
+ui_string,btn.done,interface,Done,Kész,yes
+ui_string,btn.showhelp,interface,Magyar segítség,Magyar segítség,yes
+ui_string,btn.hidehelp,interface,Hide help,Segítség elrejtése,yes
+ui_string,btn.finish,interface,Finish lesson,Lecke befejezése,yes
+ui_string,btn.hint,interface,Hint,Segítség,yes
+ui_string,btn.model,interface,Show a good answer,Mutass egy jó választ,yes
+ui_string,lesson.new,interface,New words,Új szavak,yes
+ui_string,lesson.review,interface,Review,Ismétlés,yes
+ui_string,lesson.grammar,interface,Grammar,Nyelvtan,yes
+ui_string,lesson.pron,interface,Sounds,Hangok,yes
+ui_string,lesson.complete,interface,Lesson complete,Lecke kész,yes
+ui_string,lesson.complete.msg,interface,"Well done, Marta. You practised English today.","Ügyes vagy, Marta. Ma gyakoroltad az angolt.",yes
+ui_string,act.intro.prompt,interface,"Look, listen and learn these words.","Nézd, hallgasd és tanuld meg ezeket a szavakat.",yes
+ui_string,act.listenchoose.prompt,interface,Listen and choose the word you hear.,"Hallgasd meg, és válaszd ki a hallott szót.",yes
+ui_string,act.match.prompt,interface,Match the English word to its meaning.,Párosítsd az angol szót a jelentésével.,yes
+ui_string,act.phrasematch.prompt,interface,Match the phrase to the situation.,Párosítsd a mondatot a helyzethez.,yes
+ui_string,act.typed.prompt,interface,Type the English word.,Írd be az angol szót.,yes
+ui_string,act.spelling.prompt,interface,Build the word.,Építsd fel a szót.,yes
+ui_string,act.pron.prompt,interface,"Listen, then record yourself. Compare — no score, just practice.","Hallgasd meg, majd vedd fel magad. Hasonlítsd össze — nincs pontszám, csak gyakorlás.",yes
+ui_string,act.review.prompt,interface,A gentle review of words you have seen.,A már látott szavak nyugodt ismétlése.,yes
+ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
+ui_string,conv.support.choose,interface,Choose,Válassz,yes
+ui_string,conv.support.build,interface,Build,Építsd,yes
+ui_string,conv.support.type,interface,Say or type,Mondd vagy írd,yes
+ui_string,conv.your_turn,interface,Your turn,Te jössz,yes
+ui_string,conv.type_here,interface,Type your answer here,Írd ide a válaszodat,yes
+ui_string,conv.repair,interface,"Sorry, I didn't understand. Would you like to try again?","Elnézést, nem értettem. Szeretnéd újra?",yes
+ui_string,conv.repair.shorter,interface,You can say it in a shorter way.,Mondhatod rövidebben is.,yes
+ui_string,conv.start,interface,Start conversation,Beszélgetés indítása,yes
+ui_string,conv.again,interface,Talk again,Beszéljünk újra,yes
+ui_string,conv.finished,interface,Conversation finished. Lovely work!,Vége a beszélgetésnek. Szép munka!,yes
+ui_string,conv.locked.note,interface,Open conversations are best after a few weeks of guided practice.,A szabad beszélgetések néhány hét gyakorlás után a legjobbak.,yes
+ui_string,fb.correct,interface,Well done!,Ügyes vagy!,yes
+ui_string,fb.good,interface,Good.,Jó.,yes
+ui_string,fb.almost,interface,Almost. Try once more.,Majdnem. Próbáld még egyszer.,yes
+ui_string,fb.alsoright,interface,Good. This answer is also possible.,Jó. Ez a válasz is helyes.,yes
+ui_string,fb.listen,interface,Listen again and notice the sounds.,"Hallgasd meg újra, és figyeld a hangokat.",yes
+ui_string,settings.title,interface,Settings,Beállítások,yes
+ui_string,settings.language,interface,Help language,Segítség nyelve,yes
+ui_string,settings.voice,interface,Voice,Hang,yes
+ui_string,settings.voice.test,interface,Test voice,Hang tesztelése,yes
+ui_string,settings.voice.none,interface,No British voice found. The app will use another voice.,Nincs brit hang. Az app másik hangot használ.,yes
+ui_string,settings.text,interface,Text size,Betűméret,yes
+ui_string,settings.motion,interface,Reduce movement,Kevesebb mozgás,yes
+ui_string,settings.help_mode,interface,Hungarian help,Magyar segítség,yes
+ui_string,settings.help.menu,interface,Hungarian menu labels,Magyar menüfeliratok,yes
+ui_string,settings.help.panels,interface,Hungarian help panels,Magyar segítő panelek,yes
+ui_string,settings.help.heavy,interface,Lots of Hungarian,Sok magyar,yes
+ui_string,settings.open_conv,interface,Allow open conversations now,Szabad beszélgetések engedélyezése most,yes
+ui_string,backup.title,interface,Backup,Biztonsági mentés,yes
+ui_string,backup.export,interface,Make a backup,Back-up készítése,yes
+ui_string,backup.import,interface,Restore a backup,Biztonsági mentés visszaállítása,yes
+ui_string,backup.reset,interface,Reset all progress,Minden haladás törlése,yes
+ui_string,backup.reset.confirm,interface,This will erase your progress. Are you sure?,Ez törli a haladásodat. Biztos vagy benne?,yes
+ui_string,backup.exported,interface,Backup saved. Keep the file in a safe place.,A mentés elkészült. Tedd biztos helyre a fájlt.,yes
+ui_string,backup.imported,interface,Backup restored. Welcome back!,A mentés visszaállt. Üdv újra!,yes
+ui_string,backup.invalid,interface,This file is not a valid backup. Nothing was changed.,Ez a fájl nem érvényes mentés. Semmi nem változott.,yes
+ui_string,cap.tts.ok,interface,Sound is ready.,A hang készen áll.,yes
+ui_string,cap.tts.no,interface,Sound may not work in this browser.,"Lehet, hogy a hang nem működik ebben a böngészőben.",yes
+ui_string,cap.mic.ok,interface,Microphone is ready when you need it.,"A mikrofon készen áll, ha kell.",yes
+ui_string,cap.mic.no,interface,"Recording may not work here, but you can still learn.","Lehet, hogy a felvétel nem működik, de tanulni tudsz.",yes
+ui_string,cap.rec.experimental,interface,Speaking check is experimental and optional.,A kiejtés-ellenőrzés kísérleti és nem kötelező.,yes
+ui_string,cap.storage.ok,interface,Your progress will be saved on this computer.,A haladásod ezen a gépen mentődik.,yes
+ui_string,cap.storage.no,interface,Saving may not work here. Please make backups often.,"Lehet, hogy a mentés nem működik itt. Készíts gyakran biztonsági mentést.",yes
+ui_string,diag.title,interface,A friendly start,Barátságos kezdés,yes
+ui_string,diag.intro,interface,This is not a test. It helps us find a good place to start.,Ez nem teszt. Segít megtalálni a jó kezdőpontot.,yes
+ui_string,diag.q.audio,interface,Can you hear this word clearly?,Tisztán hallod ezt a szót?,yes
+ui_string,diag.q.know,interface,Do you know this word?,Ismered ezt a szót?,yes
+ui_string,diag.yes,interface,Yes,Igen,yes
+ui_string,diag.no,interface,Not yet,Még nem,yes
+ui_string,diag.some,interface,A little,Egy kicsit,yes
+ui_string,diag.result,interface,A good place to start is Unit 1. You already know some useful English.,Jó kezdőpont az 1. egység. Már ismersz néhány hasznos angol szót.,yes
+ui_string,status.new,interface,New,Új,yes
+ui_string,status.practising,interface,Practising,Gyakorlás alatt,yes
+ui_string,status.familiar,interface,Becoming familiar,Egyre ismerősebb,yes
+ui_string,status.ready,interface,Ready to use,Használatra kész,yes
+ui_string,status.review,interface,Review soon,Hamarosan ismételd,yes
+ui_string,help.title,interface,Help,Segítség,yes
+ui_string,help.audio,interface,"If you cannot hear the voice, check your speakers and open Settings.","Ha nem hallod a hangot, ellenőrizd a hangszórót, és nyisd meg a Beállításokat.",yes
+ui_string,help.record,interface,Press Record to speak. Your voice stays on this computer and is not sent anywhere.,"Nyomd meg a Felvétel gombot a beszédhez. A hangod ezen a gépen marad, nem küldjük sehova.",yes
+ui_string,help.backup,interface,Make a backup with the button in Settings. Keep the file safe.,Készíts mentést a Beállítások gombjával. Tedd biztos helyre a fájlt.,yes
+ui_string,a11y.correct,interface,Correct,Helyes,yes
+ui_string,a11y.incorrect,interface,Not quite,Nem egészen,yes
+ui_string,a11y.recording,interface,Recording,Felvétel folyik,yes
+ui_string,a11y.playing,interface,Playing,Lejátszás,yes
+lexicon,lex_hello,lesson:u01-l01,hello,szia / jó napot,yes
+lexicon,lex_hi,lesson:u01-l01,hi,szia,yes
+lexicon,lex_goodbye,lesson:u01-l01,goodbye,viszlát,yes
+lexicon,lex_bye,lesson:u01-l01,bye,szia (búcsú),yes
+lexicon,lex_good_morning,lesson:u01-l01,good morning,jó reggelt,yes
+lexicon,lex_good_afternoon,lesson:u01-l01,good afternoon,jó napot,yes
+lexicon,lex_good_evening,lesson:u01-l01,good evening,jó estét,yes
+lexicon,lex_good_night,lesson:u01-l01,good night,jó éjszakát,yes
+lexicon,lex_please,lesson:u01-l01,please,kérem,yes
+lexicon,lex_thank_you,lesson:u01-l01,thank you,köszönöm,yes
+lexicon,lex_thanks,lesson:u01-l01,thanks,kösz,yes
+lexicon,lex_yes,lesson:u01-l01,yes,igen,yes
+lexicon,lex_no,lesson:u01-l01,no,nem,yes
+lexicon,lex_sorry,lesson:u01-l01,sorry,elnézést / bocsánat,yes
+lexicon,lex_name,lesson:u01-l01,name,név,yes
+lexicon,lex_my,lesson:u01-l01,my,az én ...-m,yes
+lexicon,lex_your,lesson:u01-l01,your,a te ...-d,yes
+lexicon,lex_i,lesson:u01-l01,I,én,yes
+lexicon,lex_you,lesson:u01-l01,you,te,yes
+lexicon,lex_he,lesson:u01-l02,he,ő (férfi),yes
+lexicon,lex_she,lesson:u01-l02,she,ő (nő),yes
+lexicon,lex_we,lesson:u01-l02,we,mi,yes
+lexicon,lex_they,lesson:u01-l02,they,ők,yes
+lexicon,lex_it,lesson:u01-l02,it,az (dolog),yes
+lexicon,lex_be,lesson:u01-l02,be,lenni,yes
+lexicon,lex_from,lesson:u01-l01,from,-ból / -ből,yes
+lexicon,lex_country,lesson:u01-l01,country,ország,yes
+lexicon,lex_city,lesson:u01-l01,city,város,yes
+lexicon,lex_teacher,lesson:u01-l01,teacher,tanár / tanárnő,yes
+lexicon,lex_retired,lesson:u01-l01,retired,nyugdíjas,yes
+lexicon,lex_nice,lesson:u01-l01,nice,kedves / jó,yes
+lexicon,lex_what,lesson:u01-l01,what,mi / mit,yes
+lexicon,lex_where,lesson:u01-l01,where,hol,yes
+lexicon,lex_how,lesson:u01-l01,how,hogy / hogyan,yes
+lexicon,lex_who,lesson:u01-l02,who,ki,yes
+lexicon,lex_fine,lesson:u01-l01,fine,jól,yes
+lexicon,lex_good,lesson:u01-l01,good,jó,yes
+lexicon,lex_well,lesson:u01-l01,well,jól,yes
+lexicon,lex_and,lesson:u01-l02,and,és,yes
+lexicon,lex_a,lesson:u01-l01,a,egy,yes
+lexicon,lex_an,lesson:u01-l01,an,egy,yes
+lexicon,lex_the,lesson:u01-l02,the,a / az,yes
+lexicon,lex_family,lesson:u02-l01,family,család,yes
+lexicon,lex_mother,lesson:u02-l01,mother,anya,yes
+lexicon,lex_father,lesson:u02-l01,father,apa,yes
+lexicon,lex_mum,lesson:u02-l01,mum,anyu,yes
+lexicon,lex_dad,lesson:u02-l01,dad,apu,yes
+lexicon,lex_parents,lesson:u02-l01,parents,szülők,yes
+lexicon,lex_sister,lesson:u02-l01,sister,lánytestvér / nővér,yes
+lexicon,lex_brother,lesson:u02-l01,brother,fiútestvér / báty,yes
+lexicon,lex_daughter,lesson:u02-l01,daughter,lánya vkinek,yes
+lexicon,lex_son,lesson:u02-l01,son,fia vkinek,yes
+lexicon,lex_husband,lesson:u02-l01,husband,férj,yes
+lexicon,lex_wife,lesson:u02-l02,wife,feleség,yes
+lexicon,lex_partner,lesson:u02-l02,partner,élettárs / partner,yes
+lexicon,lex_boyfriend,lesson:u02-l02,boyfriend,barát (párkapcsolat),yes
+lexicon,lex_girlfriend,lesson:u02-l02,girlfriend,barátnő (párkapcsolat),yes
+lexicon,lex_niece,lesson:u02-l01,niece,unokahúg,yes
+lexicon,lex_nephew,lesson:u02-l01,nephew,unokaöcs,yes
+lexicon,lex_aunt,lesson:u02-l01,aunt,nagynéni,yes
+lexicon,lex_uncle,lesson:u02-l01,uncle,nagybácsi,yes
+lexicon,lex_grandmother,lesson:u02-l02,grandmother,nagymama,yes
+lexicon,lex_grandfather,lesson:u02-l02,grandfather,nagypapa,yes
+lexicon,lex_child,lesson:u02-l01,child,gyerek,yes
+lexicon,lex_friend,lesson:u02-l02,friend,barát,yes
+lexicon,lex_have,lesson:u02-l02,have,van neki / birtokolni,yes
+lexicon,lex_this,lesson:u02-l02,this,ez,yes
+lexicon,lex_that,lesson:u02-l02,that,az,yes
+lexicon,lex_these,lesson:u02-l02,these,ezek,yes
+lexicon,lex_those,lesson:u02-l02,those,azok,yes
+lexicon,lex_his,lesson:u02-l01,his,az ő ...-ja (férfi),yes
+lexicon,lex_her,lesson:u02-l01,her,az ő ...-ja (nő),yes
+lexicon,lex_our,lesson:u02-l02,our,a mi ...-nk,yes
+lexicon,lex_their,lesson:u02-l02,their,az ő ...-juk,yes
+lexicon,lex_old,lesson:u02-l02,old,öreg / idős,yes
+lexicon,lex_young,lesson:u02-l02,young,fiatal,yes
+lexicon,lex_married,lesson:u02-l02,married,házas,yes
+lexicon,lex_hungary,lesson:u03-l01,Hungary,Magyarország,yes
+lexicon,lex_hungarian,lesson:u03-l01,Hungarian,magyar,yes
+lexicon,lex_england,lesson:u03-l01,England,Anglia,yes
+lexicon,lex_english,lesson:u03-l01,English,angol,yes
+lexicon,lex_spain,lesson:u03-l01,Spain,Spanyolország,yes
+lexicon,lex_spanish,lesson:u03-l01,Spanish,spanyol,yes
+lexicon,lex_germany,lesson:u03-l01,Germany,Németország,yes
+lexicon,lex_german,lesson:u03-l01,German,német,yes
+lexicon,lex_denmark,lesson:u03-l01,Denmark,Dánia,yes
+lexicon,lex_danish,lesson:u03-l01,Danish,dán,yes
+lexicon,lex_belgium,lesson:u03-l01,Belgium,Belgium,yes
+lexicon,lex_switzerland,lesson:u03-l01,Switzerland,Svájc,yes
+lexicon,lex_language,lesson:u03-l01,language,nyelv,yes
+lexicon,lex_speak,lesson:u03-l01,speak,beszélni (nyelvet),yes
+lexicon,lex_live,lesson:u03-l01,live,lakni / élni,yes
+lexicon,lex_work,lesson:u03-l02,work,dolgozni / munka,yes
+lexicon,lex_come,lesson:u03-l01,come,jönni,yes
+lexicon,lex_tall,lesson:u03-l02,tall,magas,yes
+lexicon,lex_short,lesson:u03-l02,short,alacsony / rövid,yes
+lexicon,lex_kind,lesson:u03-l02,kind,kedves,yes
+lexicon,lex_funny,lesson:u03-l02,funny,vicces,yes
+lexicon,lex_happy,lesson:u03-l02,happy,boldog,yes
+lexicon,lex_but,lesson:u03-l02,but,de,yes
+lexicon,lex_because,lesson:u03-l02,because,mert,yes
+lexicon,lex_so,lesson:u03-l02,so,úgyhogy / tehát,yes
+lexicon,lex_very,lesson:u03-l02,very,nagyon,yes
+lexicon,lex_day,lesson:u04-l01,day,nap,yes
+lexicon,lex_morning,lesson:u04-l01,morning,reggel,yes
+lexicon,lex_afternoon,lesson:u04-l01,afternoon,délután,yes
+lexicon,lex_evening,lesson:u04-l01,evening,este,yes
+lexicon,lex_night,lesson:u04-l01,night,éjszaka,yes
+lexicon,lex_get_up,lesson:u04-l01,get up,felkelni,yes
+lexicon,lex_wake_up,lesson:u04-l01,wake up,felébredni,yes
+lexicon,lex_eat,lesson:u04-l01,eat,enni,yes
+lexicon,lex_drink,lesson:u04-l01,drink,inni,yes
+lexicon,lex_sleep,lesson:u04-l01,sleep,aludni,yes
+lexicon,lex_go,lesson:u04-l01,go,menni,yes
+lexicon,lex_read,lesson:u04-l02,read,olvasni,yes
+lexicon,lex_watch,lesson:u04-l02,watch,nézni,yes
+lexicon,lex_walk,lesson:u04-l02,walk,sétálni,yes
+lexicon,lex_home,lesson:u04-l02,home,otthon,yes
+lexicon,lex_house,lesson:u04-l02,house,ház,yes
+lexicon,lex_room,lesson:u04-l02,room,szoba,yes
+lexicon,lex_kitchen,lesson:u04-l02,kitchen,konyha,yes
+lexicon,lex_garden,lesson:u04-l02,garden,kert,yes
+lexicon,lex_always,lesson:u04-l01,always,mindig,yes
+lexicon,lex_usually,lesson:u04-l01,usually,általában,yes
+lexicon,lex_often,lesson:u04-l01,often,gyakran,yes
+lexicon,lex_sometimes,lesson:u04-l01,sometimes,néha,yes
+lexicon,lex_never,lesson:u04-l01,never,soha,yes
+lexicon,lex_every_day,lesson:u04-l01,every day,minden nap,yes
+lexicon,lex_there_is,lesson:u04-l02,there is,van (ott),yes
+lexicon,lex_there_are,lesson:u04-l02,there are,vannak (ott),yes
+lexicon,lex_in,lesson:u04-l02,in,-ban / -ben,yes
+lexicon,lex_on,lesson:u04-l02,on,-on / -en / -ön,yes
+lexicon,lex_under,lesson:u04-l02,under,alatt,yes
+lexicon,lex_next_to,lesson:u04-l02,next to,mellett,yes
+lexicon,lex_food,lesson:u05-l01,food,étel,yes
+lexicon,lex_water,lesson:u05-l01,water,víz,yes
+lexicon,lex_coffee,lesson:u05-l01,coffee,kávé,yes
+lexicon,lex_tea,lesson:u05-l01,tea,tea,yes
+lexicon,lex_milk,lesson:u05-l01,milk,tej,yes
+lexicon,lex_bread,lesson:u05-l01,bread,kenyér,yes
+lexicon,lex_cheese,lesson:u05-l01,cheese,sajt,yes
+lexicon,lex_egg,lesson:u05-l01,egg,tojás,yes
+lexicon,lex_apple,lesson:u05-l01,apple,alma,yes
+lexicon,lex_soup,lesson:u05-l01,soup,leves,yes
+lexicon,lex_meat,lesson:u05-l01,meat,hús,yes
+lexicon,lex_fish,lesson:u05-l01,fish,hal,yes
+lexicon,lex_vegetable,lesson:u05-l01,vegetable,zöldség,yes
+lexicon,lex_fruit,lesson:u05-l01,fruit,gyümölcs,yes
+lexicon,lex_cake,lesson:u05-l02,cake,sütemény / torta,yes
+lexicon,lex_breakfast,lesson:u05-l01,breakfast,reggeli,yes
+lexicon,lex_lunch,lesson:u05-l01,lunch,ebéd,yes
+lexicon,lex_dinner,lesson:u05-l01,dinner,vacsora,yes
+lexicon,lex_cook,lesson:u05-l02,cook,főzni,yes
+lexicon,lex_make,lesson:u05-l02,make,csinálni / készíteni,yes
+lexicon,lex_buy,lesson:u05-l02,buy,venni / vásárolni,yes
+lexicon,lex_like,lesson:u05-l01,like,szeretni / kedvelni,yes
+lexicon,lex_want,lesson:u05-l02,want,akarni,yes
+lexicon,lex_shop,lesson:u05-l02,shop,bolt / vásárolni,yes
+lexicon,lex_price,lesson:u05-l02,price,ár,yes
+lexicon,lex_money,lesson:u05-l02,money,pénz,yes
+lexicon,lex_some,lesson:u05-l01,some,néhány / egy kis,yes
+lexicon,lex_any,lesson:u05-l01,any,bármennyi / semennyi,yes
+lexicon,lex_much,lesson:u05-l02,much,sok (megszámlálhatatlan),yes
+lexicon,lex_many,lesson:u05-l02,many,sok (megszámlálható),yes
+lexicon,lex_time,lesson:u06-l01,time,idő,yes
+lexicon,lex_hour,lesson:u06-l01,hour,óra (időtartam),yes
+lexicon,lex_minute,lesson:u06-l01,minute,perc,yes
+lexicon,lex_today,lesson:u06-l01,today,ma,yes
+lexicon,lex_tomorrow,lesson:u06-l01,tomorrow,holnap,yes
+lexicon,lex_yesterday,lesson:u06-l01,yesterday,tegnap,yes
+lexicon,lex_week,lesson:u06-l01,week,hét,yes
+lexicon,lex_month,lesson:u06-l01,month,hónap,yes
+lexicon,lex_year,lesson:u06-l01,year,év,yes
+lexicon,lex_monday,lesson:u06-l01,Monday,hétfő,yes
+lexicon,lex_tuesday,lesson:u06-l01,Tuesday,kedd,yes
+lexicon,lex_wednesday,lesson:u06-l01,Wednesday,szerda,yes
+lexicon,lex_thursday,lesson:u06-l01,Thursday,csütörtök,yes
+lexicon,lex_friday,lesson:u06-l01,Friday,péntek,yes
+lexicon,lex_saturday,lesson:u06-l01,Saturday,szombat,yes
+lexicon,lex_sunday,lesson:u06-l01,Sunday,vasárnap,yes
+lexicon,lex_weekend,lesson:u06-l02,weekend,hétvége,yes
+lexicon,lex_weather,lesson:u06-l02,weather,időjárás,yes
+lexicon,lex_sunny,lesson:u06-l02,sunny,napos,yes
+lexicon,lex_rainy,lesson:u06-l02,rainy,esős,yes
+lexicon,lex_cold,lesson:u06-l02,cold,hideg,yes
+lexicon,lex_hot,lesson:u06-l02,hot,meleg / forró,yes
+lexicon,lex_warm,lesson:u06-l02,warm,meleg (kellemes),yes
+lexicon,lex_plan,lesson:u06-l02,plan,terv / tervezni,yes
+lexicon,lex_meet,lesson:u06-l02,meet,találkozni,yes
+lexicon,lex_can,lesson:u06-l02,can,tud / -hat,yes
+lexicon,lex_going_to,lesson:u06-l02,going to,fog (jövő idő),yes
+lexicon,lex_free,lesson:u06-l02,free,szabad (ráér),yes
+lexicon,lex_busy,lesson:u06-l02,busy,elfoglalt,yes
+lexicon,lex_call,lesson:u07-l01,call,hívni / hívás,yes
+lexicon,lex_phone,lesson:u07-l01,phone,telefon,yes
+lexicon,lex_hear,lesson:u07-l01,hear,hallani,yes
+lexicon,lex_see,lesson:u07-l01,see,látni,yes
+lexicon,lex_repeat,lesson:u07-l01,repeat,megismételni,yes
+lexicon,lex_slowly,lesson:u07-l01,slowly,lassan,yes
+lexicon,lex_again,lesson:u07-l01,again,újra,yes
+lexicon,lex_understand,lesson:u07-l01,understand,érteni,yes
+lexicon,lex_wait,lesson:u07-l01,wait,várni,yes
+lexicon,lex_moment,lesson:u07-l01,moment,pillanat,yes
+lexicon,lex_me,lesson:u07-l02,me,engem / nekem,yes
+lexicon,lex_him,lesson:u07-l02,him,őt (férfi),yes
+lexicon,lex_them,lesson:u07-l02,them,őket,yes
+lexicon,lex_hobby,lesson:u08-l01,hobby,hobbi,yes
+lexicon,lex_music,lesson:u08-l01,music,zene,yes
+lexicon,lex_book,lesson:u08-l01,book,könyv,yes
+lexicon,lex_film,lesson:u08-l01,film,film,yes
+lexicon,lex_sport,lesson:u08-l01,sport,sport,yes
+lexicon,lex_garden_noun,lesson:u08-l01,garden,kertészkedés,yes
+lexicon,lex_swim,lesson:u08-l01,swim,úszni,yes
+lexicon,lex_dance,lesson:u08-l01,dance,táncolni,yes
+lexicon,lex_sing,lesson:u08-l01,sing,énekelni,yes
+lexicon,lex_play,lesson:u08-l01,play,játszani,yes
+lexicon,lex_love,lesson:u08-l01,love,szeretni (nagyon),yes
+lexicon,lex_enjoy,lesson:u08-l01,enjoy,élvezni,yes
+lexicon,lex_favourite,lesson:u08-l02,favourite,kedvenc,yes
+lexicon,lex_interesting,lesson:u08-l02,interesting,érdekes,yes
+lexicon,lex_boring,lesson:u08-l02,boring,unalmas,yes
+lexicon,lex_beautiful,lesson:u08-l02,beautiful,gyönyörű,yes
+lexicon,lex_horse,lesson:u08-l02,horse,ló,yes
+lexicon,lex_think,lesson:u08-l02,think,gondolni,yes
+lexicon,lex_street,lesson:u09-l01,street,utca,yes
+lexicon,lex_station,lesson:u09-l01,station,állomás / megálló,yes
+lexicon,lex_bus,lesson:u09-l01,bus,busz,yes
+lexicon,lex_train,lesson:u09-l01,train,vonat,yes
+lexicon,lex_car,lesson:u09-l01,car,autó,yes
+lexicon,lex_taxi,lesson:u09-l01,taxi,taxi,yes
+lexicon,lex_ticket,lesson:u09-l02,ticket,jegy,yes
+lexicon,lex_platform,lesson:u09-l02,platform,vágány / peron,yes
+lexicon,lex_left,lesson:u09-l01,left,bal,yes
+lexicon,lex_right,lesson:u09-l01,right,jobb,yes
+lexicon,lex_straight,lesson:u09-l01,straight,egyenesen,yes
+lexicon,lex_near,lesson:u09-l01,near,közel,yes
+lexicon,lex_far,lesson:u09-l01,far,messze,yes
+lexicon,lex_first,lesson:u09-l01,first,először,yes
+lexicon,lex_then,lesson:u09-l01,then,aztán,yes
+lexicon,lex_turn,lesson:u09-l01,turn,fordulni,yes
+lexicon,lex_restaurant,lesson:u10-l01,restaurant,étterem,yes
+lexicon,lex_hotel,lesson:u10-l02,hotel,szálloda / hotel,yes
+lexicon,lex_menu,lesson:u10-l01,menu,étlap,yes
+lexicon,lex_table,lesson:u10-l01,table,asztal,yes
+lexicon,lex_bill,lesson:u10-l01,bill,számla,yes
+lexicon,lex_order,lesson:u10-l01,order,rendelni,yes
+lexicon,lex_room_noun,lesson:u10-l02,room,szoba (hotel),yes
+lexicon,lex_key,lesson:u10-l02,key,kulcs,yes
+lexicon,lex_night_noun,lesson:u10-l02,night,éjszaka (hotel),yes
+lexicon,lex_book_verb,lesson:u10-l02,book,foglalni,yes
+lexicon,lex_help,lesson:u10-l01,help,segíteni / segítség,yes
+lexicon,lex_problem,lesson:u10-l02,problem,probléma / gond,yes
+lexicon,lex_excuse_me,lesson:u10-l01,excuse me,elnézést,yes
+lexicon,lex_lesson,lesson:u11-l01,lesson,óra / lecke,yes
+lexicon,lex_camera,lesson:u11-l01,camera,kamera,yes
+lexicon,lex_microphone,lesson:u11-l01,microphone,mikrofon,yes
+lexicon,lex_screen,lesson:u11-l01,screen,képernyő,yes
+lexicon,lex_computer,lesson:u11-l01,computer,számítógép,yes
+lexicon,lex_internet,lesson:u11-l01,internet,internet,yes
+lexicon,lex_start,lesson:u11-l01,start,kezdeni / indítani,yes
+lexicon,lex_turn_on,lesson:u11-l01,turn on,bekapcsolni,yes
+lexicon,lex_turn_off,lesson:u11-l01,turn off,kikapcsolni,yes
+lexicon,lex_click,lesson:u11-l02,click,kattintani,yes
+lexicon,lex_ready,lesson:u11-l01,ready,kész,yes
+lexicon,lex_excellent,lesson:u11-l01,excellent,kiváló,yes
+lexicon,lex_student,lesson:u11-l01,student,diák / tanuló,yes
+lexicon,lex_was,lesson:u12-l01,was,voltam / volt,yes
+lexicon,lex_went,lesson:u12-l01,went,ment (megy múlt),yes
+lexicon,lex_saw,lesson:u12-l01,saw,látott (lát múlt),yes
+lexicon,lex_visit,lesson:u12-l01,visit,meglátogatni,yes
+lexicon,lex_yesterday_noun,lesson:u12-l01,yesterday,tegnap,yes
+lexicon,lex_last_week,lesson:u12-l01,last week,múlt héten,yes
+lexicon,lex_ago,lesson:u12-l02,ago,ezelőtt,yes
+lexicon,lex_holiday,lesson:u12-l02,holiday,nyaralás / szabadság,yes
+lexicon,lex_travel,lesson:u13-l01,travel,utazni / utazás,yes
+lexicon,lex_trip,lesson:u13-l01,trip,kirándulás / út,yes
+lexicon,lex_visit_noun,lesson:u13-l01,visit,látogatás,yes
+lexicon,lex_luggage,lesson:u13-l02,luggage,poggyász,yes
+lexicon,lex_suitcase,lesson:u13-l02,suitcase,bőrönd,yes
+lexicon,lex_passport,lesson:u13-l02,passport,útlevél,yes
+lexicon,lex_need,lesson:u13-l01,need,kell / szüksége van,yes
+lexicon,lex_bring,lesson:u13-l02,bring,hozni,yes
+lexicon,lex_airport,lesson:u14-l01,airport,reptér,yes
+lexicon,lex_flight,lesson:u14-l01,flight,járat / repülés,yes
+lexicon,lex_gate,lesson:u14-l01,gate,kapu (reptér),yes
+lexicon,lex_check_in,lesson:u14-l01,check-in,check-in / becsekkolás,yes
+lexicon,lex_security,lesson:u14-l01,security,biztonsági ellenőrzés,yes
+lexicon,lex_boarding,lesson:u14-l02,boarding,beszállás,yes
+lexicon,lex_seat,lesson:u14-l02,seat,ülés / hely,yes
+lexicon,lex_late,lesson:u14-l02,late,késő / késésben,yes
+lexicon,lex_desk,lesson:u14-l01,desk,pult,yes
+lexicon,lex_plane,lesson:u15-l01,plane,repülő,yes
+lexicon,lex_afraid,lesson:u15-l01,afraid,fél (vmitől),yes
+lexicon,lex_nervous,lesson:u15-l01,nervous,ideges,yes
+lexicon,lex_scared,lesson:u15-l01,scared,megijedt / fél,yes
+lexicon,lex_calm,lesson:u15-l01,calm,nyugodt,yes
+lexicon,lex_blanket,lesson:u15-l01,blanket,takaró,yes
+lexicon,lex_toilet,lesson:u15-l01,toilet,mosdó / wc,yes
+lexicon,lex_land,lesson:u15-l02,land,landolni / leszállni,yes
+lexicon,lex_safe,lesson:u15-l01,safe,biztonságos,yes
+lexicon,lex_okay,lesson:u15-l01,okay,rendben / oké,yes
+lexicon,lex_tired,lesson:u16-l01,tired,fáradt,yes
+lexicon,lex_glad,lesson:u16-l01,glad,örül,yes
+lexicon,lex_welcome,lesson:u16-l01,welcome,szívesen / üdvözöllek,yes
+lexicon,lex_together,lesson:u16-l01,together,együtt,yes
+lexicon,lex_one,lesson:u01-l02,one,egy,yes
+lexicon,lex_two,lesson:u01-l02,two,kettő,yes
+lexicon,lex_three,lesson:u01-l02,three,három,yes
+lexicon,lex_four,lesson:u01-l02,four,négy,yes
+lexicon,lex_five,lesson:u01-l02,five,öt,yes
+lexicon,lex_six,lesson:u01-l02,six,hat,yes
+lexicon,lex_seven,lesson:u01-l02,seven,hét (szám),yes
+lexicon,lex_eight,lesson:u01-l02,eight,nyolc,yes
+lexicon,lex_nine,lesson:u01-l02,nine,kilenc,yes
+lexicon,lex_ten,lesson:u01-l02,ten,tíz,yes
+lexicon,lex_eleven,lesson:u06-l01,eleven,tizenegy,yes
+lexicon,lex_twelve,lesson:u06-l01,twelve,tizenkettő,yes
+lexicon,lex_twenty,lesson:u06-l01,twenty,húsz,yes
+lexicon,lex_thirty,lesson:u06-l01,thirty,harminc,yes
+lexicon,lex_hundred,lesson:u06-l01,hundred,száz,yes
+lexicon,lex_red,lesson:u08-l02,red,piros,yes
+lexicon,lex_blue,lesson:u08-l02,blue,kék,yes
+lexicon,lex_green,lesson:u08-l02,green,zöld,yes
+lexicon,lex_white,lesson:u08-l02,white,fehér,yes
+lexicon,lex_black,lesson:u08-l02,black,fekete,yes
+lexicon,lex_announcement,lesson:-,announcement,bejelentés,yes
+lexicon,lex_passenger,lesson:-,passenger,utas,yes
+lexicon,lex_departure,lesson:-,departure,indulás,yes
+lexicon,lex_arrival,lesson:-,arrival,érkezés,yes
+lexicon,lex_delay,lesson:-,delay,késés,yes
+lexicon,lex_cancelled,lesson:-,cancelled,törölve,yes
+lexicon,lex_fasten,lesson:-,fasten,becsatolni,yes
+lexicon,lex_seatbelt,lesson:-,seatbelt,biztonsági öv,yes
+lexicon,lex_crew,lesson:-,crew,személyzet,yes
+lexicon,lex_captain,lesson:-,captain,kapitány,yes
+lexicon,lex_runway,lesson:-,runway,kifutópálya,yes
+lexicon,lex_turbulence,lesson:-,turbulence,turbulencia,yes
+lexicon,lex_reception,lesson:-,reception,recepció,yes
+lexicon,lex_reservation,lesson:-,reservation,foglalás,yes
+lexicon,lex_breakfast_included,lesson:-,breakfast included,reggeli az árban,yes
+lexicon,lex_floor,lesson:-,floor,emelet,yes
+lexicon,lex_lift,lesson:-,lift,lift,yes
+lexicon,lex_waiter,lesson:-,waiter,pincér,yes
+lexicon,lex_starter,lesson:-,starter,előétel,yes
+lexicon,lex_dessert,lesson:-,dessert,desszert,yes
+lexicon,lex_change,lesson:-,change,visszajáró,yes
+lexicon,lex_receipt,lesson:-,receipt,nyugta,yes
+lexicon,lex_timetable,lesson:-,timetable,menetrend,yes
+lexicon,lex_direction,lesson:-,direction,irány,yes
+lexicon,lex_corner,lesson:-,corner,sarok,yes
+lexicon,lex_opposite,lesson:-,opposite,szemben,yes
+lexicon,lex_between,lesson:-,between,között,yes
+lexicon,lex_neighbour,lesson:-,neighbour,szomszéd,yes
+lexicon,lex_upstairs,lesson:-,upstairs,emeleten,yes
+lexicon,lex_downstairs,lesson:-,downstairs,földszinten,yes
+lexicon,lex_recipe,lesson:-,recipe,recept,yes
+lexicon,lex_delicious,lesson:-,delicious,finom,yes
+lexicon,lex_healthy,lesson:-,healthy,egészséges,yes
+lexicon,lex_dessert_noun,lesson:-,dessert,desszert,yes
+lexicon,lex_celebrate,lesson:-,celebrate,ünnepelni,yes
+lexicon,lex_celebration,lesson:-,celebration,ünneplés,yes
+lexicon,lex_birthday,lesson:-,birthday,születésnap,yes
+lexicon,lex_christmas,lesson:-,Christmas,karácsony,yes
+lexicon,lex_wedding,lesson:-,wedding,esküvő,yes
+lexicon,lex_retirement,lesson:-,retirement,nyugdíj,yes
+lexicon,lex_colleague,lesson:-,colleague,kolléga,yes
+lexicon,lex_meeting,lesson:-,meeting,megbeszélés / meeting,yes
+lexicon,lex_experience,lesson:-,experience,tapasztalat / élmény,yes
+lexicon,lex_abroad,lesson:-,abroad,külföldön,yes
+lexicon,lex_rowing,lesson:-,rowing,evezés,yes
+lexicon,lex_competition,lesson:-,competition,verseny,yes
+lexicon,lex_training,lesson:-,training,edzés,yes
+lexicon,lex_university,lesson:-,university,egyetem,yes
+lexicon,lex_programming,lesson:-,programming,programozás,yes
+lexicon,lex_company,lesson:-,company,cég,yes
+lexicon,lex_author,lesson:-,author,szerző,yes
+lexicon,lex_recommend,lesson:-,recommend,ajánlani,yes
+lexicon,lex_connection,lesson:-,connection,kapcsolat (internet),yes
+lexicon,lex_nervous_flyer,lesson:-,nervous flyer,félős utas,yes
+lexicon,lex_breathe,lesson:-,breathe,lélegezni,yes
+lexicon,lex_relax,lesson:-,relax,ellazulni,yes
+lexicon,lex_worried,lesson:-,worried,aggódó,yes
+lexicon,lex_comfortable,lesson:-,comfortable,kényelmes,yes
+lexicon,lex_message,lesson:-,message,üzenet,yes
+lexicon,lex_voice_message,lesson:-,voice message,hangüzenet,yes
+lexicon,lex_online,lesson:-,online,online / interneten,yes
+lexicon,lex_download,lesson:-,download,letölteni,yes
+lexicon,lex_password,lesson:-,password,jelszó,yes
+chunk,chunk_greet_hello,phrase,"Hello, how are you?","Szia, hogy vagy?",yes
+chunk,chunk_reply_fine,phrase,"I'm fine, thank you.","Jól vagyok, köszönöm.",yes
+chunk,chunk_reply_and_you,phrase,And you?,És te?,yes
+chunk,chunk_intro_name,phrase,My name is Marta.,A nevem Marta.,yes
+chunk,chunk_ask_name,phrase,What is your name?,Hogy hívnak?,yes
+chunk,chunk_intro_from,phrase,I'm from Hungary.,Magyarországról jöttem.,yes
+chunk,chunk_ask_from,phrase,Where are you from?,Honnan jössz?,yes
+chunk,chunk_intro_nice,phrase,Nice to meet you.,"Örülök, hogy megismerhetlek.",yes
+chunk,chunk_intro_job,phrase,I am a retired teacher.,Nyugdíjas tanár vagyok.,yes
+chunk,chunk_repair_notunderstand,phrase,I don't understand.,Nem értem.,yes
+chunk,chunk_repair_repeat,phrase,"Could you repeat that, please?","Meg tudná ismételni, kérem?",yes
+chunk,chunk_repair_slower,phrase,"Could you speak more slowly, please?","Tudna lassabban beszélni, kérem?",yes
+chunk,chunk_repair_wait,phrase,Please wait a moment.,"Kérem, várjon egy pillanatot.",yes
+chunk,chunk_repair_sorry,phrase,"Sorry, I didn't hear you.","Elnézést, nem hallottam.",yes
+chunk,chunk_repair_howsay,phrase,How do you say this in English?,Hogy mondják ezt angolul?,yes
+chunk,chunk_ask_howareyou,phrase,How are you?,Hogy vagy?,yes
+chunk,chunk_ask_where_live,phrase,Where do you live?,Hol laksz?,yes
+chunk,chunk_ask_work,phrase,What do you do?,Mivel foglalkozol?,yes
+chunk,chunk_ask_family,phrase,Do you have brothers or sisters?,Van testvéred?,yes
+chunk,chunk_ask_hobbies,phrase,What do you like doing?,Mit szeretsz csinálni?,yes
+chunk,chunk_ask_followup_why,phrase,Really? Why?,Tényleg? Miért?,yes
+chunk,chunk_ask_followup_where,phrase,Where exactly?,Pontosan hol?,yes
+chunk,chunk_op_like,phrase,I like it.,Szeretem.,yes
+chunk,chunk_op_dontlike,phrase,I don't like it.,Nem szeretem.,yes
+chunk,chunk_op_love,phrase,I love cooking.,Imádok főzni.,yes
+chunk,chunk_op_wouldlike,phrase,"I'd like a coffee, please.",Kérnék egy kávét.,yes
+chunk,chunk_op_ithink,phrase,I think it's very nice.,Szerintem nagyon szép.,yes
+chunk,chunk_op_agree,phrase,"Yes, me too.","Igen, én is.",yes
+chunk,chunk_call_hearme,phrase,Can you hear me?,Hallasz engem?,yes
+chunk,chunk_call_seeme,phrase,Can you see me?,Látsz engem?,yes
+chunk,chunk_call_camera,phrase,Please turn your camera on.,"Kérlek, kapcsold be a kamerát.",yes
+chunk,chunk_call_mic,phrase,Please turn your microphone on.,"Kérlek, kapcsold be a mikrofont.",yes
+chunk,chunk_call_start,phrase,Let's start today's lesson.,Kezdjük a mai órát.,yes
+chunk,chunk_call_bye,phrase,Talk to you soon. Bye!,Hamarosan beszélünk. Szia!,yes
+chunk,chunk_teach_wait,phrase,Please wait a moment.,"Kérlek, várj egy pillanatot.",yes
+chunk,chunk_teach_parent,phrase,Can you ask your parents to come?,"Meg tudod kérni a szüleidet, hogy jöjjenek?",yes
+chunk,chunk_teach_excellent,phrase,Excellent! Well done!,Kiváló! Ügyes vagy!,yes
+chunk,chunk_teach_repeat_me,phrase,"Repeat after me, please.","Ismételd utánam, kérlek.",yes
+chunk,chunk_serv_order,phrase,"I'd like the soup, please.",A levest kérném.,yes
+chunk,chunk_serv_bill,phrase,"Could I have the bill, please?","Megkaphatnám a számlát, kérem?",yes
+chunk,chunk_serv_checkin,phrase,I have a reservation.,Van foglalásom.,yes
+chunk,chunk_serv_help,phrase,"Could you help me, please?","Tudna segíteni, kérem?",yes
+chunk,chunk_serv_howmuch,phrase,How much is it?,Mennyibe kerül?,yes
+chunk,chunk_serv_excuse,phrase,Excuse me.,Elnézést.,yes
+chunk,chunk_plan_free,phrase,I'm free on Saturday.,Szombaton ráérek.,yes
+chunk,chunk_plan_suggest,phrase,Let's meet on Sunday.,Találkozzunk vasárnap.,yes
+chunk,chunk_plan_accept,phrase,"Yes, that's a good idea.","Igen, ez jó ötlet.",yes
+chunk,chunk_plan_decline,phrase,"Sorry, I can't on Friday.","Sajnálom, pénteken nem tudok.",yes
+chunk,chunk_plan_going,phrase,I'm going to visit my sister.,Meglátogatom a nővéremet.,yes
+chunk,chunk_air_gate,phrase,Where is my gate?,Hol van a kapum?,yes
+chunk,chunk_air_checkin,phrase,Where is the check-in desk?,Hol van a check-in pult?,yes
+chunk,chunk_air_help,phrase,"Could you help me, please?","Tudna segíteni, kérem?",yes
+chunk,chunk_fly_afraid,phrase,I am afraid of flying.,Félek a repüléstől.,yes
+chunk,chunk_fly_first,phrase,This is my first flight.,Ez az első repülésem.,yes
+chunk,chunk_fly_nervous,phrase,I feel nervous.,Ideges vagyok.,yes
+chunk,chunk_fly_water,phrase,"Could I have some water, please?","Kaphatnék egy kis vizet, kérem?",yes
+chunk,chunk_fly_blanket,phrase,"Could I have a blanket, please?","Kaphatnék egy takarót, kérem?",yes
+chunk,chunk_fly_toilet,phrase,Where is the toilet?,Hol van a mosdó?,yes
+chunk,chunk_fly_land,phrase,When will we land?,Mikor szállunk le?,yes
+chunk,chunk_town_where,phrase,Where is the station?,Hol van az állomás?,yes
+chunk,chunk_town_howget,phrase,How do I get to the centre?,Hogy jutok el a központba?,yes
+chunk,chunk_trans_which,phrase,Which bus goes to the airport?,Melyik busz megy a reptérre?,yes
+chunk,chunk_conv_thanks_visit,phrase,Thank you for coming.,"Köszönöm, hogy eljöttél.",yes
+chunk,chunk_conv_tellmore,phrase,Tell me more.,Mesélj még.,yes
+chunk,chunk_conv_expand,phrase,I'm good. I visited my sister and we had coffee.,"Jól vagyok. Meglátogattam a nővéremet, és ittunk egy kávét.",yes
+grammar_title,gr_be,grammar card,The verb 'be',A 'be' (lenni) ige,yes
+grammar_title,gr_pronouns,grammar card,Subject pronouns,Alanyi névmások,yes
+grammar_title,gr_questions_wh,grammar card,Question words,Kérdőszavak,yes
+grammar_title,gr_articles,grammar card,a / an,a / an (egy),yes
+grammar_title,gr_possadj,grammar card,Possessive adjectives,Birtokos névmások,yes
+grammar_title,gr_poss_s,grammar card,Possessive 's,Birtokos 's,yes
+grammar_title,gr_have,grammar card,have / has,have / has (van neki),yes
+grammar_title,gr_plural,grammar card,Plural nouns,Többes szám,yes
+grammar_title,gr_presentsimple,grammar card,Present simple,Egyszerű jelen,yes
+grammar_title,gr_dodoes,grammar card,do / does questions,do / does kérdések,yes
+grammar_title,gr_frequency,grammar card,"always, usually, sometimes, never",gyakorisági határozók,yes
+grammar_title,gr_thereis,grammar card,there is / there are,there is / there are (van / vannak),yes
+grammar_title,gr_someany,grammar card,some / any,some / any,yes
+grammar_title,gr_wouldlike,grammar card,I'd like,Kérnék (I'd like),yes
+grammar_title,gr_can,grammar card,can / can't,can / can't (tud / nem tud),yes
+grammar_title,gr_goingto,grammar card,going to (plans),going to (tervek),yes
+grammar_title,gr_presentcont,grammar card,Present continuous,Folyamatos jelen,yes
+grammar_title,gr_prepositions_time,grammar card,at / on / in (time),at / on / in (idő),yes
+grammar_title,gr_object_pronouns,grammar card,Object pronouns,Tárgyi névmások,yes
+grammar_title,gr_likeing,grammar card,like + -ing,like + -ing,yes
+grammar_title,gr_imperatives,grammar card,Imperatives,Felszólítás,yes
+grammar_title,gr_could_requests,grammar card,Could you...? / Could I...?,Could you...? / Could I...?,yes
+grammar_title,gr_waswere,grammar card,was / were,was / were (volt),yes
+grammar_title,gr_pastsimple,grammar card,Past simple,Egyszerű múlt,yes
+grammar_title,gr_needhaveto,grammar card,need to / have to,need to / have to (kell),yes
+grammar_title,gr_conjunctions,grammar card,"and, but, because","and, but, because",yes
+grammar_explain,gr_be,grammar card,"Use am with I, is with he/she/it, are with you/we/they. Short forms: I'm, you're, he's.","Az I mellett am, a he/she/it mellett is, a you/we/they mellett are áll. Rövid alakok: I'm, you're, he's.",yes
+grammar_explain,gr_pronouns,grammar card,"I, you, he, she, it, we, they replace names. Use he for a man, she for a woman.","Az I, you, he, she, it, we, they a nevek helyett áll. He = férfi, she = nő.",yes
+grammar_explain,gr_questions_wh,grammar card,"What asks about things, Where about places, How about the way. The verb comes after the question word.","A what dolgokra, a where helyre, a how módra kérdez. A kérdőszó után jön az ige.",yes
+grammar_explain,gr_articles,grammar card,"Use a before a consonant sound, an before a vowel sound: a teacher, an apple.","Mássalhangzó előtt a, magánhangzó előtt an: a teacher, an apple.",yes
+grammar_explain,gr_possadj,grammar card,"my, your, his, her, our, their show who owns something. His for a man, her for a woman.","A my, your, his, her, our, their megmutatja, kié valami. His = férfié, her = nőé.",yes
+grammar_explain,gr_poss_s,grammar card,Add 's to a name: Kira's boyfriend = the boyfriend of Kira.,Tegyél 's-t a név után: Kira's boyfriend = Kira barátja.,yes
+grammar_explain,gr_have,grammar card,Use have with I/you/we/they and has with he/she/it.,"Az I/you/we/they mellett have, a he/she/it mellett has áll.",yes
+grammar_explain,gr_plural,grammar card,"Add -s for more than one: one sister, two sisters. Some words change: child → children.","Több dologhoz tegyél -s-t: one sister, two sisters. Néhány szó változik: child → children.",yes
+grammar_explain,gr_presentsimple,grammar card,"Use the base verb: I get up, they work. Add -s for he/she/it: she works.","Alap ige: I get up, they work. He/she/it mellett -s: she works.",yes
+grammar_explain,gr_dodoes,grammar card,Use Do you...? and Does he/she...? Do not add -s to the main verb: Does she work?,Do you...? és Does he/she...? A fő igéhez ne tegyél -s-t: Does she work?,yes
+grammar_explain,gr_frequency,grammar card,These words usually come before the main verb: I always drink coffee.,Ezek a szavak általában a fő ige előtt állnak: I always drink coffee.,yes
+grammar_explain,gr_thereis,grammar card,"There is for one thing, there are for more than one: There is a garden. There are two rooms.","Egy dologhoz there is, többhöz there are: There is a garden. There are two rooms.",yes
+grammar_explain,gr_someany,grammar card,"Use some in positive sentences, any in questions and negatives: I have some bread. Do you have any milk?","Állításban some, kérdésben/tagadásban any: I have some bread. Do you have any milk?",yes
+grammar_explain,gr_wouldlike,grammar card,I'd like = I would like. It is more polite than I want.,"I'd like = I would like. Udvariasabb, mint az I want.",yes
+grammar_explain,gr_can,grammar card,Can + base verb: I can swim. Can't = cannot. Questions: Can you help me?,Can + alap ige: I can swim. Can't = cannot. Kérdés: Can you help me?,yes
+grammar_explain,gr_goingto,grammar card,be + going to + verb: I am going to visit Kira.,be + going to + ige: I am going to visit Kira.,yes
+grammar_explain,gr_presentcont,grammar card,be + verb+ing for actions happening now: I am cooking. She is working.,be + ige+ing a most történő cselekvésre: I am cooking. She is working.,yes
+grammar_explain,gr_prepositions_time,grammar card,"at for times (at seven), on for days (on Monday), in for months (in July).","at időpontra (at seven), on napra (on Monday), in hónapra (in July).",yes
+grammar_explain,gr_object_pronouns,grammar card,"me, you, him, her, it, us, them come after the verb: Can you hear me?","me, you, him, her, it, us, them az ige után áll: Can you hear me?",yes
+grammar_explain,gr_likeing,grammar card,like/love/enjoy + verb+ing: I like cooking. She loves reading.,like/love/enjoy + ige+ing: I like cooking. She loves reading.,yes
+grammar_explain,gr_imperatives,grammar card,Use the base verb alone: Turn left. Wait here. Add please to be polite.,Csak az alap ige: Turn left. Wait here. Udvariasan: tegyél please-t.,yes
+grammar_explain,gr_could_requests,grammar card,Could you help me? asks someone to do something. Could I have...? asks for something for yourself.,Could you help me? = kérsz vkit vmire. Could I have...? = kérsz magadnak vmit.,yes
+grammar_explain,gr_waswere,grammar card,"was with I/he/she/it, were with you/we/they: I was at home. They were happy.","was: I/he/she/it, were: you/we/they. I was at home. They were happy.",yes
+grammar_explain,gr_pastsimple,grammar card,"Add -ed to many verbs: visited, cooked. Some change: go → went, have → had, see → saw.","Sok igéhez -ed: visited, cooked. Néhány változik: go → went, have → had, see → saw.",yes
+grammar_explain,gr_needhaveto,grammar card,need to / have to + base verb: I need to pack. I have to check in.,need to / have to + alap ige: I need to pack. I have to check in.,yes
+grammar_explain,gr_conjunctions,grammar card,"and adds, but shows a difference, because gives a reason.","and hozzáad, but ellentétet mutat, because okot ad.",yes

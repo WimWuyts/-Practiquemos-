@@ -1,0 +1,78 @@
+{
+  "id": "u14-l02",
+  "unitId": "u14",
+  "order": 2,
+  "title": {
+    "en": "Security & gates",
+    "hu": "Biztonsági ellenőrzés, kapuk"
+  },
+  "canDo": {
+    "en": "Understand gate and time information",
+    "hu": "Kapu- és időinformáció"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_boarding",
+    "lex_seat",
+    "lex_late"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_221",
+      "type": "intro",
+      "items": [
+        "lex_boarding",
+        "lex_seat",
+        "lex_late"
+      ]
+    },
+    {
+      "id": "act_222",
+      "type": "listen-choose",
+      "items": [
+        "lex_boarding",
+        "lex_seat",
+        "lex_late"
+      ]
+    },
+    {
+      "id": "act_223",
+      "type": "match",
+      "items": [
+        "lex_boarding",
+        "lex_seat",
+        "lex_late"
+      ]
+    },
+    {
+      "id": "act_224",
+      "type": "spelling-build",
+      "family": "sf_a_e",
+      "word": "late"
+    },
+    {
+      "id": "act_225",
+      "type": "typed",
+      "items": [
+        "lex_boarding",
+        "lex_seat",
+        "lex_late"
+      ]
+    },
+    {
+      "id": "act_226",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

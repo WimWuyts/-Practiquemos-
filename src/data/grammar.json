@@ -1,0 +1,894 @@
+[
+  {
+    "id": "gr_be",
+    "unitId": "u01",
+    "title": {
+      "en": "The verb 'be'",
+      "hu": "A 'be' (lenni) ige"
+    },
+    "purpose": {
+      "en": "Say who and what someone is."
+    },
+    "explanation": {
+      "en": "Use am with I, is with he/she/it, are with you/we/they. Short forms: I'm, you're, he's.",
+      "hu": "Az I mellett am, a he/she/it mellett is, a you/we/they mellett are áll. Rövid alakok: I'm, you're, he's."
+    },
+    "examples": [
+      {
+        "en": "I am Marta.",
+        "hu": "Marta vagyok."
+      },
+      {
+        "en": "She is my niece.",
+        "hu": "Ő az unokahúgom."
+      },
+      {
+        "en": "We are from Hungary.",
+        "hu": "Magyarországról jövünk."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this when you introduce yourself or describe people."
+    },
+    "check": {
+      "question": "Choose: I ___ happy. (am / is)",
+      "answer": "am"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_pronouns",
+    "unitId": "u01",
+    "title": {
+      "en": "Subject pronouns",
+      "hu": "Alanyi névmások"
+    },
+    "purpose": {
+      "en": "Say who does something."
+    },
+    "explanation": {
+      "en": "I, you, he, she, it, we, they replace names. Use he for a man, she for a woman.",
+      "hu": "Az I, you, he, she, it, we, they a nevek helyett áll. He = férfi, she = nő."
+    },
+    "examples": [
+      {
+        "en": "He is Spanish.",
+        "hu": "Ő spanyol."
+      },
+      {
+        "en": "They live in Denmark.",
+        "hu": "Ők Dániában élnek."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to talk about other people."
+    },
+    "check": {
+      "question": "Endika is a man. He or she?",
+      "answer": "he"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_questions_wh",
+    "unitId": "u01",
+    "title": {
+      "en": "Question words",
+      "hu": "Kérdőszavak"
+    },
+    "purpose": {
+      "en": "Ask for information."
+    },
+    "explanation": {
+      "en": "What asks about things, Where about places, How about the way. The verb comes after the question word.",
+      "hu": "A what dolgokra, a where helyre, a how módra kérdez. A kérdőszó után jön az ige."
+    },
+    "examples": [
+      {
+        "en": "What is your name?",
+        "hu": "Hogy hívnak?"
+      },
+      {
+        "en": "Where are you from?",
+        "hu": "Honnan jössz?"
+      },
+      {
+        "en": "How are you?",
+        "hu": "Hogy vagy?"
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to start a conversation with questions."
+    },
+    "check": {
+      "question": "___ are you from? (What / Where)",
+      "answer": "Where"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_articles",
+    "unitId": "u01",
+    "title": {
+      "en": "a / an",
+      "hu": "a / an (egy)"
+    },
+    "purpose": {
+      "en": "Talk about one thing."
+    },
+    "explanation": {
+      "en": "Use a before a consonant sound, an before a vowel sound: a teacher, an apple.",
+      "hu": "Mássalhangzó előtt a, magánhangzó előtt an: a teacher, an apple."
+    },
+    "examples": [
+      {
+        "en": "I am a teacher.",
+        "hu": "Tanár vagyok."
+      },
+      {
+        "en": "It is an apple.",
+        "hu": "Ez egy alma."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this with jobs and single things."
+    },
+    "check": {
+      "question": "___ egg (a / an)",
+      "answer": "an"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_possadj",
+    "unitId": "u02",
+    "title": {
+      "en": "Possessive adjectives",
+      "hu": "Birtokos névmások"
+    },
+    "purpose": {
+      "en": "Say whose something is."
+    },
+    "explanation": {
+      "en": "my, your, his, her, our, their show who owns something. His for a man, her for a woman.",
+      "hu": "A my, your, his, her, our, their megmutatja, kié valami. His = férfié, her = nőé."
+    },
+    "examples": [
+      {
+        "en": "This is my family.",
+        "hu": "Ez az én családom."
+      },
+      {
+        "en": "Her name is Kira.",
+        "hu": "Az ő neve Kira."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to talk about your family and things."
+    },
+    "check": {
+      "question": "Kira is a woman. ___ name. (his / her)",
+      "answer": "her"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_poss_s",
+    "unitId": "u02",
+    "title": {
+      "en": "Possessive 's",
+      "hu": "Birtokos 's"
+    },
+    "purpose": {
+      "en": "Show that something belongs to a person."
+    },
+    "explanation": {
+      "en": "Add 's to a name: Kira's boyfriend = the boyfriend of Kira.",
+      "hu": "Tegyél 's-t a név után: Kira's boyfriend = Kira barátja."
+    },
+    "examples": [
+      {
+        "en": "Endika is Kira's boyfriend.",
+        "hu": "Endika Kira barátja."
+      },
+      {
+        "en": "This is Marta's house.",
+        "hu": "Ez Marta háza."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to say who someone belongs to in the family."
+    },
+    "check": {
+      "question": "the sister of Marta = Marta___ sister",
+      "answer": "'s"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_have",
+    "unitId": "u02",
+    "title": {
+      "en": "have / has",
+      "hu": "have / has (van neki)"
+    },
+    "purpose": {
+      "en": "Say what people have."
+    },
+    "explanation": {
+      "en": "Use have with I/you/we/they and has with he/she/it.",
+      "hu": "Az I/you/we/they mellett have, a he/she/it mellett has áll."
+    },
+    "examples": [
+      {
+        "en": "I have two sisters.",
+        "hu": "Két nővérem van."
+      },
+      {
+        "en": "She has a nice house.",
+        "hu": "Szép háza van."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to talk about family and things you own."
+    },
+    "check": {
+      "question": "He ___ a brother. (have / has)",
+      "answer": "has"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_plural",
+    "unitId": "u02",
+    "title": {
+      "en": "Plural nouns",
+      "hu": "Többes szám"
+    },
+    "purpose": {
+      "en": "Talk about more than one."
+    },
+    "explanation": {
+      "en": "Add -s for more than one: one sister, two sisters. Some words change: child → children.",
+      "hu": "Több dologhoz tegyél -s-t: one sister, two sisters. Néhány szó változik: child → children."
+    },
+    "examples": [
+      {
+        "en": "I have three brothers.",
+        "hu": "Három bátyám van."
+      },
+      {
+        "en": "Two coffees, please.",
+        "hu": "Két kávét kérek."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to count people and things."
+    },
+    "check": {
+      "question": "one book, two ___",
+      "answer": "books"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_presentsimple",
+    "unitId": "u04",
+    "title": {
+      "en": "Present simple",
+      "hu": "Egyszerű jelen"
+    },
+    "purpose": {
+      "en": "Talk about routines and facts."
+    },
+    "explanation": {
+      "en": "Use the base verb: I get up, they work. Add -s for he/she/it: she works.",
+      "hu": "Alap ige: I get up, they work. He/she/it mellett -s: she works."
+    },
+    "examples": [
+      {
+        "en": "I get up at seven.",
+        "hu": "Hétkor kelek."
+      },
+      {
+        "en": "She works in Belgium.",
+        "hu": "Belgiumban dolgozik."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to describe your day."
+    },
+    "check": {
+      "question": "She ___ (work) every day.",
+      "answer": "works"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_dodoes",
+    "unitId": "u04",
+    "title": {
+      "en": "do / does questions",
+      "hu": "do / does kérdések"
+    },
+    "purpose": {
+      "en": "Ask about routines."
+    },
+    "explanation": {
+      "en": "Use Do you...? and Does he/she...? Do not add -s to the main verb: Does she work?",
+      "hu": "Do you...? és Does he/she...? A fő igéhez ne tegyél -s-t: Does she work?"
+    },
+    "examples": [
+      {
+        "en": "Do you like coffee?",
+        "hu": "Szereted a kávét?"
+      },
+      {
+        "en": "Does she live here?",
+        "hu": "Itt lakik?"
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to ask people about their routines."
+    },
+    "check": {
+      "question": "___ you like tea? (Do / Does)",
+      "answer": "Do"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_frequency",
+    "unitId": "u04",
+    "title": {
+      "en": "always, usually, sometimes, never",
+      "hu": "gyakorisági határozók"
+    },
+    "purpose": {
+      "en": "Say how often something happens."
+    },
+    "explanation": {
+      "en": "These words usually come before the main verb: I always drink coffee.",
+      "hu": "Ezek a szavak általában a fő ige előtt állnak: I always drink coffee."
+    },
+    "examples": [
+      {
+        "en": "I usually get up early.",
+        "hu": "Általában korán kelek."
+      },
+      {
+        "en": "She never eats meat.",
+        "hu": "Soha nem eszik húst."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to describe habits."
+    },
+    "check": {
+      "question": "Word order: I / coffee / drink / always → ?",
+      "answer": "I always drink coffee"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_thereis",
+    "unitId": "u04",
+    "title": {
+      "en": "there is / there are",
+      "hu": "there is / there are (van / vannak)"
+    },
+    "purpose": {
+      "en": "Say what exists in a place."
+    },
+    "explanation": {
+      "en": "There is for one thing, there are for more than one: There is a garden. There are two rooms.",
+      "hu": "Egy dologhoz there is, többhöz there are: There is a garden. There are two rooms."
+    },
+    "examples": [
+      {
+        "en": "There is a kitchen.",
+        "hu": "Van egy konyha."
+      },
+      {
+        "en": "There are two bedrooms.",
+        "hu": "Két hálószoba van."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to describe your home."
+    },
+    "check": {
+      "question": "___ three chairs. (There is / There are)",
+      "answer": "There are"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_someany",
+    "unitId": "u05",
+    "title": {
+      "en": "some / any",
+      "hu": "some / any"
+    },
+    "purpose": {
+      "en": "Talk about amounts."
+    },
+    "explanation": {
+      "en": "Use some in positive sentences, any in questions and negatives: I have some bread. Do you have any milk?",
+      "hu": "Állításban some, kérdésben/tagadásban any: I have some bread. Do you have any milk?"
+    },
+    "examples": [
+      {
+        "en": "I'd like some water.",
+        "hu": "Kérnék egy kis vizet."
+      },
+      {
+        "en": "Is there any coffee?",
+        "hu": "Van kávé?"
+      }
+    ],
+    "useWhen": {
+      "en": "Use this when you shop and cook."
+    },
+    "check": {
+      "question": "Do you have ___ tea? (some / any)",
+      "answer": "any"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_wouldlike",
+    "unitId": "u05",
+    "title": {
+      "en": "I'd like",
+      "hu": "Kérnék (I'd like)"
+    },
+    "purpose": {
+      "en": "Ask politely for something."
+    },
+    "explanation": {
+      "en": "I'd like = I would like. It is more polite than I want.",
+      "hu": "I'd like = I would like. Udvariasabb, mint az I want."
+    },
+    "examples": [
+      {
+        "en": "I'd like a coffee, please.",
+        "hu": "Kérnék egy kávét."
+      },
+      {
+        "en": "I'd like the soup.",
+        "hu": "A levest kérném."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this in restaurants and shops."
+    },
+    "check": {
+      "question": "Polite: I ___ a tea, please.",
+      "answer": "I'd like"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_can",
+    "unitId": "u06",
+    "title": {
+      "en": "can / can't",
+      "hu": "can / can't (tud / nem tud)"
+    },
+    "purpose": {
+      "en": "Talk about ability and possibility."
+    },
+    "explanation": {
+      "en": "Can + base verb: I can swim. Can't = cannot. Questions: Can you help me?",
+      "hu": "Can + alap ige: I can swim. Can't = cannot. Kérdés: Can you help me?"
+    },
+    "examples": [
+      {
+        "en": "I can cook.",
+        "hu": "Tudok főzni."
+      },
+      {
+        "en": "Can you help me?",
+        "hu": "Tudsz segíteni?"
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to ask for help and say what you can do."
+    },
+    "check": {
+      "question": "___ you swim? (Can / Do)",
+      "answer": "Can"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_goingto",
+    "unitId": "u06",
+    "title": {
+      "en": "going to (plans)",
+      "hu": "going to (tervek)"
+    },
+    "purpose": {
+      "en": "Talk about future plans."
+    },
+    "explanation": {
+      "en": "be + going to + verb: I am going to visit Kira.",
+      "hu": "be + going to + ige: I am going to visit Kira."
+    },
+    "examples": [
+      {
+        "en": "I'm going to travel to Prague.",
+        "hu": "Prágába fogok utazni."
+      },
+      {
+        "en": "We are going to cook dinner.",
+        "hu": "Vacsorát fogunk főzni."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to talk about your plans."
+    },
+    "check": {
+      "question": "I ___ going to call her. (am / do)",
+      "answer": "am"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_presentcont",
+    "unitId": "u06",
+    "title": {
+      "en": "Present continuous",
+      "hu": "Folyamatos jelen"
+    },
+    "purpose": {
+      "en": "Talk about now."
+    },
+    "explanation": {
+      "en": "be + verb+ing for actions happening now: I am cooking. She is working.",
+      "hu": "be + ige+ing a most történő cselekvésre: I am cooking. She is working."
+    },
+    "examples": [
+      {
+        "en": "I am reading a book.",
+        "hu": "Könyvet olvasok éppen."
+      },
+      {
+        "en": "They are watching a film.",
+        "hu": "Filmet néznek éppen."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to say what is happening right now."
+    },
+    "check": {
+      "question": "Right now I ___ (cook).",
+      "answer": "am cooking"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_prepositions_time",
+    "unitId": "u06",
+    "title": {
+      "en": "at / on / in (time)",
+      "hu": "at / on / in (idő)"
+    },
+    "purpose": {
+      "en": "Say when something happens."
+    },
+    "explanation": {
+      "en": "at for times (at seven), on for days (on Monday), in for months (in July).",
+      "hu": "at időpontra (at seven), on napra (on Monday), in hónapra (in July)."
+    },
+    "examples": [
+      {
+        "en": "The lesson is at ten.",
+        "hu": "Az óra tízkor van."
+      },
+      {
+        "en": "I'm free on Saturday.",
+        "hu": "Szombaton ráérek."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to make plans."
+    },
+    "check": {
+      "question": "___ Monday (at / on / in)",
+      "answer": "on"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_object_pronouns",
+    "unitId": "u07",
+    "title": {
+      "en": "Object pronouns",
+      "hu": "Tárgyi névmások"
+    },
+    "purpose": {
+      "en": "Replace the person you talk about."
+    },
+    "explanation": {
+      "en": "me, you, him, her, it, us, them come after the verb: Can you hear me?",
+      "hu": "me, you, him, her, it, us, them az ige után áll: Can you hear me?"
+    },
+    "examples": [
+      {
+        "en": "Can you hear me?",
+        "hu": "Hallasz engem?"
+      },
+      {
+        "en": "I like him.",
+        "hu": "Kedvelem őt."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this on phone and video calls."
+    },
+    "check": {
+      "question": "Can you hear ___? (I / me)",
+      "answer": "me"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_likeing",
+    "unitId": "u08",
+    "title": {
+      "en": "like + -ing",
+      "hu": "like + -ing"
+    },
+    "purpose": {
+      "en": "Talk about activities you enjoy."
+    },
+    "explanation": {
+      "en": "like/love/enjoy + verb+ing: I like cooking. She loves reading.",
+      "hu": "like/love/enjoy + ige+ing: I like cooking. She loves reading."
+    },
+    "examples": [
+      {
+        "en": "I love cooking.",
+        "hu": "Imádok főzni."
+      },
+      {
+        "en": "He enjoys swimming.",
+        "hu": "Élvez úszni."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to talk about hobbies."
+    },
+    "check": {
+      "question": "I like ___ (read).",
+      "answer": "reading"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_imperatives",
+    "unitId": "u09",
+    "title": {
+      "en": "Imperatives",
+      "hu": "Felszólítás"
+    },
+    "purpose": {
+      "en": "Give a simple instruction."
+    },
+    "explanation": {
+      "en": "Use the base verb alone: Turn left. Wait here. Add please to be polite.",
+      "hu": "Csak az alap ige: Turn left. Wait here. Udvariasan: tegyél please-t."
+    },
+    "examples": [
+      {
+        "en": "Turn right at the corner.",
+        "hu": "A saroknál fordulj jobbra."
+      },
+      {
+        "en": "Please wait a moment.",
+        "hu": "Kérlek, várj egy pillanatot."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to give and understand directions."
+    },
+    "check": {
+      "question": "Give a direction: ___ left. (Turn / Turning)",
+      "answer": "Turn"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_could_requests",
+    "unitId": "u10",
+    "title": {
+      "en": "Could you...? / Could I...?",
+      "hu": "Could you...? / Could I...?"
+    },
+    "purpose": {
+      "en": "Make polite requests."
+    },
+    "explanation": {
+      "en": "Could you help me? asks someone to do something. Could I have...? asks for something for yourself.",
+      "hu": "Could you help me? = kérsz vkit vmire. Could I have...? = kérsz magadnak vmit."
+    },
+    "examples": [
+      {
+        "en": "Could you help me, please?",
+        "hu": "Tudna segíteni, kérem?"
+      },
+      {
+        "en": "Could I have some water?",
+        "hu": "Kaphatnék egy kis vizet?"
+      }
+    ],
+    "useWhen": {
+      "en": "Use this in shops, hotels and on the plane."
+    },
+    "check": {
+      "question": "Polite request for water: Could I ___ some water?",
+      "answer": "have"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_waswere",
+    "unitId": "u12",
+    "title": {
+      "en": "was / were",
+      "hu": "was / were (volt)"
+    },
+    "purpose": {
+      "en": "Talk about the past with 'be'."
+    },
+    "explanation": {
+      "en": "was with I/he/she/it, were with you/we/they: I was at home. They were happy.",
+      "hu": "was: I/he/she/it, were: you/we/they. I was at home. They were happy."
+    },
+    "examples": [
+      {
+        "en": "I was at my sister's house.",
+        "hu": "A nővérem házában voltam."
+      },
+      {
+        "en": "The weather was nice.",
+        "hu": "Szép idő volt."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to talk about yesterday."
+    },
+    "check": {
+      "question": "They ___ happy. (was / were)",
+      "answer": "were"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_pastsimple",
+    "unitId": "u12",
+    "title": {
+      "en": "Past simple",
+      "hu": "Egyszerű múlt"
+    },
+    "purpose": {
+      "en": "Talk about finished actions."
+    },
+    "explanation": {
+      "en": "Add -ed to many verbs: visited, cooked. Some change: go → went, have → had, see → saw.",
+      "hu": "Sok igéhez -ed: visited, cooked. Néhány változik: go → went, have → had, see → saw."
+    },
+    "examples": [
+      {
+        "en": "I visited my sister.",
+        "hu": "Meglátogattam a nővéremet."
+      },
+      {
+        "en": "We went to Prague.",
+        "hu": "Prágába mentünk."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to tell a short story about the past."
+    },
+    "check": {
+      "question": "Yesterday I ___ (visit) Kira.",
+      "answer": "visited"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_needhaveto",
+    "unitId": "u13",
+    "title": {
+      "en": "need to / have to",
+      "hu": "need to / have to (kell)"
+    },
+    "purpose": {
+      "en": "Say what is necessary."
+    },
+    "explanation": {
+      "en": "need to / have to + base verb: I need to pack. I have to check in.",
+      "hu": "need to / have to + alap ige: I need to pack. I have to check in."
+    },
+    "examples": [
+      {
+        "en": "I need to buy a ticket.",
+        "hu": "Jegyet kell vennem."
+      },
+      {
+        "en": "We have to be early.",
+        "hu": "Korán kell odaérnünk."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to plan a trip."
+    },
+    "check": {
+      "question": "I ___ to pack. (need / needs)",
+      "answer": "need"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
+    "id": "gr_conjunctions",
+    "unitId": "u03",
+    "title": {
+      "en": "and, but, because",
+      "hu": "and, but, because"
+    },
+    "purpose": {
+      "en": "Join your ideas."
+    },
+    "explanation": {
+      "en": "and adds, but shows a difference, because gives a reason.",
+      "hu": "and hozzáad, but ellentétet mutat, because okot ad."
+    },
+    "examples": [
+      {
+        "en": "I like tea but I don't like coffee.",
+        "hu": "Szeretem a teát, de a kávét nem."
+      },
+      {
+        "en": "I'm happy because you're here.",
+        "hu": "Boldog vagyok, mert itt vagy."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to make longer sentences."
+    },
+    "check": {
+      "question": "I'm tired ___ I worked a lot. (but / because)",
+      "answer": "because"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  }
+]

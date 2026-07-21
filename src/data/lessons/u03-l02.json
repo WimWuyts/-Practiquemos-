@@ -1,0 +1,100 @@
+{
+  "id": "u03-l02",
+  "unitId": "u03",
+  "order": 2,
+  "title": {
+    "en": "Describing people",
+    "hu": "Emberek leírása"
+  },
+  "canDo": {
+    "en": "Give a simple description",
+    "hu": "Egyszerű leírás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_work",
+    "lex_tall",
+    "lex_short",
+    "lex_kind",
+    "lex_funny",
+    "lex_happy",
+    "lex_but",
+    "lex_because",
+    "lex_so",
+    "lex_very"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_ask_work"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_46",
+      "type": "intro",
+      "items": [
+        "lex_work",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny",
+        "lex_happy",
+        "lex_but",
+        "lex_because"
+      ]
+    },
+    {
+      "id": "act_47",
+      "type": "listen-choose",
+      "items": [
+        "lex_work",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny",
+        "lex_happy"
+      ]
+    },
+    {
+      "id": "act_48",
+      "type": "match",
+      "items": [
+        "lex_work",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny",
+        "lex_happy"
+      ]
+    },
+    {
+      "id": "act_49",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_work"
+      ]
+    },
+    {
+      "id": "act_50",
+      "type": "typed",
+      "items": [
+        "lex_work",
+        "lex_tall",
+        "lex_short",
+        "lex_kind"
+      ]
+    },
+    {
+      "id": "act_51",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

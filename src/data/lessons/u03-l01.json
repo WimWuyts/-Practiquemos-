@@ -1,0 +1,161 @@
+{
+  "id": "u03-l01",
+  "unitId": "u03",
+  "order": 1,
+  "title": {
+    "en": "Countries & languages",
+    "hu": "Országok és nyelvek"
+  },
+  "canDo": {
+    "en": "Say where people are from",
+    "hu": "Honnan jönnek az emberek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_hungary",
+    "lex_hungarian",
+    "lex_england",
+    "lex_english",
+    "lex_spain",
+    "lex_spanish",
+    "lex_germany",
+    "lex_german",
+    "lex_denmark",
+    "lex_danish",
+    "lex_belgium",
+    "lex_switzerland",
+    "lex_language",
+    "lex_speak",
+    "lex_live",
+    "lex_come"
+  ],
+  "reviewItems": [
+    "lex_family",
+    "lex_mother",
+    "lex_father",
+    "lex_mum",
+    "lex_dad",
+    "lex_parents",
+    "lex_sister",
+    "lex_brother",
+    "lex_daughter",
+    "lex_son",
+    "lex_husband",
+    "lex_wife",
+    "lex_partner",
+    "lex_boyfriend",
+    "lex_girlfriend",
+    "lex_niece",
+    "lex_nephew",
+    "lex_aunt",
+    "lex_uncle",
+    "lex_grandmother",
+    "lex_grandfather",
+    "lex_child",
+    "lex_friend",
+    "lex_have",
+    "lex_this",
+    "lex_that",
+    "lex_these",
+    "lex_those",
+    "lex_his",
+    "lex_her",
+    "lex_our",
+    "lex_their",
+    "lex_old",
+    "lex_young",
+    "lex_married"
+  ],
+  "chunks": [
+    "chunk_ask_where_live"
+  ],
+  "grammarCards": [
+    "gr_conjunctions"
+  ],
+  "pronunciationFocus": [
+    "pf_wv"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_38",
+      "type": "intro",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english",
+        "lex_spain",
+        "lex_spanish",
+        "lex_germany",
+        "lex_german"
+      ]
+    },
+    {
+      "id": "act_39",
+      "type": "listen-choose",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english",
+        "lex_spain",
+        "lex_spanish"
+      ]
+    },
+    {
+      "id": "act_40",
+      "type": "match",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english",
+        "lex_spain",
+        "lex_spanish"
+      ]
+    },
+    {
+      "id": "act_41",
+      "type": "grammar",
+      "grammarId": "gr_conjunctions"
+    },
+    {
+      "id": "act_42",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_where_live"
+      ]
+    },
+    {
+      "id": "act_43",
+      "type": "typed",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english"
+      ]
+    },
+    {
+      "id": "act_44",
+      "type": "pron-record",
+      "focusId": "pf_wv"
+    },
+    {
+      "id": "act_45",
+      "type": "review",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad",
+        "lex_parents"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

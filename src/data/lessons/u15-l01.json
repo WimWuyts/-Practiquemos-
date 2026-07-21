@@ -1,0 +1,157 @@
+{
+  "id": "u15-l01",
+  "unitId": "u15",
+  "order": 1,
+  "title": {
+    "en": "On the plane",
+    "hu": "A repülőn"
+  },
+  "canDo": {
+    "en": "Ask for help and stay calm",
+    "hu": "Segítségkérés, nyugalom"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_plane",
+    "lex_afraid",
+    "lex_nervous",
+    "lex_scared",
+    "lex_calm",
+    "lex_blanket",
+    "lex_toilet",
+    "lex_safe",
+    "lex_okay"
+  ],
+  "reviewItems": [
+    "lex_was",
+    "lex_went",
+    "lex_saw",
+    "lex_visit",
+    "lex_yesterday_noun",
+    "lex_last_week",
+    "lex_ago",
+    "lex_holiday",
+    "lex_airport",
+    "lex_flight",
+    "lex_gate",
+    "lex_check_in",
+    "lex_security",
+    "lex_boarding",
+    "lex_seat",
+    "lex_late",
+    "lex_desk"
+  ],
+  "chunks": [
+    "chunk_fly_afraid",
+    "chunk_fly_first",
+    "chunk_fly_nervous",
+    "chunk_fly_water",
+    "chunk_fly_blanket",
+    "chunk_fly_toilet"
+  ],
+  "grammarCards": [
+    "gr_could_requests"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_plane_help",
+  "activities": [
+    {
+      "id": "act_227",
+      "type": "intro",
+      "items": [
+        "lex_plane",
+        "lex_afraid",
+        "lex_nervous",
+        "lex_scared",
+        "lex_calm",
+        "lex_blanket",
+        "lex_toilet",
+        "lex_safe"
+      ]
+    },
+    {
+      "id": "act_228",
+      "type": "listen-choose",
+      "items": [
+        "lex_plane",
+        "lex_afraid",
+        "lex_nervous",
+        "lex_scared",
+        "lex_calm",
+        "lex_blanket"
+      ]
+    },
+    {
+      "id": "act_229",
+      "type": "match",
+      "items": [
+        "lex_plane",
+        "lex_afraid",
+        "lex_nervous",
+        "lex_scared",
+        "lex_calm",
+        "lex_blanket"
+      ]
+    },
+    {
+      "id": "act_230",
+      "type": "spelling-build",
+      "family": "sf_a_e",
+      "word": "plane"
+    },
+    {
+      "id": "act_231",
+      "type": "grammar",
+      "grammarId": "gr_could_requests"
+    },
+    {
+      "id": "act_232",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fly_afraid",
+        "chunk_fly_first",
+        "chunk_fly_nervous",
+        "chunk_fly_water",
+        "chunk_fly_blanket",
+        "chunk_fly_toilet"
+      ]
+    },
+    {
+      "id": "act_233",
+      "type": "typed",
+      "items": [
+        "lex_plane",
+        "lex_afraid",
+        "lex_nervous",
+        "lex_scared"
+      ]
+    },
+    {
+      "id": "act_234",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_235",
+      "type": "conversation",
+      "dialogueId": "dlg_plane_help"
+    },
+    {
+      "id": "act_236",
+      "type": "review",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit",
+        "lex_yesterday_noun",
+        "lex_last_week"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

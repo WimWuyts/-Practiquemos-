@@ -1,0 +1,165 @@
+{
+  "id": "u01-l01",
+  "unitId": "u01",
+  "order": 1,
+  "title": {
+    "en": "Hello, Endika",
+    "hu": "Szia, Endika"
+  },
+  "canDo": {
+    "en": "Greet and say your name and country",
+    "hu": "Köszönés, név, ország"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_hello",
+    "lex_hi",
+    "lex_goodbye",
+    "lex_bye",
+    "lex_good_morning",
+    "lex_good_afternoon",
+    "lex_good_evening",
+    "lex_good_night",
+    "lex_please",
+    "lex_thank_you",
+    "lex_thanks",
+    "lex_yes",
+    "lex_no",
+    "lex_sorry",
+    "lex_name",
+    "lex_my",
+    "lex_your",
+    "lex_i",
+    "lex_you",
+    "lex_from",
+    "lex_country",
+    "lex_city",
+    "lex_teacher",
+    "lex_retired",
+    "lex_nice",
+    "lex_what",
+    "lex_where",
+    "lex_how",
+    "lex_fine",
+    "lex_good",
+    "lex_well",
+    "lex_a",
+    "lex_an"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_greet_hello",
+    "chunk_reply_fine",
+    "chunk_reply_and_you",
+    "chunk_intro_name",
+    "chunk_ask_name",
+    "chunk_intro_from",
+    "chunk_ask_from",
+    "chunk_ask_howareyou"
+  ],
+  "grammarCards": [
+    "gr_be",
+    "gr_questions_wh",
+    "gr_articles"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_endika_first",
+  "activities": [
+    {
+      "id": "act_2",
+      "type": "intro",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye",
+        "lex_good_morning",
+        "lex_good_afternoon",
+        "lex_good_evening",
+        "lex_good_night"
+      ]
+    },
+    {
+      "id": "act_3",
+      "type": "listen-choose",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye",
+        "lex_good_morning",
+        "lex_good_afternoon"
+      ]
+    },
+    {
+      "id": "act_4",
+      "type": "match",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye",
+        "lex_good_morning",
+        "lex_good_afternoon"
+      ]
+    },
+    {
+      "id": "act_5",
+      "type": "spelling-build",
+      "family": "sf_a_e",
+      "word": "name"
+    },
+    {
+      "id": "act_6",
+      "type": "grammar",
+      "grammarId": "gr_be"
+    },
+    {
+      "id": "act_7",
+      "type": "grammar",
+      "grammarId": "gr_questions_wh"
+    },
+    {
+      "id": "act_8",
+      "type": "grammar",
+      "grammarId": "gr_articles"
+    },
+    {
+      "id": "act_9",
+      "type": "phrase-match",
+      "items": [
+        "chunk_greet_hello",
+        "chunk_reply_fine",
+        "chunk_reply_and_you",
+        "chunk_intro_name",
+        "chunk_ask_name",
+        "chunk_intro_from"
+      ]
+    },
+    {
+      "id": "act_10",
+      "type": "typed",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye"
+      ]
+    },
+    {
+      "id": "act_11",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_12",
+      "type": "conversation",
+      "dialogueId": "dlg_endika_first"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

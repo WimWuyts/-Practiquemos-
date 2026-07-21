@@ -1,0 +1,80 @@
+{
+  "id": "u12-l02",
+  "unitId": "u12",
+  "order": 2,
+  "title": {
+    "en": "My weekend story",
+    "hu": "A hétvégém története"
+  },
+  "canDo": {
+    "en": "Tell a short past story",
+    "hu": "Rövid múlt idejű történet"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_ago",
+    "lex_holiday"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_conv_expand"
+  ],
+  "grammarCards": [
+    "gr_pastsimple"
+  ],
+  "pronunciationFocus": [
+    "pf_ed"
+  ],
+  "conversationId": "dlg_endika_followup",
+  "activities": [
+    {
+      "id": "act_190",
+      "type": "intro",
+      "items": [
+        "lex_ago",
+        "lex_holiday"
+      ]
+    },
+    {
+      "id": "act_191",
+      "type": "listen-choose",
+      "items": [
+        "lex_ago",
+        "lex_holiday"
+      ]
+    },
+    {
+      "id": "act_192",
+      "type": "grammar",
+      "grammarId": "gr_pastsimple"
+    },
+    {
+      "id": "act_193",
+      "type": "phrase-match",
+      "items": [
+        "chunk_conv_expand"
+      ]
+    },
+    {
+      "id": "act_194",
+      "type": "typed",
+      "items": [
+        "lex_ago",
+        "lex_holiday"
+      ]
+    },
+    {
+      "id": "act_195",
+      "type": "pron-record",
+      "focusId": "pf_ed"
+    },
+    {
+      "id": "act_196",
+      "type": "conversation",
+      "dialogueId": "dlg_endika_followup"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "id": "u08-l01",
+  "unitId": "u08",
+  "order": 1,
+  "title": {
+    "en": "Hobbies with Peter",
+    "hu": "Hobbik Peterrel"
+  },
+  "canDo": {
+    "en": "Talk about hobbies",
+    "hu": "Hobbikról beszélni"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_hobby",
+    "lex_music",
+    "lex_book",
+    "lex_film",
+    "lex_sport",
+    "lex_garden_noun",
+    "lex_swim",
+    "lex_dance",
+    "lex_sing",
+    "lex_play",
+    "lex_love",
+    "lex_enjoy"
+  ],
+  "reviewItems": [
+    "lex_food",
+    "lex_water",
+    "lex_coffee",
+    "lex_tea",
+    "lex_milk",
+    "lex_bread",
+    "lex_cheese",
+    "lex_egg",
+    "lex_apple",
+    "lex_soup",
+    "lex_meat",
+    "lex_fish",
+    "lex_vegetable",
+    "lex_fruit",
+    "lex_cake",
+    "lex_breakfast",
+    "lex_lunch",
+    "lex_dinner",
+    "lex_cook",
+    "lex_make",
+    "lex_buy",
+    "lex_like",
+    "lex_want",
+    "lex_shop",
+    "lex_price",
+    "lex_money",
+    "lex_some",
+    "lex_any",
+    "lex_much",
+    "lex_many",
+    "lex_call",
+    "lex_phone",
+    "lex_hear",
+    "lex_see",
+    "lex_repeat",
+    "lex_slowly",
+    "lex_again",
+    "lex_understand",
+    "lex_wait",
+    "lex_moment",
+    "lex_me",
+    "lex_him",
+    "lex_them"
+  ],
+  "chunks": [
+    "chunk_ask_hobbies",
+    "chunk_op_love"
+  ],
+  "grammarCards": [
+    "gr_likeing"
+  ],
+  "pronunciationFocus": [
+    "pf_stress"
+  ],
+  "conversationId": "dlg_peter_dinner",
+  "activities": [
+    {
+      "id": "act_120",
+      "type": "intro",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film",
+        "lex_sport",
+        "lex_garden_noun",
+        "lex_swim",
+        "lex_dance"
+      ]
+    },
+    {
+      "id": "act_121",
+      "type": "listen-choose",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film",
+        "lex_sport",
+        "lex_garden_noun"
+      ]
+    },
+    {
+      "id": "act_122",
+      "type": "match",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film",
+        "lex_sport",
+        "lex_garden_noun"
+      ]
+    },
+    {
+      "id": "act_123",
+      "type": "grammar",
+      "grammarId": "gr_likeing"
+    },
+    {
+      "id": "act_124",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_hobbies",
+        "chunk_op_love"
+      ]
+    },
+    {
+      "id": "act_125",
+      "type": "typed",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film"
+      ]
+    },
+    {
+      "id": "act_126",
+      "type": "pron-record",
+      "focusId": "pf_stress"
+    },
+    {
+      "id": "act_127",
+      "type": "conversation",
+      "dialogueId": "dlg_peter_dinner"
+    },
+    {
+      "id": "act_128",
+      "type": "review",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea",
+        "lex_milk",
+        "lex_bread"
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

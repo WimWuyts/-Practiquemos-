@@ -1,0 +1,27 @@
+grammar_id,title_en,intro_unit,appears_in_lessons,review_count
+gr_be,The verb 'be',u01,u01-l01,1
+gr_pronouns,Subject pronouns,u01,u01-l02,1
+gr_questions_wh,Question words,u01,u01-l01,1
+gr_articles,a / an,u01,u01-l01,1
+gr_possadj,Possessive adjectives,u02,u02-l01,1
+gr_poss_s,Possessive 's,u02,u02-l01,1
+gr_have,have / has,u02,u02-l02,1
+gr_plural,Plural nouns,u02,u02-l01,1
+gr_presentsimple,Present simple,u04,u04-l01,1
+gr_dodoes,do / does questions,u04,u04-l01,1
+gr_frequency,"always, usually, sometimes, never",u04,u04-l01,1
+gr_thereis,there is / there are,u04,u04-l02,1
+gr_someany,some / any,u05,u05-l01,1
+gr_wouldlike,I'd like,u05,u05-l02,1
+gr_can,can / can't,u06,u06-l02 u11-l02,2
+gr_goingto,going to (plans),u06,u06-l02,1
+gr_presentcont,Present continuous,u06,u06-l02,1
+gr_prepositions_time,at / on / in (time),u06,u06-l01,1
+gr_object_pronouns,Object pronouns,u07,u07-l01,1
+gr_likeing,like + -ing,u08,u08-l01,1
+gr_imperatives,Imperatives,u09,u09-l01 u11-l01,2
+gr_could_requests,Could you...? / Could I...?,u10,u10-l01 u14-l01 u15-l01,3
+gr_waswere,was / were,u12,u12-l01,1
+gr_pastsimple,Past simple,u12,u12-l02,1
+gr_needhaveto,need to / have to,u13,u13-l01,1
+gr_conjunctions,"and, but, because",u03,u03-l01,1

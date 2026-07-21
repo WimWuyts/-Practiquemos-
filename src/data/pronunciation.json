@@ -1,0 +1,420 @@
+{
+  "spellingFamilies": [
+    {
+      "id": "sf_a_e",
+      "label": {
+        "en": "The a…e family (say the letter A)",
+        "hu": "Az a…e család (az A betű nevét mondd)"
+      },
+      "note": {
+        "en": "In these words a…e often sounds like the name of the letter A.",
+        "hu": "Ezekben a szavakban az a…e gyakran úgy hangzik, mint az A betű neve."
+      },
+      "items": [
+        {
+          "onset": "m",
+          "rime": "ake",
+          "word": "make",
+          "tts": "make"
+        },
+        {
+          "onset": "c",
+          "rime": "ake",
+          "word": "cake",
+          "tts": "cake"
+        },
+        {
+          "onset": "n",
+          "rime": "ame",
+          "word": "name",
+          "tts": "name"
+        },
+        {
+          "onset": "g",
+          "rime": "ame",
+          "word": "game",
+          "tts": "game"
+        },
+        {
+          "onset": "l",
+          "rime": "ate",
+          "word": "late",
+          "tts": "late"
+        },
+        {
+          "onset": "pl",
+          "rime": "ane",
+          "word": "plane",
+          "tts": "plane"
+        }
+      ]
+    },
+    {
+      "id": "sf_i_e",
+      "label": {
+        "en": "The i…e family (say the letter I)",
+        "hu": "Az i…e család (az I betű nevét mondd)"
+      },
+      "note": {
+        "en": "Here i…e often sounds like the name of the letter I. But careful: give and live are different.",
+        "hu": "Itt az i…e gyakran úgy hangzik, mint az I betű neve. De vigyázz: a give és a live más."
+      },
+      "items": [
+        {
+          "onset": "t",
+          "rime": "ime",
+          "word": "time",
+          "tts": "time"
+        },
+        {
+          "onset": "f",
+          "rime": "ive",
+          "word": "five",
+          "tts": "five"
+        },
+        {
+          "onset": "n",
+          "rime": "ice",
+          "word": "nice",
+          "tts": "nice"
+        },
+        {
+          "onset": "l",
+          "rime": "ike",
+          "word": "like",
+          "tts": "like"
+        },
+        {
+          "onset": "wh",
+          "rime": "ite",
+          "word": "white",
+          "tts": "white"
+        }
+      ]
+    },
+    {
+      "id": "sf_o_e",
+      "label": {
+        "en": "The o…e family (say the letter O)",
+        "hu": "Az o…e család (az O betű nevét mondd)"
+      },
+      "note": {
+        "en": "In these words o…e often sounds like the name of the letter O.",
+        "hu": "Ezekben a szavakban az o…e gyakran úgy hangzik, mint az O betű neve."
+      },
+      "items": [
+        {
+          "onset": "h",
+          "rime": "ome",
+          "word": "home",
+          "tts": "home"
+        },
+        {
+          "onset": "ph",
+          "rime": "one",
+          "word": "phone",
+          "tts": "phone"
+        },
+        {
+          "onset": "n",
+          "rime": "ose",
+          "word": "nose",
+          "tts": "nose"
+        },
+        {
+          "onset": "cl",
+          "rime": "ose",
+          "word": "close",
+          "tts": "close"
+        }
+      ]
+    },
+    {
+      "id": "sf_ee",
+      "label": {
+        "en": "The ee family",
+        "hu": "Az ee család"
+      },
+      "note": {
+        "en": "ee usually sounds like a long 'ee'.",
+        "hu": "Az ee általában hosszú 'í'-nek hangzik."
+      },
+      "items": [
+        {
+          "onset": "s",
+          "rime": "ee",
+          "word": "see",
+          "tts": "see"
+        },
+        {
+          "onset": "m",
+          "rime": "eet",
+          "word": "meet",
+          "tts": "meet"
+        },
+        {
+          "onset": "thr",
+          "rime": "ee",
+          "word": "three",
+          "tts": "three"
+        },
+        {
+          "onset": "w",
+          "rime": "eek",
+          "word": "week",
+          "tts": "week"
+        },
+        {
+          "onset": "gr",
+          "rime": "een",
+          "word": "green",
+          "tts": "green"
+        }
+      ]
+    },
+    {
+      "id": "sf_ea",
+      "label": {
+        "en": "The ea family",
+        "hu": "Az ea család"
+      },
+      "note": {
+        "en": "ea often sounds like 'ee', but not always (bread is different).",
+        "hu": "Az ea gyakran 'í'-nek hangzik, de nem mindig (a bread más)."
+      },
+      "items": [
+        {
+          "onset": "t",
+          "rime": "ea",
+          "word": "tea",
+          "tts": "tea"
+        },
+        {
+          "onset": "e",
+          "rime": "at",
+          "word": "eat",
+          "tts": "eat"
+        },
+        {
+          "onset": "r",
+          "rime": "ead",
+          "word": "read",
+          "tts": "read"
+        },
+        {
+          "onset": "m",
+          "rime": "eat",
+          "word": "meat",
+          "tts": "meat"
+        }
+      ]
+    },
+    {
+      "id": "sf_ight",
+      "label": {
+        "en": "The -ight family",
+        "hu": "A -ight család"
+      },
+      "note": {
+        "en": "In -ight the 'gh' is silent. It sounds like the letter I plus t.",
+        "hu": "A -ight-ban a 'gh' néma. Úgy hangzik, mint az I betű neve + t."
+      },
+      "items": [
+        {
+          "onset": "n",
+          "rime": "ight",
+          "word": "night",
+          "tts": "night"
+        },
+        {
+          "onset": "fl",
+          "rime": "ight",
+          "word": "flight",
+          "tts": "flight"
+        },
+        {
+          "onset": "r",
+          "rime": "ight",
+          "word": "right",
+          "tts": "right"
+        },
+        {
+          "onset": "l",
+          "rime": "ight",
+          "word": "light",
+          "tts": "light"
+        }
+      ]
+    },
+    {
+      "id": "sf_oo",
+      "label": {
+        "en": "The oo family",
+        "hu": "Az oo család"
+      },
+      "note": {
+        "en": "oo is often a long 'oo' sound.",
+        "hu": "Az oo gyakran hosszú 'ú' hang."
+      },
+      "items": [
+        {
+          "onset": "f",
+          "rime": "ood",
+          "word": "food",
+          "tts": "food"
+        },
+        {
+          "onset": "s",
+          "rime": "oon",
+          "word": "soon",
+          "tts": "soon"
+        },
+        {
+          "onset": "r",
+          "rime": "oom",
+          "word": "room",
+          "tts": "room"
+        },
+        {
+          "onset": "af",
+          "rime": "ternoon",
+          "word": "afternoon",
+          "tts": "afternoon"
+        }
+      ]
+    }
+  ],
+  "soundFocus": [
+    {
+      "id": "pf_th",
+      "focus": {
+        "en": "The 'th' sound",
+        "hu": "A 'th' hang"
+      },
+      "tip": {
+        "en": "Put your tongue lightly between your teeth for th in the, three, thank you.",
+        "hu": "A th-nál (the, three, thank you) tedd a nyelved lazán a fogaid közé."
+      },
+      "examples": [
+        "the",
+        "three",
+        "thank you",
+        "this",
+        "mother"
+      ],
+      "minimalPairs": [
+        {
+          "a": "think",
+          "b": "sink"
+        },
+        {
+          "a": "three",
+          "b": "tree"
+        }
+      ]
+    },
+    {
+      "id": "pf_wv",
+      "focus": {
+        "en": "'w' and 'v'",
+        "hu": "A 'w' és a 'v'"
+      },
+      "tip": {
+        "en": "For w round your lips (water). For v use your teeth on your lip (very).",
+        "hu": "A w-nél kerekítsd az ajkad (water). A v-nél a fogad az ajkadhoz (very)."
+      },
+      "examples": [
+        "water",
+        "we",
+        "work",
+        "very",
+        "visit",
+        "video"
+      ],
+      "minimalPairs": [
+        {
+          "a": "west",
+          "b": "vest"
+        },
+        {
+          "a": "wine",
+          "b": "vine"
+        }
+      ]
+    },
+    {
+      "id": "pf_finals",
+      "focus": {
+        "en": "Final -s endings",
+        "hu": "A szóvégi -s"
+      },
+      "tip": {
+        "en": "Listen to the last sound: books, names, buses. Three gentle patterns, not a rule to memorise.",
+        "hu": "Figyeld az utolsó hangot: books, names, buses. Három lágy minta, nem szabály."
+      },
+      "examples": [
+        "books",
+        "names",
+        "buses",
+        "sisters",
+        "watches"
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "pf_ed",
+      "focus": {
+        "en": "Past -ed endings",
+        "hu": "A múlt idő -ed vége"
+      },
+      "tip": {
+        "en": "Listen: visited, cooked, lived. Three gentle patterns, not a rule to memorise.",
+        "hu": "Figyeld: visited, cooked, lived. Három lágy minta, nem szabály."
+      },
+      "examples": [
+        "visited",
+        "cooked",
+        "lived",
+        "worked",
+        "wanted"
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "pf_stress",
+      "focus": {
+        "en": "Word stress",
+        "hu": "Szóhangsúly"
+      },
+      "tip": {
+        "en": "One part of the word is stronger: HO-tel, com-PU-ter, a-FRAID.",
+        "hu": "A szó egyik része erősebb: HO-tel, com-PU-ter, a-FRAID."
+      },
+      "examples": [
+        "hotel",
+        "computer",
+        "afraid",
+        "restaurant",
+        "family"
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "pf_question",
+      "focus": {
+        "en": "Question and statement melody",
+        "hu": "Kérdés és kijelentés dallama"
+      },
+      "tip": {
+        "en": "Many yes/no questions go up at the end. Wh-questions usually go down.",
+        "hu": "Sok eldöntendő kérdés a végén felmegy. A kérdőszós kérdés általában lemegy."
+      },
+      "examples": [
+        "Can you hear me?",
+        "Where is my gate?",
+        "Are you ready?"
+      ],
+      "minimalPairs": []
+    }
+  ]
+}
