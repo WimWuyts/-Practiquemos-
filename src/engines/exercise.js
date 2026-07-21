@@ -49,6 +49,7 @@ window.M = window.M || {};
       var lx = items[i];
       mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.intro.prompt") }));
       var card = el("div", { class: "card wordcard" }, [
+        el("div", { class: "wordicon", "aria-hidden": "true", html: dom.icon(lx.icon || "dot") }),
         el("div", { class: "en", text: lx.headword }),
         el("div", { class: "hu", text: lx.hu }),
         el("div", { class: "ex muted", text: (lx.examples[0] && lx.examples[0].en) || "" }),
@@ -184,10 +185,12 @@ window.M = window.M || {};
     var fam = M.get.family(act.family);
     if (!fam) return done(true);
     dom.clear(mount);
+    var sb = stepBadge(fam.stage || "stage-2"); if (sb) mount.appendChild(sb);
     mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.spelling.prompt") }));
     mount.appendChild(el("div", { class: "card" }, [
       el("strong", { text: fam.label.en }),
       M.i18n.helpAvailable() ? el("div", { class: "muted", text: fam.note.hu }) : el("div", { class: "muted", text: fam.note.en }),
+      fam.caution ? el("div", { class: "feedback gentle", style: "margin-top:.6rem" }, [el("span", { html: dom.icon("help") }), el("span", { text: M.i18n.helpAvailable() ? fam.caution.hu : fam.caution.en })]) : null,
     ]));
     var items = fam.items.slice(0, 4), idx = 0;
     function round() {
@@ -237,6 +240,12 @@ window.M = window.M || {};
     dom.clear(mount);
     var card = el("div", { class: "card" }, [
       el("h2", { text: g.title.en }),
+      // compact grammar box: the pattern at a glance
+      el("div", { class: "grammarbox" }, [
+        el("div", { class: "lbl", text: M.i18n.t("lesson.grammar") }),
+        el("div", { class: "eg", text: (g.examples[0] && g.examples[0].en) || g.title.en }),
+        el("div", { class: "muted", text: g.useWhen.en }),
+      ]),
       el("p", { class: "muted", text: g.purpose.en }),
       el("p", { text: g.explanation.en }),
     ]);
@@ -305,9 +314,18 @@ window.M = window.M || {};
     round();
   };
 
+  function stepBadge(stageId) {
+    var path = M.data.pronunciation.path;
+    if (!path) return null;
+    var st = (path.stages || []).find(function (s) { return s.id === stageId; });
+    if (!st) return null;
+    return el("div", { class: "stepbadge", text: st.label.en });
+  }
+
   R["pron-record"] = function (mount, act, done) {
     var f = M.get.focus(act.focusId);
     dom.clear(mount);
+    if (f) { var sb = stepBadge(f.stage); if (sb) mount.appendChild(sb); }
     mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.pron.prompt") }));
     if (f) {
       mount.appendChild(el("div", { class: "card" }, [

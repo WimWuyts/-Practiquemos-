@@ -1,15 +1,47 @@
 {
+  "path": {
+    "intro": {
+      "en": "We learn pronunciation in two steps. First we listen to the sounds of English, using easy example words — no strange symbols. Then we look at how English spelling and sound fit together, which is the tricky part.",
+      "hu": "A kiejtést két lépésben tanuljuk. Először meghallgatjuk az angol hangokat egyszerű példaszavakkal — furcsa jelek nélkül. Utána megnézzük, hogyan illik össze az angol írás és kiejtés — ez a nehéz rész."
+    },
+    "stages": [
+      {
+        "id": "stage-1",
+        "label": {
+          "en": "Step 1 · The sounds",
+          "hu": "1. lépés · A hangok"
+        }
+      },
+      {
+        "id": "stage-2",
+        "label": {
+          "en": "Step 2 · Spelling & sound",
+          "hu": "2. lépés · Írás és kiejtés"
+        }
+      },
+      {
+        "id": "stage-3",
+        "label": {
+          "en": "Step 3 · Stress & melody",
+          "hu": "3. lépés · Hangsúly és dallam"
+        }
+      }
+    ]
+  },
   "spellingFamilies": [
     {
-      "id": "sf_a_e",
+      "id": "sf_magic_e_a",
+      "stage": "stage-2",
+      "order": 1,
       "label": {
-        "en": "The a…e family (say the letter A)",
-        "hu": "Az a…e család (az A betű nevét mondd)"
+        "en": "The a…e pattern (say the letter A)",
+        "hu": "Az a…e minta (az A betű neve)"
       },
       "note": {
-        "en": "In these words a…e often sounds like the name of the letter A.",
-        "hu": "Ezekben a szavakban az a…e gyakran úgy hangzik, mint az A betű neve."
+        "en": "A silent 'e' at the end often makes 'a' say its name: make, name, late.",
+        "hu": "A szóvégi néma 'e' miatt az 'a' gyakran a saját nevét mondja: make, name, late."
       },
+      "caution": null,
       "items": [
         {
           "onset": "m",
@@ -50,14 +82,20 @@
       ]
     },
     {
-      "id": "sf_i_e",
+      "id": "sf_magic_e_i",
+      "stage": "stage-2",
+      "order": 2,
       "label": {
-        "en": "The i…e family (say the letter I)",
-        "hu": "Az i…e család (az I betű nevét mondd)"
+        "en": "The i…e pattern (say the letter I)",
+        "hu": "Az i…e minta (az I betű neve)"
       },
       "note": {
-        "en": "Here i…e often sounds like the name of the letter I. But careful: give and live are different.",
-        "hu": "Itt az i…e gyakran úgy hangzik, mint az I betű neve. De vigyázz: a give és a live más."
+        "en": "Silent 'e' often makes 'i' say its name: time, five, nice. Careful: give and live are different!",
+        "hu": "A néma 'e' miatt az 'i' gyakran a nevét mondja: time, five, nice. Vigyázz: a give és a live más!"
+      },
+      "caution": {
+        "en": "Not always! In give and live the 'i' is short. Spelling does not always tell you the sound.",
+        "hu": "Nem mindig! A give és a live szóban az 'i' rövid. Az írás nem mindig árulja el a hangot."
       },
       "items": [
         {
@@ -93,15 +131,18 @@
       ]
     },
     {
-      "id": "sf_o_e",
+      "id": "sf_magic_e_o",
+      "stage": "stage-2",
+      "order": 3,
       "label": {
-        "en": "The o…e family (say the letter O)",
-        "hu": "Az o…e család (az O betű nevét mondd)"
+        "en": "The o…e pattern (say the letter O)",
+        "hu": "Az o…e minta (az O betű neve)"
       },
       "note": {
-        "en": "In these words o…e often sounds like the name of the letter O.",
-        "hu": "Ezekben a szavakban az o…e gyakran úgy hangzik, mint az O betű neve."
+        "en": "Silent 'e' often makes 'o' say its name: home, phone, close.",
+        "hu": "A néma 'e' miatt az 'o' gyakran a nevét mondja: home, phone, close."
       },
+      "caution": null,
       "items": [
         {
           "onset": "h",
@@ -131,14 +172,17 @@
     },
     {
       "id": "sf_ee",
+      "stage": "stage-2",
+      "order": 4,
       "label": {
-        "en": "The ee family",
-        "hu": "Az ee család"
+        "en": "The 'ee' spelling",
+        "hu": "Az 'ee' írás"
       },
       "note": {
-        "en": "ee usually sounds like a long 'ee'.",
-        "hu": "Az ee általában hosszú 'í'-nek hangzik."
+        "en": "'ee' is usually a long 'ee' sound: see, meet, week, green.",
+        "hu": "Az 'ee' általában hosszú 'í': see, meet, week, green."
       },
+      "caution": null,
       "items": [
         {
           "onset": "s",
@@ -174,13 +218,19 @@
     },
     {
       "id": "sf_ea",
+      "stage": "stage-2",
+      "order": 5,
       "label": {
-        "en": "The ea family",
-        "hu": "Az ea család"
+        "en": "The 'ea' spelling",
+        "hu": "Az 'ea' írás"
       },
       "note": {
-        "en": "ea often sounds like 'ee', but not always (bread is different).",
-        "hu": "Az ea gyakran 'í'-nek hangzik, de nem mindig (a bread más)."
+        "en": "'ea' is often a long 'ee' (tea, eat), but sometimes not (bread). Two words, same letters, different sound.",
+        "hu": "Az 'ea' gyakran hosszú 'í' (tea, eat), de néha nem (bread). Ugyanaz a betű, más hang."
+      },
+      "caution": {
+        "en": "'bread' and 'head' use 'ea' but sound short. Listen, don't only trust the spelling.",
+        "hu": "A 'bread' és 'head' 'ea'-t ír, de rövid. Hallgasd, ne csak az írásban bízz."
       },
       "items": [
         {
@@ -210,15 +260,18 @@
       ]
     },
     {
-      "id": "sf_ight",
+      "id": "sf_igh",
+      "stage": "stage-2",
+      "order": 6,
       "label": {
-        "en": "The -ight family",
-        "hu": "A -ight család"
+        "en": "The '-igh(t)' spelling",
+        "hu": "A '-igh(t)' írás"
       },
       "note": {
-        "en": "In -ight the 'gh' is silent. It sounds like the letter I plus t.",
-        "hu": "A -ight-ban a 'gh' néma. Úgy hangzik, mint az I betű neve + t."
+        "en": "In 'igh' the 'gh' is silent; it sounds like the letter I: night, light, right, flight.",
+        "hu": "Az 'igh'-ben a 'gh' néma; úgy hangzik, mint az I betű: night, light, right, flight."
       },
+      "caution": null,
       "items": [
         {
           "onset": "n",
@@ -248,14 +301,17 @@
     },
     {
       "id": "sf_oo",
+      "stage": "stage-2",
+      "order": 7,
       "label": {
-        "en": "The oo family",
-        "hu": "Az oo család"
+        "en": "The 'oo' spelling",
+        "hu": "Az 'oo' írás"
       },
       "note": {
-        "en": "oo is often a long 'oo' sound.",
-        "hu": "Az oo gyakran hosszú 'ú' hang."
+        "en": "'oo' is often a long 'oo': food, soon, room, afternoon.",
+        "hu": "Az 'oo' gyakran hosszú 'ú': food, soon, room, afternoon."
       },
+      "caution": null,
       "items": [
         {
           "onset": "f",
@@ -276,31 +332,260 @@
           "tts": "room"
         },
         {
-          "onset": "af",
-          "rime": "ternoon",
+          "onset": "aft",
+          "rime": "ernoon",
           "word": "afternoon",
           "tts": "afternoon"
+        }
+      ]
+    },
+    {
+      "id": "sf_ph",
+      "stage": "stage-2",
+      "order": 8,
+      "label": {
+        "en": "'ph' sounds like 'f'",
+        "hu": "A 'ph' 'f'-nek hangzik"
+      },
+      "note": {
+        "en": "The letters 'ph' make an 'f' sound: phone, photo, elephant.",
+        "hu": "A 'ph' betűk 'f' hangot adnak: phone, photo, elephant."
+      },
+      "caution": null,
+      "items": [
+        {
+          "onset": "ph",
+          "rime": "one",
+          "word": "phone",
+          "tts": "phone"
+        },
+        {
+          "onset": "ph",
+          "rime": "oto",
+          "word": "photo",
+          "tts": "photo"
+        }
+      ]
+    },
+    {
+      "id": "sf_wh",
+      "stage": "stage-2",
+      "order": 9,
+      "label": {
+        "en": "The 'wh' spelling",
+        "hu": "A 'wh' írás"
+      },
+      "note": {
+        "en": "'wh' is usually a 'w' sound: what, where, when, white. The 'h' is quiet.",
+        "hu": "A 'wh' általában 'w' hang: what, where, when, white. A 'h' halk."
+      },
+      "caution": null,
+      "items": [
+        {
+          "onset": "wh",
+          "rime": "at",
+          "word": "what",
+          "tts": "what"
+        },
+        {
+          "onset": "wh",
+          "rime": "ere",
+          "word": "where",
+          "tts": "where"
+        },
+        {
+          "onset": "wh",
+          "rime": "en",
+          "word": "when",
+          "tts": "when"
+        },
+        {
+          "onset": "wh",
+          "rime": "ite",
+          "word": "white",
+          "tts": "white"
+        }
+      ]
+    },
+    {
+      "id": "sf_tion",
+      "stage": "stage-2",
+      "order": 10,
+      "label": {
+        "en": "The '-tion' ending",
+        "hu": "A '-tion' végződés"
+      },
+      "note": {
+        "en": "'-tion' sounds like 'shun': station, question, information.",
+        "hu": "A '-tion' úgy hangzik: 'sön': station, question, information."
+      },
+      "caution": null,
+      "items": [
+        {
+          "onset": "sta",
+          "rime": "tion",
+          "word": "station",
+          "tts": "station"
+        },
+        {
+          "onset": "ques",
+          "rime": "tion",
+          "word": "question",
+          "tts": "question"
+        }
+      ]
+    },
+    {
+      "id": "sf_ar_or",
+      "stage": "stage-2",
+      "order": 11,
+      "label": {
+        "en": "'ar' and 'or'",
+        "hu": "Az 'ar' és 'or'"
+      },
+      "note": {
+        "en": "'ar' as in car, far; 'or' as in more, airport. Different mouth shapes.",
+        "hu": "Az 'ar' mint a car, far; az 'or' mint a more, airport. Más szájforma."
+      },
+      "caution": null,
+      "items": [
+        {
+          "onset": "c",
+          "rime": "ar",
+          "word": "car",
+          "tts": "car"
+        },
+        {
+          "onset": "f",
+          "rime": "ar",
+          "word": "far",
+          "tts": "far"
+        },
+        {
+          "onset": "m",
+          "rime": "ore",
+          "word": "more",
+          "tts": "more"
+        },
+        {
+          "onset": "airp",
+          "rime": "ort",
+          "word": "airport",
+          "tts": "airport"
         }
       ]
     }
   ],
   "soundFocus": [
     {
-      "id": "pf_th",
+      "id": "snd_short_vowels",
+      "stage": "stage-1",
+      "order": 1,
       "focus": {
-        "en": "The 'th' sound",
-        "hu": "A 'th' hang"
+        "en": "Short vowels",
+        "hu": "Rövid magánhangzók"
       },
       "tip": {
-        "en": "Put your tongue lightly between your teeth for th in the, three, thank you.",
-        "hu": "A th-nál (the, three, thank you) tedd a nyelved lazán a fogaid közé."
+        "en": "Listen to the short vowel in each word: cat, bed, sit, hot, cup. They are quick and clear.",
+        "hu": "Figyeld a rövid magánhangzót: cat, bed, sit, hot, cup. Rövidek és tiszták."
       },
       "examples": [
-        "the",
-        "three",
-        "thank you",
+        "cat",
+        "bed",
+        "sit",
+        "hot",
+        "cup"
+      ],
+      "minimalPairs": [
+        {
+          "a": "sit",
+          "b": "set"
+        },
+        {
+          "a": "cat",
+          "b": "cut"
+        }
+      ]
+    },
+    {
+      "id": "snd_long_vowels",
+      "stage": "stage-1",
+      "order": 2,
+      "focus": {
+        "en": "Long vowels",
+        "hu": "Hosszú magánhangzók"
+      },
+      "tip": {
+        "en": "Some vowels are longer: see, too, car, more. Let the sound last a little longer.",
+        "hu": "Néhány magánhangzó hosszabb: see, too, car, more. Hagyd egy kicsit tovább szólni."
+      },
+      "examples": [
+        "see",
+        "too",
+        "car",
+        "more",
+        "her"
+      ],
+      "minimalPairs": [
+        {
+          "a": "ship",
+          "b": "sheep"
+        },
+        {
+          "a": "full",
+          "b": "fool"
+        }
+      ]
+    },
+    {
+      "id": "snd_ee_i",
+      "stage": "stage-1",
+      "order": 3,
+      "focus": {
+        "en": "The 'ee' and 'i' sounds",
+        "hu": "Az 'ee' és 'i' hang"
+      },
+      "tip": {
+        "en": "Hear the difference: this (short) and these (long). English needs both.",
+        "hu": "Halld a különbséget: this (rövid) és these (hosszú). Mindkettő kell."
+      },
+      "examples": [
         "this",
-        "mother"
+        "these",
+        "it",
+        "eat",
+        "live",
+        "leave"
+      ],
+      "minimalPairs": [
+        {
+          "a": "it",
+          "b": "eat"
+        },
+        {
+          "a": "live",
+          "b": "leave"
+        }
+      ]
+    },
+    {
+      "id": "snd_th",
+      "stage": "stage-1",
+      "order": 4,
+      "focus": {
+        "en": "The two 'th' sounds",
+        "hu": "A két 'th' hang"
+      },
+      "tip": {
+        "en": "Put your tongue lightly between your teeth. Soft: thank you, three. Voiced: this, mother.",
+        "hu": "Tedd a nyelved lazán a fogaid közé. Lágy: thank you, three. Zöngés: this, mother."
+      },
+      "examples": [
+        "thank you",
+        "three",
+        "this",
+        "mother",
+        "the"
       ],
       "minimalPairs": [
         {
@@ -314,14 +599,16 @@
       ]
     },
     {
-      "id": "pf_wv",
+      "id": "snd_wv",
+      "stage": "stage-1",
+      "order": 5,
       "focus": {
         "en": "'w' and 'v'",
         "hu": "A 'w' és a 'v'"
       },
       "tip": {
-        "en": "For w round your lips (water). For v use your teeth on your lip (very).",
-        "hu": "A w-nél kerekítsd az ajkad (water). A v-nél a fogad az ajkadhoz (very)."
+        "en": "For w round your lips (water, we). For v put your teeth on your lip (very, visit).",
+        "hu": "A w-nél kerekítsd az ajkad (water, we). A v-nél a fogad az ajkadhoz (very, visit)."
       },
       "examples": [
         "water",
@@ -343,14 +630,149 @@
       ]
     },
     {
-      "id": "pf_finals",
+      "id": "snd_h",
+      "stage": "stage-1",
+      "order": 6,
       "focus": {
-        "en": "Final -s endings",
-        "hu": "A szóvégi -s"
+        "en": "The 'h' sound",
+        "hu": "A 'h' hang"
       },
       "tip": {
-        "en": "Listen to the last sound: books, names, buses. Three gentle patterns, not a rule to memorise.",
-        "hu": "Figyeld az utolsó hangot: books, names, buses. Három lágy minta, nem szabály."
+        "en": "Breathe out gently at the start: hello, home, help. Don't drop it.",
+        "hu": "Lehelj ki finoman a szó elején: hello, home, help. Ne hagyd el."
+      },
+      "examples": [
+        "hello",
+        "home",
+        "help",
+        "have",
+        "how"
+      ],
+      "minimalPairs": [
+        {
+          "a": "eat",
+          "b": "heat"
+        },
+        {
+          "a": "and",
+          "b": "hand"
+        }
+      ]
+    },
+    {
+      "id": "snd_shchj",
+      "stage": "stage-1",
+      "order": 7,
+      "focus": {
+        "en": "'sh', 'ch' and 'j'",
+        "hu": "A 'sh', 'ch' és 'j'"
+      },
+      "tip": {
+        "en": "sh is soft (she, ship); ch is harder (chair, teacher); j is like the start of July.",
+        "hu": "A sh lágy (she, ship); a ch keményebb (chair, teacher); a j olyan, mint a July eleje."
+      },
+      "examples": [
+        "she",
+        "ship",
+        "chair",
+        "teacher",
+        "July",
+        "juice"
+      ],
+      "minimalPairs": [
+        {
+          "a": "ship",
+          "b": "chip"
+        },
+        {
+          "a": "cheap",
+          "b": "jeep"
+        }
+      ]
+    },
+    {
+      "id": "snd_ng",
+      "stage": "stage-1",
+      "order": 8,
+      "focus": {
+        "en": "The 'ng' sound",
+        "hu": "Az 'ng' hang"
+      },
+      "tip": {
+        "en": "One soft sound at the back, no hard g: morning, evening, going, thing.",
+        "hu": "Egy lágy hang hátul, kemény g nélkül: morning, evening, going, thing."
+      },
+      "examples": [
+        "morning",
+        "evening",
+        "going",
+        "thing",
+        "reading"
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "snd_r",
+      "stage": "stage-1",
+      "order": 9,
+      "focus": {
+        "en": "The English 'r'",
+        "hu": "Az angol 'r'"
+      },
+      "tip": {
+        "en": "Soft, not rolled: right, red, three, sorry. British English often keeps it gentle.",
+        "hu": "Lágy, nem pergetett: right, red, three, sorry. A brit angolban gyakran finom."
+      },
+      "examples": [
+        "right",
+        "red",
+        "three",
+        "sorry",
+        "very"
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "snd_final_cons",
+      "stage": "stage-1",
+      "order": 10,
+      "focus": {
+        "en": "Final consonants",
+        "hu": "Szóvégi mássalhangzók"
+      },
+      "tip": {
+        "en": "Finish the last sound clearly: goodnight, help, first, next. Don't let it disappear.",
+        "hu": "Ejtsd tisztán az utolsó hangot: goodnight, help, first, next. Ne tűnjön el."
+      },
+      "examples": [
+        "night",
+        "help",
+        "first",
+        "next",
+        "airport"
+      ],
+      "minimalPairs": [
+        {
+          "a": "bad",
+          "b": "bat"
+        },
+        {
+          "a": "nine",
+          "b": "night"
+        }
+      ]
+    },
+    {
+      "id": "snd_s_endings",
+      "stage": "stage-1",
+      "order": 11,
+      "focus": {
+        "en": "'-s' endings",
+        "hu": "A '-s' végződések"
+      },
+      "tip": {
+        "en": "Three gentle patterns: books, names, buses. Just listen — no rule to memorise.",
+        "hu": "Három lágy minta: books, names, buses. Csak hallgasd — nincs szabály."
       },
       "examples": [
         "books",
@@ -362,14 +784,16 @@
       "minimalPairs": []
     },
     {
-      "id": "pf_ed",
+      "id": "snd_ed_endings",
+      "stage": "stage-1",
+      "order": 12,
       "focus": {
-        "en": "Past -ed endings",
-        "hu": "A múlt idő -ed vége"
+        "en": "Past '-ed' endings",
+        "hu": "A múlt idő '-ed' vége"
       },
       "tip": {
-        "en": "Listen: visited, cooked, lived. Three gentle patterns, not a rule to memorise.",
-        "hu": "Figyeld: visited, cooked, lived. Három lágy minta, nem szabály."
+        "en": "Three gentle patterns: visited, cooked, lived. Just listen — no rule to memorise.",
+        "hu": "Három lágy minta: visited, cooked, lived. Csak hallgasd — nincs szabály."
       },
       "examples": [
         "visited",
@@ -381,14 +805,16 @@
       "minimalPairs": []
     },
     {
-      "id": "pf_stress",
+      "id": "str_word",
+      "stage": "stage-3",
+      "order": 1,
       "focus": {
         "en": "Word stress",
         "hu": "Szóhangsúly"
       },
       "tip": {
-        "en": "One part of the word is stronger: HO-tel, com-PU-ter, a-FRAID.",
-        "hu": "A szó egyik része erősebb: HO-tel, com-PU-ter, a-FRAID."
+        "en": "One part of the word is stronger: HO-tel, com-PU-ter, a-FRAID, res-TAU-rant.",
+        "hu": "A szó egyik része erősebb: HO-tel, com-PU-ter, a-FRAID, res-TAU-rant."
       },
       "examples": [
         "hotel",
@@ -400,19 +826,59 @@
       "minimalPairs": []
     },
     {
-      "id": "pf_question",
+      "id": "str_sentence",
+      "stage": "stage-3",
+      "order": 2,
       "focus": {
-        "en": "Question and statement melody",
+        "en": "Sentence stress",
+        "hu": "Mondathangsúly"
+      },
+      "tip": {
+        "en": "The important words are louder: 'I'd like SOME WATER, please.' Small words stay light.",
+        "hu": "A fontos szavak hangosabbak: 'I'd like SOME WATER, please.' A kis szavak halkak."
+      },
+      "examples": [
+        "I'd like some water",
+        "Where is my gate",
+        "Can you help me"
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "str_question",
+      "stage": "stage-3",
+      "order": 3,
+      "focus": {
+        "en": "Question & statement melody",
         "hu": "Kérdés és kijelentés dallama"
       },
       "tip": {
-        "en": "Many yes/no questions go up at the end. Wh-questions usually go down.",
-        "hu": "Sok eldöntendő kérdés a végén felmegy. A kérdőszós kérdés általában lemegy."
+        "en": "Many yes/no questions rise at the end; wh-questions and statements usually fall.",
+        "hu": "Sok eldöntendő kérdés a végén felmegy; a kérdőszós kérdés és a kijelentés általában lemegy."
       },
       "examples": [
         "Can you hear me?",
         "Where is my gate?",
-        "Are you ready?"
+        "I am from Hungary."
+      ],
+      "minimalPairs": []
+    },
+    {
+      "id": "str_chunking",
+      "stage": "stage-3",
+      "order": 4,
+      "focus": {
+        "en": "Chunking & pausing",
+        "hu": "Tagolás és szünet"
+      },
+      "tip": {
+        "en": "Say short groups with small pauses: 'Could you help me, / please?' It sounds calm and clear.",
+        "hu": "Mondd rövid csoportokban, kis szünettel: 'Could you help me, / please?' Nyugodt és érthető."
+      },
+      "examples": [
+        "Could you help me, please?",
+        "I am afraid of flying.",
+        "When will we land?"
       ],
       "minimalPairs": []
     }

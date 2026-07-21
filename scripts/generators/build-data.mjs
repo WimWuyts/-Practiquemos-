@@ -5,9 +5,10 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { PRODUCTIVE, RECEPTIVE } from "./lexicon-source.mjs";
+import { EXTRA, EXTRA_RECEPTIVE } from "./lexicon-extra.mjs";
 import { CHUNKS } from "./chunks-source.mjs";
 import { GRAMMAR } from "./grammar-source.mjs";
-import { SPELLING_FAMILIES, SOUND_FOCUS } from "./pronunciation-source.mjs";
+import { SPELLING_FAMILIES, SOUND_FOCUS, PATH } from "./pronunciation-source.mjs";
 import { DIALOGUES } from "./dialogues-source.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -20,7 +21,30 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g
 
 // ---------- Spelling families lookup ----------
 const familyOf = {};
-for (const [id, , , , , items] of SPELLING_FAMILIES) for (const [, , word] of items) familyOf[word] = id;
+for (const [id, , , , , , items] of SPELLING_FAMILIES) for (const [, , word] of items) familyOf[word] = id;
+
+// ---------- Vocabulary icons ----------
+// theme -> icon fallback, plus concrete word overrides. Icon names live in assets/icons.js.
+const THEME_ICON = {
+  greetings: "hand", identity: "person", family: "family", countries: "globe", "daily-life": "sun",
+  home: "home", food: "fork", shopping: "cart", time: "clock", weather: "cloud", plans: "calendar",
+  phone: "phone", hobbies: "star", opinions: "heart", town: "map", transport: "bus", services: "bell",
+  hotel: "bed", teaching: "book", technology: "laptop", past: "clockback", travel: "suitcase",
+  airport: "plane", flying: "plane", feelings: "heart", numbers: "hash", conversation: "chat",
+  colours: "palette",
+};
+const WORD_ICON = {
+  coffee: "coffee", tea: "cup", water: "droplet", milk: "cup", apple: "apple", bread: "bread",
+  fish: "fish", cake: "cake", egg: "egg", cheese: "cheese", soup: "bowl", fruit: "apple",
+  vegetable: "leaf", meat: "bowl", car: "car", bus: "bus", train: "train", taxi: "car",
+  plane: "plane", book: "book", phone: "phone", camera: "camera", computer: "laptop",
+  microphone: "mic", screen: "laptop", hotel: "bed", passport: "passport", suitcase: "suitcase",
+  luggage: "suitcase", ticket: "ticket", restaurant: "fork", menu: "book", key: "key",
+  house: "home", home: "home", garden: "leaf", kitchen: "fork", horse: "star", music: "music",
+  film: "film", sport: "star", money: "cart", price: "cart", airport: "plane", flight: "plane",
+  gate: "door", blanket: "bed", toilet: "door", weekend: "calendar", family: "family",
+};
+const iconFor = (head, theme) => WORD_ICON[head.toLowerCase()] || THEME_ICON[theme] || "dot";
 
 // ---------- Simple example generator (English natural-ish; HU flagged for review) ----------
 function exampleFor(head, hu, pos, theme) {
@@ -42,7 +66,7 @@ function exampleFor(head, hu, pos, theme) {
 const lexicon = [];
 const byThemePos = {};
 const usedIds = new Set();
-function pushLex(head, hu, pos, theme, firstLesson, forms, status) {
+function pushLex(head, hu, pos, theme, firstLesson, forms, status, level) {
   let id = "lex_" + slug(head);
   if (usedIds.has(id)) id = id + "_" + slug(pos);
   while (usedIds.has(id)) id = id + "_x";
@@ -50,16 +74,28 @@ function pushLex(head, hu, pos, theme, firstLesson, forms, status) {
   const key = pos + "|" + theme;
   (byThemePos[key] = byThemePos[key] || []).push(head);
   lexicon.push({
-    id, headword: head, hu, partOfSpeech: pos, status, level: "A1",
+    id, headword: head, hu, partOfSpeech: pos, status, level: level || "A1",
     themes: [theme], firstLesson: firstLesson || null, reviewLessons: [],
     examples: [exampleFor(head, hu, pos, theme)],
     tts: head, pronunciationGroup: pos === "number" ? "numbers" : theme,
-    spellingFamily: familyOf[head] || null,
+    spellingFamily: familyOf[head] || null, icon: iconFor(head, theme),
     acceptedForms: forms || [head], distractors: [], notes: "",
   });
 }
-for (const [h, hu, pos, theme, fl, forms] of PRODUCTIVE) pushLex(h, hu, pos, theme, fl, forms, "productive");
-for (const [h, hu, pos, theme] of RECEPTIVE) pushLex(h, hu, pos, theme, null, null, "receptive");
+const seenHead = new Set();
+function addProductive(list) {
+  for (const [h, hu, pos, theme, fl, forms, level] of list) {
+    if (seenHead.has(h.toLowerCase())) continue; // skip duplicate headwords across source files
+    seenHead.add(h.toLowerCase());
+    pushLex(h, hu, pos, theme, fl, forms, "productive", level);
+  }
+}
+addProductive(PRODUCTIVE);
+addProductive(EXTRA);
+for (const [h, hu, pos, theme] of RECEPTIVE.concat(EXTRA_RECEPTIVE || [])) {
+  if (seenHead.has(h.toLowerCase())) continue; seenHead.add(h.toLowerCase());
+  pushLex(h, hu, pos, theme, null, null, "receptive");
+}
 
 // distractors: same POS, prefer same theme, else any POS
 const byId = Object.fromEntries(lexicon.map((l) => [l.id, l]));
@@ -102,12 +138,14 @@ write(join(DATA, "grammar.json"), grammar);
 
 // ---------- Pronunciation ----------
 const pronunciation = {
-  spellingFamilies: SPELLING_FAMILIES.map(([id, label, labelHu, note, noteHu, items]) => ({
-    id, label: { en: label, hu: labelHu }, note: { en: note, hu: noteHu },
+  path: PATH,
+  spellingFamilies: SPELLING_FAMILIES.map(([id, order, label, labelHu, note, noteHu, items, caution]) => ({
+    id, stage: "stage-2", order: Number(order), label: { en: label, hu: labelHu }, note: { en: note, hu: noteHu },
+    caution: caution || null,
     items: items.map(([onset, rime, word]) => ({ onset, rime, word, tts: word })),
   })),
-  soundFocus: SOUND_FOCUS.map(([id, f, fHu, tip, tipHu, examples, pairs]) => ({
-    id, focus: { en: f, hu: fHu }, tip: { en: tip, hu: tipHu },
+  soundFocus: SOUND_FOCUS.map(([id, stage, order, f, fHu, tip, tipHu, examples, pairs]) => ({
+    id, stage, order, focus: { en: f, hu: fHu }, tip: { en: tip, hu: tipHu },
     examples, minimalPairs: (pairs || []).map(([a, b]) => ({ a, b })),
   })),
 };
@@ -143,54 +181,54 @@ const L = (id, order, tEn, tHu, cdEn, cdHu, gr = [], pr = [], dlg = null) =>
   ({ id, unitId: id.slice(0, 3), order, title: { en: tEn, hu: tHu }, canDo: { en: cdEn, hu: cdHu }, grammar: gr, pronunciation: pr, dialogue: dlg });
 
 const LESSONS = [
-  L("u00-l01", 1, "Welcome, sound & your start", "Üdvözlünk, hang és a kezdésed", "Test sound and find your starting point", "Hang tesztelése, kezdőpont", [], ["pf_stress"], null),
+  L("u00-l01", 1, "Welcome, sound & your start", "Üdvözlünk, hang és a kezdésed", "Test sound and find your starting point", "Hang tesztelése, kezdőpont", [], ["snd_short_vowels"], null),
 
-  L("u01-l01", 1, "Hello, Endika", "Szia, Endika", "Greet and say your name and country", "Köszönés, név, ország", ["gr_be", "gr_questions_wh", "gr_articles"], ["pf_stress"], "dlg_endika_first"),
-  L("u01-l02", 2, "He, she & numbers", "Ő és a számok", "Talk about other people and count", "Másokról beszélni, számolni", ["gr_pronouns"], ["pf_question"], null),
+  L("u01-l01", 1, "Hello, Endika", "Szia, Endika", "Greet and say your name and country", "Köszönés, név, ország", ["gr_be", "gr_questions_wh", "gr_articles"], ["snd_short_vowels"], "dlg_endika_first"),
+  L("u01-l02", 2, "He, she & numbers", "Ő és a számok", "Talk about other people and count", "Másokról beszélni, számolni", ["gr_pronouns"], ["snd_long_vowels"], null),
 
-  L("u02-l01", 1, "This is my family", "Ez a családom", "Name family members", "Családtagok megnevezése", ["gr_possadj", "gr_poss_s", "gr_plural"], ["pf_finals"], null),
-  L("u02-l02", 2, "Meeting Marlene", "Marlene megismerése", "Ask about family, meet someone new", "Kérdezni a családról, új ismerős", ["gr_have"], ["pf_finals"], "dlg_marlene_first"),
+  L("u02-l01", 1, "This is my family", "Ez a családom", "Name family members", "Családtagok megnevezése", ["gr_possadj", "gr_poss_s", "gr_plural"], ["snd_final_cons"], null),
+  L("u02-l02", 2, "Meeting Marlene", "Marlene megismerése", "Ask about family, meet someone new", "Kérdezni a családról, új ismerős", ["gr_have"], ["snd_s_endings"], "dlg_marlene_first"),
 
-  L("u03-l01", 1, "Countries & languages", "Országok és nyelvek", "Say where people are from", "Honnan jönnek az emberek", ["gr_conjunctions"], ["pf_wv"], null),
-  L("u03-l02", 2, "Describing people", "Emberek leírása", "Give a simple description", "Egyszerű leírás", [], ["pf_stress"], null),
+  L("u03-l01", 1, "Countries & languages", "Országok és nyelvek", "Say where people are from", "Honnan jönnek az emberek", ["gr_conjunctions"], ["snd_wv"], null),
+  L("u03-l02", 2, "Describing people", "Emberek leírása", "Give a simple description", "Egyszerű leírás", [], ["snd_h"], null),
 
-  L("u04-l01", 1, "My daily routine", "A napirendem", "Describe your day", "A napod leírása", ["gr_presentsimple", "gr_dodoes", "gr_frequency"], ["pf_ed"], null),
-  L("u04-l02", 2, "My home", "Az otthonom", "Describe your home", "Az otthonod leírása", ["gr_thereis"], ["pf_finals"], null),
+  L("u04-l01", 1, "My daily routine", "A napirendem", "Describe your day", "A napod leírása", ["gr_presentsimple", "gr_dodoes", "gr_frequency"], ["snd_ed_endings"], null),
+  L("u04-l02", 2, "My home", "Az otthonom", "Describe your home", "Az otthonod leírása", ["gr_thereis"], ["snd_ng"], null),
 
-  L("u05-l01", 1, "Food I like", "Ételek, amiket szeretek", "Talk about food you like", "Kedvenc ételek", ["gr_someany"], ["pf_ea"], null),
-  L("u05-l02", 2, "Cooking & shopping", "Főzés és vásárlás", "Buy and cook simple things", "Vásárlás, főzés", ["gr_wouldlike"], ["pf_ea"], null),
+  L("u05-l01", 1, "Food I like", "Ételek, amiket szeretek", "Talk about food you like", "Kedvenc ételek", ["gr_someany"], ["snd_ee_i"], null),
+  L("u05-l02", 2, "Cooking & shopping", "Főzés és vásárlás", "Buy and cook simple things", "Vásárlás, főzés", ["gr_wouldlike"], ["snd_shchj"], null),
 
-  L("u06-l01", 1, "Days, times & numbers", "Napok, idő, számok", "Say days and times", "Napok, időpontok", ["gr_prepositions_time"], ["pf_question"], null),
-  L("u06-l02", 2, "Weather & plans", "Időjárás és tervek", "Talk about weather and make plans", "Időjárás, tervek", ["gr_can", "gr_goingto", "gr_presentcont"], ["pf_stress"], null),
+  L("u06-l01", 1, "Days, times & numbers", "Napok, idő, számok", "Say days and times", "Napok, időpontok", ["gr_prepositions_time"], ["str_word"], null),
+  L("u06-l02", 2, "Weather & plans", "Időjárás és tervek", "Talk about weather and make plans", "Időjárás, tervek", ["gr_can", "gr_goingto", "gr_presentcont"], ["str_question"], null),
 
-  L("u07-l01", 1, "Phone call with Kira", "Telefon Kirával", "Start a call and check sound", "Hívás, hangellenőrzés", ["gr_object_pronouns"], ["pf_question"], "dlg_kira_phone"),
-  L("u07-l02", 2, "Video calls", "Videóhívás", "Check picture and give an update", "Kép ellenőrzése, hírek", [], ["pf_th"], null),
+  L("u07-l01", 1, "Phone call with Kira", "Telefon Kirával", "Start a call and check sound", "Hívás, hangellenőrzés", ["gr_object_pronouns"], ["str_question"], "dlg_kira_phone"),
+  L("u07-l02", 2, "Video calls", "Videóhívás", "Check picture and give an update", "Kép ellenőrzése, hírek", [], ["snd_th"], null),
 
-  L("u08-l01", 1, "Hobbies with Peter", "Hobbik Peterrel", "Talk about hobbies", "Hobbikról beszélni", ["gr_likeing"], ["pf_stress"], "dlg_peter_dinner"),
-  L("u08-l02", 2, "Books & opinions with Emma", "Könyvek és vélemények Emmával", "Give a simple opinion", "Véleményt mondani", [], ["pf_th"], "dlg_emma_books"),
+  L("u08-l01", 1, "Hobbies with Peter", "Hobbik Peterrel", "Talk about hobbies", "Hobbikról beszélni", ["gr_likeing"], ["snd_r"], "dlg_peter_dinner"),
+  L("u08-l02", 2, "Books & opinions with Emma", "Könyvek és vélemények Emmával", "Give a simple opinion", "Véleményt mondani", ["gr_comparatives"], ["snd_th"], "dlg_emma_books"),
 
-  L("u09-l01", 1, "Where is it?", "Merre van?", "Ask for and give directions", "Útbaigazítás", ["gr_imperatives"], ["pf_th"], null),
-  L("u09-l02", 2, "Buses & trains", "Buszok és vonatok", "Use transport words", "Közlekedési szavak", [], ["pf_finals"], null),
+  L("u09-l01", 1, "Where is it?", "Merre van?", "Ask for and give directions", "Útbaigazítás", ["gr_imperatives"], ["snd_shchj"], null),
+  L("u09-l02", 2, "Buses & trains", "Buszok és vonatok", "Use transport words", "Közlekedési szavak", [], ["snd_final_cons"], null),
 
-  L("u10-l01", 1, "At the restaurant", "Az étteremben", "Order food and ask for the bill", "Rendelés, számla", ["gr_could_requests"], ["pf_stress"], "dlg_restaurant"),
-  L("u10-l02", 2, "Hotel check-in", "Bejelentkezés a szállodában", "Check in and explain a problem", "Bejelentkezés, probléma", [], ["pf_stress"], "dlg_hotel"),
+  L("u10-l01", 1, "At the restaurant", "Az étteremben", "Order food and ask for the bill", "Rendelés, számla", ["gr_could_requests"], ["str_sentence"], "dlg_restaurant"),
+  L("u10-l02", 2, "Hotel check-in", "Bejelentkezés a szállodában", "Check in and explain a problem", "Bejelentkezés, probléma", [], ["str_word"], "dlg_hotel"),
 
-  L("u11-l01", 1, "Starting an online lesson", "Online óra indítása", "Start a lesson, fix sound, praise", "Óra indítása, hang, dicséret", ["gr_imperatives"], ["pf_stress"], "dlg_student_mic"),
-  L("u11-l02", 2, "Talking with a parent", "Beszélgetés a szülővel", "Ask for a parent and speak with them", "Szülő hívása, beszélgetés", ["gr_can"], ["pf_question"], "dlg_student_parent"),
+  L("u11-l01", 1, "Starting an online lesson", "Online óra indítása", "Start a lesson, fix sound, praise", "Óra indítása, hang, dicséret", ["gr_imperatives"], ["str_chunking"], "dlg_student_mic"),
+  L("u11-l02", 2, "Talking with a parent", "Beszélgetés a szülővel", "Ask for a parent and speak with them", "Szülő hívása, beszélgetés", ["gr_can"], ["str_question"], "dlg_student_parent"),
 
-  L("u12-l01", 1, "Where were you?", "Hol voltál?", "Say where you were", "Hol voltál", ["gr_waswere"], ["pf_ed"], null),
-  L("u12-l02", 2, "My weekend story", "A hétvégém története", "Tell a short past story", "Rövid múlt idejű történet", ["gr_pastsimple"], ["pf_ed"], "dlg_endika_followup"),
+  L("u12-l01", 1, "Where were you?", "Hol voltál?", "Say where you were", "Hol voltál", ["gr_waswere"], ["snd_ed_endings"], null),
+  L("u12-l02", 2, "My weekend story", "A hétvégém története", "Tell a short past story", "Rövid múlt idejű történet", ["gr_pastsimple"], ["snd_ed_endings"], "dlg_endika_followup"),
 
-  L("u13-l01", 1, "Planning a visit", "Látogatás tervezése", "Plan a visit and a trip", "Látogatás, utazás", ["gr_needhaveto"], ["pf_stress"], "dlg_mirella_travel"),
-  L("u13-l02", 2, "Packing & documents", "Csomagolás és iratok", "Talk about luggage and documents", "Poggyász, iratok", [], ["pf_finals"], null),
+  L("u13-l01", 1, "Planning a visit", "Látogatás tervezése", "Plan a visit and a trip", "Látogatás, utazás", ["gr_needhaveto"], ["str_word"], "dlg_mirella_travel"),
+  L("u13-l02", 2, "Packing & documents", "Csomagolás és iratok", "Talk about luggage and documents", "Poggyász, iratok", [], ["snd_final_cons"], null),
 
-  L("u14-l01", 1, "At the airport", "A reptéren", "Find check-in and your gate", "Check-in és kapu", ["gr_could_requests"], ["pf_question"], "dlg_airport"),
-  L("u14-l02", 2, "Security & gates", "Biztonsági ellenőrzés, kapuk", "Understand gate and time information", "Kapu- és időinformáció", [], ["pf_stress"], null),
+  L("u14-l01", 1, "At the airport", "A reptéren", "Find check-in and your gate", "Check-in és kapu", ["gr_could_requests"], ["str_question"], "dlg_airport"),
+  L("u14-l02", 2, "Security & gates", "Biztonsági ellenőrzés, kapuk", "Understand gate and time information", "Kapu- és időinformáció", [], ["str_word"], null),
 
-  L("u15-l01", 1, "On the plane", "A repülőn", "Ask for help and stay calm", "Segítségkérés, nyugalom", ["gr_could_requests"], ["pf_stress"], "dlg_plane_help"),
-  L("u15-l02", 2, "Arrival", "Érkezés", "Manage a simple arrival", "Egyszerű érkezés", [], ["pf_question"], null),
+  L("u15-l01", 1, "On the plane", "A repülőn", "Ask for help and stay calm", "Segítségkérés, nyugalom", ["gr_could_requests"], ["str_chunking"], "dlg_plane_help"),
+  L("u15-l02", 2, "Arrival", "Érkezés", "Manage a simple arrival", "Egyszerű érkezés", [], ["str_question"], null),
 
-  L("u16-l01", 1, "Family party at Lake Balaton", "Családi buli a Balatonnál", "Join a family conversation", "Családi beszélgetés", [], ["pf_stress"], "dlg_balaton"),
+  L("u16-l01", 1, "Family party at Lake Balaton", "Családi buli a Balatonnál", "Join a family conversation", "Családi beszélgetés", [], ["str_sentence"], "dlg_balaton"),
 ];
 
 // ---------- Activity generation ----------
@@ -251,7 +289,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.0.0", schemaVersion: 1,
+  id: "marta_english", version: "1.1.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

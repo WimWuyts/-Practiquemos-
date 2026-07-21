@@ -20,35 +20,35 @@
   ],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_question"
+    "str_question"
   ],
   "conversationId": null,
   "activities": [
     {
-      "id": "act_237",
+      "id": "act_243",
       "type": "intro",
       "items": [
         "lex_land"
       ]
     },
     {
-      "id": "act_238",
+      "id": "act_244",
       "type": "phrase-match",
       "items": [
         "chunk_fly_land"
       ]
     },
     {
-      "id": "act_239",
+      "id": "act_245",
       "type": "typed",
       "items": [
         "lex_land"
       ]
     },
     {
-      "id": "act_240",
+      "id": "act_246",
       "type": "pron-record",
-      "focusId": "pf_question"
+      "focusId": "str_question"
     }
   ],
   "completionRule": {

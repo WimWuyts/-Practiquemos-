@@ -11,9 +11,40 @@
 .navbtn:hover{background:var(--surface-2)}
 
 /* Avatar */
-.avatar{width:96px;height:96px;border-radius:50%;background:var(--surface-2);border:2px solid var(--line);flex:0 0 auto}
+.avatar{width:96px;height:96px;border-radius:50%;background:var(--surface-2);border:2px solid var(--line);flex:0 0 auto;overflow:hidden}
 .avatar.small{width:52px;height:52px}
+.avatar svg{width:100%;height:100%;display:block}
 .avatar-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+
+/* Progress ring (conic-gradient, no colour-only meaning: always shows % text too) */
+.ring{--p:0;--rs:64px;width:var(--rs);height:var(--rs);border-radius:50%;flex:0 0 auto;
+  background:conic-gradient(var(--accent) calc(var(--p)*1%), var(--surface-2) 0);display:grid;place-items:center}
+.ring > b{width:calc(var(--rs) - 14px);height:calc(var(--rs) - 14px);border-radius:50%;background:var(--surface);
+  display:grid;place-items:center;font-weight:800;font-size:.9rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.ring.sm{--rs:44px}.ring.sm > b{font-size:.72rem}
+
+/* Home hero */
+.hero{display:flex;align-items:center;gap:1.1rem;margin:.2rem 0 1.2rem}
+.hero .avatar{width:76px;height:76px}
+.hero h1{margin:0;font-size:1.6rem;letter-spacing:-.01em}
+.hero .sub{color:var(--ink-soft);margin:.2rem 0 0}
+.recommend{background:linear-gradient(180deg,#ffffff, var(--accent-soft));border:1px solid var(--line);
+  border-radius:var(--radius);padding:1.3rem;box-shadow:var(--shadow);margin-bottom:1.2rem}
+.recommend .k{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.recommend h2{margin:.2rem 0 .2rem;font-size:1.3rem}
+
+/* Theme tiles (icon well + colour + optional ring) */
+.tilegrid{display:grid;grid-template-columns:1fr;gap:.7rem}
+@media(min-width:560px){.tilegrid{grid-template-columns:1fr 1fr}}
+.themetile{display:flex;align-items:center;gap:.8rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:.9rem 1rem;cursor:pointer;text-align:left;color:var(--ink);width:100%}
+.themetile:hover{border-color:var(--accent)}
+.iconwell{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:0 0 auto;
+  background:var(--tint,var(--accent-soft));color:var(--tintink,var(--accent))}
+.iconwell svg{width:24px;height:24px}
+.themetile .txt{flex:1;min-width:0}
+.themetile .txt b{display:block;font-size:1.02rem}
+.themetile .txt span{font-size:.82rem;color:var(--ink-soft)}
 
 /* Progress */
 .progress{height:16px;background:var(--surface-2);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
@@ -33,7 +64,14 @@
 .stage{min-height:220px}
 .prompt{font-size:1.15rem;font-weight:600;margin-bottom:1rem}
 .wordcard{text-align:center;padding:1.4rem}
+.wordcard .wordicon{width:64px;height:64px;margin:0 auto .6rem;border-radius:18px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.wordcard .wordicon svg{width:34px;height:34px}
 .wordcard .en{font-size:2rem;font-weight:800;letter-spacing:.3px}
+.stepbadge{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px;margin-bottom:.6rem}
+.grammarbox{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:.9rem 1rem;margin:1rem 0}
+.grammarbox .lbl{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
+.grammarbox .eg{font-weight:600}
 .wordcard .hu{font-size:1.15rem;color:var(--accent-2);margin-top:.3rem}
 .wordcard .ex{margin-top:.8rem;color:var(--ink-soft)}
 .options{display:grid;gap:.7rem;grid-template-columns:1fr}
@@ -62,12 +100,18 @@
 .helppanel{background:var(--gentle-bg);border:1px solid var(--gentle);border-radius:12px;padding:.9rem 1rem;margin:1rem 0}
 .helppanel h3{color:var(--gentle);font-size:1rem;margin-bottom:.3rem}
 
-/* Conversation */
+/* Conversation — chat with character faces */
 .chat{display:flex;flex-direction:column;gap:.8rem;margin:1rem 0}
-.bubble{max-width:85%;padding:.8rem 1rem;border-radius:16px;font-size:1.08rem}
-.bubble.them{background:var(--surface-2);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
-.bubble.me{background:var(--good-bg);border:1px solid var(--accent);align-self:flex-end;border-bottom-right-radius:4px}
-.bubble .who{font-size:.78rem;font-weight:700;color:var(--ink-soft);margin-bottom:.2rem}
+.turn{display:flex;gap:.55rem;align-items:flex-end;max-width:90%}
+.turn.them{align-self:flex-start}
+.turn.me{align-self:flex-end;flex-direction:row-reverse}
+.turn .face{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:0 0 auto;border:1px solid var(--line);background:var(--surface-2)}
+.turn .face svg{width:100%;height:100%;display:block}
+.bubble{padding:.75rem 1rem;border-radius:16px;font-size:1.08rem}
+.turn.them .bubble{background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:5px}
+.turn.me .bubble{background:var(--accent);color:#fff;border:1px solid var(--accent);border-bottom-right-radius:5px}
+.bubble .who{font-size:.76rem;font-weight:700;opacity:.75;margin-bottom:.15rem}
+.turn.me .bubble .who{color:#eafffd}
 .support-tabs{display:flex;gap:.4rem;margin:.6rem 0}
 .support-tabs button{flex:1;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:600;color:var(--ink)}
 .support-tabs button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}

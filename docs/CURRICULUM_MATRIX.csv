@@ -1,33 +1,33 @@
 unit,unit_title_en,lesson,lesson_title_en,can_do_en,new_words,review_words,chunks,grammar,pronunciation,conversation,activities
-u00,Welcome & first steps,u00-l01,"Welcome, sound & your start",Test sound and find your starting point,0,0,0,,pf_stress,,diagnostic
-u01,"Hello, I'm Marta",u01-l01,"Hello, Endika",Greet and say your name and country,33,0,8,gr_be gr_questions_wh gr_articles,pf_stress,dlg_endika_first,intro listen-choose match spelling-build grammar grammar grammar phrase-match typed pron-record conversation
-u01,"Hello, I'm Marta",u01-l02,"He, she & numbers",Talk about other people and count,19,0,2,gr_pronouns,pf_question,,intro listen-choose match spelling-build grammar phrase-match typed pron-record
-u02,My family,u02-l01,This is my family,Name family members,18,52,0,gr_possadj gr_poss_s gr_plural,pf_finals,,intro listen-choose match grammar grammar grammar typed pron-record review
-u02,My family,u02-l02,Meeting Marlene,"Ask about family, meet someone new",17,0,1,gr_have,pf_finals,dlg_marlene_first,intro listen-choose match grammar phrase-match typed pron-record conversation
-u03,"People, countries & languages",u03-l01,Countries & languages,Say where people are from,16,35,1,gr_conjunctions,pf_wv,,intro listen-choose match grammar phrase-match typed pron-record review
-u03,"People, countries & languages",u03-l02,Describing people,Give a simple description,10,0,1,,pf_stress,,intro listen-choose match phrase-match typed pron-record
-u04,My day & my home,u04-l01,My daily routine,Describe your day,17,78,0,gr_presentsimple gr_dodoes gr_frequency,pf_ed,,intro listen-choose match spelling-build grammar grammar grammar typed pron-record review
-u04,My day & my home,u04-l02,My home,Describe your home,14,0,0,gr_thereis,pf_finals,,intro listen-choose match spelling-build grammar typed pron-record
-u05,"Food, cooking & shopping",u05-l01,Food I like,Talk about food you like,20,66,2,gr_someany,pf_ea,,intro listen-choose match spelling-build grammar phrase-match typed pron-record review
-u05,"Food, cooking & shopping",u05-l02,Cooking & shopping,Buy and cook simple things,10,0,1,gr_wouldlike,pf_ea,,intro listen-choose match spelling-build grammar phrase-match typed pron-record
-u06,"Time, weather & plans",u06-l01,"Days, times & numbers",Say days and times,21,56,0,gr_prepositions_time,pf_question,,intro listen-choose match spelling-build grammar typed pron-record review
-u06,"Time, weather & plans",u06-l02,Weather & plans,Talk about weather and make plans,13,0,4,gr_can gr_goingto gr_presentcont,pf_stress,,intro listen-choose match spelling-build grammar grammar grammar phrase-match typed pron-record
-u07,Phone & video calls,u07-l01,Phone call with Kira,Start a call and check sound,10,65,7,gr_object_pronouns,pf_question,dlg_kira_phone,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
-u07,Phone & video calls,u07-l02,Video calls,Check picture and give an update,3,0,2,,pf_th,,intro listen-choose match phrase-match typed pron-record
-u08,"Hobbies, books & opinions",u08-l01,Hobbies with Peter,Talk about hobbies,12,43,2,gr_likeing,pf_stress,dlg_peter_dinner,intro listen-choose match grammar phrase-match typed pron-record conversation review
-u08,"Hobbies, books & opinions",u08-l02,Books & opinions with Emma,Give a simple opinion,11,0,3,,pf_th,dlg_emma_books,intro listen-choose match spelling-build phrase-match typed pron-record conversation
-u09,Around town: directions,u09-l01,Where is it?,Ask for and give directions,14,57,3,gr_imperatives,pf_th,,intro listen-choose match spelling-build grammar phrase-match typed pron-record review
-u09,Around town: directions,u09-l02,Buses & trains,Use transport words,2,0,1,,pf_finals,,intro listen-choose phrase-match typed pron-record
-u10,"Restaurant, hotel & services",u10-l01,At the restaurant,Order food and ask for the bill,7,29,5,gr_could_requests,pf_stress,dlg_restaurant,intro listen-choose match grammar phrase-match typed pron-record conversation review
-u10,"Restaurant, hotel & services",u10-l02,Hotel check-in,Check in and explain a problem,6,0,1,,pf_stress,dlg_hotel,intro listen-choose match spelling-build phrase-match typed pron-record conversation
-u11,Teaching Hungarian online,u11-l01,Starting an online lesson,"Start a lesson, fix sound, praise",12,36,6,gr_imperatives,pf_stress,dlg_student_mic,intro listen-choose match grammar phrase-match typed pron-record conversation review
-u11,Teaching Hungarian online,u11-l02,Talking with a parent,Ask for a parent and speak with them,1,0,1,gr_can,pf_question,dlg_student_parent,intro grammar phrase-match typed pron-record conversation
-u12,Yesterday & past experiences,u12-l01,Where were you?,Say where you were,6,29,0,gr_waswere,pf_ed,,intro listen-choose match grammar typed pron-record review
-u12,Yesterday & past experiences,u12-l02,My weekend story,Tell a short past story,2,0,1,gr_pastsimple,pf_ed,dlg_endika_followup,intro listen-choose grammar phrase-match typed pron-record conversation
-u13,Visits & future travel,u13-l01,Planning a visit,Plan a visit and a trip,4,21,1,gr_needhaveto,pf_stress,dlg_mirella_travel,intro listen-choose match grammar phrase-match typed pron-record conversation review
-u13,Visits & future travel,u13-l02,Packing & documents,Talk about luggage and documents,4,0,0,,pf_finals,,intro listen-choose match typed pron-record
-u14,Airport confidence,u14-l01,At the airport,Find check-in and your gate,6,21,3,gr_could_requests,pf_question,dlg_airport,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
-u14,Airport confidence,u14-l02,Security & gates,Understand gate and time information,3,0,0,,pf_stress,,intro listen-choose match spelling-build typed pron-record
-u15,On the plane & arrival,u15-l01,On the plane,Ask for help and stay calm,9,17,6,gr_could_requests,pf_stress,dlg_plane_help,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
-u15,On the plane & arrival,u15-l02,Arrival,Manage a simple arrival,1,0,1,,pf_question,,intro phrase-match typed pron-record
-u16,Family occasions,u16-l01,Family party at Lake Balaton,Join a family conversation,4,18,2,,pf_stress,dlg_balaton,intro listen-choose match phrase-match typed pron-record conversation review
+u00,Welcome & first steps,u00-l01,"Welcome, sound & your start",Test sound and find your starting point,0,0,0,,snd_short_vowels,,diagnostic
+u01,"Hello, I'm Marta",u01-l01,"Hello, Endika",Greet and say your name and country,34,0,8,gr_be gr_questions_wh gr_articles,snd_short_vowels,dlg_endika_first,intro listen-choose match spelling-build grammar grammar grammar phrase-match typed pron-record conversation
+u01,"Hello, I'm Marta",u01-l02,"He, she & numbers",Talk about other people and count,21,0,2,gr_pronouns,snd_long_vowels,,intro listen-choose match spelling-build grammar phrase-match typed pron-record
+u02,My family,u02-l01,This is my family,Name family members,27,55,0,gr_possadj gr_poss_s gr_plural,snd_final_cons,,intro listen-choose match grammar grammar grammar typed pron-record review
+u02,My family,u02-l02,Meeting Marlene,"Ask about family, meet someone new",18,0,1,gr_have,snd_s_endings,dlg_marlene_first,intro listen-choose match grammar phrase-match typed pron-record conversation
+u03,"People, countries & languages",u03-l01,Countries & languages,Say where people are from,16,45,1,gr_conjunctions,snd_wv,,intro listen-choose match grammar phrase-match typed pron-record review
+u03,"People, countries & languages",u03-l02,Describing people,Give a simple description,21,0,1,,snd_h,,intro listen-choose match phrase-match typed pron-record
+u04,My day & my home,u04-l01,My daily routine,Describe your day,25,92,0,gr_presentsimple gr_dodoes gr_frequency,snd_ed_endings,,intro listen-choose match spelling-build grammar grammar grammar typed pron-record review
+u04,My day & my home,u04-l02,My home,Describe your home,42,0,0,gr_thereis,snd_ng,,intro listen-choose match spelling-build grammar typed pron-record
+u05,"Food, cooking & shopping",u05-l01,Food I like,Talk about food you like,38,112,2,gr_someany,snd_ee_i,,intro listen-choose match spelling-build grammar phrase-match typed pron-record review
+u05,"Food, cooking & shopping",u05-l02,Cooking & shopping,Buy and cook simple things,35,0,1,gr_wouldlike,snd_shchj,,intro listen-choose match spelling-build grammar phrase-match typed pron-record
+u06,"Time, weather & plans",u06-l01,"Days, times & numbers",Say days and times,62,110,0,gr_prepositions_time,str_word,,intro listen-choose match spelling-build grammar typed pron-record review
+u06,"Time, weather & plans",u06-l02,Weather & plans,Talk about weather and make plans,41,0,4,gr_can gr_goingto gr_presentcont,str_question,,intro listen-choose match spelling-build grammar grammar grammar phrase-match typed pron-record
+u07,Phone & video calls,u07-l01,Phone call with Kira,Start a call and check sound,10,170,7,gr_object_pronouns,str_question,dlg_kira_phone,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
+u07,Phone & video calls,u07-l02,Video calls,Check picture and give an update,17,0,2,,snd_th,,intro listen-choose match phrase-match typed pron-record
+u08,"Hobbies, books & opinions",u08-l01,Hobbies with Peter,Talk about hobbies,23,100,2,gr_likeing,snd_r,dlg_peter_dinner,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
+u08,"Hobbies, books & opinions",u08-l02,Books & opinions with Emma,Give a simple opinion,50,0,3,gr_comparatives,snd_th,dlg_emma_books,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation
+u09,Around town: directions,u09-l01,Where is it?,Ask for and give directions,67,176,3,gr_imperatives,snd_shchj,,intro listen-choose match spelling-build grammar phrase-match typed pron-record review
+u09,Around town: directions,u09-l02,Buses & trains,Use transport words,10,0,1,,snd_final_cons,,intro listen-choose match phrase-match typed pron-record
+u10,"Restaurant, hotel & services",u10-l01,At the restaurant,Order food and ask for the bill,11,104,5,gr_could_requests,str_sentence,dlg_restaurant,intro listen-choose match grammar phrase-match typed pron-record conversation review
+u10,"Restaurant, hotel & services",u10-l02,Hotel check-in,Check in and explain a problem,15,0,1,,str_word,dlg_hotel,intro listen-choose match phrase-match typed pron-record conversation
+u11,Teaching Hungarian online,u11-l01,Starting an online lesson,"Start a lesson, fix sound, praise",27,99,6,gr_imperatives,str_chunking,dlg_student_mic,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
+u11,Teaching Hungarian online,u11-l02,Talking with a parent,Ask for a parent and speak with them,6,0,1,gr_can,str_question,dlg_student_parent,intro listen-choose match grammar phrase-match typed pron-record conversation
+u12,Yesterday & past experiences,u12-l01,Where were you?,Say where you were,6,110,0,gr_waswere,snd_ed_endings,,intro listen-choose match grammar typed pron-record review
+u12,Yesterday & past experiences,u12-l02,My weekend story,Tell a short past story,7,0,1,gr_pastsimple,snd_ed_endings,dlg_endika_followup,intro listen-choose match grammar phrase-match typed pron-record conversation
+u13,Visits & future travel,u13-l01,Planning a visit,Plan a visit and a trip,10,39,1,gr_needhaveto,str_word,dlg_mirella_travel,intro listen-choose match grammar phrase-match typed pron-record conversation review
+u13,Visits & future travel,u13-l02,Packing & documents,Talk about luggage and documents,17,0,0,,snd_final_cons,,intro listen-choose match typed pron-record
+u14,Airport confidence,u14-l01,At the airport,Find check-in and your gate,6,60,3,gr_could_requests,str_question,dlg_airport,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
+u14,Airport confidence,u14-l02,Security & gates,Understand gate and time information,4,0,0,,str_word,,intro listen-choose match spelling-build typed pron-record
+u15,On the plane & arrival,u15-l01,On the plane,Ask for help and stay calm,14,23,6,gr_could_requests,str_chunking,dlg_plane_help,intro listen-choose match spelling-build grammar phrase-match typed pron-record conversation review
+u15,On the plane & arrival,u15-l02,Arrival,Manage a simple arrival,1,0,1,,str_question,,intro phrase-match typed pron-record
+u16,Family occasions,u16-l01,Family party at Lake Balaton,Join a family conversation,18,42,2,,str_sentence,dlg_balaton,intro listen-choose match phrase-match typed pron-record conversation review

@@ -17,13 +17,24 @@
     "lex_book",
     "lex_film",
     "lex_sport",
-    "lex_garden_noun",
     "lex_swim",
     "lex_dance",
     "lex_sing",
     "lex_play",
     "lex_love",
-    "lex_enjoy"
+    "lex_enjoy",
+    "lex_run",
+    "lex_listen",
+    "lex_story",
+    "lex_song",
+    "lex_game",
+    "lex_photo",
+    "lex_picture",
+    "lex_jump",
+    "lex_draw",
+    "lex_paint",
+    "lex_win",
+    "lex_hate"
   ],
   "reviewItems": [
     "lex_food",
@@ -68,7 +79,64 @@
     "lex_moment",
     "lex_me",
     "lex_him",
-    "lex_them"
+    "lex_them",
+    "lex_rice",
+    "lex_potato",
+    "lex_tomato",
+    "lex_onion",
+    "lex_chicken",
+    "lex_salad",
+    "lex_sugar",
+    "lex_salt",
+    "lex_butter",
+    "lex_chocolate",
+    "lex_orange",
+    "lex_banana",
+    "lex_sandwich",
+    "lex_juice",
+    "lex_wine",
+    "lex_dessert",
+    "lex_hungry",
+    "lex_thirsty",
+    "lex_delicious",
+    "lex_taste",
+    "lex_give",
+    "lex_know",
+    "lex_ask",
+    "lex_answer",
+    "lex_tell",
+    "lex_say",
+    "lex_pay",
+    "lex_send",
+    "lex_sell",
+    "lex_expensive",
+    "lex_cheap",
+    "lex_full",
+    "lex_empty",
+    "lex_wrong",
+    "lex_just",
+    "lex_for",
+    "lex_of",
+    "lex_cost",
+    "lex_euro",
+    "lex_card",
+    "lex_cash",
+    "lex_video",
+    "lex_thing",
+    "lex_letter",
+    "lex_news",
+    "lex_box",
+    "lex_bottle",
+    "lex_glass",
+    "lex_plate",
+    "lex_knife",
+    "lex_spoon",
+    "lex_fork",
+    "lex_meal",
+    "lex_snack",
+    "lex_talk",
+    "lex_cut",
+    "lex_size"
   ],
   "chunks": [
     "chunk_ask_hobbies",
@@ -78,7 +146,7 @@
     "gr_likeing"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "snd_r"
   ],
   "conversationId": "dlg_peter_dinner",
   "activities": [
@@ -91,9 +159,9 @@
         "lex_book",
         "lex_film",
         "lex_sport",
-        "lex_garden_noun",
         "lex_swim",
-        "lex_dance"
+        "lex_dance",
+        "lex_sing"
       ]
     },
     {
@@ -105,7 +173,7 @@
         "lex_book",
         "lex_film",
         "lex_sport",
-        "lex_garden_noun"
+        "lex_swim"
       ]
     },
     {
@@ -117,16 +185,22 @@
         "lex_book",
         "lex_film",
         "lex_sport",
-        "lex_garden_noun"
+        "lex_swim"
       ]
     },
     {
       "id": "act_123",
+      "type": "spelling-build",
+      "family": "sf_magic_e_a",
+      "word": "game"
+    },
+    {
+      "id": "act_124",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_124",
+      "id": "act_125",
       "type": "phrase-match",
       "items": [
         "chunk_ask_hobbies",
@@ -134,7 +208,7 @@
       ]
     },
     {
-      "id": "act_125",
+      "id": "act_126",
       "type": "typed",
       "items": [
         "lex_hobby",
@@ -144,17 +218,17 @@
       ]
     },
     {
-      "id": "act_126",
+      "id": "act_127",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "snd_r"
     },
     {
-      "id": "act_127",
+      "id": "act_128",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_128",
+      "id": "act_129",
       "type": "review",
       "items": [
         "lex_food",

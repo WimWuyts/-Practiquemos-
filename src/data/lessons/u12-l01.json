@@ -16,8 +16,8 @@
     "lex_went",
     "lex_saw",
     "lex_visit",
-    "lex_yesterday_noun",
-    "lex_last_week"
+    "lex_last_week",
+    "lex_last"
   ],
   "reviewItems": [
     "lex_street",
@@ -48,60 +48,141 @@
     "lex_click",
     "lex_ready",
     "lex_excellent",
-    "lex_student"
+    "lex_student",
+    "lex_second",
+    "lex_third",
+    "lex_town",
+    "lex_village",
+    "lex_road",
+    "lex_bank",
+    "lex_park",
+    "lex_church",
+    "lex_school",
+    "lex_market",
+    "lex_supermarket",
+    "lex_cinema",
+    "lex_museum",
+    "lex_square",
+    "lex_bridge",
+    "lex_library",
+    "lex_centre",
+    "lex_place",
+    "lex_corner",
+    "lex_open",
+    "lex_close",
+    "lex_stop",
+    "lex_take",
+    "lex_find",
+    "lex_show",
+    "lex_use",
+    "lex_drive",
+    "lex_write",
+    "lex_learn",
+    "lex_teach",
+    "lex_begin",
+    "lex_finish",
+    "lex_change",
+    "lex_fast",
+    "lex_slow",
+    "lex_high",
+    "lex_here",
+    "lex_there",
+    "lex_up",
+    "lex_down",
+    "lex_to",
+    "lex_by",
+    "lex_over",
+    "lex_behind",
+    "lex_map",
+    "lex_email",
+    "lex_mobile",
+    "lex_app",
+    "lex_word",
+    "lex_question",
+    "lex_pen",
+    "lex_pencil",
+    "lex_paper",
+    "lex_page",
+    "lex_classroom",
+    "lex_homework",
+    "lex_which",
+    "lex_way",
+    "lex_side",
+    "lex_office",
+    "lex_building",
+    "lex_catch",
+    "lex_practise",
+    "lex_save",
+    "lex_low",
+    "lex_other",
+    "lex_into",
+    "lex_through",
+    "lex_around",
+    "lex_front",
+    "lex_back",
+    "lex_middle",
+    "lex_top",
+    "lex_ground",
+    "lex_north",
+    "lex_south",
+    "lex_east",
+    "lex_west",
+    "lex_pull",
+    "lex_push",
+    "lex_let"
   ],
   "chunks": [],
   "grammarCards": [
     "gr_waswere"
   ],
   "pronunciationFocus": [
-    "pf_ed"
+    "snd_ed_endings"
   ],
   "conversationId": null,
   "activities": [
     {
-      "id": "act_183",
+      "id": "act_188",
       "type": "intro",
       "items": [
         "lex_was",
         "lex_went",
         "lex_saw",
         "lex_visit",
-        "lex_yesterday_noun",
-        "lex_last_week"
+        "lex_last_week",
+        "lex_last"
       ]
     },
     {
-      "id": "act_184",
+      "id": "act_189",
       "type": "listen-choose",
       "items": [
         "lex_was",
         "lex_went",
         "lex_saw",
         "lex_visit",
-        "lex_yesterday_noun",
-        "lex_last_week"
+        "lex_last_week",
+        "lex_last"
       ]
     },
     {
-      "id": "act_185",
+      "id": "act_190",
       "type": "match",
       "items": [
         "lex_was",
         "lex_went",
         "lex_saw",
         "lex_visit",
-        "lex_yesterday_noun",
-        "lex_last_week"
+        "lex_last_week",
+        "lex_last"
       ]
     },
     {
-      "id": "act_186",
+      "id": "act_191",
       "type": "grammar",
       "grammarId": "gr_waswere"
     },
     {
-      "id": "act_187",
+      "id": "act_192",
       "type": "typed",
       "items": [
         "lex_was",
@@ -111,12 +192,12 @@
       ]
     },
     {
-      "id": "act_188",
+      "id": "act_193",
       "type": "pron-record",
-      "focusId": "pf_ed"
+      "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_189",
+      "id": "act_194",
       "type": "review",
       "items": [
         "lex_street",

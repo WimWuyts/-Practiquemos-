@@ -14,7 +14,21 @@
   "newProductiveItems": [
     "lex_me",
     "lex_him",
-    "lex_them"
+    "lex_them",
+    "lex_know",
+    "lex_ask",
+    "lex_answer",
+    "lex_tell",
+    "lex_say",
+    "lex_send",
+    "lex_wrong",
+    "lex_just",
+    "lex_of",
+    "lex_video",
+    "lex_thing",
+    "lex_letter",
+    "lex_news",
+    "lex_talk"
   ],
   "reviewItems": [],
   "chunks": [
@@ -23,7 +37,7 @@
   ],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_th"
+    "snd_th"
   ],
   "conversationId": null,
   "activities": [
@@ -33,7 +47,12 @@
       "items": [
         "lex_me",
         "lex_him",
-        "lex_them"
+        "lex_them",
+        "lex_know",
+        "lex_ask",
+        "lex_answer",
+        "lex_tell",
+        "lex_say"
       ]
     },
     {
@@ -42,7 +61,10 @@
       "items": [
         "lex_me",
         "lex_him",
-        "lex_them"
+        "lex_them",
+        "lex_know",
+        "lex_ask",
+        "lex_answer"
       ]
     },
     {
@@ -51,7 +73,10 @@
       "items": [
         "lex_me",
         "lex_him",
-        "lex_them"
+        "lex_them",
+        "lex_know",
+        "lex_ask",
+        "lex_answer"
       ]
     },
     {
@@ -68,13 +93,14 @@
       "items": [
         "lex_me",
         "lex_him",
-        "lex_them"
+        "lex_them",
+        "lex_know"
       ]
     },
     {
       "id": "act_119",
       "type": "pron-record",
-      "focusId": "pf_th"
+      "focusId": "snd_th"
     }
   ],
   "completionRule": {

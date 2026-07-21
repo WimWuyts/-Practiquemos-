@@ -15,48 +15,69 @@
     "lex_luggage",
     "lex_suitcase",
     "lex_passport",
-    "lex_bring"
+    "lex_bring",
+    "lex_clothes",
+    "lex_shirt",
+    "lex_trousers",
+    "lex_dress",
+    "lex_shoes",
+    "lex_coat",
+    "lex_hat",
+    "lex_jacket",
+    "lex_wear",
+    "lex_carry",
+    "lex_bag",
+    "lex_keep",
+    "lex_heavy"
   ],
   "reviewItems": [],
   "chunks": [],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_finals"
+    "snd_final_cons"
   ],
   "conversationId": null,
   "activities": [
     {
-      "id": "act_206",
+      "id": "act_212",
       "type": "intro",
       "items": [
         "lex_luggage",
         "lex_suitcase",
         "lex_passport",
-        "lex_bring"
+        "lex_bring",
+        "lex_clothes",
+        "lex_shirt",
+        "lex_trousers",
+        "lex_dress"
       ]
     },
     {
-      "id": "act_207",
+      "id": "act_213",
       "type": "listen-choose",
       "items": [
         "lex_luggage",
         "lex_suitcase",
         "lex_passport",
-        "lex_bring"
+        "lex_bring",
+        "lex_clothes",
+        "lex_shirt"
       ]
     },
     {
-      "id": "act_208",
+      "id": "act_214",
       "type": "match",
       "items": [
         "lex_luggage",
         "lex_suitcase",
         "lex_passport",
-        "lex_bring"
+        "lex_bring",
+        "lex_clothes",
+        "lex_shirt"
       ]
     },
     {
-      "id": "act_209",
+      "id": "act_215",
       "type": "typed",
       "items": [
         "lex_luggage",
@@ -66,9 +87,9 @@
       ]
     },
     {
-      "id": "act_210",
+      "id": "act_216",
       "type": "pron-record",
-      "focusId": "pf_finals"
+      "focusId": "snd_final_cons"
     }
   ],
   "completionRule": {

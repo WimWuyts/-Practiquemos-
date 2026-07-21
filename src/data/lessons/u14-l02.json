@@ -14,62 +14,67 @@
   "newProductiveItems": [
     "lex_boarding",
     "lex_seat",
-    "lex_late"
+    "lex_late",
+    "lex_miss"
   ],
   "reviewItems": [],
   "chunks": [],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_word"
   ],
   "conversationId": null,
   "activities": [
     {
-      "id": "act_221",
+      "id": "act_227",
       "type": "intro",
       "items": [
         "lex_boarding",
         "lex_seat",
-        "lex_late"
+        "lex_late",
+        "lex_miss"
       ]
     },
     {
-      "id": "act_222",
+      "id": "act_228",
       "type": "listen-choose",
       "items": [
         "lex_boarding",
         "lex_seat",
-        "lex_late"
+        "lex_late",
+        "lex_miss"
       ]
     },
     {
-      "id": "act_223",
+      "id": "act_229",
       "type": "match",
       "items": [
         "lex_boarding",
         "lex_seat",
-        "lex_late"
+        "lex_late",
+        "lex_miss"
       ]
     },
     {
-      "id": "act_224",
+      "id": "act_230",
       "type": "spelling-build",
-      "family": "sf_a_e",
+      "family": "sf_magic_e_a",
       "word": "late"
     },
     {
-      "id": "act_225",
+      "id": "act_231",
       "type": "typed",
       "items": [
         "lex_boarding",
         "lex_seat",
-        "lex_late"
+        "lex_late",
+        "lex_miss"
       ]
     },
     {
-      "id": "act_226",
+      "id": "act_232",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_word"
     }
   ],
   "completionRule": {

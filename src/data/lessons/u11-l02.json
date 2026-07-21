@@ -12,7 +12,12 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_click"
+    "lex_click",
+    "lex_use",
+    "lex_email",
+    "lex_mobile",
+    "lex_app",
+    "lex_save"
   ],
   "reviewItems": [],
   "chunks": [
@@ -22,43 +27,75 @@
     "gr_can"
   ],
   "pronunciationFocus": [
-    "pf_question"
+    "str_question"
   ],
   "conversationId": "dlg_student_parent",
   "activities": [
     {
-      "id": "act_177",
+      "id": "act_180",
       "type": "intro",
       "items": [
-        "lex_click"
+        "lex_click",
+        "lex_use",
+        "lex_email",
+        "lex_mobile",
+        "lex_app",
+        "lex_save"
       ]
     },
     {
-      "id": "act_178",
+      "id": "act_181",
+      "type": "listen-choose",
+      "items": [
+        "lex_click",
+        "lex_use",
+        "lex_email",
+        "lex_mobile",
+        "lex_app",
+        "lex_save"
+      ]
+    },
+    {
+      "id": "act_182",
+      "type": "match",
+      "items": [
+        "lex_click",
+        "lex_use",
+        "lex_email",
+        "lex_mobile",
+        "lex_app",
+        "lex_save"
+      ]
+    },
+    {
+      "id": "act_183",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_179",
+      "id": "act_184",
       "type": "phrase-match",
       "items": [
         "chunk_teach_parent"
       ]
     },
     {
-      "id": "act_180",
+      "id": "act_185",
       "type": "typed",
       "items": [
-        "lex_click"
+        "lex_click",
+        "lex_use",
+        "lex_email",
+        "lex_mobile"
       ]
     },
     {
-      "id": "act_181",
+      "id": "act_186",
       "type": "pron-record",
-      "focusId": "pf_question"
+      "focusId": "str_question"
     },
     {
-      "id": "act_182",
+      "id": "act_187",
       "type": "conversation",
       "dialogueId": "dlg_student_parent"
     }

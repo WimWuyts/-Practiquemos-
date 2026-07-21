@@ -6,44 +6,71 @@ window.M = window.M || {};
 
   function avatar(cls) { return el("span", { class: "avatar " + (cls || ""), html: M.data.avatarSvg, role: "img", "aria-label": "Marta" }); }
 
+  // unit visual identity: icon + colour tint per unit
+  var UNIT_VIS = {
+    u00: ["star", "#eef1ee", "#5b615a"], u01: ["hand", "#eaf4f3", "#14746f"], u02: ["family", "#f3ecf0", "#9a5a86"],
+    u03: ["globe", "#e9f0f4", "#2f6f9a"], u04: ["sun", "#f4efe6", "#a5772e"], u05: ["fork", "#eef4ec", "#4f8a4a"],
+    u06: ["calendar", "#eef1f6", "#5a6aa0"], u07: ["phone", "#eaf4f3", "#14746f"], u08: ["star", "#f3eef6", "#7a5a9a"],
+    u09: ["map", "#eef4ec", "#4f8a4a"], u10: ["bell", "#f4eee6", "#a5772e"], u11: ["laptop", "#e9f2f2", "#2f8a86"],
+    u12: ["clockback", "#f0eeea", "#8a6a4a"], u13: ["suitcase", "#eef1f6", "#5a6aa0"], u14: ["plane", "#e9f0f4", "#2f6f9a"],
+    u15: ["plane", "#eef4f3", "#14746f"], u16: ["heart", "#f5ecef", "#b06a80"],
+  };
+  function unitVis(id) { return UNIT_VIS[id] || ["book", "var(--accent-soft)", "var(--accent)"]; }
+
   // ---------------- HOME ----------------
   function home(mount) {
     var s = M.store.settings();
     var last = s.lastLocation;
     var rec = pickRecommended();
-    mount.appendChild(el("div", { class: "avatar-row" }, [
-      avatar(""),
-      el("div", {}, [
-        el("h1", { text: M.i18n.t("home.welcome") }),
-        el("p", { class: "muted", text: M.i18n.t("app.subtitle") + (M.i18n.helpAvailable() ? " · " + M.i18n.hu("app.subtitle") : "") }),
-      ]),
-    ]));
     var pct = M.store.overall();
-    mount.appendChild(el("div", { class: "card" }, [
-      el("h2", { text: M.i18n.label("home.progress") }),
-      el("div", { class: "progress", role: "progressbar", "aria-valuenow": pct, "aria-valuemin": 0, "aria-valuemax": 100 }, [el("span", { style: "width:" + pct + "%" })]),
-      el("p", { class: "muted", text: pct + "%" }),
+
+    // hero
+    mount.appendChild(el("div", { class: "hero" }, [
+      avatar(""),
+      el("div", { style: "flex:1" }, [
+        el("h1", { text: M.i18n.t("home.welcome") }),
+        el("p", { class: "sub", text: M.i18n.t("app.subtitle") }),
+      ]),
+      el("div", { class: "ring", style: "--p:" + pct, role: "img", "aria-label": M.i18n.t("home.progress") + " " + pct + "%" }, [el("b", { text: pct + "%" })]),
     ]));
-    var target = rec;
-    mount.appendChild(el("div", { class: "card" }, [
-      el("h2", { text: M.i18n.label("home.recommended") }),
-      el("p", {}, [el("strong", { text: unitLessonTitle(target) })]),
+
+    // recommended
+    var lesson = M.get.lesson(rec), unit = lesson ? M.get.unit(lesson.unitId) : null;
+    mount.appendChild(el("div", { class: "recommend" }, [
+      el("div", { class: "k", text: M.i18n.t("home.recommended") }),
+      el("h2", { text: lesson ? lesson.title.en : "" }),
+      el("p", { class: "muted", text: (unit ? unit.title.en + " · " : "") + (lesson ? lesson.canDo.en : "") }),
       el("div", { class: "btn-row" }, [
-        el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + target); } }, [el("span", { html: dom.icon("book") }), " " + M.i18n.t("home.start")]),
-        last ? el("button", { class: "btn secondary", onclick: function () { M.router.go("lesson/" + last); } }, [M.i18n.t("home.continue")]) : null,
+        el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + rec); } }, [el("span", { html: dom.icon("book") }), " " + M.i18n.t("home.start")]),
+        (last && last !== rec) ? el("button", { class: "btn secondary", onclick: function () { M.router.go("lesson/" + last); } }, [M.i18n.t("home.continue")]) : null,
       ]),
     ]));
-    mount.appendChild(el("div", { class: "card" }, [
-      el("h2", { text: M.i18n.label("home.conversations") }),
-      el("p", { class: "muted", text: M.i18n.helpAvailable() ? M.i18n.hu("home.conversations") : "" }),
-      el("div", { class: "btn-row" }, [
-        el("button", { class: "btn secondary", onclick: function () { M.router.go("conversations"); } }, [el("span", { html: dom.icon("chat") }), " " + M.i18n.t("nav.conversations")]),
+
+    // theme tiles — units as a calm grid
+    mount.appendChild(el("h2", { style: "margin:1.4rem 0 .6rem;font-size:1.15rem", text: M.i18n.label("nav.lessons") }));
+    var grid = el("div", { class: "tilegrid" });
+    M.data.course.units.forEach(function (u) {
+      if (u.id === "u00") return;
+      var vis = unitVis(u.id);
+      var doneCount = u.lessons.filter(function (l) { return M.store.isLessonDone(l); }).length;
+      var up = Math.round((doneCount / Math.max(1, u.lessons.length)) * 100);
+      grid.appendChild(el("button", { class: "themetile", onclick: function () { M.router.go("lesson/" + u.lessons[0]); } }, [
+        el("span", { class: "iconwell", style: "--tint:" + vis[1] + ";--tintink:" + vis[2], html: dom.icon(vis[0]), "aria-hidden": "true" }),
+        el("span", { class: "txt" }, [el("b", { text: u.title.en }), el("span", { text: M.i18n.helpAvailable() ? u.title.hu : u.canDo.en })]),
+        el("span", { class: "ring sm", style: "--p:" + up + ";--accent:" + vis[2], "aria-label": up + "%" }, [el("b", { text: up + "%" })]),
+      ]));
+    });
+    mount.appendChild(grid);
+
+    // conversations + monthly
+    mount.appendChild(el("div", { class: "card", style: "margin-top:1.2rem" }, [
+      el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [
+        el("span", { class: "iconwell", html: dom.icon("chat"), "aria-hidden": "true" }),
+        el("div", { style: "flex:1" }, [el("h2", { style: "margin:0;font-size:1.1rem", text: M.i18n.t("home.conversations") }), el("p", { class: "muted", style: "margin:.2rem 0 0", text: M.i18n.helpAvailable() ? M.i18n.hu("home.conversations") : "" })]),
       ]),
+      el("div", { class: "btn-row" }, [el("button", { class: "btn secondary", onclick: function () { M.router.go("conversations"); } }, [M.i18n.t("nav.conversations")])]),
     ]));
-    mount.appendChild(el("div", { class: "card" }, [
-      el("h2", { text: M.i18n.label("home.monthly") }),
-      el("p", { class: "muted", text: M.i18n.t("home.monthly.note") + (M.i18n.helpAvailable() ? " · " + M.i18n.hu("home.monthly.note") : "") }),
-    ]));
+    mount.appendChild(el("p", { class: "muted", style: "text-align:center;margin-top:1rem", text: M.i18n.t("home.monthly.note") }));
   }
 
   function pickRecommended() {
@@ -147,14 +174,13 @@ window.M = window.M || {};
     M.data.dialogues.forEach(function (d) {
       var count = (M.store.progress().conversations[d.id] || {}).count || 0;
       grid.appendChild(el("div", { class: "card" }, [
-        el("div", { style: "display:flex;align-items:center;gap:.6rem" }, [
-          el("span", { html: dom.icon("chat") }),
-          el("strong", { text: d.scene.en }),
+        el("div", { style: "display:flex;align-items:center;gap:.7rem" }, [
+          el("span", { class: "avatar small", style: "width:44px;height:44px", "aria-hidden": "true", html: M.avatarFor(d.characterId) }),
+          el("div", { style: "flex:1" }, [el("strong", { text: d.scene.en }), M.i18n.helpAvailable() ? el("div", { class: "muted", text: d.scene.hu }) : null]),
           count ? el("span", { class: "pill", text: "★ " + count }) : null,
         ]),
-        M.i18n.helpAvailable() ? el("p", { class: "muted", text: d.scene.hu }) : null,
         el("div", { class: "btn-row" }, [
-          el("button", { class: "btn", onclick: function () { M.router.go("talk/" + d.id); } }, [M.i18n.t("conv.start")]),
+          el("button", { class: "btn", onclick: function () { M.router.go("talk/" + d.id); } }, [el("span", { html: dom.icon("chat") }), " " + M.i18n.t("conv.start")]),
         ]),
       ]));
     });

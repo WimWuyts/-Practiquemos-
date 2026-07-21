@@ -13,7 +13,12 @@
   "estimatedMinutes": 17,
   "newProductiveItems": [
     "lex_ago",
-    "lex_holiday"
+    "lex_holiday",
+    "lex_remember",
+    "lex_try",
+    "lex_end",
+    "lex_spend",
+    "lex_almost"
   ],
   "reviewItems": [],
   "chunks": [
@@ -23,53 +28,76 @@
     "gr_pastsimple"
   ],
   "pronunciationFocus": [
-    "pf_ed"
+    "snd_ed_endings"
   ],
   "conversationId": "dlg_endika_followup",
   "activities": [
     {
-      "id": "act_190",
+      "id": "act_195",
       "type": "intro",
       "items": [
         "lex_ago",
-        "lex_holiday"
+        "lex_holiday",
+        "lex_remember",
+        "lex_try",
+        "lex_end",
+        "lex_spend",
+        "lex_almost"
       ]
     },
     {
-      "id": "act_191",
+      "id": "act_196",
       "type": "listen-choose",
       "items": [
         "lex_ago",
-        "lex_holiday"
+        "lex_holiday",
+        "lex_remember",
+        "lex_try",
+        "lex_end",
+        "lex_spend"
       ]
     },
     {
-      "id": "act_192",
+      "id": "act_197",
+      "type": "match",
+      "items": [
+        "lex_ago",
+        "lex_holiday",
+        "lex_remember",
+        "lex_try",
+        "lex_end",
+        "lex_spend"
+      ]
+    },
+    {
+      "id": "act_198",
       "type": "grammar",
       "grammarId": "gr_pastsimple"
     },
     {
-      "id": "act_193",
+      "id": "act_199",
       "type": "phrase-match",
       "items": [
         "chunk_conv_expand"
       ]
     },
     {
-      "id": "act_194",
+      "id": "act_200",
       "type": "typed",
       "items": [
         "lex_ago",
-        "lex_holiday"
+        "lex_holiday",
+        "lex_remember",
+        "lex_try"
       ]
     },
     {
-      "id": "act_195",
+      "id": "act_201",
       "type": "pron-record",
-      "focusId": "pf_ed"
+      "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_196",
+      "id": "act_202",
       "type": "conversation",
       "dialogueId": "dlg_endika_followup"
     }

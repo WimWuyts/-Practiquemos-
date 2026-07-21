@@ -858,6 +858,40 @@
     "needsReview": true
   },
   {
+    "id": "gr_comparatives",
+    "unitId": "u08",
+    "title": {
+      "en": "Comparing: -er / more",
+      "hu": "Összehasonlítás: -er / more"
+    },
+    "purpose": {
+      "en": "Compare two things in a simple way."
+    },
+    "explanation": {
+      "en": "Short words add -er: older, bigger. Long words use more: more interesting. Use 'than' to compare.",
+      "hu": "Rövid szóhoz -er: older, bigger. Hosszú szóhoz more: more interesting. A 'than' köti össze."
+    },
+    "examples": [
+      {
+        "en": "My sister is older than me.",
+        "hu": "A nővérem idősebb nálam."
+      },
+      {
+        "en": "This book is more interesting.",
+        "hu": "Ez a könyv érdekesebb."
+      }
+    ],
+    "useWhen": {
+      "en": "Use this to compare people, places and things."
+    },
+    "check": {
+      "question": "big → ___ (comparative)",
+      "answer": "bigger"
+    },
+    "appearsIn": [],
+    "needsReview": true
+  },
+  {
     "id": "gr_conjunctions",
     "unitId": "u03",
     "title": {

@@ -8,7 +8,7 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const REL = join(ROOT, "releases");
-const VER = "v1.0";
+const VER = "v1.1";
 mkdirSync(REL, { recursive: true });
 
 function zipDir(srcDir, outZip) {

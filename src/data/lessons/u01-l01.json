@@ -44,7 +44,8 @@
     "lex_good",
     "lex_well",
     "lex_a",
-    "lex_an"
+    "lex_an",
+    "lex_thank"
   ],
   "reviewItems": [],
   "chunks": [
@@ -63,7 +64,7 @@
     "gr_articles"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "snd_short_vowels"
   ],
   "conversationId": "dlg_endika_first",
   "activities": [
@@ -108,7 +109,7 @@
     {
       "id": "act_5",
       "type": "spelling-build",
-      "family": "sf_a_e",
+      "family": "sf_magic_e_a",
       "word": "name"
     },
     {
@@ -151,7 +152,7 @@
     {
       "id": "act_11",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "snd_short_vowels"
     },
     {
       "id": "act_12",

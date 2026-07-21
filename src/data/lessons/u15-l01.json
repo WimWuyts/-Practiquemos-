@@ -20,14 +20,18 @@
     "lex_blanket",
     "lex_toilet",
     "lex_safe",
-    "lex_okay"
+    "lex_okay",
+    "lex_fly",
+    "lex_feel",
+    "lex_sad",
+    "lex_worry",
+    "lex_hold"
   ],
   "reviewItems": [
     "lex_was",
     "lex_went",
     "lex_saw",
     "lex_visit",
-    "lex_yesterday_noun",
     "lex_last_week",
     "lex_ago",
     "lex_holiday",
@@ -39,7 +43,14 @@
     "lex_boarding",
     "lex_seat",
     "lex_late",
-    "lex_desk"
+    "lex_desk",
+    "lex_remember",
+    "lex_try",
+    "lex_end",
+    "lex_spend",
+    "lex_last",
+    "lex_almost",
+    "lex_miss"
   ],
   "chunks": [
     "chunk_fly_afraid",
@@ -53,12 +64,12 @@
     "gr_could_requests"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_chunking"
   ],
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_227",
+      "id": "act_233",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -72,7 +83,7 @@
       ]
     },
     {
-      "id": "act_228",
+      "id": "act_234",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -84,7 +95,7 @@
       ]
     },
     {
-      "id": "act_229",
+      "id": "act_235",
       "type": "match",
       "items": [
         "lex_plane",
@@ -96,18 +107,18 @@
       ]
     },
     {
-      "id": "act_230",
+      "id": "act_236",
       "type": "spelling-build",
-      "family": "sf_a_e",
+      "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_231",
+      "id": "act_237",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_232",
+      "id": "act_238",
       "type": "phrase-match",
       "items": [
         "chunk_fly_afraid",
@@ -119,7 +130,7 @@
       ]
     },
     {
-      "id": "act_233",
+      "id": "act_239",
       "type": "typed",
       "items": [
         "lex_plane",
@@ -129,25 +140,25 @@
       ]
     },
     {
-      "id": "act_234",
+      "id": "act_240",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_chunking"
     },
     {
-      "id": "act_235",
+      "id": "act_241",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_236",
+      "id": "act_242",
       "type": "review",
       "items": [
         "lex_was",
         "lex_went",
         "lex_saw",
         "lex_visit",
-        "lex_yesterday_noun",
-        "lex_last_week"
+        "lex_last_week",
+        "lex_ago"
       ]
     }
   ],

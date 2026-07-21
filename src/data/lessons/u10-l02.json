@@ -13,11 +13,20 @@
   "estimatedMinutes": 17,
   "newProductiveItems": [
     "lex_hotel",
-    "lex_room_noun",
     "lex_key",
-    "lex_night_noun",
-    "lex_book_verb",
-    "lex_problem"
+    "lex_problem",
+    "lex_doctor",
+    "lex_nurse",
+    "lex_hospital",
+    "lex_medicine",
+    "lex_ill",
+    "lex_sick",
+    "lex_pain",
+    "lex_better",
+    "lex_rest",
+    "lex_hurt",
+    "lex_pharmacy",
+    "lex_fill"
   ],
   "reviewItems": [],
   "chunks": [
@@ -25,76 +34,72 @@
   ],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_word"
   ],
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_160",
+      "id": "act_163",
       "type": "intro",
       "items": [
         "lex_hotel",
-        "lex_room_noun",
         "lex_key",
-        "lex_night_noun",
-        "lex_book_verb",
-        "lex_problem"
+        "lex_problem",
+        "lex_doctor",
+        "lex_nurse",
+        "lex_hospital",
+        "lex_medicine",
+        "lex_ill"
       ]
-    },
-    {
-      "id": "act_161",
-      "type": "listen-choose",
-      "items": [
-        "lex_hotel",
-        "lex_room_noun",
-        "lex_key",
-        "lex_night_noun",
-        "lex_book_verb",
-        "lex_problem"
-      ]
-    },
-    {
-      "id": "act_162",
-      "type": "match",
-      "items": [
-        "lex_hotel",
-        "lex_room_noun",
-        "lex_key",
-        "lex_night_noun",
-        "lex_book_verb",
-        "lex_problem"
-      ]
-    },
-    {
-      "id": "act_163",
-      "type": "spelling-build",
-      "family": "sf_oo",
-      "word": "room"
     },
     {
       "id": "act_164",
+      "type": "listen-choose",
+      "items": [
+        "lex_hotel",
+        "lex_key",
+        "lex_problem",
+        "lex_doctor",
+        "lex_nurse",
+        "lex_hospital"
+      ]
+    },
+    {
+      "id": "act_165",
+      "type": "match",
+      "items": [
+        "lex_hotel",
+        "lex_key",
+        "lex_problem",
+        "lex_doctor",
+        "lex_nurse",
+        "lex_hospital"
+      ]
+    },
+    {
+      "id": "act_166",
       "type": "phrase-match",
       "items": [
         "chunk_serv_checkin"
       ]
     },
     {
-      "id": "act_165",
+      "id": "act_167",
       "type": "typed",
       "items": [
         "lex_hotel",
-        "lex_room_noun",
         "lex_key",
-        "lex_night_noun"
+        "lex_problem",
+        "lex_doctor"
       ]
     },
     {
-      "id": "act_166",
+      "id": "act_168",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_word"
     },
     {
-      "id": "act_167",
+      "id": "act_169",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

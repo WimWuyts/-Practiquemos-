@@ -14,8 +14,14 @@
   "newProductiveItems": [
     "lex_travel",
     "lex_trip",
-    "lex_visit_noun",
-    "lex_need"
+    "lex_need",
+    "lex_stay",
+    "lex_leave",
+    "lex_arrive",
+    "lex_tourist",
+    "lex_journey",
+    "lex_guide",
+    "lex_decide"
   ],
   "reviewItems": [
     "lex_restaurant",
@@ -24,10 +30,7 @@
     "lex_table",
     "lex_bill",
     "lex_order",
-    "lex_room_noun",
     "lex_key",
-    "lex_night_noun",
-    "lex_book_verb",
     "lex_help",
     "lex_problem",
     "lex_excuse_me",
@@ -35,10 +38,31 @@
     "lex_went",
     "lex_saw",
     "lex_visit",
-    "lex_yesterday_noun",
     "lex_last_week",
     "lex_ago",
-    "lex_holiday"
+    "lex_holiday",
+    "lex_doctor",
+    "lex_nurse",
+    "lex_hospital",
+    "lex_medicine",
+    "lex_ill",
+    "lex_sick",
+    "lex_pain",
+    "lex_better",
+    "lex_rest",
+    "lex_hurt",
+    "lex_pharmacy",
+    "lex_remember",
+    "lex_try",
+    "lex_of_course",
+    "lex_end",
+    "lex_cafe",
+    "lex_fill",
+    "lex_choose",
+    "lex_spend",
+    "lex_last",
+    "lex_almost",
+    "lex_closed"
   ],
   "chunks": [
     "chunk_plan_going"
@@ -47,74 +71,82 @@
     "gr_needhaveto"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_word"
   ],
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_197",
+      "id": "act_203",
       "type": "intro",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_visit_noun",
-        "lex_need"
+        "lex_need",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive",
+        "lex_tourist",
+        "lex_journey"
       ]
     },
     {
-      "id": "act_198",
+      "id": "act_204",
       "type": "listen-choose",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_visit_noun",
-        "lex_need"
+        "lex_need",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive"
       ]
     },
     {
-      "id": "act_199",
+      "id": "act_205",
       "type": "match",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_visit_noun",
-        "lex_need"
+        "lex_need",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive"
       ]
     },
     {
-      "id": "act_200",
+      "id": "act_206",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_201",
+      "id": "act_207",
       "type": "phrase-match",
       "items": [
         "chunk_plan_going"
       ]
     },
     {
-      "id": "act_202",
+      "id": "act_208",
       "type": "typed",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_visit_noun",
-        "lex_need"
+        "lex_need",
+        "lex_stay"
       ]
     },
     {
-      "id": "act_203",
+      "id": "act_209",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_word"
     },
     {
-      "id": "act_204",
+      "id": "act_210",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_205",
+      "id": "act_211",
       "type": "review",
       "items": [
         "lex_restaurant",

@@ -25,7 +25,35 @@
     "lex_in",
     "lex_on",
     "lex_under",
-    "lex_next_to"
+    "lex_next_to",
+    "lex_body",
+    "lex_head",
+    "lex_face",
+    "lex_eye",
+    "lex_ear",
+    "lex_nose",
+    "lex_mouth",
+    "lex_hair",
+    "lex_hand",
+    "lex_arm",
+    "lex_leg",
+    "lex_foot",
+    "lex_tooth",
+    "lex_window",
+    "lex_door",
+    "lex_chair",
+    "lex_bed",
+    "lex_sofa",
+    "lex_wall",
+    "lex_floor",
+    "lex_bathroom",
+    "lex_bedroom",
+    "lex_television",
+    "lex_fridge",
+    "lex_lamp",
+    "lex_flat",
+    "lex_look",
+    "lex_dirty"
   ],
   "reviewItems": [],
   "chunks": [],
@@ -33,7 +61,7 @@
     "gr_thereis"
   ],
   "pronunciationFocus": [
-    "pf_finals"
+    "snd_ng"
   ],
   "conversationId": null,
   "activities": [
@@ -99,7 +127,7 @@
     {
       "id": "act_68",
       "type": "pron-record",
-      "focusId": "pf_finals"
+      "focusId": "snd_ng"
     }
   ],
   "completionRule": {

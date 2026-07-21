@@ -21,7 +21,18 @@
     "lex_but",
     "lex_because",
     "lex_so",
-    "lex_very"
+    "lex_very",
+    "lex_job",
+    "lex_driver",
+    "lex_engineer",
+    "lex_manager",
+    "lex_artist",
+    "lex_big",
+    "lex_small",
+    "lex_long",
+    "lex_new",
+    "lex_bad",
+    "lex_friendly"
   ],
   "reviewItems": [],
   "chunks": [
@@ -29,7 +40,7 @@
   ],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_stress"
+    "snd_h"
   ],
   "conversationId": null,
   "activities": [
@@ -91,7 +102,7 @@
     {
       "id": "act_51",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "snd_h"
     }
   ],
   "completionRule": {

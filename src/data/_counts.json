@@ -1,11 +1,11 @@
 {
-  "productive": 325,
-  "receptive": 63,
+  "productive": 699,
+  "receptive": 76,
   "chunks": 65,
-  "grammar": 26,
+  "grammar": 27,
   "dialogues": 14,
   "lessons": 32,
   "units": 17,
-  "spellingFamilies": 7,
-  "soundFocus": 6
+  "spellingFamilies": 11,
+  "soundFocus": 16
 }

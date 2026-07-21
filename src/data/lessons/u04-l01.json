@@ -28,7 +28,15 @@
     "lex_often",
     "lex_sometimes",
     "lex_never",
-    "lex_every_day"
+    "lex_every_day",
+    "lex_put",
+    "lex_get",
+    "lex_wash",
+    "lex_clean",
+    "lex_sit",
+    "lex_stand",
+    "lex_out",
+    "lex_every"
   ],
   "reviewItems": [
     "lex_hello",
@@ -108,7 +116,21 @@
     "lex_seven",
     "lex_eight",
     "lex_nine",
-    "lex_ten"
+    "lex_ten",
+    "lex_job",
+    "lex_driver",
+    "lex_engineer",
+    "lex_manager",
+    "lex_artist",
+    "lex_big",
+    "lex_small",
+    "lex_long",
+    "lex_new",
+    "lex_bad",
+    "lex_friendly",
+    "lex_thank",
+    "lex_age",
+    "lex_address"
   ],
   "chunks": [],
   "grammarCards": [
@@ -117,7 +139,7 @@
     "gr_frequency"
   ],
   "pronunciationFocus": [
-    "pf_ed"
+    "snd_ed_endings"
   ],
   "conversationId": null,
   "activities": [
@@ -193,7 +215,7 @@
     {
       "id": "act_60",
       "type": "pron-record",
-      "focusId": "pf_ed"
+      "focusId": "snd_ed_endings"
     },
     {
       "id": "act_61",

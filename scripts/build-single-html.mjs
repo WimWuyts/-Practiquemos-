@@ -44,6 +44,7 @@ const dataScript =
 // ---- scripts (concatenation order == dependency order) ----
 const SCRIPT_FILES = [
   "assets/icons.js",
+  "assets/avatars.js",
   "app/dom.js",
   "app/store.js",
   "app/i18n.js",

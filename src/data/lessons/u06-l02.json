@@ -24,7 +24,35 @@
     "lex_can",
     "lex_going_to",
     "lex_free",
-    "lex_busy"
+    "lex_busy",
+    "lex_tree",
+    "lex_flower",
+    "lex_sea",
+    "lex_river",
+    "lex_lake",
+    "lex_mountain",
+    "lex_beach",
+    "lex_sky",
+    "lex_sun",
+    "lex_rain",
+    "lex_snow",
+    "lex_wind",
+    "lex_cloud",
+    "lex_cloudy",
+    "lex_windy",
+    "lex_wet",
+    "lex_dry",
+    "lex_dark",
+    "lex_light",
+    "lex_maybe",
+    "lex_sure",
+    "lex_idea",
+    "lex_umbrella",
+    "lex_cool",
+    "lex_moon",
+    "lex_grass",
+    "lex_field",
+    "lex_star"
   ],
   "reviewItems": [],
   "chunks": [
@@ -39,7 +67,7 @@
     "gr_presentcont"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_question"
   ],
   "conversationId": null,
   "activities": [
@@ -125,7 +153,7 @@
     {
       "id": "act_103",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_question"
     }
   ],
   "completionRule": {

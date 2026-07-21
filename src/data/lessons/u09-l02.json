@@ -13,7 +13,15 @@
   "estimatedMinutes": 17,
   "newProductiveItems": [
     "lex_ticket",
-    "lex_platform"
+    "lex_platform",
+    "lex_drive",
+    "lex_change",
+    "lex_fast",
+    "lex_slow",
+    "lex_by",
+    "lex_which",
+    "lex_catch",
+    "lex_other"
   ],
   "reviewItems": [],
   "chunks": [
@@ -21,45 +29,69 @@
   ],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_finals"
+    "snd_final_cons"
   ],
   "conversationId": null,
   "activities": [
     {
-      "id": "act_146",
+      "id": "act_148",
       "type": "intro",
       "items": [
         "lex_ticket",
-        "lex_platform"
+        "lex_platform",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow",
+        "lex_by",
+        "lex_which"
       ]
     },
     {
-      "id": "act_147",
+      "id": "act_149",
       "type": "listen-choose",
       "items": [
         "lex_ticket",
-        "lex_platform"
+        "lex_platform",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow"
       ]
     },
     {
-      "id": "act_148",
+      "id": "act_150",
+      "type": "match",
+      "items": [
+        "lex_ticket",
+        "lex_platform",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow"
+      ]
+    },
+    {
+      "id": "act_151",
       "type": "phrase-match",
       "items": [
         "chunk_trans_which"
       ]
     },
     {
-      "id": "act_149",
+      "id": "act_152",
       "type": "typed",
       "items": [
         "lex_ticket",
-        "lex_platform"
+        "lex_platform",
+        "lex_drive",
+        "lex_change"
       ]
     },
     {
-      "id": "act_150",
+      "id": "act_153",
       "type": "pron-record",
-      "focusId": "pf_finals"
+      "focusId": "snd_final_cons"
     }
   ],
   "completionRule": {

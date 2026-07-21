@@ -15,12 +15,25 @@
     "lex_tired",
     "lex_glad",
     "lex_welcome",
-    "lex_together"
+    "lex_together",
+    "lex_hope",
+    "lex_angry",
+    "lex_surprised",
+    "lex_excited",
+    "lex_welcome_back",
+    "lex_good_luck",
+    "lex_congratulations",
+    "lex_group",
+    "lex_party",
+    "lex_present",
+    "lex_birthday",
+    "lex_smile",
+    "lex_laugh",
+    "lex_invite"
   ],
   "reviewItems": [
     "lex_travel",
     "lex_trip",
-    "lex_visit_noun",
     "lex_luggage",
     "lex_suitcase",
     "lex_passport",
@@ -35,7 +48,32 @@
     "lex_toilet",
     "lex_land",
     "lex_safe",
-    "lex_okay"
+    "lex_okay",
+    "lex_clothes",
+    "lex_shirt",
+    "lex_trousers",
+    "lex_dress",
+    "lex_shoes",
+    "lex_coat",
+    "lex_hat",
+    "lex_jacket",
+    "lex_wear",
+    "lex_carry",
+    "lex_stay",
+    "lex_leave",
+    "lex_arrive",
+    "lex_fly",
+    "lex_feel",
+    "lex_sad",
+    "lex_bag",
+    "lex_tourist",
+    "lex_journey",
+    "lex_guide",
+    "lex_worry",
+    "lex_decide",
+    "lex_hold",
+    "lex_keep",
+    "lex_heavy"
   ],
   "chunks": [
     "chunk_conv_thanks_visit",
@@ -43,42 +81,50 @@
   ],
   "grammarCards": [],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_sentence"
   ],
   "conversationId": "dlg_balaton",
   "activities": [
     {
-      "id": "act_241",
+      "id": "act_247",
       "type": "intro",
       "items": [
         "lex_tired",
         "lex_glad",
         "lex_welcome",
-        "lex_together"
+        "lex_together",
+        "lex_hope",
+        "lex_angry",
+        "lex_surprised",
+        "lex_excited"
       ]
     },
     {
-      "id": "act_242",
+      "id": "act_248",
       "type": "listen-choose",
       "items": [
         "lex_tired",
         "lex_glad",
         "lex_welcome",
-        "lex_together"
+        "lex_together",
+        "lex_hope",
+        "lex_angry"
       ]
     },
     {
-      "id": "act_243",
+      "id": "act_249",
       "type": "match",
       "items": [
         "lex_tired",
         "lex_glad",
         "lex_welcome",
-        "lex_together"
+        "lex_together",
+        "lex_hope",
+        "lex_angry"
       ]
     },
     {
-      "id": "act_244",
+      "id": "act_250",
       "type": "phrase-match",
       "items": [
         "chunk_conv_thanks_visit",
@@ -86,7 +132,7 @@
       ]
     },
     {
-      "id": "act_245",
+      "id": "act_251",
       "type": "typed",
       "items": [
         "lex_tired",
@@ -96,25 +142,25 @@
       ]
     },
     {
-      "id": "act_246",
+      "id": "act_252",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_sentence"
     },
     {
-      "id": "act_247",
+      "id": "act_253",
       "type": "conversation",
       "dialogueId": "dlg_balaton"
     },
     {
-      "id": "act_248",
+      "id": "act_254",
       "type": "review",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_visit_noun",
         "lex_luggage",
         "lex_suitcase",
-        "lex_passport"
+        "lex_passport",
+        "lex_need"
       ]
     }
   ],

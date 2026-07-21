@@ -64,7 +64,17 @@
     "lex_their",
     "lex_old",
     "lex_young",
-    "lex_married"
+    "lex_married",
+    "lex_baby",
+    "lex_cousin",
+    "lex_grandparents",
+    "lex_people",
+    "lex_man",
+    "lex_woman",
+    "lex_girl",
+    "lex_boy",
+    "lex_person",
+    "lex_with"
   ],
   "chunks": [
     "chunk_ask_where_live"
@@ -73,7 +83,7 @@
     "gr_conjunctions"
   ],
   "pronunciationFocus": [
-    "pf_wv"
+    "snd_wv"
   ],
   "conversationId": null,
   "activities": [
@@ -140,7 +150,7 @@
     {
       "id": "act_44",
       "type": "pron-record",
-      "focusId": "pf_wv"
+      "focusId": "snd_wv"
     },
     {
       "id": "act_45",

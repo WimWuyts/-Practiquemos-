@@ -22,7 +22,46 @@
     "lex_blue",
     "lex_green",
     "lex_white",
-    "lex_black"
+    "lex_black",
+    "lex_animal",
+    "lex_dog",
+    "lex_cat",
+    "lex_bird",
+    "lex_cow",
+    "lex_easy",
+    "lex_difficult",
+    "lex_hard",
+    "lex_important",
+    "lex_different",
+    "lex_same",
+    "lex_lovely",
+    "lex_quiet",
+    "lex_loud",
+    "lex_strong",
+    "lex_yellow",
+    "lex_brown",
+    "lex_grey",
+    "lex_pink",
+    "lex_too",
+    "lex_also",
+    "lex_only",
+    "lex_really",
+    "lex_about",
+    "lex_why",
+    "lex_part",
+    "lex_colour",
+    "lex_wonderful",
+    "lex_great",
+    "lex_true",
+    "lex_real",
+    "lex_best",
+    "lex_perfect",
+    "lex_terrible",
+    "lex_quite",
+    "lex_prefer",
+    "lex_agree",
+    "lex_soft",
+    "lex_pretty"
   ],
   "reviewItems": [],
   "chunks": [
@@ -30,14 +69,16 @@
     "chunk_op_ithink",
     "chunk_op_agree"
   ],
-  "grammarCards": [],
+  "grammarCards": [
+    "gr_comparatives"
+  ],
   "pronunciationFocus": [
-    "pf_th"
+    "snd_th"
   ],
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_129",
+      "id": "act_130",
       "type": "intro",
       "items": [
         "lex_favourite",
@@ -51,7 +92,7 @@
       ]
     },
     {
-      "id": "act_130",
+      "id": "act_131",
       "type": "listen-choose",
       "items": [
         "lex_favourite",
@@ -63,7 +104,7 @@
       ]
     },
     {
-      "id": "act_131",
+      "id": "act_132",
       "type": "match",
       "items": [
         "lex_favourite",
@@ -75,13 +116,18 @@
       ]
     },
     {
-      "id": "act_132",
+      "id": "act_133",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "green"
     },
     {
-      "id": "act_133",
+      "id": "act_134",
+      "type": "grammar",
+      "grammarId": "gr_comparatives"
+    },
+    {
+      "id": "act_135",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_why",
@@ -90,7 +136,7 @@
       ]
     },
     {
-      "id": "act_134",
+      "id": "act_136",
       "type": "typed",
       "items": [
         "lex_favourite",
@@ -100,12 +146,12 @@
       ]
     },
     {
-      "id": "act_135",
+      "id": "act_137",
       "type": "pron-record",
-      "focusId": "pf_th"
+      "focusId": "snd_th"
     },
     {
-      "id": "act_136",
+      "id": "act_138",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

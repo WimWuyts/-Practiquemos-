@@ -21,7 +21,32 @@
     "lex_price",
     "lex_money",
     "lex_much",
-    "lex_many"
+    "lex_many",
+    "lex_wine",
+    "lex_dessert",
+    "lex_delicious",
+    "lex_taste",
+    "lex_give",
+    "lex_pay",
+    "lex_sell",
+    "lex_expensive",
+    "lex_cheap",
+    "lex_full",
+    "lex_empty",
+    "lex_for",
+    "lex_cost",
+    "lex_euro",
+    "lex_card",
+    "lex_cash",
+    "lex_box",
+    "lex_bottle",
+    "lex_glass",
+    "lex_plate",
+    "lex_knife",
+    "lex_spoon",
+    "lex_fork",
+    "lex_cut",
+    "lex_size"
   ],
   "reviewItems": [],
   "chunks": [
@@ -31,7 +56,7 @@
     "gr_wouldlike"
   ],
   "pronunciationFocus": [
-    "pf_ea"
+    "snd_shchj"
   ],
   "conversationId": null,
   "activities": [
@@ -76,7 +101,7 @@
     {
       "id": "act_81",
       "type": "spelling-build",
-      "family": "sf_a_e",
+      "family": "sf_magic_e_a",
       "word": "cake"
     },
     {
@@ -104,7 +129,7 @@
     {
       "id": "act_85",
       "type": "pron-record",
-      "focusId": "pf_ea"
+      "focusId": "snd_shchj"
     }
   ],
   "completionRule": {

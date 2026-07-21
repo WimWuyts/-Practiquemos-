@@ -23,9 +23,14 @@ window.M = window.M || {};
       mount.appendChild(interact);
 
       function who(id) { return CHAR[id] || id; }
-      function bubble(side, name, text) {
-        var b = el("div", { class: "bubble " + side }, [el("div", { class: "who", text: name }), el("span", { text: text })]);
-        chat.appendChild(b); b.scrollIntoView({ block: "nearest" }); return b;
+      function bubble(side, name, text, charId) {
+        var faceId = side === "me" ? "marta" : (charId || dlg.characterId);
+        var turn = el("div", { class: "turn " + side }, [
+          el("span", { class: "face", "aria-hidden": "true", html: M.avatarFor(faceId) }),
+          el("div", { class: "bubble" }, [el("div", { class: "who", text: name }), el("span", { text: text })]),
+        ]);
+        chat.appendChild(turn); turn.scrollIntoView({ block: "nearest" });
+        return turn.querySelector(".bubble");
       }
 
       function go(nodeId) {
@@ -34,9 +39,9 @@ window.M = window.M || {};
         if (!node) return finish();
         // character line
         if (node.speaker) {
-          bubble("them", who(node.speaker), node.text.en);
+          var bb = bubble("them", who(node.speaker), node.text.en, node.speaker);
           M.audio.speak(node.tts || node.text.en);
-          if (M.i18n.helpAvailable() && node.text.hu) chat.lastChild.appendChild(el("div", { class: "muted", style: "margin-top:.3rem", text: node.text.hu }));
+          if (M.i18n.helpAvailable() && node.text.hu) bb.appendChild(el("div", { class: "muted", style: "margin-top:.3rem;font-size:.9rem", text: node.text.hu }));
         }
         var r = node.response || { mode: "end" };
         if (r.mode === "end") return finish();

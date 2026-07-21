@@ -30,7 +30,9 @@
     "lex_seven",
     "lex_eight",
     "lex_nine",
-    "lex_ten"
+    "lex_ten",
+    "lex_age",
+    "lex_address"
   ],
   "reviewItems": [],
   "chunks": [
@@ -41,7 +43,7 @@
     "gr_pronouns"
   ],
   "pronunciationFocus": [
-    "pf_question"
+    "snd_long_vowels"
   ],
   "conversationId": null,
   "activities": [
@@ -115,7 +117,7 @@
     {
       "id": "act_20",
       "type": "pron-record",
-      "focusId": "pf_question"
+      "focusId": "snd_long_vowels"
     }
   ],
   "completionRule": {

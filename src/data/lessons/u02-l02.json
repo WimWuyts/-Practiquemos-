@@ -28,7 +28,8 @@
     "lex_their",
     "lex_old",
     "lex_young",
-    "lex_married"
+    "lex_married",
+    "lex_with"
   ],
   "reviewItems": [],
   "chunks": [
@@ -38,7 +39,7 @@
     "gr_have"
   ],
   "pronunciationFocus": [
-    "pf_finals"
+    "snd_s_endings"
   ],
   "conversationId": "dlg_marlene_first",
   "activities": [
@@ -105,7 +106,7 @@
     {
       "id": "act_36",
       "type": "pron-record",
-      "focusId": "pf_finals"
+      "focusId": "snd_s_endings"
     },
     {
       "id": "act_37",

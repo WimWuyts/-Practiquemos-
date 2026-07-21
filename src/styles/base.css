@@ -1,23 +1,27 @@
 /* Base design system — warm, adult, calm. Designed for a 70+ learner. */
 :root{
-  --bg:#faf6ef;            /* warm cream */
+  /* Direction C — "Rustig & modern": off-white ground, one deep teal accent, soft blush support */
+  --bg:#f5f6f4;            /* soft off-white with a faint green bias */
   --surface:#ffffff;
-  --surface-2:#f3ece0;
-  --ink:#241f1a;           /* dark readable text */
-  --ink-soft:#4d463d;
-  --accent:#2f6b4f;        /* calm green */
+  --surface-2:#eef1ee;
+  --ink:#20241f;           /* deep readable ink */
+  --ink-soft:#5b615a;
+  --accent:#14746f;        /* deep calm teal */
   --accent-ink:#ffffff;
-  --accent-2:#a8551f;      /* warm supportive terracotta */
-  --line:#d9cfbe;
-  --good:#2f6b4f;
-  --good-bg:#e6f0ea;
-  --gentle:#8a5a12;
-  --gentle-bg:#fbf0dc;
-  --focus:#1b4dd8;
-  --radius:16px;
-  --shadow:0 2px 10px rgba(60,45,25,.08);
+  --accent-soft:#eaf4f3;   /* teal tint for chips/icon wells */
+  --accent-2:#c06a4a;      /* warm clay support (used sparingly) */
+  --blush:#e7b6a0;
+  --line:#e3e6e2;
+  --good:#14746f;
+  --good-bg:#e7f1f0;
+  --gentle:#9a6a2b;
+  --gentle-bg:#f6eede;
+  --focus:#14746f;
+  --radius:18px;
+  --shadow:0 10px 30px -18px rgba(20,60,58,.45);
+  --shadow-soft:0 2px 10px rgba(30,50,45,.06);
   --tap:48px;
-  --font: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font: ui-sans-serif, system-ui, "Segoe UI", "Helvetica Neue", "Avenir Next", Roboto, Arial, sans-serif;
   --fs:20px;
 }
 *{box-sizing:border-box}
@@ -57,7 +61,8 @@ button{font-family:inherit}
 
 /* Cards */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:var(--shadow);padding:1.3rem;margin:0 0 1.1rem}
+  box-shadow:var(--shadow-soft);padding:1.4rem;margin:0 0 1.1rem}
+.card.raised{box-shadow:var(--shadow)}
 .card h2{margin-top:0}
 .muted{color:var(--ink-soft)}
 .pill{display:inline-block;padding:.2rem .7rem;border-radius:999px;background:var(--surface-2);

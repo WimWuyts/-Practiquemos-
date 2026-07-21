@@ -18,7 +18,11 @@
     "lex_bill",
     "lex_order",
     "lex_help",
-    "lex_excuse_me"
+    "lex_excuse_me",
+    "lex_of_course",
+    "lex_cafe",
+    "lex_choose",
+    "lex_closed"
   ],
   "reviewItems": [
     "lex_call",
@@ -49,7 +53,82 @@
     "lex_far",
     "lex_first",
     "lex_then",
-    "lex_turn"
+    "lex_turn",
+    "lex_second",
+    "lex_third",
+    "lex_town",
+    "lex_village",
+    "lex_road",
+    "lex_bank",
+    "lex_park",
+    "lex_church",
+    "lex_school",
+    "lex_market",
+    "lex_supermarket",
+    "lex_cinema",
+    "lex_museum",
+    "lex_square",
+    "lex_bridge",
+    "lex_library",
+    "lex_centre",
+    "lex_place",
+    "lex_corner",
+    "lex_open",
+    "lex_close",
+    "lex_stop",
+    "lex_take",
+    "lex_find",
+    "lex_know",
+    "lex_ask",
+    "lex_answer",
+    "lex_tell",
+    "lex_say",
+    "lex_show",
+    "lex_send",
+    "lex_drive",
+    "lex_change",
+    "lex_fast",
+    "lex_slow",
+    "lex_high",
+    "lex_wrong",
+    "lex_here",
+    "lex_there",
+    "lex_just",
+    "lex_up",
+    "lex_down",
+    "lex_to",
+    "lex_of",
+    "lex_by",
+    "lex_over",
+    "lex_behind",
+    "lex_map",
+    "lex_video",
+    "lex_which",
+    "lex_thing",
+    "lex_way",
+    "lex_side",
+    "lex_letter",
+    "lex_news",
+    "lex_office",
+    "lex_building",
+    "lex_talk",
+    "lex_catch",
+    "lex_low",
+    "lex_other",
+    "lex_into",
+    "lex_through",
+    "lex_around",
+    "lex_front",
+    "lex_back",
+    "lex_middle",
+    "lex_top",
+    "lex_ground",
+    "lex_north",
+    "lex_south",
+    "lex_east",
+    "lex_west",
+    "lex_pull",
+    "lex_push"
   ],
   "chunks": [
     "chunk_serv_order",
@@ -62,12 +141,12 @@
     "gr_could_requests"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_sentence"
   ],
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_151",
+      "id": "act_154",
       "type": "intro",
       "items": [
         "lex_restaurant",
@@ -76,11 +155,12 @@
         "lex_bill",
         "lex_order",
         "lex_help",
-        "lex_excuse_me"
+        "lex_excuse_me",
+        "lex_of_course"
       ]
     },
     {
-      "id": "act_152",
+      "id": "act_155",
       "type": "listen-choose",
       "items": [
         "lex_restaurant",
@@ -92,7 +172,7 @@
       ]
     },
     {
-      "id": "act_153",
+      "id": "act_156",
       "type": "match",
       "items": [
         "lex_restaurant",
@@ -104,12 +184,12 @@
       ]
     },
     {
-      "id": "act_154",
+      "id": "act_157",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_155",
+      "id": "act_158",
       "type": "phrase-match",
       "items": [
         "chunk_serv_order",
@@ -120,7 +200,7 @@
       ]
     },
     {
-      "id": "act_156",
+      "id": "act_159",
       "type": "typed",
       "items": [
         "lex_restaurant",
@@ -130,17 +210,17 @@
       ]
     },
     {
-      "id": "act_157",
+      "id": "act_160",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_sentence"
     },
     {
-      "id": "act_158",
+      "id": "act_161",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_159",
+      "id": "act_162",
       "type": "review",
       "items": [
         "lex_call",

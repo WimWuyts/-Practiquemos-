@@ -1,7 +1,7 @@
 # Project state
 
 **Project:** Mirella tante — English with Marta
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Status:** ✅ Stable core-first release. All release-blocking gates pass.
 **Date:** 2026-07
 
@@ -10,9 +10,9 @@
 - [x] Inputs read (source brief, avatar reference, web source register, master prompt).
 - [x] Decisions locked (`docs/ASSUMPTIONS_AND_DECISIONS.md`).
 - [x] Curriculum: 17 units (Unit 0 diagnostic + 16), 32 micro-lessons, spiral review (`docs/CURRICULUM_MATRIX.csv`).
-- [x] Lexicon 325 productive + 63 receptive, chunks 65, all with HU + examples + distractors (`docs/LEXICON_COVERAGE_REPORT.md`).
-- [x] Grammar: 26 functional bilingual spiral cards (`docs/GRAMMAR_SPIRAL_MATRIX.csv`).
-- [x] Pronunciation: 7 spelling-sound families + 6 sound-focus sets, no IPA shown; word-builder engine.
+- [x] Lexicon 699 productive (EVP A1+A2) + 76 receptive, chunks 65, all with HU + examples + distractors (`docs/LEXICON_COVERAGE_REPORT.md`).
+- [x] Grammar: 27 functional bilingual spiral cards (EGP A1) (`docs/GRAMMAR_SPIRAL_MATRIX.csv`).
+- [x] Pronunciation: 2-step path — 11 spelling-sound families + 16 sound/stress sets, no IPA shown; word-builder engine.
 - [x] Conversations: 14 branching guided dialogues, 3 support levels, repair paths.
 - [x] Exercise engine: 12+ reusable data-driven activity types + calm feedback.
 - [x] Adaptive (deterministic) conversation engine with memory schema + variation support.

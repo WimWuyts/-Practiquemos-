@@ -23,7 +23,22 @@
     "lex_turn_off",
     "lex_ready",
     "lex_excellent",
-    "lex_student"
+    "lex_student",
+    "lex_write",
+    "lex_learn",
+    "lex_teach",
+    "lex_begin",
+    "lex_finish",
+    "lex_word",
+    "lex_question",
+    "lex_pen",
+    "lex_pencil",
+    "lex_paper",
+    "lex_page",
+    "lex_classroom",
+    "lex_homework",
+    "lex_practise",
+    "lex_let"
   ],
   "reviewItems": [
     "lex_hobby",
@@ -31,7 +46,6 @@
     "lex_book",
     "lex_film",
     "lex_sport",
-    "lex_garden_noun",
     "lex_swim",
     "lex_dance",
     "lex_sing",
@@ -50,10 +64,7 @@
     "lex_table",
     "lex_bill",
     "lex_order",
-    "lex_room_noun",
     "lex_key",
-    "lex_night_noun",
-    "lex_book_verb",
     "lex_help",
     "lex_problem",
     "lex_excuse_me",
@@ -61,7 +72,74 @@
     "lex_blue",
     "lex_green",
     "lex_white",
-    "lex_black"
+    "lex_black",
+    "lex_doctor",
+    "lex_nurse",
+    "lex_hospital",
+    "lex_medicine",
+    "lex_ill",
+    "lex_sick",
+    "lex_pain",
+    "lex_better",
+    "lex_rest",
+    "lex_hurt",
+    "lex_pharmacy",
+    "lex_animal",
+    "lex_dog",
+    "lex_cat",
+    "lex_bird",
+    "lex_cow",
+    "lex_run",
+    "lex_listen",
+    "lex_easy",
+    "lex_difficult",
+    "lex_hard",
+    "lex_important",
+    "lex_different",
+    "lex_same",
+    "lex_lovely",
+    "lex_quiet",
+    "lex_loud",
+    "lex_strong",
+    "lex_yellow",
+    "lex_brown",
+    "lex_grey",
+    "lex_pink",
+    "lex_too",
+    "lex_also",
+    "lex_only",
+    "lex_really",
+    "lex_about",
+    "lex_of_course",
+    "lex_why",
+    "lex_part",
+    "lex_story",
+    "lex_song",
+    "lex_game",
+    "lex_photo",
+    "lex_picture",
+    "lex_cafe",
+    "lex_colour",
+    "lex_jump",
+    "lex_draw",
+    "lex_paint",
+    "lex_win",
+    "lex_fill",
+    "lex_choose",
+    "lex_wonderful",
+    "lex_great",
+    "lex_true",
+    "lex_real",
+    "lex_best",
+    "lex_perfect",
+    "lex_terrible",
+    "lex_quite",
+    "lex_hate",
+    "lex_prefer",
+    "lex_agree",
+    "lex_closed",
+    "lex_soft",
+    "lex_pretty"
   ],
   "chunks": [
     "chunk_call_camera",
@@ -75,12 +153,12 @@
     "gr_imperatives"
   ],
   "pronunciationFocus": [
-    "pf_stress"
+    "str_chunking"
   ],
   "conversationId": "dlg_student_mic",
   "activities": [
     {
-      "id": "act_168",
+      "id": "act_170",
       "type": "intro",
       "items": [
         "lex_lesson",
@@ -94,7 +172,7 @@
       ]
     },
     {
-      "id": "act_169",
+      "id": "act_171",
       "type": "listen-choose",
       "items": [
         "lex_lesson",
@@ -106,7 +184,7 @@
       ]
     },
     {
-      "id": "act_170",
+      "id": "act_172",
       "type": "match",
       "items": [
         "lex_lesson",
@@ -118,12 +196,18 @@
       ]
     },
     {
-      "id": "act_171",
+      "id": "act_173",
+      "type": "spelling-build",
+      "family": "sf_tion",
+      "word": "question"
+    },
+    {
+      "id": "act_174",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_172",
+      "id": "act_175",
       "type": "phrase-match",
       "items": [
         "chunk_call_camera",
@@ -135,7 +219,7 @@
       ]
     },
     {
-      "id": "act_173",
+      "id": "act_176",
       "type": "typed",
       "items": [
         "lex_lesson",
@@ -145,17 +229,17 @@
       ]
     },
     {
-      "id": "act_174",
+      "id": "act_177",
       "type": "pron-record",
-      "focusId": "pf_stress"
+      "focusId": "str_chunking"
     },
     {
-      "id": "act_175",
+      "id": "act_178",
       "type": "conversation",
       "dialogueId": "dlg_student_mic"
     },
     {
-      "id": "act_176",
+      "id": "act_179",
       "type": "review",
       "items": [
         "lex_hobby",
@@ -163,7 +247,7 @@
         "lex_book",
         "lex_film",
         "lex_sport",
-        "lex_garden_noun"
+        "lex_swim"
       ]
     }
   ],

@@ -29,7 +29,16 @@
     "lex_uncle",
     "lex_child",
     "lex_his",
-    "lex_her"
+    "lex_her",
+    "lex_baby",
+    "lex_cousin",
+    "lex_grandparents",
+    "lex_people",
+    "lex_man",
+    "lex_woman",
+    "lex_girl",
+    "lex_boy",
+    "lex_person"
   ],
   "reviewItems": [
     "lex_hello",
@@ -83,7 +92,10 @@
     "lex_seven",
     "lex_eight",
     "lex_nine",
-    "lex_ten"
+    "lex_ten",
+    "lex_thank",
+    "lex_age",
+    "lex_address"
   ],
   "chunks": [],
   "grammarCards": [
@@ -92,7 +104,7 @@
     "gr_plural"
   ],
   "pronunciationFocus": [
-    "pf_finals"
+    "snd_final_cons"
   ],
   "conversationId": null,
   "activities": [
@@ -162,7 +174,7 @@
     {
       "id": "act_28",
       "type": "pron-record",
-      "focusId": "pf_finals"
+      "focusId": "snd_final_cons"
     },
     {
       "id": "act_29",

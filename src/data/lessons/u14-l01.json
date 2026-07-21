@@ -35,12 +35,51 @@
     "lex_student",
     "lex_travel",
     "lex_trip",
-    "lex_visit_noun",
     "lex_luggage",
     "lex_suitcase",
     "lex_passport",
     "lex_need",
-    "lex_bring"
+    "lex_bring",
+    "lex_clothes",
+    "lex_shirt",
+    "lex_trousers",
+    "lex_dress",
+    "lex_shoes",
+    "lex_coat",
+    "lex_hat",
+    "lex_jacket",
+    "lex_wear",
+    "lex_use",
+    "lex_carry",
+    "lex_stay",
+    "lex_leave",
+    "lex_arrive",
+    "lex_write",
+    "lex_learn",
+    "lex_teach",
+    "lex_begin",
+    "lex_finish",
+    "lex_bag",
+    "lex_tourist",
+    "lex_journey",
+    "lex_guide",
+    "lex_email",
+    "lex_mobile",
+    "lex_app",
+    "lex_word",
+    "lex_question",
+    "lex_pen",
+    "lex_pencil",
+    "lex_paper",
+    "lex_page",
+    "lex_classroom",
+    "lex_homework",
+    "lex_practise",
+    "lex_decide",
+    "lex_save",
+    "lex_keep",
+    "lex_let",
+    "lex_heavy"
   ],
   "chunks": [
     "chunk_air_gate",
@@ -51,12 +90,12 @@
     "gr_could_requests"
   ],
   "pronunciationFocus": [
-    "pf_question"
+    "str_question"
   ],
   "conversationId": "dlg_airport",
   "activities": [
     {
-      "id": "act_211",
+      "id": "act_217",
       "type": "intro",
       "items": [
         "lex_airport",
@@ -68,7 +107,7 @@
       ]
     },
     {
-      "id": "act_212",
+      "id": "act_218",
       "type": "listen-choose",
       "items": [
         "lex_airport",
@@ -80,7 +119,7 @@
       ]
     },
     {
-      "id": "act_213",
+      "id": "act_219",
       "type": "match",
       "items": [
         "lex_airport",
@@ -92,18 +131,18 @@
       ]
     },
     {
-      "id": "act_214",
+      "id": "act_220",
       "type": "spelling-build",
-      "family": "sf_ight",
-      "word": "flight"
+      "family": "sf_ar_or",
+      "word": "airport"
     },
     {
-      "id": "act_215",
+      "id": "act_221",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_216",
+      "id": "act_222",
       "type": "phrase-match",
       "items": [
         "chunk_air_gate",
@@ -112,7 +151,7 @@
       ]
     },
     {
-      "id": "act_217",
+      "id": "act_223",
       "type": "typed",
       "items": [
         "lex_airport",
@@ -122,17 +161,17 @@
       ]
     },
     {
-      "id": "act_218",
+      "id": "act_224",
       "type": "pron-record",
-      "focusId": "pf_question"
+      "focusId": "str_question"
     },
     {
-      "id": "act_219",
+      "id": "act_225",
       "type": "conversation",
       "dialogueId": "dlg_airport"
     },
     {
-      "id": "act_220",
+      "id": "act_226",
       "type": "review",
       "items": [
         "lex_lesson",

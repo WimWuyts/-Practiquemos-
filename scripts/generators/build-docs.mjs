@@ -54,13 +54,19 @@ prod.forEach((l) => { encounters[l.id] = (l.firstLesson ? 1 : 0) + (l.reviewLess
 Object.values(lessons).forEach((L) => L.activities.forEach((a) => (a.items || []).forEach((id) => { if (encounters[id] != null) encounters[id]++; })));
 const under3 = prod.filter((l) => encounters[l.id] < 3).length;
 
+const a1 = prod.filter((l) => l.level === "A1").length;
+const a2 = prod.filter((l) => l.level === "A2").length;
 let md = `# Lexicon coverage report\n\nGenerated from source data. Hungarian is machine-drafted and flagged in \`HUNGARIAN_REVIEW_QUEUE.csv\`.\n\n`;
-md += `## Counts (v1.0, core-first release)\n\n`;
-md += `| Category | Count | Contract target | Status |\n|---|---|---|---|\n`;
-md += `| Productive individual words | ${prod.length} | 730–770 | core subset, fully wired |\n`;
-md += `| Productive chunks / frames | ${chunks.length} | 240–260 | core subset, fully wired |\n`;
-md += `| Additional receptive items | ${rec.length} | 320–380 | core subset |\n\n`;
-md += `The v1.0 release delivers a **fully-wired core corpus** (every item appears in real lessons, exercises and/or conversations) rather than the full contract count. The engine, schema and authoring pipeline support scaling to the full targets by extending the source lists in \`scripts/generators/lexicon-source.mjs\` and \`chunks-source.mjs\` and re-running the build. See \`OPEN_IMPROVEMENTS.md\`.\n\n`;
+md += `## A1 coverage — anchoring\n\nVocabulary is anchored to the **English Vocabulary Profile (EVP)** A1 core, prioritised by general frequency, and cross-checked against Marta's real-life themes. Grammar is anchored to the **English Grammar Profile (EGP)** A1 inventory. Together these form the internal coverage matrix that guarantees the app covers A1, with a small, deliberate layer of A2 "beginnings" where real life needs it (travel, past, plans, polite requests). A2 items are flagged internally and never labelled to Marta.\n\n`;
+md += `## Counts (v1.1)\n\n`;
+md += `| Category | Count | Note |\n|---|---|---|\n`;
+md += `| Productive individual words | ${prod.length} | A1: ${a1} · A2: ${a2} |\n`;
+md += `| Productive chunks / frames | ${chunks.length} | fully wired |\n`;
+md += `| Additional receptive items | ${rec.length} | listening/reading support |\n\n`;
+md += `Every item appears in real lessons, exercises and/or conversations. The vocabulary target (~700) is met; chunks and receptive items grow via the same generator pipeline (see \`OPEN_IMPROVEMENTS.md\`).\n\n`;
+md += `## EVP × EGP internal matrix (summary)\n\nEach A1 grammar point (EGP) is paired with the vocabulary domains (EVP) that exercise it. This matrix is the internal reference used to confirm A1 coverage; it is acted upon, not shipped as a learner file.\n\n`;
+md += `| A1 grammar (EGP) | Exercised by vocabulary domains (EVP) |\n|---|---|\n`;
+md += `| be / pronouns / questions | identity, family, countries |\n| a/an, plurals, this/that | family, home, food |\n| possessives, have/has | family, home |\n| present simple, do/does, frequency | daily-life, home |\n| there is/are, prepositions of place | home, town |\n| some/any, much/many | food, shopping |\n| can/can't, imperatives | town, transport, teaching |\n| would like, could you/I | food, services, hotel, flying |\n| present continuous, going to | plans, travel, phone |\n| like/love + -ing, comparatives | hobbies, opinions |\n| was/were, past simple | past, travel, family |\n| need to / have to | travel, airport |\n\n`;
 md += `## Coverage rules\n\n- Each productive word appears in first lesson + spiral review lessons + generated activities.\n- Productive items with fewer than 3 encounters: **${under3}** (target: 0; addressed as the corpus grows).\n- Every productive word has a Hungarian field and at least one example.\n\n`;
 md += `## By theme\n\n| Theme | Productive | Receptive |\n|---|---|---|\n`;
 Object.keys(themes).sort().forEach((t) => md += `| ${t} | ${themes[t].p} | ${themes[t].r} |\n`);
