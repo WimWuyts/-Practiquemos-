@@ -1,4 +1,4 @@
-# QA report — v1.0
+# QA report — v1.3
 
 Automated where possible (headless Chromium via `tests/smoke.mjs`, content validator via `scripts/validate-content.mjs`), plus manual code/content audit.
 

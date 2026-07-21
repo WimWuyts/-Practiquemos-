@@ -70,7 +70,25 @@ window.M = window.M || {};
       ]),
       el("div", { class: "btn-row" }, [el("button", { class: "btn secondary", onclick: function () { M.router.go("conversations"); } }, [M.i18n.t("nav.conversations")])]),
     ]));
-    mount.appendChild(el("p", { class: "muted", style: "text-align:center;margin-top:1rem", text: M.i18n.t("home.monthly.note") }));
+    var monthly = M.data.monthlyAvailable || [];
+    if (monthly.length) {
+      var mc = el("div", { class: "card", style: "margin-top:1rem" }, [
+        el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [
+          el("span", { class: "iconwell", style: "--tint:#f4eee6;--tintink:#a5772e", html: dom.icon("calendar"), "aria-hidden": "true" }),
+          el("div", { style: "flex:1" }, [el("h2", { style: "margin:0;font-size:1.1rem", text: M.i18n.label("home.monthly") })]),
+        ]),
+      ]);
+      monthly.forEach(function (m) {
+        mc.appendChild(el("div", { class: "btn-row" }, [
+          el("button", { class: "btn secondary", onclick: function () { M.router.go("lesson/" + m.id); } }, [
+            (M.store.isLessonDone(m.id) ? "✓ " : "") + m.title.en + (M.i18n.helpAvailable() ? " · " + m.title.hu : ""),
+          ]),
+        ]));
+      });
+      mount.appendChild(mc);
+    } else {
+      mount.appendChild(el("p", { class: "muted", style: "text-align:center;margin-top:1rem", text: M.i18n.t("home.monthly.note") }));
+    }
   }
 
   function pickRecommended() {

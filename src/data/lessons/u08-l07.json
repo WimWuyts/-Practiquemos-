@@ -99,14 +99,14 @@
           "hu": "Miért szereted?"
         },
         {
-          "text": "This is a ___.",
+          "text": "This is my favourite ___.",
           "answer": "part",
           "options": [
             "part",
             "moment",
             "thing"
           ],
-          "hu": "(rész)"
+          "hu": "Ez a kedvenc részem."
         },
         {
           "text": "This is a ___.",

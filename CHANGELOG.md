@@ -2,6 +2,26 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.3.0] — 2026-07 — "Everything green": full contract coverage
+
+Delivered in three waves; validator passes with **0 errors and 0 warnings**.
+
+### Wave A — coverage to contract targets
+- Productive words **699 → 751** (target 730–770), receptive **76 → 331** (320–380), chunks **137 → 246** (240–260).
+- New exercise type: **listening comprehension** (family voice messages, airport/cabin announcements, teaching) with slow replay + one question.
+
+### Wave B — lesson structure
+- Micro-lessons **32 → 103**: the generator redistributes each unit's vocabulary into lessons of **≤8 new words** (contract: ≤10), keeping hand-authored anchor lessons and auto-generating practice lessons.
+
+### Wave C — experience & completeness
+- Guided conversations **14 → 21** (added Kira video call, Esztella visit, Martin, David, Panna, Christmas dinner at Aunt Eva's, Agárd summer party) with new family avatars (Eva, Ákos).
+- **Conversation variation:** alternate opener lines so repeat sessions aren't identical.
+- **Natural examples:** curated function/abstract words; safe grammatical fallback elsewhere.
+- **First monthly lesson authored** (`month-01`, "A spring visit to Kira") — runnable from Home, demonstrating the extension workflow.
+
+### Still requires a human
+- **Hungarian native proofread** (`HUNGARIAN_REVIEW_QUEUE.csv`) — by definition a person's sign-off; all Hungarian is drafted and centralised for review.
+
 ## [1.2.0] — 2026-07 — Natural examples, full pronunciation coverage, more exercises
 
 ### Added — exercise variety (6 new types, 18 total)

@@ -65,7 +65,21 @@
             }
           ],
           "fallbackNode": null
-        }
+        },
+        "alts": [
+          {
+            "en": "Hello Marta! Nice to meet you. How are you?",
+            "hu": "Szia Marta! Örülök, hogy megismerhetlek. Hogy vagy?"
+          },
+          {
+            "en": "Hi Marta! It's so nice to meet you at last. How are you today?",
+            "hu": "Szia Marta! De jó, hogy végre találkozunk. Hogy vagy ma?"
+          },
+          {
+            "en": "Hello Marta! Kira told me a lot about you. How are you?",
+            "hu": "Szia Marta! Kira sokat mesélt rólad. Hogy vagy?"
+          }
+        ]
       },
       "n1b": {
         "speaker": "endika",
@@ -738,7 +752,21 @@
             }
           ],
           "fallbackNode": null
-        }
+        },
+        "alts": [
+          {
+            "en": "Hi auntie! Can you hear me?",
+            "hu": "Szia nénikém! Hallasz engem?"
+          },
+          {
+            "en": "Hello auntie! It's Kira. Can you hear me okay?",
+            "hu": "Szia nénikém! Kira vagyok. Jól hallasz?"
+          },
+          {
+            "en": "Hi auntie, it's me! Can you hear me now?",
+            "hu": "Szia nénikém, én vagyok! Most hallasz?"
+          }
+        ]
       },
       "n1b": {
         "speaker": "kira",
@@ -2534,6 +2562,1113 @@
           "hu": "Olyan jó, hogy az egész család együtt van!"
         },
         "tts": "It's so nice to have the whole family together!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_kira_video",
+    "characterId": "kira",
+    "scene": {
+      "en": "A video call with Kira",
+      "hu": "Videóhívás Kirával"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "kira",
+        "text": {
+          "en": "Hi auntie! Can you see me now?",
+          "hu": "Szia nénikém! Most látsz engem?"
+        },
+        "tts": "Hi auntie! Can you see me now?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, I can see you well!",
+                "hu": "Igen, jól látlak!"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Great, the picture is clear.",
+                "hu": "Remek, tiszta a kép."
+              }
+            },
+            {
+              "text": {
+                "en": "Please turn your camera on.",
+                "hu": "Kérlek, kapcsold be a kamerát."
+              },
+              "correct": true,
+              "next": "n1b",
+              "feedback": {
+                "en": "Good useful phrase!",
+                "hu": "Jó, hasznos mondat!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n1b": {
+        "speaker": "kira",
+        "text": {
+          "en": "Is it better now?",
+          "hu": "Most jobb?"
+        },
+        "tts": "Is it better now?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, now I can see you.",
+                "hu": "Igen, most látlak."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Lovely.",
+                "hu": "Kedves."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "kira",
+        "text": {
+          "en": "I'm cooking dinner. What are you doing?",
+          "hu": "Vacsorát főzök. Te mit csinálsz?"
+        },
+        "tts": "I'm cooking dinner. What are you doing?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "I'm reading a book.",
+                "hu": "Könyvet olvasok."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Nice, present continuous!",
+                "hu": "Szuper, folyamatos jelen!"
+              }
+            },
+            {
+              "text": {
+                "en": "I'm making coffee.",
+                "hu": "Kávét készítek."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Perfect.",
+                "hu": "Tökéletes."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "kira",
+        "text": {
+          "en": "Shall we cook together next time on a video call?",
+          "hu": "Főzzünk együtt legközelebb videóhíváson?"
+        },
+        "tts": "Shall we cook together next time on a video call?",
+        "huHelp": "",
+        "response": {
+          "mode": "build",
+          "blocks": [
+            "Yes",
+            "that",
+            "is",
+            "a",
+            "good",
+            "idea"
+          ],
+          "modelAnswer": "Yes that is a good idea",
+          "accepted": [
+            "Yes that is a good idea",
+            "Yes it is a good idea"
+          ],
+          "next": "n4",
+          "hints": [
+            "Yes, that is a good idea."
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "kira",
+        "text": {
+          "en": "Wonderful! Talk soon, auntie. Bye!",
+          "hu": "Csodás! Hamarosan beszélünk, nénikém. Szia!"
+        },
+        "tts": "Wonderful! Talk soon, auntie. Bye!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_esztella_visit",
+    "characterId": "esztella",
+    "scene": {
+      "en": "Planning a visit to Prague with Esztella",
+      "hu": "Prágai látogatás tervezése Esztellával"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "esztella",
+        "text": {
+          "en": "Auntie, would you like to visit me in Prague?",
+          "hu": "Néni, meglátogatnál Prágában?"
+        },
+        "tts": "Auntie, would you like to visit me in Prague?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, I'd love to!",
+                "hu": "Igen, nagyon szívesen!"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Wonderful!",
+                "hu": "Csodás!"
+              }
+            },
+            {
+              "text": {
+                "en": "Yes, but I'm afraid of flying.",
+                "hu": "Igen, de félek a repüléstől."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Don't worry, we can take the train.",
+                "hu": "Ne aggódj, mehetünk vonattal."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "esztella",
+        "text": {
+          "en": "We can take the train. When would you like to come?",
+          "hu": "Mehetünk vonattal. Mikor szeretnél jönni?"
+        },
+        "tts": "We can take the train. When would you like to come?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "In the summer, maybe in July.",
+                "hu": "Nyáron, talán júliusban."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Perfect, the weather is lovely then.",
+                "hu": "Tökéletes, olyankor szép az idő."
+              }
+            },
+            {
+              "text": {
+                "en": "Next month, if that's okay.",
+                "hu": "Jövő hónapban, ha jó."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Great, I can't wait!",
+                "hu": "Remek, alig várom!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "esztella",
+        "text": {
+          "en": "What would you like to see in Prague?",
+          "hu": "Mit szeretnél látni Prágában?"
+        },
+        "tts": "What would you like to see in Prague?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "castle",
+            "city",
+            "bridge",
+            "river",
+            "old town",
+            "museum",
+            "walk"
+          ],
+          "keywords": [
+            "castle",
+            "city",
+            "bridge",
+            "river",
+            "old",
+            "museum",
+            "see",
+            "walk"
+          ],
+          "modelAnswer": "I'd like to see the old town.",
+          "next": "n4",
+          "hints": [
+            "I'd like to see the ..."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "esztella",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "I'd like to see the old town.",
+                "hu": "Szeretném látni az óvárost."
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Lovely choice.",
+                "hu": "Szép választás."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "esztella",
+        "text": {
+          "en": "It will be a wonderful visit. See you in Prague!",
+          "hu": "Csodás látogatás lesz. Találkozunk Prágában!"
+        },
+        "tts": "It will be a wonderful visit. See you in Prague!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_martin_hobbies",
+    "characterId": "martin",
+    "scene": {
+      "en": "Talking about sport with Martin",
+      "hu": "Sportról Martinnal"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "martin",
+        "text": {
+          "en": "Hi Aunt Marta! I have a rowing competition on Saturday.",
+          "hu": "Szia Marta néni! Szombaton evezős versenyem van."
+        },
+        "tts": "Hi Aunt Marta! I have a rowing competition on Saturday.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "How exciting! Do you train often?",
+                "hu": "De izgalmas! Sokat edzel?"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Great follow-up question!",
+                "hu": "Remek visszakérdezés!"
+              }
+            },
+            {
+              "text": {
+                "en": "Good luck!",
+                "hu": "Sok sikert!"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Thank you, auntie!",
+                "hu": "Köszönöm, néni!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "martin",
+        "text": {
+          "en": "Yes, I train every morning before school.",
+          "hu": "Igen, minden reggel edzek suli előtt."
+        },
+        "tts": "Yes, I train every morning before school.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "That's a lot of work. Well done!",
+                "hu": "Ez sok munka. Ügyes vagy!"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Thank you!",
+                "hu": "Köszönöm!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "martin",
+        "text": {
+          "en": "Do you like sport, auntie?",
+          "hu": "Szereted a sportot, néni?"
+        },
+        "tts": "Do you like sport, auntie?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "walk",
+            "swim",
+            "like",
+            "yes",
+            "no",
+            "young"
+          ],
+          "keywords": [
+            "walk",
+            "swim",
+            "like",
+            "young",
+            "watch",
+            "yes",
+            "no"
+          ],
+          "modelAnswer": "I liked swimming when I was young.",
+          "next": "n4",
+          "hints": [
+            "I like ... / I liked ... when I was young."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "martin",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "I like walking every day.",
+                "hu": "Minden nap szeretek sétálni."
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "That's great for you!",
+                "hu": "Ez nagyszerű!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "martin",
+        "text": {
+          "en": "Come and watch my next race, auntie!",
+          "hu": "Gyere el a következő versenyemre, néni!"
+        },
+        "tts": "Come and watch my next race, auntie!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_david_tech",
+    "characterId": "david",
+    "scene": {
+      "en": "Talking about studies with David",
+      "hu": "Tanulásról Daviddal"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "david",
+        "text": {
+          "en": "Hi auntie! I'm studying computer science at university.",
+          "hu": "Szia néni! Informatikát tanulok az egyetemen."
+        },
+        "tts": "Hi auntie! I'm studying computer science at university.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "How interesting! Do you like it?",
+                "hu": "De érdekes! Szereted?"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Yes, I love it!",
+                "hu": "Igen, imádom!"
+              }
+            },
+            {
+              "text": {
+                "en": "That sounds difficult!",
+                "hu": "Ez nehéznek hangzik!"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "It is, but it's fun.",
+                "hu": "Az, de jó móka."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "david",
+        "text": {
+          "en": "I want to start a technology company one day.",
+          "hu": "Egy nap tech céget szeretnék indítani."
+        },
+        "tts": "I want to start a technology company one day.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "That's a wonderful plan!",
+                "hu": "Ez remek terv!"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Thank you, auntie!",
+                "hu": "Köszönöm, néni!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "david",
+        "text": {
+          "en": "Do you use a computer, auntie?",
+          "hu": "Használsz számítógépet, néni?"
+        },
+        "tts": "Do you use a computer, auntie?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "yes",
+            "computer",
+            "teach",
+            "online",
+            "email",
+            "call"
+          ],
+          "keywords": [
+            "yes",
+            "computer",
+            "teach",
+            "online",
+            "email",
+            "video"
+          ],
+          "modelAnswer": "Yes, I teach online on my computer.",
+          "next": "n4",
+          "hints": [
+            "Yes, I use it to ..."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "david",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, I teach online on my computer.",
+                "hu": "Igen, online tanítok a számítógépemen."
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "That's great, auntie!",
+                "hu": "Ez nagyszerű, néni!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "david",
+        "text": {
+          "en": "If you need help with technology, just call me!",
+          "hu": "Ha segítség kell a technikával, csak hívj!"
+        },
+        "tts": "If you need help with technology, just call me!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_panna_horses",
+    "characterId": "panna",
+    "scene": {
+      "en": "Talking about horses with Panna",
+      "hu": "Lovakról Pannával"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "panna",
+        "text": {
+          "en": "Hi Aunt Marta! I went horse riding today.",
+          "hu": "Szia Marta néni! Ma lovagoltam."
+        },
+        "tts": "Hi Aunt Marta! I went horse riding today.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "How lovely! Do you have a horse?",
+                "hu": "De jó! Van lovad?"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Great question!",
+                "hu": "Remek kérdés!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "panna",
+        "text": {
+          "en": "Not my own, but I ride at a farm near us.",
+          "hu": "Nem sajátom, de egy közeli farmon lovagolok."
+        },
+        "tts": "Not my own, but I ride at a farm near us.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "What is the horse's name?",
+                "hu": "Mi a ló neve?"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Her name is Luna!",
+                "hu": "Lunának hívják!"
+              }
+            },
+            {
+              "text": {
+                "en": "That sounds wonderful!",
+                "hu": "Ez csodásan hangzik!"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "It is! I love it.",
+                "hu": "Az! Imádom."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "panna",
+        "text": {
+          "en": "Do you like animals, auntie?",
+          "hu": "Szereted az állatokat, néni?"
+        },
+        "tts": "Do you like animals, auntie?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "yes",
+            "dog",
+            "cat",
+            "animal",
+            "like",
+            "love",
+            "no"
+          ],
+          "keywords": [
+            "yes",
+            "dog",
+            "cat",
+            "animal",
+            "like",
+            "love",
+            "no"
+          ],
+          "modelAnswer": "Yes, I like cats and dogs.",
+          "next": "n4",
+          "hints": [
+            "Yes, I like ..."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "panna",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, I love animals.",
+                "hu": "Igen, imádom az állatokat."
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Me too!",
+                "hu": "Én is!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "panna",
+        "text": {
+          "en": "I'll send you a photo of Luna, auntie!",
+          "hu": "Küldök egy képet Lunáról, néni!"
+        },
+        "tts": "I'll send you a photo of Luna, auntie!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_christmas",
+    "characterId": "eva",
+    "scene": {
+      "en": "Christmas dinner at Aunt Eva's",
+      "hu": "Karácsonyi vacsora Éva néninél"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "eva",
+        "text": {
+          "en": "Merry Christmas, Marta! Welcome. Please come in.",
+          "hu": "Boldog karácsonyt, Marta! Isten hozott. Gyere be."
+        },
+        "tts": "Merry Christmas, Marta! Welcome. Please come in.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Merry Christmas, Eva! Thank you.",
+                "hu": "Boldog karácsonyt, Éva! Köszönöm."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "So glad you came!",
+                "hu": "Úgy örülök, hogy eljöttél!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "eva",
+        "text": {
+          "en": "Would you like some soup? It's hot and ready.",
+          "hu": "Kérsz egy kis levest? Forró és kész."
+        },
+        "tts": "Would you like some soup? It's hot and ready.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, please. It smells wonderful.",
+                "hu": "Igen, kérek. Csodálatos illata van."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Thank you, dear.",
+                "hu": "Köszönöm, drágám."
+              }
+            },
+            {
+              "text": {
+                "en": "Just a little, thank you.",
+                "hu": "Csak egy kicsit, köszönöm."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Of course!",
+                "hu": "Persze!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "eva",
+        "text": {
+          "en": "Marlene is here too. Would you like to say hello to her?",
+          "hu": "Marlene is itt. Szeretnél köszönni neki?"
+        },
+        "tts": "Marlene is here too. Would you like to say hello to her?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "hello",
+            "nice",
+            "meet",
+            "marlene",
+            "yes",
+            "how are you"
+          ],
+          "keywords": [
+            "hello",
+            "nice",
+            "meet",
+            "yes",
+            "how"
+          ],
+          "modelAnswer": "Hello Marlene, nice to see you.",
+          "next": "n4",
+          "hints": [
+            "Hello Marlene, ..."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "eva",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Hello Marlene, nice to see you!",
+                "hu": "Szia Marlene, örülök, hogy látlak!"
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Lovely.",
+                "hu": "Kedves."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "eva",
+        "text": {
+          "en": "It's so nice to have everyone together at Christmas.",
+          "hu": "Olyan jó, hogy karácsonykor mind együtt vagyunk."
+        },
+        "tts": "It's so nice to have everyone together at Christmas.",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_agard",
+    "characterId": "akos",
+    "scene": {
+      "en": "Summer party at the Agárd weekend house",
+      "hu": "Nyári parti az agárdi hétvégi házban"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "akos",
+        "text": {
+          "en": "It's a lovely evening for a barbecue, isn't it?",
+          "hu": "Csodás este ez egy szalonnasütéshez, ugye?"
+        },
+        "tts": "It's a lovely evening for a barbecue, isn't it?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, it's warm and the sky is clear.",
+                "hu": "Igen, meleg van és tiszta az ég."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Perfect weather talk!",
+                "hu": "Tökéletes időjárás-beszéd!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "akos",
+        "text": {
+          "en": "Endika is here with Kira. Would you like to talk to him?",
+          "hu": "Endika is itt Kirával. Szeretnél beszélni vele?"
+        },
+        "tts": "Endika is here with Kira. Would you like to talk to him?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes! Hello Endika, how are you?",
+                "hu": "Igen! Szia Endika, hogy vagy?"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "He's happy to see you!",
+                "hu": "Örül, hogy lát!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "endika",
+        "text": {
+          "en": "Hello Marta! Are you enjoying the party?",
+          "hu": "Szia Marta! Élvezed a partit?"
+        },
+        "tts": "Hello Marta! Are you enjoying the party?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "yes",
+            "food",
+            "family",
+            "nice",
+            "lovely",
+            "enjoy",
+            "happy"
+          ],
+          "keywords": [
+            "yes",
+            "food",
+            "family",
+            "nice",
+            "lovely",
+            "enjoy",
+            "happy"
+          ],
+          "modelAnswer": "Yes, the food is delicious and the family is here.",
+          "next": "n4",
+          "hints": [
+            "Yes, ..."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "endika",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, I'm very happy. The food is delicious!",
+                "hu": "Igen, nagyon boldog vagyok. Az étel finom!"
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Me too!",
+                "hu": "Én is!"
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "akos",
+        "text": {
+          "en": "Let's sit by the fire together. It's a beautiful night.",
+          "hu": "Üljünk a tűz mellé együtt. Gyönyörű este van."
+        },
+        "tts": "Let's sit by the fire together. It's a beautiful night.",
         "huHelp": "",
         "response": {
           "mode": "end"

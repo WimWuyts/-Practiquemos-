@@ -1,5 +1,9 @@
 # Open improvements (post-v1.0)
 
+> **v1.3 status:** the count and structure gates are all **green** — 751 productive words, 246 chunks, 331 receptive, 103 micro-lessons, 21 conversations, full pronunciation coverage, 0 validator errors/warnings. The only item that cannot be auto-completed is the **Hungarian native proofread** (human sign-off). The points below are further polish.
+
+
+
 None of these are release blockers. They are the planned path from the core-first v1.0 to the full contract breadth.
 
 ## Content growth (highest value)

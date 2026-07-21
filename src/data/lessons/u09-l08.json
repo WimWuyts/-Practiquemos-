@@ -83,24 +83,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "Is this the ___ to the station?",
           "answer": "way",
           "options": [
             "way",
             "street",
             "left"
           ],
-          "hu": "(út / mód)"
+          "hu": "Erre van az állomás?"
         },
         {
-          "text": "This is a ___.",
+          "text": "The shop is on the other ___.",
           "answer": "side",
           "options": [
             "side",
             "street",
             "left"
           ],
-          "hu": "(oldal)"
+          "hu": "A bolt a másik oldalon van."
         },
         {
           "text": "This is an ___.",

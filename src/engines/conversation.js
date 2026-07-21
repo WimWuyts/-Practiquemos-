@@ -3,7 +3,8 @@ window.M = window.M || {};
 (function (M) {
   var CHAR = {
     endika: "Endika", marlene: "Marlene", kira: "Kira", esztella: "Esztella", mirella: "Mirella",
-    peter: "Peter", emma: "Emma", margo: "Margó", student: "Student", parent: "Parent",
+    peter: "Peter", emma: "Emma", margo: "Margó", martin: "Martin", david: "David", panna: "Panna",
+    eva: "Aunt Eva", akos: "Ákos", student: "Student", parent: "Parent",
     agent: "Airport staff", attendant: "Flight attendant", waiter: "Waiter", receptionist: "Receptionist",
   };
 
@@ -37,8 +38,14 @@ window.M = window.M || {};
         dom.clear(interact);
         var node = dlg.nodes[nodeId];
         if (!node) return finish();
-        // character line
+        // character line (with optional variation for non-identical repeats)
         if (node.speaker) {
+          var line = node.text;
+          if (node.alts && node.alts.length) {
+            M._seed = (M._seed * 9301 + 49297) % 233280;
+            line = node.alts[Math.floor(M._seed / 233280 * node.alts.length)] || node.text;
+          }
+          node = Object.assign({}, node, { text: line, tts: line.en });
           var bb = bubble("them", who(node.speaker), node.text.en, node.speaker);
           M.audio.speak(node.tts || node.text.en);
           if (M.i18n.helpAvailable() && node.text.hu) bb.appendChild(el("div", { class: "muted", style: "margin-top:.3rem;font-size:.9rem", text: node.text.hu }));

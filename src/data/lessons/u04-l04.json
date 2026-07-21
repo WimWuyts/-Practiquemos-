@@ -113,14 +113,14 @@
           "hu": "(vannak (ott))"
         },
         {
-          "text": "___ — a useful word.",
+          "text": "The keys are ___ the kitchen.",
           "answer": "in",
           "options": [
             "in",
             "on",
             "under"
           ],
-          "hu": "(-ban / -ben)"
+          "hu": "A kulcsok a konyhában vannak."
         }
       ]
     },

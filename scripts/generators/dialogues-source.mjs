@@ -33,6 +33,8 @@ function end(speaker, en, hu, opts = {}) {
   return { speaker, text: { en, hu }, tts: opts.tts || en, huHelp: opts.huHelp || "", response: { mode: "end" } };
 }
 const c = (en, hu, correct, next, fbEn, fbHu) => ({ text: { en, hu }, correct, next, feedback: { en: fbEn, hu: fbHu } });
+// attach alternate opening lines so repeat sessions are not identical
+const withAlts = (node, alts) => { node.alts = alts; return node; };
 
 export const DIALOGUES = [
   // ---------- Endika first conversation ----------
@@ -42,10 +44,14 @@ export const DIALOGUES = [
     supportLevels: ["choose", "build", "type-speak"], startNode: "n1",
     memorySchema: { martaMood: "string" },
     nodes: {
-      n1: choose("endika", "Hello Marta! Nice to meet you. How are you?", "Szia Marta! Örülök, hogy megismerhetlek. Hogy vagy?", [
+      n1: withAlts(choose("endika", "Hello Marta! Nice to meet you. How are you?", "Szia Marta! Örülök, hogy megismerhetlek. Hogy vagy?", [
         c("I'm fine, thank you. And you?", "Jól vagyok, köszönöm. És te?", true, "n2", "Lovely, a warm and natural reply.", "Kedves, meleg és természetes válasz."),
         c("Yes.", "Igen.", false, "n1b", "That's a little short. Try a greeting reply.", "Ez kicsit rövid. Próbálj köszönéssel válaszolni."),
         c("Goodbye.", "Viszlát.", false, "n1b", "Almost — that's for the end. Let's greet him first.", "Majdnem — az a végére való. Előbb köszönjünk."),
+      ]), [
+        { en: "Hello Marta! Nice to meet you. How are you?", hu: "Szia Marta! Örülök, hogy megismerhetlek. Hogy vagy?" },
+        { en: "Hi Marta! It's so nice to meet you at last. How are you today?", hu: "Szia Marta! De jó, hogy végre találkozunk. Hogy vagy ma?" },
+        { en: "Hello Marta! Kira told me a lot about you. How are you?", hu: "Szia Marta! Kira sokat mesélt rólad. Hogy vagy?" },
       ]),
       n1b: choose("endika", "No problem. Let's try again — how are you?", "Semmi baj. Próbáljuk újra — hogy vagy?", [
         c("I'm fine, thank you. And you?", "Jól vagyok, köszönöm. És te?", true, "n2", "There it is. Well done.", "Ez az. Ügyes vagy."),
@@ -134,9 +140,13 @@ export const DIALOGUES = [
     scene: { en: "A phone call with Kira", hu: "Telefonhívás Kirával" },
     supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
     nodes: {
-      n1: choose("kira", "Hi auntie! Can you hear me?", "Szia nénikém! Hallasz engem?", [
+      n1: withAlts(choose("kira", "Hi auntie! Can you hear me?", "Szia nénikém! Hallasz engem?", [
         c("Yes, I can hear you.", "Igen, hallak.", true, "n2", "Perfect.", "Tökéletes."),
         c("Sorry, I can't hear you well.", "Bocsi, nem hallak jól.", true, "n1b", "Good repair phrase!", "Jó javító mondat!"),
+      ]), [
+        { en: "Hi auntie! Can you hear me?", hu: "Szia nénikém! Hallasz engem?" },
+        { en: "Hello auntie! It's Kira. Can you hear me okay?", hu: "Szia nénikém! Kira vagyok. Jól hallasz?" },
+        { en: "Hi auntie, it's me! Can you hear me now?", hu: "Szia nénikém, én vagyok! Most hallasz?" },
       ]),
       n1b: choose("kira", "Is it better now?", "Most jobb?", [
         c("Yes, now I can hear you.", "Igen, most hallak.", true, "n2", "Great.", "Remek."),
@@ -395,6 +405,168 @@ export const DIALOGUES = [
         c("No, thank you. I'm fine.", "Nem, köszönöm. Jól vagyok.", true, "n4", "Perfectly polite.", "Tökéletesen udvarias."),
       ]),
       n4: end("margo", "It's so nice to have the whole family together!", "Olyan jó, hogy az egész család együtt van!"),
+    },
+  },
+
+  // ---------- Kira video call ----------
+  {
+    id: "dlg_kira_video", characterId: "kira",
+    scene: { en: "A video call with Kira", hu: "Videóhívás Kirával" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("kira", "Hi auntie! Can you see me now?", "Szia nénikém! Most látsz engem?", [
+        c("Yes, I can see you well!", "Igen, jól látlak!", true, "n2", "Great, the picture is clear.", "Remek, tiszta a kép."),
+        c("Please turn your camera on.", "Kérlek, kapcsold be a kamerát.", true, "n1b", "Good useful phrase!", "Jó, hasznos mondat!"),
+      ]),
+      n1b: choose("kira", "Is it better now?", "Most jobb?", [
+        c("Yes, now I can see you.", "Igen, most látlak.", true, "n2", "Lovely.", "Kedves."),
+      ]),
+      n2: choose("kira", "I'm cooking dinner. What are you doing?", "Vacsorát főzök. Te mit csinálsz?", [
+        c("I'm reading a book.", "Könyvet olvasok.", true, "n3", "Nice, present continuous!", "Szuper, folyamatos jelen!"),
+        c("I'm making coffee.", "Kávét készítek.", true, "n3", "Perfect.", "Tökéletes."),
+      ]),
+      n3: build("kira", "Shall we cook together next time on a video call?", "Főzzünk együtt legközelebb videóhíváson?",
+        ["Yes", "that", "is", "a", "good", "idea"], "Yes that is a good idea", "n4",
+        { hints: ["Yes, that is a good idea."], accepted: ["Yes that is a good idea", "Yes it is a good idea"] }),
+      n4: end("kira", "Wonderful! Talk soon, auntie. Bye!", "Csodás! Hamarosan beszélünk, nénikém. Szia!"),
+    },
+  },
+
+  // ---------- Esztella: planning a visit ----------
+  {
+    id: "dlg_esztella_visit", characterId: "esztella",
+    scene: { en: "Planning a visit to Prague with Esztella", hu: "Prágai látogatás tervezése Esztellával" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("esztella", "Auntie, would you like to visit me in Prague?", "Néni, meglátogatnál Prágában?", [
+        c("Yes, I'd love to!", "Igen, nagyon szívesen!", true, "n2", "Wonderful!", "Csodás!"),
+        c("Yes, but I'm afraid of flying.", "Igen, de félek a repüléstől.", true, "n2", "Don't worry, we can take the train.", "Ne aggódj, mehetünk vonattal."),
+      ]),
+      n2: choose("esztella", "We can take the train. When would you like to come?", "Mehetünk vonattal. Mikor szeretnél jönni?", [
+        c("In the summer, maybe in July.", "Nyáron, talán júliusban.", true, "n3", "Perfect, the weather is lovely then.", "Tökéletes, olyankor szép az idő."),
+        c("Next month, if that's okay.", "Jövő hónapban, ha jó.", true, "n3", "Great, I can't wait!", "Remek, alig várom!"),
+      ]),
+      n3: type("esztella", "What would you like to see in Prague?", "Mit szeretnél látni Prágában?",
+        ["castle", "city", "bridge", "river", "old town", "museum", "walk"], ["castle", "city", "bridge", "river", "old", "museum", "see", "walk"],
+        "I'd like to see the old town.", "n4", { hints: ["I'd like to see the ..."], fallback: "n3b" }),
+      n3b: choose("esztella", "Choose an answer:", "Válassz választ:", [
+        c("I'd like to see the old town.", "Szeretném látni az óvárost.", true, "n4", "Lovely choice.", "Szép választás."),
+      ]),
+      n4: end("esztella", "It will be a wonderful visit. See you in Prague!", "Csodás látogatás lesz. Találkozunk Prágában!"),
+    },
+  },
+
+  // ---------- Martin: hobbies / rowing ----------
+  {
+    id: "dlg_martin_hobbies", characterId: "martin",
+    scene: { en: "Talking about sport with Martin", hu: "Sportról Martinnal" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("martin", "Hi Aunt Marta! I have a rowing competition on Saturday.", "Szia Marta néni! Szombaton evezős versenyem van.", [
+        c("How exciting! Do you train often?", "De izgalmas! Sokat edzel?", true, "n2", "Great follow-up question!", "Remek visszakérdezés!"),
+        c("Good luck!", "Sok sikert!", true, "n2", "Thank you, auntie!", "Köszönöm, néni!"),
+      ]),
+      n2: choose("martin", "Yes, I train every morning before school.", "Igen, minden reggel edzek suli előtt.", [
+        c("That's a lot of work. Well done!", "Ez sok munka. Ügyes vagy!", true, "n3", "Thank you!", "Köszönöm!"),
+      ]),
+      n3: type("martin", "Do you like sport, auntie?", "Szereted a sportot, néni?",
+        ["walk", "swim", "like", "yes", "no", "young"], ["walk", "swim", "like", "young", "watch", "yes", "no"],
+        "I liked swimming when I was young.", "n4", { hints: ["I like ... / I liked ... when I was young."], fallback: "n3b" }),
+      n3b: choose("martin", "Choose an answer:", "Válassz választ:", [
+        c("I like walking every day.", "Minden nap szeretek sétálni.", true, "n4", "That's great for you!", "Ez nagyszerű!"),
+      ]),
+      n4: end("martin", "Come and watch my next race, auntie!", "Gyere el a következő versenyemre, néni!"),
+    },
+  },
+
+  // ---------- David: technology / university ----------
+  {
+    id: "dlg_david_tech", characterId: "david",
+    scene: { en: "Talking about studies with David", hu: "Tanulásról Daviddal" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("david", "Hi auntie! I'm studying computer science at university.", "Szia néni! Informatikát tanulok az egyetemen.", [
+        c("How interesting! Do you like it?", "De érdekes! Szereted?", true, "n2", "Yes, I love it!", "Igen, imádom!"),
+        c("That sounds difficult!", "Ez nehéznek hangzik!", true, "n2", "It is, but it's fun.", "Az, de jó móka."),
+      ]),
+      n2: choose("david", "I want to start a technology company one day.", "Egy nap tech céget szeretnék indítani.", [
+        c("That's a wonderful plan!", "Ez remek terv!", true, "n3", "Thank you, auntie!", "Köszönöm, néni!"),
+      ]),
+      n3: type("david", "Do you use a computer, auntie?", "Használsz számítógépet, néni?",
+        ["yes", "computer", "teach", "online", "email", "call"], ["yes", "computer", "teach", "online", "email", "video"],
+        "Yes, I teach online on my computer.", "n4", { hints: ["Yes, I use it to ..."], fallback: "n3b" }),
+      n3b: choose("david", "Choose an answer:", "Válassz választ:", [
+        c("Yes, I teach online on my computer.", "Igen, online tanítok a számítógépemen.", true, "n4", "That's great, auntie!", "Ez nagyszerű, néni!"),
+      ]),
+      n4: end("david", "If you need help with technology, just call me!", "Ha segítség kell a technikával, csak hívj!"),
+    },
+  },
+
+  // ---------- Panna: horses ----------
+  {
+    id: "dlg_panna_horses", characterId: "panna",
+    scene: { en: "Talking about horses with Panna", hu: "Lovakról Pannával" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("panna", "Hi Aunt Marta! I went horse riding today.", "Szia Marta néni! Ma lovagoltam.", [
+        c("How lovely! Do you have a horse?", "De jó! Van lovad?", true, "n2", "Great question!", "Remek kérdés!"),
+      ]),
+      n2: choose("panna", "Not my own, but I ride at a farm near us.", "Nem sajátom, de egy közeli farmon lovagolok.", [
+        c("What is the horse's name?", "Mi a ló neve?", true, "n3", "Her name is Luna!", "Lunának hívják!"),
+        c("That sounds wonderful!", "Ez csodásan hangzik!", true, "n3", "It is! I love it.", "Az! Imádom."),
+      ]),
+      n3: type("panna", "Do you like animals, auntie?", "Szereted az állatokat, néni?",
+        ["yes", "dog", "cat", "animal", "like", "love", "no"], ["yes", "dog", "cat", "animal", "like", "love", "no"],
+        "Yes, I like cats and dogs.", "n4", { hints: ["Yes, I like ..."], fallback: "n3b" }),
+      n3b: choose("panna", "Choose an answer:", "Válassz választ:", [
+        c("Yes, I love animals.", "Igen, imádom az állatokat.", true, "n4", "Me too!", "Én is!"),
+      ]),
+      n4: end("panna", "I'll send you a photo of Luna, auntie!", "Küldök egy képet Lunáról, néni!"),
+    },
+  },
+
+  // ---------- Christmas dinner at Aunt Eva's ----------
+  {
+    id: "dlg_christmas", characterId: "eva",
+    scene: { en: "Christmas dinner at Aunt Eva's", hu: "Karácsonyi vacsora Éva néninél" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("eva", "Merry Christmas, Marta! Welcome. Please come in.", "Boldog karácsonyt, Marta! Isten hozott. Gyere be.", [
+        c("Merry Christmas, Eva! Thank you.", "Boldog karácsonyt, Éva! Köszönöm.", true, "n2", "So glad you came!", "Úgy örülök, hogy eljöttél!"),
+      ]),
+      n2: choose("eva", "Would you like some soup? It's hot and ready.", "Kérsz egy kis levest? Forró és kész.", [
+        c("Yes, please. It smells wonderful.", "Igen, kérek. Csodálatos illata van.", true, "n3", "Thank you, dear.", "Köszönöm, drágám."),
+        c("Just a little, thank you.", "Csak egy kicsit, köszönöm.", true, "n3", "Of course!", "Persze!"),
+      ]),
+      n3: type("eva", "Marlene is here too. Would you like to say hello to her?", "Marlene is itt. Szeretnél köszönni neki?",
+        ["hello", "nice", "meet", "marlene", "yes", "how are you"], ["hello", "nice", "meet", "yes", "how"],
+        "Hello Marlene, nice to see you.", "n4", { hints: ["Hello Marlene, ..."], fallback: "n3b" }),
+      n3b: choose("eva", "Choose an answer:", "Válassz választ:", [
+        c("Hello Marlene, nice to see you!", "Szia Marlene, örülök, hogy látlak!", true, "n4", "Lovely.", "Kedves."),
+      ]),
+      n4: end("eva", "It's so nice to have everyone together at Christmas.", "Olyan jó, hogy karácsonykor mind együtt vagyunk."),
+    },
+  },
+
+  // ---------- Agárd summer party (szalonnasütő) ----------
+  {
+    id: "dlg_agard", characterId: "akos",
+    scene: { en: "Summer party at the Agárd weekend house", hu: "Nyári parti az agárdi hétvégi házban" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("akos", "It's a lovely evening for a barbecue, isn't it?", "Csodás este ez egy szalonnasütéshez, ugye?", [
+        c("Yes, it's warm and the sky is clear.", "Igen, meleg van és tiszta az ég.", true, "n2", "Perfect weather talk!", "Tökéletes időjárás-beszéd!"),
+      ]),
+      n2: choose("akos", "Endika is here with Kira. Would you like to talk to him?", "Endika is itt Kirával. Szeretnél beszélni vele?", [
+        c("Yes! Hello Endika, how are you?", "Igen! Szia Endika, hogy vagy?", true, "n3", "He's happy to see you!", "Örül, hogy lát!"),
+      ]),
+      n3: type("endika", "Hello Marta! Are you enjoying the party?", "Szia Marta! Élvezed a partit?",
+        ["yes", "food", "family", "nice", "lovely", "enjoy", "happy"], ["yes", "food", "family", "nice", "lovely", "enjoy", "happy"],
+        "Yes, the food is delicious and the family is here.", "n4", { hints: ["Yes, ..."], fallback: "n3b" }),
+      n3b: choose("endika", "Choose an answer:", "Válassz választ:", [
+        c("Yes, I'm very happy. The food is delicious!", "Igen, nagyon boldog vagyok. Az étel finom!", true, "n4", "Me too!", "Én is!"),
+      ]),
+      n4: end("akos", "Let's sit by the fire together. It's a beautiful night.", "Üljünk a tűz mellé együtt. Gyönyörű este van."),
     },
   },
 ];

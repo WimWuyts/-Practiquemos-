@@ -105,24 +105,24 @@
           "hu": "(pénz)"
         },
         {
-          "text": "___ — a useful word.",
+          "text": "I'd like ___ water.",
           "answer": "some",
           "options": [
             "some",
             "any",
             "much"
           ],
-          "hu": "(néhány / egy kis)"
+          "hu": "Kérnék egy kis vizet."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "Do you have ___ tea?",
           "answer": "any",
           "options": [
             "any",
             "some",
             "much"
           ],
-          "hu": "(bármennyi / semennyi)"
+          "hu": "Van teád?"
         }
       ]
     },

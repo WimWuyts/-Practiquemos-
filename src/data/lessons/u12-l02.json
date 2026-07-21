@@ -106,14 +106,14 @@
           "hu": "(megpróbálni)"
         },
         {
-          "text": "This is an ___.",
+          "text": "The station is at the ___ of the street.",
           "answer": "end",
           "options": [
             "end",
             "moment",
             "thing"
           ],
-          "hu": "(vég)"
+          "hu": "Az állomás az utca végén van."
         },
         {
           "text": "I ___ every day.",

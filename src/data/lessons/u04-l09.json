@@ -93,14 +93,14 @@
           "hu": "(piszkos)"
         },
         {
-          "text": "I speak ___.",
+          "text": "Let's go ___ for a walk.",
           "answer": "out",
           "options": [
             "out",
             "always",
             "usually"
           ],
-          "hu": "(ki / kint)"
+          "hu": "Menjünk ki sétálni."
         },
         {
           "text": "___ — a useful word.",

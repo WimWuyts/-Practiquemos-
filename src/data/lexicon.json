@@ -920,8 +920,8 @@
     ],
     "examples": [
       {
-        "en": "From — a useful word.",
-        "hu": "(-ból / -ből)",
+        "en": "I'm from Hungary.",
+        "hu": "Magyarországról jöttem.",
         "needsReview": true
       }
     ],
@@ -2634,8 +2634,8 @@
     ],
     "examples": [
       {
-        "en": "It is very our.",
-        "hu": "(a mi ...-nk)",
+        "en": "This is our house.",
+        "hu": "Ez a mi házunk.",
         "needsReview": true
       }
     ],
@@ -2670,8 +2670,8 @@
     ],
     "examples": [
       {
-        "en": "It is very their.",
-        "hu": "(az ő ...-juk)",
+        "en": "Their children live abroad.",
+        "hu": "A gyerekeik külföldön élnek.",
         "needsReview": true
       }
     ],
@@ -4753,8 +4753,8 @@
     ],
     "examples": [
       {
-        "en": "In — a useful word.",
-        "hu": "(-ban / -ben)",
+        "en": "The keys are in the kitchen.",
+        "hu": "A kulcsok a konyhában vannak.",
         "needsReview": true
       }
     ],
@@ -4789,8 +4789,8 @@
     ],
     "examples": [
       {
-        "en": "On — a useful word.",
-        "hu": "(-on / -en / -ön)",
+        "en": "The book is on the table.",
+        "hu": "A könyv az asztalon van.",
         "needsReview": true
       }
     ],
@@ -4825,8 +4825,8 @@
     ],
     "examples": [
       {
-        "en": "Under — a useful word.",
-        "hu": "(alatt)",
+        "en": "The cat is under the chair.",
+        "hu": "A macska a szék alatt van.",
         "needsReview": true
       }
     ],
@@ -4861,8 +4861,8 @@
     ],
     "examples": [
       {
-        "en": "Next to — a useful word.",
-        "hu": "(mellett)",
+        "en": "The shop is next to the bank.",
+        "hu": "A bolt a bank mellett van.",
         "needsReview": true
       }
     ],
@@ -5848,8 +5848,8 @@
     ],
     "examples": [
       {
-        "en": "Some — a useful word.",
-        "hu": "(néhány / egy kis)",
+        "en": "I'd like some water.",
+        "hu": "Kérnék egy kis vizet.",
         "needsReview": true
       }
     ],
@@ -5884,8 +5884,8 @@
     ],
     "examples": [
       {
-        "en": "Any — a useful word.",
-        "hu": "(bármennyi / semennyi)",
+        "en": "Do you have any tea?",
+        "hu": "Van teád?",
         "needsReview": true
       }
     ],
@@ -5920,8 +5920,8 @@
     ],
     "examples": [
       {
-        "en": "Much — a useful word.",
-        "hu": "(sok (megszámlálhatatlan))",
+        "en": "How much is it?",
+        "hu": "Mennyibe kerül?",
         "needsReview": true
       }
     ],
@@ -5956,8 +5956,8 @@
     ],
     "examples": [
       {
-        "en": "Many — a useful word.",
-        "hu": "(sok (megszámlálható))",
+        "en": "How many people are coming?",
+        "hu": "Hányan jönnek?",
         "needsReview": true
       }
     ],
@@ -7419,8 +7419,8 @@
     ],
     "examples": [
       {
-        "en": "Me — a useful word.",
-        "hu": "(engem / nekem)",
+        "en": "Can you hear me?",
+        "hu": "Hallasz engem?",
         "needsReview": true
       }
     ],
@@ -7455,8 +7455,8 @@
     ],
     "examples": [
       {
-        "en": "Him — a useful word.",
-        "hu": "(őt (férfi))",
+        "en": "I like him very much.",
+        "hu": "Nagyon kedvelem őt.",
         "needsReview": true
       }
     ],
@@ -7491,8 +7491,8 @@
     ],
     "examples": [
       {
-        "en": "Them — a useful word.",
-        "hu": "(őket)",
+        "en": "I visit them every summer.",
+        "hu": "Minden nyáron meglátogatom őket.",
         "needsReview": true
       }
     ],
@@ -8669,8 +8669,8 @@
     ],
     "examples": [
       {
-        "en": "I speak then.",
-        "hu": "(aztán)",
+        "en": "First we eat, then we talk.",
+        "hu": "Előbb eszünk, aztán beszélgetünk.",
         "needsReview": true
       }
     ],
@@ -20219,8 +20219,8 @@
     ],
     "examples": [
       {
-        "en": "I speak here.",
-        "hu": "(itt)",
+        "en": "Please sit here.",
+        "hu": "Kérlek, ülj ide.",
         "needsReview": true
       }
     ],
@@ -20255,8 +20255,8 @@
     ],
     "examples": [
       {
-        "en": "I speak there.",
-        "hu": "(ott)",
+        "en": "The station is over there.",
+        "hu": "Az állomás ott van.",
         "needsReview": true
       }
     ],
@@ -20291,8 +20291,8 @@
     ],
     "examples": [
       {
-        "en": "I speak too.",
-        "hu": "(is / túl)",
+        "en": "I'm happy, and my sister is happy too.",
+        "hu": "Boldog vagyok, és a nővérem is.",
         "needsReview": true
       }
     ],
@@ -20327,8 +20327,8 @@
     ],
     "examples": [
       {
-        "en": "I speak also.",
-        "hu": "(szintén)",
+        "en": "I speak Hungarian and also a little English.",
+        "hu": "Beszélek magyarul és egy kicsit angolul is.",
         "needsReview": true
       }
     ],
@@ -20363,8 +20363,8 @@
     ],
     "examples": [
       {
-        "en": "I speak only.",
-        "hu": "(csak)",
+        "en": "I have only one brother.",
+        "hu": "Csak egy bátyám van.",
         "needsReview": true
       }
     ],
@@ -20399,8 +20399,8 @@
     ],
     "examples": [
       {
-        "en": "I speak maybe.",
-        "hu": "(talán)",
+        "en": "Maybe we can meet on Sunday.",
+        "hu": "Talán találkozhatunk vasárnap.",
         "needsReview": true
       }
     ],
@@ -20435,8 +20435,8 @@
     ],
     "examples": [
       {
-        "en": "I speak really.",
-        "hu": "(tényleg)",
+        "en": "I really like this.",
+        "hu": "Nagyon tetszik ez.",
         "needsReview": true
       }
     ],
@@ -20471,8 +20471,8 @@
     ],
     "examples": [
       {
-        "en": "I speak just.",
-        "hu": "(épp / csak)",
+        "en": "I've just made coffee.",
+        "hu": "Épp most készítettem kávét.",
         "needsReview": true
       }
     ],
@@ -20507,8 +20507,8 @@
     ],
     "examples": [
       {
-        "en": "About — a useful word.",
-        "hu": "(-ról / -ről / kb.)",
+        "en": "Let's talk about your trip.",
+        "hu": "Beszéljünk az utadról.",
         "needsReview": true
       }
     ],
@@ -20543,8 +20543,8 @@
     ],
     "examples": [
       {
-        "en": "I speak up.",
-        "hu": "(fel)",
+        "en": "I get up at seven.",
+        "hu": "Hétkor kelek.",
         "needsReview": true
       }
     ],
@@ -20579,8 +20579,8 @@
     ],
     "examples": [
       {
-        "en": "I speak down.",
-        "hu": "(le)",
+        "en": "Please sit down.",
+        "hu": "Kérlek, ülj le.",
         "needsReview": true
       }
     ],
@@ -20615,8 +20615,8 @@
     ],
     "examples": [
       {
-        "en": "I speak out.",
-        "hu": "(ki / kint)",
+        "en": "Let's go out for a walk.",
+        "hu": "Menjünk ki sétálni.",
         "needsReview": true
       }
     ],
@@ -20651,8 +20651,8 @@
     ],
     "examples": [
       {
-        "en": "With — a useful word.",
-        "hu": "(-val / -vel)",
+        "en": "I live with my partner.",
+        "hu": "A párommal élek.",
         "needsReview": true
       }
     ],
@@ -20687,8 +20687,8 @@
     ],
     "examples": [
       {
-        "en": "For — a useful word.",
-        "hu": "(-nak / -ért)",
+        "en": "This is for you.",
+        "hu": "Ez neked van.",
         "needsReview": true
       }
     ],
@@ -20723,8 +20723,8 @@
     ],
     "examples": [
       {
-        "en": "At — a useful word.",
-        "hu": "(-nál / -kor)",
+        "en": "The lesson is at ten.",
+        "hu": "Az óra tízkor van.",
         "needsReview": true
       }
     ],
@@ -20759,8 +20759,8 @@
     ],
     "examples": [
       {
-        "en": "To — a useful word.",
-        "hu": "(-hoz / -ba)",
+        "en": "I go to the market on Monday.",
+        "hu": "Hétfőn a piacra megyek.",
         "needsReview": true
       }
     ],
@@ -20795,8 +20795,8 @@
     ],
     "examples": [
       {
-        "en": "Of — a useful word.",
-        "hu": "(-nak a ...)",
+        "en": "She is a friend of the family.",
+        "hu": "Ő a család barátja.",
         "needsReview": true
       }
     ],
@@ -20831,8 +20831,8 @@
     ],
     "examples": [
       {
-        "en": "By — a useful word.",
-        "hu": "(-val (közlekedés) / mellett)",
+        "en": "I travel by train.",
+        "hu": "Vonattal utazom.",
         "needsReview": true
       }
     ],
@@ -20867,8 +20867,8 @@
     ],
     "examples": [
       {
-        "en": "Over — a useful word.",
-        "hu": "(fölött / vége)",
+        "en": "The lesson is over.",
+        "hu": "Vége az órának.",
         "needsReview": true
       }
     ],
@@ -20903,8 +20903,8 @@
     ],
     "examples": [
       {
-        "en": "Behind — a useful word.",
-        "hu": "(mögött)",
+        "en": "The garden is behind the house.",
+        "hu": "A kert a ház mögött van.",
         "needsReview": true
       }
     ],
@@ -21992,8 +21992,8 @@
     ],
     "examples": [
       {
-        "en": "This is a thing.",
-        "hu": "(dolog)",
+        "en": "I have one more thing to say.",
+        "hu": "Még egy dolgot mondanék.",
         "needsReview": true
       }
     ],
@@ -22029,8 +22029,8 @@
     ],
     "examples": [
       {
-        "en": "This is a way.",
-        "hu": "(út / mód)",
+        "en": "Is this the way to the station?",
+        "hu": "Erre van az állomás?",
         "needsReview": true
       }
     ],
@@ -22066,8 +22066,8 @@
     ],
     "examples": [
       {
-        "en": "This is a part.",
-        "hu": "(rész)",
+        "en": "This is my favourite part.",
+        "hu": "Ez a kedvenc részem.",
         "needsReview": true
       }
     ],
@@ -22103,8 +22103,8 @@
     ],
     "examples": [
       {
-        "en": "This is a side.",
-        "hu": "(oldal)",
+        "en": "The shop is on the other side.",
+        "hu": "A bolt a másik oldalon van.",
         "needsReview": true
       }
     ],
@@ -22140,8 +22140,8 @@
     ],
     "examples": [
       {
-        "en": "This is an end.",
-        "hu": "(vég)",
+        "en": "The station is at the end of the street.",
+        "hu": "Az állomás az utca végén van.",
         "needsReview": true
       }
     ],
@@ -24304,8 +24304,8 @@
     ],
     "examples": [
       {
-        "en": "Into — a useful word.",
-        "hu": "(-ba / -be)",
+        "en": "Please come into the kitchen.",
+        "hu": "Kérlek, gyere be a konyhába.",
         "needsReview": true
       }
     ],
@@ -24340,8 +24340,8 @@
     ],
     "examples": [
       {
-        "en": "Through — a useful word.",
-        "hu": "(át / keresztül)",
+        "en": "We walked through the park.",
+        "hu": "Átsétáltunk a parkon.",
         "needsReview": true
       }
     ],
@@ -24376,8 +24376,8 @@
     ],
     "examples": [
       {
-        "en": "Around — a useful word.",
-        "hu": "(körül)",
+        "en": "It's just around the corner.",
+        "hu": "Ott van a sarok mögött.",
         "needsReview": true
       }
     ],
@@ -27322,8 +27322,8 @@
     ],
     "examples": [
       {
-        "en": "I speak already.",
-        "hu": "(már)",
+        "en": "I've already eaten, thank you.",
+        "hu": "Már ettem, köszönöm.",
         "needsReview": true
       }
     ],
@@ -27358,8 +27358,8 @@
     ],
     "examples": [
       {
-        "en": "I speak still.",
-        "hu": "(még mindig)",
+        "en": "I still remember it.",
+        "hu": "Még mindig emlékszem rá.",
         "needsReview": true
       }
     ],

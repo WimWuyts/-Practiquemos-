@@ -1,0 +1,38 @@
+{
+  "id": "month-01",
+  "unitId": "month-01",
+  "order": 1,
+  "month": "2026-03",
+  "title": { "en": "March: A spring visit to Kira", "hu": "Március: tavaszi látogatás Kiránál" },
+  "canDo": { "en": "Plan a spring visit and talk about it on a video call.", "hu": "Tavaszi látogatás tervezése és megbeszélése videóhíváson." },
+  "trigger": { "en": "Marta is planning a spring trip to Denmark to see Kira.", "hu": "Marta tavaszi utat tervez Dániába, hogy meglátogassa Kirát." },
+  "estimatedMinutes": 18,
+  "newProductiveItems": ["lex_travel", "lex_holiday", "lex_suitcase", "lex_passport", "lex_plan", "lex_weather"],
+  "reviewItems": [],
+  "chunks": ["chunk_fu_planto", "chunk_fu_lookingforward"],
+  "grammarCards": ["gr_goingto"],
+  "pronunciationFocus": ["str_word"],
+  "conversationId": "dlg_kira_video",
+  "activities": [
+    { "id": "m1_a1", "type": "intro", "items": ["lex_travel", "lex_holiday", "lex_suitcase", "lex_passport", "lex_plan", "lex_weather"] },
+    { "id": "m1_a2", "type": "listen-choose", "items": ["lex_travel", "lex_suitcase", "lex_passport", "lex_plan", "lex_weather"] },
+    { "id": "m1_a3", "type": "grammar", "grammarId": "gr_goingto" },
+    { "id": "m1_a4", "type": "phrase-match", "items": ["chunk_fu_planto", "chunk_fu_lookingforward"] },
+    { "id": "m1_a5", "type": "listen-comprehension",
+      "passage": { "en": "Hi auntie! Spring is here in Denmark and the weather is getting warmer. I can't wait to see you. Bring a light coat!" },
+      "question": { "en": "What should Marta bring?", "hu": "Mit hozzon Marta?" },
+      "options": ["A light coat", "A heavy blanket", "An umbrella only"], "answer": "A light coat" },
+    { "id": "m1_a6", "type": "conversation", "dialogueId": "dlg_kira_video" },
+    { "id": "m1_a7", "type": "expand",
+      "question": { "en": "Tell Kira about your plan.", "hu": "Mesélj Kirának a tervedről." },
+      "steps": [
+        { "en": "I'm going to visit you.", "hu": "Meg foglak látogatni." },
+        { "en": "I'm going to visit you in the spring.", "hu": "Tavasszal foglak meglátogatni." },
+        { "en": "I'm going to visit you in the spring, and we're going to cook together.", "hu": "Tavasszal foglak meglátogatni, és együtt fogunk főzni." }
+      ] }
+  ],
+  "completionRule": { "minActivities": 1 },
+  "finalTask": { "en": "Send Kira a short message with your spring plan.", "hu": "Küldj Kirának egy rövid üzenetet a tavaszi terveddel." },
+  "contentVersion": "1.0",
+  "compatibilityVersion": "1.0"
+}

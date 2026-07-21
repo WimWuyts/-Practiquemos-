@@ -93,14 +93,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "___ — a useful word.",
+          "text": "I'm ___ Hungary.",
           "answer": "from",
           "options": [
             "from",
             "in",
             "on"
           ],
-          "hu": "(-ból / -ből)"
+          "hu": "Magyarországról jöttem."
         },
         {
           "text": "This is a ___.",

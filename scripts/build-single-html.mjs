@@ -21,6 +21,14 @@ for (const f of readdirSync(join(DATA, "lessons")).filter((x) => x.endsWith(".js
   const obj = readJSON(join(DATA, "lessons", f));
   lessons[obj.id] = obj;
 }
+// monthly lessons authored under data/monthly-lessons are merged as runnable lessons
+const monthlyAvailable = [];
+try {
+  for (const f of readdirSync(join(DATA, "monthly-lessons")).filter((x) => x.endsWith(".json"))) {
+    const obj = readJSON(join(DATA, "monthly-lessons", f));
+    lessons[obj.id] = obj; monthlyAvailable.push({ id: obj.id, title: obj.title, month: obj.month });
+  }
+} catch (e) { /* none yet */ }
 const bundle = {
   course: readJSON(join(DATA, "course.json")),
   lexicon: readJSON(join(DATA, "lexicon.json")),
@@ -29,6 +37,7 @@ const bundle = {
   pronunciation: readJSON(join(DATA, "pronunciation.json")),
   dialogues: readJSON(join(DATA, "dialogues.json")),
   lessons,
+  monthlyAvailable,
   avatarSvg: read(join(SRC, "assets", "marta-avatar.svg")),
 };
 const i18n = {

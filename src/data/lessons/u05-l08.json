@@ -93,14 +93,14 @@
           "hu": "(üres)"
         },
         {
-          "text": "___ — a useful word.",
+          "text": "This is ___ you.",
           "answer": "for",
           "options": [
             "for",
             "about",
             "with"
           ],
-          "hu": "(-nak / -ért)"
+          "hu": "Ez neked van."
         },
         {
           "text": "I ___ every day.",

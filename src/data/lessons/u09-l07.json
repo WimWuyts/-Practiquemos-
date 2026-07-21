@@ -83,44 +83,44 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I speak ___.",
+          "text": "I get ___ at seven.",
           "answer": "up",
           "options": [
             "up",
             "straight",
             "first"
           ],
-          "hu": "(fel)"
+          "hu": "Hétkor kelek."
         },
         {
-          "text": "I speak ___.",
+          "text": "Please sit ___.",
           "answer": "down",
           "options": [
             "down",
             "straight",
             "first"
           ],
-          "hu": "(le)"
+          "hu": "Kérlek, ülj le."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "I go ___ the market on Monday.",
           "answer": "to",
           "options": [
             "to",
             "over",
             "behind"
           ],
-          "hu": "(-hoz / -ba)"
+          "hu": "Hétfőn a piacra megyek."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "I travel ___ train.",
           "answer": "by",
           "options": [
             "by",
             "from",
             "in"
           ],
-          "hu": "(-val (közlekedés) / mellett)"
+          "hu": "Vonattal utazom."
         }
       ]
     },

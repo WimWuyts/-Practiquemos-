@@ -108,24 +108,24 @@
           "hu": "(pillanat)"
         },
         {
-          "text": "___ — a useful word.",
+          "text": "Can you hear ___?",
           "answer": "me",
           "options": [
             "me",
             "what",
             "who"
           ],
-          "hu": "(engem / nekem)"
+          "hu": "Hallasz engem?"
         },
         {
-          "text": "___ — a useful word.",
+          "text": "I like ___ very much.",
           "answer": "him",
           "options": [
             "him",
             "what",
             "who"
           ],
-          "hu": "(őt (férfi))"
+          "hu": "Nagyon kedvelem őt."
         }
       ]
     },

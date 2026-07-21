@@ -109,24 +109,24 @@
           "hu": "(világos / könnyű)"
         },
         {
-          "text": "I speak ___.",
+          "text": "___ we can meet on Sunday.",
           "answer": "maybe",
           "options": [
             "maybe",
             "where",
             "how"
           ],
-          "hu": "(talán)"
+          "hu": "Talán találkozhatunk vasárnap."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "The lesson is ___ ten.",
           "answer": "at",
           "options": [
             "at",
             "before",
             "after"
           ],
-          "hu": "(-nál / -kor)"
+          "hu": "Az óra tízkor van."
         }
       ]
     },

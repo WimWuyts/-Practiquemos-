@@ -83,24 +83,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "___ — a useful word.",
+          "text": "We walked ___ the park.",
           "answer": "through",
           "options": [
             "through",
             "to",
             "over"
           ],
-          "hu": "(át / keresztül)"
+          "hu": "Átsétáltunk a parkon."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "It's just ___ the corner.",
           "answer": "around",
           "options": [
             "around",
             "to",
             "over"
           ],
-          "hu": "(körül)"
+          "hu": "Ott van a sarok mögött."
         },
         {
           "text": "This is a ___.",

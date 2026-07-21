@@ -113,14 +113,14 @@
           "hu": "(rózsaszín)"
         },
         {
-          "text": "I speak ___.",
+          "text": "I'm happy, and my sister is happy ___.",
           "answer": "too",
           "options": [
             "too",
             "where",
             "how"
           ],
-          "hu": "(is / túl)"
+          "hu": "Boldog vagyok, és a nővérem is."
         }
       ]
     },
