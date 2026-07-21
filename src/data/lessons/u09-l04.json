@@ -1,0 +1,198 @@
+{
+  "id": "u09-l04",
+  "unitId": "u09",
+  "order": 4,
+  "title": {
+    "en": "Around town: directions · more (4)",
+    "hu": "A városban: útbaigazítás · több (4)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_school",
+    "lex_market",
+    "lex_supermarket",
+    "lex_cinema",
+    "lex_museum",
+    "lex_square",
+    "lex_bridge",
+    "lex_library"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_tw_excusewhere",
+    "chunk_tw_straighton",
+    "chunk_tw_howfar",
+    "chunk_tw_overthere"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_700",
+      "type": "intro",
+      "items": [
+        "lex_school",
+        "lex_market",
+        "lex_supermarket",
+        "lex_cinema",
+        "lex_museum",
+        "lex_square",
+        "lex_bridge",
+        "lex_library"
+      ]
+    },
+    {
+      "id": "act_701",
+      "type": "listen-choose",
+      "items": [
+        "lex_school",
+        "lex_market",
+        "lex_supermarket",
+        "lex_cinema",
+        "lex_museum",
+        "lex_square"
+      ]
+    },
+    {
+      "id": "act_702",
+      "type": "icon-choice",
+      "items": [
+        "lex_school",
+        "lex_market",
+        "lex_supermarket",
+        "lex_cinema",
+        "lex_museum"
+      ]
+    },
+    {
+      "id": "act_703",
+      "type": "match",
+      "items": [
+        "lex_school",
+        "lex_market",
+        "lex_supermarket",
+        "lex_cinema",
+        "lex_museum",
+        "lex_square"
+      ]
+    },
+    {
+      "id": "act_704",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "school",
+          "options": [
+            "school",
+            "street",
+            "left"
+          ],
+          "hu": "(iskola)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "market",
+          "options": [
+            "market",
+            "street",
+            "left"
+          ],
+          "hu": "(piac)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "supermarket",
+          "options": [
+            "supermarket",
+            "street",
+            "left"
+          ],
+          "hu": "(szupermarket)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "cinema",
+          "options": [
+            "cinema",
+            "street",
+            "left"
+          ],
+          "hu": "(mozi)"
+        }
+      ]
+    },
+    {
+      "id": "act_705",
+      "type": "phrase-match",
+      "items": [
+        "chunk_tw_excusewhere",
+        "chunk_tw_straighton",
+        "chunk_tw_howfar",
+        "chunk_tw_overthere"
+      ]
+    },
+    {
+      "id": "act_706",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Excuse me, where is the station?",
+          "hu": "Elnézést, hol van az állomás?"
+        },
+        {
+          "en": "Go straight on and turn left.",
+          "hu": "Menj egyenesen, majd fordulj balra."
+        },
+        {
+          "en": "How long does it take?",
+          "hu": "Mennyi ideig tart?"
+        }
+      ]
+    },
+    {
+      "id": "act_707",
+      "type": "typed",
+      "items": [
+        "lex_school",
+        "lex_market",
+        "lex_supermarket",
+        "lex_cinema"
+      ]
+    },
+    {
+      "id": "act_708",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_709",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_710",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "school",
+            "market",
+            "supermarket"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

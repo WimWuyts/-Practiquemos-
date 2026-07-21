@@ -1,0 +1,138 @@
+{
+  "id": "u13-l04",
+  "unitId": "u13",
+  "order": 4,
+  "title": {
+    "en": "Visits & future travel · more (4)",
+    "hu": "Látogatások, jövőbeli utazás · több (4)"
+  },
+  "canDo": {
+    "en": "Plan a visit and a trip",
+    "hu": "Látogatás és utazás tervezése"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_decide",
+    "lex_keep",
+    "lex_heavy",
+    "lex_return"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_928",
+      "type": "intro",
+      "items": [
+        "lex_decide",
+        "lex_keep",
+        "lex_heavy",
+        "lex_return"
+      ]
+    },
+    {
+      "id": "act_929",
+      "type": "listen-choose",
+      "items": [
+        "lex_decide",
+        "lex_keep",
+        "lex_heavy",
+        "lex_return"
+      ]
+    },
+    {
+      "id": "act_930",
+      "type": "icon-choice",
+      "items": [
+        "lex_decide",
+        "lex_keep",
+        "lex_heavy",
+        "lex_return"
+      ]
+    },
+    {
+      "id": "act_931",
+      "type": "match",
+      "items": [
+        "lex_decide",
+        "lex_keep",
+        "lex_heavy",
+        "lex_return"
+      ]
+    },
+    {
+      "id": "act_932",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "decide",
+          "options": [
+            "decide",
+            "meet",
+            "can"
+          ],
+          "hu": "(eldönteni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "keep",
+          "options": [
+            "keep",
+            "work",
+            "get up"
+          ],
+          "hu": "(megtartani)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "heavy",
+          "options": [
+            "heavy",
+            "local",
+            "my"
+          ],
+          "hu": "(nehéz (súly))"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "return",
+          "options": [
+            "return",
+            "travel",
+            "need"
+          ],
+          "hu": "(visszatérni / visszaadni)"
+        }
+      ]
+    },
+    {
+      "id": "act_933",
+      "type": "typed",
+      "items": [
+        "lex_decide",
+        "lex_keep",
+        "lex_heavy",
+        "lex_return"
+      ]
+    },
+    {
+      "id": "act_934",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_935",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

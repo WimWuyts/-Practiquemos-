@@ -1,0 +1,199 @@
+{
+  "id": "u06-l04",
+  "unitId": "u06",
+  "order": 4,
+  "title": {
+    "en": "Time, weather & plans · more (4)",
+    "hu": "Idő, időjárás, tervek · több (4)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_meet",
+    "lex_can",
+    "lex_going_to",
+    "lex_free",
+    "lex_busy",
+    "lex_eleven",
+    "lex_twelve",
+    "lex_twenty"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_nm_whatsdate",
+    "chunk_we_forecast",
+    "chunk_we_takecoat",
+    "chunk_dl_busytoday"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_426",
+      "type": "intro",
+      "items": [
+        "lex_meet",
+        "lex_can",
+        "lex_going_to",
+        "lex_free",
+        "lex_busy",
+        "lex_eleven",
+        "lex_twelve",
+        "lex_twenty"
+      ]
+    },
+    {
+      "id": "act_427",
+      "type": "listen-choose",
+      "items": [
+        "lex_meet",
+        "lex_can",
+        "lex_going_to",
+        "lex_free",
+        "lex_busy",
+        "lex_eleven"
+      ]
+    },
+    {
+      "id": "act_428",
+      "type": "icon-choice",
+      "items": [
+        "lex_meet",
+        "lex_can",
+        "lex_going_to",
+        "lex_free",
+        "lex_busy"
+      ]
+    },
+    {
+      "id": "act_429",
+      "type": "match",
+      "items": [
+        "lex_meet",
+        "lex_can",
+        "lex_going_to",
+        "lex_free",
+        "lex_busy",
+        "lex_eleven"
+      ]
+    },
+    {
+      "id": "act_430",
+      "type": "spelling-build",
+      "family": "sf_ee",
+      "word": "meet"
+    },
+    {
+      "id": "act_431",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Let's ___ on Sunday.",
+          "answer": "meet",
+          "options": [
+            "meet",
+            "can",
+            "decide"
+          ],
+          "hu": "Találkozzunk vasárnap."
+        },
+        {
+          "text": "I ___ cook well.",
+          "answer": "can",
+          "options": [
+            "can",
+            "meet",
+            "decide"
+          ],
+          "hu": "Jól tudok főzni."
+        },
+        {
+          "text": "___.",
+          "answer": "going to",
+          "options": [
+            "going to",
+            "hello",
+            "hi"
+          ],
+          "hu": "(fog (jövő idő))"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "free",
+          "options": [
+            "free",
+            "busy",
+            "my"
+          ],
+          "hu": "(szabad (ráér))"
+        }
+      ]
+    },
+    {
+      "id": "act_432",
+      "type": "phrase-match",
+      "items": [
+        "chunk_nm_whatsdate",
+        "chunk_we_forecast",
+        "chunk_we_takecoat",
+        "chunk_dl_busytoday"
+      ]
+    },
+    {
+      "id": "act_433",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What's the date today?",
+          "hu": "Hányadika van ma?"
+        },
+        {
+          "en": "What's the weather like today?",
+          "hu": "Milyen ma az idő?"
+        },
+        {
+          "en": "Take a coat, it's cold.",
+          "hu": "Vigyél kabátot, hideg van."
+        }
+      ]
+    },
+    {
+      "id": "act_434",
+      "type": "typed",
+      "items": [
+        "lex_meet",
+        "lex_can",
+        "lex_going_to",
+        "lex_free"
+      ]
+    },
+    {
+      "id": "act_435",
+      "type": "pron-record",
+      "focusId": "str_question"
+    },
+    {
+      "id": "act_436",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "meet",
+            "can",
+            "going to"
+          ],
+          "odd": "be"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

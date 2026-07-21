@@ -12,24 +12,22 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_ago",
-    "lex_holiday",
-    "lex_remember",
     "lex_try",
     "lex_end",
     "lex_spend",
+    "lex_last",
     "lex_almost",
     "lex_already",
     "lex_still"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_conv_expand",
-    "chunk_pa_wasnice",
     "chunk_pa_howwas",
+    "chunk_pa_lastnight",
     "chunk_pa_itwasgreat",
     "chunk_pa_didyou",
     "chunk_pa_wentto2",
+    "chunk_pa_bornin",
     "chunk_op_whatapity"
   ],
   "grammarCards": [
@@ -41,93 +39,62 @@
   "conversationId": "dlg_endika_followup",
   "activities": [
     {
-      "id": "act_301",
+      "id": "act_881",
       "type": "intro",
       "items": [
-        "lex_ago",
-        "lex_holiday",
-        "lex_remember",
         "lex_try",
         "lex_end",
         "lex_spend",
+        "lex_last",
+        "lex_almost",
+        "lex_already",
+        "lex_still"
+      ]
+    },
+    {
+      "id": "act_882",
+      "type": "listen-choose",
+      "items": [
+        "lex_try",
+        "lex_end",
+        "lex_spend",
+        "lex_last",
         "lex_almost",
         "lex_already"
       ]
     },
     {
-      "id": "act_302",
-      "type": "listen-choose",
-      "items": [
-        "lex_ago",
-        "lex_holiday",
-        "lex_remember",
-        "lex_try",
-        "lex_end",
-        "lex_spend"
-      ]
-    },
-    {
-      "id": "act_303",
+      "id": "act_883",
       "type": "icon-choice",
       "items": [
-        "lex_ago",
-        "lex_holiday",
-        "lex_remember",
-        "lex_try",
-        "lex_end"
-      ]
-    },
-    {
-      "id": "act_304",
-      "type": "match",
-      "items": [
-        "lex_ago",
-        "lex_holiday",
-        "lex_remember",
         "lex_try",
         "lex_end",
-        "lex_spend"
+        "lex_spend",
+        "lex_last",
+        "lex_almost"
       ]
     },
     {
-      "id": "act_305",
+      "id": "act_884",
+      "type": "match",
+      "items": [
+        "lex_try",
+        "lex_end",
+        "lex_spend",
+        "lex_last",
+        "lex_almost",
+        "lex_already"
+      ]
+    },
+    {
+      "id": "act_885",
       "type": "grammar",
       "grammarId": "gr_pastsimple"
     },
     {
-      "id": "act_306",
+      "id": "act_886",
       "type": "gapfill",
       "items": [
-        {
-          "text": "I speak ___.",
-          "answer": "ago",
-          "options": [
-            "ago",
-            "please",
-            "yes"
-          ],
-          "hu": "(ezelőtt)"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "holiday",
-          "options": [
-            "holiday",
-            "trip",
-            "luggage"
-          ],
-          "hu": "(nyaralás / szabadság)"
-        },
-        {
-          "text": "I ___ every day.",
-          "answer": "remember",
-          "options": [
-            "remember",
-            "repeat",
-            "understand"
-          ],
-          "hu": "(emlékezni)"
-        },
         {
           "text": "I ___ every day.",
           "answer": "try",
@@ -137,32 +104,62 @@
             "understand"
           ],
           "hu": "(megpróbálni)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "end",
+          "options": [
+            "end",
+            "moment",
+            "thing"
+          ],
+          "hu": "(vég)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "spend",
+          "options": [
+            "spend",
+            "buy",
+            "pay"
+          ],
+          "hu": "(költeni / tölteni)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "last",
+          "options": [
+            "last",
+            "my",
+            "your"
+          ],
+          "hu": "(utolsó / múlt)"
         }
       ]
     },
     {
-      "id": "act_307",
+      "id": "act_887",
       "type": "phrase-match",
       "items": [
-        "chunk_conv_expand",
-        "chunk_pa_wasnice",
         "chunk_pa_howwas",
+        "chunk_pa_lastnight",
         "chunk_pa_itwasgreat",
         "chunk_pa_didyou",
-        "chunk_pa_wentto2"
+        "chunk_pa_wentto2",
+        "chunk_pa_bornin"
       ]
     },
     {
-      "id": "act_308",
+      "id": "act_888",
       "type": "reorder",
       "sentences": [
         {
-          "en": "It was really nice.",
-          "hu": "Nagyon jó volt."
-        },
-        {
           "en": "How was your weekend?",
           "hu": "Milyen volt a hétvégéd?"
+        },
+        {
+          "en": "Last night I watched a film.",
+          "hu": "Tegnap este filmet néztem."
         },
         {
           "en": "It was really lovely.",
@@ -171,22 +168,36 @@
       ]
     },
     {
-      "id": "act_309",
+      "id": "act_889",
       "type": "typed",
       "items": [
-        "lex_ago",
-        "lex_holiday",
-        "lex_remember",
-        "lex_try"
+        "lex_try",
+        "lex_end",
+        "lex_spend",
+        "lex_last"
       ]
     },
     {
-      "id": "act_310",
+      "id": "act_890",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_311",
+      "id": "act_891",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "try",
+            "end",
+            "almost"
+          ],
+          "odd": "be"
+        }
+      ]
+    },
+    {
+      "id": "act_892",
       "type": "listen-comprehension",
       "passage": "Hi Marta! At the weekend I visited my sister. We cooked lunch and talked for hours. It was lovely.",
       "question": {
@@ -201,7 +212,7 @@
       "answer": "Visited her sister"
     },
     {
-      "id": "act_312",
+      "id": "act_893",
       "type": "expand",
       "question": {
         "en": "What did you do at the weekend?",
@@ -223,7 +234,7 @@
       ]
     },
     {
-      "id": "act_313",
+      "id": "act_894",
       "type": "conversation",
       "dialogueId": "dlg_endika_followup"
     }

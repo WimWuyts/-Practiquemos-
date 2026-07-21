@@ -1,0 +1,165 @@
+{
+  "id": "u06-l06",
+  "unitId": "u06",
+  "order": 6,
+  "title": {
+    "en": "Time, weather & plans · more (6)",
+    "hu": "Idő, időjárás, tervek · több (6)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_eighteen",
+    "lex_nineteen",
+    "lex_forty",
+    "lex_fifty",
+    "lex_sixty",
+    "lex_seventy",
+    "lex_eighty",
+    "lex_ninety"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_op_soundsgood"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_446",
+      "type": "intro",
+      "items": [
+        "lex_eighteen",
+        "lex_nineteen",
+        "lex_forty",
+        "lex_fifty",
+        "lex_sixty",
+        "lex_seventy",
+        "lex_eighty",
+        "lex_ninety"
+      ]
+    },
+    {
+      "id": "act_447",
+      "type": "listen-choose",
+      "items": [
+        "lex_eighteen",
+        "lex_nineteen",
+        "lex_forty",
+        "lex_fifty",
+        "lex_sixty",
+        "lex_seventy"
+      ]
+    },
+    {
+      "id": "act_448",
+      "type": "icon-choice",
+      "items": [
+        "lex_eighteen",
+        "lex_nineteen",
+        "lex_forty",
+        "lex_fifty",
+        "lex_sixty"
+      ]
+    },
+    {
+      "id": "act_449",
+      "type": "match",
+      "items": [
+        "lex_eighteen",
+        "lex_nineteen",
+        "lex_forty",
+        "lex_fifty",
+        "lex_sixty",
+        "lex_seventy"
+      ]
+    },
+    {
+      "id": "act_450",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I have ___ friends.",
+          "answer": "eighteen",
+          "options": [
+            "eighteen",
+            "one",
+            "two"
+          ],
+          "hu": "(tizennyolc)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "nineteen",
+          "options": [
+            "nineteen",
+            "one",
+            "two"
+          ],
+          "hu": "(tizenkilenc)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "forty",
+          "options": [
+            "forty",
+            "one",
+            "two"
+          ],
+          "hu": "(negyven)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "fifty",
+          "options": [
+            "fifty",
+            "one",
+            "two"
+          ],
+          "hu": "(ötven)"
+        }
+      ]
+    },
+    {
+      "id": "act_451",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_soundsgood"
+      ]
+    },
+    {
+      "id": "act_452",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "That sounds great!",
+          "hu": "Ez remekül hangzik!"
+        }
+      ]
+    },
+    {
+      "id": "act_453",
+      "type": "typed",
+      "items": [
+        "lex_eighteen",
+        "lex_nineteen",
+        "lex_forty",
+        "lex_fifty"
+      ]
+    },
+    {
+      "id": "act_454",
+      "type": "pron-record",
+      "focusId": "str_question"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

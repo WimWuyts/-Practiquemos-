@@ -1,0 +1,160 @@
+{
+  "id": "u06-l09",
+  "unitId": "u06",
+  "order": 9,
+  "title": {
+    "en": "Time, weather & plans · more (9)",
+    "hu": "Idő, időjárás, tervek · több (9)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_june",
+    "lex_july",
+    "lex_august",
+    "lex_september",
+    "lex_october",
+    "lex_november",
+    "lex_december",
+    "lex_tree"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_471",
+      "type": "intro",
+      "items": [
+        "lex_june",
+        "lex_july",
+        "lex_august",
+        "lex_september",
+        "lex_october",
+        "lex_november",
+        "lex_december",
+        "lex_tree"
+      ]
+    },
+    {
+      "id": "act_472",
+      "type": "listen-choose",
+      "items": [
+        "lex_june",
+        "lex_july",
+        "lex_august",
+        "lex_september",
+        "lex_october",
+        "lex_november"
+      ]
+    },
+    {
+      "id": "act_473",
+      "type": "icon-choice",
+      "items": [
+        "lex_june",
+        "lex_july",
+        "lex_august",
+        "lex_september",
+        "lex_october"
+      ]
+    },
+    {
+      "id": "act_474",
+      "type": "match",
+      "items": [
+        "lex_june",
+        "lex_july",
+        "lex_august",
+        "lex_september",
+        "lex_october",
+        "lex_november"
+      ]
+    },
+    {
+      "id": "act_475",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I like ___.",
+          "answer": "June",
+          "options": [
+            "June",
+            "time",
+            "hour"
+          ],
+          "hu": "(június)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "July",
+          "options": [
+            "July",
+            "time",
+            "hour"
+          ],
+          "hu": "(július)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "August",
+          "options": [
+            "August",
+            "time",
+            "hour"
+          ],
+          "hu": "(augusztus)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "September",
+          "options": [
+            "September",
+            "time",
+            "hour"
+          ],
+          "hu": "(szeptember)"
+        }
+      ]
+    },
+    {
+      "id": "act_476",
+      "type": "typed",
+      "items": [
+        "lex_june",
+        "lex_july",
+        "lex_august",
+        "lex_september"
+      ]
+    },
+    {
+      "id": "act_477",
+      "type": "pron-record",
+      "focusId": "str_word"
+    },
+    {
+      "id": "act_478",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "June",
+            "July",
+            "August"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

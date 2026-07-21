@@ -12,26 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_ticket",
-    "lex_platform",
-    "lex_drive",
-    "lex_change",
-    "lex_fast",
-    "lex_slow",
-    "lex_by",
-    "lex_which",
-    "lex_catch",
-    "lex_other",
-    "lex_boat",
-    "lex_bicycle"
+    "lex_left",
+    "lex_right",
+    "lex_straight",
+    "lex_near",
+    "lex_far",
+    "lex_first",
+    "lex_then",
+    "lex_turn"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_trans_which",
-    "chunk_tr_whichbus",
-    "chunk_tr_oneticket",
-    "chunk_tr_getoff",
-    "chunk_tr_lastbus"
+    "chunk_tw_wheretoilet",
+    "chunk_tw_isitfar",
+    "chunk_tw_lost",
+    "chunk_tr_whichbus"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -40,158 +35,163 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_228",
+      "id": "act_678",
       "type": "intro",
       "items": [
-        "lex_ticket",
-        "lex_platform",
-        "lex_drive",
-        "lex_change",
-        "lex_fast",
-        "lex_slow",
-        "lex_by",
-        "lex_which"
+        "lex_left",
+        "lex_right",
+        "lex_straight",
+        "lex_near",
+        "lex_far",
+        "lex_first",
+        "lex_then",
+        "lex_turn"
       ]
     },
     {
-      "id": "act_229",
+      "id": "act_679",
       "type": "listen-choose",
       "items": [
-        "lex_ticket",
-        "lex_platform",
-        "lex_drive",
-        "lex_change",
-        "lex_fast",
-        "lex_slow"
+        "lex_left",
+        "lex_right",
+        "lex_straight",
+        "lex_near",
+        "lex_far",
+        "lex_first"
       ]
     },
     {
-      "id": "act_230",
+      "id": "act_680",
       "type": "icon-choice",
       "items": [
-        "lex_ticket",
-        "lex_platform",
-        "lex_drive",
-        "lex_change",
-        "lex_fast"
+        "lex_left",
+        "lex_right",
+        "lex_straight",
+        "lex_near",
+        "lex_far"
       ]
     },
     {
-      "id": "act_231",
+      "id": "act_681",
       "type": "match",
       "items": [
-        "lex_ticket",
-        "lex_platform",
-        "lex_drive",
-        "lex_change",
-        "lex_fast",
-        "lex_slow"
+        "lex_left",
+        "lex_right",
+        "lex_straight",
+        "lex_near",
+        "lex_far",
+        "lex_first"
       ]
     },
     {
-      "id": "act_232",
+      "id": "act_682",
+      "type": "spelling-build",
+      "family": "sf_igh",
+      "word": "right"
+    },
+    {
+      "id": "act_683",
       "type": "gapfill",
       "items": [
         {
-          "text": "I need a ___, please.",
-          "answer": "ticket",
+          "text": "Turn ___ at the corner.",
+          "answer": "left",
           "options": [
-            "ticket",
-            "station",
-            "bus"
+            "left",
+            "street",
+            "right"
           ],
-          "hu": "Egy jegyet kérek."
+          "hu": "A saroknál fordulj balra."
         },
         {
-          "text": "This is a ___.",
-          "answer": "platform",
+          "text": "Turn ___ at the church.",
+          "answer": "right",
           "options": [
-            "platform",
-            "station",
-            "bus"
+            "right",
+            "street",
+            "left"
           ],
-          "hu": "(vágány / peron)"
+          "hu": "A templomnál fordulj jobbra."
         },
         {
-          "text": "I ___ every day.",
-          "answer": "drive",
+          "text": "I speak ___.",
+          "answer": "straight",
           "options": [
-            "drive",
-            "change",
-            "catch"
+            "straight",
+            "first",
+            "then"
           ],
-          "hu": "(vezetni (autót))"
+          "hu": "(egyenesen)"
         },
         {
-          "text": "I ___ every day.",
-          "answer": "change",
+          "text": "It is very ___.",
+          "answer": "near",
           "options": [
-            "change",
-            "drive",
-            "catch"
+            "near",
+            "far",
+            "high"
           ],
-          "hu": "(változtatni / átszállni)"
+          "hu": "(közel)"
         }
       ]
     },
     {
-      "id": "act_233",
+      "id": "act_684",
       "type": "phrase-match",
       "items": [
-        "chunk_trans_which",
-        "chunk_tr_whichbus",
-        "chunk_tr_oneticket",
-        "chunk_tr_getoff",
-        "chunk_tr_lastbus"
+        "chunk_tw_wheretoilet",
+        "chunk_tw_isitfar",
+        "chunk_tw_lost",
+        "chunk_tr_whichbus"
       ]
     },
     {
-      "id": "act_234",
+      "id": "act_685",
       "type": "reorder",
       "sentences": [
         {
-          "en": "Which bus goes to the airport?",
-          "hu": "Melyik busz megy a reptérre?"
+          "en": "Where is the toilet, please?",
+          "hu": "Hol van a mosdó, kérem?"
         },
         {
-          "en": "Which bus goes to the centre?",
-          "hu": "Melyik busz megy a központba?"
+          "en": "Is it far from here?",
+          "hu": "Messze van innen?"
         },
         {
-          "en": "One ticket, please.",
-          "hu": "Egy jegyet kérek."
+          "en": "I think I'm lost.",
+          "hu": "Azt hiszem, eltévedtem."
         }
       ]
     },
     {
-      "id": "act_235",
+      "id": "act_686",
       "type": "typed",
       "items": [
-        "lex_ticket",
-        "lex_platform",
-        "lex_drive",
-        "lex_change"
+        "lex_left",
+        "lex_right",
+        "lex_straight",
+        "lex_near"
       ]
     },
     {
-      "id": "act_236",
+      "id": "act_687",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_237",
+      "id": "act_688",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_238",
+      "id": "act_689",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
-            "ticket",
-            "platform",
-            "drive"
+            "left",
+            "right",
+            "straight"
           ],
           "odd": "name"
         }

@@ -1,0 +1,201 @@
+{
+  "id": "u07-l04",
+  "unitId": "u07",
+  "order": 4,
+  "title": {
+    "en": "Phone & video calls · more (4)",
+    "hu": "Telefon és videóhívás · több (4)"
+  },
+  "canDo": {
+    "en": "Start a call, check sound, ask to repeat",
+    "hu": "Hívás indítása, hang ellenőrzése, ismétléskérés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_letter",
+    "lex_news",
+    "lex_talk",
+    "lex_ring",
+    "lex_wait_for"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_ph_badline",
+    "chunk_ph_seeyoulater",
+    "chunk_ph_sendmessage",
+    "chunk_rp_saythatagain",
+    "chunk_rp_onemoment",
+    "chunk_nm_myphone",
+    "chunk_ph_whoscalling",
+    "chunk_ph_holdon",
+    "chunk_ph_callback",
+    "chunk_ph_speakup",
+    "chunk_rp_whatmeans",
+    "chunk_rp_slowlyplease",
+    "chunk_ph_gooutside"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_th"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_553",
+      "type": "intro",
+      "items": [
+        "lex_letter",
+        "lex_news",
+        "lex_talk",
+        "lex_ring",
+        "lex_wait_for"
+      ]
+    },
+    {
+      "id": "act_554",
+      "type": "listen-choose",
+      "items": [
+        "lex_letter",
+        "lex_news",
+        "lex_talk",
+        "lex_ring",
+        "lex_wait_for"
+      ]
+    },
+    {
+      "id": "act_555",
+      "type": "icon-choice",
+      "items": [
+        "lex_letter",
+        "lex_news",
+        "lex_talk",
+        "lex_ring",
+        "lex_wait_for"
+      ]
+    },
+    {
+      "id": "act_556",
+      "type": "match",
+      "items": [
+        "lex_letter",
+        "lex_news",
+        "lex_talk",
+        "lex_ring",
+        "lex_wait_for"
+      ]
+    },
+    {
+      "id": "act_557",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "letter",
+          "options": [
+            "letter",
+            "phone",
+            "news"
+          ],
+          "hu": "(levél / betű)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "news",
+          "options": [
+            "news",
+            "phone",
+            "letter"
+          ],
+          "hu": "(hír(ek))"
+        },
+        {
+          "text": "I want to ___ to Endika.",
+          "answer": "talk",
+          "options": [
+            "talk",
+            "repeat",
+            "understand"
+          ],
+          "hu": "Szeretnék beszélni Endikával."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "ring",
+          "options": [
+            "ring",
+            "call",
+            "hear"
+          ],
+          "hu": "(csengetni / felhívni)"
+        }
+      ]
+    },
+    {
+      "id": "act_558",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ph_badline",
+        "chunk_ph_seeyoulater",
+        "chunk_ph_sendmessage",
+        "chunk_rp_saythatagain",
+        "chunk_rp_onemoment",
+        "chunk_nm_myphone"
+      ]
+    },
+    {
+      "id": "act_559",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Sorry, the line is bad.",
+          "hu": "Bocsi, rossz a vonal."
+        },
+        {
+          "en": "Talk to you soon. Bye!",
+          "hu": "Hamarosan beszélünk. Szia!"
+        },
+        {
+          "en": "I'll send you a message.",
+          "hu": "Küldök egy üzenetet."
+        }
+      ]
+    },
+    {
+      "id": "act_560",
+      "type": "typed",
+      "items": [
+        "lex_letter",
+        "lex_news",
+        "lex_talk",
+        "lex_ring"
+      ]
+    },
+    {
+      "id": "act_561",
+      "type": "pron-record",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_562",
+      "type": "minimal-pair",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_563",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "letter",
+            "news",
+            "ring"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

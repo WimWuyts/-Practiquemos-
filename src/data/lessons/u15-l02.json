@@ -12,12 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_land"
+    "lex_safe",
+    "lex_okay",
+    "lex_fly",
+    "lex_feel",
+    "lex_sad",
+    "lex_worry",
+    "lex_hold",
+    "lex_fall"
   ],
   "reviewItems": [],
   "chunks": [
+    "chunk_fly_blanket",
+    "chunk_fly_toilet",
     "chunk_fly_land",
-    "chunk_fl_needanything"
+    "chunk_fe_tired"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -26,48 +35,159 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_379",
+      "id": "act_975",
       "type": "intro",
       "items": [
-        "lex_land"
+        "lex_safe",
+        "lex_okay",
+        "lex_fly",
+        "lex_feel",
+        "lex_sad",
+        "lex_worry",
+        "lex_hold",
+        "lex_fall"
       ]
     },
     {
-      "id": "act_380",
-      "type": "phrase-match",
+      "id": "act_976",
+      "type": "listen-choose",
       "items": [
-        "chunk_fly_land",
-        "chunk_fl_needanything"
+        "lex_safe",
+        "lex_okay",
+        "lex_fly",
+        "lex_feel",
+        "lex_sad",
+        "lex_worry"
       ]
     },
     {
-      "id": "act_381",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_977",
+      "type": "icon-choice",
+      "items": [
+        "lex_safe",
+        "lex_okay",
+        "lex_fly",
+        "lex_feel",
+        "lex_sad"
+      ]
+    },
+    {
+      "id": "act_978",
+      "type": "match",
+      "items": [
+        "lex_safe",
+        "lex_okay",
+        "lex_fly",
+        "lex_feel",
+        "lex_sad",
+        "lex_worry"
+      ]
+    },
+    {
+      "id": "act_979",
+      "type": "gapfill",
+      "items": [
         {
-          "en": "When will we land?",
-          "hu": "Mikor szállunk le?"
+          "text": "It is very ___.",
+          "answer": "safe",
+          "options": [
+            "safe",
+            "happy",
+            "afraid"
+          ],
+          "hu": "(biztonságos)"
         },
         {
-          "en": "I'm okay now, thank you.",
-          "hu": "Most már jól vagyok, köszönöm."
+          "text": "It is very ___.",
+          "answer": "okay",
+          "options": [
+            "okay",
+            "happy",
+            "afraid"
+          ],
+          "hu": "(rendben / oké)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "fly",
+          "options": [
+            "fly",
+            "land",
+            "fasten"
+          ],
+          "hu": "(repülni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "feel",
+          "options": [
+            "feel",
+            "smile",
+            "laugh"
+          ],
+          "hu": "(érezni)"
         }
       ]
     },
     {
-      "id": "act_382",
-      "type": "typed",
+      "id": "act_980",
+      "type": "phrase-match",
       "items": [
-        "lex_land"
+        "chunk_fly_blanket",
+        "chunk_fly_toilet",
+        "chunk_fly_land",
+        "chunk_fe_tired"
       ]
     },
     {
-      "id": "act_383",
+      "id": "act_981",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Could I have a blanket, please?",
+          "hu": "Kaphatnék egy takarót, kérem?"
+        },
+        {
+          "en": "Where is the toilet?",
+          "hu": "Hol van a mosdó?"
+        },
+        {
+          "en": "When will we land?",
+          "hu": "Mikor szállunk le?"
+        }
+      ]
+    },
+    {
+      "id": "act_982",
+      "type": "typed",
+      "items": [
+        "lex_safe",
+        "lex_okay",
+        "lex_fly",
+        "lex_feel"
+      ]
+    },
+    {
+      "id": "act_983",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_384",
+      "id": "act_984",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "safe",
+            "okay",
+            "feel"
+          ],
+          "odd": "my"
+        }
+      ]
+    },
+    {
+      "id": "act_985",
       "type": "listen-comprehension",
       "passage": "Ladies and gentlemen, we will land in about twenty minutes. Please fasten your seatbelt. Thank you.",
       "question": {

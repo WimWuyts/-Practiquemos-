@@ -1,0 +1,165 @@
+{
+  "id": "u05-l10",
+  "unitId": "u05",
+  "order": 10,
+  "title": {
+    "en": "Food, cooking & shopping · more (10)",
+    "hu": "Étel, főzés, vásárlás · több (10)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_size",
+    "lex_borrow",
+    "lex_cup",
+    "lex_pot",
+    "lex_pan",
+    "lex_basket",
+    "lex_list",
+    "lex_carrot"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_372",
+      "type": "intro",
+      "items": [
+        "lex_size",
+        "lex_borrow",
+        "lex_cup",
+        "lex_pot",
+        "lex_pan",
+        "lex_basket",
+        "lex_list",
+        "lex_carrot"
+      ]
+    },
+    {
+      "id": "act_373",
+      "type": "listen-choose",
+      "items": [
+        "lex_size",
+        "lex_borrow",
+        "lex_cup",
+        "lex_pot",
+        "lex_pan",
+        "lex_basket"
+      ]
+    },
+    {
+      "id": "act_374",
+      "type": "icon-choice",
+      "items": [
+        "lex_size",
+        "lex_borrow",
+        "lex_cup",
+        "lex_pot",
+        "lex_pan"
+      ]
+    },
+    {
+      "id": "act_375",
+      "type": "match",
+      "items": [
+        "lex_size",
+        "lex_borrow",
+        "lex_cup",
+        "lex_pot",
+        "lex_pan",
+        "lex_basket"
+      ]
+    },
+    {
+      "id": "act_376",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "size",
+          "options": [
+            "size",
+            "shop",
+            "price"
+          ],
+          "hu": "(méret)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "borrow",
+          "options": [
+            "borrow",
+            "buy",
+            "pay"
+          ],
+          "hu": "(kölcsönkérni)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "cup",
+          "options": [
+            "cup",
+            "food",
+            "water"
+          ],
+          "hu": "(csésze / bögre)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "pot",
+          "options": [
+            "pot",
+            "food",
+            "water"
+          ],
+          "hu": "(fazék)"
+        }
+      ]
+    },
+    {
+      "id": "act_377",
+      "type": "typed",
+      "items": [
+        "lex_size",
+        "lex_borrow",
+        "lex_cup",
+        "lex_pot"
+      ]
+    },
+    {
+      "id": "act_378",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_379",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_380",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "size",
+            "borrow",
+            "basket"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

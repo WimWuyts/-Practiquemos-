@@ -1,0 +1,152 @@
+{
+  "id": "u08-l07",
+  "unitId": "u08",
+  "order": 7,
+  "title": {
+    "en": "Hobbies, books & opinions · more (7)",
+    "hu": "Hobbik, könyvek, vélemények · több (7)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_why",
+    "lex_part",
+    "lex_story",
+    "lex_song",
+    "lex_game",
+    "lex_photo",
+    "lex_picture",
+    "lex_colour"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_r"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_629",
+      "type": "intro",
+      "items": [
+        "lex_why",
+        "lex_part",
+        "lex_story",
+        "lex_song",
+        "lex_game",
+        "lex_photo",
+        "lex_picture",
+        "lex_colour"
+      ]
+    },
+    {
+      "id": "act_630",
+      "type": "listen-choose",
+      "items": [
+        "lex_why",
+        "lex_part",
+        "lex_story",
+        "lex_song",
+        "lex_game",
+        "lex_photo"
+      ]
+    },
+    {
+      "id": "act_631",
+      "type": "icon-choice",
+      "items": [
+        "lex_why",
+        "lex_part",
+        "lex_story",
+        "lex_song",
+        "lex_game"
+      ]
+    },
+    {
+      "id": "act_632",
+      "type": "match",
+      "items": [
+        "lex_why",
+        "lex_part",
+        "lex_story",
+        "lex_song",
+        "lex_game",
+        "lex_photo"
+      ]
+    },
+    {
+      "id": "act_633",
+      "type": "spelling-build",
+      "family": "sf_magic_e_a",
+      "word": "game"
+    },
+    {
+      "id": "act_634",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ do you like it?",
+          "answer": "why",
+          "options": [
+            "why",
+            "where",
+            "how"
+          ],
+          "hu": "Miért szereted?"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "part",
+          "options": [
+            "part",
+            "moment",
+            "thing"
+          ],
+          "hu": "(rész)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "story",
+          "options": [
+            "story",
+            "hobby",
+            "music"
+          ],
+          "hu": "(történet)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "song",
+          "options": [
+            "song",
+            "hobby",
+            "music"
+          ],
+          "hu": "(dal)"
+        }
+      ]
+    },
+    {
+      "id": "act_635",
+      "type": "typed",
+      "items": [
+        "lex_why",
+        "lex_part",
+        "lex_story",
+        "lex_song"
+      ]
+    },
+    {
+      "id": "act_636",
+      "type": "pron-record",
+      "focusId": "snd_r"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

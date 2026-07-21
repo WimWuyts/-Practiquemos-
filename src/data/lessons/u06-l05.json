@@ -1,0 +1,179 @@
+{
+  "id": "u06-l05",
+  "unitId": "u06",
+  "order": 5,
+  "title": {
+    "en": "Time, weather & plans · more (5)",
+    "hu": "Idő, időjárás, tervek · több (5)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_thirty",
+    "lex_hundred",
+    "lex_zero",
+    "lex_thirteen",
+    "lex_fourteen",
+    "lex_fifteen",
+    "lex_sixteen",
+    "lex_seventeen"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_tm_seeyouat",
+    "chunk_we_lovely2",
+    "chunk_pl_freetomorrow",
+    "chunk_rp_didyousay"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_437",
+      "type": "intro",
+      "items": [
+        "lex_thirty",
+        "lex_hundred",
+        "lex_zero",
+        "lex_thirteen",
+        "lex_fourteen",
+        "lex_fifteen",
+        "lex_sixteen",
+        "lex_seventeen"
+      ]
+    },
+    {
+      "id": "act_438",
+      "type": "listen-choose",
+      "items": [
+        "lex_thirty",
+        "lex_hundred",
+        "lex_zero",
+        "lex_thirteen",
+        "lex_fourteen",
+        "lex_fifteen"
+      ]
+    },
+    {
+      "id": "act_439",
+      "type": "icon-choice",
+      "items": [
+        "lex_thirty",
+        "lex_hundred",
+        "lex_zero",
+        "lex_thirteen",
+        "lex_fourteen"
+      ]
+    },
+    {
+      "id": "act_440",
+      "type": "match",
+      "items": [
+        "lex_thirty",
+        "lex_hundred",
+        "lex_zero",
+        "lex_thirteen",
+        "lex_fourteen",
+        "lex_fifteen"
+      ]
+    },
+    {
+      "id": "act_441",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I have ___ friends.",
+          "answer": "thirty",
+          "options": [
+            "thirty",
+            "one",
+            "two"
+          ],
+          "hu": "(harminc)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "hundred",
+          "options": [
+            "hundred",
+            "one",
+            "two"
+          ],
+          "hu": "(száz)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "zero",
+          "options": [
+            "zero",
+            "one",
+            "two"
+          ],
+          "hu": "(nulla)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "thirteen",
+          "options": [
+            "thirteen",
+            "one",
+            "two"
+          ],
+          "hu": "(tizenhárom)"
+        }
+      ]
+    },
+    {
+      "id": "act_442",
+      "type": "phrase-match",
+      "items": [
+        "chunk_tm_seeyouat",
+        "chunk_we_lovely2",
+        "chunk_pl_freetomorrow",
+        "chunk_rp_didyousay"
+      ]
+    },
+    {
+      "id": "act_443",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "See you at three o'clock.",
+          "hu": "Háromkor találkozunk."
+        },
+        {
+          "en": "What a lovely day!",
+          "hu": "Micsoda gyönyörű nap!"
+        },
+        {
+          "en": "Are you free tomorrow?",
+          "hu": "Ráérsz holnap?"
+        }
+      ]
+    },
+    {
+      "id": "act_444",
+      "type": "typed",
+      "items": [
+        "lex_thirty",
+        "lex_hundred",
+        "lex_zero",
+        "lex_thirteen"
+      ]
+    },
+    {
+      "id": "act_445",
+      "type": "pron-record",
+      "focusId": "str_word"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

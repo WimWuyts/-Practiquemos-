@@ -1,0 +1,204 @@
+{
+  "id": "u09-l05",
+  "unitId": "u09",
+  "order": 5,
+  "title": {
+    "en": "Around town: directions · more (5)",
+    "hu": "A városban: útbaigazítás · több (5)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_centre",
+    "lex_place",
+    "lex_corner",
+    "lex_open",
+    "lex_close",
+    "lex_stop",
+    "lex_take",
+    "lex_find"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_rp_howspell",
+    "chunk_tw_isitclose",
+    "chunk_tr_lastbus",
+    "chunk_tw_canyoushow"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_711",
+      "type": "intro",
+      "items": [
+        "lex_centre",
+        "lex_place",
+        "lex_corner",
+        "lex_open",
+        "lex_close",
+        "lex_stop",
+        "lex_take",
+        "lex_find"
+      ]
+    },
+    {
+      "id": "act_712",
+      "type": "listen-choose",
+      "items": [
+        "lex_centre",
+        "lex_place",
+        "lex_corner",
+        "lex_open",
+        "lex_close",
+        "lex_stop"
+      ]
+    },
+    {
+      "id": "act_713",
+      "type": "icon-choice",
+      "items": [
+        "lex_centre",
+        "lex_place",
+        "lex_corner",
+        "lex_open",
+        "lex_close"
+      ]
+    },
+    {
+      "id": "act_714",
+      "type": "match",
+      "items": [
+        "lex_centre",
+        "lex_place",
+        "lex_corner",
+        "lex_open",
+        "lex_close",
+        "lex_stop"
+      ]
+    },
+    {
+      "id": "act_715",
+      "type": "spelling-build",
+      "family": "sf_magic_e_o",
+      "word": "close"
+    },
+    {
+      "id": "act_716",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "centre",
+          "options": [
+            "centre",
+            "street",
+            "left"
+          ],
+          "hu": "(központ)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "place",
+          "options": [
+            "place",
+            "street",
+            "left"
+          ],
+          "hu": "(hely)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "corner",
+          "options": [
+            "corner",
+            "street",
+            "left"
+          ],
+          "hu": "(sarok)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "open",
+          "options": [
+            "open",
+            "work",
+            "get up"
+          ],
+          "hu": "(kinyitni)"
+        }
+      ]
+    },
+    {
+      "id": "act_717",
+      "type": "phrase-match",
+      "items": [
+        "chunk_rp_howspell",
+        "chunk_tw_isitclose",
+        "chunk_tr_lastbus",
+        "chunk_tw_canyoushow"
+      ]
+    },
+    {
+      "id": "act_718",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "How do you spell that?",
+          "hu": "Hogy írják ezt?"
+        },
+        {
+          "en": "Is it near here?",
+          "hu": "Közel van ide?"
+        },
+        {
+          "en": "When is the last bus?",
+          "hu": "Mikor megy az utolsó busz?"
+        }
+      ]
+    },
+    {
+      "id": "act_719",
+      "type": "typed",
+      "items": [
+        "lex_centre",
+        "lex_place",
+        "lex_corner",
+        "lex_open"
+      ]
+    },
+    {
+      "id": "act_720",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_721",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_722",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "centre",
+            "place",
+            "corner"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "id": "u09-l06",
+  "unitId": "u09",
+  "order": 6,
+  "title": {
+    "en": "Around town: directions · more (6)",
+    "hu": "A városban: útbaigazítás · több (6)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_show",
+    "lex_drive",
+    "lex_change",
+    "lex_fast",
+    "lex_slow",
+    "lex_high",
+    "lex_here",
+    "lex_there"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_723",
+      "type": "intro",
+      "items": [
+        "lex_show",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow",
+        "lex_high",
+        "lex_here",
+        "lex_there"
+      ]
+    },
+    {
+      "id": "act_724",
+      "type": "listen-choose",
+      "items": [
+        "lex_show",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow",
+        "lex_high"
+      ]
+    },
+    {
+      "id": "act_725",
+      "type": "icon-choice",
+      "items": [
+        "lex_show",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow"
+      ]
+    },
+    {
+      "id": "act_726",
+      "type": "match",
+      "items": [
+        "lex_show",
+        "lex_drive",
+        "lex_change",
+        "lex_fast",
+        "lex_slow",
+        "lex_high"
+      ]
+    },
+    {
+      "id": "act_727",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "show",
+          "options": [
+            "show",
+            "work",
+            "get up"
+          ],
+          "hu": "(megmutatni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "drive",
+          "options": [
+            "drive",
+            "change",
+            "catch"
+          ],
+          "hu": "(vezetni (autót))"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "change",
+          "options": [
+            "change",
+            "drive",
+            "catch"
+          ],
+          "hu": "(változtatni / átszállni)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "fast",
+          "options": [
+            "fast",
+            "slow",
+            "my"
+          ],
+          "hu": "(gyors)"
+        }
+      ]
+    },
+    {
+      "id": "act_728",
+      "type": "typed",
+      "items": [
+        "lex_show",
+        "lex_drive",
+        "lex_change",
+        "lex_fast"
+      ]
+    },
+    {
+      "id": "act_729",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_730",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

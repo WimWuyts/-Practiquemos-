@@ -1,0 +1,149 @@
+{
+  "id": "u01-l07",
+  "unitId": "u01",
+  "order": 7,
+  "title": {
+    "en": "Hello, I'm Marta · more (7)",
+    "hu": "Szia, Marta vagyok · több (7)"
+  },
+  "canDo": {
+    "en": "Greet, introduce yourself, ask simple questions",
+    "hu": "Köszönés, bemutatkozás, egyszerű kérdések"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_seven",
+    "lex_eight",
+    "lex_nine",
+    "lex_ten",
+    "lex_thank",
+    "lex_age",
+    "lex_address"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_short_vowels"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_73",
+      "type": "intro",
+      "items": [
+        "lex_seven",
+        "lex_eight",
+        "lex_nine",
+        "lex_ten",
+        "lex_thank",
+        "lex_age",
+        "lex_address"
+      ]
+    },
+    {
+      "id": "act_74",
+      "type": "listen-choose",
+      "items": [
+        "lex_seven",
+        "lex_eight",
+        "lex_nine",
+        "lex_ten",
+        "lex_thank",
+        "lex_age"
+      ]
+    },
+    {
+      "id": "act_75",
+      "type": "icon-choice",
+      "items": [
+        "lex_seven",
+        "lex_eight",
+        "lex_nine",
+        "lex_ten",
+        "lex_thank"
+      ]
+    },
+    {
+      "id": "act_76",
+      "type": "match",
+      "items": [
+        "lex_seven",
+        "lex_eight",
+        "lex_nine",
+        "lex_ten",
+        "lex_thank",
+        "lex_age"
+      ]
+    },
+    {
+      "id": "act_77",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I have ___ friends.",
+          "answer": "seven",
+          "options": [
+            "seven",
+            "one",
+            "two"
+          ],
+          "hu": "(hét (szám))"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "eight",
+          "options": [
+            "eight",
+            "one",
+            "two"
+          ],
+          "hu": "(nyolc)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "nine",
+          "options": [
+            "nine",
+            "one",
+            "two"
+          ],
+          "hu": "(kilenc)"
+        },
+        {
+          "text": "I have ___ friends.",
+          "answer": "ten",
+          "options": [
+            "ten",
+            "one",
+            "two"
+          ],
+          "hu": "(tíz)"
+        }
+      ]
+    },
+    {
+      "id": "act_78",
+      "type": "typed",
+      "items": [
+        "lex_seven",
+        "lex_eight",
+        "lex_nine",
+        "lex_ten"
+      ]
+    },
+    {
+      "id": "act_79",
+      "type": "pron-record",
+      "focusId": "snd_short_vowels"
+    },
+    {
+      "id": "act_80",
+      "type": "minimal-pair",
+      "focusId": "snd_short_vowels"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "id": "u09-l11",
+  "unitId": "u09",
+  "order": 11,
+  "title": {
+    "en": "Around town: directions · more (11)",
+    "hu": "A városban: útbaigazítás · több (11)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_boat",
+    "lex_bicycle",
+    "lex_corner_shop",
+    "lex_bench",
+    "lex_wide"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_767",
+      "type": "intro",
+      "items": [
+        "lex_boat",
+        "lex_bicycle",
+        "lex_corner_shop",
+        "lex_bench",
+        "lex_wide"
+      ]
+    },
+    {
+      "id": "act_768",
+      "type": "listen-choose",
+      "items": [
+        "lex_boat",
+        "lex_bicycle",
+        "lex_corner_shop",
+        "lex_bench",
+        "lex_wide"
+      ]
+    },
+    {
+      "id": "act_769",
+      "type": "icon-choice",
+      "items": [
+        "lex_boat",
+        "lex_bicycle",
+        "lex_corner_shop",
+        "lex_bench",
+        "lex_wide"
+      ]
+    },
+    {
+      "id": "act_770",
+      "type": "match",
+      "items": [
+        "lex_boat",
+        "lex_bicycle",
+        "lex_corner_shop",
+        "lex_bench",
+        "lex_wide"
+      ]
+    },
+    {
+      "id": "act_771",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "boat",
+          "options": [
+            "boat",
+            "station",
+            "bus"
+          ],
+          "hu": "(csónak / hajó)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "bicycle",
+          "options": [
+            "bicycle",
+            "station",
+            "bus"
+          ],
+          "hu": "(kerékpár)"
+        },
+        {
+          "text": "___.",
+          "answer": "corner shop",
+          "options": [
+            "corner shop",
+            "turn left",
+            "turn right"
+          ],
+          "hu": "(sarki bolt)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "bench",
+          "options": [
+            "bench",
+            "street",
+            "left"
+          ],
+          "hu": "(pad)"
+        }
+      ]
+    },
+    {
+      "id": "act_772",
+      "type": "typed",
+      "items": [
+        "lex_boat",
+        "lex_bicycle",
+        "lex_corner_shop",
+        "lex_bench"
+      ]
+    },
+    {
+      "id": "act_773",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_774",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

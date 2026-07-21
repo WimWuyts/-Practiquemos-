@@ -1,0 +1,192 @@
+{
+  "id": "u10-l03",
+  "unitId": "u10",
+  "order": 3,
+  "title": {
+    "en": "Restaurant, hotel & services · more (3)",
+    "hu": "Étterem, szálloda, szolgáltatások · több (3)"
+  },
+  "canDo": {
+    "en": "Order, check in, ask for help",
+    "hu": "Rendelés, bejelentkezés, segítségkérés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_pain",
+    "lex_better",
+    "lex_rest",
+    "lex_hurt",
+    "lex_pharmacy",
+    "lex_of_course",
+    "lex_cafe",
+    "lex_fill"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_sv_recommend",
+    "chunk_sv_water",
+    "chunk_sv_checkin",
+    "chunk_sv_roomproblem"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_sentence"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_797",
+      "type": "intro",
+      "items": [
+        "lex_pain",
+        "lex_better",
+        "lex_rest",
+        "lex_hurt",
+        "lex_pharmacy",
+        "lex_of_course",
+        "lex_cafe",
+        "lex_fill"
+      ]
+    },
+    {
+      "id": "act_798",
+      "type": "listen-choose",
+      "items": [
+        "lex_pain",
+        "lex_better",
+        "lex_rest",
+        "lex_hurt",
+        "lex_pharmacy",
+        "lex_of_course"
+      ]
+    },
+    {
+      "id": "act_799",
+      "type": "icon-choice",
+      "items": [
+        "lex_pharmacy",
+        "lex_of_course",
+        "lex_cafe",
+        "lex_fill"
+      ]
+    },
+    {
+      "id": "act_800",
+      "type": "match",
+      "items": [
+        "lex_pain",
+        "lex_better",
+        "lex_rest",
+        "lex_hurt",
+        "lex_pharmacy",
+        "lex_of_course"
+      ]
+    },
+    {
+      "id": "act_801",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "pain",
+          "options": [
+            "pain",
+            "doctor",
+            "nurse"
+          ],
+          "hu": "(fájdalom)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "better",
+          "options": [
+            "better",
+            "ill",
+            "sick"
+          ],
+          "hu": "(jobban / jobb)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "rest",
+          "options": [
+            "rest",
+            "doctor",
+            "nurse"
+          ],
+          "hu": "(pihenés / pihenni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "hurt",
+          "options": [
+            "hurt",
+            "be",
+            "have"
+          ],
+          "hu": "(fájni)"
+        }
+      ]
+    },
+    {
+      "id": "act_802",
+      "type": "phrase-match",
+      "items": [
+        "chunk_sv_recommend",
+        "chunk_sv_water",
+        "chunk_sv_checkin",
+        "chunk_sv_roomproblem"
+      ]
+    },
+    {
+      "id": "act_803",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What do you recommend?",
+          "hu": "Mit ajánl?"
+        },
+        {
+          "en": "A glass of water, please.",
+          "hu": "Egy pohár vizet kérek."
+        },
+        {
+          "en": "I'd like to check in, please.",
+          "hu": "Szeretnék bejelentkezni."
+        }
+      ]
+    },
+    {
+      "id": "act_804",
+      "type": "typed",
+      "items": [
+        "lex_pain",
+        "lex_better",
+        "lex_rest",
+        "lex_hurt"
+      ]
+    },
+    {
+      "id": "act_805",
+      "type": "pron-record",
+      "focusId": "str_sentence"
+    },
+    {
+      "id": "act_806",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "pain",
+            "better",
+            "rest"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

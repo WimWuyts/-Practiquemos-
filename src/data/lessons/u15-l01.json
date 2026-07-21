@@ -19,16 +19,7 @@
     "lex_calm",
     "lex_blanket",
     "lex_toilet",
-    "lex_safe",
-    "lex_okay",
-    "lex_fly",
-    "lex_feel",
-    "lex_sad",
-    "lex_worry",
-    "lex_hold",
-    "lex_fall",
-    "lex_drop",
-    "lex_sleepy"
+    "lex_land"
   ],
   "reviewItems": [
     "lex_was",
@@ -63,15 +54,7 @@
     "chunk_fly_afraid",
     "chunk_fly_first",
     "chunk_fly_nervous",
-    "chunk_fly_water",
-    "chunk_fly_blanket",
-    "chunk_fly_toilet",
-    "chunk_fe_tired",
-    "chunk_fl_firsttime",
-    "chunk_fl_helpcalm",
-    "chunk_fe_worried",
-    "chunk_fl_thankyou",
-    "chunk_fl_couldyourepeat"
+    "chunk_fly_water"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -82,7 +65,7 @@
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_365",
+      "id": "act_961",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -92,11 +75,11 @@
         "lex_calm",
         "lex_blanket",
         "lex_toilet",
-        "lex_safe"
+        "lex_land"
       ]
     },
     {
-      "id": "act_366",
+      "id": "act_962",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -108,7 +91,7 @@
       ]
     },
     {
-      "id": "act_367",
+      "id": "act_963",
       "type": "icon-choice",
       "items": [
         "lex_plane",
@@ -119,7 +102,7 @@
       ]
     },
     {
-      "id": "act_368",
+      "id": "act_964",
       "type": "match",
       "items": [
         "lex_plane",
@@ -131,18 +114,18 @@
       ]
     },
     {
-      "id": "act_369",
+      "id": "act_965",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_370",
+      "id": "act_966",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_371",
+      "id": "act_967",
       "type": "gapfill",
       "items": [
         {
@@ -188,19 +171,17 @@
       ]
     },
     {
-      "id": "act_372",
+      "id": "act_968",
       "type": "phrase-match",
       "items": [
         "chunk_fly_afraid",
         "chunk_fly_first",
         "chunk_fly_nervous",
-        "chunk_fly_water",
-        "chunk_fly_blanket",
-        "chunk_fly_toilet"
+        "chunk_fly_water"
       ]
     },
     {
-      "id": "act_373",
+      "id": "act_969",
       "type": "reorder",
       "sentences": [
         {
@@ -218,7 +199,7 @@
       ]
     },
     {
-      "id": "act_374",
+      "id": "act_970",
       "type": "typed",
       "items": [
         "lex_plane",
@@ -228,12 +209,12 @@
       ]
     },
     {
-      "id": "act_375",
+      "id": "act_971",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_376",
+      "id": "act_972",
       "type": "odd-one-out",
       "groups": [
         {
@@ -247,12 +228,12 @@
       ]
     },
     {
-      "id": "act_377",
+      "id": "act_973",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_378",
+      "id": "act_974",
       "type": "review",
       "items": [
         "lex_was",

@@ -12,58 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
+    "lex_apple",
+    "lex_soup",
+    "lex_meat",
+    "lex_fish",
+    "lex_vegetable",
+    "lex_fruit",
     "lex_cake",
-    "lex_cook",
-    "lex_make",
-    "lex_buy",
-    "lex_want",
-    "lex_shop",
-    "lex_price",
-    "lex_money",
-    "lex_much",
-    "lex_many",
-    "lex_wine",
-    "lex_dessert",
-    "lex_delicious",
-    "lex_taste",
-    "lex_give",
-    "lex_pay",
-    "lex_sell",
-    "lex_expensive",
-    "lex_cheap",
-    "lex_full",
-    "lex_empty",
-    "lex_for",
-    "lex_cost",
-    "lex_euro",
-    "lex_card",
-    "lex_cash",
-    "lex_box",
-    "lex_bottle",
-    "lex_glass",
-    "lex_plate",
-    "lex_knife",
-    "lex_spoon",
-    "lex_fork",
-    "lex_cut",
-    "lex_size",
-    "lex_borrow",
-    "lex_cup",
-    "lex_pot",
-    "lex_pan",
-    "lex_basket",
-    "lex_list"
+    "lex_breakfast"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_op_wouldlike",
     "chunk_fd_recipe",
     "chunk_fd_howmuch2",
     "chunk_fd_takeit",
-    "chunk_pm_canihave",
-    "chunk_of_hereyouare",
-    "chunk_nm_howmuchtotal",
-    "chunk_nm_itcosts"
+    "chunk_pm_canihave"
   ],
   "grammarCards": [
     "gr_wouldlike"
@@ -74,131 +37,125 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_120",
+      "id": "act_293",
       "type": "intro",
       "items": [
+        "lex_apple",
+        "lex_soup",
+        "lex_meat",
+        "lex_fish",
+        "lex_vegetable",
+        "lex_fruit",
         "lex_cake",
-        "lex_cook",
-        "lex_make",
-        "lex_buy",
-        "lex_want",
-        "lex_shop",
-        "lex_price",
-        "lex_money"
+        "lex_breakfast"
       ]
     },
     {
-      "id": "act_121",
+      "id": "act_294",
       "type": "listen-choose",
       "items": [
-        "lex_cake",
-        "lex_cook",
-        "lex_make",
-        "lex_buy",
-        "lex_want",
-        "lex_shop"
+        "lex_apple",
+        "lex_soup",
+        "lex_meat",
+        "lex_fish",
+        "lex_vegetable",
+        "lex_fruit"
       ]
     },
     {
-      "id": "act_122",
+      "id": "act_295",
       "type": "icon-choice",
       "items": [
-        "lex_cake",
-        "lex_cook",
-        "lex_make",
-        "lex_buy",
-        "lex_want"
+        "lex_apple",
+        "lex_soup",
+        "lex_meat",
+        "lex_fish",
+        "lex_vegetable"
       ]
     },
     {
-      "id": "act_123",
+      "id": "act_296",
       "type": "match",
       "items": [
-        "lex_cake",
-        "lex_cook",
-        "lex_make",
-        "lex_buy",
-        "lex_want",
-        "lex_shop"
+        "lex_apple",
+        "lex_soup",
+        "lex_meat",
+        "lex_fish",
+        "lex_vegetable",
+        "lex_fruit"
       ]
     },
     {
-      "id": "act_124",
+      "id": "act_297",
       "type": "spelling-build",
-      "family": "sf_magic_e_a",
-      "word": "cake"
+      "family": "sf_ea",
+      "word": "meat"
     },
     {
-      "id": "act_125",
+      "id": "act_298",
       "type": "grammar",
       "grammarId": "gr_wouldlike"
     },
     {
-      "id": "act_126",
+      "id": "act_299",
       "type": "gapfill",
       "items": [
         {
-          "text": "Would you like some ___?",
-          "answer": "cake",
+          "text": "I eat an ___ every day.",
+          "answer": "apple",
           "options": [
-            "cake",
+            "apple",
             "food",
             "water"
           ],
-          "hu": "Kérsz egy kis süteményt?"
+          "hu": "Minden nap eszem egy almát."
         },
         {
-          "text": "I love to ___ for my family.",
-          "answer": "cook",
+          "text": "I'd like the ___, please.",
+          "answer": "soup",
           "options": [
-            "cook",
-            "eat",
-            "drink"
+            "soup",
+            "food",
+            "water"
           ],
-          "hu": "Imádok főzni a családomnak."
+          "hu": "A levest kérném."
         },
         {
-          "text": "I ___ coffee for my sister.",
-          "answer": "make",
+          "text": "I like ___.",
+          "answer": "meat",
           "options": [
-            "make",
-            "eat",
-            "drink"
+            "meat",
+            "food",
+            "water"
           ],
-          "hu": "Kávét készítek a nővéremnek."
+          "hu": "(hús)"
         },
         {
-          "text": "I ___ food at the market.",
-          "answer": "buy",
+          "text": "I like ___.",
+          "answer": "fish",
           "options": [
-            "buy",
-            "pay",
-            "sell"
+            "fish",
+            "food",
+            "water"
           ],
-          "hu": "A piacon veszek élelmiszert."
+          "hu": "(hal)"
         }
       ]
     },
     {
-      "id": "act_127",
+      "id": "act_300",
       "type": "phrase-match",
       "items": [
-        "chunk_op_wouldlike",
         "chunk_fd_recipe",
         "chunk_fd_howmuch2",
         "chunk_fd_takeit",
-        "chunk_pm_canihave",
-        "chunk_of_hereyouare"
+        "chunk_pm_canihave"
       ]
     },
     {
-      "id": "act_128",
+      "id": "act_301",
       "type": "reorder",
       "sentences": [
-        {
-          "en": "I'd like a coffee, please.",
-          "hu": "Kérnék egy kávét."
-        },
         {
           "en": "I can show you the recipe.",
           "hu": "Megmutathatom a receptet."
@@ -206,38 +163,42 @@
         {
           "en": "How much is this, please?",
           "hu": "Mennyibe kerül ez, kérem?"
+        },
+        {
+          "en": "I'll take it, thank you.",
+          "hu": "Megveszem, köszönöm."
         }
       ]
     },
     {
-      "id": "act_129",
+      "id": "act_302",
       "type": "typed",
       "items": [
-        "lex_cake",
-        "lex_cook",
-        "lex_make",
-        "lex_buy"
+        "lex_apple",
+        "lex_soup",
+        "lex_meat",
+        "lex_fish"
       ]
     },
     {
-      "id": "act_130",
+      "id": "act_303",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_131",
+      "id": "act_304",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_132",
+      "id": "act_305",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
-            "cake",
-            "cook",
-            "make"
+            "apple",
+            "soup",
+            "meat"
           ],
           "odd": "name"
         }

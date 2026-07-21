@@ -1,0 +1,146 @@
+{
+  "id": "u04-l08",
+  "unitId": "u04",
+  "order": 8,
+  "title": {
+    "en": "My day & my home · more (8)",
+    "hu": "A napom és az otthonom · több (8)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_flat",
+    "lex_put",
+    "lex_get",
+    "lex_wash",
+    "lex_clean",
+    "lex_sit",
+    "lex_stand",
+    "lex_look"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ng"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_259",
+      "type": "intro",
+      "items": [
+        "lex_flat",
+        "lex_put",
+        "lex_get",
+        "lex_wash",
+        "lex_clean",
+        "lex_sit",
+        "lex_stand",
+        "lex_look"
+      ]
+    },
+    {
+      "id": "act_260",
+      "type": "listen-choose",
+      "items": [
+        "lex_flat",
+        "lex_put",
+        "lex_get",
+        "lex_wash",
+        "lex_clean",
+        "lex_sit"
+      ]
+    },
+    {
+      "id": "act_261",
+      "type": "icon-choice",
+      "items": [
+        "lex_flat",
+        "lex_put",
+        "lex_get",
+        "lex_wash",
+        "lex_clean"
+      ]
+    },
+    {
+      "id": "act_262",
+      "type": "match",
+      "items": [
+        "lex_flat",
+        "lex_put",
+        "lex_get",
+        "lex_wash",
+        "lex_clean",
+        "lex_sit"
+      ]
+    },
+    {
+      "id": "act_263",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "flat",
+          "options": [
+            "flat",
+            "home",
+            "house"
+          ],
+          "hu": "(lakás)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "put",
+          "options": [
+            "put",
+            "work",
+            "get up"
+          ],
+          "hu": "(tenni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "get",
+          "options": [
+            "get",
+            "work",
+            "get up"
+          ],
+          "hu": "(kapni / szerezni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "wash",
+          "options": [
+            "wash",
+            "work",
+            "get up"
+          ],
+          "hu": "(mosni / mosakodni)"
+        }
+      ]
+    },
+    {
+      "id": "act_264",
+      "type": "typed",
+      "items": [
+        "lex_flat",
+        "lex_put",
+        "lex_get",
+        "lex_wash"
+      ]
+    },
+    {
+      "id": "act_265",
+      "type": "pron-record",
+      "focusId": "snd_ng"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -14,15 +14,12 @@
   "newProductiveItems": [
     "lex_travel",
     "lex_trip",
+    "lex_luggage",
+    "lex_suitcase",
+    "lex_passport",
     "lex_need",
-    "lex_stay",
-    "lex_leave",
-    "lex_arrive",
-    "lex_tourist",
-    "lex_journey",
-    "lex_guide",
-    "lex_decide",
-    "lex_return"
+    "lex_bring",
+    "lex_clothes"
   ],
   "reviewItems": [
     "lex_restaurant",
@@ -73,11 +70,7 @@
     "chunk_plan_going",
     "chunk_tv_needto",
     "chunk_tv_planto",
-    "chunk_fu_planto",
-    "chunk_fu_wouldliketo",
-    "chunk_fu_needto2",
-    "chunk_fu_lookingforward",
-    "chunk_fe_excited"
+    "chunk_fu_planto"
   ],
   "grammarCards": [
     "gr_needhaveto"
@@ -88,61 +81,61 @@
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_314",
+      "id": "act_895",
       "type": "intro",
       "items": [
         "lex_travel",
         "lex_trip",
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
         "lex_need",
-        "lex_stay",
-        "lex_leave",
-        "lex_arrive",
-        "lex_tourist",
-        "lex_journey"
+        "lex_bring",
+        "lex_clothes"
       ]
     },
     {
-      "id": "act_315",
+      "id": "act_896",
       "type": "listen-choose",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_need",
-        "lex_stay",
-        "lex_leave",
-        "lex_arrive"
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_need"
       ]
     },
     {
-      "id": "act_316",
+      "id": "act_897",
       "type": "icon-choice",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_need",
-        "lex_stay",
-        "lex_leave"
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport"
       ]
     },
     {
-      "id": "act_317",
+      "id": "act_898",
       "type": "match",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_need",
-        "lex_stay",
-        "lex_leave",
-        "lex_arrive"
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_need"
       ]
     },
     {
-      "id": "act_318",
+      "id": "act_899",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_319",
+      "id": "act_900",
       "type": "gapfill",
       "items": [
         {
@@ -156,51 +149,49 @@
           "hu": "Milyen volt az utad?"
         },
         {
-          "text": "I ___ a ticket, please.",
-          "answer": "need",
+          "text": "I like ___.",
+          "answer": "luggage",
           "options": [
-            "need",
-            "travel",
-            "bring"
+            "luggage",
+            "holiday",
+            "trip"
           ],
-          "hu": "Egy jegyet kérek."
+          "hu": "(poggyász)"
         },
         {
-          "text": "I ___ every day.",
-          "answer": "stay",
+          "text": "My ___ is heavy.",
+          "answer": "suitcase",
           "options": [
-            "stay",
-            "travel",
-            "need"
+            "suitcase",
+            "holiday",
+            "trip"
           ],
-          "hu": "(maradni)"
+          "hu": "A bőröndöm nehéz."
         },
         {
-          "text": "I ___ every day.",
-          "answer": "leave",
+          "text": "Here is my ___.",
+          "answer": "passport",
           "options": [
-            "leave",
-            "travel",
-            "need"
+            "passport",
+            "holiday",
+            "trip"
           ],
-          "hu": "(elmenni / elhagyni)"
+          "hu": "Itt az útlevelem."
         }
       ]
     },
     {
-      "id": "act_320",
+      "id": "act_901",
       "type": "phrase-match",
       "items": [
         "chunk_plan_going",
         "chunk_tv_needto",
         "chunk_tv_planto",
-        "chunk_fu_planto",
-        "chunk_fu_wouldliketo",
-        "chunk_fu_needto2"
+        "chunk_fu_planto"
       ]
     },
     {
-      "id": "act_321",
+      "id": "act_902",
       "type": "reorder",
       "sentences": [
         {
@@ -218,41 +209,41 @@
       ]
     },
     {
-      "id": "act_322",
+      "id": "act_903",
       "type": "typed",
       "items": [
         "lex_travel",
         "lex_trip",
-        "lex_need",
-        "lex_stay"
+        "lex_luggage",
+        "lex_suitcase"
       ]
     },
     {
-      "id": "act_323",
+      "id": "act_904",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_324",
+      "id": "act_905",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
             "travel",
             "trip",
-            "need"
+            "luggage"
           ],
           "odd": "be"
         }
       ]
     },
     {
-      "id": "act_325",
+      "id": "act_906",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_326",
+      "id": "act_907",
       "type": "review",
       "items": [
         "lex_restaurant",

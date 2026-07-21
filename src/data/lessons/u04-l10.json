@@ -1,0 +1,85 @@
+{
+  "id": "u04-l10",
+  "unitId": "u04",
+  "order": 10,
+  "title": {
+    "en": "My day & my home · more (10)",
+    "hu": "A napom és az otthonom · több (10)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_outside",
+    "lex_inside"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ng"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_274",
+      "type": "intro",
+      "items": [
+        "lex_outside",
+        "lex_inside"
+      ]
+    },
+    {
+      "id": "act_275",
+      "type": "listen-choose",
+      "items": [
+        "lex_outside",
+        "lex_inside"
+      ]
+    },
+    {
+      "id": "act_276",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I speak ___.",
+          "answer": "outside",
+          "options": [
+            "outside",
+            "inside",
+            "upstairs"
+          ],
+          "hu": "(kint)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "inside",
+          "options": [
+            "inside",
+            "outside",
+            "upstairs"
+          ],
+          "hu": "(bent)"
+        }
+      ]
+    },
+    {
+      "id": "act_277",
+      "type": "typed",
+      "items": [
+        "lex_outside",
+        "lex_inside"
+      ]
+    },
+    {
+      "id": "act_278",
+      "type": "pron-record",
+      "focusId": "snd_ng"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

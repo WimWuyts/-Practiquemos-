@@ -1,0 +1,204 @@
+{
+  "id": "u05-l03",
+  "unitId": "u05",
+  "order": 3,
+  "title": {
+    "en": "Food, cooking & shopping · more (3)",
+    "hu": "Étel, főzés, vásárlás · több (3)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_lunch",
+    "lex_dinner",
+    "lex_cook",
+    "lex_make",
+    "lex_buy",
+    "lex_like",
+    "lex_want",
+    "lex_shop"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_of_hereyouare",
+    "chunk_nm_howmuchtotal",
+    "chunk_nm_itcosts",
+    "chunk_fd_allergic"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ee_i"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_306",
+      "type": "intro",
+      "items": [
+        "lex_lunch",
+        "lex_dinner",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_like",
+        "lex_want",
+        "lex_shop"
+      ]
+    },
+    {
+      "id": "act_307",
+      "type": "listen-choose",
+      "items": [
+        "lex_lunch",
+        "lex_dinner",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_like"
+      ]
+    },
+    {
+      "id": "act_308",
+      "type": "icon-choice",
+      "items": [
+        "lex_lunch",
+        "lex_dinner",
+        "lex_cook",
+        "lex_make",
+        "lex_buy"
+      ]
+    },
+    {
+      "id": "act_309",
+      "type": "match",
+      "items": [
+        "lex_lunch",
+        "lex_dinner",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_like"
+      ]
+    },
+    {
+      "id": "act_310",
+      "type": "spelling-build",
+      "family": "sf_magic_e_a",
+      "word": "make"
+    },
+    {
+      "id": "act_311",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "We have ___ together.",
+          "answer": "lunch",
+          "options": [
+            "lunch",
+            "food",
+            "water"
+          ],
+          "hu": "Együtt ebédelünk."
+        },
+        {
+          "text": "___ is at seven.",
+          "answer": "dinner",
+          "options": [
+            "dinner",
+            "food",
+            "water"
+          ],
+          "hu": "A vacsora hétkor van."
+        },
+        {
+          "text": "I love to ___ for my family.",
+          "answer": "cook",
+          "options": [
+            "cook",
+            "eat",
+            "drink"
+          ],
+          "hu": "Imádok főzni a családomnak."
+        },
+        {
+          "text": "I ___ coffee for my sister.",
+          "answer": "make",
+          "options": [
+            "make",
+            "eat",
+            "drink"
+          ],
+          "hu": "Kávét készítek a nővéremnek."
+        }
+      ]
+    },
+    {
+      "id": "act_312",
+      "type": "phrase-match",
+      "items": [
+        "chunk_of_hereyouare",
+        "chunk_nm_howmuchtotal",
+        "chunk_nm_itcosts",
+        "chunk_fd_allergic"
+      ]
+    },
+    {
+      "id": "act_313",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Here you are.",
+          "hu": "Tessék."
+        },
+        {
+          "en": "How much is that altogether?",
+          "hu": "Mennyi ez összesen?"
+        },
+        {
+          "en": "It costs ten euros.",
+          "hu": "Tíz euróba kerül."
+        }
+      ]
+    },
+    {
+      "id": "act_314",
+      "type": "typed",
+      "items": [
+        "lex_lunch",
+        "lex_dinner",
+        "lex_cook",
+        "lex_make"
+      ]
+    },
+    {
+      "id": "act_315",
+      "type": "pron-record",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_316",
+      "type": "minimal-pair",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_317",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "lunch",
+            "dinner",
+            "cook"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "id": "u03-l03",
+  "unitId": "u03",
+  "order": 3,
+  "title": {
+    "en": "People, countries & languages · more (3)",
+    "hu": "Emberek, országok, nyelvek · több (3)"
+  },
+  "canDo": {
+    "en": "Say where people are from and describe them",
+    "hu": "Honnan jönnek az emberek, milyenek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_come",
+    "lex_tall",
+    "lex_short",
+    "lex_kind",
+    "lex_funny",
+    "lex_happy",
+    "lex_but",
+    "lex_because"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_wv"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_168",
+      "type": "intro",
+      "items": [
+        "lex_come",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny",
+        "lex_happy",
+        "lex_but",
+        "lex_because"
+      ]
+    },
+    {
+      "id": "act_169",
+      "type": "listen-choose",
+      "items": [
+        "lex_come",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny",
+        "lex_happy"
+      ]
+    },
+    {
+      "id": "act_170",
+      "type": "icon-choice",
+      "items": [
+        "lex_come",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny"
+      ]
+    },
+    {
+      "id": "act_171",
+      "type": "match",
+      "items": [
+        "lex_come",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny",
+        "lex_happy"
+      ]
+    },
+    {
+      "id": "act_172",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ from Hungary.",
+          "answer": "come",
+          "options": [
+            "come",
+            "speak",
+            "live"
+          ],
+          "hu": "Magyarországról jövök."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "tall",
+          "options": [
+            "tall",
+            "my",
+            "your"
+          ],
+          "hu": "(magas)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "short",
+          "options": [
+            "short",
+            "my",
+            "your"
+          ],
+          "hu": "(alacsony / rövid)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "kind",
+          "options": [
+            "kind",
+            "my",
+            "your"
+          ],
+          "hu": "(kedves)"
+        }
+      ]
+    },
+    {
+      "id": "act_173",
+      "type": "typed",
+      "items": [
+        "lex_come",
+        "lex_tall",
+        "lex_short",
+        "lex_kind"
+      ]
+    },
+    {
+      "id": "act_174",
+      "type": "pron-record",
+      "focusId": "snd_wv"
+    },
+    {
+      "id": "act_175",
+      "type": "minimal-pair",
+      "focusId": "snd_wv"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

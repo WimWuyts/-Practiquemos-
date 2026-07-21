@@ -19,26 +19,7 @@
     "lex_dad",
     "lex_parents",
     "lex_sister",
-    "lex_brother",
-    "lex_daughter",
-    "lex_son",
-    "lex_husband",
-    "lex_niece",
-    "lex_nephew",
-    "lex_aunt",
-    "lex_uncle",
-    "lex_child",
-    "lex_his",
-    "lex_her",
-    "lex_baby",
-    "lex_cousin",
-    "lex_grandparents",
-    "lex_people",
-    "lex_man",
-    "lex_woman",
-    "lex_girl",
-    "lex_boy",
-    "lex_person"
+    "lex_brother"
   ],
   "reviewItems": [
     "lex_hello",
@@ -98,8 +79,10 @@
     "lex_address"
   ],
   "chunks": [
-    "chunk_fam_livesin",
-    "chunk_fam_youngest"
+    "chunk_ask_family",
+    "chunk_sm_howsfamily",
+    "chunk_id_thisis",
+    "chunk_fam_livesin"
   ],
   "grammarCards": [
     "gr_possadj",
@@ -112,7 +95,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_32",
+      "id": "act_81",
       "type": "intro",
       "items": [
         "lex_family",
@@ -126,7 +109,7 @@
       ]
     },
     {
-      "id": "act_33",
+      "id": "act_82",
       "type": "listen-choose",
       "items": [
         "lex_family",
@@ -138,7 +121,7 @@
       ]
     },
     {
-      "id": "act_34",
+      "id": "act_83",
       "type": "icon-choice",
       "items": [
         "lex_family",
@@ -149,7 +132,7 @@
       ]
     },
     {
-      "id": "act_35",
+      "id": "act_84",
       "type": "match",
       "items": [
         "lex_family",
@@ -161,22 +144,22 @@
       ]
     },
     {
-      "id": "act_36",
+      "id": "act_85",
       "type": "grammar",
       "grammarId": "gr_possadj"
     },
     {
-      "id": "act_37",
+      "id": "act_86",
       "type": "grammar",
       "grammarId": "gr_poss_s"
     },
     {
-      "id": "act_38",
+      "id": "act_87",
       "type": "grammar",
       "grammarId": "gr_plural"
     },
     {
-      "id": "act_39",
+      "id": "act_88",
       "type": "gapfill",
       "items": [
         {
@@ -222,29 +205,35 @@
       ]
     },
     {
-      "id": "act_40",
+      "id": "act_89",
       "type": "phrase-match",
       "items": [
-        "chunk_fam_livesin",
-        "chunk_fam_youngest"
+        "chunk_ask_family",
+        "chunk_sm_howsfamily",
+        "chunk_id_thisis",
+        "chunk_fam_livesin"
       ]
     },
     {
-      "id": "act_41",
+      "id": "act_90",
       "type": "reorder",
       "sentences": [
         {
-          "en": "My niece lives in Denmark.",
-          "hu": "Az unokahúgom Dániában él."
+          "en": "Do you have brothers or sisters?",
+          "hu": "Van testvéred?"
         },
         {
-          "en": "I'm the oldest in the family.",
-          "hu": "Én vagyok a legidősebb a családban."
+          "en": "How is your family?",
+          "hu": "Hogy van a családod?"
+        },
+        {
+          "en": "This is my sister, Margó.",
+          "hu": "Ez a nővérem, Margó."
         }
       ]
     },
     {
-      "id": "act_42",
+      "id": "act_91",
       "type": "typed",
       "items": [
         "lex_family",
@@ -254,17 +243,17 @@
       ]
     },
     {
-      "id": "act_43",
+      "id": "act_92",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_44",
+      "id": "act_93",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_45",
+      "id": "act_94",
       "type": "odd-one-out",
       "groups": [
         {
@@ -278,7 +267,7 @@
       ]
     },
     {
-      "id": "act_46",
+      "id": "act_95",
       "type": "review",
       "items": [
         "lex_hello",
@@ -288,12 +277,6 @@
         "lex_good_morning",
         "lex_good_afternoon"
       ]
-    },
-    {
-      "id": "act_400",
-      "type": "spelling-build",
-      "family": "sf_wh",
-      "word": "what"
     }
   ],
   "completionRule": {

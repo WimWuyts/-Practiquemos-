@@ -1,0 +1,159 @@
+{
+  "id": "u04-l06",
+  "unitId": "u04",
+  "order": 6,
+  "title": {
+    "en": "My day & my home · more (6)",
+    "hu": "A napom és az otthonom · több (6)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_arm",
+    "lex_leg",
+    "lex_foot",
+    "lex_tooth",
+    "lex_window",
+    "lex_door",
+    "lex_chair",
+    "lex_bed"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ng"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_243",
+      "type": "intro",
+      "items": [
+        "lex_arm",
+        "lex_leg",
+        "lex_foot",
+        "lex_tooth",
+        "lex_window",
+        "lex_door",
+        "lex_chair",
+        "lex_bed"
+      ]
+    },
+    {
+      "id": "act_244",
+      "type": "listen-choose",
+      "items": [
+        "lex_arm",
+        "lex_leg",
+        "lex_foot",
+        "lex_tooth",
+        "lex_window",
+        "lex_door"
+      ]
+    },
+    {
+      "id": "act_245",
+      "type": "icon-choice",
+      "items": [
+        "lex_window",
+        "lex_door",
+        "lex_chair",
+        "lex_bed"
+      ]
+    },
+    {
+      "id": "act_246",
+      "type": "match",
+      "items": [
+        "lex_arm",
+        "lex_leg",
+        "lex_foot",
+        "lex_tooth",
+        "lex_window",
+        "lex_door"
+      ]
+    },
+    {
+      "id": "act_247",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is an ___.",
+          "answer": "arm",
+          "options": [
+            "arm",
+            "body",
+            "head"
+          ],
+          "hu": "(kar)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "leg",
+          "options": [
+            "leg",
+            "body",
+            "head"
+          ],
+          "hu": "(láb (comb))"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "foot",
+          "options": [
+            "foot",
+            "body",
+            "head"
+          ],
+          "hu": "(lábfej)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "tooth",
+          "options": [
+            "tooth",
+            "body",
+            "head"
+          ],
+          "hu": "(fog)"
+        }
+      ]
+    },
+    {
+      "id": "act_248",
+      "type": "typed",
+      "items": [
+        "lex_arm",
+        "lex_leg",
+        "lex_foot",
+        "lex_tooth"
+      ]
+    },
+    {
+      "id": "act_249",
+      "type": "pron-record",
+      "focusId": "snd_ng"
+    },
+    {
+      "id": "act_250",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "arm",
+            "leg",
+            "foot"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

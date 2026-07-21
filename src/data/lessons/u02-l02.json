@@ -12,30 +12,17 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
+    "lex_daughter",
+    "lex_son",
+    "lex_husband",
     "lex_wife",
     "lex_partner",
     "lex_boyfriend",
     "lex_girlfriend",
-    "lex_grandmother",
-    "lex_grandfather",
-    "lex_friend",
-    "lex_have",
-    "lex_this",
-    "lex_that",
-    "lex_these",
-    "lex_those",
-    "lex_our",
-    "lex_their",
-    "lex_old",
-    "lex_young",
-    "lex_married",
-    "lex_with"
+    "lex_niece"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_ask_family",
-    "chunk_sm_howsfamily",
-    "chunk_id_thisis",
     "chunk_fam_howmany",
     "chunk_fam_married",
     "chunk_nm_whatsage",
@@ -50,63 +37,93 @@
   "conversationId": "dlg_marlene_first",
   "activities": [
     {
-      "id": "act_47",
+      "id": "act_96",
       "type": "intro",
       "items": [
+        "lex_daughter",
+        "lex_son",
+        "lex_husband",
         "lex_wife",
         "lex_partner",
         "lex_boyfriend",
         "lex_girlfriend",
-        "lex_grandmother",
-        "lex_grandfather",
-        "lex_friend",
-        "lex_have"
+        "lex_niece"
       ]
     },
     {
-      "id": "act_48",
+      "id": "act_97",
       "type": "listen-choose",
       "items": [
+        "lex_daughter",
+        "lex_son",
+        "lex_husband",
         "lex_wife",
         "lex_partner",
-        "lex_boyfriend",
-        "lex_girlfriend",
-        "lex_grandmother",
-        "lex_grandfather"
+        "lex_boyfriend"
       ]
     },
     {
-      "id": "act_49",
+      "id": "act_98",
       "type": "icon-choice",
       "items": [
+        "lex_daughter",
+        "lex_son",
+        "lex_husband",
         "lex_wife",
-        "lex_partner",
-        "lex_boyfriend",
-        "lex_girlfriend",
-        "lex_grandmother"
+        "lex_partner"
       ]
     },
     {
-      "id": "act_50",
+      "id": "act_99",
       "type": "match",
       "items": [
+        "lex_daughter",
+        "lex_son",
+        "lex_husband",
         "lex_wife",
         "lex_partner",
-        "lex_boyfriend",
-        "lex_girlfriend",
-        "lex_grandmother",
-        "lex_grandfather"
+        "lex_boyfriend"
       ]
     },
     {
-      "id": "act_51",
+      "id": "act_100",
       "type": "grammar",
       "grammarId": "gr_have"
     },
     {
-      "id": "act_52",
+      "id": "act_101",
       "type": "gapfill",
       "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "daughter",
+          "options": [
+            "daughter",
+            "family",
+            "mother"
+          ],
+          "hu": "(lánya vkinek)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "son",
+          "options": [
+            "son",
+            "family",
+            "mother"
+          ],
+          "hu": "(fia vkinek)"
+        },
+        {
+          "text": "Her ___ is called Endre.",
+          "answer": "husband",
+          "options": [
+            "husband",
+            "family",
+            "mother"
+          ],
+          "hu": "A férjét Endrének hívják."
+        },
         {
           "text": "This is a ___.",
           "answer": "wife",
@@ -116,100 +133,68 @@
             "mother"
           ],
           "hu": "(feleség)"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "partner",
-          "options": [
-            "partner",
-            "family",
-            "mother"
-          ],
-          "hu": "(élettárs / partner)"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "boyfriend",
-          "options": [
-            "boyfriend",
-            "family",
-            "mother"
-          ],
-          "hu": "(barát (párkapcsolat))"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "girlfriend",
-          "options": [
-            "girlfriend",
-            "family",
-            "mother"
-          ],
-          "hu": "(barátnő (párkapcsolat))"
         }
       ]
     },
     {
-      "id": "act_53",
+      "id": "act_102",
       "type": "phrase-match",
       "items": [
-        "chunk_ask_family",
-        "chunk_sm_howsfamily",
-        "chunk_id_thisis",
         "chunk_fam_howmany",
         "chunk_fam_married",
-        "chunk_nm_whatsage"
+        "chunk_nm_whatsage",
+        "chunk_id_thisismy"
       ]
     },
     {
-      "id": "act_54",
+      "id": "act_103",
       "type": "reorder",
       "sentences": [
         {
-          "en": "Do you have brothers or sisters?",
-          "hu": "Van testvéred?"
+          "en": "Are you married?",
+          "hu": "Házas vagy?"
         },
         {
-          "en": "How is your family?",
-          "hu": "Hogy van a családod?"
+          "en": "How old are you?",
+          "hu": "Hány éves vagy?"
         },
         {
-          "en": "This is my sister, Margó.",
-          "hu": "Ez a nővérem, Margó."
+          "en": "This is my partner, Ákos.",
+          "hu": "Ez a párom, Ákos."
         }
       ]
     },
     {
-      "id": "act_55",
+      "id": "act_104",
       "type": "typed",
       "items": [
-        "lex_wife",
-        "lex_partner",
-        "lex_boyfriend",
-        "lex_girlfriend"
+        "lex_daughter",
+        "lex_son",
+        "lex_husband",
+        "lex_wife"
       ]
     },
     {
-      "id": "act_56",
+      "id": "act_105",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     },
     {
-      "id": "act_57",
+      "id": "act_106",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
-            "wife",
-            "partner",
-            "boyfriend"
+            "daughter",
+            "son",
+            "husband"
           ],
           "odd": "name"
         }
       ]
     },
     {
-      "id": "act_58",
+      "id": "act_107",
       "type": "conversation",
       "dialogueId": "dlg_marlene_first"
     }

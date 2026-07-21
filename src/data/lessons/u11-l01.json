@@ -19,26 +19,7 @@
     "lex_computer",
     "lex_internet",
     "lex_start",
-    "lex_turn_on",
-    "lex_turn_off",
-    "lex_ready",
-    "lex_excellent",
-    "lex_student",
-    "lex_write",
-    "lex_learn",
-    "lex_teach",
-    "lex_begin",
-    "lex_finish",
-    "lex_word",
-    "lex_question",
-    "lex_pen",
-    "lex_pencil",
-    "lex_paper",
-    "lex_page",
-    "lex_classroom",
-    "lex_homework",
-    "lex_practise",
-    "lex_let"
+    "lex_turn_on"
   ],
   "reviewItems": [
     "lex_hobby",
@@ -155,20 +136,7 @@
     "chunk_call_camera",
     "chunk_call_mic",
     "chunk_call_start",
-    "chunk_teach_wait",
-    "chunk_teach_excellent",
-    "chunk_teach_repeat_me",
-    "chunk_te_canyousee",
-    "chunk_te_looksgood",
-    "chunk_te_tryagain",
-    "chunk_te_openbook",
-    "chunk_rp_isthisright",
-    "chunk_ap_soznumber",
-    "chunk_te_repeatafter",
-    "chunk_te_writedown",
-    "chunk_te_understand",
-    "chunk_te_greatjob",
-    "chunk_te_onemore"
+    "chunk_teach_wait"
   ],
   "grammarCards": [
     "gr_imperatives"
@@ -179,7 +147,7 @@
   "conversationId": "dlg_student_mic",
   "activities": [
     {
-      "id": "act_262",
+      "id": "act_816",
       "type": "intro",
       "items": [
         "lex_lesson",
@@ -193,7 +161,7 @@
       ]
     },
     {
-      "id": "act_263",
+      "id": "act_817",
       "type": "listen-choose",
       "items": [
         "lex_lesson",
@@ -205,7 +173,7 @@
       ]
     },
     {
-      "id": "act_264",
+      "id": "act_818",
       "type": "icon-choice",
       "items": [
         "lex_lesson",
@@ -216,7 +184,7 @@
       ]
     },
     {
-      "id": "act_265",
+      "id": "act_819",
       "type": "match",
       "items": [
         "lex_lesson",
@@ -228,18 +196,12 @@
       ]
     },
     {
-      "id": "act_266",
-      "type": "spelling-build",
-      "family": "sf_tion",
-      "word": "question"
-    },
-    {
-      "id": "act_267",
+      "id": "act_820",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_268",
+      "id": "act_821",
       "type": "gapfill",
       "items": [
         {
@@ -285,19 +247,17 @@
       ]
     },
     {
-      "id": "act_269",
+      "id": "act_822",
       "type": "phrase-match",
       "items": [
         "chunk_call_camera",
         "chunk_call_mic",
         "chunk_call_start",
-        "chunk_teach_wait",
-        "chunk_teach_excellent",
-        "chunk_teach_repeat_me"
+        "chunk_teach_wait"
       ]
     },
     {
-      "id": "act_270",
+      "id": "act_823",
       "type": "reorder",
       "sentences": [
         {
@@ -315,7 +275,7 @@
       ]
     },
     {
-      "id": "act_271",
+      "id": "act_824",
       "type": "typed",
       "items": [
         "lex_lesson",
@@ -325,26 +285,12 @@
       ]
     },
     {
-      "id": "act_272",
+      "id": "act_825",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_273",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "lesson",
-            "start",
-            "ready"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_274",
+      "id": "act_826",
       "type": "listen-comprehension",
       "passage": "Good morning class! Today we will read a short story. Please open your book and turn your camera on.",
       "question": {
@@ -359,12 +305,12 @@
       "answer": "Open the book and turn the camera on"
     },
     {
-      "id": "act_275",
+      "id": "act_827",
       "type": "conversation",
       "dialogueId": "dlg_student_mic"
     },
     {
-      "id": "act_276",
+      "id": "act_828",
       "type": "review",
       "items": [
         "lex_hobby",

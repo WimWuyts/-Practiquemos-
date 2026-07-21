@@ -1,0 +1,165 @@
+{
+  "id": "u09-l09",
+  "unitId": "u09",
+  "order": 9,
+  "title": {
+    "en": "Around town: directions · more (9)",
+    "hu": "A városban: útbaigazítás · több (9)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_through",
+    "lex_around",
+    "lex_front",
+    "lex_back",
+    "lex_middle",
+    "lex_top",
+    "lex_ground",
+    "lex_north"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_749",
+      "type": "intro",
+      "items": [
+        "lex_through",
+        "lex_around",
+        "lex_front",
+        "lex_back",
+        "lex_middle",
+        "lex_top",
+        "lex_ground",
+        "lex_north"
+      ]
+    },
+    {
+      "id": "act_750",
+      "type": "listen-choose",
+      "items": [
+        "lex_through",
+        "lex_around",
+        "lex_front",
+        "lex_back",
+        "lex_middle",
+        "lex_top"
+      ]
+    },
+    {
+      "id": "act_751",
+      "type": "icon-choice",
+      "items": [
+        "lex_through",
+        "lex_around",
+        "lex_front",
+        "lex_back",
+        "lex_middle"
+      ]
+    },
+    {
+      "id": "act_752",
+      "type": "match",
+      "items": [
+        "lex_through",
+        "lex_around",
+        "lex_front",
+        "lex_back",
+        "lex_middle",
+        "lex_top"
+      ]
+    },
+    {
+      "id": "act_753",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ — a useful word.",
+          "answer": "through",
+          "options": [
+            "through",
+            "to",
+            "over"
+          ],
+          "hu": "(át / keresztül)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "around",
+          "options": [
+            "around",
+            "to",
+            "over"
+          ],
+          "hu": "(körül)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "front",
+          "options": [
+            "front",
+            "street",
+            "left"
+          ],
+          "hu": "(eleje / elöl)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "back",
+          "options": [
+            "back",
+            "street",
+            "left"
+          ],
+          "hu": "(hátulja / hát)"
+        }
+      ]
+    },
+    {
+      "id": "act_754",
+      "type": "typed",
+      "items": [
+        "lex_through",
+        "lex_around",
+        "lex_front",
+        "lex_back"
+      ]
+    },
+    {
+      "id": "act_755",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_756",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_757",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "through",
+            "around",
+            "front"
+          ],
+          "odd": "from"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

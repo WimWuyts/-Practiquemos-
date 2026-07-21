@@ -1,0 +1,146 @@
+{
+  "id": "u04-l04",
+  "unitId": "u04",
+  "order": 4,
+  "title": {
+    "en": "My day & my home · more (4)",
+    "hu": "A napom és az otthonom · több (4)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_every_day",
+    "lex_there_is",
+    "lex_there_are",
+    "lex_in",
+    "lex_on",
+    "lex_under",
+    "lex_next_to",
+    "lex_body"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ng"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_228",
+      "type": "intro",
+      "items": [
+        "lex_every_day",
+        "lex_there_is",
+        "lex_there_are",
+        "lex_in",
+        "lex_on",
+        "lex_under",
+        "lex_next_to",
+        "lex_body"
+      ]
+    },
+    {
+      "id": "act_229",
+      "type": "listen-choose",
+      "items": [
+        "lex_every_day",
+        "lex_there_is",
+        "lex_there_are",
+        "lex_in",
+        "lex_on",
+        "lex_under"
+      ]
+    },
+    {
+      "id": "act_230",
+      "type": "icon-choice",
+      "items": [
+        "lex_every_day",
+        "lex_there_is",
+        "lex_there_are",
+        "lex_in",
+        "lex_on"
+      ]
+    },
+    {
+      "id": "act_231",
+      "type": "match",
+      "items": [
+        "lex_every_day",
+        "lex_there_is",
+        "lex_there_are",
+        "lex_in",
+        "lex_on",
+        "lex_under"
+      ]
+    },
+    {
+      "id": "act_232",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___.",
+          "answer": "every day",
+          "options": [
+            "every day",
+            "hello",
+            "hi"
+          ],
+          "hu": "(minden nap)"
+        },
+        {
+          "text": "___.",
+          "answer": "there is",
+          "options": [
+            "there is",
+            "there are",
+            "living room"
+          ],
+          "hu": "(van (ott))"
+        },
+        {
+          "text": "___.",
+          "answer": "there are",
+          "options": [
+            "there are",
+            "there is",
+            "living room"
+          ],
+          "hu": "(vannak (ott))"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "in",
+          "options": [
+            "in",
+            "on",
+            "under"
+          ],
+          "hu": "(-ban / -ben)"
+        }
+      ]
+    },
+    {
+      "id": "act_233",
+      "type": "typed",
+      "items": [
+        "lex_every_day",
+        "lex_there_is",
+        "lex_there_are",
+        "lex_in"
+      ]
+    },
+    {
+      "id": "act_234",
+      "type": "pron-record",
+      "focusId": "snd_ng"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

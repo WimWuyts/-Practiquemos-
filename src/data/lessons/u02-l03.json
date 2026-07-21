@@ -1,0 +1,184 @@
+{
+  "id": "u02-l03",
+  "unitId": "u02",
+  "order": 3,
+  "title": {
+    "en": "My family · more (3)",
+    "hu": "A családom · több (3)"
+  },
+  "canDo": {
+    "en": "Talk about family and who is who",
+    "hu": "Beszélj a családról, ki kicsoda"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_nephew",
+    "lex_aunt",
+    "lex_uncle",
+    "lex_grandmother",
+    "lex_grandfather",
+    "lex_child",
+    "lex_friend",
+    "lex_have"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_fam_youngest"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_108",
+      "type": "intro",
+      "items": [
+        "lex_nephew",
+        "lex_aunt",
+        "lex_uncle",
+        "lex_grandmother",
+        "lex_grandfather",
+        "lex_child",
+        "lex_friend",
+        "lex_have"
+      ]
+    },
+    {
+      "id": "act_109",
+      "type": "listen-choose",
+      "items": [
+        "lex_nephew",
+        "lex_aunt",
+        "lex_uncle",
+        "lex_grandmother",
+        "lex_grandfather",
+        "lex_child"
+      ]
+    },
+    {
+      "id": "act_110",
+      "type": "icon-choice",
+      "items": [
+        "lex_nephew",
+        "lex_aunt",
+        "lex_uncle",
+        "lex_grandmother",
+        "lex_grandfather"
+      ]
+    },
+    {
+      "id": "act_111",
+      "type": "match",
+      "items": [
+        "lex_nephew",
+        "lex_aunt",
+        "lex_uncle",
+        "lex_grandmother",
+        "lex_grandfather",
+        "lex_child"
+      ]
+    },
+    {
+      "id": "act_112",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "nephew",
+          "options": [
+            "nephew",
+            "family",
+            "mother"
+          ],
+          "hu": "(unokaöcs)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "aunt",
+          "options": [
+            "aunt",
+            "family",
+            "mother"
+          ],
+          "hu": "(nagynéni)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "uncle",
+          "options": [
+            "uncle",
+            "family",
+            "mother"
+          ],
+          "hu": "(nagybácsi)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "grandmother",
+          "options": [
+            "grandmother",
+            "family",
+            "mother"
+          ],
+          "hu": "(nagymama)"
+        }
+      ]
+    },
+    {
+      "id": "act_113",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fam_youngest"
+      ]
+    },
+    {
+      "id": "act_114",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm the oldest in the family.",
+          "hu": "Én vagyok a legidősebb a családban."
+        }
+      ]
+    },
+    {
+      "id": "act_115",
+      "type": "typed",
+      "items": [
+        "lex_nephew",
+        "lex_aunt",
+        "lex_uncle",
+        "lex_grandmother"
+      ]
+    },
+    {
+      "id": "act_116",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_117",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_118",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "nephew",
+            "aunt",
+            "uncle"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

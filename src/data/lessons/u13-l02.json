@@ -12,11 +12,6 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_luggage",
-    "lex_suitcase",
-    "lex_passport",
-    "lex_bring",
-    "lex_clothes",
     "lex_shirt",
     "lex_trousers",
     "lex_dress",
@@ -24,15 +19,14 @@
     "lex_coat",
     "lex_hat",
     "lex_jacket",
-    "lex_wear",
-    "lex_carry",
-    "lex_bag",
-    "lex_keep",
-    "lex_heavy"
+    "lex_wear"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_rp_letmecheck"
+    "chunk_fu_wouldliketo",
+    "chunk_fu_needto2",
+    "chunk_fu_lookingforward",
+    "chunk_fe_excited"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -41,146 +35,146 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_327",
+      "id": "act_908",
       "type": "intro",
       "items": [
-        "lex_luggage",
-        "lex_suitcase",
-        "lex_passport",
-        "lex_bring",
-        "lex_clothes",
         "lex_shirt",
         "lex_trousers",
-        "lex_dress"
+        "lex_dress",
+        "lex_shoes",
+        "lex_coat",
+        "lex_hat",
+        "lex_jacket",
+        "lex_wear"
       ]
     },
     {
-      "id": "act_328",
+      "id": "act_909",
       "type": "listen-choose",
       "items": [
-        "lex_luggage",
-        "lex_suitcase",
-        "lex_passport",
-        "lex_bring",
-        "lex_clothes",
-        "lex_shirt"
+        "lex_shirt",
+        "lex_trousers",
+        "lex_dress",
+        "lex_shoes",
+        "lex_coat",
+        "lex_hat"
       ]
     },
     {
-      "id": "act_329",
-      "type": "icon-choice",
-      "items": [
-        "lex_luggage",
-        "lex_suitcase",
-        "lex_passport",
-        "lex_bring",
-        "lex_carry"
-      ]
-    },
-    {
-      "id": "act_330",
+      "id": "act_910",
       "type": "match",
       "items": [
-        "lex_luggage",
-        "lex_suitcase",
-        "lex_passport",
-        "lex_bring",
-        "lex_clothes",
-        "lex_shirt"
+        "lex_shirt",
+        "lex_trousers",
+        "lex_dress",
+        "lex_shoes",
+        "lex_coat",
+        "lex_hat"
       ]
     },
     {
-      "id": "act_331",
+      "id": "act_911",
       "type": "gapfill",
       "items": [
         {
-          "text": "I like ___.",
-          "answer": "luggage",
+          "text": "This is a ___.",
+          "answer": "shirt",
           "options": [
-            "luggage",
-            "holiday",
-            "trip"
+            "shirt",
+            "clothes",
+            "trousers"
           ],
-          "hu": "(poggyász)"
+          "hu": "(ing)"
         },
         {
-          "text": "My ___ is heavy.",
-          "answer": "suitcase",
+          "text": "The ___ are here.",
+          "answer": "trousers",
           "options": [
-            "suitcase",
-            "holiday",
-            "trip"
+            "trousers",
+            "clothes",
+            "shirt"
           ],
-          "hu": "A bőröndöm nehéz."
+          "hu": "(nadrág)"
         },
         {
-          "text": "Here is my ___.",
-          "answer": "passport",
+          "text": "The ___ are here.",
+          "answer": "dress",
           "options": [
-            "passport",
-            "holiday",
-            "trip"
+            "dress",
+            "clothes",
+            "shirt"
           ],
-          "hu": "Itt az útlevelem."
+          "hu": "(ruha (női))"
         },
         {
-          "text": "I ___ every day.",
-          "answer": "bring",
+          "text": "The ___ are here.",
+          "answer": "shoes",
           "options": [
-            "bring",
-            "travel",
-            "need"
+            "shoes",
+            "clothes",
+            "shirt"
           ],
-          "hu": "(hozni)"
+          "hu": "(cipő)"
         }
       ]
     },
     {
-      "id": "act_332",
+      "id": "act_912",
       "type": "phrase-match",
       "items": [
-        "chunk_rp_letmecheck"
+        "chunk_fu_wouldliketo",
+        "chunk_fu_needto2",
+        "chunk_fu_lookingforward",
+        "chunk_fe_excited"
       ]
     },
     {
-      "id": "act_333",
+      "id": "act_913",
       "type": "reorder",
       "sentences": [
         {
-          "en": "Let me check.",
-          "hu": "Hadd nézzem meg."
+          "en": "I'd like to visit Denmark one day.",
+          "hu": "Egy nap szeretnék Dániába menni."
+        },
+        {
+          "en": "I need to book a ticket.",
+          "hu": "Jegyet kell foglalnom."
+        },
+        {
+          "en": "I'm looking forward to it.",
+          "hu": "Nagyon várom."
         }
       ]
     },
     {
-      "id": "act_334",
+      "id": "act_914",
       "type": "typed",
       "items": [
-        "lex_luggage",
-        "lex_suitcase",
-        "lex_passport",
-        "lex_bring"
+        "lex_shirt",
+        "lex_trousers",
+        "lex_dress",
+        "lex_shoes"
       ]
     },
     {
-      "id": "act_335",
+      "id": "act_915",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_336",
+      "id": "act_916",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_337",
+      "id": "act_917",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
-            "luggage",
-            "suitcase",
-            "passport"
+            "shirt",
+            "trousers",
+            "dress"
           ],
           "odd": "name"
         }

@@ -1,0 +1,157 @@
+{
+  "id": "u05-l11",
+  "unitId": "u05",
+  "order": 11,
+  "title": {
+    "en": "Food, cooking & shopping · more (11)",
+    "hu": "Étel, főzés, vásárlás · több (11)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_lemon",
+    "lex_biscuit",
+    "lex_honey",
+    "lex_sweet",
+    "lex_fresh"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ee_i"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_381",
+      "type": "intro",
+      "items": [
+        "lex_lemon",
+        "lex_biscuit",
+        "lex_honey",
+        "lex_sweet",
+        "lex_fresh"
+      ]
+    },
+    {
+      "id": "act_382",
+      "type": "listen-choose",
+      "items": [
+        "lex_lemon",
+        "lex_biscuit",
+        "lex_honey",
+        "lex_sweet",
+        "lex_fresh"
+      ]
+    },
+    {
+      "id": "act_383",
+      "type": "icon-choice",
+      "items": [
+        "lex_lemon",
+        "lex_biscuit",
+        "lex_honey",
+        "lex_sweet",
+        "lex_fresh"
+      ]
+    },
+    {
+      "id": "act_384",
+      "type": "match",
+      "items": [
+        "lex_lemon",
+        "lex_biscuit",
+        "lex_honey",
+        "lex_sweet",
+        "lex_fresh"
+      ]
+    },
+    {
+      "id": "act_385",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "lemon",
+          "options": [
+            "lemon",
+            "food",
+            "water"
+          ],
+          "hu": "(citrom)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "biscuit",
+          "options": [
+            "biscuit",
+            "food",
+            "water"
+          ],
+          "hu": "(keksz)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "honey",
+          "options": [
+            "honey",
+            "food",
+            "water"
+          ],
+          "hu": "(méz)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "sweet",
+          "options": [
+            "sweet",
+            "hungry",
+            "thirsty"
+          ],
+          "hu": "(édes)"
+        }
+      ]
+    },
+    {
+      "id": "act_386",
+      "type": "typed",
+      "items": [
+        "lex_lemon",
+        "lex_biscuit",
+        "lex_honey",
+        "lex_sweet"
+      ]
+    },
+    {
+      "id": "act_387",
+      "type": "pron-record",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_388",
+      "type": "minimal-pair",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_389",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "lemon",
+            "biscuit",
+            "honey"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

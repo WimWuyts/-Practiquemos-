@@ -1,0 +1,155 @@
+{
+  "id": "u04-l05",
+  "unitId": "u04",
+  "order": 5,
+  "title": {
+    "en": "My day & my home · more (5)",
+    "hu": "A napom és az otthonom · több (5)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_head",
+    "lex_face",
+    "lex_eye",
+    "lex_ear",
+    "lex_nose",
+    "lex_mouth",
+    "lex_hair",
+    "lex_hand"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ed_endings"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_235",
+      "type": "intro",
+      "items": [
+        "lex_head",
+        "lex_face",
+        "lex_eye",
+        "lex_ear",
+        "lex_nose",
+        "lex_mouth",
+        "lex_hair",
+        "lex_hand"
+      ]
+    },
+    {
+      "id": "act_236",
+      "type": "listen-choose",
+      "items": [
+        "lex_head",
+        "lex_face",
+        "lex_eye",
+        "lex_ear",
+        "lex_nose",
+        "lex_mouth"
+      ]
+    },
+    {
+      "id": "act_237",
+      "type": "match",
+      "items": [
+        "lex_head",
+        "lex_face",
+        "lex_eye",
+        "lex_ear",
+        "lex_nose",
+        "lex_mouth"
+      ]
+    },
+    {
+      "id": "act_238",
+      "type": "spelling-build",
+      "family": "sf_magic_e_o",
+      "word": "nose"
+    },
+    {
+      "id": "act_239",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "head",
+          "options": [
+            "head",
+            "body",
+            "face"
+          ],
+          "hu": "(fej)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "face",
+          "options": [
+            "face",
+            "body",
+            "head"
+          ],
+          "hu": "(arc)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "eye",
+          "options": [
+            "eye",
+            "body",
+            "head"
+          ],
+          "hu": "(szem)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "ear",
+          "options": [
+            "ear",
+            "body",
+            "head"
+          ],
+          "hu": "(fül)"
+        }
+      ]
+    },
+    {
+      "id": "act_240",
+      "type": "typed",
+      "items": [
+        "lex_head",
+        "lex_face",
+        "lex_eye",
+        "lex_ear"
+      ]
+    },
+    {
+      "id": "act_241",
+      "type": "pron-record",
+      "focusId": "snd_ed_endings"
+    },
+    {
+      "id": "act_242",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "head",
+            "face",
+            "eye"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

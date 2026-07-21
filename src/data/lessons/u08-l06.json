@@ -1,0 +1,165 @@
+{
+  "id": "u08-l06",
+  "unitId": "u08",
+  "order": 6,
+  "title": {
+    "en": "Hobbies, books & opinions · more (6)",
+    "hu": "Hobbik, könyvek, vélemények · több (6)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_brown",
+    "lex_grey",
+    "lex_pink",
+    "lex_too",
+    "lex_also",
+    "lex_only",
+    "lex_really",
+    "lex_about"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_th"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_620",
+      "type": "intro",
+      "items": [
+        "lex_brown",
+        "lex_grey",
+        "lex_pink",
+        "lex_too",
+        "lex_also",
+        "lex_only",
+        "lex_really",
+        "lex_about"
+      ]
+    },
+    {
+      "id": "act_621",
+      "type": "listen-choose",
+      "items": [
+        "lex_brown",
+        "lex_grey",
+        "lex_pink",
+        "lex_too",
+        "lex_also",
+        "lex_only"
+      ]
+    },
+    {
+      "id": "act_622",
+      "type": "icon-choice",
+      "items": [
+        "lex_brown",
+        "lex_grey",
+        "lex_pink",
+        "lex_too",
+        "lex_also"
+      ]
+    },
+    {
+      "id": "act_623",
+      "type": "match",
+      "items": [
+        "lex_brown",
+        "lex_grey",
+        "lex_pink",
+        "lex_too",
+        "lex_also",
+        "lex_only"
+      ]
+    },
+    {
+      "id": "act_624",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "brown",
+          "options": [
+            "brown",
+            "red",
+            "blue"
+          ],
+          "hu": "(barna)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "grey",
+          "options": [
+            "grey",
+            "red",
+            "blue"
+          ],
+          "hu": "(szürke)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "pink",
+          "options": [
+            "pink",
+            "red",
+            "blue"
+          ],
+          "hu": "(rózsaszín)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "too",
+          "options": [
+            "too",
+            "where",
+            "how"
+          ],
+          "hu": "(is / túl)"
+        }
+      ]
+    },
+    {
+      "id": "act_625",
+      "type": "typed",
+      "items": [
+        "lex_brown",
+        "lex_grey",
+        "lex_pink",
+        "lex_too"
+      ]
+    },
+    {
+      "id": "act_626",
+      "type": "pron-record",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_627",
+      "type": "minimal-pair",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_628",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "brown",
+            "grey",
+            "pink"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

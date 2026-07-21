@@ -1,0 +1,166 @@
+{
+  "id": "u06-l12",
+  "unitId": "u06",
+  "order": 12,
+  "title": {
+    "en": "Time, weather & plans · more (12)",
+    "hu": "Idő, időjárás, tervek · több (12)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_dark",
+    "lex_light",
+    "lex_maybe",
+    "lex_at",
+    "lex_sure",
+    "lex_when",
+    "lex_idea",
+    "lex_clock"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_495",
+      "type": "intro",
+      "items": [
+        "lex_dark",
+        "lex_light",
+        "lex_maybe",
+        "lex_at",
+        "lex_sure",
+        "lex_when",
+        "lex_idea",
+        "lex_clock"
+      ]
+    },
+    {
+      "id": "act_496",
+      "type": "listen-choose",
+      "items": [
+        "lex_dark",
+        "lex_light",
+        "lex_maybe",
+        "lex_at",
+        "lex_sure",
+        "lex_when"
+      ]
+    },
+    {
+      "id": "act_497",
+      "type": "icon-choice",
+      "items": [
+        "lex_dark",
+        "lex_light",
+        "lex_maybe",
+        "lex_at",
+        "lex_sure"
+      ]
+    },
+    {
+      "id": "act_498",
+      "type": "match",
+      "items": [
+        "lex_dark",
+        "lex_light",
+        "lex_maybe",
+        "lex_at",
+        "lex_sure",
+        "lex_when"
+      ]
+    },
+    {
+      "id": "act_499",
+      "type": "spelling-build",
+      "family": "sf_igh",
+      "word": "light"
+    },
+    {
+      "id": "act_500",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "dark",
+          "options": [
+            "dark",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(sötét)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "light",
+          "options": [
+            "light",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(világos / könnyű)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "maybe",
+          "options": [
+            "maybe",
+            "where",
+            "how"
+          ],
+          "hu": "(talán)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "at",
+          "options": [
+            "at",
+            "before",
+            "after"
+          ],
+          "hu": "(-nál / -kor)"
+        }
+      ]
+    },
+    {
+      "id": "act_501",
+      "type": "typed",
+      "items": [
+        "lex_dark",
+        "lex_light",
+        "lex_maybe",
+        "lex_at"
+      ]
+    },
+    {
+      "id": "act_502",
+      "type": "pron-record",
+      "focusId": "str_question"
+    },
+    {
+      "id": "act_503",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "dark",
+            "light",
+            "idea"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

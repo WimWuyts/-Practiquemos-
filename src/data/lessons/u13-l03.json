@@ -1,0 +1,179 @@
+{
+  "id": "u13-l03",
+  "unitId": "u13",
+  "order": 3,
+  "title": {
+    "en": "Visits & future travel · more (3)",
+    "hu": "Látogatások, jövőbeli utazás · több (3)"
+  },
+  "canDo": {
+    "en": "Plan a visit and a trip",
+    "hu": "Látogatás és utazás tervezése"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_carry",
+    "lex_stay",
+    "lex_leave",
+    "lex_arrive",
+    "lex_bag",
+    "lex_tourist",
+    "lex_journey",
+    "lex_guide"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_rp_letmecheck"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_918",
+      "type": "intro",
+      "items": [
+        "lex_carry",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive",
+        "lex_bag",
+        "lex_tourist",
+        "lex_journey",
+        "lex_guide"
+      ]
+    },
+    {
+      "id": "act_919",
+      "type": "listen-choose",
+      "items": [
+        "lex_carry",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive",
+        "lex_bag",
+        "lex_tourist"
+      ]
+    },
+    {
+      "id": "act_920",
+      "type": "icon-choice",
+      "items": [
+        "lex_carry",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive",
+        "lex_bag"
+      ]
+    },
+    {
+      "id": "act_921",
+      "type": "match",
+      "items": [
+        "lex_carry",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive",
+        "lex_bag",
+        "lex_tourist"
+      ]
+    },
+    {
+      "id": "act_922",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "carry",
+          "options": [
+            "carry",
+            "travel",
+            "need"
+          ],
+          "hu": "(cipelni / vinni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "stay",
+          "options": [
+            "stay",
+            "travel",
+            "need"
+          ],
+          "hu": "(maradni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "leave",
+          "options": [
+            "leave",
+            "travel",
+            "need"
+          ],
+          "hu": "(elmenni / elhagyni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "arrive",
+          "options": [
+            "arrive",
+            "travel",
+            "need"
+          ],
+          "hu": "(megérkezni)"
+        }
+      ]
+    },
+    {
+      "id": "act_923",
+      "type": "phrase-match",
+      "items": [
+        "chunk_rp_letmecheck"
+      ]
+    },
+    {
+      "id": "act_924",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Let me check.",
+          "hu": "Hadd nézzem meg."
+        }
+      ]
+    },
+    {
+      "id": "act_925",
+      "type": "typed",
+      "items": [
+        "lex_carry",
+        "lex_stay",
+        "lex_leave",
+        "lex_arrive"
+      ]
+    },
+    {
+      "id": "act_926",
+      "type": "pron-record",
+      "focusId": "str_word"
+    },
+    {
+      "id": "act_927",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "carry",
+            "stay",
+            "leave"
+          ],
+          "odd": "be"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

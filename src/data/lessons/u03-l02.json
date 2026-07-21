@@ -12,33 +12,17 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_work",
-    "lex_tall",
-    "lex_short",
-    "lex_kind",
-    "lex_funny",
-    "lex_happy",
-    "lex_but",
-    "lex_because",
-    "lex_so",
-    "lex_very",
-    "lex_job",
-    "lex_driver",
-    "lex_engineer",
-    "lex_manager",
-    "lex_artist",
-    "lex_big",
-    "lex_small",
-    "lex_long",
-    "lex_new",
-    "lex_bad",
-    "lex_friendly"
+    "lex_denmark",
+    "lex_danish",
+    "lex_belgium",
+    "lex_switzerland",
+    "lex_language",
+    "lex_speak",
+    "lex_live",
+    "lex_work"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_ask_work",
-    "chunk_id_teachonline",
-    "chunk_ds_tall",
     "chunk_ds_looks",
     "chunk_id_wherework"
   ],
@@ -49,148 +33,155 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_72",
+      "id": "act_157",
       "type": "intro",
       "items": [
-        "lex_work",
-        "lex_tall",
-        "lex_short",
-        "lex_kind",
-        "lex_funny",
-        "lex_happy",
-        "lex_but",
-        "lex_because"
+        "lex_denmark",
+        "lex_danish",
+        "lex_belgium",
+        "lex_switzerland",
+        "lex_language",
+        "lex_speak",
+        "lex_live",
+        "lex_work"
       ]
     },
     {
-      "id": "act_73",
+      "id": "act_158",
       "type": "listen-choose",
       "items": [
-        "lex_work",
-        "lex_tall",
-        "lex_short",
-        "lex_kind",
-        "lex_funny",
-        "lex_happy"
+        "lex_denmark",
+        "lex_danish",
+        "lex_belgium",
+        "lex_switzerland",
+        "lex_language",
+        "lex_speak"
       ]
     },
     {
-      "id": "act_74",
+      "id": "act_159",
       "type": "icon-choice",
       "items": [
-        "lex_work",
-        "lex_tall",
-        "lex_short",
-        "lex_kind",
-        "lex_funny"
+        "lex_denmark",
+        "lex_danish",
+        "lex_belgium",
+        "lex_switzerland",
+        "lex_language"
       ]
     },
     {
-      "id": "act_75",
+      "id": "act_160",
       "type": "match",
       "items": [
-        "lex_work",
-        "lex_tall",
-        "lex_short",
-        "lex_kind",
-        "lex_funny",
-        "lex_happy"
+        "lex_denmark",
+        "lex_danish",
+        "lex_belgium",
+        "lex_switzerland",
+        "lex_language",
+        "lex_speak"
       ]
     },
     {
-      "id": "act_76",
+      "id": "act_161",
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ with children.",
-          "answer": "work",
+          "text": "I like ___.",
+          "answer": "Denmark",
           "options": [
-            "work",
-            "get up",
-            "wake up"
+            "Denmark",
+            "Hungary",
+            "England"
           ],
-          "hu": "Gyerekekkel dolgozom."
+          "hu": "(Dánia)"
         },
         {
           "text": "It is very ___.",
-          "answer": "tall",
+          "answer": "Danish",
           "options": [
-            "tall",
-            "my",
-            "your"
+            "Danish",
+            "Hungarian",
+            "English"
           ],
-          "hu": "(magas)"
+          "hu": "(dán)"
         },
         {
-          "text": "It is very ___.",
-          "answer": "short",
+          "text": "I like ___.",
+          "answer": "Belgium",
           "options": [
-            "short",
-            "my",
-            "your"
+            "Belgium",
+            "Hungary",
+            "England"
           ],
-          "hu": "(alacsony / rövid)"
+          "hu": "(Belgium)"
         },
         {
-          "text": "It is very ___.",
-          "answer": "kind",
+          "text": "I like ___.",
+          "answer": "Switzerland",
           "options": [
-            "kind",
-            "my",
-            "your"
+            "Switzerland",
+            "Hungary",
+            "England"
           ],
-          "hu": "(kedves)"
+          "hu": "(Svájc)"
         }
       ]
     },
     {
-      "id": "act_77",
+      "id": "act_162",
       "type": "phrase-match",
       "items": [
-        "chunk_ask_work",
-        "chunk_id_teachonline",
-        "chunk_ds_tall",
         "chunk_ds_looks",
         "chunk_id_wherework"
       ]
     },
     {
-      "id": "act_78",
+      "id": "act_163",
       "type": "reorder",
       "sentences": [
         {
-          "en": "What do you do?",
-          "hu": "Mivel foglalkozol?"
+          "en": "She looks like her mother.",
+          "hu": "Az anyjára hasonlít."
         },
         {
-          "en": "I teach Hungarian online.",
-          "hu": "Magyart tanítok online."
-        },
-        {
-          "en": "She is tall and friendly.",
-          "hu": "Magas és barátságos."
+          "en": "Where do you work?",
+          "hu": "Hol dolgozol?"
         }
       ]
     },
     {
-      "id": "act_79",
+      "id": "act_164",
       "type": "typed",
       "items": [
-        "lex_work",
-        "lex_tall",
-        "lex_short",
-        "lex_kind"
+        "lex_denmark",
+        "lex_danish",
+        "lex_belgium",
+        "lex_switzerland"
       ]
     },
     {
-      "id": "act_80",
+      "id": "act_165",
       "type": "pron-record",
       "focusId": "snd_h"
     },
     {
-      "id": "act_81",
+      "id": "act_166",
       "type": "minimal-pair",
       "focusId": "snd_h"
+    },
+    {
+      "id": "act_167",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "Denmark",
+            "Danish",
+            "Belgium"
+          ],
+          "odd": "name"
+        }
+      ]
     }
   ],
   "completionRule": {

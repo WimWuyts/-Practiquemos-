@@ -1,0 +1,160 @@
+{
+  "id": "u08-l09",
+  "unitId": "u08",
+  "order": 9,
+  "title": {
+    "en": "Hobbies, books & opinions · more (9)",
+    "hu": "Hobbik, könyvek, vélemények · több (9)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_best",
+    "lex_perfect",
+    "lex_terrible",
+    "lex_quite",
+    "lex_hate",
+    "lex_prefer",
+    "lex_agree",
+    "lex_soft"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_r"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_646",
+      "type": "intro",
+      "items": [
+        "lex_best",
+        "lex_perfect",
+        "lex_terrible",
+        "lex_quite",
+        "lex_hate",
+        "lex_prefer",
+        "lex_agree",
+        "lex_soft"
+      ]
+    },
+    {
+      "id": "act_647",
+      "type": "listen-choose",
+      "items": [
+        "lex_best",
+        "lex_perfect",
+        "lex_terrible",
+        "lex_quite",
+        "lex_hate",
+        "lex_prefer"
+      ]
+    },
+    {
+      "id": "act_648",
+      "type": "icon-choice",
+      "items": [
+        "lex_best",
+        "lex_perfect",
+        "lex_terrible",
+        "lex_quite",
+        "lex_hate"
+      ]
+    },
+    {
+      "id": "act_649",
+      "type": "match",
+      "items": [
+        "lex_best",
+        "lex_perfect",
+        "lex_terrible",
+        "lex_quite",
+        "lex_hate",
+        "lex_prefer"
+      ]
+    },
+    {
+      "id": "act_650",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "best",
+          "options": [
+            "best",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(legjobb)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "perfect",
+          "options": [
+            "perfect",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(tökéletes)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "terrible",
+          "options": [
+            "terrible",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(szörnyű)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "quite",
+          "options": [
+            "quite",
+            "really",
+            "please"
+          ],
+          "hu": "(elég(gé))"
+        }
+      ]
+    },
+    {
+      "id": "act_651",
+      "type": "typed",
+      "items": [
+        "lex_best",
+        "lex_perfect",
+        "lex_terrible",
+        "lex_quite"
+      ]
+    },
+    {
+      "id": "act_652",
+      "type": "pron-record",
+      "focusId": "snd_r"
+    },
+    {
+      "id": "act_653",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "best",
+            "perfect",
+            "terrible"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

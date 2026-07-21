@@ -1,0 +1,151 @@
+{
+  "id": "u08-l10",
+  "unitId": "u08",
+  "order": 10,
+  "title": {
+    "en": "Hobbies, books & opinions · more (10)",
+    "hu": "Hobbik, könyvek, vélemények · több (10)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_pretty",
+    "lex_ride",
+    "lex_climb",
+    "lex_build",
+    "lex_grow",
+    "lex_duck",
+    "lex_rabbit",
+    "lex_famous"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_th"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_654",
+      "type": "intro",
+      "items": [
+        "lex_pretty",
+        "lex_ride",
+        "lex_climb",
+        "lex_build",
+        "lex_grow",
+        "lex_duck",
+        "lex_rabbit",
+        "lex_famous"
+      ]
+    },
+    {
+      "id": "act_655",
+      "type": "listen-choose",
+      "items": [
+        "lex_pretty",
+        "lex_ride",
+        "lex_climb",
+        "lex_build",
+        "lex_grow",
+        "lex_duck"
+      ]
+    },
+    {
+      "id": "act_656",
+      "type": "icon-choice",
+      "items": [
+        "lex_pretty",
+        "lex_ride",
+        "lex_climb",
+        "lex_build",
+        "lex_grow"
+      ]
+    },
+    {
+      "id": "act_657",
+      "type": "match",
+      "items": [
+        "lex_pretty",
+        "lex_ride",
+        "lex_climb",
+        "lex_build",
+        "lex_grow",
+        "lex_duck"
+      ]
+    },
+    {
+      "id": "act_658",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "pretty",
+          "options": [
+            "pretty",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(csinos / szép)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "ride",
+          "options": [
+            "ride",
+            "read",
+            "swim"
+          ],
+          "hu": "(lovagolni / biciklizni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "climb",
+          "options": [
+            "climb",
+            "read",
+            "swim"
+          ],
+          "hu": "(mászni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "build",
+          "options": [
+            "build",
+            "read",
+            "swim"
+          ],
+          "hu": "(építeni)"
+        }
+      ]
+    },
+    {
+      "id": "act_659",
+      "type": "typed",
+      "items": [
+        "lex_pretty",
+        "lex_ride",
+        "lex_climb",
+        "lex_build"
+      ]
+    },
+    {
+      "id": "act_660",
+      "type": "pron-record",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_661",
+      "type": "minimal-pair",
+      "focusId": "snd_th"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

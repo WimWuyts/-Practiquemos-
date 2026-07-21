@@ -1,0 +1,184 @@
+{
+  "id": "u09-l03",
+  "unitId": "u09",
+  "order": 3,
+  "title": {
+    "en": "Around town: directions · more (3)",
+    "hu": "A városban: útbaigazítás · több (3)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_second",
+    "lex_third",
+    "lex_town",
+    "lex_village",
+    "lex_road",
+    "lex_bank",
+    "lex_park",
+    "lex_church"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_tr_oneticket",
+    "chunk_tr_getoff",
+    "chunk_rp_writeit",
+    "chunk_ds_verynice"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_690",
+      "type": "intro",
+      "items": [
+        "lex_second",
+        "lex_third",
+        "lex_town",
+        "lex_village",
+        "lex_road",
+        "lex_bank",
+        "lex_park",
+        "lex_church"
+      ]
+    },
+    {
+      "id": "act_691",
+      "type": "listen-choose",
+      "items": [
+        "lex_second",
+        "lex_third",
+        "lex_town",
+        "lex_village",
+        "lex_road",
+        "lex_bank"
+      ]
+    },
+    {
+      "id": "act_692",
+      "type": "icon-choice",
+      "items": [
+        "lex_second",
+        "lex_third",
+        "lex_town",
+        "lex_village",
+        "lex_road"
+      ]
+    },
+    {
+      "id": "act_693",
+      "type": "match",
+      "items": [
+        "lex_second",
+        "lex_third",
+        "lex_town",
+        "lex_village",
+        "lex_road",
+        "lex_bank"
+      ]
+    },
+    {
+      "id": "act_694",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "second",
+          "options": [
+            "second",
+            "third",
+            "my"
+          ],
+          "hu": "(második)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "third",
+          "options": [
+            "third",
+            "second",
+            "my"
+          ],
+          "hu": "(harmadik)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "town",
+          "options": [
+            "town",
+            "street",
+            "left"
+          ],
+          "hu": "(kisváros)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "village",
+          "options": [
+            "village",
+            "street",
+            "left"
+          ],
+          "hu": "(falu)"
+        }
+      ]
+    },
+    {
+      "id": "act_695",
+      "type": "phrase-match",
+      "items": [
+        "chunk_tr_oneticket",
+        "chunk_tr_getoff",
+        "chunk_rp_writeit",
+        "chunk_ds_verynice"
+      ]
+    },
+    {
+      "id": "act_696",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "One ticket, please.",
+          "hu": "Egy jegyet kérek."
+        },
+        {
+          "en": "Where do I get off?",
+          "hu": "Hol kell leszállnom?"
+        },
+        {
+          "en": "Could you write it down, please?",
+          "hu": "Le tudná írni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_697",
+      "type": "typed",
+      "items": [
+        "lex_second",
+        "lex_third",
+        "lex_town",
+        "lex_village"
+      ]
+    },
+    {
+      "id": "act_698",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_699",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

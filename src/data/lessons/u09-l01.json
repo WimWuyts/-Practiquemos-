@@ -18,73 +18,8 @@
     "lex_train",
     "lex_car",
     "lex_taxi",
-    "lex_left",
-    "lex_right",
-    "lex_straight",
-    "lex_near",
-    "lex_far",
-    "lex_first",
-    "lex_then",
-    "lex_turn",
-    "lex_second",
-    "lex_third",
-    "lex_town",
-    "lex_village",
-    "lex_road",
-    "lex_bank",
-    "lex_park",
-    "lex_church",
-    "lex_school",
-    "lex_market",
-    "lex_supermarket",
-    "lex_cinema",
-    "lex_museum",
-    "lex_square",
-    "lex_bridge",
-    "lex_library",
-    "lex_centre",
-    "lex_place",
-    "lex_corner",
-    "lex_open",
-    "lex_close",
-    "lex_stop",
-    "lex_take",
-    "lex_find",
-    "lex_show",
-    "lex_high",
-    "lex_here",
-    "lex_there",
-    "lex_up",
-    "lex_down",
-    "lex_to",
-    "lex_over",
-    "lex_behind",
-    "lex_map",
-    "lex_way",
-    "lex_side",
-    "lex_office",
-    "lex_building",
-    "lex_low",
-    "lex_into",
-    "lex_through",
-    "lex_around",
-    "lex_front",
-    "lex_back",
-    "lex_middle",
-    "lex_top",
-    "lex_ground",
-    "lex_north",
-    "lex_south",
-    "lex_east",
-    "lex_west",
-    "lex_pull",
-    "lex_push",
-    "lex_follow",
-    "lex_enter",
-    "lex_look_for",
-    "lex_corner_shop",
-    "lex_bench",
-    "lex_wide"
+    "lex_ticket",
+    "lex_platform"
   ],
   "reviewItems": [
     "lex_time",
@@ -279,18 +214,7 @@
     "chunk_ask_followup_where",
     "chunk_town_where",
     "chunk_town_howget",
-    "chunk_tw_wheretoilet",
-    "chunk_tw_isitfar",
-    "chunk_tw_lost",
-    "chunk_rp_writeit",
-    "chunk_ds_verynice",
-    "chunk_tw_excusewhere",
-    "chunk_tw_straighton",
-    "chunk_tw_howfar",
-    "chunk_tw_overthere",
-    "chunk_rp_howspell",
-    "chunk_tw_isitclose",
-    "chunk_tw_canyoushow"
+    "chunk_trans_which"
   ],
   "grammarCards": [
     "gr_imperatives"
@@ -301,7 +225,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_214",
+      "id": "act_665",
       "type": "intro",
       "items": [
         "lex_street",
@@ -310,12 +234,12 @@
         "lex_train",
         "lex_car",
         "lex_taxi",
-        "lex_left",
-        "lex_right"
+        "lex_ticket",
+        "lex_platform"
       ]
     },
     {
-      "id": "act_215",
+      "id": "act_666",
       "type": "listen-choose",
       "items": [
         "lex_street",
@@ -327,7 +251,7 @@
       ]
     },
     {
-      "id": "act_216",
+      "id": "act_667",
       "type": "icon-choice",
       "items": [
         "lex_street",
@@ -338,7 +262,7 @@
       ]
     },
     {
-      "id": "act_217",
+      "id": "act_668",
       "type": "match",
       "items": [
         "lex_street",
@@ -350,18 +274,18 @@
       ]
     },
     {
-      "id": "act_218",
+      "id": "act_669",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "station"
     },
     {
-      "id": "act_219",
+      "id": "act_670",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_220",
+      "id": "act_671",
       "type": "gapfill",
       "items": [
         {
@@ -407,19 +331,17 @@
       ]
     },
     {
-      "id": "act_221",
+      "id": "act_672",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_where",
         "chunk_town_where",
         "chunk_town_howget",
-        "chunk_tw_wheretoilet",
-        "chunk_tw_isitfar",
-        "chunk_tw_lost"
+        "chunk_trans_which"
       ]
     },
     {
-      "id": "act_222",
+      "id": "act_673",
       "type": "reorder",
       "sentences": [
         {
@@ -431,13 +353,13 @@
           "hu": "Hogy jutok el a központba?"
         },
         {
-          "en": "Where is the toilet, please?",
-          "hu": "Hol van a mosdó, kérem?"
+          "en": "Which bus goes to the airport?",
+          "hu": "Melyik busz megy a reptérre?"
         }
       ]
     },
     {
-      "id": "act_223",
+      "id": "act_674",
       "type": "typed",
       "items": [
         "lex_street",
@@ -447,31 +369,17 @@
       ]
     },
     {
-      "id": "act_224",
+      "id": "act_675",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_225",
+      "id": "act_676",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_226",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "street",
-            "left",
-            "right"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_227",
+      "id": "act_677",
       "type": "review",
       "items": [
         "lex_time",

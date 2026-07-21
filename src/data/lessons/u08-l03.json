@@ -1,0 +1,185 @@
+{
+  "id": "u08-l03",
+  "unitId": "u08",
+  "order": 3,
+  "title": {
+    "en": "Hobbies, books & opinions · more (3)",
+    "hu": "Hobbik, könyvek, vélemények · több (3)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_think",
+    "lex_red",
+    "lex_blue",
+    "lex_green",
+    "lex_white",
+    "lex_black",
+    "lex_animal",
+    "lex_dog"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_op_prefer",
+    "chunk_ds_bigger",
+    "chunk_ag_iagree",
+    "chunk_ag_notreally"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_r"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_589",
+      "type": "intro",
+      "items": [
+        "lex_think",
+        "lex_red",
+        "lex_blue",
+        "lex_green",
+        "lex_white",
+        "lex_black",
+        "lex_animal",
+        "lex_dog"
+      ]
+    },
+    {
+      "id": "act_590",
+      "type": "listen-choose",
+      "items": [
+        "lex_think",
+        "lex_red",
+        "lex_blue",
+        "lex_green",
+        "lex_white",
+        "lex_black"
+      ]
+    },
+    {
+      "id": "act_591",
+      "type": "icon-choice",
+      "items": [
+        "lex_think",
+        "lex_red",
+        "lex_blue",
+        "lex_green",
+        "lex_white"
+      ]
+    },
+    {
+      "id": "act_592",
+      "type": "match",
+      "items": [
+        "lex_think",
+        "lex_red",
+        "lex_blue",
+        "lex_green",
+        "lex_white",
+        "lex_black"
+      ]
+    },
+    {
+      "id": "act_593",
+      "type": "spelling-build",
+      "family": "sf_ee",
+      "word": "green"
+    },
+    {
+      "id": "act_594",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ it is beautiful.",
+          "answer": "think",
+          "options": [
+            "think",
+            "like",
+            "want"
+          ],
+          "hu": "Szerintem gyönyörű."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "red",
+          "options": [
+            "red",
+            "blue",
+            "green"
+          ],
+          "hu": "(piros)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "blue",
+          "options": [
+            "blue",
+            "red",
+            "green"
+          ],
+          "hu": "(kék)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "green",
+          "options": [
+            "green",
+            "red",
+            "blue"
+          ],
+          "hu": "(zöld)"
+        }
+      ]
+    },
+    {
+      "id": "act_595",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_prefer",
+        "chunk_ds_bigger",
+        "chunk_ag_iagree",
+        "chunk_ag_notreally"
+      ]
+    },
+    {
+      "id": "act_596",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I prefer tea to coffee.",
+          "hu": "Jobban szeretem a teát, mint a kávét."
+        },
+        {
+          "en": "This one is bigger than that one.",
+          "hu": "Ez nagyobb, mint az."
+        },
+        {
+          "en": "Yes, I agree.",
+          "hu": "Igen, egyetértek."
+        }
+      ]
+    },
+    {
+      "id": "act_597",
+      "type": "typed",
+      "items": [
+        "lex_think",
+        "lex_red",
+        "lex_blue",
+        "lex_green"
+      ]
+    },
+    {
+      "id": "act_598",
+      "type": "pron-record",
+      "focusId": "snd_r"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

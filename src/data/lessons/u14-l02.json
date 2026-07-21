@@ -12,15 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_boarding",
-    "lex_seat",
-    "lex_late",
+    "lex_desk",
     "lex_miss",
-    "lex_lose"
+    "lex_lose",
+    "lex_airport_bus"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_ai_delayed"
+    "chunk_ai_myflight",
+    "chunk_ai_dontunderstand2",
+    "chunk_ai_luggage",
+    "chunk_ai_delayed",
+    "chunk_ai_whichgate",
+    "chunk_ai_help_bags",
+    "chunk_ai_iamnervous",
+    "chunk_ai_isthisright"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -29,88 +35,58 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_353",
+      "id": "act_951",
       "type": "intro",
       "items": [
-        "lex_boarding",
-        "lex_seat",
-        "lex_late",
+        "lex_desk",
         "lex_miss",
-        "lex_lose"
+        "lex_lose",
+        "lex_airport_bus"
       ]
     },
     {
-      "id": "act_354",
+      "id": "act_952",
       "type": "listen-choose",
       "items": [
-        "lex_boarding",
-        "lex_seat",
-        "lex_late",
+        "lex_desk",
         "lex_miss",
-        "lex_lose"
+        "lex_lose",
+        "lex_airport_bus"
       ]
     },
     {
-      "id": "act_355",
+      "id": "act_953",
       "type": "icon-choice",
       "items": [
-        "lex_boarding",
-        "lex_seat",
-        "lex_late",
+        "lex_desk",
         "lex_miss",
-        "lex_lose"
+        "lex_lose",
+        "lex_airport_bus"
       ]
     },
     {
-      "id": "act_356",
+      "id": "act_954",
       "type": "match",
       "items": [
-        "lex_boarding",
-        "lex_seat",
-        "lex_late",
+        "lex_desk",
         "lex_miss",
-        "lex_lose"
+        "lex_lose",
+        "lex_airport_bus"
       ]
     },
     {
-      "id": "act_357",
-      "type": "spelling-build",
-      "family": "sf_magic_e_a",
-      "word": "late"
-    },
-    {
-      "id": "act_358",
+      "id": "act_955",
       "type": "gapfill",
       "items": [
         {
           "text": "This is a ___.",
-          "answer": "boarding",
+          "answer": "desk",
           "options": [
-            "boarding",
+            "desk",
             "airport",
             "flight"
           ],
-          "hu": "(beszállás)"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "seat",
-          "options": [
-            "seat",
-            "airport",
-            "flight"
-          ],
-          "hu": "(ülés / hely)"
-        },
-        {
-          "text": "It is very ___.",
-          "answer": "late",
-          "options": [
-            "late",
-            "cancelled",
-            "my"
-          ],
-          "hu": "(késő / késésben)"
+          "hu": "(pult)"
         },
         {
           "text": "I ___ every day.",
@@ -121,20 +97,53 @@
             "need"
           ],
           "hu": "(lekésni / hiányozni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "lose",
+          "options": [
+            "lose",
+            "travel",
+            "need"
+          ],
+          "hu": "(elveszíteni)"
+        },
+        {
+          "text": "___.",
+          "answer": "airport bus",
+          "options": [
+            "airport bus",
+            "return ticket",
+            "single ticket"
+          ],
+          "hu": "(reptéri busz)"
         }
       ]
     },
     {
-      "id": "act_359",
+      "id": "act_956",
       "type": "phrase-match",
       "items": [
-        "chunk_ai_delayed"
+        "chunk_ai_myflight",
+        "chunk_ai_dontunderstand2",
+        "chunk_ai_luggage",
+        "chunk_ai_delayed",
+        "chunk_ai_whichgate",
+        "chunk_ai_help_bags"
       ]
     },
     {
-      "id": "act_360",
+      "id": "act_957",
       "type": "reorder",
       "sentences": [
+        {
+          "en": "My flight is at ten o'clock.",
+          "hu": "A járatom tízkor indul."
+        },
+        {
+          "en": "I have one suitcase and a bag.",
+          "hu": "Egy bőröndöm és egy táskám van."
+        },
         {
           "en": "Is the flight delayed?",
           "hu": "Késik a járat?"
@@ -142,36 +151,22 @@
       ]
     },
     {
-      "id": "act_361",
+      "id": "act_958",
       "type": "typed",
       "items": [
-        "lex_boarding",
-        "lex_seat",
-        "lex_late",
-        "lex_miss"
+        "lex_desk",
+        "lex_miss",
+        "lex_lose",
+        "lex_airport_bus"
       ]
     },
     {
-      "id": "act_362",
+      "id": "act_959",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_363",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "boarding",
-            "seat",
-            "late"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_364",
+      "id": "act_960",
       "type": "listen-comprehension",
       "passage": "This is a final call for passenger Marta. Please go to gate twelve. The gate is closing soon.",
       "question": {

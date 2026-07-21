@@ -19,18 +19,7 @@
     "lex_hope",
     "lex_angry",
     "lex_surprised",
-    "lex_excited",
-    "lex_welcome_back",
-    "lex_good_luck",
-    "lex_congratulations",
-    "lex_group",
-    "lex_party",
-    "lex_present",
-    "lex_birthday",
-    "lex_smile",
-    "lex_laugh",
-    "lex_invite",
-    "lex_lucky"
+    "lex_excited"
   ],
   "reviewItems": [
     "lex_travel",
@@ -84,24 +73,7 @@
     "chunk_conv_thanks_visit",
     "chunk_conv_tellmore",
     "chunk_sm_welcome",
-    "chunk_fam_proud",
-    "chunk_fe_happy",
-    "chunk_fd_delicious",
-    "chunk_pm_mayisit",
-    "chunk_pm_canyoupass",
-    "chunk_of_wouldyoulike",
-    "chunk_of_letme",
-    "chunk_th_kind",
-    "chunk_ev_comingover",
-    "chunk_ev_happybday",
-    "chunk_ev_merryxmas",
-    "chunk_ev_cheers",
-    "chunk_ev_thanksforcoming",
-    "chunk_fu_hopetosee",
-    "chunk_ev_soproud",
-    "chunk_ev_comein",
-    "chunk_fd_cheers2",
-    "chunk_ev_wishyou"
+    "chunk_fam_proud"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -110,7 +82,7 @@
   "conversationId": "dlg_balaton",
   "activities": [
     {
-      "id": "act_385",
+      "id": "act_993",
       "type": "intro",
       "items": [
         "lex_tired",
@@ -124,7 +96,7 @@
       ]
     },
     {
-      "id": "act_386",
+      "id": "act_994",
       "type": "listen-choose",
       "items": [
         "lex_tired",
@@ -136,7 +108,7 @@
       ]
     },
     {
-      "id": "act_387",
+      "id": "act_995",
       "type": "icon-choice",
       "items": [
         "lex_tired",
@@ -147,7 +119,7 @@
       ]
     },
     {
-      "id": "act_388",
+      "id": "act_996",
       "type": "match",
       "items": [
         "lex_tired",
@@ -159,7 +131,7 @@
       ]
     },
     {
-      "id": "act_389",
+      "id": "act_997",
       "type": "gapfill",
       "items": [
         {
@@ -205,19 +177,17 @@
       ]
     },
     {
-      "id": "act_390",
+      "id": "act_998",
       "type": "phrase-match",
       "items": [
         "chunk_conv_thanks_visit",
         "chunk_conv_tellmore",
         "chunk_sm_welcome",
-        "chunk_fam_proud",
-        "chunk_fe_happy",
-        "chunk_fd_delicious"
+        "chunk_fam_proud"
       ]
     },
     {
-      "id": "act_391",
+      "id": "act_999",
       "type": "reorder",
       "sentences": [
         {
@@ -235,7 +205,7 @@
       ]
     },
     {
-      "id": "act_392",
+      "id": "act_1000",
       "type": "typed",
       "items": [
         "lex_tired",
@@ -245,12 +215,12 @@
       ]
     },
     {
-      "id": "act_393",
+      "id": "act_1001",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_394",
+      "id": "act_1002",
       "type": "odd-one-out",
       "groups": [
         {
@@ -264,7 +234,7 @@
       ]
     },
     {
-      "id": "act_395",
+      "id": "act_1003",
       "type": "expand",
       "question": {
         "en": "Tell me about your day.",
@@ -286,12 +256,12 @@
       ]
     },
     {
-      "id": "act_396",
+      "id": "act_1004",
       "type": "conversation",
       "dialogueId": "dlg_balaton"
     },
     {
-      "id": "act_397",
+      "id": "act_1005",
       "type": "review",
       "items": [
         "lex_travel",

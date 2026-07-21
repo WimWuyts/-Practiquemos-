@@ -12,37 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_he",
-    "lex_she",
-    "lex_we",
-    "lex_they",
-    "lex_it",
-    "lex_be",
-    "lex_who",
-    "lex_and",
-    "lex_the",
-    "lex_one",
-    "lex_two",
-    "lex_three",
-    "lex_four",
-    "lex_five",
-    "lex_six",
-    "lex_seven",
-    "lex_eight",
-    "lex_nine",
-    "lex_ten",
-    "lex_age",
-    "lex_address"
+    "lex_please",
+    "lex_thank_you",
+    "lex_thanks",
+    "lex_yes",
+    "lex_no",
+    "lex_sorry",
+    "lex_name",
+    "lex_my"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_intro_nice",
-    "chunk_intro_job",
-    "chunk_sm_longtime",
-    "chunk_id_age",
-    "chunk_id_job2",
-    "chunk_sm_longtime2",
-    "chunk_id_pleased"
+    "chunk_ask_name",
+    "chunk_intro_from",
+    "chunk_ask_from",
+    "chunk_intro_nice"
   ],
   "grammarCards": [
     "gr_pronouns"
@@ -53,180 +37,172 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_19",
+      "id": "act_18",
       "type": "intro",
       "items": [
-        "lex_he",
-        "lex_she",
-        "lex_we",
-        "lex_they",
-        "lex_it",
-        "lex_be",
-        "lex_who",
-        "lex_and"
+        "lex_please",
+        "lex_thank_you",
+        "lex_thanks",
+        "lex_yes",
+        "lex_no",
+        "lex_sorry",
+        "lex_name",
+        "lex_my"
+      ]
+    },
+    {
+      "id": "act_19",
+      "type": "listen-choose",
+      "items": [
+        "lex_please",
+        "lex_thank_you",
+        "lex_thanks",
+        "lex_yes",
+        "lex_no",
+        "lex_sorry"
       ]
     },
     {
       "id": "act_20",
-      "type": "listen-choose",
+      "type": "icon-choice",
       "items": [
-        "lex_he",
-        "lex_she",
-        "lex_we",
-        "lex_they",
-        "lex_it",
-        "lex_be"
+        "lex_please",
+        "lex_thank_you",
+        "lex_thanks",
+        "lex_yes",
+        "lex_no"
       ]
     },
     {
       "id": "act_21",
-      "type": "icon-choice",
+      "type": "match",
       "items": [
-        "lex_he",
-        "lex_she",
-        "lex_we",
-        "lex_they",
-        "lex_it"
+        "lex_please",
+        "lex_thank_you",
+        "lex_thanks",
+        "lex_yes",
+        "lex_no",
+        "lex_sorry"
       ]
     },
     {
       "id": "act_22",
-      "type": "match",
-      "items": [
-        "lex_he",
-        "lex_she",
-        "lex_we",
-        "lex_they",
-        "lex_it",
-        "lex_be"
-      ]
+      "type": "spelling-build",
+      "family": "sf_magic_e_a",
+      "word": "name"
     },
     {
       "id": "act_23",
-      "type": "spelling-build",
-      "family": "sf_ee",
-      "word": "three"
-    },
-    {
-      "id": "act_24",
       "type": "grammar",
       "grammarId": "gr_pronouns"
     },
     {
-      "id": "act_25",
+      "id": "act_24",
       "type": "gapfill",
       "items": [
         {
-          "text": "___ is my nephew.",
-          "answer": "he",
+          "text": "Can you help me, ___?",
+          "answer": "please",
           "options": [
-            "he",
-            "I",
-            "you"
+            "please",
+            "yes",
+            "no"
           ],
-          "hu": "Ő az unokaöcsém."
+          "hu": "Tudsz segíteni, kérlek?"
         },
         {
-          "text": "___ is my niece, Kira.",
-          "answer": "she",
+          "text": "___ very much.",
+          "answer": "thank you",
           "options": [
-            "she",
-            "I",
-            "you"
+            "thank you",
+            "hello",
+            "hi"
           ],
-          "hu": "Ő az unokahúgom, Kira."
+          "hu": "Nagyon köszönöm."
         },
         {
-          "text": "___ are a big family.",
-          "answer": "we",
+          "text": "___.",
+          "answer": "thanks",
           "options": [
-            "we",
-            "I",
-            "you"
+            "thanks",
+            "hello",
+            "hi"
           ],
-          "hu": "Nagy család vagyunk."
+          "hu": "(kösz)"
         },
         {
-          "text": "___ live in Denmark.",
-          "answer": "they",
+          "text": "___, I would like some tea.",
+          "answer": "yes",
           "options": [
-            "they",
-            "I",
-            "you"
+            "yes",
+            "please",
+            "no"
           ],
-          "hu": "Ők Dániában élnek."
+          "hu": "Igen, kérnék egy teát."
         }
+      ]
+    },
+    {
+      "id": "act_25",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_name",
+        "chunk_intro_from",
+        "chunk_ask_from",
+        "chunk_intro_nice"
       ]
     },
     {
       "id": "act_26",
-      "type": "phrase-match",
-      "items": [
-        "chunk_intro_nice",
-        "chunk_intro_job",
-        "chunk_sm_longtime",
-        "chunk_id_age",
-        "chunk_id_job2",
-        "chunk_sm_longtime2"
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What is your name?",
+          "hu": "Hogy hívnak?"
+        },
+        {
+          "en": "I'm from Hungary.",
+          "hu": "Magyarországról jöttem."
+        },
+        {
+          "en": "Where are you from?",
+          "hu": "Honnan jössz?"
+        }
       ]
     },
     {
       "id": "act_27",
-      "type": "reorder",
-      "sentences": [
-        {
-          "en": "Nice to meet you.",
-          "hu": "Örülök, hogy megismerhetlek."
-        },
-        {
-          "en": "I am a retired teacher.",
-          "hu": "Nyugdíjas tanár vagyok."
-        },
-        {
-          "en": "It's lovely to see you!",
-          "hu": "De jó látni téged!"
-        }
+      "type": "typed",
+      "items": [
+        "lex_please",
+        "lex_thank_you",
+        "lex_thanks",
+        "lex_yes"
       ]
     },
     {
       "id": "act_28",
-      "type": "typed",
-      "items": [
-        "lex_he",
-        "lex_she",
-        "lex_we",
-        "lex_they"
-      ]
-    },
-    {
-      "id": "act_29",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_30",
+      "id": "act_29",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_31",
+      "id": "act_30",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
-            "he",
-            "she",
-            "we"
+            "please",
+            "thank you",
+            "thanks"
           ],
-          "odd": "what"
+          "odd": "where"
         }
       ]
-    },
-    {
-      "id": "act_399",
-      "type": "spelling-build",
-      "family": "sf_igh",
-      "word": "night"
     }
   ],
   "completionRule": {

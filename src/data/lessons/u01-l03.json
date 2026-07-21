@@ -1,0 +1,198 @@
+{
+  "id": "u01-l03",
+  "unitId": "u01",
+  "order": 3,
+  "title": {
+    "en": "Hello, I'm Marta · more (3)",
+    "hu": "Szia, Marta vagyok · több (3)"
+  },
+  "canDo": {
+    "en": "Greet, introduce yourself, ask simple questions",
+    "hu": "Köszönés, bemutatkozás, egyszerű kérdések"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_your",
+    "lex_i",
+    "lex_you",
+    "lex_he",
+    "lex_she",
+    "lex_we",
+    "lex_they",
+    "lex_it"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_intro_job",
+    "chunk_ask_howareyou",
+    "chunk_sm_longtime",
+    "chunk_id_age"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_short_vowels"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_31",
+      "type": "intro",
+      "items": [
+        "lex_your",
+        "lex_i",
+        "lex_you",
+        "lex_he",
+        "lex_she",
+        "lex_we",
+        "lex_they",
+        "lex_it"
+      ]
+    },
+    {
+      "id": "act_32",
+      "type": "listen-choose",
+      "items": [
+        "lex_your",
+        "lex_i",
+        "lex_you",
+        "lex_he",
+        "lex_she",
+        "lex_we"
+      ]
+    },
+    {
+      "id": "act_33",
+      "type": "icon-choice",
+      "items": [
+        "lex_your",
+        "lex_i",
+        "lex_you",
+        "lex_he",
+        "lex_she"
+      ]
+    },
+    {
+      "id": "act_34",
+      "type": "match",
+      "items": [
+        "lex_your",
+        "lex_i",
+        "lex_you",
+        "lex_he",
+        "lex_she",
+        "lex_we"
+      ]
+    },
+    {
+      "id": "act_35",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "What is ___ name?",
+          "answer": "your",
+          "options": [
+            "your",
+            "my",
+            "retired"
+          ],
+          "hu": "Hogy hívnak?"
+        },
+        {
+          "text": "___ live in Hungary.",
+          "answer": "I",
+          "options": [
+            "I",
+            "you",
+            "he"
+          ],
+          "hu": "Magyarországon élek."
+        },
+        {
+          "text": "Where are ___ from?",
+          "answer": "you",
+          "options": [
+            "you",
+            "I",
+            "he"
+          ],
+          "hu": "Honnan jössz?"
+        },
+        {
+          "text": "___ is my nephew.",
+          "answer": "he",
+          "options": [
+            "he",
+            "I",
+            "you"
+          ],
+          "hu": "Ő az unokaöcsém."
+        }
+      ]
+    },
+    {
+      "id": "act_36",
+      "type": "phrase-match",
+      "items": [
+        "chunk_intro_job",
+        "chunk_ask_howareyou",
+        "chunk_sm_longtime",
+        "chunk_id_age"
+      ]
+    },
+    {
+      "id": "act_37",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I am a retired teacher.",
+          "hu": "Nyugdíjas tanár vagyok."
+        },
+        {
+          "en": "How are you?",
+          "hu": "Hogy vagy?"
+        },
+        {
+          "en": "It's lovely to see you!",
+          "hu": "De jó látni téged!"
+        }
+      ]
+    },
+    {
+      "id": "act_38",
+      "type": "typed",
+      "items": [
+        "lex_your",
+        "lex_i",
+        "lex_you",
+        "lex_he"
+      ]
+    },
+    {
+      "id": "act_39",
+      "type": "pron-record",
+      "focusId": "snd_short_vowels"
+    },
+    {
+      "id": "act_40",
+      "type": "minimal-pair",
+      "focusId": "snd_short_vowels"
+    },
+    {
+      "id": "act_41",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "your",
+            "I",
+            "you"
+          ],
+          "odd": "fine"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

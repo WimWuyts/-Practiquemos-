@@ -1,0 +1,160 @@
+{
+  "id": "u02-l04",
+  "unitId": "u02",
+  "order": 4,
+  "title": {
+    "en": "My family · more (4)",
+    "hu": "A családom · több (4)"
+  },
+  "canDo": {
+    "en": "Talk about family and who is who",
+    "hu": "Beszélj a családról, ki kicsoda"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_this",
+    "lex_that",
+    "lex_these",
+    "lex_those",
+    "lex_his",
+    "lex_her",
+    "lex_our",
+    "lex_their"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_s_endings"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_119",
+      "type": "intro",
+      "items": [
+        "lex_this",
+        "lex_that",
+        "lex_these",
+        "lex_those",
+        "lex_his",
+        "lex_her",
+        "lex_our",
+        "lex_their"
+      ]
+    },
+    {
+      "id": "act_120",
+      "type": "listen-choose",
+      "items": [
+        "lex_this",
+        "lex_that",
+        "lex_these",
+        "lex_those",
+        "lex_his",
+        "lex_her"
+      ]
+    },
+    {
+      "id": "act_121",
+      "type": "icon-choice",
+      "items": [
+        "lex_this",
+        "lex_that",
+        "lex_these",
+        "lex_those",
+        "lex_his"
+      ]
+    },
+    {
+      "id": "act_122",
+      "type": "match",
+      "items": [
+        "lex_this",
+        "lex_that",
+        "lex_these",
+        "lex_those",
+        "lex_his",
+        "lex_her"
+      ]
+    },
+    {
+      "id": "act_123",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ is my sister.",
+          "answer": "this",
+          "options": [
+            "this",
+            "that",
+            "these"
+          ],
+          "hu": "Ez a nővérem."
+        },
+        {
+          "text": "___ is a lovely photo.",
+          "answer": "that",
+          "options": [
+            "that",
+            "this",
+            "these"
+          ],
+          "hu": "Az egy szép fénykép."
+        },
+        {
+          "text": "___ are my books.",
+          "answer": "these",
+          "options": [
+            "these",
+            "this",
+            "that"
+          ],
+          "hu": "Ezek az én könyveim."
+        },
+        {
+          "text": "___ are Kira's shoes.",
+          "answer": "those",
+          "options": [
+            "those",
+            "this",
+            "that"
+          ],
+          "hu": "Azok Kira cipői."
+        }
+      ]
+    },
+    {
+      "id": "act_124",
+      "type": "typed",
+      "items": [
+        "lex_this",
+        "lex_that",
+        "lex_these",
+        "lex_those"
+      ]
+    },
+    {
+      "id": "act_125",
+      "type": "pron-record",
+      "focusId": "snd_s_endings"
+    },
+    {
+      "id": "act_126",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "this",
+            "that",
+            "these"
+          ],
+          "odd": "I"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

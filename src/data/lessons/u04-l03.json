@@ -1,0 +1,166 @@
+{
+  "id": "u04-l03",
+  "unitId": "u04",
+  "order": 3,
+  "title": {
+    "en": "My day & my home · more (3)",
+    "hu": "A napom és az otthonom · több (3)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_room",
+    "lex_kitchen",
+    "lex_garden",
+    "lex_always",
+    "lex_usually",
+    "lex_often",
+    "lex_sometimes",
+    "lex_never"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ed_endings"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_219",
+      "type": "intro",
+      "items": [
+        "lex_room",
+        "lex_kitchen",
+        "lex_garden",
+        "lex_always",
+        "lex_usually",
+        "lex_often",
+        "lex_sometimes",
+        "lex_never"
+      ]
+    },
+    {
+      "id": "act_220",
+      "type": "listen-choose",
+      "items": [
+        "lex_room",
+        "lex_kitchen",
+        "lex_garden",
+        "lex_always",
+        "lex_usually",
+        "lex_often"
+      ]
+    },
+    {
+      "id": "act_221",
+      "type": "icon-choice",
+      "items": [
+        "lex_room",
+        "lex_kitchen",
+        "lex_garden",
+        "lex_always",
+        "lex_usually"
+      ]
+    },
+    {
+      "id": "act_222",
+      "type": "match",
+      "items": [
+        "lex_room",
+        "lex_kitchen",
+        "lex_garden",
+        "lex_always",
+        "lex_usually",
+        "lex_often"
+      ]
+    },
+    {
+      "id": "act_223",
+      "type": "spelling-build",
+      "family": "sf_oo",
+      "word": "room"
+    },
+    {
+      "id": "act_224",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I cook in the ___.",
+          "answer": "kitchen",
+          "options": [
+            "kitchen",
+            "home",
+            "house"
+          ],
+          "hu": "A konyhában főzök."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "garden",
+          "options": [
+            "garden",
+            "home",
+            "house"
+          ],
+          "hu": "(kert)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "always",
+          "options": [
+            "always",
+            "usually",
+            "often"
+          ],
+          "hu": "(mindig)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "usually",
+          "options": [
+            "usually",
+            "always",
+            "often"
+          ],
+          "hu": "(általában)"
+        }
+      ]
+    },
+    {
+      "id": "act_225",
+      "type": "typed",
+      "items": [
+        "lex_room",
+        "lex_kitchen",
+        "lex_garden",
+        "lex_always"
+      ]
+    },
+    {
+      "id": "act_226",
+      "type": "pron-record",
+      "focusId": "snd_ed_endings"
+    },
+    {
+      "id": "act_227",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "room",
+            "kitchen",
+            "garden"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

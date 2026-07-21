@@ -19,15 +19,7 @@
     "lex_spain",
     "lex_spanish",
     "lex_germany",
-    "lex_german",
-    "lex_denmark",
-    "lex_danish",
-    "lex_belgium",
-    "lex_switzerland",
-    "lex_language",
-    "lex_speak",
-    "lex_live",
-    "lex_come"
+    "lex_german"
   ],
   "reviewItems": [
     "lex_family",
@@ -77,7 +69,10 @@
     "lex_with"
   ],
   "chunks": [
-    "chunk_ask_where_live"
+    "chunk_ask_where_live",
+    "chunk_ask_work",
+    "chunk_id_teachonline",
+    "chunk_ds_tall"
   ],
   "grammarCards": [
     "gr_conjunctions"
@@ -88,7 +83,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_59",
+      "id": "act_144",
       "type": "intro",
       "items": [
         "lex_hungary",
@@ -102,7 +97,7 @@
       ]
     },
     {
-      "id": "act_60",
+      "id": "act_145",
       "type": "listen-choose",
       "items": [
         "lex_hungary",
@@ -114,7 +109,7 @@
       ]
     },
     {
-      "id": "act_61",
+      "id": "act_146",
       "type": "icon-choice",
       "items": [
         "lex_hungary",
@@ -125,7 +120,7 @@
       ]
     },
     {
-      "id": "act_62",
+      "id": "act_147",
       "type": "match",
       "items": [
         "lex_hungary",
@@ -137,12 +132,12 @@
       ]
     },
     {
-      "id": "act_63",
+      "id": "act_148",
       "type": "grammar",
       "grammarId": "gr_conjunctions"
     },
     {
-      "id": "act_64",
+      "id": "act_149",
       "type": "gapfill",
       "items": [
         {
@@ -188,24 +183,35 @@
       ]
     },
     {
-      "id": "act_65",
+      "id": "act_150",
       "type": "phrase-match",
       "items": [
-        "chunk_ask_where_live"
+        "chunk_ask_where_live",
+        "chunk_ask_work",
+        "chunk_id_teachonline",
+        "chunk_ds_tall"
       ]
     },
     {
-      "id": "act_66",
+      "id": "act_151",
       "type": "reorder",
       "sentences": [
         {
           "en": "Where do you live?",
           "hu": "Hol laksz?"
+        },
+        {
+          "en": "What do you do?",
+          "hu": "Mivel foglalkozol?"
+        },
+        {
+          "en": "I teach Hungarian online.",
+          "hu": "Magyart tanítok online."
         }
       ]
     },
     {
-      "id": "act_67",
+      "id": "act_152",
       "type": "typed",
       "items": [
         "lex_hungary",
@@ -215,17 +221,17 @@
       ]
     },
     {
-      "id": "act_68",
+      "id": "act_153",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_69",
+      "id": "act_154",
       "type": "minimal-pair",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_70",
+      "id": "act_155",
       "type": "odd-one-out",
       "groups": [
         {
@@ -239,7 +245,7 @@
       ]
     },
     {
-      "id": "act_71",
+      "id": "act_156",
       "type": "review",
       "items": [
         "lex_family",

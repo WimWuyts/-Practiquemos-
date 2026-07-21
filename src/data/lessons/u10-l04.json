@@ -1,0 +1,179 @@
+{
+  "id": "u10-l04",
+  "unitId": "u10",
+  "order": 4,
+  "title": {
+    "en": "Restaurant, hotel & services · more (4)",
+    "hu": "Étterem, szálloda, szolgáltatások · több (4)"
+  },
+  "canDo": {
+    "en": "Order, check in, ask for help",
+    "hu": "Rendelés, bejelentkezés, segítségkérés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_choose",
+    "lex_closed",
+    "lex_break",
+    "lex_comfortable"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_sv_whatstime_bf",
+    "chunk_pm_doyoumind",
+    "chunk_of_canihelp",
+    "chunk_th_forhelp",
+    "chunk_he_notwell",
+    "chunk_he_headache",
+    "chunk_he_medicine",
+    "chunk_he_doctor",
+    "chunk_rs_readyorder",
+    "chunk_rs_anythingelse",
+    "chunk_rs_cardorcash",
+    "chunk_rs_lovelymeal",
+    "chunk_rs_couldwehave",
+    "chunk_sv_wheretoilet2",
+    "chunk_he_getwell"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_807",
+      "type": "intro",
+      "items": [
+        "lex_choose",
+        "lex_closed",
+        "lex_break",
+        "lex_comfortable"
+      ]
+    },
+    {
+      "id": "act_808",
+      "type": "listen-choose",
+      "items": [
+        "lex_choose",
+        "lex_closed",
+        "lex_break",
+        "lex_comfortable"
+      ]
+    },
+    {
+      "id": "act_809",
+      "type": "icon-choice",
+      "items": [
+        "lex_choose",
+        "lex_closed",
+        "lex_break",
+        "lex_comfortable"
+      ]
+    },
+    {
+      "id": "act_810",
+      "type": "match",
+      "items": [
+        "lex_choose",
+        "lex_closed",
+        "lex_break",
+        "lex_comfortable"
+      ]
+    },
+    {
+      "id": "act_811",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "choose",
+          "options": [
+            "choose",
+            "order",
+            "help"
+          ],
+          "hu": "(választani)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "closed",
+          "options": [
+            "closed",
+            "vegetarian",
+            "my"
+          ],
+          "hu": "(zárva)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "break",
+          "options": [
+            "break",
+            "knock",
+            "be"
+          ],
+          "hu": "(eltörni)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "comfortable",
+          "options": [
+            "comfortable",
+            "happy",
+            "afraid"
+          ],
+          "hu": "(kényelmes)"
+        }
+      ]
+    },
+    {
+      "id": "act_812",
+      "type": "phrase-match",
+      "items": [
+        "chunk_sv_whatstime_bf",
+        "chunk_pm_doyoumind",
+        "chunk_of_canihelp",
+        "chunk_th_forhelp",
+        "chunk_he_notwell",
+        "chunk_he_headache"
+      ]
+    },
+    {
+      "id": "act_813",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What time is breakfast?",
+          "hu": "Hánykor van a reggeli?"
+        },
+        {
+          "en": "Can I help you?",
+          "hu": "Segíthetek?"
+        },
+        {
+          "en": "Thank you for your help.",
+          "hu": "Köszönöm a segítségedet."
+        }
+      ]
+    },
+    {
+      "id": "act_814",
+      "type": "typed",
+      "items": [
+        "lex_choose",
+        "lex_closed",
+        "lex_break",
+        "lex_comfortable"
+      ]
+    },
+    {
+      "id": "act_815",
+      "type": "pron-record",
+      "focusId": "str_word"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

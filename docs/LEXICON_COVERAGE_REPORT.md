@@ -38,7 +38,7 @@ Each A1 grammar point (EGP) is paired with the vocabulary domains (EVP) that exe
 ## Coverage rules
 
 - Each productive word appears in first lesson + spiral review lessons + generated activities.
-- Productive items with fewer than 3 encounters: **22** (target: 0; addressed as the corpus grows).
+- Productive items with fewer than 3 encounters: **4** (target: 0; addressed as the corpus grows).
 - Every productive word has a Hungarian field and at least one example.
 
 ## By theme

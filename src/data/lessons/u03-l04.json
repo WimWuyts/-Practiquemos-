@@ -1,0 +1,151 @@
+{
+  "id": "u03-l04",
+  "unitId": "u03",
+  "order": 4,
+  "title": {
+    "en": "People, countries & languages · more (4)",
+    "hu": "Emberek, országok, nyelvek · több (4)"
+  },
+  "canDo": {
+    "en": "Say where people are from and describe them",
+    "hu": "Honnan jönnek az emberek, milyenek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_so",
+    "lex_very",
+    "lex_job",
+    "lex_driver",
+    "lex_engineer",
+    "lex_manager",
+    "lex_artist",
+    "lex_big"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_h"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_176",
+      "type": "intro",
+      "items": [
+        "lex_so",
+        "lex_very",
+        "lex_job",
+        "lex_driver",
+        "lex_engineer",
+        "lex_manager",
+        "lex_artist",
+        "lex_big"
+      ]
+    },
+    {
+      "id": "act_177",
+      "type": "listen-choose",
+      "items": [
+        "lex_so",
+        "lex_very",
+        "lex_job",
+        "lex_driver",
+        "lex_engineer",
+        "lex_manager"
+      ]
+    },
+    {
+      "id": "act_178",
+      "type": "icon-choice",
+      "items": [
+        "lex_so",
+        "lex_very",
+        "lex_job",
+        "lex_driver",
+        "lex_engineer"
+      ]
+    },
+    {
+      "id": "act_179",
+      "type": "match",
+      "items": [
+        "lex_so",
+        "lex_very",
+        "lex_job",
+        "lex_driver",
+        "lex_engineer",
+        "lex_manager"
+      ]
+    },
+    {
+      "id": "act_180",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It's late, ___ I go home.",
+          "answer": "so",
+          "options": [
+            "so",
+            "and",
+            "but"
+          ],
+          "hu": "Késő van, úgyhogy hazamegyek."
+        },
+        {
+          "text": "It is ___ nice.",
+          "answer": "very",
+          "options": [
+            "very",
+            "where",
+            "how"
+          ],
+          "hu": "Nagyon szép."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "job",
+          "options": [
+            "job",
+            "name",
+            "country"
+          ],
+          "hu": "(állás / munka)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "driver",
+          "options": [
+            "driver",
+            "name",
+            "country"
+          ],
+          "hu": "(sofőr)"
+        }
+      ]
+    },
+    {
+      "id": "act_181",
+      "type": "typed",
+      "items": [
+        "lex_so",
+        "lex_very",
+        "lex_job",
+        "lex_driver"
+      ]
+    },
+    {
+      "id": "act_182",
+      "type": "pron-record",
+      "focusId": "snd_h"
+    },
+    {
+      "id": "act_183",
+      "type": "minimal-pair",
+      "focusId": "snd_h"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

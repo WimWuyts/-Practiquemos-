@@ -1,0 +1,165 @@
+{
+  "id": "u09-l10",
+  "unitId": "u09",
+  "order": 10,
+  "title": {
+    "en": "Around town: directions · more (10)",
+    "hu": "A városban: útbaigazítás · több (10)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_south",
+    "lex_east",
+    "lex_west",
+    "lex_pull",
+    "lex_push",
+    "lex_follow",
+    "lex_enter",
+    "lex_look_for"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_758",
+      "type": "intro",
+      "items": [
+        "lex_south",
+        "lex_east",
+        "lex_west",
+        "lex_pull",
+        "lex_push",
+        "lex_follow",
+        "lex_enter",
+        "lex_look_for"
+      ]
+    },
+    {
+      "id": "act_759",
+      "type": "listen-choose",
+      "items": [
+        "lex_south",
+        "lex_east",
+        "lex_west",
+        "lex_pull",
+        "lex_push",
+        "lex_follow"
+      ]
+    },
+    {
+      "id": "act_760",
+      "type": "icon-choice",
+      "items": [
+        "lex_south",
+        "lex_east",
+        "lex_west",
+        "lex_pull",
+        "lex_push"
+      ]
+    },
+    {
+      "id": "act_761",
+      "type": "match",
+      "items": [
+        "lex_south",
+        "lex_east",
+        "lex_west",
+        "lex_pull",
+        "lex_push",
+        "lex_follow"
+      ]
+    },
+    {
+      "id": "act_762",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "south",
+          "options": [
+            "south",
+            "street",
+            "left"
+          ],
+          "hu": "(dél)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "east",
+          "options": [
+            "east",
+            "street",
+            "left"
+          ],
+          "hu": "(kelet)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "west",
+          "options": [
+            "west",
+            "street",
+            "left"
+          ],
+          "hu": "(nyugat)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "pull",
+          "options": [
+            "pull",
+            "work",
+            "get up"
+          ],
+          "hu": "(húzni)"
+        }
+      ]
+    },
+    {
+      "id": "act_763",
+      "type": "typed",
+      "items": [
+        "lex_south",
+        "lex_east",
+        "lex_west",
+        "lex_pull"
+      ]
+    },
+    {
+      "id": "act_764",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_765",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_766",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "south",
+            "east",
+            "west"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

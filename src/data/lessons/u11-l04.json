@@ -1,0 +1,193 @@
+{
+  "id": "u11-l04",
+  "unitId": "u11",
+  "order": 4,
+  "title": {
+    "en": "Teaching Hungarian online · more (4)",
+    "hu": "Magyartanítás online · több (4)"
+  },
+  "canDo": {
+    "en": "Run an online lesson in English",
+    "hu": "Online óra angolul"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_pen",
+    "lex_pencil",
+    "lex_paper",
+    "lex_page",
+    "lex_classroom",
+    "lex_homework",
+    "lex_practise",
+    "lex_save"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_rp_isthisright",
+    "chunk_ap_soznumber",
+    "chunk_te_repeatafter",
+    "chunk_te_writedown"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_852",
+      "type": "intro",
+      "items": [
+        "lex_pen",
+        "lex_pencil",
+        "lex_paper",
+        "lex_page",
+        "lex_classroom",
+        "lex_homework",
+        "lex_practise",
+        "lex_save"
+      ]
+    },
+    {
+      "id": "act_853",
+      "type": "listen-choose",
+      "items": [
+        "lex_pen",
+        "lex_pencil",
+        "lex_paper",
+        "lex_page",
+        "lex_classroom",
+        "lex_homework"
+      ]
+    },
+    {
+      "id": "act_854",
+      "type": "icon-choice",
+      "items": [
+        "lex_pen",
+        "lex_pencil",
+        "lex_paper",
+        "lex_page",
+        "lex_classroom"
+      ]
+    },
+    {
+      "id": "act_855",
+      "type": "match",
+      "items": [
+        "lex_pen",
+        "lex_pencil",
+        "lex_paper",
+        "lex_page",
+        "lex_classroom",
+        "lex_homework"
+      ]
+    },
+    {
+      "id": "act_856",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "pen",
+          "options": [
+            "pen",
+            "lesson",
+            "student"
+          ],
+          "hu": "(toll)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "pencil",
+          "options": [
+            "pencil",
+            "lesson",
+            "student"
+          ],
+          "hu": "(ceruza)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "paper",
+          "options": [
+            "paper",
+            "lesson",
+            "student"
+          ],
+          "hu": "(papír)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "page",
+          "options": [
+            "page",
+            "lesson",
+            "student"
+          ],
+          "hu": "(oldal)"
+        }
+      ]
+    },
+    {
+      "id": "act_857",
+      "type": "phrase-match",
+      "items": [
+        "chunk_rp_isthisright",
+        "chunk_ap_soznumber",
+        "chunk_te_repeatafter",
+        "chunk_te_writedown"
+      ]
+    },
+    {
+      "id": "act_858",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Is this right?",
+          "hu": "Ez így jó?"
+        },
+        {
+          "en": "Sorry, that's my mistake.",
+          "hu": "Bocsánat, ez az én hibám."
+        },
+        {
+          "en": "Repeat after me, please.",
+          "hu": "Ismételd utánam, kérlek."
+        }
+      ]
+    },
+    {
+      "id": "act_859",
+      "type": "typed",
+      "items": [
+        "lex_pen",
+        "lex_pencil",
+        "lex_paper",
+        "lex_page"
+      ]
+    },
+    {
+      "id": "act_860",
+      "type": "pron-record",
+      "focusId": "str_question"
+    },
+    {
+      "id": "act_861",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "pen",
+            "pencil",
+            "paper"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

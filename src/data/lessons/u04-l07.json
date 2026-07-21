@@ -1,0 +1,160 @@
+{
+  "id": "u04-l07",
+  "unitId": "u04",
+  "order": 7,
+  "title": {
+    "en": "My day & my home · more (7)",
+    "hu": "A napom és az otthonom · több (7)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_sofa",
+    "lex_wall",
+    "lex_floor",
+    "lex_bathroom",
+    "lex_bedroom",
+    "lex_television",
+    "lex_fridge",
+    "lex_lamp"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ed_endings"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_251",
+      "type": "intro",
+      "items": [
+        "lex_sofa",
+        "lex_wall",
+        "lex_floor",
+        "lex_bathroom",
+        "lex_bedroom",
+        "lex_television",
+        "lex_fridge",
+        "lex_lamp"
+      ]
+    },
+    {
+      "id": "act_252",
+      "type": "listen-choose",
+      "items": [
+        "lex_sofa",
+        "lex_wall",
+        "lex_floor",
+        "lex_bathroom",
+        "lex_bedroom",
+        "lex_television"
+      ]
+    },
+    {
+      "id": "act_253",
+      "type": "icon-choice",
+      "items": [
+        "lex_sofa",
+        "lex_wall",
+        "lex_floor",
+        "lex_bathroom",
+        "lex_bedroom"
+      ]
+    },
+    {
+      "id": "act_254",
+      "type": "match",
+      "items": [
+        "lex_sofa",
+        "lex_wall",
+        "lex_floor",
+        "lex_bathroom",
+        "lex_bedroom",
+        "lex_television"
+      ]
+    },
+    {
+      "id": "act_255",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "sofa",
+          "options": [
+            "sofa",
+            "home",
+            "house"
+          ],
+          "hu": "(kanapé)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "wall",
+          "options": [
+            "wall",
+            "home",
+            "house"
+          ],
+          "hu": "(fal)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "floor",
+          "options": [
+            "floor",
+            "home",
+            "house"
+          ],
+          "hu": "(padló / emelet)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "bathroom",
+          "options": [
+            "bathroom",
+            "home",
+            "house"
+          ],
+          "hu": "(fürdőszoba)"
+        }
+      ]
+    },
+    {
+      "id": "act_256",
+      "type": "typed",
+      "items": [
+        "lex_sofa",
+        "lex_wall",
+        "lex_floor",
+        "lex_bathroom"
+      ]
+    },
+    {
+      "id": "act_257",
+      "type": "pron-record",
+      "focusId": "snd_ed_endings"
+    },
+    {
+      "id": "act_258",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "sofa",
+            "wall",
+            "floor"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

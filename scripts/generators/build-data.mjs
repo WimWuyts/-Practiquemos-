@@ -257,6 +257,33 @@ const LESSONS = [
   L("u16-l01", 1, "Family party at Lake Balaton", "Családi buli a Balatonnál", "Join a family conversation", "Családi beszélgetés", [], ["str_sentence"], "dlg_balaton"),
 ];
 
+// ---------- Redistribute vocabulary into more micro-lessons (max ~8 new words each) ----------
+// Keeps the hand-authored "anchor" lessons (grammar/pronunciation/dialogue) and adds
+// auto-generated practice lessons per unit to absorb the expanded vocabulary.
+const NEW_PER_LESSON = 8, CHUNKS_PER_LESSON = 4;
+const pad2 = (n) => String(n).padStart(2, "0");
+const EXPANDED = [];
+for (const unit of UNITS) {
+  const anchors = LESSONS.filter((l) => l.unitId === unit.id).sort((a, b) => a.order - b.order);
+  if (unit.id === "u00") { EXPANDED.push(...anchors); continue; }
+  const words = lexicon.filter((l) => l.status === "productive" && l.firstLesson && l.firstLesson.slice(0, 3) === unit.id);
+  const uchunks = chunks.filter((c) => c.firstLesson && c.firstLesson.slice(0, 3) === unit.id);
+  const need = Math.max(anchors.length, Math.ceil(words.length / NEW_PER_LESSON) || 1);
+  const pronPool = [...new Set(anchors.flatMap((a) => a.pronunciation))];
+  const slots = [];
+  for (let i = 0; i < need; i++) {
+    if (i < anchors.length) { slots.push({ ...anchors[i], pronunciation: anchors[i].pronunciation.slice(), grammar: anchors[i].grammar.slice() }); }
+    else slots.push({
+      id: unit.id + "-l" + pad2(i + 1), unitId: unit.id, order: i + 1,
+      title: { en: unit.title.en + " · more (" + (i + 1) + ")", hu: unit.title.hu + " · több (" + (i + 1) + ")" },
+      canDo: unit.canDo, grammar: [], pronunciation: pronPool.length ? [pronPool[i % pronPool.length]] : [], dialogue: null,
+    });
+  }
+  words.forEach((w, j) => { w.firstLesson = slots[Math.min(Math.floor(j / NEW_PER_LESSON), need - 1)].id; });
+  uchunks.forEach((c, k) => { c.firstLesson = slots[Math.min(Math.floor(k / CHUNKS_PER_LESSON), need - 1)].id; });
+  EXPANDED.push(...slots);
+}
+
 // ---------- Activity generation ----------
 const lexByLesson = {};
 for (const l of lexicon) if (l.firstLesson) (lexByLesson[l.firstLesson] = lexByLesson[l.firstLesson] || []).push(l);
@@ -354,7 +381,7 @@ function activitiesFor(lesson) {
   return acts;
 }
 
-const lessonObjs = LESSONS.map((l) => {
+const lessonObjs = EXPANDED.map((l) => {
   const newLex = (lexByLesson[l.id] || []).filter((x) => x.status === "productive").map((x) => x.id);
   const reviewIds = lexicon.filter((x) => x.status === "productive" && (x.reviewLessons || []).includes(l.id)).map((x) => x.id);
   return {

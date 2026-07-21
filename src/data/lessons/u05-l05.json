@@ -1,0 +1,165 @@
+{
+  "id": "u05-l05",
+  "unitId": "u05",
+  "order": 5,
+  "title": {
+    "en": "Food, cooking & shopping · more (5)",
+    "hu": "Étel, főzés, vásárlás · több (5)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_tomato",
+    "lex_onion",
+    "lex_chicken",
+    "lex_salad",
+    "lex_sugar",
+    "lex_salt",
+    "lex_butter",
+    "lex_chocolate"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ee_i"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_328",
+      "type": "intro",
+      "items": [
+        "lex_tomato",
+        "lex_onion",
+        "lex_chicken",
+        "lex_salad",
+        "lex_sugar",
+        "lex_salt",
+        "lex_butter",
+        "lex_chocolate"
+      ]
+    },
+    {
+      "id": "act_329",
+      "type": "listen-choose",
+      "items": [
+        "lex_tomato",
+        "lex_onion",
+        "lex_chicken",
+        "lex_salad",
+        "lex_sugar",
+        "lex_salt"
+      ]
+    },
+    {
+      "id": "act_330",
+      "type": "icon-choice",
+      "items": [
+        "lex_tomato",
+        "lex_onion",
+        "lex_chicken",
+        "lex_salad",
+        "lex_sugar"
+      ]
+    },
+    {
+      "id": "act_331",
+      "type": "match",
+      "items": [
+        "lex_tomato",
+        "lex_onion",
+        "lex_chicken",
+        "lex_salad",
+        "lex_sugar",
+        "lex_salt"
+      ]
+    },
+    {
+      "id": "act_332",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "tomato",
+          "options": [
+            "tomato",
+            "food",
+            "water"
+          ],
+          "hu": "(paradicsom)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "onion",
+          "options": [
+            "onion",
+            "food",
+            "water"
+          ],
+          "hu": "(hagyma)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "chicken",
+          "options": [
+            "chicken",
+            "food",
+            "water"
+          ],
+          "hu": "(csirke)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "salad",
+          "options": [
+            "salad",
+            "food",
+            "water"
+          ],
+          "hu": "(saláta)"
+        }
+      ]
+    },
+    {
+      "id": "act_333",
+      "type": "typed",
+      "items": [
+        "lex_tomato",
+        "lex_onion",
+        "lex_chicken",
+        "lex_salad"
+      ]
+    },
+    {
+      "id": "act_334",
+      "type": "pron-record",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_335",
+      "type": "minimal-pair",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_336",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "tomato",
+            "onion",
+            "chicken"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "u09-l07",
+  "unitId": "u09",
+  "order": 7,
+  "title": {
+    "en": "Around town: directions · more (7)",
+    "hu": "A városban: útbaigazítás · több (7)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_up",
+    "lex_down",
+    "lex_to",
+    "lex_by",
+    "lex_over",
+    "lex_behind",
+    "lex_map",
+    "lex_which"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_731",
+      "type": "intro",
+      "items": [
+        "lex_up",
+        "lex_down",
+        "lex_to",
+        "lex_by",
+        "lex_over",
+        "lex_behind",
+        "lex_map",
+        "lex_which"
+      ]
+    },
+    {
+      "id": "act_732",
+      "type": "listen-choose",
+      "items": [
+        "lex_up",
+        "lex_down",
+        "lex_to",
+        "lex_by",
+        "lex_over",
+        "lex_behind"
+      ]
+    },
+    {
+      "id": "act_733",
+      "type": "icon-choice",
+      "items": [
+        "lex_up",
+        "lex_down",
+        "lex_to",
+        "lex_by",
+        "lex_over"
+      ]
+    },
+    {
+      "id": "act_734",
+      "type": "match",
+      "items": [
+        "lex_up",
+        "lex_down",
+        "lex_to",
+        "lex_by",
+        "lex_over",
+        "lex_behind"
+      ]
+    },
+    {
+      "id": "act_735",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I speak ___.",
+          "answer": "up",
+          "options": [
+            "up",
+            "straight",
+            "first"
+          ],
+          "hu": "(fel)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "down",
+          "options": [
+            "down",
+            "straight",
+            "first"
+          ],
+          "hu": "(le)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "to",
+          "options": [
+            "to",
+            "over",
+            "behind"
+          ],
+          "hu": "(-hoz / -ba)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "by",
+          "options": [
+            "by",
+            "from",
+            "in"
+          ],
+          "hu": "(-val (közlekedés) / mellett)"
+        }
+      ]
+    },
+    {
+      "id": "act_736",
+      "type": "typed",
+      "items": [
+        "lex_up",
+        "lex_down",
+        "lex_to",
+        "lex_by"
+      ]
+    },
+    {
+      "id": "act_737",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_738",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_739",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "up",
+            "down",
+            "to"
+          ],
+          "odd": "please"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

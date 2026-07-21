@@ -1,0 +1,165 @@
+{
+  "id": "u08-l08",
+  "unitId": "u08",
+  "order": 8,
+  "title": {
+    "en": "Hobbies, books & opinions · more (8)",
+    "hu": "Hobbik, könyvek, vélemények · több (8)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_jump",
+    "lex_draw",
+    "lex_paint",
+    "lex_win",
+    "lex_wonderful",
+    "lex_great",
+    "lex_true",
+    "lex_real"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_th"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_637",
+      "type": "intro",
+      "items": [
+        "lex_jump",
+        "lex_draw",
+        "lex_paint",
+        "lex_win",
+        "lex_wonderful",
+        "lex_great",
+        "lex_true",
+        "lex_real"
+      ]
+    },
+    {
+      "id": "act_638",
+      "type": "listen-choose",
+      "items": [
+        "lex_jump",
+        "lex_draw",
+        "lex_paint",
+        "lex_win",
+        "lex_wonderful",
+        "lex_great"
+      ]
+    },
+    {
+      "id": "act_639",
+      "type": "icon-choice",
+      "items": [
+        "lex_jump",
+        "lex_draw",
+        "lex_paint",
+        "lex_win",
+        "lex_wonderful"
+      ]
+    },
+    {
+      "id": "act_640",
+      "type": "match",
+      "items": [
+        "lex_jump",
+        "lex_draw",
+        "lex_paint",
+        "lex_win",
+        "lex_wonderful",
+        "lex_great"
+      ]
+    },
+    {
+      "id": "act_641",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "jump",
+          "options": [
+            "jump",
+            "read",
+            "swim"
+          ],
+          "hu": "(ugrani)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "draw",
+          "options": [
+            "draw",
+            "read",
+            "swim"
+          ],
+          "hu": "(rajzolni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "paint",
+          "options": [
+            "paint",
+            "read",
+            "swim"
+          ],
+          "hu": "(festeni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "win",
+          "options": [
+            "win",
+            "read",
+            "swim"
+          ],
+          "hu": "(nyerni)"
+        }
+      ]
+    },
+    {
+      "id": "act_642",
+      "type": "typed",
+      "items": [
+        "lex_jump",
+        "lex_draw",
+        "lex_paint",
+        "lex_win"
+      ]
+    },
+    {
+      "id": "act_643",
+      "type": "pron-record",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_644",
+      "type": "minimal-pair",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_645",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "jump",
+            "draw",
+            "paint"
+          ],
+          "odd": "be"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

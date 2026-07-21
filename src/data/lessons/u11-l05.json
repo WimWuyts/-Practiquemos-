@@ -1,0 +1,118 @@
+{
+  "id": "u11-l05",
+  "unitId": "u11",
+  "order": 5,
+  "title": {
+    "en": "Teaching Hungarian online · more (5)",
+    "hu": "Magyartanítás online · több (5)"
+  },
+  "canDo": {
+    "en": "Run an online lesson in English",
+    "hu": "Online óra angolul"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_let",
+    "lex_fix"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_te_understand",
+    "chunk_te_seeyounext",
+    "chunk_te_greatjob",
+    "chunk_te_onemore"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_chunking"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_862",
+      "type": "intro",
+      "items": [
+        "lex_let",
+        "lex_fix"
+      ]
+    },
+    {
+      "id": "act_863",
+      "type": "listen-choose",
+      "items": [
+        "lex_let",
+        "lex_fix"
+      ]
+    },
+    {
+      "id": "act_864",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "let",
+          "options": [
+            "let",
+            "repeat",
+            "understand"
+          ],
+          "hu": "(hagyni / engedni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "fix",
+          "options": [
+            "fix",
+            "turn on",
+            "turn off"
+          ],
+          "hu": "(megjavítani)"
+        }
+      ]
+    },
+    {
+      "id": "act_865",
+      "type": "phrase-match",
+      "items": [
+        "chunk_te_understand",
+        "chunk_te_seeyounext",
+        "chunk_te_greatjob",
+        "chunk_te_onemore"
+      ]
+    },
+    {
+      "id": "act_866",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Do you understand?",
+          "hu": "Érted?"
+        },
+        {
+          "en": "See you next week. Bye!",
+          "hu": "Jövő héten találkozunk. Szia!"
+        },
+        {
+          "en": "Great job today!",
+          "hu": "Nagyszerű munka ma!"
+        }
+      ]
+    },
+    {
+      "id": "act_867",
+      "type": "typed",
+      "items": [
+        "lex_let",
+        "lex_fix"
+      ]
+    },
+    {
+      "id": "act_868",
+      "type": "pron-record",
+      "focusId": "str_chunking"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "id": "u11-l03",
+  "unitId": "u11",
+  "order": 3,
+  "title": {
+    "en": "Teaching Hungarian online · more (3)",
+    "hu": "Magyartanítás online · több (3)"
+  },
+  "canDo": {
+    "en": "Run an online lesson in English",
+    "hu": "Online óra angolul"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_teach",
+    "lex_begin",
+    "lex_finish",
+    "lex_email",
+    "lex_mobile",
+    "lex_app",
+    "lex_word",
+    "lex_question"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_te_looksgood",
+    "chunk_te_tryagain",
+    "chunk_te_openbook",
+    "chunk_te_seeyou"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_chunking"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_841",
+      "type": "intro",
+      "items": [
+        "lex_teach",
+        "lex_begin",
+        "lex_finish",
+        "lex_email",
+        "lex_mobile",
+        "lex_app",
+        "lex_word",
+        "lex_question"
+      ]
+    },
+    {
+      "id": "act_842",
+      "type": "listen-choose",
+      "items": [
+        "lex_teach",
+        "lex_begin",
+        "lex_finish",
+        "lex_email",
+        "lex_mobile",
+        "lex_app"
+      ]
+    },
+    {
+      "id": "act_843",
+      "type": "icon-choice",
+      "items": [
+        "lex_teach",
+        "lex_begin",
+        "lex_finish",
+        "lex_email",
+        "lex_mobile"
+      ]
+    },
+    {
+      "id": "act_844",
+      "type": "match",
+      "items": [
+        "lex_teach",
+        "lex_begin",
+        "lex_finish",
+        "lex_email",
+        "lex_mobile",
+        "lex_app"
+      ]
+    },
+    {
+      "id": "act_845",
+      "type": "spelling-build",
+      "family": "sf_tion",
+      "word": "question"
+    },
+    {
+      "id": "act_846",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ Hungarian online.",
+          "answer": "teach",
+          "options": [
+            "teach",
+            "start",
+            "write"
+          ],
+          "hu": "Magyart tanítok online."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "begin",
+          "options": [
+            "begin",
+            "start",
+            "write"
+          ],
+          "hu": "(elkezdeni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "finish",
+          "options": [
+            "finish",
+            "start",
+            "write"
+          ],
+          "hu": "(befejezni)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "email",
+          "options": [
+            "email",
+            "camera",
+            "microphone"
+          ],
+          "hu": "(e-mail)"
+        }
+      ]
+    },
+    {
+      "id": "act_847",
+      "type": "phrase-match",
+      "items": [
+        "chunk_te_looksgood",
+        "chunk_te_tryagain",
+        "chunk_te_openbook",
+        "chunk_te_seeyou"
+      ]
+    },
+    {
+      "id": "act_848",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Very good! That's correct.",
+          "hu": "Nagyon jó! Ez helyes."
+        },
+        {
+          "en": "Good try! Let's try again.",
+          "hu": "Jó próbálkozás! Próbáljuk újra."
+        },
+        {
+          "en": "Open your book, please.",
+          "hu": "Nyisd ki a könyvet, kérlek."
+        }
+      ]
+    },
+    {
+      "id": "act_849",
+      "type": "typed",
+      "items": [
+        "lex_teach",
+        "lex_begin",
+        "lex_finish",
+        "lex_email"
+      ]
+    },
+    {
+      "id": "act_850",
+      "type": "pron-record",
+      "focusId": "str_chunking"
+    },
+    {
+      "id": "act_851",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "teach",
+            "begin",
+            "finish"
+          ],
+          "odd": "be"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

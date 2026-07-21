@@ -12,71 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_weekend",
-    "lex_weather",
-    "lex_sunny",
-    "lex_rainy",
-    "lex_cold",
-    "lex_hot",
-    "lex_warm",
-    "lex_plan",
-    "lex_meet",
-    "lex_can",
-    "lex_going_to",
-    "lex_free",
-    "lex_busy",
-    "lex_tree",
-    "lex_flower",
-    "lex_sea",
-    "lex_river",
-    "lex_lake",
-    "lex_mountain",
-    "lex_beach",
-    "lex_sky",
-    "lex_sun",
-    "lex_rain",
-    "lex_snow",
-    "lex_wind",
-    "lex_cloud",
-    "lex_cloudy",
-    "lex_windy",
-    "lex_wet",
-    "lex_dry",
-    "lex_dark",
-    "lex_light",
-    "lex_maybe",
-    "lex_sure",
-    "lex_idea",
-    "lex_umbrella",
-    "lex_cool",
-    "lex_moon",
-    "lex_grass",
-    "lex_field",
-    "lex_star",
-    "lex_hill",
-    "lex_bright",
-    "lex_deep"
+    "lex_year",
+    "lex_monday",
+    "lex_tuesday",
+    "lex_wednesday",
+    "lex_thursday",
+    "lex_friday",
+    "lex_saturday",
+    "lex_sunday"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_plan_free",
-    "chunk_plan_suggest",
-    "chunk_plan_accept",
-    "chunk_plan_decline",
+    "chunk_tm_whattime",
     "chunk_tm_freeon",
     "chunk_we_nice",
-    "chunk_we_cold",
-    "chunk_pl_shallwe",
-    "chunk_pl_goodidea",
-    "chunk_pl_cantsorry",
-    "chunk_ap_solate",
-    "chunk_we_forecast",
-    "chunk_we_takecoat",
-    "chunk_dl_busytoday",
-    "chunk_we_lovely2",
-    "chunk_pl_freetomorrow",
-    "chunk_rp_didyousay",
-    "chunk_op_soundsgood"
+    "chunk_we_cold"
   ],
   "grammarCards": [
     "gr_can",
@@ -89,168 +39,174 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_146",
+      "id": "act_403",
       "type": "intro",
       "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy",
-        "lex_cold",
-        "lex_hot",
-        "lex_warm",
-        "lex_plan"
+        "lex_year",
+        "lex_monday",
+        "lex_tuesday",
+        "lex_wednesday",
+        "lex_thursday",
+        "lex_friday",
+        "lex_saturday",
+        "lex_sunday"
       ]
     },
     {
-      "id": "act_147",
+      "id": "act_404",
       "type": "listen-choose",
       "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy",
-        "lex_cold",
-        "lex_hot"
+        "lex_year",
+        "lex_monday",
+        "lex_tuesday",
+        "lex_wednesday",
+        "lex_thursday",
+        "lex_friday"
       ]
     },
     {
-      "id": "act_148",
+      "id": "act_405",
       "type": "icon-choice",
       "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy",
-        "lex_cold"
+        "lex_year",
+        "lex_monday",
+        "lex_tuesday",
+        "lex_wednesday",
+        "lex_thursday"
       ]
     },
     {
-      "id": "act_149",
+      "id": "act_406",
       "type": "match",
       "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy",
-        "lex_cold",
-        "lex_hot"
+        "lex_year",
+        "lex_monday",
+        "lex_tuesday",
+        "lex_wednesday",
+        "lex_thursday",
+        "lex_friday"
       ]
     },
     {
-      "id": "act_150",
-      "type": "spelling-build",
-      "family": "sf_ee",
-      "word": "meet"
-    },
-    {
-      "id": "act_151",
+      "id": "act_407",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_152",
+      "id": "act_408",
       "type": "grammar",
       "grammarId": "gr_goingto"
     },
     {
-      "id": "act_153",
+      "id": "act_409",
       "type": "grammar",
       "grammarId": "gr_presentcont"
     },
     {
-      "id": "act_154",
+      "id": "act_410",
       "type": "gapfill",
       "items": [
         {
-          "text": "I am free at the ___.",
-          "answer": "weekend",
+          "text": "This is a ___.",
+          "answer": "year",
           "options": [
-            "weekend",
+            "year",
             "time",
             "hour"
           ],
-          "hu": "Hétvégén ráérek."
+          "hu": "(év)"
         },
         {
-          "text": "The ___ is nice today.",
-          "answer": "weather",
+          "text": "I like ___.",
+          "answer": "Monday",
           "options": [
-            "weather",
-            "tree",
-            "flower"
+            "Monday",
+            "time",
+            "hour"
           ],
-          "hu": "Ma szép idő van."
+          "hu": "(hétfő)"
         },
         {
-          "text": "It is very ___.",
-          "answer": "sunny",
+          "text": "I like ___.",
+          "answer": "Tuesday",
           "options": [
-            "sunny",
-            "rainy",
-            "cold"
+            "Tuesday",
+            "time",
+            "hour"
           ],
-          "hu": "(napos)"
+          "hu": "(kedd)"
         },
         {
-          "text": "It is very ___.",
-          "answer": "rainy",
+          "text": "I like ___.",
+          "answer": "Wednesday",
           "options": [
-            "rainy",
-            "sunny",
-            "cold"
+            "Wednesday",
+            "time",
+            "hour"
           ],
-          "hu": "(esős)"
+          "hu": "(szerda)"
         }
       ]
     },
     {
-      "id": "act_155",
+      "id": "act_411",
       "type": "phrase-match",
       "items": [
-        "chunk_plan_free",
-        "chunk_plan_suggest",
-        "chunk_plan_accept",
-        "chunk_plan_decline",
+        "chunk_tm_whattime",
         "chunk_tm_freeon",
-        "chunk_we_nice"
+        "chunk_we_nice",
+        "chunk_we_cold"
       ]
     },
     {
-      "id": "act_156",
+      "id": "act_412",
       "type": "reorder",
       "sentences": [
         {
-          "en": "I'm free on Saturday.",
-          "hu": "Szombaton ráérek."
+          "en": "What time is it?",
+          "hu": "Mennyi az idő?"
         },
         {
-          "en": "Let's meet on Sunday.",
-          "hu": "Találkozzunk vasárnap."
+          "en": "I'm free on Saturday afternoon.",
+          "hu": "Szombat délután ráérek."
         },
         {
-          "en": "Yes, that's a good idea.",
-          "hu": "Igen, ez jó ötlet."
+          "en": "The weather is lovely today.",
+          "hu": "Ma csodás az idő."
         }
       ]
     },
     {
-      "id": "act_157",
+      "id": "act_413",
       "type": "typed",
       "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy"
+        "lex_year",
+        "lex_monday",
+        "lex_tuesday",
+        "lex_wednesday"
       ]
     },
     {
-      "id": "act_158",
+      "id": "act_414",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_159",
+      "id": "act_415",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "year",
+            "Monday",
+            "Tuesday"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_416",
       "type": "listen-comprehension",
       "passage": "Hi auntie, it's Kira. The weather here in Denmark is cold and rainy today. Let's talk on Sunday. Bye!",
       "question": {

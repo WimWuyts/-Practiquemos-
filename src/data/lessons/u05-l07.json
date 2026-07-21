@@ -1,0 +1,165 @@
+{
+  "id": "u05-l07",
+  "unitId": "u05",
+  "order": 7,
+  "title": {
+    "en": "Food, cooking & shopping · more (7)",
+    "hu": "Étel, főzés, vásárlás · több (7)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_delicious",
+    "lex_taste",
+    "lex_give",
+    "lex_pay",
+    "lex_sell",
+    "lex_expensive",
+    "lex_cheap",
+    "lex_full"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ee_i"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_346",
+      "type": "intro",
+      "items": [
+        "lex_delicious",
+        "lex_taste",
+        "lex_give",
+        "lex_pay",
+        "lex_sell",
+        "lex_expensive",
+        "lex_cheap",
+        "lex_full"
+      ]
+    },
+    {
+      "id": "act_347",
+      "type": "listen-choose",
+      "items": [
+        "lex_delicious",
+        "lex_taste",
+        "lex_give",
+        "lex_pay",
+        "lex_sell",
+        "lex_expensive"
+      ]
+    },
+    {
+      "id": "act_348",
+      "type": "icon-choice",
+      "items": [
+        "lex_delicious",
+        "lex_taste",
+        "lex_give",
+        "lex_pay",
+        "lex_sell"
+      ]
+    },
+    {
+      "id": "act_349",
+      "type": "match",
+      "items": [
+        "lex_delicious",
+        "lex_taste",
+        "lex_give",
+        "lex_pay",
+        "lex_sell",
+        "lex_expensive"
+      ]
+    },
+    {
+      "id": "act_350",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "delicious",
+          "options": [
+            "delicious",
+            "hungry",
+            "thirsty"
+          ],
+          "hu": "(finom)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "taste",
+          "options": [
+            "taste",
+            "eat",
+            "drink"
+          ],
+          "hu": "(íz / ízlelni)"
+        },
+        {
+          "text": "Please ___ me the menu.",
+          "answer": "give",
+          "options": [
+            "give",
+            "work",
+            "get up"
+          ],
+          "hu": "Kérem, adja ide az étlapot."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "pay",
+          "options": [
+            "pay",
+            "buy",
+            "sell"
+          ],
+          "hu": "(fizetni)"
+        }
+      ]
+    },
+    {
+      "id": "act_351",
+      "type": "typed",
+      "items": [
+        "lex_delicious",
+        "lex_taste",
+        "lex_give",
+        "lex_pay"
+      ]
+    },
+    {
+      "id": "act_352",
+      "type": "pron-record",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_353",
+      "type": "minimal-pair",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_354",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "delicious",
+            "taste",
+            "full"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

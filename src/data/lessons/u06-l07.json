@@ -1,0 +1,152 @@
+{
+  "id": "u06-l07",
+  "unitId": "u06",
+  "order": 7,
+  "title": {
+    "en": "Time, weather & plans · more (7)",
+    "hu": "Idő, időjárás, tervek · több (7)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_thousand",
+    "lex_number",
+    "lex_o_clock",
+    "lex_half",
+    "lex_quarter",
+    "lex_early",
+    "lex_now",
+    "lex_soon"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_455",
+      "type": "intro",
+      "items": [
+        "lex_thousand",
+        "lex_number",
+        "lex_o_clock",
+        "lex_half",
+        "lex_quarter",
+        "lex_early",
+        "lex_now",
+        "lex_soon"
+      ]
+    },
+    {
+      "id": "act_456",
+      "type": "listen-choose",
+      "items": [
+        "lex_thousand",
+        "lex_number",
+        "lex_o_clock",
+        "lex_half",
+        "lex_quarter",
+        "lex_early"
+      ]
+    },
+    {
+      "id": "act_457",
+      "type": "icon-choice",
+      "items": [
+        "lex_thousand",
+        "lex_number",
+        "lex_o_clock",
+        "lex_half",
+        "lex_quarter"
+      ]
+    },
+    {
+      "id": "act_458",
+      "type": "match",
+      "items": [
+        "lex_thousand",
+        "lex_number",
+        "lex_o_clock",
+        "lex_half",
+        "lex_quarter",
+        "lex_early"
+      ]
+    },
+    {
+      "id": "act_459",
+      "type": "spelling-build",
+      "family": "sf_oo",
+      "word": "soon"
+    },
+    {
+      "id": "act_460",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I have ___ friends.",
+          "answer": "thousand",
+          "options": [
+            "thousand",
+            "one",
+            "two"
+          ],
+          "hu": "(ezer)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "number",
+          "options": [
+            "number",
+            "name",
+            "country"
+          ],
+          "hu": "(szám)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "o'clock",
+          "options": [
+            "o'clock",
+            "early",
+            "now"
+          ],
+          "hu": "(óra (pontos idő))"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "half",
+          "options": [
+            "half",
+            "time",
+            "hour"
+          ],
+          "hu": "(fél)"
+        }
+      ]
+    },
+    {
+      "id": "act_461",
+      "type": "typed",
+      "items": [
+        "lex_thousand",
+        "lex_number",
+        "lex_o_clock",
+        "lex_half"
+      ]
+    },
+    {
+      "id": "act_462",
+      "type": "pron-record",
+      "focusId": "str_word"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

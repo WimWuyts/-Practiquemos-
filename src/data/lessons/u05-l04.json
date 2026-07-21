@@ -1,0 +1,170 @@
+{
+  "id": "u05-l04",
+  "unitId": "u05",
+  "order": 4,
+  "title": {
+    "en": "Food, cooking & shopping · more (4)",
+    "hu": "Étel, főzés, vásárlás · több (4)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_price",
+    "lex_money",
+    "lex_some",
+    "lex_any",
+    "lex_much",
+    "lex_many",
+    "lex_rice",
+    "lex_potato"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_fd_favourite"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_318",
+      "type": "intro",
+      "items": [
+        "lex_price",
+        "lex_money",
+        "lex_some",
+        "lex_any",
+        "lex_much",
+        "lex_many",
+        "lex_rice",
+        "lex_potato"
+      ]
+    },
+    {
+      "id": "act_319",
+      "type": "listen-choose",
+      "items": [
+        "lex_price",
+        "lex_money",
+        "lex_some",
+        "lex_any",
+        "lex_much",
+        "lex_many"
+      ]
+    },
+    {
+      "id": "act_320",
+      "type": "icon-choice",
+      "items": [
+        "lex_price",
+        "lex_money",
+        "lex_some",
+        "lex_any",
+        "lex_much"
+      ]
+    },
+    {
+      "id": "act_321",
+      "type": "match",
+      "items": [
+        "lex_price",
+        "lex_money",
+        "lex_some",
+        "lex_any",
+        "lex_much",
+        "lex_many"
+      ]
+    },
+    {
+      "id": "act_322",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "price",
+          "options": [
+            "price",
+            "shop",
+            "money"
+          ],
+          "hu": "(ár)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "money",
+          "options": [
+            "money",
+            "shop",
+            "price"
+          ],
+          "hu": "(pénz)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "some",
+          "options": [
+            "some",
+            "any",
+            "much"
+          ],
+          "hu": "(néhány / egy kis)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "any",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "hu": "(bármennyi / semennyi)"
+        }
+      ]
+    },
+    {
+      "id": "act_323",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fd_favourite"
+      ]
+    },
+    {
+      "id": "act_324",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "My favourite food is soup.",
+          "hu": "A kedvenc ételem a leves."
+        }
+      ]
+    },
+    {
+      "id": "act_325",
+      "type": "typed",
+      "items": [
+        "lex_price",
+        "lex_money",
+        "lex_some",
+        "lex_any"
+      ]
+    },
+    {
+      "id": "act_326",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_327",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

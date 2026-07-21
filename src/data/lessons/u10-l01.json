@@ -13,16 +13,13 @@
   "estimatedMinutes": 17,
   "newProductiveItems": [
     "lex_restaurant",
+    "lex_hotel",
     "lex_menu",
     "lex_table",
     "lex_bill",
     "lex_order",
-    "lex_help",
-    "lex_excuse_me",
-    "lex_of_course",
-    "lex_cafe",
-    "lex_choose",
-    "lex_closed"
+    "lex_key",
+    "lex_help"
   ],
   "reviewItems": [
     "lex_call",
@@ -143,21 +140,8 @@
   "chunks": [
     "chunk_serv_order",
     "chunk_serv_bill",
-    "chunk_serv_help",
-    "chunk_serv_howmuch",
-    "chunk_serv_excuse",
-    "chunk_sm_haveniceday",
-    "chunk_sv_tablefor",
-    "chunk_sv_recommend",
-    "chunk_sv_water",
-    "chunk_of_canihelp",
-    "chunk_th_forhelp",
-    "chunk_rs_readyorder",
-    "chunk_rs_anythingelse",
-    "chunk_rs_cardorcash",
-    "chunk_rs_lovelymeal",
-    "chunk_rs_couldwehave",
-    "chunk_sv_wheretoilet2"
+    "chunk_serv_checkin",
+    "chunk_serv_help"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -168,36 +152,25 @@
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_239",
+      "id": "act_775",
       "type": "intro",
       "items": [
         "lex_restaurant",
+        "lex_hotel",
         "lex_menu",
         "lex_table",
         "lex_bill",
         "lex_order",
-        "lex_help",
-        "lex_excuse_me",
-        "lex_of_course"
-      ]
-    },
-    {
-      "id": "act_240",
-      "type": "listen-choose",
-      "items": [
-        "lex_restaurant",
-        "lex_menu",
-        "lex_table",
-        "lex_bill",
-        "lex_order",
+        "lex_key",
         "lex_help"
       ]
     },
     {
-      "id": "act_241",
-      "type": "icon-choice",
+      "id": "act_776",
+      "type": "listen-choose",
       "items": [
         "lex_restaurant",
+        "lex_hotel",
         "lex_menu",
         "lex_table",
         "lex_bill",
@@ -205,24 +178,35 @@
       ]
     },
     {
-      "id": "act_242",
-      "type": "match",
+      "id": "act_777",
+      "type": "icon-choice",
       "items": [
         "lex_restaurant",
+        "lex_hotel",
         "lex_menu",
         "lex_table",
-        "lex_bill",
-        "lex_order",
-        "lex_help"
+        "lex_bill"
       ]
     },
     {
-      "id": "act_243",
+      "id": "act_778",
+      "type": "match",
+      "items": [
+        "lex_restaurant",
+        "lex_hotel",
+        "lex_menu",
+        "lex_table",
+        "lex_bill",
+        "lex_order"
+      ]
+    },
+    {
+      "id": "act_779",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_244",
+      "id": "act_780",
       "type": "gapfill",
       "items": [
         {
@@ -234,6 +218,16 @@
             "table"
           ],
           "hu": "Egy szép étteremben eszünk."
+        },
+        {
+          "text": "The ___ is near the station.",
+          "answer": "hotel",
+          "options": [
+            "hotel",
+            "key",
+            "reception"
+          ],
+          "hu": "A szálloda az állomás közelében van."
         },
         {
           "text": "Could I have the ___, please?",
@@ -254,33 +248,21 @@
             "menu"
           ],
           "hu": "(asztal)"
-        },
-        {
-          "text": "Could I have the ___, please?",
-          "answer": "bill",
-          "options": [
-            "bill",
-            "restaurant",
-            "menu"
-          ],
-          "hu": "Megkaphatnám a számlát, kérem?"
         }
       ]
     },
     {
-      "id": "act_245",
+      "id": "act_781",
       "type": "phrase-match",
       "items": [
         "chunk_serv_order",
         "chunk_serv_bill",
-        "chunk_serv_help",
-        "chunk_serv_howmuch",
-        "chunk_serv_excuse",
-        "chunk_sm_haveniceday"
+        "chunk_serv_checkin",
+        "chunk_serv_help"
       ]
     },
     {
-      "id": "act_246",
+      "id": "act_782",
       "type": "reorder",
       "sentences": [
         {
@@ -292,28 +274,28 @@
           "hu": "Megkaphatnám a számlát, kérem?"
         },
         {
-          "en": "Could you help me, please?",
-          "hu": "Tudna segíteni, kérem?"
+          "en": "I have a reservation.",
+          "hu": "Van foglalásom."
         }
       ]
     },
     {
-      "id": "act_247",
+      "id": "act_783",
       "type": "typed",
       "items": [
         "lex_restaurant",
+        "lex_hotel",
         "lex_menu",
-        "lex_table",
-        "lex_bill"
+        "lex_table"
       ]
     },
     {
-      "id": "act_248",
+      "id": "act_784",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_249",
+      "id": "act_785",
       "type": "odd-one-out",
       "groups": [
         {
@@ -327,12 +309,12 @@
       ]
     },
     {
-      "id": "act_250",
+      "id": "act_786",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_251",
+      "id": "act_787",
       "type": "review",
       "items": [
         "lex_call",

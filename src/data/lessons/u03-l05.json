@@ -1,0 +1,157 @@
+{
+  "id": "u03-l05",
+  "unitId": "u03",
+  "order": 5,
+  "title": {
+    "en": "People, countries & languages · more (5)",
+    "hu": "Emberek, országok, nyelvek · több (5)"
+  },
+  "canDo": {
+    "en": "Say where people are from and describe them",
+    "hu": "Honnan jönnek az emberek, milyenek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_small",
+    "lex_long",
+    "lex_new",
+    "lex_bad",
+    "lex_friendly"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_wv"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_184",
+      "type": "intro",
+      "items": [
+        "lex_small",
+        "lex_long",
+        "lex_new",
+        "lex_bad",
+        "lex_friendly"
+      ]
+    },
+    {
+      "id": "act_185",
+      "type": "listen-choose",
+      "items": [
+        "lex_small",
+        "lex_long",
+        "lex_new",
+        "lex_bad",
+        "lex_friendly"
+      ]
+    },
+    {
+      "id": "act_186",
+      "type": "icon-choice",
+      "items": [
+        "lex_small",
+        "lex_long",
+        "lex_new",
+        "lex_bad",
+        "lex_friendly"
+      ]
+    },
+    {
+      "id": "act_187",
+      "type": "match",
+      "items": [
+        "lex_small",
+        "lex_long",
+        "lex_new",
+        "lex_bad",
+        "lex_friendly"
+      ]
+    },
+    {
+      "id": "act_188",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "small",
+          "options": [
+            "small",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(kicsi)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "long",
+          "options": [
+            "long",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(hosszú)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "new",
+          "options": [
+            "new",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(új)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "bad",
+          "options": [
+            "bad",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(rossz)"
+        }
+      ]
+    },
+    {
+      "id": "act_189",
+      "type": "typed",
+      "items": [
+        "lex_small",
+        "lex_long",
+        "lex_new",
+        "lex_bad"
+      ]
+    },
+    {
+      "id": "act_190",
+      "type": "pron-record",
+      "focusId": "snd_wv"
+    },
+    {
+      "id": "act_191",
+      "type": "minimal-pair",
+      "focusId": "snd_wv"
+    },
+    {
+      "id": "act_192",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "small",
+            "long",
+            "new"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

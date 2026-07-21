@@ -1,0 +1,160 @@
+{
+  "id": "u06-l13",
+  "unitId": "u06",
+  "order": 13,
+  "title": {
+    "en": "Time, weather & plans · more (13)",
+    "hu": "Idő, időjárás, tervek · több (13)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_umbrella",
+    "lex_cool",
+    "lex_next",
+    "lex_moon",
+    "lex_grass",
+    "lex_field",
+    "lex_star",
+    "lex_hill"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_504",
+      "type": "intro",
+      "items": [
+        "lex_umbrella",
+        "lex_cool",
+        "lex_next",
+        "lex_moon",
+        "lex_grass",
+        "lex_field",
+        "lex_star",
+        "lex_hill"
+      ]
+    },
+    {
+      "id": "act_505",
+      "type": "listen-choose",
+      "items": [
+        "lex_umbrella",
+        "lex_cool",
+        "lex_next",
+        "lex_moon",
+        "lex_grass",
+        "lex_field"
+      ]
+    },
+    {
+      "id": "act_506",
+      "type": "icon-choice",
+      "items": [
+        "lex_umbrella",
+        "lex_cool",
+        "lex_next",
+        "lex_moon",
+        "lex_grass"
+      ]
+    },
+    {
+      "id": "act_507",
+      "type": "match",
+      "items": [
+        "lex_umbrella",
+        "lex_cool",
+        "lex_next",
+        "lex_moon",
+        "lex_grass",
+        "lex_field"
+      ]
+    },
+    {
+      "id": "act_508",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is an ___.",
+          "answer": "umbrella",
+          "options": [
+            "umbrella",
+            "weather",
+            "tree"
+          ],
+          "hu": "(esernyő)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "cool",
+          "options": [
+            "cool",
+            "sunny",
+            "rainy"
+          ],
+          "hu": "(hűvös / menő)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "next",
+          "options": [
+            "next",
+            "my",
+            "your"
+          ],
+          "hu": "(következő)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "moon",
+          "options": [
+            "moon",
+            "weather",
+            "tree"
+          ],
+          "hu": "(hold)"
+        }
+      ]
+    },
+    {
+      "id": "act_509",
+      "type": "typed",
+      "items": [
+        "lex_umbrella",
+        "lex_cool",
+        "lex_next",
+        "lex_moon"
+      ]
+    },
+    {
+      "id": "act_510",
+      "type": "pron-record",
+      "focusId": "str_word"
+    },
+    {
+      "id": "act_511",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "umbrella",
+            "cool",
+            "moon"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

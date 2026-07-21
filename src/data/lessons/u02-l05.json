@@ -1,0 +1,165 @@
+{
+  "id": "u02-l05",
+  "unitId": "u02",
+  "order": 5,
+  "title": {
+    "en": "My family · more (5)",
+    "hu": "A családom · több (5)"
+  },
+  "canDo": {
+    "en": "Talk about family and who is who",
+    "hu": "Beszélj a családról, ki kicsoda"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_old",
+    "lex_young",
+    "lex_married",
+    "lex_baby",
+    "lex_cousin",
+    "lex_grandparents",
+    "lex_people",
+    "lex_man"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_127",
+      "type": "intro",
+      "items": [
+        "lex_old",
+        "lex_young",
+        "lex_married",
+        "lex_baby",
+        "lex_cousin",
+        "lex_grandparents",
+        "lex_people",
+        "lex_man"
+      ]
+    },
+    {
+      "id": "act_128",
+      "type": "listen-choose",
+      "items": [
+        "lex_old",
+        "lex_young",
+        "lex_married",
+        "lex_baby",
+        "lex_cousin",
+        "lex_grandparents"
+      ]
+    },
+    {
+      "id": "act_129",
+      "type": "icon-choice",
+      "items": [
+        "lex_old",
+        "lex_young",
+        "lex_married",
+        "lex_baby",
+        "lex_cousin"
+      ]
+    },
+    {
+      "id": "act_130",
+      "type": "match",
+      "items": [
+        "lex_old",
+        "lex_young",
+        "lex_married",
+        "lex_baby",
+        "lex_cousin",
+        "lex_grandparents"
+      ]
+    },
+    {
+      "id": "act_131",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "old",
+          "options": [
+            "old",
+            "his",
+            "her"
+          ],
+          "hu": "(öreg / idős)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "young",
+          "options": [
+            "young",
+            "his",
+            "her"
+          ],
+          "hu": "(fiatal)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "married",
+          "options": [
+            "married",
+            "his",
+            "her"
+          ],
+          "hu": "(házas)"
+        },
+        {
+          "text": "The ___ is very small.",
+          "answer": "baby",
+          "options": [
+            "baby",
+            "family",
+            "mother"
+          ],
+          "hu": "A baba nagyon kicsi."
+        }
+      ]
+    },
+    {
+      "id": "act_132",
+      "type": "typed",
+      "items": [
+        "lex_old",
+        "lex_young",
+        "lex_married",
+        "lex_baby"
+      ]
+    },
+    {
+      "id": "act_133",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_134",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_135",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "old",
+            "young",
+            "married"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

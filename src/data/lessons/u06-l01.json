@@ -19,61 +19,7 @@
     "lex_tomorrow",
     "lex_yesterday",
     "lex_week",
-    "lex_month",
-    "lex_year",
-    "lex_monday",
-    "lex_tuesday",
-    "lex_wednesday",
-    "lex_thursday",
-    "lex_friday",
-    "lex_saturday",
-    "lex_sunday",
-    "lex_eleven",
-    "lex_twelve",
-    "lex_twenty",
-    "lex_thirty",
-    "lex_hundred",
-    "lex_zero",
-    "lex_thirteen",
-    "lex_fourteen",
-    "lex_fifteen",
-    "lex_sixteen",
-    "lex_seventeen",
-    "lex_eighteen",
-    "lex_nineteen",
-    "lex_forty",
-    "lex_fifty",
-    "lex_sixty",
-    "lex_seventy",
-    "lex_eighty",
-    "lex_ninety",
-    "lex_thousand",
-    "lex_number",
-    "lex_o_clock",
-    "lex_half",
-    "lex_quarter",
-    "lex_early",
-    "lex_now",
-    "lex_soon",
-    "lex_before",
-    "lex_after",
-    "lex_date",
-    "lex_january",
-    "lex_february",
-    "lex_march",
-    "lex_april",
-    "lex_may",
-    "lex_june",
-    "lex_july",
-    "lex_august",
-    "lex_september",
-    "lex_october",
-    "lex_november",
-    "lex_december",
-    "lex_at",
-    "lex_when",
-    "lex_clock",
-    "lex_next"
+    "lex_month"
   ],
   "reviewItems": [
     "lex_hungary",
@@ -200,9 +146,10 @@
     "lex_fresh"
   ],
   "chunks": [
-    "chunk_tm_whattime",
-    "chunk_nm_whatsdate",
-    "chunk_tm_seeyouat"
+    "chunk_plan_free",
+    "chunk_plan_suggest",
+    "chunk_plan_accept",
+    "chunk_plan_decline"
   ],
   "grammarCards": [
     "gr_prepositions_time"
@@ -213,7 +160,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_133",
+      "id": "act_390",
       "type": "intro",
       "items": [
         "lex_time",
@@ -227,7 +174,7 @@
       ]
     },
     {
-      "id": "act_134",
+      "id": "act_391",
       "type": "listen-choose",
       "items": [
         "lex_time",
@@ -239,7 +186,7 @@
       ]
     },
     {
-      "id": "act_135",
+      "id": "act_392",
       "type": "icon-choice",
       "items": [
         "lex_time",
@@ -250,7 +197,7 @@
       ]
     },
     {
-      "id": "act_136",
+      "id": "act_393",
       "type": "match",
       "items": [
         "lex_time",
@@ -262,18 +209,18 @@
       ]
     },
     {
-      "id": "act_137",
+      "id": "act_394",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "time"
     },
     {
-      "id": "act_138",
+      "id": "act_395",
       "type": "grammar",
       "grammarId": "gr_prepositions_time"
     },
     {
-      "id": "act_139",
+      "id": "act_396",
       "type": "gapfill",
       "items": [
         {
@@ -319,34 +266,35 @@
       ]
     },
     {
-      "id": "act_140",
+      "id": "act_397",
       "type": "phrase-match",
       "items": [
-        "chunk_tm_whattime",
-        "chunk_nm_whatsdate",
-        "chunk_tm_seeyouat"
+        "chunk_plan_free",
+        "chunk_plan_suggest",
+        "chunk_plan_accept",
+        "chunk_plan_decline"
       ]
     },
     {
-      "id": "act_141",
+      "id": "act_398",
       "type": "reorder",
       "sentences": [
         {
-          "en": "What time is it?",
-          "hu": "Mennyi az idő?"
+          "en": "I'm free on Saturday.",
+          "hu": "Szombaton ráérek."
         },
         {
-          "en": "What's the date today?",
-          "hu": "Hányadika van ma?"
+          "en": "Let's meet on Sunday.",
+          "hu": "Találkozzunk vasárnap."
         },
         {
-          "en": "See you at three o'clock.",
-          "hu": "Háromkor találkozunk."
+          "en": "Yes, that's a good idea.",
+          "hu": "Igen, ez jó ötlet."
         }
       ]
     },
     {
-      "id": "act_142",
+      "id": "act_399",
       "type": "typed",
       "items": [
         "lex_time",
@@ -356,12 +304,12 @@
       ]
     },
     {
-      "id": "act_143",
+      "id": "act_400",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_144",
+      "id": "act_401",
       "type": "odd-one-out",
       "groups": [
         {
@@ -375,7 +323,7 @@
       ]
     },
     {
-      "id": "act_145",
+      "id": "act_402",
       "type": "review",
       "items": [
         "lex_hungary",

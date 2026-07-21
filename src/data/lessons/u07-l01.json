@@ -19,11 +19,7 @@
     "lex_repeat",
     "lex_slowly",
     "lex_again",
-    "lex_understand",
-    "lex_wait",
-    "lex_moment",
-    "lex_ring",
-    "lex_wait_for"
+    "lex_understand"
   ],
   "reviewItems": [
     "lex_day",
@@ -211,19 +207,7 @@
     "chunk_repair_notunderstand",
     "chunk_repair_repeat",
     "chunk_repair_slower",
-    "chunk_repair_wait",
-    "chunk_repair_sorry",
-    "chunk_call_hearme",
-    "chunk_call_seeme",
-    "chunk_ph_callyou",
-    "chunk_ph_badline",
-    "chunk_rp_saythatagain",
-    "chunk_rp_onemoment",
-    "chunk_ph_whoscalling",
-    "chunk_ph_holdon",
-    "chunk_ph_speakup",
-    "chunk_rp_slowlyplease",
-    "chunk_ph_gooutside"
+    "chunk_repair_wait"
   ],
   "grammarCards": [
     "gr_object_pronouns"
@@ -234,7 +218,7 @@
   "conversationId": "dlg_kira_phone",
   "activities": [
     {
-      "id": "act_160",
+      "id": "act_517",
       "type": "intro",
       "items": [
         "lex_call",
@@ -248,7 +232,7 @@
       ]
     },
     {
-      "id": "act_161",
+      "id": "act_518",
       "type": "listen-choose",
       "items": [
         "lex_call",
@@ -260,7 +244,7 @@
       ]
     },
     {
-      "id": "act_162",
+      "id": "act_519",
       "type": "icon-choice",
       "items": [
         "lex_call",
@@ -271,7 +255,7 @@
       ]
     },
     {
-      "id": "act_163",
+      "id": "act_520",
       "type": "match",
       "items": [
         "lex_call",
@@ -283,18 +267,18 @@
       ]
     },
     {
-      "id": "act_164",
+      "id": "act_521",
       "type": "spelling-build",
       "family": "sf_ph",
       "word": "phone"
     },
     {
-      "id": "act_165",
+      "id": "act_522",
       "type": "grammar",
       "grammarId": "gr_object_pronouns"
     },
     {
-      "id": "act_166",
+      "id": "act_523",
       "type": "gapfill",
       "items": [
         {
@@ -340,19 +324,17 @@
       ]
     },
     {
-      "id": "act_167",
+      "id": "act_524",
       "type": "phrase-match",
       "items": [
         "chunk_repair_notunderstand",
         "chunk_repair_repeat",
         "chunk_repair_slower",
-        "chunk_repair_wait",
-        "chunk_repair_sorry",
-        "chunk_call_hearme"
+        "chunk_repair_wait"
       ]
     },
     {
-      "id": "act_168",
+      "id": "act_525",
       "type": "reorder",
       "sentences": [
         {
@@ -370,7 +352,7 @@
       ]
     },
     {
-      "id": "act_169",
+      "id": "act_526",
       "type": "typed",
       "items": [
         "lex_call",
@@ -380,12 +362,12 @@
       ]
     },
     {
-      "id": "act_170",
+      "id": "act_527",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_171",
+      "id": "act_528",
       "type": "odd-one-out",
       "groups": [
         {
@@ -399,12 +381,12 @@
       ]
     },
     {
-      "id": "act_172",
+      "id": "act_529",
       "type": "conversation",
       "dialogueId": "dlg_kira_phone"
     },
     {
-      "id": "act_173",
+      "id": "act_530",
       "type": "review",
       "items": [
         "lex_day",

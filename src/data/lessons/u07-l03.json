@@ -1,0 +1,193 @@
+{
+  "id": "u07-l03",
+  "unitId": "u07",
+  "order": 3,
+  "title": {
+    "en": "Phone & video calls · more (3)",
+    "hu": "Telefon és videóhívás · több (3)"
+  },
+  "canDo": {
+    "en": "Start a call, check sound, ask to repeat",
+    "hu": "Hívás indítása, hang ellenőrzése, ismétléskérés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_tell",
+    "lex_say",
+    "lex_send",
+    "lex_wrong",
+    "lex_just",
+    "lex_of",
+    "lex_video",
+    "lex_thing"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_call_bye",
+    "chunk_sm_takecare",
+    "chunk_sm_seeyou",
+    "chunk_ph_callyou"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_543",
+      "type": "intro",
+      "items": [
+        "lex_tell",
+        "lex_say",
+        "lex_send",
+        "lex_wrong",
+        "lex_just",
+        "lex_of",
+        "lex_video",
+        "lex_thing"
+      ]
+    },
+    {
+      "id": "act_544",
+      "type": "listen-choose",
+      "items": [
+        "lex_tell",
+        "lex_say",
+        "lex_send",
+        "lex_wrong",
+        "lex_just",
+        "lex_of"
+      ]
+    },
+    {
+      "id": "act_545",
+      "type": "icon-choice",
+      "items": [
+        "lex_tell",
+        "lex_say",
+        "lex_send",
+        "lex_wrong",
+        "lex_just"
+      ]
+    },
+    {
+      "id": "act_546",
+      "type": "match",
+      "items": [
+        "lex_tell",
+        "lex_say",
+        "lex_send",
+        "lex_wrong",
+        "lex_just",
+        "lex_of"
+      ]
+    },
+    {
+      "id": "act_547",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "tell",
+          "options": [
+            "tell",
+            "repeat",
+            "understand"
+          ],
+          "hu": "(mondani (vkinek))"
+        },
+        {
+          "text": "How do you ___ this in English?",
+          "answer": "say",
+          "options": [
+            "say",
+            "repeat",
+            "understand"
+          ],
+          "hu": "Hogy mondják ezt angolul?"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "send",
+          "options": [
+            "send",
+            "call",
+            "hear"
+          ],
+          "hu": "(küldeni)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "wrong",
+          "options": [
+            "wrong",
+            "true",
+            "other"
+          ],
+          "hu": "(rossz / helytelen)"
+        }
+      ]
+    },
+    {
+      "id": "act_548",
+      "type": "phrase-match",
+      "items": [
+        "chunk_call_bye",
+        "chunk_sm_takecare",
+        "chunk_sm_seeyou",
+        "chunk_ph_callyou"
+      ]
+    },
+    {
+      "id": "act_549",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Talk to you soon. Bye!",
+          "hu": "Hamarosan beszélünk. Szia!"
+        },
+        {
+          "en": "See you soon!",
+          "hu": "Hamarosan találkozunk!"
+        },
+        {
+          "en": "I'll call you on Sunday.",
+          "hu": "Vasárnap felhívlak."
+        }
+      ]
+    },
+    {
+      "id": "act_550",
+      "type": "typed",
+      "items": [
+        "lex_tell",
+        "lex_say",
+        "lex_send",
+        "lex_wrong"
+      ]
+    },
+    {
+      "id": "act_551",
+      "type": "pron-record",
+      "focusId": "str_question"
+    },
+    {
+      "id": "act_552",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "tell",
+            "say",
+            "wrong"
+          ],
+          "odd": "be"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

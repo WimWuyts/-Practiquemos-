@@ -1,0 +1,160 @@
+{
+  "id": "u04-l09",
+  "unitId": "u04",
+  "order": 9,
+  "title": {
+    "en": "My day & my home · more (9)",
+    "hu": "A napom és az otthonom · több (9)"
+  },
+  "canDo": {
+    "en": "Describe your routine and your home",
+    "hu": "A napirended és az otthonod"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_dirty",
+    "lex_out",
+    "lex_every",
+    "lex_move",
+    "lex_knock",
+    "lex_feed",
+    "lex_towel",
+    "lex_mirror"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ed_endings"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_266",
+      "type": "intro",
+      "items": [
+        "lex_dirty",
+        "lex_out",
+        "lex_every",
+        "lex_move",
+        "lex_knock",
+        "lex_feed",
+        "lex_towel",
+        "lex_mirror"
+      ]
+    },
+    {
+      "id": "act_267",
+      "type": "listen-choose",
+      "items": [
+        "lex_dirty",
+        "lex_out",
+        "lex_every",
+        "lex_move",
+        "lex_knock",
+        "lex_feed"
+      ]
+    },
+    {
+      "id": "act_268",
+      "type": "icon-choice",
+      "items": [
+        "lex_dirty",
+        "lex_out",
+        "lex_every",
+        "lex_move",
+        "lex_knock"
+      ]
+    },
+    {
+      "id": "act_269",
+      "type": "match",
+      "items": [
+        "lex_dirty",
+        "lex_out",
+        "lex_every",
+        "lex_move",
+        "lex_knock",
+        "lex_feed"
+      ]
+    },
+    {
+      "id": "act_270",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "dirty",
+          "options": [
+            "dirty",
+            "my",
+            "your"
+          ],
+          "hu": "(piszkos)"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "out",
+          "options": [
+            "out",
+            "always",
+            "usually"
+          ],
+          "hu": "(ki / kint)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "every",
+          "options": [
+            "every",
+            "some",
+            "any"
+          ],
+          "hu": "(minden)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "move",
+          "options": [
+            "move",
+            "work",
+            "get up"
+          ],
+          "hu": "(mozogni / költözni)"
+        }
+      ]
+    },
+    {
+      "id": "act_271",
+      "type": "typed",
+      "items": [
+        "lex_dirty",
+        "lex_out",
+        "lex_every",
+        "lex_move"
+      ]
+    },
+    {
+      "id": "act_272",
+      "type": "pron-record",
+      "focusId": "snd_ed_endings"
+    },
+    {
+      "id": "act_273",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "dirty",
+            "knock",
+            "towel"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

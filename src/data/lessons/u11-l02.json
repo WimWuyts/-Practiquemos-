@@ -12,19 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
+    "lex_turn_off",
     "lex_click",
+    "lex_ready",
+    "lex_excellent",
+    "lex_student",
     "lex_use",
-    "lex_email",
-    "lex_mobile",
-    "lex_app",
-    "lex_save",
-    "lex_fix"
+    "lex_write",
+    "lex_learn"
   ],
   "reviewItems": [],
   "chunks": [
     "chunk_teach_parent",
-    "chunk_te_seeyou",
-    "chunk_te_seeyounext"
+    "chunk_teach_excellent",
+    "chunk_teach_repeat_me",
+    "chunk_te_canyousee"
   ],
   "grammarCards": [
     "gr_can"
@@ -35,62 +37,73 @@
   "conversationId": "dlg_student_parent",
   "activities": [
     {
-      "id": "act_277",
+      "id": "act_829",
       "type": "intro",
       "items": [
+        "lex_turn_off",
         "lex_click",
+        "lex_ready",
+        "lex_excellent",
+        "lex_student",
         "lex_use",
-        "lex_email",
-        "lex_mobile",
-        "lex_app",
-        "lex_save",
-        "lex_fix"
+        "lex_write",
+        "lex_learn"
       ]
     },
     {
-      "id": "act_278",
+      "id": "act_830",
       "type": "listen-choose",
       "items": [
+        "lex_turn_off",
         "lex_click",
-        "lex_use",
-        "lex_email",
-        "lex_mobile",
-        "lex_app",
-        "lex_save"
+        "lex_ready",
+        "lex_excellent",
+        "lex_student",
+        "lex_use"
       ]
     },
     {
-      "id": "act_279",
+      "id": "act_831",
       "type": "icon-choice",
       "items": [
+        "lex_turn_off",
         "lex_click",
-        "lex_use",
-        "lex_email",
-        "lex_mobile",
-        "lex_app"
+        "lex_ready",
+        "lex_excellent",
+        "lex_student"
       ]
     },
     {
-      "id": "act_280",
+      "id": "act_832",
       "type": "match",
       "items": [
+        "lex_turn_off",
         "lex_click",
-        "lex_use",
-        "lex_email",
-        "lex_mobile",
-        "lex_app",
-        "lex_save"
+        "lex_ready",
+        "lex_excellent",
+        "lex_student",
+        "lex_use"
       ]
     },
     {
-      "id": "act_281",
+      "id": "act_833",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_282",
+      "id": "act_834",
       "type": "gapfill",
       "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "turn off",
+          "options": [
+            "turn off",
+            "turn on",
+            "click"
+          ],
+          "hu": "(kikapcsolni)"
+        },
         {
           "text": "I ___ every day.",
           "answer": "click",
@@ -102,48 +115,39 @@
           "hu": "(kattintani)"
         },
         {
-          "text": "I ___ every day.",
-          "answer": "use",
+          "text": "It is very ___.",
+          "answer": "ready",
           "options": [
-            "use",
-            "turn on",
-            "turn off"
+            "ready",
+            "excellent",
+            "my"
           ],
-          "hu": "(használni)"
+          "hu": "(kész)"
         },
         {
-          "text": "This is an ___.",
-          "answer": "email",
+          "text": "___! Well done!",
+          "answer": "excellent",
           "options": [
-            "email",
-            "camera",
-            "microphone"
+            "excellent",
+            "ready",
+            "my"
           ],
-          "hu": "(e-mail)"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "mobile",
-          "options": [
-            "mobile",
-            "camera",
-            "microphone"
-          ],
-          "hu": "(mobil(telefon))"
+          "hu": "Kiváló! Ügyes vagy!"
         }
       ]
     },
     {
-      "id": "act_283",
+      "id": "act_835",
       "type": "phrase-match",
       "items": [
         "chunk_teach_parent",
-        "chunk_te_seeyou",
-        "chunk_te_seeyounext"
+        "chunk_teach_excellent",
+        "chunk_teach_repeat_me",
+        "chunk_te_canyousee"
       ]
     },
     {
-      "id": "act_284",
+      "id": "act_836",
       "type": "reorder",
       "sentences": [
         {
@@ -151,46 +155,46 @@
           "hu": "Meg tudod kérni a szüleidet, hogy jöjjenek?"
         },
         {
-          "en": "That's all for today. Well done!",
-          "hu": "Ez minden mára. Ügyes voltál!"
+          "en": "Excellent! Well done!",
+          "hu": "Kiváló! Ügyes vagy!"
         },
         {
-          "en": "See you next week. Bye!",
-          "hu": "Jövő héten találkozunk. Szia!"
+          "en": "Repeat after me, please.",
+          "hu": "Ismételd utánam, kérlek."
         }
       ]
     },
     {
-      "id": "act_285",
+      "id": "act_837",
       "type": "typed",
       "items": [
+        "lex_turn_off",
         "lex_click",
-        "lex_use",
-        "lex_email",
-        "lex_mobile"
+        "lex_ready",
+        "lex_excellent"
       ]
     },
     {
-      "id": "act_286",
+      "id": "act_838",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_287",
+      "id": "act_839",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
+            "turn off",
             "click",
-            "use",
-            "email"
+            "use"
           ],
           "odd": "be"
         }
       ]
     },
     {
-      "id": "act_288",
+      "id": "act_840",
       "type": "conversation",
       "dialogueId": "dlg_student_parent"
     }

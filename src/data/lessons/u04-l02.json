@@ -12,56 +12,19 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
+    "lex_drink",
+    "lex_sleep",
+    "lex_go",
     "lex_read",
     "lex_watch",
     "lex_walk",
     "lex_home",
-    "lex_house",
-    "lex_room",
-    "lex_kitchen",
-    "lex_garden",
-    "lex_there_is",
-    "lex_there_are",
-    "lex_in",
-    "lex_on",
-    "lex_under",
-    "lex_next_to",
-    "lex_body",
-    "lex_head",
-    "lex_face",
-    "lex_eye",
-    "lex_ear",
-    "lex_nose",
-    "lex_mouth",
-    "lex_hair",
-    "lex_hand",
-    "lex_arm",
-    "lex_leg",
-    "lex_foot",
-    "lex_tooth",
-    "lex_window",
-    "lex_door",
-    "lex_chair",
-    "lex_bed",
-    "lex_sofa",
-    "lex_wall",
-    "lex_floor",
-    "lex_bathroom",
-    "lex_bedroom",
-    "lex_television",
-    "lex_fridge",
-    "lex_lamp",
-    "lex_flat",
-    "lex_look",
-    "lex_dirty",
-    "lex_knock",
-    "lex_towel",
-    "lex_mirror",
-    "lex_outside",
-    "lex_inside"
+    "lex_house"
   ],
   "reviewItems": [],
-  "chunks": [],
+  "chunks": [
+    "chunk_sm_goodnight"
+  ],
   "grammarCards": [
     "gr_thereis"
   ],
@@ -71,35 +34,12 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_97",
+      "id": "act_208",
       "type": "intro",
       "items": [
-        "lex_read",
-        "lex_watch",
-        "lex_walk",
-        "lex_home",
-        "lex_house",
-        "lex_room",
-        "lex_kitchen",
-        "lex_garden"
-      ]
-    },
-    {
-      "id": "act_98",
-      "type": "listen-choose",
-      "items": [
-        "lex_read",
-        "lex_watch",
-        "lex_walk",
-        "lex_home",
-        "lex_house",
-        "lex_room"
-      ]
-    },
-    {
-      "id": "act_99",
-      "type": "icon-choice",
-      "items": [
+        "lex_drink",
+        "lex_sleep",
+        "lex_go",
         "lex_read",
         "lex_watch",
         "lex_walk",
@@ -108,32 +48,85 @@
       ]
     },
     {
-      "id": "act_100",
-      "type": "match",
+      "id": "act_209",
+      "type": "listen-choose",
       "items": [
+        "lex_drink",
+        "lex_sleep",
+        "lex_go",
         "lex_read",
         "lex_watch",
-        "lex_walk",
-        "lex_home",
-        "lex_house",
-        "lex_room"
+        "lex_walk"
       ]
     },
     {
-      "id": "act_101",
+      "id": "act_210",
+      "type": "icon-choice",
+      "items": [
+        "lex_drink",
+        "lex_sleep",
+        "lex_go",
+        "lex_read",
+        "lex_watch"
+      ]
+    },
+    {
+      "id": "act_211",
+      "type": "match",
+      "items": [
+        "lex_drink",
+        "lex_sleep",
+        "lex_go",
+        "lex_read",
+        "lex_watch",
+        "lex_walk"
+      ]
+    },
+    {
+      "id": "act_212",
       "type": "spelling-build",
       "family": "sf_ea",
       "word": "read"
     },
     {
-      "id": "act_102",
+      "id": "act_213",
       "type": "grammar",
       "grammarId": "gr_thereis"
     },
     {
-      "id": "act_103",
+      "id": "act_214",
       "type": "gapfill",
       "items": [
+        {
+          "text": "I ___ coffee in the morning.",
+          "answer": "drink",
+          "options": [
+            "drink",
+            "eat",
+            "cook"
+          ],
+          "hu": "Reggel kávét iszom."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "sleep",
+          "options": [
+            "sleep",
+            "work",
+            "get up"
+          ],
+          "hu": "(aludni)"
+        },
+        {
+          "text": "I ___ to the market on Monday.",
+          "answer": "go",
+          "options": [
+            "go",
+            "work",
+            "get up"
+          ],
+          "hu": "Hétfőn piacra megyek."
+        },
         {
           "text": "I like to ___ in the evening.",
           "answer": "read",
@@ -143,51 +136,38 @@
             "dance"
           ],
           "hu": "Este szeretek olvasni."
-        },
-        {
-          "text": "I ___ every day.",
-          "answer": "watch",
-          "options": [
-            "watch",
-            "work",
-            "get up"
-          ],
-          "hu": "(nézni)"
-        },
-        {
-          "text": "I ___ every day.",
-          "answer": "walk",
-          "options": [
-            "walk",
-            "work",
-            "get up"
-          ],
-          "hu": "(sétálni)"
-        },
-        {
-          "text": "I am at ___ now.",
-          "answer": "home",
-          "options": [
-            "home",
-            "house",
-            "room"
-          ],
-          "hu": "Most otthon vagyok."
         }
       ]
     },
     {
-      "id": "act_104",
-      "type": "typed",
+      "id": "act_215",
+      "type": "phrase-match",
       "items": [
-        "lex_read",
-        "lex_watch",
-        "lex_walk",
-        "lex_home"
+        "chunk_sm_goodnight"
       ]
     },
     {
-      "id": "act_105",
+      "id": "act_216",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Good night, sleep well.",
+          "hu": "Jó éjt, aludj jól."
+        }
+      ]
+    },
+    {
+      "id": "act_217",
+      "type": "typed",
+      "items": [
+        "lex_drink",
+        "lex_sleep",
+        "lex_go",
+        "lex_read"
+      ]
+    },
+    {
+      "id": "act_218",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

@@ -19,43 +19,7 @@
     "lex_milk",
     "lex_bread",
     "lex_cheese",
-    "lex_egg",
-    "lex_apple",
-    "lex_soup",
-    "lex_meat",
-    "lex_fish",
-    "lex_vegetable",
-    "lex_fruit",
-    "lex_breakfast",
-    "lex_lunch",
-    "lex_dinner",
-    "lex_like",
-    "lex_some",
-    "lex_any",
-    "lex_rice",
-    "lex_potato",
-    "lex_tomato",
-    "lex_onion",
-    "lex_chicken",
-    "lex_salad",
-    "lex_sugar",
-    "lex_salt",
-    "lex_butter",
-    "lex_chocolate",
-    "lex_orange",
-    "lex_banana",
-    "lex_sandwich",
-    "lex_juice",
-    "lex_hungry",
-    "lex_thirsty",
-    "lex_meal",
-    "lex_snack",
-    "lex_carrot",
-    "lex_lemon",
-    "lex_biscuit",
-    "lex_honey",
-    "lex_sweet",
-    "lex_fresh"
+    "lex_egg"
   ],
   "reviewItems": [
     "lex_family",
@@ -181,9 +145,8 @@
   "chunks": [
     "chunk_op_like",
     "chunk_op_dontlike",
-    "chunk_fd_hungry",
-    "chunk_fd_allergic",
-    "chunk_fd_favourite"
+    "chunk_op_wouldlike",
+    "chunk_fd_hungry"
   ],
   "grammarCards": [
     "gr_someany"
@@ -194,7 +157,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_106",
+      "id": "act_279",
       "type": "intro",
       "items": [
         "lex_food",
@@ -208,7 +171,7 @@
       ]
     },
     {
-      "id": "act_107",
+      "id": "act_280",
       "type": "listen-choose",
       "items": [
         "lex_food",
@@ -220,7 +183,7 @@
       ]
     },
     {
-      "id": "act_108",
+      "id": "act_281",
       "type": "icon-choice",
       "items": [
         "lex_food",
@@ -231,7 +194,7 @@
       ]
     },
     {
-      "id": "act_109",
+      "id": "act_282",
       "type": "match",
       "items": [
         "lex_food",
@@ -243,18 +206,18 @@
       ]
     },
     {
-      "id": "act_110",
+      "id": "act_283",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "food"
     },
     {
-      "id": "act_111",
+      "id": "act_284",
       "type": "grammar",
       "grammarId": "gr_someany"
     },
     {
-      "id": "act_112",
+      "id": "act_285",
       "type": "gapfill",
       "items": [
         {
@@ -300,18 +263,17 @@
       ]
     },
     {
-      "id": "act_113",
+      "id": "act_286",
       "type": "phrase-match",
       "items": [
         "chunk_op_like",
         "chunk_op_dontlike",
-        "chunk_fd_hungry",
-        "chunk_fd_allergic",
-        "chunk_fd_favourite"
+        "chunk_op_wouldlike",
+        "chunk_fd_hungry"
       ]
     },
     {
-      "id": "act_114",
+      "id": "act_287",
       "type": "reorder",
       "sentences": [
         {
@@ -323,13 +285,13 @@
           "hu": "Nem szeretem."
         },
         {
-          "en": "I'm a little hungry.",
-          "hu": "Kicsit éhes vagyok."
+          "en": "I'd like a coffee, please.",
+          "hu": "Kérnék egy kávét."
         }
       ]
     },
     {
-      "id": "act_115",
+      "id": "act_288",
       "type": "typed",
       "items": [
         "lex_food",
@@ -339,17 +301,17 @@
       ]
     },
     {
-      "id": "act_116",
+      "id": "act_289",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_117",
+      "id": "act_290",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_118",
+      "id": "act_291",
       "type": "odd-one-out",
       "groups": [
         {
@@ -363,7 +325,7 @@
       ]
     },
     {
-      "id": "act_119",
+      "id": "act_292",
       "type": "review",
       "items": [
         "lex_family",

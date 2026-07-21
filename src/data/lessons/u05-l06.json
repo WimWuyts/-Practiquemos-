@@ -1,0 +1,165 @@
+{
+  "id": "u05-l06",
+  "unitId": "u05",
+  "order": 6,
+  "title": {
+    "en": "Food, cooking & shopping · more (6)",
+    "hu": "Étel, főzés, vásárlás · több (6)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_orange",
+    "lex_banana",
+    "lex_sandwich",
+    "lex_juice",
+    "lex_wine",
+    "lex_dessert",
+    "lex_hungry",
+    "lex_thirsty"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_337",
+      "type": "intro",
+      "items": [
+        "lex_orange",
+        "lex_banana",
+        "lex_sandwich",
+        "lex_juice",
+        "lex_wine",
+        "lex_dessert",
+        "lex_hungry",
+        "lex_thirsty"
+      ]
+    },
+    {
+      "id": "act_338",
+      "type": "listen-choose",
+      "items": [
+        "lex_orange",
+        "lex_banana",
+        "lex_sandwich",
+        "lex_juice",
+        "lex_wine",
+        "lex_dessert"
+      ]
+    },
+    {
+      "id": "act_339",
+      "type": "icon-choice",
+      "items": [
+        "lex_orange",
+        "lex_banana",
+        "lex_sandwich",
+        "lex_juice",
+        "lex_wine"
+      ]
+    },
+    {
+      "id": "act_340",
+      "type": "match",
+      "items": [
+        "lex_orange",
+        "lex_banana",
+        "lex_sandwich",
+        "lex_juice",
+        "lex_wine",
+        "lex_dessert"
+      ]
+    },
+    {
+      "id": "act_341",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is an ___.",
+          "answer": "orange",
+          "options": [
+            "orange",
+            "food",
+            "water"
+          ],
+          "hu": "(narancs)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "banana",
+          "options": [
+            "banana",
+            "food",
+            "water"
+          ],
+          "hu": "(banán)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "sandwich",
+          "options": [
+            "sandwich",
+            "food",
+            "water"
+          ],
+          "hu": "(szendvics)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "juice",
+          "options": [
+            "juice",
+            "food",
+            "water"
+          ],
+          "hu": "(gyümölcslé)"
+        }
+      ]
+    },
+    {
+      "id": "act_342",
+      "type": "typed",
+      "items": [
+        "lex_orange",
+        "lex_banana",
+        "lex_sandwich",
+        "lex_juice"
+      ]
+    },
+    {
+      "id": "act_343",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_344",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_345",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "orange",
+            "banana",
+            "sandwich"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

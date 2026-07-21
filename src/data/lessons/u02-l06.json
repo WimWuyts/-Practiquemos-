@@ -1,0 +1,152 @@
+{
+  "id": "u02-l06",
+  "unitId": "u02",
+  "order": 6,
+  "title": {
+    "en": "My family · more (6)",
+    "hu": "A családom · több (6)"
+  },
+  "canDo": {
+    "en": "Talk about family and who is who",
+    "hu": "Beszélj a családról, ki kicsoda"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_woman",
+    "lex_girl",
+    "lex_boy",
+    "lex_person",
+    "lex_with"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_s_endings"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_136",
+      "type": "intro",
+      "items": [
+        "lex_woman",
+        "lex_girl",
+        "lex_boy",
+        "lex_person",
+        "lex_with"
+      ]
+    },
+    {
+      "id": "act_137",
+      "type": "listen-choose",
+      "items": [
+        "lex_woman",
+        "lex_girl",
+        "lex_boy",
+        "lex_person",
+        "lex_with"
+      ]
+    },
+    {
+      "id": "act_138",
+      "type": "icon-choice",
+      "items": [
+        "lex_woman",
+        "lex_girl",
+        "lex_boy",
+        "lex_person",
+        "lex_with"
+      ]
+    },
+    {
+      "id": "act_139",
+      "type": "match",
+      "items": [
+        "lex_woman",
+        "lex_girl",
+        "lex_boy",
+        "lex_person",
+        "lex_with"
+      ]
+    },
+    {
+      "id": "act_140",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "The ___ is my sister.",
+          "answer": "woman",
+          "options": [
+            "woman",
+            "family",
+            "mother"
+          ],
+          "hu": "A nő a nővérem."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "girl",
+          "options": [
+            "girl",
+            "family",
+            "mother"
+          ],
+          "hu": "(lány)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "boy",
+          "options": [
+            "boy",
+            "family",
+            "mother"
+          ],
+          "hu": "(fiú)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "person",
+          "options": [
+            "person",
+            "family",
+            "mother"
+          ],
+          "hu": "(személy)"
+        }
+      ]
+    },
+    {
+      "id": "act_141",
+      "type": "typed",
+      "items": [
+        "lex_woman",
+        "lex_girl",
+        "lex_boy",
+        "lex_person"
+      ]
+    },
+    {
+      "id": "act_142",
+      "type": "pron-record",
+      "focusId": "snd_s_endings"
+    },
+    {
+      "id": "act_143",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "woman",
+            "girl",
+            "boy"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

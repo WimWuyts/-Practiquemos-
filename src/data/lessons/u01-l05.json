@@ -1,0 +1,171 @@
+{
+  "id": "u01-l05",
+  "unitId": "u01",
+  "order": 5,
+  "title": {
+    "en": "Hello, I'm Marta · more (5)",
+    "hu": "Szia, Marta vagyok · több (5)"
+  },
+  "canDo": {
+    "en": "Greet, introduce yourself, ask simple questions",
+    "hu": "Köszönés, bemutatkozás, egyszerű kérdések"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_where",
+    "lex_how",
+    "lex_who",
+    "lex_fine",
+    "lex_good",
+    "lex_well",
+    "lex_and",
+    "lex_a"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_short_vowels"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_54",
+      "type": "intro",
+      "items": [
+        "lex_where",
+        "lex_how",
+        "lex_who",
+        "lex_fine",
+        "lex_good",
+        "lex_well",
+        "lex_and",
+        "lex_a"
+      ]
+    },
+    {
+      "id": "act_55",
+      "type": "listen-choose",
+      "items": [
+        "lex_where",
+        "lex_how",
+        "lex_who",
+        "lex_fine",
+        "lex_good",
+        "lex_well"
+      ]
+    },
+    {
+      "id": "act_56",
+      "type": "icon-choice",
+      "items": [
+        "lex_where",
+        "lex_how",
+        "lex_who",
+        "lex_fine",
+        "lex_good"
+      ]
+    },
+    {
+      "id": "act_57",
+      "type": "match",
+      "items": [
+        "lex_where",
+        "lex_how",
+        "lex_who",
+        "lex_fine",
+        "lex_good",
+        "lex_well"
+      ]
+    },
+    {
+      "id": "act_58",
+      "type": "spelling-build",
+      "family": "sf_wh",
+      "word": "where"
+    },
+    {
+      "id": "act_59",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ do you live?",
+          "answer": "where",
+          "options": [
+            "where",
+            "how",
+            "very"
+          ],
+          "hu": "Hol laksz?"
+        },
+        {
+          "text": "___ are you?",
+          "answer": "how",
+          "options": [
+            "how",
+            "where",
+            "very"
+          ],
+          "hu": "Hogy vagy?"
+        },
+        {
+          "text": "___ is that?",
+          "answer": "who",
+          "options": [
+            "who",
+            "what",
+            "me"
+          ],
+          "hu": "Ki az?"
+        },
+        {
+          "text": "I'm ___, thank you.",
+          "answer": "fine",
+          "options": [
+            "fine",
+            "good",
+            "my"
+          ],
+          "hu": "Jól vagyok, köszönöm."
+        }
+      ]
+    },
+    {
+      "id": "act_60",
+      "type": "typed",
+      "items": [
+        "lex_where",
+        "lex_how",
+        "lex_who",
+        "lex_fine"
+      ]
+    },
+    {
+      "id": "act_61",
+      "type": "pron-record",
+      "focusId": "snd_short_vowels"
+    },
+    {
+      "id": "act_62",
+      "type": "minimal-pair",
+      "focusId": "snd_short_vowels"
+    },
+    {
+      "id": "act_63",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "where",
+            "how",
+            "who"
+          ],
+          "odd": "please"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

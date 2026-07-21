@@ -1,0 +1,160 @@
+{
+  "id": "u06-l10",
+  "unitId": "u06",
+  "order": 10,
+  "title": {
+    "en": "Time, weather & plans · more (10)",
+    "hu": "Idő, időjárás, tervek · több (10)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_flower",
+    "lex_sea",
+    "lex_river",
+    "lex_lake",
+    "lex_mountain",
+    "lex_beach",
+    "lex_sky",
+    "lex_sun"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_question"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_479",
+      "type": "intro",
+      "items": [
+        "lex_flower",
+        "lex_sea",
+        "lex_river",
+        "lex_lake",
+        "lex_mountain",
+        "lex_beach",
+        "lex_sky",
+        "lex_sun"
+      ]
+    },
+    {
+      "id": "act_480",
+      "type": "listen-choose",
+      "items": [
+        "lex_flower",
+        "lex_sea",
+        "lex_river",
+        "lex_lake",
+        "lex_mountain",
+        "lex_beach"
+      ]
+    },
+    {
+      "id": "act_481",
+      "type": "icon-choice",
+      "items": [
+        "lex_flower",
+        "lex_sea",
+        "lex_river",
+        "lex_lake",
+        "lex_mountain"
+      ]
+    },
+    {
+      "id": "act_482",
+      "type": "match",
+      "items": [
+        "lex_flower",
+        "lex_sea",
+        "lex_river",
+        "lex_lake",
+        "lex_mountain",
+        "lex_beach"
+      ]
+    },
+    {
+      "id": "act_483",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "flower",
+          "options": [
+            "flower",
+            "weather",
+            "tree"
+          ],
+          "hu": "(virág)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "sea",
+          "options": [
+            "sea",
+            "weather",
+            "tree"
+          ],
+          "hu": "(tenger)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "river",
+          "options": [
+            "river",
+            "weather",
+            "tree"
+          ],
+          "hu": "(folyó)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "lake",
+          "options": [
+            "lake",
+            "weather",
+            "tree"
+          ],
+          "hu": "(tó)"
+        }
+      ]
+    },
+    {
+      "id": "act_484",
+      "type": "typed",
+      "items": [
+        "lex_flower",
+        "lex_sea",
+        "lex_river",
+        "lex_lake"
+      ]
+    },
+    {
+      "id": "act_485",
+      "type": "pron-record",
+      "focusId": "str_question"
+    },
+    {
+      "id": "act_486",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "flower",
+            "sea",
+            "river"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

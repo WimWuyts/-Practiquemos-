@@ -12,76 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
+    "lex_play",
+    "lex_love",
+    "lex_enjoy",
     "lex_favourite",
     "lex_interesting",
     "lex_boring",
     "lex_beautiful",
-    "lex_horse",
-    "lex_think",
-    "lex_red",
-    "lex_blue",
-    "lex_green",
-    "lex_white",
-    "lex_black",
-    "lex_animal",
-    "lex_dog",
-    "lex_cat",
-    "lex_bird",
-    "lex_cow",
-    "lex_easy",
-    "lex_difficult",
-    "lex_hard",
-    "lex_important",
-    "lex_different",
-    "lex_same",
-    "lex_lovely",
-    "lex_quiet",
-    "lex_loud",
-    "lex_strong",
-    "lex_yellow",
-    "lex_brown",
-    "lex_grey",
-    "lex_pink",
-    "lex_too",
-    "lex_also",
-    "lex_only",
-    "lex_really",
-    "lex_about",
-    "lex_why",
-    "lex_part",
-    "lex_colour",
-    "lex_wonderful",
-    "lex_great",
-    "lex_true",
-    "lex_real",
-    "lex_best",
-    "lex_perfect",
-    "lex_terrible",
-    "lex_quite",
-    "lex_prefer",
-    "lex_agree",
-    "lex_soft",
-    "lex_pretty",
-    "lex_duck",
-    "lex_rabbit",
-    "lex_famous",
-    "lex_modern"
+    "lex_horse"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_ask_followup_why",
-    "chunk_op_ithink",
     "chunk_op_agree",
     "chunk_op_notsure",
-    "chunk_op_favourite",
-    "chunk_op_prefer",
-    "chunk_ds_bigger",
-    "chunk_ag_iagree",
-    "chunk_ag_notreally",
-    "chunk_ag_inmyopinion",
-    "chunk_ag_reallythink",
-    "chunk_rp_almostget",
-    "chunk_op_dependson"
+    "chunk_op_ilike2",
+    "chunk_op_favourite"
   ],
   "grammarCards": [
     "gr_comparatives"
@@ -92,35 +37,12 @@
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_200",
+      "id": "act_577",
       "type": "intro",
       "items": [
-        "lex_favourite",
-        "lex_interesting",
-        "lex_boring",
-        "lex_beautiful",
-        "lex_horse",
-        "lex_think",
-        "lex_red",
-        "lex_blue"
-      ]
-    },
-    {
-      "id": "act_201",
-      "type": "listen-choose",
-      "items": [
-        "lex_favourite",
-        "lex_interesting",
-        "lex_boring",
-        "lex_beautiful",
-        "lex_horse",
-        "lex_think"
-      ]
-    },
-    {
-      "id": "act_202",
-      "type": "icon-choice",
-      "items": [
+        "lex_play",
+        "lex_love",
+        "lex_enjoy",
         "lex_favourite",
         "lex_interesting",
         "lex_boring",
@@ -129,32 +51,79 @@
       ]
     },
     {
-      "id": "act_203",
-      "type": "match",
+      "id": "act_578",
+      "type": "listen-choose",
       "items": [
+        "lex_play",
+        "lex_love",
+        "lex_enjoy",
         "lex_favourite",
         "lex_interesting",
-        "lex_boring",
-        "lex_beautiful",
-        "lex_horse",
-        "lex_think"
+        "lex_boring"
       ]
     },
     {
-      "id": "act_204",
-      "type": "spelling-build",
-      "family": "sf_ee",
-      "word": "green"
+      "id": "act_579",
+      "type": "icon-choice",
+      "items": [
+        "lex_play",
+        "lex_love",
+        "lex_enjoy",
+        "lex_favourite",
+        "lex_interesting"
+      ]
     },
     {
-      "id": "act_205",
+      "id": "act_580",
+      "type": "match",
+      "items": [
+        "lex_play",
+        "lex_love",
+        "lex_enjoy",
+        "lex_favourite",
+        "lex_interesting",
+        "lex_boring"
+      ]
+    },
+    {
+      "id": "act_581",
       "type": "grammar",
       "grammarId": "gr_comparatives"
     },
     {
-      "id": "act_206",
+      "id": "act_582",
       "type": "gapfill",
       "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "play",
+          "options": [
+            "play",
+            "read",
+            "swim"
+          ],
+          "hu": "(játszani)"
+        },
+        {
+          "text": "I ___ my family.",
+          "answer": "love",
+          "options": [
+            "love",
+            "like",
+            "want"
+          ],
+          "hu": "Szeretem a családomat."
+        },
+        {
+          "text": "I ___ cooking with Kira.",
+          "answer": "enjoy",
+          "options": [
+            "enjoy",
+            "like",
+            "want"
+          ],
+          "hu": "Élvezem a főzést Kirával."
+        },
         {
           "text": "Cooking is my ___ hobby.",
           "answer": "favourite",
@@ -164,59 +133,23 @@
             "boring"
           ],
           "hu": "A főzés a kedvenc hobbim."
-        },
-        {
-          "text": "It is very ___.",
-          "answer": "interesting",
-          "options": [
-            "interesting",
-            "favourite",
-            "boring"
-          ],
-          "hu": "(érdekes)"
-        },
-        {
-          "text": "It is very ___.",
-          "answer": "boring",
-          "options": [
-            "boring",
-            "favourite",
-            "interesting"
-          ],
-          "hu": "(unalmas)"
-        },
-        {
-          "text": "The lake is ___.",
-          "answer": "beautiful",
-          "options": [
-            "beautiful",
-            "favourite",
-            "interesting"
-          ],
-          "hu": "A tó gyönyörű."
         }
       ]
     },
     {
-      "id": "act_207",
+      "id": "act_583",
       "type": "phrase-match",
       "items": [
-        "chunk_ask_followup_why",
-        "chunk_op_ithink",
         "chunk_op_agree",
         "chunk_op_notsure",
-        "chunk_op_favourite",
-        "chunk_op_prefer"
+        "chunk_op_ilike2",
+        "chunk_op_favourite"
       ]
     },
     {
-      "id": "act_208",
+      "id": "act_584",
       "type": "reorder",
       "sentences": [
-        {
-          "en": "I think it's very nice.",
-          "hu": "Szerintem nagyon szép."
-        },
         {
           "en": "Yes, me too.",
           "hu": "Igen, én is."
@@ -224,45 +157,35 @@
         {
           "en": "I'm not sure.",
           "hu": "Nem vagyok biztos benne."
+        },
+        {
+          "en": "I really enjoy it.",
+          "hu": "Nagyon élvezem."
         }
       ]
     },
     {
-      "id": "act_209",
+      "id": "act_585",
       "type": "typed",
       "items": [
-        "lex_favourite",
-        "lex_interesting",
-        "lex_boring",
-        "lex_beautiful"
+        "lex_play",
+        "lex_love",
+        "lex_enjoy",
+        "lex_favourite"
       ]
     },
     {
-      "id": "act_210",
+      "id": "act_586",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_211",
+      "id": "act_587",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_212",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "favourite",
-            "interesting",
-            "boring"
-          ],
-          "odd": "my"
-        }
-      ]
-    },
-    {
-      "id": "act_213",
+      "id": "act_588",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

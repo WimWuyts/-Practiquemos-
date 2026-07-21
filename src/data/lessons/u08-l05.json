@@ -1,0 +1,181 @@
+{
+  "id": "u08-l05",
+  "unitId": "u08",
+  "order": 5,
+  "title": {
+    "en": "Hobbies, books & opinions · more (5)",
+    "hu": "Hobbik, könyvek, vélemények · több (5)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_important",
+    "lex_different",
+    "lex_same",
+    "lex_lovely",
+    "lex_quiet",
+    "lex_loud",
+    "lex_strong",
+    "lex_yellow"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_op_dependson",
+    "chunk_dl_freetime"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_r"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_610",
+      "type": "intro",
+      "items": [
+        "lex_important",
+        "lex_different",
+        "lex_same",
+        "lex_lovely",
+        "lex_quiet",
+        "lex_loud",
+        "lex_strong",
+        "lex_yellow"
+      ]
+    },
+    {
+      "id": "act_611",
+      "type": "listen-choose",
+      "items": [
+        "lex_important",
+        "lex_different",
+        "lex_same",
+        "lex_lovely",
+        "lex_quiet",
+        "lex_loud"
+      ]
+    },
+    {
+      "id": "act_612",
+      "type": "icon-choice",
+      "items": [
+        "lex_important",
+        "lex_different",
+        "lex_same",
+        "lex_lovely",
+        "lex_quiet"
+      ]
+    },
+    {
+      "id": "act_613",
+      "type": "match",
+      "items": [
+        "lex_important",
+        "lex_different",
+        "lex_same",
+        "lex_lovely",
+        "lex_quiet",
+        "lex_loud"
+      ]
+    },
+    {
+      "id": "act_614",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "important",
+          "options": [
+            "important",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(fontos)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "different",
+          "options": [
+            "different",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(különböző / más)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "same",
+          "options": [
+            "same",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(ugyanaz)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "lovely",
+          "options": [
+            "lovely",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(kedves / bájos)"
+        }
+      ]
+    },
+    {
+      "id": "act_615",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_dependson",
+        "chunk_dl_freetime"
+      ]
+    },
+    {
+      "id": "act_616",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "In my free time I like reading.",
+          "hu": "A szabadidőmben szeretek olvasni."
+        }
+      ]
+    },
+    {
+      "id": "act_617",
+      "type": "typed",
+      "items": [
+        "lex_important",
+        "lex_different",
+        "lex_same",
+        "lex_lovely"
+      ]
+    },
+    {
+      "id": "act_618",
+      "type": "pron-record",
+      "focusId": "snd_r"
+    },
+    {
+      "id": "act_619",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "important",
+            "different",
+            "same"
+          ],
+          "odd": "my"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "id": "u01-l04",
+  "unitId": "u01",
+  "order": 4,
+  "title": {
+    "en": "Hello, I'm Marta · more (4)",
+    "hu": "Szia, Marta vagyok · több (4)"
+  },
+  "canDo": {
+    "en": "Greet, introduce yourself, ask simple questions",
+    "hu": "Köszönés, bemutatkozás, egyszerű kérdések"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_be",
+    "lex_from",
+    "lex_country",
+    "lex_city",
+    "lex_teacher",
+    "lex_retired",
+    "lex_nice",
+    "lex_what"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_id_job2",
+    "chunk_sm_longtime2",
+    "chunk_id_pleased"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_long_vowels"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_42",
+      "type": "intro",
+      "items": [
+        "lex_be",
+        "lex_from",
+        "lex_country",
+        "lex_city",
+        "lex_teacher",
+        "lex_retired",
+        "lex_nice",
+        "lex_what"
+      ]
+    },
+    {
+      "id": "act_43",
+      "type": "listen-choose",
+      "items": [
+        "lex_be",
+        "lex_from",
+        "lex_country",
+        "lex_city",
+        "lex_teacher",
+        "lex_retired"
+      ]
+    },
+    {
+      "id": "act_44",
+      "type": "icon-choice",
+      "items": [
+        "lex_be",
+        "lex_from",
+        "lex_country",
+        "lex_city",
+        "lex_teacher"
+      ]
+    },
+    {
+      "id": "act_45",
+      "type": "match",
+      "items": [
+        "lex_be",
+        "lex_from",
+        "lex_country",
+        "lex_city",
+        "lex_teacher",
+        "lex_retired"
+      ]
+    },
+    {
+      "id": "act_46",
+      "type": "spelling-build",
+      "family": "sf_magic_e_i",
+      "word": "nice"
+    },
+    {
+      "id": "act_47",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ — a useful word.",
+          "answer": "from",
+          "options": [
+            "from",
+            "in",
+            "on"
+          ],
+          "hu": "(-ból / -ből)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "country",
+          "options": [
+            "country",
+            "name",
+            "city"
+          ],
+          "hu": "(ország)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "city",
+          "options": [
+            "city",
+            "name",
+            "country"
+          ],
+          "hu": "(város)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "teacher",
+          "options": [
+            "teacher",
+            "name",
+            "country"
+          ],
+          "hu": "(tanár / tanárnő)"
+        }
+      ]
+    },
+    {
+      "id": "act_48",
+      "type": "phrase-match",
+      "items": [
+        "chunk_id_job2",
+        "chunk_sm_longtime2",
+        "chunk_id_pleased"
+      ]
+    },
+    {
+      "id": "act_49",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm retired now.",
+          "hu": "Most nyugdíjas vagyok."
+        },
+        {
+          "en": "It's been a long time!",
+          "hu": "Rég találkoztunk!"
+        },
+        {
+          "en": "Pleased to meet you.",
+          "hu": "Örvendek."
+        }
+      ]
+    },
+    {
+      "id": "act_50",
+      "type": "typed",
+      "items": [
+        "lex_be",
+        "lex_from",
+        "lex_country",
+        "lex_city"
+      ]
+    },
+    {
+      "id": "act_51",
+      "type": "pron-record",
+      "focusId": "snd_long_vowels"
+    },
+    {
+      "id": "act_52",
+      "type": "minimal-pair",
+      "focusId": "snd_long_vowels"
+    },
+    {
+      "id": "act_53",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "be",
+            "from",
+            "country"
+          ],
+          "odd": "have"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

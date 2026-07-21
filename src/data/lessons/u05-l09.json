@@ -1,0 +1,165 @@
+{
+  "id": "u05-l09",
+  "unitId": "u05",
+  "order": 9,
+  "title": {
+    "en": "Food, cooking & shopping · more (9)",
+    "hu": "Étel, főzés, vásárlás · több (9)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_glass",
+    "lex_plate",
+    "lex_knife",
+    "lex_spoon",
+    "lex_fork",
+    "lex_meal",
+    "lex_snack",
+    "lex_cut"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_ee_i"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_363",
+      "type": "intro",
+      "items": [
+        "lex_glass",
+        "lex_plate",
+        "lex_knife",
+        "lex_spoon",
+        "lex_fork",
+        "lex_meal",
+        "lex_snack",
+        "lex_cut"
+      ]
+    },
+    {
+      "id": "act_364",
+      "type": "listen-choose",
+      "items": [
+        "lex_glass",
+        "lex_plate",
+        "lex_knife",
+        "lex_spoon",
+        "lex_fork",
+        "lex_meal"
+      ]
+    },
+    {
+      "id": "act_365",
+      "type": "icon-choice",
+      "items": [
+        "lex_glass",
+        "lex_plate",
+        "lex_knife",
+        "lex_spoon",
+        "lex_fork"
+      ]
+    },
+    {
+      "id": "act_366",
+      "type": "match",
+      "items": [
+        "lex_glass",
+        "lex_plate",
+        "lex_knife",
+        "lex_spoon",
+        "lex_fork",
+        "lex_meal"
+      ]
+    },
+    {
+      "id": "act_367",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "The ___ are here.",
+          "answer": "glass",
+          "options": [
+            "glass",
+            "food",
+            "water"
+          ],
+          "hu": "(pohár)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "plate",
+          "options": [
+            "plate",
+            "food",
+            "water"
+          ],
+          "hu": "(tányér)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "knife",
+          "options": [
+            "knife",
+            "food",
+            "water"
+          ],
+          "hu": "(kés)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "spoon",
+          "options": [
+            "spoon",
+            "food",
+            "water"
+          ],
+          "hu": "(kanál)"
+        }
+      ]
+    },
+    {
+      "id": "act_368",
+      "type": "typed",
+      "items": [
+        "lex_glass",
+        "lex_plate",
+        "lex_knife",
+        "lex_spoon"
+      ]
+    },
+    {
+      "id": "act_369",
+      "type": "pron-record",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_370",
+      "type": "minimal-pair",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_371",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "glass",
+            "plate",
+            "knife"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

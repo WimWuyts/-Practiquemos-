@@ -1,0 +1,151 @@
+{
+  "id": "u05-l08",
+  "unitId": "u05",
+  "order": 8,
+  "title": {
+    "en": "Food, cooking & shopping · more (8)",
+    "hu": "Étel, főzés, vásárlás · több (8)"
+  },
+  "canDo": {
+    "en": "Talk about food and buy simple things",
+    "hu": "Ételről beszélni, egyszerű vásárlás"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_empty",
+    "lex_for",
+    "lex_cost",
+    "lex_euro",
+    "lex_card",
+    "lex_cash",
+    "lex_box",
+    "lex_bottle"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_shchj"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_355",
+      "type": "intro",
+      "items": [
+        "lex_empty",
+        "lex_for",
+        "lex_cost",
+        "lex_euro",
+        "lex_card",
+        "lex_cash",
+        "lex_box",
+        "lex_bottle"
+      ]
+    },
+    {
+      "id": "act_356",
+      "type": "listen-choose",
+      "items": [
+        "lex_empty",
+        "lex_for",
+        "lex_cost",
+        "lex_euro",
+        "lex_card",
+        "lex_cash"
+      ]
+    },
+    {
+      "id": "act_357",
+      "type": "icon-choice",
+      "items": [
+        "lex_empty",
+        "lex_for",
+        "lex_cost",
+        "lex_euro",
+        "lex_card"
+      ]
+    },
+    {
+      "id": "act_358",
+      "type": "match",
+      "items": [
+        "lex_empty",
+        "lex_for",
+        "lex_cost",
+        "lex_euro",
+        "lex_card",
+        "lex_cash"
+      ]
+    },
+    {
+      "id": "act_359",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is very ___.",
+          "answer": "empty",
+          "options": [
+            "empty",
+            "hungry",
+            "thirsty"
+          ],
+          "hu": "(üres)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "for",
+          "options": [
+            "for",
+            "about",
+            "with"
+          ],
+          "hu": "(-nak / -ért)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "cost",
+          "options": [
+            "cost",
+            "buy",
+            "pay"
+          ],
+          "hu": "(kerülni (vmennyibe))"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "euro",
+          "options": [
+            "euro",
+            "shop",
+            "price"
+          ],
+          "hu": "(euró)"
+        }
+      ]
+    },
+    {
+      "id": "act_360",
+      "type": "typed",
+      "items": [
+        "lex_empty",
+        "lex_for",
+        "lex_cost",
+        "lex_euro"
+      ]
+    },
+    {
+      "id": "act_361",
+      "type": "pron-record",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_362",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

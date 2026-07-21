@@ -1,0 +1,179 @@
+{
+  "id": "u06-l03",
+  "unitId": "u06",
+  "order": 3,
+  "title": {
+    "en": "Time, weather & plans · more (3)",
+    "hu": "Idő, időjárás, tervek · több (3)"
+  },
+  "canDo": {
+    "en": "Say times, weather and make plans",
+    "hu": "Időpontok, időjárás, tervek"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_weekend",
+    "lex_weather",
+    "lex_sunny",
+    "lex_rainy",
+    "lex_cold",
+    "lex_hot",
+    "lex_warm",
+    "lex_plan"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_pl_shallwe",
+    "chunk_pl_goodidea",
+    "chunk_pl_cantsorry",
+    "chunk_ap_solate"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_word"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_417",
+      "type": "intro",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold",
+        "lex_hot",
+        "lex_warm",
+        "lex_plan"
+      ]
+    },
+    {
+      "id": "act_418",
+      "type": "listen-choose",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold",
+        "lex_hot"
+      ]
+    },
+    {
+      "id": "act_419",
+      "type": "icon-choice",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold"
+      ]
+    },
+    {
+      "id": "act_420",
+      "type": "match",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold",
+        "lex_hot"
+      ]
+    },
+    {
+      "id": "act_421",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I am free at the ___.",
+          "answer": "weekend",
+          "options": [
+            "weekend",
+            "time",
+            "hour"
+          ],
+          "hu": "Hétvégén ráérek."
+        },
+        {
+          "text": "The ___ is nice today.",
+          "answer": "weather",
+          "options": [
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "Ma szép idő van."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "sunny",
+          "options": [
+            "sunny",
+            "rainy",
+            "cold"
+          ],
+          "hu": "(napos)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "rainy",
+          "options": [
+            "rainy",
+            "sunny",
+            "cold"
+          ],
+          "hu": "(esős)"
+        }
+      ]
+    },
+    {
+      "id": "act_422",
+      "type": "phrase-match",
+      "items": [
+        "chunk_pl_shallwe",
+        "chunk_pl_goodidea",
+        "chunk_pl_cantsorry",
+        "chunk_ap_solate"
+      ]
+    },
+    {
+      "id": "act_423",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Shall we meet on Sunday?",
+          "hu": "Találkozzunk vasárnap?"
+        },
+        {
+          "en": "That's a good idea!",
+          "hu": "Ez jó ötlet!"
+        },
+        {
+          "en": "I'm sorry, I can't that day.",
+          "hu": "Sajnálom, aznap nem tudok."
+        }
+      ]
+    },
+    {
+      "id": "act_424",
+      "type": "typed",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy"
+      ]
+    },
+    {
+      "id": "act_425",
+      "type": "pron-record",
+      "focusId": "str_word"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

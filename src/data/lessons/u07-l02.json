@@ -12,35 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
+    "lex_wait",
+    "lex_moment",
     "lex_me",
     "lex_him",
     "lex_them",
     "lex_know",
     "lex_ask",
-    "lex_answer",
-    "lex_tell",
-    "lex_say",
-    "lex_send",
-    "lex_wrong",
-    "lex_just",
-    "lex_of",
-    "lex_video",
-    "lex_thing",
-    "lex_letter",
-    "lex_news",
-    "lex_talk"
+    "lex_answer"
   ],
   "reviewItems": [],
   "chunks": [
+    "chunk_repair_sorry",
     "chunk_repair_howsay",
-    "chunk_call_bye",
-    "chunk_sm_takecare",
-    "chunk_sm_seeyou",
-    "chunk_ph_seeyoulater",
-    "chunk_ph_sendmessage",
-    "chunk_nm_myphone",
-    "chunk_ph_callback",
-    "chunk_rp_whatmeans"
+    "chunk_call_hearme",
+    "chunk_call_seeme"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -49,58 +35,78 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_174",
+      "id": "act_531",
       "type": "intro",
       "items": [
+        "lex_wait",
+        "lex_moment",
         "lex_me",
         "lex_him",
         "lex_them",
         "lex_know",
         "lex_ask",
-        "lex_answer",
-        "lex_tell",
-        "lex_say"
+        "lex_answer"
       ]
     },
     {
-      "id": "act_175",
+      "id": "act_532",
       "type": "listen-choose",
       "items": [
+        "lex_wait",
+        "lex_moment",
         "lex_me",
         "lex_him",
         "lex_them",
-        "lex_know",
-        "lex_ask",
-        "lex_answer"
+        "lex_know"
       ]
     },
     {
-      "id": "act_176",
+      "id": "act_533",
       "type": "icon-choice",
       "items": [
+        "lex_wait",
+        "lex_moment",
         "lex_me",
         "lex_him",
-        "lex_them",
-        "lex_know",
-        "lex_ask"
+        "lex_them"
       ]
     },
     {
-      "id": "act_177",
+      "id": "act_534",
       "type": "match",
       "items": [
+        "lex_wait",
+        "lex_moment",
         "lex_me",
         "lex_him",
         "lex_them",
-        "lex_know",
-        "lex_ask",
-        "lex_answer"
+        "lex_know"
       ]
     },
     {
-      "id": "act_178",
+      "id": "act_535",
       "type": "gapfill",
       "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "wait",
+          "options": [
+            "wait",
+            "repeat",
+            "understand"
+          ],
+          "hu": "(várni)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "moment",
+          "options": [
+            "moment",
+            "thing",
+            "part"
+          ],
+          "hu": "(pillanat)"
+        },
         {
           "text": "___ — a useful word.",
           "answer": "me",
@@ -120,95 +126,73 @@
             "who"
           ],
           "hu": "(őt (férfi))"
-        },
-        {
-          "text": "___ — a useful word.",
-          "answer": "them",
-          "options": [
-            "them",
-            "what",
-            "who"
-          ],
-          "hu": "(őket)"
-        },
-        {
-          "text": "I ___ a little English.",
-          "answer": "know",
-          "options": [
-            "know",
-            "repeat",
-            "understand"
-          ],
-          "hu": "Tudok egy kicsit angolul."
         }
       ]
     },
     {
-      "id": "act_179",
+      "id": "act_536",
       "type": "phrase-match",
       "items": [
+        "chunk_repair_sorry",
         "chunk_repair_howsay",
-        "chunk_call_bye",
-        "chunk_sm_takecare",
-        "chunk_sm_seeyou",
-        "chunk_ph_seeyoulater",
-        "chunk_ph_sendmessage"
+        "chunk_call_hearme",
+        "chunk_call_seeme"
       ]
     },
     {
-      "id": "act_180",
+      "id": "act_537",
       "type": "reorder",
       "sentences": [
+        {
+          "en": "Sorry, I didn't hear you.",
+          "hu": "Elnézést, nem hallottam."
+        },
         {
           "en": "How do you say this in English?",
           "hu": "Hogy mondják ezt angolul?"
         },
         {
-          "en": "Talk to you soon. Bye!",
-          "hu": "Hamarosan beszélünk. Szia!"
-        },
-        {
-          "en": "See you soon!",
-          "hu": "Hamarosan találkozunk!"
+          "en": "Can you hear me?",
+          "hu": "Hallasz engem?"
         }
       ]
     },
     {
-      "id": "act_181",
+      "id": "act_538",
       "type": "typed",
       "items": [
+        "lex_wait",
+        "lex_moment",
         "lex_me",
-        "lex_him",
-        "lex_them",
-        "lex_know"
+        "lex_him"
       ]
     },
     {
-      "id": "act_182",
+      "id": "act_539",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_183",
+      "id": "act_540",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_184",
+      "id": "act_541",
       "type": "odd-one-out",
       "groups": [
         {
           "words": [
-            "me",
-            "him",
-            "them"
+            "wait",
+            "moment",
+            "me"
           ],
-          "odd": "I"
+          "odd": "be"
         }
       ]
     },
     {
-      "id": "act_185",
+      "id": "act_542",
       "type": "listen-comprehension",
       "passage": "Hello Marta, this is a short message. I will call you at seven o'clock this evening. Talk soon!",
       "question": {

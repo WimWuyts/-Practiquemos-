@@ -1,0 +1,165 @@
+{
+  "id": "u09-l08",
+  "unitId": "u09",
+  "order": 8,
+  "title": {
+    "en": "Around town: directions · more (8)",
+    "hu": "A városban: útbaigazítás · több (8)"
+  },
+  "canDo": {
+    "en": "Ask where places are and use transport",
+    "hu": "Merre van, közlekedés"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_way",
+    "lex_side",
+    "lex_office",
+    "lex_building",
+    "lex_catch",
+    "lex_low",
+    "lex_other",
+    "lex_into"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_final_cons"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_740",
+      "type": "intro",
+      "items": [
+        "lex_way",
+        "lex_side",
+        "lex_office",
+        "lex_building",
+        "lex_catch",
+        "lex_low",
+        "lex_other",
+        "lex_into"
+      ]
+    },
+    {
+      "id": "act_741",
+      "type": "listen-choose",
+      "items": [
+        "lex_way",
+        "lex_side",
+        "lex_office",
+        "lex_building",
+        "lex_catch",
+        "lex_low"
+      ]
+    },
+    {
+      "id": "act_742",
+      "type": "icon-choice",
+      "items": [
+        "lex_way",
+        "lex_side",
+        "lex_office",
+        "lex_building",
+        "lex_catch"
+      ]
+    },
+    {
+      "id": "act_743",
+      "type": "match",
+      "items": [
+        "lex_way",
+        "lex_side",
+        "lex_office",
+        "lex_building",
+        "lex_catch",
+        "lex_low"
+      ]
+    },
+    {
+      "id": "act_744",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "way",
+          "options": [
+            "way",
+            "street",
+            "left"
+          ],
+          "hu": "(út / mód)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "side",
+          "options": [
+            "side",
+            "street",
+            "left"
+          ],
+          "hu": "(oldal)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "office",
+          "options": [
+            "office",
+            "street",
+            "left"
+          ],
+          "hu": "(iroda)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "building",
+          "options": [
+            "building",
+            "street",
+            "left"
+          ],
+          "hu": "(épület)"
+        }
+      ]
+    },
+    {
+      "id": "act_745",
+      "type": "typed",
+      "items": [
+        "lex_way",
+        "lex_side",
+        "lex_office",
+        "lex_building"
+      ]
+    },
+    {
+      "id": "act_746",
+      "type": "pron-record",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_747",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_748",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "way",
+            "side",
+            "office"
+          ],
+          "odd": "name"
+        }
+      ]
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -19,26 +19,7 @@
     "lex_sport",
     "lex_swim",
     "lex_dance",
-    "lex_sing",
-    "lex_play",
-    "lex_love",
-    "lex_enjoy",
-    "lex_run",
-    "lex_listen",
-    "lex_story",
-    "lex_song",
-    "lex_game",
-    "lex_photo",
-    "lex_picture",
-    "lex_jump",
-    "lex_draw",
-    "lex_paint",
-    "lex_win",
-    "lex_hate",
-    "lex_ride",
-    "lex_climb",
-    "lex_build",
-    "lex_grow"
+    "lex_sing"
   ],
   "reviewItems": [
     "lex_food",
@@ -158,10 +139,9 @@
   ],
   "chunks": [
     "chunk_ask_hobbies",
+    "chunk_ask_followup_why",
     "chunk_op_love",
-    "chunk_op_ilike2",
-    "chunk_ag_metoo",
-    "chunk_dl_freetime"
+    "chunk_op_ithink"
   ],
   "grammarCards": [
     "gr_likeing"
@@ -172,7 +152,7 @@
   "conversationId": "dlg_peter_dinner",
   "activities": [
     {
-      "id": "act_186",
+      "id": "act_564",
       "type": "intro",
       "items": [
         "lex_hobby",
@@ -186,7 +166,7 @@
       ]
     },
     {
-      "id": "act_187",
+      "id": "act_565",
       "type": "listen-choose",
       "items": [
         "lex_hobby",
@@ -198,7 +178,7 @@
       ]
     },
     {
-      "id": "act_188",
+      "id": "act_566",
       "type": "icon-choice",
       "items": [
         "lex_hobby",
@@ -209,7 +189,7 @@
       ]
     },
     {
-      "id": "act_189",
+      "id": "act_567",
       "type": "match",
       "items": [
         "lex_hobby",
@@ -221,18 +201,12 @@
       ]
     },
     {
-      "id": "act_190",
-      "type": "spelling-build",
-      "family": "sf_magic_e_a",
-      "word": "game"
-    },
-    {
-      "id": "act_191",
+      "id": "act_568",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_192",
+      "id": "act_569",
       "type": "gapfill",
       "items": [
         {
@@ -278,18 +252,17 @@
       ]
     },
     {
-      "id": "act_193",
+      "id": "act_570",
       "type": "phrase-match",
       "items": [
         "chunk_ask_hobbies",
+        "chunk_ask_followup_why",
         "chunk_op_love",
-        "chunk_op_ilike2",
-        "chunk_ag_metoo",
-        "chunk_dl_freetime"
+        "chunk_op_ithink"
       ]
     },
     {
-      "id": "act_194",
+      "id": "act_571",
       "type": "reorder",
       "sentences": [
         {
@@ -301,13 +274,13 @@
           "hu": "Imádok főzni."
         },
         {
-          "en": "I really enjoy it.",
-          "hu": "Nagyon élvezem."
+          "en": "I think it's very nice.",
+          "hu": "Szerintem nagyon szép."
         }
       ]
     },
     {
-      "id": "act_195",
+      "id": "act_572",
       "type": "typed",
       "items": [
         "lex_hobby",
@@ -317,12 +290,12 @@
       ]
     },
     {
-      "id": "act_196",
+      "id": "act_573",
       "type": "pron-record",
       "focusId": "snd_r"
     },
     {
-      "id": "act_197",
+      "id": "act_574",
       "type": "odd-one-out",
       "groups": [
         {
@@ -336,12 +309,12 @@
       ]
     },
     {
-      "id": "act_198",
+      "id": "act_575",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_199",
+      "id": "act_576",
       "type": "review",
       "items": [
         "lex_food",

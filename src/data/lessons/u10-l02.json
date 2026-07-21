@@ -12,36 +12,21 @@
   },
   "estimatedMinutes": 17,
   "newProductiveItems": [
-    "lex_hotel",
-    "lex_key",
     "lex_problem",
+    "lex_excuse_me",
     "lex_doctor",
     "lex_nurse",
     "lex_hospital",
     "lex_medicine",
     "lex_ill",
-    "lex_sick",
-    "lex_pain",
-    "lex_better",
-    "lex_rest",
-    "lex_hurt",
-    "lex_pharmacy",
-    "lex_fill",
-    "lex_break",
-    "lex_comfortable"
+    "lex_sick"
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_serv_checkin",
-    "chunk_sv_checkin",
-    "chunk_sv_roomproblem",
-    "chunk_sv_whatstime_bf",
-    "chunk_pm_doyoumind",
-    "chunk_he_notwell",
-    "chunk_he_headache",
-    "chunk_he_medicine",
-    "chunk_he_doctor",
-    "chunk_he_getwell"
+    "chunk_serv_howmuch",
+    "chunk_serv_excuse",
+    "chunk_sm_haveniceday",
+    "chunk_sv_tablefor"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -50,78 +35,47 @@
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_252",
+      "id": "act_788",
       "type": "intro",
       "items": [
-        "lex_hotel",
-        "lex_key",
         "lex_problem",
+        "lex_excuse_me",
         "lex_doctor",
         "lex_nurse",
         "lex_hospital",
         "lex_medicine",
-        "lex_ill"
+        "lex_ill",
+        "lex_sick"
       ]
     },
     {
-      "id": "act_253",
+      "id": "act_789",
       "type": "listen-choose",
       "items": [
-        "lex_hotel",
-        "lex_key",
         "lex_problem",
+        "lex_excuse_me",
         "lex_doctor",
         "lex_nurse",
-        "lex_hospital"
+        "lex_hospital",
+        "lex_medicine"
       ]
     },
     {
-      "id": "act_254",
-      "type": "icon-choice",
-      "items": [
-        "lex_hotel",
-        "lex_key",
-        "lex_problem",
-        "lex_pharmacy",
-        "lex_fill"
-      ]
-    },
-    {
-      "id": "act_255",
+      "id": "act_790",
       "type": "match",
       "items": [
-        "lex_hotel",
-        "lex_key",
         "lex_problem",
+        "lex_excuse_me",
         "lex_doctor",
         "lex_nurse",
-        "lex_hospital"
+        "lex_hospital",
+        "lex_medicine"
       ]
     },
     {
-      "id": "act_256",
+      "id": "act_791",
       "type": "gapfill",
       "items": [
-        {
-          "text": "The ___ is near the station.",
-          "answer": "hotel",
-          "options": [
-            "hotel",
-            "key",
-            "reception"
-          ],
-          "hu": "A szálloda az állomás közelében van."
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "key",
-          "options": [
-            "key",
-            "hotel",
-            "reception"
-          ],
-          "hu": "(kulcs)"
-        },
         {
           "text": "This is a ___.",
           "answer": "problem",
@@ -133,6 +87,16 @@
           "hu": "(probléma / gond)"
         },
         {
+          "text": "___.",
+          "answer": "excuse me",
+          "options": [
+            "excuse me",
+            "still water",
+            "sparkling water"
+          ],
+          "hu": "(elnézést)"
+        },
+        {
           "text": "This is a ___.",
           "answer": "doctor",
           "options": [
@@ -141,56 +105,64 @@
             "hospital"
           ],
           "hu": "(orvos)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "nurse",
+          "options": [
+            "nurse",
+            "doctor",
+            "hospital"
+          ],
+          "hu": "(nővér (ápoló))"
         }
       ]
     },
     {
-      "id": "act_257",
+      "id": "act_792",
       "type": "phrase-match",
       "items": [
-        "chunk_serv_checkin",
-        "chunk_sv_checkin",
-        "chunk_sv_roomproblem",
-        "chunk_sv_whatstime_bf",
-        "chunk_pm_doyoumind",
-        "chunk_he_notwell"
+        "chunk_serv_howmuch",
+        "chunk_serv_excuse",
+        "chunk_sm_haveniceday",
+        "chunk_sv_tablefor"
       ]
     },
     {
-      "id": "act_258",
+      "id": "act_793",
       "type": "reorder",
       "sentences": [
         {
-          "en": "I have a reservation.",
-          "hu": "Van foglalásom."
+          "en": "How much is it?",
+          "hu": "Mennyibe kerül?"
         },
         {
-          "en": "I'd like to check in, please.",
-          "hu": "Szeretnék bejelentkezni."
+          "en": "Have a nice day!",
+          "hu": "Szép napot!"
         },
         {
-          "en": "What time is breakfast?",
-          "hu": "Hánykor van a reggeli?"
+          "en": "A table for two, please.",
+          "hu": "Egy asztalt kérnék kettőnek."
         }
       ]
     },
     {
-      "id": "act_259",
+      "id": "act_794",
       "type": "typed",
       "items": [
-        "lex_hotel",
-        "lex_key",
         "lex_problem",
-        "lex_doctor"
+        "lex_excuse_me",
+        "lex_doctor",
+        "lex_nurse"
       ]
     },
     {
-      "id": "act_260",
+      "id": "act_795",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_261",
+      "id": "act_796",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

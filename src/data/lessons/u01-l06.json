@@ -1,0 +1,157 @@
+{
+  "id": "u01-l06",
+  "unitId": "u01",
+  "order": 6,
+  "title": {
+    "en": "Hello, I'm Marta · more (6)",
+    "hu": "Szia, Marta vagyok · több (6)"
+  },
+  "canDo": {
+    "en": "Greet, introduce yourself, ask simple questions",
+    "hu": "Köszönés, bemutatkozás, egyszerű kérdések"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_an",
+    "lex_the",
+    "lex_one",
+    "lex_two",
+    "lex_three",
+    "lex_four",
+    "lex_five",
+    "lex_six"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_long_vowels"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_64",
+      "type": "intro",
+      "items": [
+        "lex_an",
+        "lex_the",
+        "lex_one",
+        "lex_two",
+        "lex_three",
+        "lex_four",
+        "lex_five",
+        "lex_six"
+      ]
+    },
+    {
+      "id": "act_65",
+      "type": "listen-choose",
+      "items": [
+        "lex_an",
+        "lex_the",
+        "lex_one",
+        "lex_two",
+        "lex_three",
+        "lex_four"
+      ]
+    },
+    {
+      "id": "act_66",
+      "type": "icon-choice",
+      "items": [
+        "lex_an",
+        "lex_the",
+        "lex_one",
+        "lex_two",
+        "lex_three"
+      ]
+    },
+    {
+      "id": "act_67",
+      "type": "match",
+      "items": [
+        "lex_an",
+        "lex_the",
+        "lex_one",
+        "lex_two",
+        "lex_three",
+        "lex_four"
+      ]
+    },
+    {
+      "id": "act_68",
+      "type": "spelling-build",
+      "family": "sf_ee",
+      "word": "three"
+    },
+    {
+      "id": "act_69",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is ___ apple.",
+          "answer": "an",
+          "options": [
+            "an",
+            "a",
+            "the"
+          ],
+          "hu": "Ez egy alma."
+        },
+        {
+          "text": "___ coffee is hot.",
+          "answer": "the",
+          "options": [
+            "the",
+            "a",
+            "an"
+          ],
+          "hu": "A kávé forró."
+        },
+        {
+          "text": "I have ___ sister.",
+          "answer": "one",
+          "options": [
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "Egy nővérem van."
+        },
+        {
+          "text": "___ coffees, please.",
+          "answer": "two",
+          "options": [
+            "two",
+            "one",
+            "three"
+          ],
+          "hu": "Két kávét kérek."
+        }
+      ]
+    },
+    {
+      "id": "act_70",
+      "type": "typed",
+      "items": [
+        "lex_an",
+        "lex_the",
+        "lex_one",
+        "lex_two"
+      ]
+    },
+    {
+      "id": "act_71",
+      "type": "pron-record",
+      "focusId": "snd_long_vowels"
+    },
+    {
+      "id": "act_72",
+      "type": "minimal-pair",
+      "focusId": "snd_long_vowels"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "u15-l03",
+  "unitId": "u15",
+  "order": 3,
+  "title": {
+    "en": "On the plane & arrival · more (3)",
+    "hu": "A repülőn és érkezés · több (3)"
+  },
+  "canDo": {
+    "en": "Ask for help and stay calm on the plane",
+    "hu": "Segítségkérés és nyugalom a repülőn"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_drop",
+    "lex_sleepy"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_fl_firsttime",
+    "chunk_fl_helpcalm",
+    "chunk_fl_needanything",
+    "chunk_fe_worried",
+    "chunk_fl_thankyou",
+    "chunk_fl_couldyourepeat"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_chunking"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_986",
+      "type": "intro",
+      "items": [
+        "lex_drop",
+        "lex_sleepy"
+      ]
+    },
+    {
+      "id": "act_987",
+      "type": "listen-choose",
+      "items": [
+        "lex_drop",
+        "lex_sleepy"
+      ]
+    },
+    {
+      "id": "act_988",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "drop",
+          "options": [
+            "drop",
+            "work",
+            "get up"
+          ],
+          "hu": "(leejteni)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "sleepy",
+          "options": [
+            "sleepy",
+            "happy",
+            "afraid"
+          ],
+          "hu": "(álmos)"
+        }
+      ]
+    },
+    {
+      "id": "act_989",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fl_firsttime",
+        "chunk_fl_helpcalm",
+        "chunk_fl_needanything",
+        "chunk_fe_worried",
+        "chunk_fl_thankyou",
+        "chunk_fl_couldyourepeat"
+      ]
+    },
+    {
+      "id": "act_990",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm okay now, thank you.",
+          "hu": "Most már jól vagyok, köszönöm."
+        },
+        {
+          "en": "I'm a little worried.",
+          "hu": "Kicsit aggódom."
+        },
+        {
+          "en": "Thank you, that's very kind.",
+          "hu": "Köszönöm, nagyon kedves."
+        }
+      ]
+    },
+    {
+      "id": "act_991",
+      "type": "typed",
+      "items": [
+        "lex_drop",
+        "lex_sleepy"
+      ]
+    },
+    {
+      "id": "act_992",
+      "type": "pron-record",
+      "focusId": "str_chunking"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

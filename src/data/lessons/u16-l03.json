@@ -1,0 +1,161 @@
+{
+  "id": "u16-l03",
+  "unitId": "u16",
+  "order": 3,
+  "title": {
+    "en": "Family occasions · more (3)",
+    "hu": "Családi alkalmak · több (3)"
+  },
+  "canDo": {
+    "en": "Join a family conversation",
+    "hu": "Bekapcsolódni a családi beszélgetésbe"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_laugh",
+    "lex_invite",
+    "lex_lucky"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_of_wouldyoulike",
+    "chunk_of_letme",
+    "chunk_th_kind",
+    "chunk_ev_comingover",
+    "chunk_ev_happybday",
+    "chunk_ev_merryxmas",
+    "chunk_ev_cheers",
+    "chunk_ev_thanksforcoming",
+    "chunk_fu_hopetosee",
+    "chunk_ev_soproud",
+    "chunk_ev_comein",
+    "chunk_fd_cheers2",
+    "chunk_ev_wishyou"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_sentence"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_1015",
+      "type": "intro",
+      "items": [
+        "lex_laugh",
+        "lex_invite",
+        "lex_lucky"
+      ]
+    },
+    {
+      "id": "act_1016",
+      "type": "listen-choose",
+      "items": [
+        "lex_laugh",
+        "lex_invite",
+        "lex_lucky"
+      ]
+    },
+    {
+      "id": "act_1017",
+      "type": "icon-choice",
+      "items": [
+        "lex_laugh",
+        "lex_invite",
+        "lex_lucky"
+      ]
+    },
+    {
+      "id": "act_1018",
+      "type": "match",
+      "items": [
+        "lex_laugh",
+        "lex_invite",
+        "lex_lucky"
+      ]
+    },
+    {
+      "id": "act_1019",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "laugh",
+          "options": [
+            "laugh",
+            "feel",
+            "smile"
+          ],
+          "hu": "(nevetni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "invite",
+          "options": [
+            "invite",
+            "have",
+            "celebrate"
+          ],
+          "hu": "(meghívni)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "lucky",
+          "options": [
+            "lucky",
+            "happy",
+            "afraid"
+          ],
+          "hu": "(szerencsés)"
+        }
+      ]
+    },
+    {
+      "id": "act_1020",
+      "type": "phrase-match",
+      "items": [
+        "chunk_of_wouldyoulike",
+        "chunk_of_letme",
+        "chunk_th_kind",
+        "chunk_ev_comingover",
+        "chunk_ev_happybday",
+        "chunk_ev_merryxmas"
+      ]
+    },
+    {
+      "id": "act_1021",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Would you like some coffee?",
+          "hu": "Kérsz egy kis kávét?"
+        },
+        {
+          "en": "Let me help you.",
+          "hu": "Hadd segítsek."
+        },
+        {
+          "en": "That's very kind of you.",
+          "hu": "Nagyon kedves tőled."
+        }
+      ]
+    },
+    {
+      "id": "act_1022",
+      "type": "typed",
+      "items": [
+        "lex_laugh",
+        "lex_invite",
+        "lex_lucky"
+      ]
+    },
+    {
+      "id": "act_1023",
+      "type": "pron-record",
+      "focusId": "str_sentence"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

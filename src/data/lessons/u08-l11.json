@@ -1,0 +1,48 @@
+{
+  "id": "u08-l11",
+  "unitId": "u08",
+  "order": 11,
+  "title": {
+    "en": "Hobbies, books & opinions · more (11)",
+    "hu": "Hobbik, könyvek, vélemények · több (11)"
+  },
+  "canDo": {
+    "en": "Talk about hobbies and give an opinion",
+    "hu": "Hobbikról beszélni, véleményt mondani"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_modern"
+  ],
+  "reviewItems": [],
+  "chunks": [],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "snd_r"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_662",
+      "type": "intro",
+      "items": [
+        "lex_modern"
+      ]
+    },
+    {
+      "id": "act_663",
+      "type": "typed",
+      "items": [
+        "lex_modern"
+      ]
+    },
+    {
+      "id": "act_664",
+      "type": "pron-record",
+      "focusId": "snd_r"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}

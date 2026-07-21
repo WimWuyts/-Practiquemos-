@@ -1,0 +1,179 @@
+{
+  "id": "u16-l02",
+  "unitId": "u16",
+  "order": 2,
+  "title": {
+    "en": "Family occasions · more (2)",
+    "hu": "Családi alkalmak · több (2)"
+  },
+  "canDo": {
+    "en": "Join a family conversation",
+    "hu": "Bekapcsolódni a családi beszélgetésbe"
+  },
+  "estimatedMinutes": 17,
+  "newProductiveItems": [
+    "lex_welcome_back",
+    "lex_good_luck",
+    "lex_congratulations",
+    "lex_group",
+    "lex_party",
+    "lex_present",
+    "lex_birthday",
+    "lex_smile"
+  ],
+  "reviewItems": [],
+  "chunks": [
+    "chunk_fe_happy",
+    "chunk_fd_delicious",
+    "chunk_pm_mayisit",
+    "chunk_pm_canyoupass"
+  ],
+  "grammarCards": [],
+  "pronunciationFocus": [
+    "str_sentence"
+  ],
+  "conversationId": null,
+  "activities": [
+    {
+      "id": "act_1006",
+      "type": "intro",
+      "items": [
+        "lex_welcome_back",
+        "lex_good_luck",
+        "lex_congratulations",
+        "lex_group",
+        "lex_party",
+        "lex_present",
+        "lex_birthday",
+        "lex_smile"
+      ]
+    },
+    {
+      "id": "act_1007",
+      "type": "listen-choose",
+      "items": [
+        "lex_welcome_back",
+        "lex_good_luck",
+        "lex_congratulations",
+        "lex_group",
+        "lex_party",
+        "lex_present"
+      ]
+    },
+    {
+      "id": "act_1008",
+      "type": "icon-choice",
+      "items": [
+        "lex_welcome_back",
+        "lex_good_luck",
+        "lex_congratulations",
+        "lex_group",
+        "lex_party"
+      ]
+    },
+    {
+      "id": "act_1009",
+      "type": "match",
+      "items": [
+        "lex_welcome_back",
+        "lex_good_luck",
+        "lex_congratulations",
+        "lex_group",
+        "lex_party",
+        "lex_present"
+      ]
+    },
+    {
+      "id": "act_1010",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___.",
+          "answer": "welcome back",
+          "options": [
+            "welcome back",
+            "hello",
+            "hi"
+          ],
+          "hu": "(üdv újra)"
+        },
+        {
+          "text": "___.",
+          "answer": "good luck",
+          "options": [
+            "good luck",
+            "of course",
+            "how long"
+          ],
+          "hu": "(sok sikert)"
+        },
+        {
+          "text": "___.",
+          "answer": "congratulations",
+          "options": [
+            "congratulations",
+            "toast (drink)",
+            "in-laws"
+          ],
+          "hu": "(gratulálok)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "group",
+          "options": [
+            "group",
+            "moment",
+            "thing"
+          ],
+          "hu": "(csoport)"
+        }
+      ]
+    },
+    {
+      "id": "act_1011",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fe_happy",
+        "chunk_fd_delicious",
+        "chunk_pm_mayisit",
+        "chunk_pm_canyoupass"
+      ]
+    },
+    {
+      "id": "act_1012",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm so happy to see you.",
+          "hu": "Nagyon örülök, hogy látlak."
+        },
+        {
+          "en": "This is delicious!",
+          "hu": "Ez finom!"
+        },
+        {
+          "en": "May I sit here?",
+          "hu": "Leülhetek ide?"
+        }
+      ]
+    },
+    {
+      "id": "act_1013",
+      "type": "typed",
+      "items": [
+        "lex_welcome_back",
+        "lex_good_luck",
+        "lex_congratulations",
+        "lex_group"
+      ]
+    },
+    {
+      "id": "act_1014",
+      "type": "pron-record",
+      "focusId": "str_sentence"
+    }
+  ],
+  "completionRule": {
+    "minActivities": 1
+  }
+}
