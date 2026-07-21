@@ -1,7 +1,7 @@
 # Project state
 
 **Project:** Mirella tante — English with Marta
-**Version:** 1.3.0
+**Version:** 1.4.0
 **Status:** ✅ Stable core-first release. All release-blocking gates pass.
 **Date:** 2026-07
 

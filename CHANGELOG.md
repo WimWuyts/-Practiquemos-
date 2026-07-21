@@ -2,6 +2,16 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.4.0] — 2026-07 — Reference addendum, monthly gift system, Hungarian polish
+
+### Added
+- **In-app "Word list & grammar" screen** (new nav entry): every word grouped by theme (English–Hungarian, with a listen button), all grammar cards, and all useful phrases — always current because it reads live from the data.
+- **Auto-generated addendum** `docs/VOCABULARY_AND_GRAMMAR_ADDENDUM.md` — the full vocabulary + grammar + phrases, **regenerated on every build** (so it updates whenever a new monthly lesson is added).
+- **Monthly gift system:** `docs/MONTHLY_LESSON_PLAN.md` with 12 lesson ideas tied to Marta's year (family events, seasons, travel, teaching); the Home screen surfaces available monthly lessons, and `month-01` is live as a worked example.
+
+### Changed
+- **Hungarian polish** pass on the most visible UI strings (native sign-off still recommended; all Hungarian remains centralised in `HUNGARIAN_REVIEW_QUEUE.csv`).
+
 ## [1.3.0] — 2026-07 — "Everything green": full contract coverage
 
 Delivered in three waves; validator passes with **0 errors and 0 warnings**.

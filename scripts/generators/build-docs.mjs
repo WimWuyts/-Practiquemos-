@@ -73,5 +73,38 @@ Object.keys(themes).sort().forEach((t) => md += `| ${t} | ${themes[t].p} | ${the
 md += `\n## Distractor / spelling metadata\n\n- All productive items carry 2–3 distractors for recognition tasks.\n- Spelling-family metadata assigned where a word belongs to a taught family (${pron.spellingFamilies.length} families).\n`;
 writeFileSync(join(DOCS, "LEXICON_COVERAGE_REPORT.md"), md);
 
-console.log("DOCS BUILT: CURRICULUM_MATRIX, GRAMMAR_SPIRAL_MATRIX, HUNGARIAN_REVIEW_QUEUE, LEXICON_COVERAGE_REPORT");
+// ---- VOCABULARY_AND_GRAMMAR_ADDENDUM.md (auto-updates on every build) ----
+const THEME_LABEL = {
+  greetings: "Greetings", identity: "About me", family: "Family", countries: "Countries & languages",
+  "daily-life": "Daily life", home: "Home", food: "Food & drink", shopping: "Shopping", time: "Time & dates",
+  weather: "Weather & nature", plans: "Plans", phone: "Phone & calls", hobbies: "Hobbies & animals",
+  opinions: "Opinions", town: "Around town", transport: "Transport", services: "Services", hotel: "Hotel",
+  teaching: "Teaching online", technology: "Technology", past: "The past", travel: "Travel", airport: "Airport",
+  flying: "Flying", feelings: "Feelings", numbers: "Numbers", conversation: "Conversation", colours: "Colours",
+  body: "The body", health: "Health", clothes: "Clothes",
+};
+const byThemeAll = {};
+lexicon.forEach((l) => { (byThemeAll[l.themes[0]] = byThemeAll[l.themes[0]] || []).push(l); });
+let add = `# Addendum — full vocabulary & grammar\n\n`;
+add += `Auto-generated on every build. **This file updates automatically when a new (monthly) lesson is added and the app is rebuilt.**\n\n`;
+add += `- Productive words: ${lexicon.filter((l) => l.status === "productive").length}\n- Receptive items: ${lexicon.filter((l) => l.status === "receptive").length}\n- Chunks / phrases: ${chunks.length}\n- Grammar points: ${grammar.length}\n\n`;
+add += `## Vocabulary by theme\n\n`;
+Object.keys(byThemeAll).sort().forEach((th) => {
+  add += `### ${THEME_LABEL[th] || th} (${byThemeAll[th].length})\n\n`;
+  add += `| English | Hungarian | Type | Level | Status |\n|---|---|---|---|---|\n`;
+  byThemeAll[th].slice().sort((a, b) => a.headword.localeCompare(b.headword)).forEach((l) => {
+    add += `| ${l.headword} | ${l.hu} | ${l.partOfSpeech} | ${l.level} | ${l.status} |\n`;
+  });
+  add += `\n`;
+});
+add += `## Grammar\n\n`;
+grammar.forEach((g) => {
+  add += `### ${g.title.en} · ${g.title.hu}\n\n${g.explanation.en}\n\n_${g.explanation.hu}_\n\n`;
+  add += g.examples.map((e) => `- ${e.en} — ${e.hu}`).join("\n") + `\n\n`;
+});
+add += `## Useful phrases (chunks)\n\n| English | Hungarian | Intention |\n|---|---|---|\n`;
+chunks.forEach((c) => { add += `| ${c.en} | ${c.hu} | ${c.intention} |\n`; });
+writeFileSync(join(DOCS, "VOCABULARY_AND_GRAMMAR_ADDENDUM.md"), add);
+
+console.log("DOCS BUILT: CURRICULUM_MATRIX, GRAMMAR_SPIRAL_MATRIX, HUNGARIAN_REVIEW_QUEUE, LEXICON_COVERAGE_REPORT, VOCABULARY_AND_GRAMMAR_ADDENDUM");
 console.log("HU review queue rows:", hq.length - 1);

@@ -7,6 +7,7 @@ window.M = window.M || {};
   var NAV = [
     ["home", "nav.home", "home"], ["lessons", "nav.lessons", "book"],
     ["conversations", "nav.conversations", "chat"], ["practice", "nav.practice", "star"],
+    ["reference", "nav.reference", "list"],
     ["settings", "nav.settings", "gear"], ["help", "nav.help", "help"],
   ];
 

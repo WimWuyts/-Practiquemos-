@@ -8,8 +8,17 @@ ui_string,nav.practice,interface,Practice,Gyakorlás,yes
 ui_string,nav.settings,interface,Settings,Beállítások,yes
 ui_string,nav.help,interface,Help,Segítség,yes
 ui_string,nav.back,interface,Back,Vissza,yes
+ui_string,nav.reference,interface,Word list,Szólista,yes
+ui_string,ref.title,interface,Word list & grammar,Szólista és nyelvtan,yes
+ui_string,ref.intro,interface,"Everything you have learned, in one place.","Minden, amit tanultál, egy helyen.",yes
+ui_string,ref.vocab,interface,Vocabulary,Szókincs,yes
+ui_string,ref.grammar,interface,Grammar,Nyelvtan,yes
+ui_string,ref.chunks,interface,Useful phrases,Hasznos kifejezések,yes
+ui_string,ref.words,interface,words,szó,yes
+ui_string,ref.showhu,interface,Show Hungarian,Magyar megjelenítése,yes
+ui_string,ref.count,interface,items,elem,yes
 ui_string,home.welcome,interface,"Welcome back, Marta","Üdv újra, Marta",yes
-ui_string,home.continue,interface,Continue learning,Tanulás folytatása,yes
+ui_string,home.continue,interface,Continue learning,Folytatom a tanulást,yes
 ui_string,home.recommended,interface,Recommended for you,Neked ajánljuk,yes
 ui_string,home.start,interface,Start,Kezdés,yes
 ui_string,home.progress,interface,Your progress,A haladásod,yes
@@ -37,7 +46,7 @@ ui_string,lesson.review,interface,Review,Ismétlés,yes
 ui_string,lesson.grammar,interface,Grammar,Nyelvtan,yes
 ui_string,lesson.pron,interface,Sounds,Hangok,yes
 ui_string,lesson.complete,interface,Lesson complete,Lecke kész,yes
-ui_string,lesson.complete.msg,interface,"Well done, Marta. You practised English today.","Ügyes vagy, Marta. Ma gyakoroltad az angolt.",yes
+ui_string,lesson.complete.msg,interface,"Well done, Marta. You practised English today.","Ügyes vagy, Marta! Ma szépen gyakoroltad az angolt.",yes
 ui_string,act.intro.prompt,interface,"Look, listen and learn these words.","Nézd, hallgasd és tanuld meg ezeket a szavakat.",yes
 ui_string,act.listenchoose.prompt,interface,Listen and choose the word you hear.,"Hallgasd meg, és válaszd ki a hallott szót.",yes
 ui_string,act.match.prompt,interface,Match the English word to its meaning.,Párosítsd az angol szót a jelentésével.,yes
@@ -60,9 +69,9 @@ ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
 ui_string,conv.support.choose,interface,Choose,Válassz,yes
 ui_string,conv.support.build,interface,Build,Építsd,yes
 ui_string,conv.support.type,interface,Say or type,Mondd vagy írd,yes
-ui_string,conv.your_turn,interface,Your turn,Te jössz,yes
+ui_string,conv.your_turn,interface,Your turn,Most te jössz,yes
 ui_string,conv.type_here,interface,Type your answer here,Írd ide a válaszodat,yes
-ui_string,conv.repair,interface,"Sorry, I didn't understand. Would you like to try again?","Elnézést, nem értettem. Szeretnéd újra?",yes
+ui_string,conv.repair,interface,"Sorry, I didn't understand. Would you like to try again?","Elnézést, ezt nem értettem. Szeretnéd újra megpróbálni?",yes
 ui_string,conv.repair.shorter,interface,You can say it in a shorter way.,Mondhatod rövidebben is.,yes
 ui_string,conv.start,interface,Start conversation,Beszélgetés indítása,yes
 ui_string,conv.again,interface,Talk again,Beszéljünk újra,yes
@@ -77,7 +86,7 @@ ui_string,settings.title,interface,Settings,Beállítások,yes
 ui_string,settings.language,interface,Help language,Segítség nyelve,yes
 ui_string,settings.voice,interface,Voice,Hang,yes
 ui_string,settings.voice.test,interface,Test voice,Hang tesztelése,yes
-ui_string,settings.voice.none,interface,No British voice found. The app will use another voice.,Nincs brit hang. Az app másik hangot használ.,yes
+ui_string,settings.voice.none,interface,No British voice found. The app will use another voice.,Nem található brit hang. Az alkalmazás másik angol hangot használ.,yes
 ui_string,settings.text,interface,Text size,Betűméret,yes
 ui_string,settings.motion,interface,Reduce movement,Kevesebb mozgás,yes
 ui_string,settings.help_mode,interface,Hungarian help,Magyar segítség,yes
@@ -91,17 +100,17 @@ ui_string,backup.import,interface,Restore a backup,Biztonsági mentés visszaál
 ui_string,backup.reset,interface,Reset all progress,Minden haladás törlése,yes
 ui_string,backup.reset.confirm,interface,This will erase your progress. Are you sure?,Ez törli a haladásodat. Biztos vagy benne?,yes
 ui_string,backup.exported,interface,Backup saved. Keep the file in a safe place.,A mentés elkészült. Tedd biztos helyre a fájlt.,yes
-ui_string,backup.imported,interface,Backup restored. Welcome back!,A mentés visszaállt. Üdv újra!,yes
+ui_string,backup.imported,interface,Backup restored. Welcome back!,"A mentés visszaállt. Üdv újra, Marta!",yes
 ui_string,backup.invalid,interface,This file is not a valid backup. Nothing was changed.,Ez a fájl nem érvényes mentés. Semmi nem változott.,yes
 ui_string,cap.tts.ok,interface,Sound is ready.,A hang készen áll.,yes
 ui_string,cap.tts.no,interface,Sound may not work in this browser.,"Lehet, hogy a hang nem működik ebben a böngészőben.",yes
 ui_string,cap.mic.ok,interface,Microphone is ready when you need it.,"A mikrofon készen áll, ha kell.",yes
-ui_string,cap.mic.no,interface,"Recording may not work here, but you can still learn.","Lehet, hogy a felvétel nem működik, de tanulni tudsz.",yes
+ui_string,cap.mic.no,interface,"Recording may not work here, but you can still learn.","Lehet, hogy a felvétel itt nem működik, de a tanulás akkor is megy.",yes
 ui_string,cap.rec.experimental,interface,Speaking check is experimental and optional.,A kiejtés-ellenőrzés kísérleti és nem kötelező.,yes
 ui_string,cap.storage.ok,interface,Your progress will be saved on this computer.,A haladásod ezen a gépen mentődik.,yes
 ui_string,cap.storage.no,interface,Saving may not work here. Please make backups often.,"Lehet, hogy a mentés nem működik itt. Készíts gyakran biztonsági mentést.",yes
 ui_string,diag.title,interface,A friendly start,Barátságos kezdés,yes
-ui_string,diag.intro,interface,This is not a test. It helps us find a good place to start.,Ez nem teszt. Segít megtalálni a jó kezdőpontot.,yes
+ui_string,diag.intro,interface,This is not a test. It helps us find a good place to start.,Ez nem vizsga. Csak segít megtalálni a jó kezdőpontot.,yes
 ui_string,diag.q.audio,interface,Can you hear this word clearly?,Tisztán hallod ezt a szót?,yes
 ui_string,diag.q.know,interface,Do you know this word?,Ismered ezt a szót?,yes
 ui_string,diag.yes,interface,Yes,Igen,yes

@@ -348,6 +348,67 @@ window.M = window.M || {};
     });
   }
 
+  // ---------------- REFERENCE (addendum: all vocabulary & grammar, always current) ----------------
+  var THEME_LABEL = {
+    greetings: "Greetings", identity: "About me", family: "Family", countries: "Countries & languages",
+    "daily-life": "Daily life", home: "Home", food: "Food & drink", shopping: "Shopping", time: "Time & dates",
+    weather: "Weather & nature", plans: "Plans", phone: "Phone & calls", hobbies: "Hobbies & animals",
+    opinions: "Opinions", town: "Around town", transport: "Transport", services: "Services", hotel: "Hotel",
+    teaching: "Teaching online", technology: "Technology", past: "The past", travel: "Travel", airport: "Airport",
+    flying: "Flying", feelings: "Feelings", numbers: "Numbers", conversation: "Conversation", colours: "Colours",
+    body: "The body", health: "Health", clothes: "Clothes",
+  };
+  function reference(mount) {
+    mount.appendChild(el("h1", { text: M.i18n.label("ref.title") }));
+    mount.appendChild(el("p", { class: "muted", text: M.i18n.t("ref.intro") + (M.i18n.helpAvailable() ? " · " + M.i18n.hu("ref.intro") : "") }));
+    // Vocabulary by theme (accordion)
+    var byTheme = {};
+    M.data.lexicon.forEach(function (l) { (byTheme[l.themes[0]] = byTheme[l.themes[0]] || []).push(l); });
+    var vocabCard = el("div", { class: "card" }, [el("h2", { text: M.i18n.t("ref.vocab") + " (" + M.data.lexicon.length + " " + M.i18n.t("ref.count") + ")" })]);
+    var list = el("ul", { class: "unit-list" });
+    Object.keys(byTheme).sort().forEach(function (th) {
+      var items = byTheme[th].slice().sort(function (a, b) { return a.headword.localeCompare(b.headword); });
+      var body = el("div", { class: "lessons hidden" });
+      items.forEach(function (l) {
+        body.appendChild(el("div", { class: "setrow", style: "padding:.4rem 0" }, [
+          el("span", { style: "flex:1" }, [el("strong", { text: l.headword }), el("span", { class: "muted", text: "  " + l.hu })]),
+          el("button", { class: "btn ghost small", "aria-label": "Listen: " + l.headword, onclick: (function (w) { return function () { M.audio.speak(w); }; })(l.tts) }, [el("span", { html: dom.icon("speaker") })]),
+        ]));
+      });
+      var header = el("button", { "aria-expanded": "false" }, [
+        el("span", { html: dom.icon("list") }),
+        el("span", { style: "flex:1" }, [THEME_LABEL[th] || th]),
+        el("span", { class: "pill", text: items.length + " " + M.i18n.t("ref.words") }),
+      ]);
+      header.addEventListener("click", function () { var h = body.classList.toggle("hidden"); header.setAttribute("aria-expanded", String(!h)); });
+      list.appendChild(el("li", { class: "unit" }, [header, body]));
+    });
+    vocabCard.appendChild(list);
+    mount.appendChild(vocabCard);
+    // Grammar
+    var gCard = el("div", { class: "card" }, [el("h2", { text: M.i18n.t("ref.grammar") + " (" + M.data.grammar.length + ")" })]);
+    M.data.grammar.forEach(function (g) {
+      gCard.appendChild(el("div", { class: "grammarbox", style: "margin:.5rem 0" }, [
+        el("div", { class: "lbl", text: g.title.en + (M.i18n.helpAvailable() ? " · " + g.title.hu : "") }),
+        el("div", { class: "eg", text: (g.examples[0] && g.examples[0].en) || "" }),
+        el("div", { class: "muted", text: g.useWhen.en }),
+      ]));
+    });
+    mount.appendChild(gCard);
+    // Useful phrases (chunks)
+    var cCard = el("div", { class: "card" }, [el("h2", { text: M.i18n.t("ref.chunks") + " (" + M.data.chunks.length + ")" })]);
+    var cbody = el("div", { class: "lessons hidden" });
+    M.data.chunks.forEach(function (c) {
+      cbody.appendChild(el("div", { class: "setrow", style: "padding:.4rem 0" }, [
+        el("span", { style: "flex:1" }, [el("strong", { text: c.en }), M.i18n.helpAvailable() ? el("span", { class: "muted", text: "  " + c.hu }) : null]),
+      ]));
+    });
+    var ch = el("button", { class: "btn secondary", "aria-expanded": "false" }, [el("span", { html: dom.icon("chat") }), " " + M.i18n.t("ref.chunks")]);
+    ch.addEventListener("click", function () { var h = cbody.classList.toggle("hidden"); ch.setAttribute("aria-expanded", String(!h)); });
+    cCard.appendChild(ch); cCard.appendChild(cbody);
+    mount.appendChild(cCard);
+  }
+
   // ---------------- DIAGNOSTIC screen ----------------
   function diagnostic(mount) {
     var stage = el("div", { class: "card stage" });
@@ -359,7 +420,7 @@ window.M = window.M || {};
     init: init,
     screens: {
       home: home, lessons: lessons, conversations: conversations, practice: practice,
-      settings: settings, help: help, review: reviewScreen, diagnostic: diagnostic,
+      reference: reference, settings: settings, help: help, review: reviewScreen, diagnostic: diagnostic,
     },
     lessonRunner: lessonRunner, talk: talk,
     avatar: avatar,
