@@ -16,7 +16,7 @@ export const GRAMMAR_PRACTICE = {
     { kind: "say", en: "I am a little nervous.", hu: "Kicsit ideges vagyok." },
   ],
   gr_pronouns: [
-    { kind: "form", text: "Endika is from Spain. ___ is very kind.", answer: "He", options: ["He", "She", "They"], hu: "Endika Spanyolországból jött. Nagyon kedves." },
+    { kind: "form", text: "Endika is from Spain. ___ is very kind.", answer: "He", options: ["He", "She", "They"], hu: "Endika Spanyolországból származik. Nagyon kedves." },
     { kind: "form", text: "Kira and Endika live in Denmark. ___ are happy.", answer: "They", options: ["We", "They", "She"], hu: "Kira és Endika Dániában él. Boldogok." },
     { kind: "fix", tokens: ["Kira", "is", "kind.", "Her", "is", "my", "niece"], wrong: 3, fix: "She", hu: "Kira kedves. Ő az unokahúgom." },
     { kind: "say", en: "She is my niece.", hu: "Ő az unokahúgom." },
@@ -40,7 +40,7 @@ export const GRAMMAR_PRACTICE = {
     { kind: "say", en: "Her name is Kira.", hu: "Az ő neve Kira." },
   ],
   gr_poss_s: [
-    { kind: "type", text: "This is Marta___ house.", accepted: ["'s", "s"], hint: { en: "add 's to the name", hu: "tegyél 's-t a név után" }, hu: "Ez Marta háza." },
+    { kind: "type", text: "This is Marta___ house.", accepted: ["'s"], hint: { en: "add 's to the name", hu: "tedd a név után: 's" }, hu: "Ez Marta háza." },
     { kind: "form", text: "Endika is ___ boyfriend.", answer: "Kira's", options: ["Kira's", "Kiras", "Kira"], hu: "Endika Kira barátja." },
     { kind: "fix", tokens: ["That", "is", "my", "sisters", "car"], wrong: 3, fix: "sister's", hu: "Az a nővérem autója." },
     { kind: "say", en: "This is my niece's boyfriend.", hu: "Ez az unokahúgom barátja." },
@@ -88,7 +88,7 @@ export const GRAMMAR_PRACTICE = {
     { kind: "say", en: "Can I have some water, please?", hu: "Kaphatnék egy kis vizet, kérem?" },
   ],
   gr_wouldlike: [
-    { kind: "type", text: "I ___ a coffee, please.", accepted: ["would like", "'d like", "would like to"], hint: { en: "polite: I'd like", hu: "udvarias: I'd like" }, hu: "Egy kávét kérek." },
+    { kind: "type", text: "I ___ a coffee, please.", accepted: ["would like", "'d like"], hint: { en: "polite: I'd like", hu: "udvarias: I'd like" }, hu: "Egy kávét kérek." },
     { kind: "form", text: "___ you like some tea?", answer: "Would", options: ["Would", "Do", "Are"], hu: "Kérsz egy kis teát?" },
     { kind: "build", en: "I would like to visit Kira.", hu: "Szeretném meglátogatni Kirát." },
     { kind: "say", en: "I'd like a window seat, please.", hu: "Ablak melletti ülést kérek." },
@@ -107,9 +107,9 @@ export const GRAMMAR_PRACTICE = {
   ],
   gr_presentcont: [
     { kind: "type", text: "Right now I ___ lunch for the family.", accepted: ["am cooking", "'m cooking"], hint: { en: "now → am + -ing", hu: "most → am + -ing" }, hu: "Most ebédet főzök a családnak." },
-    { kind: "form", text: "The children ___ listening to me.", answer: "are", options: ["is", "are", "am"], hu: "A gyerekek hallgatnak engem." },
+    { kind: "form", text: "The children ___ listening to me.", answer: "are", options: ["is", "are", "am"], hu: "A gyerekek engem hallgatnak." },
     { kind: "fix", tokens: ["I", "am", "teach", "now"], wrong: 2, fix: "teaching", hu: "Most tanítok." },
-    { kind: "say", en: "I am waiting at the gate.", hu: "A kapunál várok." },
+    { kind: "say", en: "I am waiting at the gate.", hu: "A beszállókapunál várok." },
   ],
   gr_prepositions_time: [
     { kind: "form", text: "I teach ___ Monday.", answer: "on", options: ["at", "on", "in"], hu: "Hétfőn tanítok." },
@@ -162,7 +162,7 @@ export const GRAMMAR_PRACTICE = {
   gr_comparatives: [
     { kind: "type", text: "Denmark is ___ than Hungary. (big)", accepted: ["bigger"], hint: { en: "short word → -er", hu: "rövid szó → -er" }, hu: "Dánia nagyobb, mint Magyarország." },
     { kind: "form", text: "Prague is ___ beautiful than I remembered.", answer: "more", options: ["more", "most"], hu: "Prága szebb, mint emlékeztem." },
-    { kind: "fix", tokens: ["Today", "is", "more", "warm", "than", "yesterday"], wrong: 2, fix: "warmer", hu: "Ma melegebb van, mint tegnap." },
+    { kind: "fix", tokens: ["Today", "is", "hoter", "than", "yesterday"], wrong: 2, fix: "hotter", hu: "Ma melegebb van, mint tegnap." },
     { kind: "say", en: "My English is better now.", hu: "Az angolom most jobb." },
   ],
   gr_conjunctions: [

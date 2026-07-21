@@ -85,14 +85,14 @@
           "hu": "(Dánia)"
         },
         {
-          "text": "It is very ___.",
+          "text": "Kira speaks ___.",
           "answer": "Danish",
           "options": [
             "Danish",
             "Hungarian",
             "English"
           ],
-          "hu": "(dán)"
+          "hu": "Kira beszél dánul."
         },
         {
           "text": "I like ___.",
@@ -129,7 +129,7 @@
         },
         {
           "id": "lex_danish",
-          "text": "It is very ___.",
+          "text": "Kira speaks ___.",
           "answer": "Danish",
           "accepted": [
             "Danish",
@@ -142,7 +142,7 @@
             "English",
             "Spanish"
           ],
-          "hu": "(dán)"
+          "hu": "Kira beszél dánul."
         },
         {
           "id": "lex_belgium",

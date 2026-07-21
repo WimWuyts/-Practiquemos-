@@ -266,7 +266,7 @@
           "hu": "Mennyi az idő?"
         },
         {
-          "text": "This is a ___.",
+          "text": "This is an ___.",
           "answer": "hour",
           "options": [
             "hour",
@@ -310,7 +310,7 @@
         },
         {
           "id": "lex_hour",
-          "text": "This is a ___.",
+          "text": "This is an ___.",
           "answer": "hour",
           "accepted": [
             "hour",

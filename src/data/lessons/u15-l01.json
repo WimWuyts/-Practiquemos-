@@ -240,7 +240,7 @@
         },
         {
           "id": "lex_scared",
-          "text": "It is very ___.",
+          "text": "I am ___ of flying.",
           "answer": "scared",
           "accepted": [
             "scared",
@@ -253,7 +253,7 @@
             "afraid",
             "nervous"
           ],
-          "hu": "(megijedt / fél)"
+          "hu": "Félek a repüléstől."
         }
       ]
     },

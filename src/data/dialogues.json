@@ -942,8 +942,8 @@
     "id": "dlg_mirella_travel",
     "characterId": "mirella",
     "scene": {
-      "en": "Talking about work travel with Mirella",
-      "hu": "Munkautazásról Mirellával"
+      "en": "Talking about work travel with Rita",
+      "hu": "Munkautazásról Ritával"
     },
     "supportLevels": [
       "choose",

@@ -108,23 +108,6 @@
       "type": "word-fill",
       "items": [
         {
-          "id": "lex_so",
-          "text": "It's late, ___ I go home.",
-          "answer": "so",
-          "accepted": [
-            "so",
-            "so",
-            "so"
-          ],
-          "options": [
-            "so",
-            "and",
-            "but",
-            "because"
-          ],
-          "hu": "Késő van, úgyhogy hazamegyek."
-        },
-        {
           "id": "lex_very",
           "text": "It is ___ nice.",
           "answer": "very",
@@ -176,6 +159,24 @@
             "city"
           ],
           "hu": "(sofőr)"
+        },
+        {
+          "id": "lex_engineer",
+          "text": "This is an ___.",
+          "answer": "engineer",
+          "accepted": [
+            "engineer",
+            "engineer",
+            "engineers",
+            "engineer"
+          ],
+          "options": [
+            "engineer",
+            "name",
+            "country",
+            "city"
+          ],
+          "hu": "(mérnök)"
         }
       ]
     },

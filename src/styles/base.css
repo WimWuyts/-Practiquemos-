@@ -90,7 +90,7 @@ button{font-family:inherit}
 .btn.secondary{background:var(--surface);color:var(--accent);}
 .btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
 .btn.wide{width:100%}
-.btn.small{min-height:40px;padding:.4rem .9rem;font-size:.92rem}
+.btn.small{min-height:44px;padding:.5rem .95rem;font-size:.92rem}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .btn-row{display:flex;flex-wrap:wrap;gap:.7rem;margin:1rem 0}
 

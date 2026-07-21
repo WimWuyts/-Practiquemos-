@@ -208,12 +208,11 @@
         {
           "text": "This is Marta___ house.",
           "accepted": [
-            "'s",
-            "s"
+            "'s"
           ],
           "hint": {
             "en": "add 's to the name",
-            "hu": "tegyél 's-t a név után"
+            "hu": "tedd a név után: 's"
           },
           "hu": "Ez Marta háza."
         }
@@ -352,7 +351,7 @@
         },
         {
           "id": "lex_mum",
-          "text": "This is a ___.",
+          "text": "I call my ___ every week.",
           "answer": "mum",
           "accepted": [
             "mum",
@@ -365,7 +364,7 @@
             "mother",
             "father"
           ],
-          "hu": "(anyu)"
+          "hu": "Minden héten felhívom anyát."
         }
       ]
     },

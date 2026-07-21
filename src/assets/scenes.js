@@ -56,12 +56,31 @@ window.M = window.M || {};
       '<circle cx="320" cy="40" r="20" fill="#f2c46b" opacity=".55"/>' +
       '<path d="M60 58 l120 -14 l40 -26 l10 4 l-18 30 l40 6 v6 l-70 -2 l-24 26 l-9 -3 l6 -24 z" fill="#fbfbfd" stroke="#bcd0e0" stroke-width="1.5"/>' +
       '<ellipse cx="120" cy="92" rx="52" ry="18" fill="#f2f6fa"/><ellipse cx="290" cy="96" rx="60" ry="20" fill="#f2f6fa"/>'),
+    // food / table — a plate, cutlery and a warm cup, from above
+    food: band("sc_fd", "#f5eee2", "#efe4cf",
+      '<ellipse cx="200" cy="66" rx="150" ry="34" fill="#e9dcc4"/>' +
+      '<circle cx="200" cy="64" r="30" fill="#faf5ec"/><circle cx="200" cy="64" r="18" fill="#e7cfa0"/>' +
+      '<rect x="150" y="48" width="4" height="34" rx="2" fill="#c7a05a"/>' +
+      '<rect x="246" y="48" width="4" height="34" rx="2" fill="#c7a05a"/>' +
+      '<circle cx="300" cy="60" r="15" fill="#faf5ec"/><circle cx="300" cy="60" r="8" fill="#a85436"/>'),
+    // home interior — window with warm light + a plant
+    home: band("sc_hm", "#eef1ea", "#e3e8dd",
+      '<rect x="150" y="26" width="100" height="70" rx="4" fill="#cfe0d9"/>' +
+      '<rect x="160" y="36" width="80" height="50" rx="2" fill="#f6efe0"/><path d="M200 36 v50 M160 61 h80" stroke="#cfe0d9" stroke-width="3"/>' +
+      '<circle cx="315" cy="46" r="14" fill="#f2c46b" opacity=".7"/>' +
+      '<path d="M92 96 q-6 -30 8 -40 q18 8 8 40 z" fill="#8fb98f"/><rect x="94" y="94" width="12" height="12" fill="#c8842b"/>'),
+    // phone / video call — a phone with a friendly face
+    phone: band("sc_ph", "#e9f2f1", "#dcece9",
+      '<rect x="158" y="24" width="84" height="74" rx="9" fill="#2f6f66"/>' +
+      '<rect x="166" y="32" width="68" height="58" rx="4" fill="#f4ede0"/>' +
+      '<circle cx="200" cy="54" r="11" fill="#c8842b"/><path d="M182 78 q18 -14 36 0" fill="none" stroke="#a85436" stroke-width="3"/>' +
+      '<circle cx="300" cy="52" r="9" fill="#e7b6a0"/><circle cx="110" cy="60" r="7" fill="#8fb98f"/>'),
   };
 
   var MAP = {
-    u00: "welcome", u01: "greeting", u02: "family", u03: "travel", u04: "outdoors",
-    u05: "outdoors", u06: "outdoors", u07: "greeting", u08: "online", u09: "travel",
-    u10: "sky", u11: "online", u12: "online", u13: "travel", u14: "sky",
+    u00: "welcome", u01: "greeting", u02: "family", u03: "travel", u04: "home",
+    u05: "food", u06: "outdoors", u07: "phone", u08: "outdoors", u09: "travel",
+    u10: "food", u11: "online", u12: "welcome", u13: "travel", u14: "sky",
     u15: "sky", u16: "family",
   };
 

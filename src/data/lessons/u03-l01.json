@@ -164,14 +164,14 @@
           "hu": "Magyarországról jöttem."
         },
         {
-          "text": "It is very ___.",
+          "text": "I am ___.",
           "answer": "Hungarian",
           "options": [
             "Hungarian",
             "English",
             "Spanish"
           ],
-          "hu": "(magyar)"
+          "hu": "Magyar vagyok."
         },
         {
           "text": "I like ___.",
@@ -208,7 +208,7 @@
         },
         {
           "id": "lex_hungarian",
-          "text": "It is very ___.",
+          "text": "I am ___.",
           "answer": "Hungarian",
           "accepted": [
             "Hungarian",
@@ -221,7 +221,7 @@
             "Spanish",
             "German"
           ],
-          "hu": "(magyar)"
+          "hu": "Magyar vagyok."
         },
         {
           "id": "lex_england",

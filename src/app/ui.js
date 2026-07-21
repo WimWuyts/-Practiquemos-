@@ -31,9 +31,13 @@ window.M = window.M || {};
       if (m) { re = r; surface = m[0]; break; }
     }
     if (!surface) return null;
+    if (STOPWORD_GAP[surface.toLowerCase()]) return null; // skip ambiguous stop-word gaps
+    // tap options must never include a distractor the forgiving matcher would accept as correct
+    var opts = [surface].concat((lex.distractors || []).filter(function (d) { return !M.match.close(d, [surface]); }).slice(0, 3));
     return { id: lex.id, text: ex.replace(re, "___"), answer: surface, accepted: forms.concat([surface]),
-      options: [surface].concat((lex.distractors || []).slice(0, 3)), hu: (lex.examples[0].hu || "") };
+      options: opts, hu: (lex.examples[0].hu || "") };
   }
+  var STOPWORD_GAP = { a: 1, an: 1, the: 1, is: 1, am: 1, are: 1, i: 1, you: 1, he: 1, she: 1, it: 1, we: 1, they: 1, my: 1, to: 1, of: 1, "in": 1, on: 1, at: 1, and: 1, so: 1, or: 1, up: 1, me: 1, us: 1, no: 1, "do": 1 };
   function sayPhrasesFrom(words) {
     return words.slice(0, 3).map(function (l) { return { en: l.examples[0].en, hu: l.examples[0].hu }; }).filter(function (p) { return p.en; });
   }
@@ -176,7 +180,7 @@ window.M = window.M || {};
     if (!lesson) { mount.appendChild(el("p", { text: "…" })); return; }
     var acts = lesson.activities, idx = 0;
     mount.appendChild(el("div", { class: "btn-row" }, [
-      el("button", { class: "btn ghost small", onclick: function () { M.router.go("lessons"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.back")]),
+      el("button", { class: "btn ghost small", onclick: function () { M.router.go("lessons"); } }, [el("span", { html: dom.icon("back") }), " " + M.i18n.t("nav.back")]),
     ]));
     // themed scene band — drawn once, gives the lesson a sense of place
     if (M.scenes) {
@@ -215,14 +219,14 @@ window.M = window.M || {};
       stage.appendChild(el("p", { style: "text-align:center", text: M.i18n.t("lesson.complete.msg") }));
       if (M.i18n.helpAvailable()) stage.appendChild(el("p", { class: "muted", text: M.i18n.hu("lesson.complete.msg") }));
       var next = pickRecommended();
-      // deep-link to practise what was just learned, or talk to the family
-      stage.appendChild(el("div", { class: "btn-row" }, [
-        el("button", { class: "btn secondary", onclick: function () { M.router.go("drill/" + lesson.unitId); } }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("lesson.next.practise")]),
-        lesson.conversationId ? el("button", { class: "btn secondary", onclick: function () { M.router.go("talk/" + lesson.conversationId); } }, [el("span", { html: dom.icon("chat") }), " " + M.i18n.t("lesson.next.talk")]) : null,
+      // ONE clear primary action, then quieter alternatives
+      stage.appendChild(el("div", { class: "btn-row", style: "justify-content:center" }, [
+        el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + next); } }, [M.i18n.t("home.continue"), " ", el("span", { html: dom.icon("chevron") })]),
       ]));
-      stage.appendChild(el("div", { class: "btn-row" }, [
-        el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + next); } }, [M.i18n.t("home.continue")]),
-        el("button", { class: "btn ghost", onclick: function () { M.router.go("home"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.home")]),
+      stage.appendChild(el("div", { class: "btn-row", style: "justify-content:center" }, [
+        el("button", { class: "btn ghost small", onclick: function () { M.router.go("drill/" + lesson.unitId); } }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("lesson.next.practise")]),
+        lesson.conversationId ? el("button", { class: "btn ghost small", onclick: function () { M.router.go("talk/" + lesson.conversationId); } }, [el("span", { html: dom.icon("chat") }), " " + M.i18n.t("lesson.next.talk")]) : null,
+        el("button", { class: "btn ghost small", onclick: function () { M.router.go("home"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.home")]),
       ]));
     }
     run();
@@ -257,7 +261,7 @@ window.M = window.M || {};
   }
   function talk(mount, dialogueId) {
     mount.appendChild(el("div", { class: "btn-row" }, [
-      el("button", { class: "btn ghost small", onclick: function () { M.router.go("conversations"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.back")]),
+      el("button", { class: "btn ghost small", onclick: function () { M.router.go("conversations"); } }, [el("span", { html: dom.icon("back") }), " " + M.i18n.t("nav.back")]),
     ]));
     var stage = el("div", { class: "card" });
     mount.appendChild(stage);
@@ -292,7 +296,7 @@ window.M = window.M || {};
     step();
   }
   function backBar(to) {
-    return el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.router.go(to || "practice"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.back")])]);
+    return el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.router.go(to || "practice"); } }, [el("span", { html: dom.icon("back") }), " " + M.i18n.t("nav.back")])]);
   }
 
   function practice(mount) {
@@ -320,11 +324,7 @@ window.M = window.M || {};
         el("button", { class: "btn" + (due.length ? "" : " secondary"), onclick: function () { M.router.go("review"); } }, [M.i18n.t("practice.review")]),
       ]),
     ]));
-    // Vocabulary practice — per unit
-    var vCard = el("div", { class: "card" }, [
-      el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [el("span", { class: "iconwell", html: dom.icon("list"), "aria-hidden": "true" }), el("h2", { style: "margin:0;flex:1;font-size:1.1rem", text: M.i18n.t("practice.vocab") })]),
-      el("p", { class: "muted", text: M.i18n.t("practice.choosetopic") }),
-    ]);
+    // Vocabulary / Grammar / Sounds — collapsed by default so the hub is a calm menu
     var vGrid = el("div", { class: "tilegrid" });
     M.data.course.units.forEach(function (u) {
       if (u.id === "u00") return;
@@ -336,35 +336,47 @@ window.M = window.M || {};
         el("span", { class: "txt" }, [el("b", { text: u.title.en }), el("span", { text: n + " " + M.i18n.t("ref.words") })]),
       ]));
     });
-    vCard.appendChild(vGrid); mount.appendChild(vCard);
-    // Grammar practice — per point
-    var gCard = el("div", { class: "card" }, [
-      el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [el("span", { class: "iconwell", html: dom.icon("book"), "aria-hidden": "true" }), el("h2", { style: "margin:0;flex:1;font-size:1.1rem", text: M.i18n.t("practice.grammar") })]),
-      el("p", { class: "muted", text: M.i18n.t("practice.choosepoint") }),
-    ]);
+    mount.appendChild(collapsibleCard("list", M.i18n.t("practice.vocab"), M.i18n.t("practice.choosetopic"), vGrid));
+
+    var gList = el("div", {});
     M.data.grammar.forEach(function (g) {
-      gCard.appendChild(el("button", { class: "lessonbtn", onclick: function () { M.router.go("gram/" + g.id); } }, [
-        el("span", { html: dom.icon("book") }),
+      var vis = unitVis(g.unitId);
+      gList.appendChild(el("button", { class: "lessonbtn", onclick: function () { M.router.go("gram/" + g.id); } }, [
+        el("span", { class: "iconwell", style: "--tint:" + vis[1] + ";--tintink:" + vis[2], html: dom.icon("book"), "aria-hidden": "true" }),
         el("span", { style: "flex:1" }, [el("strong", { text: g.title.en }), M.i18n.helpAvailable() ? el("div", { class: "muted", text: g.title.hu }) : null]),
       ]));
     });
-    mount.appendChild(gCard);
-    // Sounds & spelling — ALL of them
-    var sCard = el("div", { class: "card" }, [el("h2", { style: "font-size:1.1rem", text: M.i18n.label("lesson.pron") })]);
-    var groups = [["stage-1", "practice.sounds.step1"], ["stage-3", "practice.sounds.step3"]];
-    groups.forEach(function (grp) {
+    mount.appendChild(collapsibleCard("book", M.i18n.t("practice.grammar"), M.i18n.t("practice.choosepoint"), gList));
+
+    var sContent = el("div", {});
+    [["stage-1", "practice.sounds.step1"], ["stage-3", "practice.sounds.step3"]].forEach(function (grp) {
       var fs = M.data.pronunciation.soundFocus.filter(function (f) { return f.stage === grp[0]; });
       if (!fs.length) return;
-      sCard.appendChild(el("h3", { style: "margin:.6rem 0 .2rem", text: M.i18n.t(grp[1]) }));
+      sContent.appendChild(el("h3", { style: "margin:.6rem 0 .2rem", text: M.i18n.t(grp[1]) }));
       var row2 = el("div", { class: "blocks" });
       fs.forEach(function (f) { row2.appendChild(el("button", { class: "btn secondary small", onclick: function () { M.router.go("snd/" + f.id); } }, [f.focus.en])); });
-      sCard.appendChild(row2);
+      sContent.appendChild(row2);
     });
-    sCard.appendChild(el("h3", { style: "margin:.8rem 0 .2rem", text: M.i18n.t("practice.sounds.step2") }));
+    sContent.appendChild(el("h3", { style: "margin:.8rem 0 .2rem", text: M.i18n.t("practice.sounds.step2") }));
     var spRow = el("div", { class: "blocks" });
     M.data.pronunciation.spellingFamilies.forEach(function (f) { spRow.appendChild(el("button", { class: "btn secondary small", onclick: function () { M.router.go("spell/" + f.id); } }, [f.label.en])); });
-    sCard.appendChild(spRow);
-    mount.appendChild(sCard);
+    sContent.appendChild(spRow);
+    mount.appendChild(collapsibleCard("music", M.i18n.label("lesson.pron"), null, sContent));
+  }
+  // A card whose body is hidden until the header is tapped (calm progressive disclosure).
+  function collapsibleCard(iconName, title, subtitle, contentEl) {
+    var body = el("div", { class: "hidden", style: "margin-top:.7rem" }, [contentEl]);
+    var head = el("button", { class: "acc-head", type: "button", "aria-expanded": "false" }, [
+      el("span", { class: "iconwell", html: dom.icon(iconName), "aria-hidden": "true" }),
+      el("span", { style: "flex:1;text-align:left" }, [el("strong", { style: "font-size:1.1rem", text: title }), subtitle ? el("div", { class: "muted", style: "font-weight:400", text: subtitle }) : null]),
+      el("span", { class: "acc-chev", html: dom.icon("chevron"), "aria-hidden": "true" }),
+    ]);
+    head.addEventListener("click", function () {
+      var hid = body.classList.toggle("hidden");
+      head.setAttribute("aria-expanded", String(!hid));
+      head.classList.toggle("open", !hid);
+    });
+    return el("div", { class: "card acc" }, [head, body]);
   }
 
   // Vocabulary session: see/hear → recognise → tap → TYPE → say it. Items are picked so
@@ -461,7 +473,14 @@ window.M = window.M || {};
   }
   function reviewScreen(mount) {
     var due = M.review.dueItems(8);
-    if (!due.length) { mount.appendChild(backBar("practice")); mount.appendChild(el("p", { class: "muted", text: M.i18n.t("act.review.prompt") })); return; }
+    if (!due.length) {
+      mount.appendChild(backBar("practice"));
+      mount.appendChild(el("div", { class: "card" }, [
+        el("p", { text: M.i18n.t("act.review.prompt") }),
+        el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { M.router.go("quick"); } }, [el("span", { html: dom.icon("star") }), " " + M.i18n.t("practice.quick")])]),
+      ]));
+      return;
+    }
     mount.appendChild(backBar("practice"));
     mount.appendChild(el("h1", { text: M.i18n.t("lesson.review") }));
     runActivities(mount, [{ id: "act_review", type: "review", items: due }], function () { M.router.go("practice"); });
@@ -549,8 +568,17 @@ window.M = window.M || {};
     return s;
   }
   function toggle(val, onchange) {
-    var b = el("button", { class: "btn " + (val ? "" : "ghost") + " switch", "aria-pressed": String(!!val), text: val ? "✓ " + M.i18n.t("diag.yes") : M.i18n.t("diag.no") });
-    b.addEventListener("click", function () { val = !val; b.setAttribute("aria-pressed", String(val)); b.className = "btn " + (val ? "" : "ghost") + " switch"; b.textContent = val ? "✓ " + M.i18n.t("diag.yes") : M.i18n.t("diag.no"); onchange(val); });
+    function lbl() { return val ? M.i18n.t("settings.on") : M.i18n.t("settings.off"); }
+    var text = el("span", { class: "switch-lbl", text: lbl() });
+    var b = el("button", { class: "switch" + (val ? " on" : ""), type: "button", role: "switch", "aria-checked": String(!!val) }, [
+      el("span", { class: "switch-track", "aria-hidden": "true" }, [el("span", { class: "switch-thumb" })]),
+      text,
+    ]);
+    b.addEventListener("click", function () {
+      val = !val;
+      b.classList.toggle("on", val); b.setAttribute("aria-checked", String(val)); text.textContent = lbl();
+      onchange(val);
+    });
     return b;
   }
 

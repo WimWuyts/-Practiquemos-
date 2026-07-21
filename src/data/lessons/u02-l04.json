@@ -153,8 +153,7 @@
           "options": [
             "These",
             "this",
-            "that",
-            "those"
+            "that"
           ],
           "hu": "Ezek az én könyveim."
         },
@@ -170,8 +169,7 @@
           "options": [
             "Those",
             "this",
-            "that",
-            "these"
+            "that"
           ],
           "hu": "Azok Kira cipői."
         }

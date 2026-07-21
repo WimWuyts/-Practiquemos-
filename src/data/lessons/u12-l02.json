@@ -195,7 +195,7 @@
         },
         {
           "id": "lex_last",
-          "text": "It is very ___.",
+          "text": "He is ___.",
           "answer": "last",
           "accepted": [
             "last",

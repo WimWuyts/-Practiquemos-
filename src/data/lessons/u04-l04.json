@@ -159,21 +159,21 @@
           "hu": "(vannak (ott))"
         },
         {
-          "id": "lex_in",
-          "text": "The keys are ___ the kitchen.",
-          "answer": "in",
+          "id": "lex_under",
+          "text": "The cat is ___ the chair.",
+          "answer": "under",
           "accepted": [
-            "in",
-            "in",
-            "in"
+            "under",
+            "under",
+            "under"
           ],
           "options": [
+            "under",
             "in",
             "on",
-            "under",
             "next to"
           ],
-          "hu": "A kulcsok a konyhában vannak."
+          "hu": "A macska a szék alatt van."
         }
       ]
     },

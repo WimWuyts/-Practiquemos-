@@ -125,24 +125,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "She is my ___.",
           "answer": "daughter",
           "options": [
             "daughter",
             "family",
             "mother"
           ],
-          "hu": "(lánya vkinek)"
+          "hu": "Ő a lányom."
         },
         {
-          "text": "This is a ___.",
+          "text": "He is my ___.",
           "answer": "son",
           "options": [
             "son",
             "family",
             "mother"
           ],
-          "hu": "(fia vkinek)"
+          "hu": "Ő a fiam."
         },
         {
           "text": "Her ___ is called Endre.",
@@ -162,7 +162,7 @@
       "items": [
         {
           "id": "lex_daughter",
-          "text": "This is a ___.",
+          "text": "She is my ___.",
           "answer": "daughter",
           "accepted": [
             "daughter",
@@ -176,11 +176,11 @@
             "mother",
             "father"
           ],
-          "hu": "(lánya vkinek)"
+          "hu": "Ő a lányom."
         },
         {
           "id": "lex_son",
-          "text": "This is a ___.",
+          "text": "He is my ___.",
           "answer": "son",
           "accepted": [
             "son",
@@ -194,7 +194,7 @@
             "mother",
             "father"
           ],
-          "hu": "(fia vkinek)"
+          "hu": "Ő a fiam."
         },
         {
           "id": "lex_husband",

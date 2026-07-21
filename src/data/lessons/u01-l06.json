@@ -114,38 +114,6 @@
       "type": "word-fill",
       "items": [
         {
-          "id": "lex_an",
-          "text": "It is ___ apple.",
-          "answer": "an",
-          "accepted": [
-            "an",
-            "an",
-            "an"
-          ],
-          "options": [
-            "an",
-            "a",
-            "the"
-          ],
-          "hu": "Ez egy alma."
-        },
-        {
-          "id": "lex_the",
-          "text": "___ coffee is hot.",
-          "answer": "The",
-          "accepted": [
-            "the",
-            "the",
-            "The"
-          ],
-          "options": [
-            "The",
-            "a",
-            "an"
-          ],
-          "hu": "A kávé forró."
-        },
-        {
           "id": "lex_one",
           "text": "I have ___ sister.",
           "answer": "one",
@@ -178,6 +146,40 @@
             "four"
           ],
           "hu": "Két kávét kérek."
+        },
+        {
+          "id": "lex_three",
+          "text": "We have ___ rooms.",
+          "answer": "three",
+          "accepted": [
+            "three",
+            "three",
+            "three"
+          ],
+          "options": [
+            "three",
+            "one",
+            "two",
+            "four"
+          ],
+          "hu": "Három szobánk van."
+        },
+        {
+          "id": "lex_four",
+          "text": "I have ___ friends.",
+          "answer": "four",
+          "accepted": [
+            "four",
+            "four",
+            "four"
+          ],
+          "options": [
+            "four",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(négy)"
         }
       ]
     },

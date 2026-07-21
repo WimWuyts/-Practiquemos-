@@ -82,24 +82,24 @@
           "hu": "Magyarországról jövök."
         },
         {
-          "text": "It is very ___.",
+          "text": "My son is very ___.",
           "answer": "tall",
           "options": [
             "tall",
             "my",
             "your"
           ],
-          "hu": "(magas)"
+          "hu": "A fiam nagyon magas."
         },
         {
-          "text": "It is very ___.",
+          "text": "The lesson is ___.",
           "answer": "short",
           "options": [
             "short",
             "my",
             "your"
           ],
-          "hu": "(alacsony / rövid)"
+          "hu": "A lecke rövid."
         }
       ]
     },
@@ -128,7 +128,7 @@
         },
         {
           "id": "lex_tall",
-          "text": "It is very ___.",
+          "text": "My son is very ___.",
           "answer": "tall",
           "accepted": [
             "tall",
@@ -141,11 +141,11 @@
             "your",
             "retired"
           ],
-          "hu": "(magas)"
+          "hu": "A fiam nagyon magas."
         },
         {
           "id": "lex_short",
-          "text": "It is very ___.",
+          "text": "The lesson is ___.",
           "answer": "short",
           "accepted": [
             "short",
@@ -158,11 +158,11 @@
             "your",
             "retired"
           ],
-          "hu": "(alacsony / rövid)"
+          "hu": "A lecke rövid."
         },
         {
           "id": "lex_kind",
-          "text": "It is very ___.",
+          "text": "Endika is very ___.",
           "answer": "kind",
           "accepted": [
             "kind",
@@ -175,7 +175,7 @@
             "your",
             "retired"
           ],
-          "hu": "(kedves)"
+          "hu": "Endika nagyon kedves."
         }
       ]
     },
@@ -199,12 +199,12 @@
           "hu": "Magyarországról jövök."
         },
         {
-          "en": "It is very tall.",
-          "hu": "(magas)"
+          "en": "My son is very tall.",
+          "hu": "A fiam nagyon magas."
         },
         {
-          "en": "It is very short.",
-          "hu": "(alacsony / rövid)"
+          "en": "The lesson is short.",
+          "hu": "A lecke rövid."
         }
       ]
     },

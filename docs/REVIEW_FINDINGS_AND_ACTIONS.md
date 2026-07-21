@@ -2,6 +2,30 @@
 
 ---
 
+## v1.9 — Final inspection (12 specialists)
+
+The owner asked "what can still be better?" and engaged all specialists. Twelve read-only inspectors audited the v1.8 app across pedagogy, English correctness, Hungarian quality, UX flow, visual design, accessibility, audio, code robustness, offline/performance, Marta-relevance, productive-skills, and data/QA. Every actionable finding was implemented in v1.9.
+
+### Correctness (highest value — the app was teaching/rewarding wrong things)
+- **Broken template example sentences** (*"a hour"*, *"It is very married"*, *"I was every day"*, *"I speak always"*) → rewrote `safeTemplate` (sound-based articles; skip irregular pasts, non-gradable adjectives, fix frequency-adverb order); curated 38 identity/family words; broadened the validator + added a template ratchet.
+- **Forgiving matcher accepted wrong answers** (she/he, a/an, home/house) → tightened tolerance (≤8 letters → 1 edit), filtered colliding "tap" distractors in the generator + runtime, added a `distractorCollision` build rule, skipped trivial stop-word gaps.
+- **Fake "spoken" credit** (granted on render) → now credited only via the record widget's `onRecorded`. Fixed two grammar-bank items (`gr_comparatives` unrepairable fix; `gr_wouldlike` accepting an ungrammatical answer).
+
+### Learning engine
+- **Spacing collapse** (`contexts` counted same-session reps → intervals jumped to a month) → advance the interval at most once per session; **failures demote**; exposure (`intro`) no longer counts as retrieval.
+- **Mastery ignored production** → "ready"/"familiar" now require written+spoken. **Spaced review** now brings words back to type and say, not just tap.
+
+### Speaking loop & robustness
+- No "saved" confirmation + tiny native replay → **"Saved ✓" + a big "Hear me"** button; empty-recording message.
+- Bugs fixed: dialogue typing-beat timer firing after navigation (voice on wrong screen); speech/mic not stopped on navigation; **gr-type/gr-fix had no escape** → both now offer a way forward.
+
+### Accessibility, look & the rest
+- Auto-advance moves focus to Continue; screen-reader announcements for gr-fix/gr-type; visible input label; ⟲ labels; 48px targets; scene-label contrast.
+- **App-bar never wraps** ("Word list" keeps its label); **Practice hub collapsed into a calm menu**; **real on/off switches**; corrected + enriched **scene-band map** (+ kitchen/home/phone scenes); one-primary lesson-complete; back-arrow icon; empty-review exit.
+- Performance: **debounced progress writes + flush on close**; **`JSON.parse` boot**. Hungarian polish (Skip→Kihagyás, Lektori mód, …). Renamed the reused side-character to **Rita**; warmer completion line. New validator rules + smoke tests (22 checks).
+
+---
+
 ## v1.8 — "Rosetta for Marta: the productive turn" design team (8 agents)
 
 Brief: the app held a lot of content but *did too little with it*. Owner: **"Lots of words, but so little is done with them — Marta only points and speaks; nowhere is a word typed in. Grammar is offered very sparsely per category, barely any exercises. Pronunciation: the framework is there but little variation."** Vision: **"a kind of Rosetta Stone, but for Marta's situation."** Eight design agents (see `docs/REVIEW_TEAM_v3.md`); their findings converged and were implemented in one pass as v1.8.

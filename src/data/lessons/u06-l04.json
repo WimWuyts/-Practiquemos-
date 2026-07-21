@@ -174,7 +174,7 @@
         },
         {
           "id": "lex_free",
-          "text": "It is very ___.",
+          "text": "He is ___.",
           "answer": "free",
           "accepted": [
             "free",

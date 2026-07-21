@@ -245,7 +245,7 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "We often use \"___\" in English.",
           "answer": "was",
           "options": [
             "was",
@@ -255,7 +255,7 @@
           "hu": "(voltam / volt)"
         },
         {
-          "text": "I ___ every day.",
+          "text": "We often use \"___\" in English.",
           "answer": "went",
           "options": [
             "went",
@@ -265,7 +265,7 @@
           "hu": "(ment (megy múlt))"
         },
         {
-          "text": "I ___ every day.",
+          "text": "We often use \"___\" in English.",
           "answer": "saw",
           "options": [
             "saw",
@@ -282,7 +282,7 @@
       "items": [
         {
           "id": "lex_was",
-          "text": "I ___ every day.",
+          "text": "We often use \"___\" in English.",
           "answer": "was",
           "accepted": [
             "was",
@@ -300,7 +300,7 @@
         },
         {
           "id": "lex_went",
-          "text": "I ___ every day.",
+          "text": "We often use \"___\" in English.",
           "answer": "went",
           "accepted": [
             "went",
@@ -317,7 +317,7 @@
         },
         {
           "id": "lex_saw",
-          "text": "I ___ every day.",
+          "text": "We often use \"___\" in English.",
           "answer": "saw",
           "accepted": [
             "saw",

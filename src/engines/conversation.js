@@ -2,7 +2,7 @@
 window.M = window.M || {};
 (function (M) {
   var CHAR = {
-    endika: "Endika", marlene: "Marlene", kira: "Kira", esztella: "Esztella", mirella: "Mirella",
+    endika: "Endika", marlene: "Marlene", kira: "Kira", esztella: "Esztella", mirella: "Rita",
     peter: "Peter", emma: "Emma", margo: "Margó", martin: "Martin", david: "David", panna: "Panna",
     eva: "Aunt Eva", akos: "Ákos", endre: "Endre", student: "Student", parent: "Parent",
     agent: "Airport staff", attendant: "Flight attendant", waiter: "Waiter", receptionist: "Receptionist",
@@ -63,6 +63,7 @@ window.M = window.M || {};
         if (document.body.dataset.motion === "reduce") { emit(node); proceed(node); return; }
         var typing = typingBubble(who(node.speaker), node.speaker);
         setTimeout(function () {
+          if (!chat.isConnected) return; // user navigated away during the beat — don't speak/append
           if (typing.parentNode) typing.parentNode.removeChild(typing);
           emit(node); proceed(node);
         }, 700);

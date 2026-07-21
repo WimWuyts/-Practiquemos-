@@ -71,10 +71,12 @@ window.M = window.M || {};
         mr.ondataavailable = function (e) { if (e.data && e.data.size) self._chunks.push(e.data); };
         mr.onstop = function () {
           if (self._url) { URL.revokeObjectURL(self._url); self._url = null; }
-          var blob = new Blob(self._chunks, { type: mr.mimeType || "audio/webm" });
-          self._url = URL.createObjectURL(blob);
+          var size = self._chunks.reduce(function (n, c) { return n + (c.size || 0); }, 0);
           // release tracks
           if (self._stream) { self._stream.getTracks().forEach(function (t) { t.stop(); }); self._stream = null; }
+          if (size < 800) { self._chunks = []; onState && onState("empty"); return; } // too short → no clip
+          var blob = new Blob(self._chunks, { type: mr.mimeType || "audio/webm" });
+          self._url = URL.createObjectURL(blob);
           onState && onState("ready", self._url);
         };
         mr.start();

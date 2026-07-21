@@ -122,6 +122,34 @@ grammar.forEach((g) => {
 });
 if (!gramBad) OK(`Grammar practice bank: ${gramItems} items across ${grammar.length} points`);
 
+// word-fill integrity: no "tap" distractor may be close enough to be scored correct, and
+// no gap should be a trivial stop-word (ambiguous). Mirrors the runtime matcher's tolerance.
+function levD(a, b) {
+  const m = a.length, n = b.length, d = [];
+  for (let i = 0; i <= m; i++) d[i] = [i];
+  for (let j = 0; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++)
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[m][n];
+}
+const nW = (s) => String(s || "").toLowerCase().replace(/[^a-z']/g, "");
+const STOP = new Set(["a", "an", "the", "is", "am", "are", "i", "you", "he", "she", "it", "we", "they", "my", "to", "of", "in", "on", "at", "and", "so", "or", "up", "me", "us", "no", "do"]);
+let wfCollide = 0, wfTrivial = 0, wfItems = 0;
+allLessonSets.forEach((L) => (L.activities || []).forEach((a) => {
+  if (a.type !== "word-fill") return;
+  (a.items || []).forEach((it) => {
+    wfItems++;
+    const ans = nW(it.answer);
+    if (STOP.has(ans)) { W(`word-fill trivial stop-word gap "${it.answer}" in ${L.id}`); wfTrivial++; }
+    (it.options || []).forEach((o) => {
+      if (nW(o) === ans) return;
+      const tol = ans.length <= 8 ? 1 : 2;
+      if (levD(nW(o), ans) <= tol) { E(`word-fill distractor "${o}" collides with answer "${it.answer}" in ${L.id}`); wfCollide++; }
+    });
+  });
+}));
+if (!wfCollide) OK(`Word-fill: ${wfItems} items, no distractor collisions`);
+
 // pronunciation coverage: every sound-focus and spelling-family must appear in a lesson activity
 const usedSounds = new Set(), usedFamilies = new Set();
 Object.values(lessons).forEach((L) => (L.activities || []).forEach((a) => {
@@ -134,8 +162,27 @@ Object.values(lessons).forEach((L) => (L.activities || []).forEach((a) => {
 OK(`Pronunciation coverage: ${(pron.soundFocus || []).length} sounds + ${(pron.spellingFamilies || []).length} spelling families all used`);
 
 // example quality: flag remaining template-y examples for the review queue (not an error)
-const tmpl = prod.filter((l) => /every day\.$|use "|useful word|is here\.$/.test((l.examples[0] || {}).en || "")).length;
-OK(`Curated examples used; ${tmpl} productive words still on the safe template (flagged for review)`);
+const TEMPLATE_RE = /every day\.$|use "|useful word|is here\.$|^This is an? |^It is very |^It is the \w+ one\.$|^I speak \w+\.$|^I have \w+ friends\.$/;
+const tmplWords = prod.filter((l) => TEMPLATE_RE.test((l.examples[0] || {}).en || ""));
+const tmpl = tmplWords.length;
+// ratchet: templates are all grammatical now, but the count may only SHRINK from here
+const TEMPLATE_CEILING = 432;
+if (tmpl > TEMPLATE_CEILING) E(`Template examples ${tmpl} exceed ceiling ${TEMPLATE_CEILING} — curate before raising the ceiling`);
+OK(`Curated examples used; ${tmpl} productive words on grammar-safe templates (ceiling ${TEMPLATE_CEILING})`);
+
+// duplicate curated example sentences across several words (a lesson could show it twice)
+const exSeen = {};
+prod.forEach((l) => { const e = (l.examples[0] || {}).en; if (!e || TEMPLATE_RE.test(e)) return; (exSeen[e] = exSeen[e] || []).push(l.id); });
+const dupEx = Object.keys(exSeen).filter((e) => exSeen[e].length >= 3);
+if (dupEx.length) W(`${dupEx.length} example sentences reused by 3+ words (e.g. "${dupEx[0]}")`);
+
+// lesson length: flag lessons that are too short or fatiguingly long
+Object.values(lessons).forEach((L) => {
+  const n = (L.activities || []).length;
+  if (L.id === "u00-l01") return;
+  if (n < 6) W(`lesson ${L.id} has only ${n} activities (thin)`);
+  if (n > 22) W(`lesson ${L.id} has ${n} activities (long — may fatigue)`);
+});
 
 // report
 console.log("\n=== CONTENT VALIDATION ===");

@@ -91,6 +91,31 @@ await page.locator(".stage, #main").locator(".btn:not(.ghost):not(.secondary)").
 await page.waitForTimeout(150);
 check("word-fill accepts a forgiving typed answer", await page.locator(".feedback.good").count() >= 1);
 
+// word-fill must REJECT a clearly wrong word (guards against forgiving-match over-acceptance)
+await page.evaluate(() => {
+  const m = document.getElementById("main"); M.dom.clear(m);
+  M.exercise.render(m, { id: "wf2", type: "word-fill", items: [
+    { id: "lex_coffee", text: "I drink ___ in the morning.", answer: "coffee", accepted: ["coffee"], options: ["coffee"], hu: "" },
+  ] }, () => {});
+});
+await page.locator(".textin").fill("water");
+await page.locator("#main .btn:not(.ghost):not(.secondary)").last().click();
+await page.waitForTimeout(120);
+check("word-fill rejects a clearly wrong word", (await page.locator(".feedback.good").count()) === 0 && (await page.locator(".textin").isEditable()));
+
+// the new renderers each draw without error
+const renderOK = await page.evaluate(() => {
+  const m = document.getElementById("main");
+  const cases = [
+    { id: "a", type: "gr-fix", item: { tokens: ["We", "goed", "to", "Prague"], wrong: 1, fix: "went", hu: "" } },
+    { id: "b", type: "sound-sort", groups: [{ label: "A", words: ["make", "name"] }, { label: "B", words: ["cat", "bad"] }] },
+    { id: "c", type: "shadow", focusId: "snd_short_vowels" },
+    { id: "d", type: "minimal-pair-say", focusId: "snd_short_vowels" },
+  ];
+  return cases.every((c) => { M.dom.clear(m); let ok = false; M.exercise.render(m, c, () => {}); return m.children.length > 0; });
+});
+check("new renderers (gr-fix/sound-sort/shadow/pair-say) all draw", renderOK);
+
 // grammar type-the-form is STRICT (teach != teaches) then accepts the exact form
 await page.evaluate(() => {
   const m = document.getElementById("main"); M.dom.clear(m);

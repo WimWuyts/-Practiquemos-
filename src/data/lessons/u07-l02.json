@@ -149,23 +149,6 @@
           "hu": "(pillanat)"
         },
         {
-          "id": "lex_me",
-          "text": "Can you hear ___?",
-          "answer": "me",
-          "accepted": [
-            "me",
-            "me",
-            "me"
-          ],
-          "options": [
-            "me",
-            "what",
-            "who",
-            "him"
-          ],
-          "hu": "Hallasz engem?"
-        },
-        {
           "id": "lex_him",
           "text": "I like ___ very much.",
           "answer": "him",
@@ -181,6 +164,23 @@
             "me"
           ],
           "hu": "Nagyon kedvelem őt."
+        },
+        {
+          "id": "lex_them",
+          "text": "I visit ___ every summer.",
+          "answer": "them",
+          "accepted": [
+            "them",
+            "them",
+            "them"
+          ],
+          "options": [
+            "them",
+            "what",
+            "who",
+            "me"
+          ],
+          "hu": "Minden nyáron meglátogatom őket."
         }
       ]
     },

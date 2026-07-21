@@ -92,7 +92,7 @@
           "hu": "(hűvös / menő)"
         },
         {
-          "text": "It is very ___.",
+          "text": "He is ___.",
           "answer": "next",
           "options": [
             "next",
@@ -144,7 +144,7 @@
         },
         {
           "id": "lex_next",
-          "text": "It is very ___.",
+          "text": "He is ___.",
           "answer": "next",
           "accepted": [
             "next",
@@ -202,7 +202,7 @@
           "hu": "(hűvös / menő)"
         },
         {
-          "en": "It is very next.",
+          "en": "He is next.",
           "hu": "(következő)"
         }
       ]

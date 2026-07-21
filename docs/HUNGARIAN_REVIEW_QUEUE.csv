@@ -47,12 +47,13 @@ ui_string,btn.hidehelp,interface,Hide help,Segítség elrejtése,yes
 ui_string,btn.finish,interface,Finish lesson,Lecke befejezése,yes
 ui_string,btn.hint,interface,Hint,Segítség,yes
 ui_string,btn.model,interface,Show a good answer,Mutass egy jó választ,yes
+ui_string,btn.startover,interface,Start over,Kezdd elölről,yes
 ui_string,lesson.new,interface,New words,Új szavak,yes
 ui_string,lesson.review,interface,Review,Ismétlés,yes
 ui_string,lesson.grammar,interface,Grammar,Nyelvtan,yes
 ui_string,lesson.pron,interface,Sounds,Hangok,yes
 ui_string,lesson.complete,interface,Lesson complete,Lecke kész,yes
-ui_string,lesson.complete.msg,interface,"Well done, Marta. You practised English today.","Szép munka, Marta. Ma jól gyakoroltál.",yes
+ui_string,lesson.complete.msg,interface,"That's today's practice done, Marta. Nicely done.","Ennyi volt a mai gyakorlás, Marta. Szép munka.",yes
 ui_string,act.intro.prompt,interface,"Look, listen and learn these words.","Nézd, hallgasd és tanuld meg ezeket a szavakat.",yes
 ui_string,act.listenchoose.prompt,interface,Listen and choose the word you hear.,"Hallgasd meg, és válaszd ki a hallott szót.",yes
 ui_string,act.match.prompt,interface,Match the English word to its meaning.,Párosítsd az angol szót a jelentésével.,yes
@@ -67,14 +68,14 @@ ui_string,act.minimalpair.which,interface,Which word did you hear?,Melyik szót 
 ui_string,act.reorder.prompt,interface,Put the words in the right order.,Rakd a szavakat a helyes sorrendbe.,yes
 ui_string,act.gapfill.prompt,interface,Choose the missing word.,Válaszd ki a hiányzó szót.,yes
 ui_string,act.expand.prompt,interface,"Grow your answer, one step at a time.","Bővítsd a válaszodat, lépésről lépésre.",yes
-ui_string,act.expand.more,interface,Add more,Tegyél hozzá,yes
+ui_string,act.expand.more,interface,Add more,Tegyél hozzá többet,yes
 ui_string,act.odd.prompt,interface,Which word is different? Choose the one that does not belong.,"Melyik szó a kakukktojás? Válaszd ki, amelyik nem illik a többihez.",yes
 ui_string,act.listencomp.prompt,interface,"Listen to the message, then answer.","Hallgasd meg az üzenetet, majd válaszolj.",yes
 ui_string,act.listencomp.again,interface,Play again,Játszd le újra,yes
 ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
 ui_string,act.sayit.prompt,interface,Now say it out loud. Record yourself and listen back.,"Most mondd ki hangosan. Vedd fel magad, és hallgasd vissza.",yes
 ui_string,act.wordfill.prompt,interface,Type the missing word.,Írd be a hiányzó szót.,yes
-ui_string,act.wordfill.tap,interface,Show word choices,Mutasd a szóválasztékot,yes
+ui_string,act.wordfill.tap,interface,Show word choices,Mutasd a választható szavakat,yes
 ui_string,act.wordfill.type,interface,I'll type it,Inkább beírom,yes
 ui_string,act.wordfill.reveal,interface,Show the answer,Mutasd a választ,yes
 ui_string,act.wordfill.copy,interface,Type the word to continue.,Írd be a szót a folytatáshoz.,yes
@@ -90,6 +91,8 @@ ui_string,say.hear,interface,Hear it,Hallgasd meg,yes
 ui_string,say.hearme,interface,Hear me,Hallgasd vissza magad,yes
 ui_string,say.record,interface,Record me,Vegyél fel,yes
 ui_string,say.again,interface,Say it again,Mondd újra,yes
+ui_string,say.saved,interface,Saved — press Hear me,Elmentve — nyomd meg a Hallgasd vissza gombot,yes
+ui_string,say.empty,interface,I didn't catch that — please try again.,"Nem hallottam — próbáld újra, kérlek.",yes
 ui_string,practice.review,interface,Review words due today,Mai ismétlendő szavak,yes
 ui_string,practice.vocab,interface,Practice vocabulary,Szókincs gyakorlása,yes
 ui_string,practice.grammar,interface,Practice grammar,Nyelvtan gyakorlása,yes
@@ -111,7 +114,7 @@ ui_string,practice.more,interface,Practise more,Gyakorolj még,yes
 ui_string,practice.showall,interface,Show all,Mutasd mind,yes
 ui_string,practice.hideall,interface,Show fewer,Mutass kevesebbet,yes
 ui_string,practice.growth,interface,{n} of {m} words practised,{n} / {m} szó gyakorolva,yes
-ui_string,practice.pickone,interface,One to try,Egy próbára,yes
+ui_string,practice.pickone,interface,One to try,Próbálj ki egyet,yes
 ui_string,conv.support.choose,interface,Choose,Válassz,yes
 ui_string,conv.support.build,interface,Build,Építsd,yes
 ui_string,conv.support.type,interface,Say or type,Mondd vagy írd,yes
@@ -140,10 +143,12 @@ ui_string,settings.help.menu,interface,Hungarian menu labels,Magyar menüfelirat
 ui_string,settings.help.panels,interface,Hungarian help panels,Magyar segítő panelek,yes
 ui_string,settings.help.heavy,interface,Lots of Hungarian,Sok magyar,yes
 ui_string,settings.open_conv,interface,Allow open conversations now,Szabad beszélgetések engedélyezése most,yes
-ui_string,settings.reviewer,interface,Reviewer mode,Áttekintő mód,yes
-ui_string,settings.reviewer.note,interface,Adds a Skip button on every step so you can browse the whole app without answering.,"Minden lépésnél megjelenik egy Skip gomb, így válaszadás nélkül átnézheted az egész appot.",yes
+ui_string,settings.reviewer,interface,Reviewer mode,Lektori mód,yes
+ui_string,settings.reviewer.note,interface,Adds a Skip button on every step so you can browse the whole app without answering.,"Minden lépésnél megjelenik egy Kihagyás gomb, így válasz nélkül végignézheted az egész alkalmazást.",yes
+ui_string,settings.on,interface,On,Be,yes
+ui_string,settings.off,interface,Off,Ki,yes
 ui_string,backup.title,interface,Backup,Biztonsági mentés,yes
-ui_string,backup.export,interface,Make a backup,Back-up készítése,yes
+ui_string,backup.export,interface,Make a backup,Mentés készítése,yes
 ui_string,backup.import,interface,Restore a backup,Biztonsági mentés visszaállítása,yes
 ui_string,backup.reset,interface,Reset all progress,Minden haladás törlése,yes
 ui_string,backup.reset.confirm,interface,This will erase your progress. Are you sure?,Ez törli a haladásodat. Biztos vagy benne?,yes

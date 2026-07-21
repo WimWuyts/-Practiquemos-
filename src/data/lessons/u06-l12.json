@@ -165,21 +165,21 @@
           "hu": "Talán találkozhatunk vasárnap."
         },
         {
-          "id": "lex_at",
-          "text": "The lesson is ___ ten.",
-          "answer": "at",
+          "id": "lex_sure",
+          "text": "I speak ___.",
+          "answer": "sure",
           "accepted": [
-            "at",
-            "at",
-            "at"
+            "sure",
+            "sure",
+            "sure"
           ],
           "options": [
-            "at",
-            "before",
-            "after",
-            "from"
+            "sure",
+            "where",
+            "how",
+            "very"
           ],
-          "hu": "Az óra tízkor van."
+          "hu": "(persze)"
         }
       ]
     },

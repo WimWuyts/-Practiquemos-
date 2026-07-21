@@ -168,10 +168,10 @@ export const DIALOGUES = [
     },
   },
 
-  // ---------- Mirella work travel ----------
+  // ---------- Rita (friend) work travel ----------
   {
     id: "dlg_mirella_travel", characterId: "mirella",
-    scene: { en: "Talking about work travel with Mirella", hu: "Munkautazásról Mirellával" },
+    scene: { en: "Talking about work travel with Rita", hu: "Munkautazásról Ritával" },
     supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
     nodes: {
       n1: choose("mirella", "Hi Marta! I'm travelling to Belgium for work next week.", "Szia Marta! Jövő héten Belgiumba utazom dolgozni.", [

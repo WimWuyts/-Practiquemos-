@@ -2,6 +2,35 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.9.0] — 2026-07 — Final inspection: 12-specialist audit acted on
+
+A 12-specialist inspection (pedagogy, English & Hungarian correctness, UX, visual, accessibility, audio, robustness, offline/perf, relevance, productive-skills, data/QA — see `docs/REVIEW_FINDINGS_AND_ACTIONS.md`) found what could still be better. Every actionable finding was fixed.
+
+### Correctness — no longer teaches or rewards the wrong thing
+- **Broken example sentences are gone.** The fallback generator now uses sound-based articles (*an hour*, *a university*), skips irregular-past headwords and non-gradable adjectives, and fixes frequency-adverb placement — so no drill ever shows *"a hour"*, *"It is very married"*, or *"I was every day"*. 38 high-value identity/family words are hand-curated to her life. A validator ratchet stops template sentences from growing.
+- **Wrong answers are no longer accepted.** Typed matching is tightened so a different real word two edits away (*home/house*, *sheep/ship*) is rejected, and word-fill never offers a "tap" distractor the matcher would wrongly accept — enforced by a new build rule. Trivial stop-word gaps are skipped.
+- **"Spoken" credit now requires actually recording** (not just seeing the card). Two grammar-bank items were repaired.
+
+### The learning engine actually works now
+- **Spaced review no longer collapses**: the interval advances at most once per session (it used to jump to a month after one sitting), a **failure demotes** the item to "due soon", and **mastery requires production**, not recognition alone. Merely viewing a word no longer counts as retrieval.
+- **Spaced review is now productive** — it brings words back to *type* and *say*, not just tap.
+
+### Speaking loop & robustness
+- **Recording is reassuring**: a clear "Saved ✓", a big **Hear me** button beside **Hear it** (no more hunting for a tiny native player), and a gentle message when a recording is too short.
+- Fixed: the dialogue "typing…" beat could speak on the wrong screen after navigating away; speech/mic now stop on every navigation; **gr-type / gr-fix always offer a way forward** so a learner can't get stuck.
+
+### Accessibility (70+)
+- Auto-advance now moves keyboard focus to Continue; wrong grammar-tap and revealed answers are announced to screen readers; a real visible label on the grammar input; `Start over` labels on ⟲ buttons; tap targets raised to 48px; stronger scene-band label contrast.
+
+### Look & navigation
+- **The app-bar never wraps** and "Word list" keeps its label (it becomes a tidy horizontal scroll strip when tight). The **Practice hub is a calm menu** (Quick practice + Review, with Vocabulary/Grammar/Sounds collapsed). Settings toggles are **real on/off switches**. Scene-band headers match their unit (Restaurant no longer shows a plane); new kitchen/home/phone scenes. Lesson-complete has one clear primary; empty review offers Quick practice; back buttons use a back arrow.
+
+### Performance, Hungarian & QA
+- Progress writes are **debounced with a flush on close** (no more re-serializing the whole blob every rep); data boots via **`JSON.parse`** (faster cold start).
+- Hungarian polish: the English *"Skip"*/*"app"* leaking into the reviewer text is fixed (*Kihagyás*/*alkalmazást*), *Lektori mód*, and several naturalness fixes.
+- The ex-protagonist's name reused as a side character is renamed (**Rita**); the report-card completion line is warmer.
+- New validator rules (distractor collision, trivial gaps, template ratchet, duplicate examples, lesson length) and smoke tests (negative word-fill, render-once for the new exercises) — **22 checks**.
+
 ## [1.8.0] — 2026-07 — Rosetta for Marta: the productive turn (8-agent design team)
 
 An 8-agent design-and-build team (Rosetta method, productive-vocab & typing, grammar exercises, pronunciation variety, drill flow, older-adult ergonomics, engine feasibility, Marta-relevance) drove this release — see `docs/REVIEW_TEAM_v3.md` and `docs/REVIEW_FINDINGS_AND_ACTIONS.md`. The theme: **the app had lots of words but did too little with them** — Marta only pointed and spoke; grammar was one info card; pronunciation had two exercise types. This release makes her *produce*.

@@ -72,7 +72,7 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "He is ___.",
           "answer": "empty",
           "options": [
             "empty",
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_empty",
-          "text": "It is very ___.",
+          "text": "He is ___.",
           "answer": "empty",
           "accepted": [
             "empty",
@@ -161,7 +161,7 @@
         },
         {
           "id": "lex_euro",
-          "text": "This is an ___.",
+          "text": "This is a ___.",
           "answer": "euro",
           "accepted": [
             "euro",
@@ -195,7 +195,7 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very empty.",
+          "en": "He is empty.",
           "hu": "(üres)"
         },
         {

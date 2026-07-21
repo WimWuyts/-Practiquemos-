@@ -59,6 +59,7 @@ window.M = window.M || {};
     var screen = parts[0] || "home";
     current = hash;
     dom.clear(main);
+    if (M.audio) { M.audio.stopSpeak(); M.audio.clearRecording(); } // no speech/mic bleeding across screens
     if (M.clearReviewSkip) M.clearReviewSkip(); // activities re-show it; nav screens don't
     if (M.updateReviewChrome) M.updateReviewChrome();
     M.ui.init();

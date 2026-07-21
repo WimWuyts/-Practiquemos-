@@ -108,23 +108,6 @@
       "type": "word-fill",
       "items": [
         {
-          "id": "lex_up",
-          "text": "I get ___ at seven.",
-          "answer": "up",
-          "accepted": [
-            "up",
-            "up",
-            "up"
-          ],
-          "options": [
-            "up",
-            "straight",
-            "first",
-            "then"
-          ],
-          "hu": "Hétkor kelek."
-        },
-        {
           "id": "lex_down",
           "text": "Please sit ___.",
           "answer": "down",
@@ -142,23 +125,6 @@
           "hu": "Kérlek, ülj le."
         },
         {
-          "id": "lex_to",
-          "text": "I go ___ the market on Monday.",
-          "answer": "to",
-          "accepted": [
-            "to",
-            "to",
-            "to"
-          ],
-          "options": [
-            "to",
-            "over",
-            "behind",
-            "into"
-          ],
-          "hu": "Hétfőn a piacra megyek."
-        },
-        {
           "id": "lex_by",
           "text": "I travel ___ train.",
           "answer": "by",
@@ -174,6 +140,40 @@
             "on"
           ],
           "hu": "Vonattal utazom."
+        },
+        {
+          "id": "lex_over",
+          "text": "The lesson is ___.",
+          "answer": "over",
+          "accepted": [
+            "over",
+            "over",
+            "over"
+          ],
+          "options": [
+            "over",
+            "to",
+            "behind",
+            "into"
+          ],
+          "hu": "Vége az órának."
+        },
+        {
+          "id": "lex_behind",
+          "text": "The garden is ___ the house.",
+          "answer": "behind",
+          "accepted": [
+            "behind",
+            "behind",
+            "behind"
+          ],
+          "options": [
+            "behind",
+            "to",
+            "over",
+            "into"
+          ],
+          "hu": "A kert a ház mögött van."
         }
       ]
     },

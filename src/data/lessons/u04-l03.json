@@ -88,24 +88,24 @@
           "hu": "A konyhában főzök."
         },
         {
-          "text": "This is a ___.",
+          "text": "We sit in the ___.",
           "answer": "garden",
           "options": [
             "garden",
             "home",
             "house"
           ],
-          "hu": "(kert)"
+          "hu": "A kertben ülünk."
         },
         {
-          "text": "I speak ___.",
+          "text": "I ___ drink coffee.",
           "answer": "always",
           "options": [
             "always",
             "usually",
             "often"
           ],
-          "hu": "(mindig)"
+          "hu": "Mindig kávét iszom."
         }
       ]
     },
@@ -151,7 +151,7 @@
         },
         {
           "id": "lex_garden",
-          "text": "This is a ___.",
+          "text": "We sit in the ___.",
           "answer": "garden",
           "accepted": [
             "garden",
@@ -165,11 +165,11 @@
             "house",
             "room"
           ],
-          "hu": "(kert)"
+          "hu": "A kertben ülünk."
         },
         {
           "id": "lex_always",
-          "text": "I speak ___.",
+          "text": "I ___ drink coffee.",
           "answer": "always",
           "accepted": [
             "always",
@@ -182,7 +182,7 @@
             "often",
             "sometimes"
           ],
-          "hu": "(mindig)"
+          "hu": "Mindig kávét iszom."
         }
       ]
     },
@@ -210,8 +210,8 @@
           "hu": "A konyhában főzök."
         },
         {
-          "en": "This is a garden.",
-          "hu": "(kert)"
+          "en": "We sit in the garden.",
+          "hu": "A kertben ülünk."
         }
       ]
     },

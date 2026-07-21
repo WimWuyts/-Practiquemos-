@@ -103,8 +103,7 @@
           "text": "I ___ a coffee, please.",
           "accepted": [
             "would like",
-            "'d like",
-            "would like to"
+            "'d like"
           ],
           "hint": {
             "en": "polite: I'd like",

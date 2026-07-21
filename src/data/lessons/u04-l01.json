@@ -293,24 +293,24 @@
           "hu": "(nap)"
         },
         {
-          "text": "This is a ___.",
+          "text": "I drink coffee in the ___.",
           "answer": "morning",
           "options": [
             "morning",
             "day",
             "afternoon"
           ],
-          "hu": "(reggel)"
+          "hu": "Reggel kávét iszom."
         },
         {
-          "text": "This is an ___.",
+          "text": "We talk in the ___.",
           "answer": "afternoon",
           "options": [
             "afternoon",
             "day",
             "morning"
           ],
-          "hu": "(délután)"
+          "hu": "Délután beszélgetünk."
         }
       ]
     },
@@ -338,7 +338,7 @@
         },
         {
           "id": "lex_morning",
-          "text": "This is a ___.",
+          "text": "I drink coffee in the ___.",
           "answer": "morning",
           "accepted": [
             "morning",
@@ -351,11 +351,11 @@
             "afternoon",
             "evening"
           ],
-          "hu": "(reggel)"
+          "hu": "Reggel kávét iszom."
         },
         {
           "id": "lex_afternoon",
-          "text": "This is an ___.",
+          "text": "We talk in the ___.",
           "answer": "afternoon",
           "accepted": [
             "afternoon",
@@ -368,11 +368,11 @@
             "morning",
             "evening"
           ],
-          "hu": "(délután)"
+          "hu": "Délután beszélgetünk."
         },
         {
           "id": "lex_evening",
-          "text": "This is an ___.",
+          "text": "I teach in the ___.",
           "answer": "evening",
           "accepted": [
             "evening",
@@ -385,7 +385,7 @@
             "morning",
             "afternoon"
           ],
-          "hu": "(este)"
+          "hu": "Este tanítok."
         }
       ]
     },

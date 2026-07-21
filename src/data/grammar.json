@@ -122,7 +122,7 @@
           "She",
           "They"
         ],
-        "hu": "Endika Spanyolországból jött. Nagyon kedves."
+        "hu": "Endika Spanyolországból származik. Nagyon kedves."
       },
       {
         "kind": "form",
@@ -429,12 +429,11 @@
         "kind": "type",
         "text": "This is Marta___ house.",
         "accepted": [
-          "'s",
-          "s"
+          "'s"
         ],
         "hint": {
           "en": "add 's to the name",
-          "hu": "tegyél 's-t a név után"
+          "hu": "tedd a név után: 's"
         },
         "hu": "Ez Marta háza."
       },
@@ -1019,8 +1018,7 @@
         "text": "I ___ a coffee, please.",
         "accepted": [
           "would like",
-          "'d like",
-          "would like to"
+          "'d like"
         ],
         "hint": {
           "en": "polite: I'd like",
@@ -1251,7 +1249,7 @@
           "are",
           "am"
         ],
-        "hu": "A gyerekek hallgatnak engem."
+        "hu": "A gyerekek engem hallgatnak."
       },
       {
         "kind": "fix",
@@ -1268,7 +1266,7 @@
       {
         "kind": "say",
         "en": "I am waiting at the gate.",
-        "hu": "A kapunál várok."
+        "hu": "A beszállókapunál várok."
       }
     ],
     "appearsIn": [],
@@ -1906,13 +1904,12 @@
         "tokens": [
           "Today",
           "is",
-          "more",
-          "warm",
+          "hoter",
           "than",
           "yesterday"
         ],
         "wrong": 2,
-        "fix": "warmer",
+        "fix": "hotter",
         "hu": "Ma melegebb van, mint tegnap."
       },
       {

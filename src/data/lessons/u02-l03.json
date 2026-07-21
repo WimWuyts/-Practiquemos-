@@ -74,34 +74,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "David is my ___.",
           "answer": "nephew",
           "options": [
             "nephew",
             "family",
             "mother"
           ],
-          "hu": "(unokaöcs)"
+          "hu": "David az unokaöcsém."
         },
         {
-          "text": "This is an ___.",
+          "text": "___ Eva cooks for Christmas.",
           "answer": "aunt",
           "options": [
             "aunt",
             "family",
             "mother"
           ],
-          "hu": "(nagynéni)"
+          "hu": "Eva néni karácsonyra főz."
         },
         {
-          "text": "This is an ___.",
+          "text": "He is my ___.",
           "answer": "uncle",
           "options": [
             "uncle",
             "family",
             "mother"
           ],
-          "hu": "(nagybácsi)"
+          "hu": "Ő a nagybátyám."
         }
       ]
     },
@@ -111,7 +111,7 @@
       "items": [
         {
           "id": "lex_nephew",
-          "text": "This is a ___.",
+          "text": "David is my ___.",
           "answer": "nephew",
           "accepted": [
             "nephew",
@@ -125,29 +125,29 @@
             "mother",
             "father"
           ],
-          "hu": "(unokaöcs)"
+          "hu": "David az unokaöcsém."
         },
         {
           "id": "lex_aunt",
-          "text": "This is an ___.",
-          "answer": "aunt",
+          "text": "___ Eva cooks for Christmas.",
+          "answer": "Aunt",
           "accepted": [
             "aunt",
             "aunt",
             "aunts",
-            "aunt"
+            "Aunt"
           ],
           "options": [
-            "aunt",
+            "Aunt",
             "family",
             "mother",
             "father"
           ],
-          "hu": "(nagynéni)"
+          "hu": "Eva néni karácsonyra főz."
         },
         {
           "id": "lex_uncle",
-          "text": "This is an ___.",
+          "text": "He is my ___.",
           "answer": "uncle",
           "accepted": [
             "uncle",
@@ -161,11 +161,11 @@
             "mother",
             "father"
           ],
-          "hu": "(nagybácsi)"
+          "hu": "Ő a nagybátyám."
         },
         {
           "id": "lex_grandmother",
-          "text": "This is a ___.",
+          "text": "I am a ___.",
           "answer": "grandmother",
           "accepted": [
             "grandmother",
@@ -179,7 +179,7 @@
             "mother",
             "father"
           ],
-          "hu": "(nagymama)"
+          "hu": "Nagymama vagyok."
         }
       ]
     },

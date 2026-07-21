@@ -8,13 +8,15 @@ window.M = window.M || {};
   // (with a manual escape); on a wrong answer, always wait for a deliberate tap.
   function advance(mount, ok, goNext) {
     if (ok && !reduceMotion()) {
-      var row = el("div", { class: "btn-row" }, [
-        el("button", { class: "btn ghost small", onclick: function () { clearTimeout(t); goNext(); } }, [M.i18n.t("btn.continue")]),
-      ]);
+      var btn = el("button", { class: "btn ghost small", onclick: function () { clearTimeout(t); goNext(); } }, [M.i18n.t("btn.continue")]);
+      var row = el("div", { class: "btn-row" }, [btn]);
       mount.appendChild(row);
+      try { btn.focus({ preventScroll: true }); } catch (e) {} // keep keyboard/SR focus on the way forward
       var t = setTimeout(function () { if (document.body.contains(row)) goNext(); }, 900);
     } else {
-      mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: goNext }, [M.i18n.t("btn.continue")])]));
+      var b2 = el("button", { class: "btn", onclick: goNext }, [M.i18n.t("btn.continue")]);
+      mount.appendChild(el("div", { class: "btn-row" }, [b2]));
+      try { b2.focus({ preventScroll: true }); } catch (e) {}
     }
   }
 
@@ -70,7 +72,7 @@ window.M = window.M || {};
       ]);
       card.appendChild(speakBtn(lx.tts));
       mount.appendChild(card);
-      M.store.touchItem(lx.id, "meaning", true);
+      M.store.touchItem(lx.id, null, false); // exposure only — seeing a card is not retrieval
       var np = el("div", { class: "btn-row" }, [
         el("button", { class: "btn secondary", disabled: i === 0 ? "disabled" : false, onclick: function () { if (i > 0) { i--; draw(); } } }, [M.i18n.t("nav.back")]),
         el("button", { class: "btn", onclick: function () { if (i < items.length - 1) { i++; draw(); } else done(true); } },
@@ -233,7 +235,7 @@ window.M = window.M || {};
         });
         blocks.appendChild(b);
       });
-      builder.appendChild(el("button", { class: "btn ghost small", onclick: function () { current = ""; refresh(); }, text: "⟲" }));
+      builder.appendChild(el("button", { class: "btn ghost small", "aria-label": M.i18n.t("btn.startover"), title: M.i18n.t("btn.startover"), onclick: function () { current = ""; refresh(); }, text: "⟲" }));
       stage.appendChild(builder); stage.appendChild(blocks);
       mount.appendChild(stage); refresh();
     }
@@ -271,7 +273,7 @@ window.M = window.M || {};
     card.appendChild(exs);
     // tiny check
     var checked = false;
-    var input = el("input", { class: "textin", type: "text", "aria-label": g.check.question, placeholder: g.check.question });
+    var input = el("input", { class: "textin", type: "text", "aria-label": g.check.question });
     var checkWrap = el("div", { class: "card" }, [
       el("strong", { text: M.i18n.t("act.grammar.check") + ": " }), el("span", { text: g.check.question }), input,
       el("div", { class: "btn-row" }, [
@@ -358,7 +360,8 @@ window.M = window.M || {};
         if (!recording) {
           M.audio.startRecording(function (st, url) {
             if (st === "recording") { recording = true; recBtn.innerHTML = dom.icon("stop") + " " + M.i18n.t("btn.stop"); recState.innerHTML = '<span class="rec-dot on"></span>' + M.i18n.t("a11y.recording"); }
-            else if (st === "ready") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("btn.record"); recState.textContent = ""; audio.src = url; audio.classList.remove("hidden"); }
+            else if (st === "ready") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("btn.record"); recState.innerHTML = '<span class="rec-ok">✓</span> ' + M.i18n.t("say.saved"); audio.src = url; audio.classList.remove("hidden"); }
+            else if (st === "empty") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("btn.record"); recState.textContent = M.i18n.t("say.empty"); }
             else if (st === "error") { recording = false; dom.toast(M.i18n.t("cap.mic.no")); }
           });
         } else { M.audio.stopRecording(); }
@@ -395,8 +398,17 @@ window.M = window.M || {};
   };
 
   R.review = function (mount, act, done) {
-    // gentle review: reuse listen-choose over the review items
-    R["listen-choose"](mount, { items: act.items }, done);
+    // Spaced review is now a mixed retrieval: recognise → TYPE → SAY, so production
+    // (not just recognition) is brought back over time.
+    var ids = (act.items || []).filter(Boolean);
+    var lexes = ids.map(M.get.lex).filter(Boolean);
+    if (!lexes.length) return done(true);
+    var says = lexes.slice(0, 3).map(function (l) { return { en: (l.examples[0] || {}).en, hu: (l.examples[0] || {}).hu }; }).filter(function (p) { return p.en; });
+    var steps = [function (cb) { R["listen-choose"](mount, { items: ids.slice(0, 6) }, cb); }];
+    steps.push(function (cb) { R.typed(mount, { items: ids.slice(0, 4) }, cb); });
+    if (says.length) steps.push(function (cb) { R["say-it"](mount, { phrases: says }, cb); });
+    var i = 0;
+    (function next() { if (i >= steps.length) return done(true); steps[i++](function () { dom.clear(mount); next(); }); })();
   };
 
   // See an icon, choose the English word.
@@ -493,7 +505,7 @@ window.M = window.M || {};
         b.addEventListener("click", function () { if (b.disabled) return; b.disabled = true; current.push(w); refresh(); });
         btns.push(b); pool.appendChild(b);
       });
-      builder.appendChild(el("button", { class: "btn ghost small", onclick: function () { current = []; btns.forEach(function (b) { b.disabled = false; }); refresh(); }, text: "⟲" }));
+      builder.appendChild(el("button", { class: "btn ghost small", "aria-label": M.i18n.t("btn.startover"), title: M.i18n.t("btn.startover"), onclick: function () { current = []; btns.forEach(function (b) { b.disabled = false; }); refresh(); }, text: "⟲" }));
       mount.appendChild(builder); mount.appendChild(pool);
       mount.appendChild(el("div", { class: "btn-row" }, [
         el("button", { class: "btn", onclick: function () {
@@ -668,7 +680,14 @@ window.M = window.M || {};
         tries++;
         dom.clear(msg); feedback(msg, false, M.i18n.t("fb.almost"));
         if (it.hint) msg.appendChild(hintBox());
-        if (tries >= 2) msg.appendChild(el("div", { style: "font-size:1.2rem;color:var(--ink)", text: answer }));
+        if (tries >= 2) {
+          // never stuck: reveal the answer (announced) and offer a way forward
+          msg.appendChild(el("div", { style: "font-size:1.2rem;color:var(--ink)", role: "status", text: M.i18n.t("act.wordfill.copy") + " " + answer }));
+          if (!msg.querySelector(".gr-reveal-cont")) {
+            input.value = answer;
+            msg.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn gr-reveal-cont", onclick: function () { M.audio.speak(it.text.replace("___", answer)); goNext(); } }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+          }
+        }
       }
       var controls = el("div", { class: "btn-row" }, [
         it.hint ? el("button", { class: "btn secondary small", onclick: function () { dom.clear(msg); msg.appendChild(hintBox()); } }, [el("span", { html: dom.icon("help") }), " " + M.i18n.t("btn.hint")]) : null,
@@ -688,9 +707,12 @@ window.M = window.M || {};
     mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.grfix.prompt") }));
     if (M.i18n.helpAvailable() && it.hu) mount.appendChild(el("div", { class: "card" }, [el("div", { class: "muted", text: it.hu })]));
     var wrap = el("div", { class: "blocks", style: "font-size:1.2rem" });
-    var solved = false;
+    var live = el("div", { class: "sr-only", role: "status", "aria-live": "polite" });
+    var solved = false, wrongTaps = 0;
+    var btns = [];
     it.tokens.forEach(function (tok, i) {
       var b = el("button", { class: "block" }, [tok]);
+      btns.push(b);
       b.addEventListener("click", function () {
         if (solved) return;
         if (i === it.wrong) {
@@ -704,12 +726,15 @@ window.M = window.M || {};
           mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { done(true); } }, [M.i18n.t("btn.continue")])]));
         } else {
           b.classList.add("wrong");
+          live.textContent = M.i18n.t("a11y.incorrect"); // announce for screen readers
           setTimeout(function () { b.classList.remove("wrong"); }, 500);
+          if (++wrongTaps >= 3) { btns[it.wrong].classList.add("hintme"); } // never stuck: show where to tap
         }
       });
       wrap.appendChild(b);
     });
     mount.appendChild(wrap);
+    mount.appendChild(live);
   };
 
   // Answer expansion: grow a short answer from one clause to three (from the brief).
@@ -820,21 +845,25 @@ window.M = window.M || {};
       el("button", { class: "btn secondary", onclick: function () { M.audio.speak(text); }, "aria-label": "Hear it: " + text }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("say.hear")]),
       el("button", { class: "btn ghost", onclick: function () { M.audio.speak(text, { slow: true }); } }, [el("span", { html: dom.icon("slow") }), " " + M.i18n.t("btn.listen.slow")]),
     ]));
-    var recState = el("div", { class: "recstate", "aria-live": "polite" });
-    var audio = el("audio", { controls: "controls", class: "hidden", "aria-label": M.i18n.t("say.hearme") });
+    var recState = el("div", { class: "recstate", role: "status", "aria-live": "polite" });
+    var audio = el("audio", { class: "hidden", "aria-hidden": "true" });
     var recBtn = el("button", { class: "btn" }, [el("span", { html: dom.icon("mic") }), " " + M.i18n.t("say.record")]);
+    // big, obvious "Hear me" — the model↔her comparison, no hunting for a native player
+    var hearMe = el("button", { class: "btn secondary hidden", onclick: function () { try { audio.currentTime = 0; audio.play(); } catch (e) {} } },
+      [el("span", { html: dom.icon("play") }), " " + M.i18n.t("say.hearme")]);
     var recording = false;
     recBtn.addEventListener("click", function () {
       if (!M.audio.canRecord()) { dom.toast(M.i18n.t("cap.mic.no")); return; }
       if (!recording) {
         M.audio.startRecording(function (st, url) {
-          if (st === "recording") { recording = true; recBtn.innerHTML = dom.icon("stop") + " " + M.i18n.t("btn.stop"); recState.innerHTML = '<span class="rec-dot on"></span>' + M.i18n.t("a11y.recording"); }
-          else if (st === "ready") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("say.again"); recState.textContent = ""; audio.src = url; audio.classList.remove("hidden"); if (opts.onRecorded) opts.onRecorded(url); }
+          if (st === "recording") { recording = true; recBtn.innerHTML = dom.icon("stop") + " " + M.i18n.t("btn.stop"); recState.innerHTML = '<span class="rec-dot on"></span>' + M.i18n.t("a11y.recording"); hearMe.classList.add("hidden"); }
+          else if (st === "ready") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("say.again"); recState.innerHTML = '<span class="rec-ok">✓</span> ' + M.i18n.t("say.saved"); audio.src = url; hearMe.classList.remove("hidden"); if (opts.onRecorded) opts.onRecorded(url); }
+          else if (st === "empty") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("say.record"); recState.textContent = M.i18n.t("say.empty"); hearMe.classList.add("hidden"); }
           else if (st === "error") { recording = false; dom.toast(M.i18n.t("cap.mic.no")); }
         });
       } else { M.audio.stopRecording(); }
     });
-    wrap.appendChild(el("div", { class: "btn-row" }, [recBtn]));
+    wrap.appendChild(el("div", { class: "btn-row" }, [recBtn, hearMe]));
     wrap.appendChild(recState);
     wrap.appendChild(audio);
     if (M.caps.recognition && opts.check !== false) {
@@ -865,9 +894,9 @@ window.M = window.M || {};
         el("div", { style: "font-size:1.35rem;font-weight:700", text: p.en }),
         M.i18n.helpAvailable() && p.hu ? el("div", { class: "hu", text: p.hu }) : null,
       ]);
-      card.appendChild(M.speakRecord(p.en));
+      var sayId = (M.data._lexByWord[p.en] || {}).id || ("_say_" + idx);
+      card.appendChild(M.speakRecord(p.en, { onRecorded: function () { M.store.touchItem(sayId, "spoken", true); } }));
       mount.appendChild(card);
-      M.store.touchItem((M.data._lexByWord[p.en] || {}).id || ("_say_" + idx), "spoken", true);
       mount.appendChild(el("div", { class: "btn-row" }, [
         el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < phrases.length) round(); else done(true); } }, [idx < phrases.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
       ]));
@@ -891,9 +920,8 @@ window.M = window.M || {};
         el("div", { class: "en", text: word }),
         el("p", { class: "muted", text: (idx + 1) + " / " + words.length }),
       ]);
-      card.appendChild(M.speakRecord(word));
+      card.appendChild(M.speakRecord(word, { onRecorded: function () { M.store.touchItem("_pron_" + word, "spoken", true); } }));
       mount.appendChild(card);
-      M.store.touchItem("_pron_" + word, "spoken", true);
       mount.appendChild(el("div", { class: "btn-row" }, [
         el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < words.length) round(); else done(true); } },
           [idx < words.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
@@ -919,9 +947,8 @@ window.M = window.M || {};
         el("div", { class: "muted", style: "font-size:1rem", text: pair.a + " · " + pair.b }),
         el("div", { class: "en", text: target }),
       ]);
-      card.appendChild(M.speakRecord(target));
+      card.appendChild(M.speakRecord(target, { onRecorded: function () { M.store.touchItem("_pron_" + target, "spoken", true); } }));
       mount.appendChild(card);
-      M.store.touchItem("_pron_" + target, "spoken", true);
       mount.appendChild(el("div", { class: "btn-row" }, [
         el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < pairs.length) round(); else done(true); } },
           [idx < pairs.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),

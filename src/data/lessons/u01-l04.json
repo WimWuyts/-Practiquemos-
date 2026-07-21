@@ -92,24 +92,24 @@
           "hu": "Magyarországról jöttem."
         },
         {
-          "text": "This is a ___.",
+          "text": "Denmark is a beautiful ___.",
           "answer": "country",
           "options": [
             "country",
             "name",
             "city"
           ],
-          "hu": "(ország)"
+          "hu": "Dánia gyönyörű ország."
         },
         {
-          "text": "This is a ___.",
+          "text": "Prague is a lovely ___.",
           "answer": "city",
           "options": [
             "city",
             "name",
             "country"
           ],
-          "hu": "(város)"
+          "hu": "Prága csodás város."
         }
       ]
     },
@@ -117,26 +117,6 @@
       "id": "act_51",
       "type": "word-fill",
       "items": [
-        {
-          "id": "lex_be",
-          "text": "I ___ happy today.",
-          "answer": "am",
-          "accepted": [
-            "be",
-            "am",
-            "is",
-            "are",
-            "be",
-            "am"
-          ],
-          "options": [
-            "am",
-            "have",
-            "speak",
-            "live"
-          ],
-          "hu": "Ma boldog vagyok."
-        },
         {
           "id": "lex_from",
           "text": "I'm ___ Hungary.",
@@ -156,7 +136,7 @@
         },
         {
           "id": "lex_country",
-          "text": "This is a ___.",
+          "text": "Denmark is a beautiful ___.",
           "answer": "country",
           "accepted": [
             "country",
@@ -170,11 +150,11 @@
             "city",
             "teacher"
           ],
-          "hu": "(ország)"
+          "hu": "Dánia gyönyörű ország."
         },
         {
           "id": "lex_city",
-          "text": "This is a ___.",
+          "text": "Prague is a lovely ___.",
           "answer": "city",
           "accepted": [
             "city",
@@ -188,7 +168,25 @@
             "country",
             "teacher"
           ],
-          "hu": "(város)"
+          "hu": "Prága csodás város."
+        },
+        {
+          "id": "lex_teacher",
+          "text": "I am a ___.",
+          "answer": "teacher",
+          "accepted": [
+            "teacher",
+            "teacher",
+            "teachers",
+            "teacher"
+          ],
+          "options": [
+            "teacher",
+            "name",
+            "country",
+            "city"
+          ],
+          "hu": "Tanár vagyok."
         }
       ]
     },

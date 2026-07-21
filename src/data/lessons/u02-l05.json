@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "My house is very ___.",
           "answer": "old",
           "options": [
             "old",
             "his",
             "her"
           ],
-          "hu": "(öreg / idős)"
+          "hu": "A házam nagyon régi."
         },
         {
-          "text": "It is very ___.",
+          "text": "My students are ___.",
           "answer": "young",
           "options": [
             "young",
             "his",
             "her"
           ],
-          "hu": "(fiatal)"
+          "hu": "A diákjaim fiatalok."
         },
         {
-          "text": "It is very ___.",
+          "text": "Kira and Endika are ___.",
           "answer": "married",
           "options": [
             "married",
             "his",
             "her"
           ],
-          "hu": "(házas)"
+          "hu": "Kira és Endika házasok."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_old",
-          "text": "It is very ___.",
+          "text": "My house is very ___.",
           "answer": "old",
           "accepted": [
             "old",
@@ -122,11 +122,11 @@
             "her",
             "our"
           ],
-          "hu": "(öreg / idős)"
+          "hu": "A házam nagyon régi."
         },
         {
           "id": "lex_young",
-          "text": "It is very ___.",
+          "text": "My students are ___.",
           "answer": "young",
           "accepted": [
             "young",
@@ -139,11 +139,11 @@
             "her",
             "our"
           ],
-          "hu": "(fiatal)"
+          "hu": "A diákjaim fiatalok."
         },
         {
           "id": "lex_married",
-          "text": "It is very ___.",
+          "text": "Kira and Endika are ___.",
           "answer": "married",
           "accepted": [
             "married",
@@ -156,7 +156,7 @@
             "her",
             "our"
           ],
-          "hu": "(házas)"
+          "hu": "Kira és Endika házasok."
         },
         {
           "id": "lex_baby",
@@ -194,16 +194,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very old.",
-          "hu": "(öreg / idős)"
+          "en": "My house is very old.",
+          "hu": "A házam nagyon régi."
         },
         {
-          "en": "It is very young.",
-          "hu": "(fiatal)"
+          "en": "My students are young.",
+          "hu": "A diákjaim fiatalok."
         },
         {
-          "en": "It is very married.",
-          "hu": "(házas)"
+          "en": "Kira and Endika are married.",
+          "hu": "Kira és Endika házasok."
         }
       ]
     },

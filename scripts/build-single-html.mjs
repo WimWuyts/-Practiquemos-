@@ -44,11 +44,17 @@ const i18n = {
   en: readJSON(join(SRC, "i18n", "en.json")),
   hu: readJSON(join(SRC, "i18n", "hu.json")),
 };
-// Guard against </script> breaking the inline script tag.
-const safe = (obj) => JSON.stringify(obj).replace(/<\//g, "<\\/");
+// Embed data as a JSON string parsed with JSON.parse — the dedicated JSON parser is much
+// faster on cold boot than the JS engine parsing a ~1 MB object literal. Escape for a
+// single-quoted JS string literal and guard against </script> closing the inline tag.
+const jsonLiteral = (obj) => "'" + JSON.stringify(obj)
+  .replace(/\\/g, "\\\\")
+  .replace(/'/g, "\\'")
+  .replace(/[\u2028\u2029]/g, function (c) { return "\\u" + c.charCodeAt(0).toString(16); })
+  .replace(/<\//g, "<\\/") + "'";
 const dataScript =
-  "window.MARTA_DATA = " + safe(bundle) + ";\n" +
-  "window.MARTA_I18N = " + safe(i18n) + ";";
+  "window.MARTA_DATA = JSON.parse(" + jsonLiteral(bundle) + ");\n" +
+  "window.MARTA_I18N = JSON.parse(" + jsonLiteral(i18n) + ");";
 
 // ---- scripts (concatenation order == dependency order) ----
 const SCRIPT_FILES = [

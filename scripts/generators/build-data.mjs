@@ -85,20 +85,48 @@ const UNCOUNTABLE = new Set(["food", "water", "coffee", "tea", "milk", "bread", 
   "music", "weather", "time", "help", "work", "hair", "snow", "rain", "wind", "grass", "furniture", "luggage", "clothes", "chocolate"]);
 // verbs whose bare present is awkward with "I ___ every day."
 const VERB_SKIP = new Set(["be", "can", "do", "will", "would", "could", "should", "may", "might", "must", "have", "get up", "wake up", "going to"]);
+// irregular/past forms listed as headwords — must NOT hit the present-habitual template
+const IRREG_PAST = new Set(["was", "were", "went", "saw", "had", "did", "said", "came", "got", "gave", "made", "took",
+  "found", "told", "knew", "felt", "left", "met", "paid", "brought", "bought", "thought", "caught", "taught",
+  "ate", "drank", "wrote", "spoke", "broke", "woke", "chose", "flew", "grew", "threw", "drove", "rode", "ran",
+  "sat", "stood", "won", "lost", "sent", "spent", "built", "held", "heard", "read", "fell", "kept", "slept"]);
+// non-gradable adjectives — "It is very X" is wrong
+const NON_GRADABLE = new Set(["retired", "married", "single", "dead", "alive", "free", "full", "empty", "online",
+  "hungarian", "spanish", "danish", "german", "english", "french", "italian", "polish", "dutch", "american",
+  "british", "chinese", "japanese", "russian", "daily", "weekly", "main", "next", "last", "only"]);
+const ORDINALS = new Set(["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"]);
+const FREQ_ADV = new Set(["always", "usually", "often", "sometimes", "never", "rarely", "seldom", "normally", "generally"]);
+// vowel/consonant SOUND overrides for a/an (letter-based test is wrong for these)
+const AN_BY_SOUND = new Set(["hour", "honest", "honour", "honor", "heir"]);
+const A_BY_SOUND = new Set(["university", "unicorn", "european", "one", "once", "uniform", "useful", "unit", "user", "use", "united", "universe", "euro", "user"]);
+function article(w) {
+  const lw = w.toLowerCase();
+  if (AN_BY_SOUND.has(lw)) return "an";
+  if (A_BY_SOUND.has(lw)) return "a";
+  return /^[aeiou]/i.test(w) ? "an" : "a";
+}
 function safeTemplate(w, pos, theme) {
+  const lw = w.toLowerCase();
   const isProper = /^[A-Z]/.test(w);
   if (pos === "noun") {
     if (isProper) return `I like ${w}.`;
-    if (UNCOUNTABLE.has(w.toLowerCase())) return `I like ${w}.`;
+    if (UNCOUNTABLE.has(lw)) return `I like ${w}.`;
     if (/s$/.test(w)) return `The ${w} are here.`;
-    return /^[aeiou]/i.test(w) ? `This is an ${w}.` : `This is a ${w}.`;
+    return `This is ${article(w)} ${w}.`;
   }
   if (pos === "verb") {
-    if (VERB_SKIP.has(w.toLowerCase())) return `We often use "${w}" in English.`;
+    if (VERB_SKIP.has(lw) || IRREG_PAST.has(lw) || /ed$/.test(lw)) return `We often use "${w}" in English.`;
     return `I ${w} every day.`;
   }
-  if (pos === "adjective") return `It is very ${w}.`;
-  if (pos === "adverb") return `I speak ${w}.`;
+  if (pos === "adjective") {
+    if (ORDINALS.has(lw)) return `It is the ${w} one.`;
+    if (NON_GRADABLE.has(lw)) return `He is ${w}.`;
+    return `It is very ${w}.`;
+  }
+  if (pos === "adverb") {
+    if (FREQ_ADV.has(lw)) return `I ${w} drink coffee.`;
+    return `I speak ${w}.`;
+  }
   if (pos === "number") return `I have ${w} friends.`;
   if (pos === "preposition" || pos === "determiner" || pos === "pronoun" || pos === "article") return `${w[0].toUpperCase()}${w.slice(1)} — a useful word.`;
   return `${w[0].toUpperCase()}${w.slice(1)}.`;
@@ -351,6 +379,26 @@ function gapfillFrom(lx) {
   return { text: ex.replace(re, "___"), answer: lx.headword, options: opts, hu: (lx.examples[0].hu || "") };
 }
 
+// Levenshtein + the SAME tolerance the runtime matcher uses, so we never offer a "tap"
+// distractor that would be scored correct, and never blank a trivial stop-word.
+function levDist(a, b) {
+  const m = a.length, n = b.length, d = [];
+  for (let i = 0; i <= m; i++) d[i] = [i];
+  for (let j = 0; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++)
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[m][n];
+}
+const normW = (s) => String(s || "").toLowerCase().replace(/[^a-z']/g, "");
+function collidesWith(distractor, answer) {
+  const a = normW(distractor), b = normW(answer);
+  if (!a || !b) return true;
+  const tol = b.length <= 8 ? 1 : 2;
+  return levDist(a, b) <= tol;
+}
+const STOPWORD_GAP = new Set(["a", "an", "the", "is", "am", "are", "i", "you", "he", "she", "it", "we", "they",
+  "my", "to", "of", "in", "on", "at", "and", "so", "or", "up", "me", "us", "no", "do"]);
+
 // Typed word-fill: blank the exact surface form of the word in its own example sentence.
 // Accepts the headword + all acceptedForms + the surface form; carries options for the
 // "tap instead" fallback. Derived — no authoring needed (every productive word has an example).
@@ -366,8 +414,10 @@ function wordFillFrom(lx) {
     if (m) { re = r; surface = m[0]; break; }
   }
   if (!surface) return null;
-  // avoid trivially short gaps that are hard to guess ("a", "is") unless they carry meaning
-  const options = [surface].concat((lx.distractors || []).slice(0, 3));
+  // skip trivial stop-word gaps — ambiguous and pedagogically weak
+  if (STOPWORD_GAP.has(surface.toLowerCase())) return null;
+  // "tap" options must never include a distractor the forgiving matcher would accept
+  const options = [surface].concat((lx.distractors || []).filter((d) => !collidesWith(d, surface)).slice(0, 3));
   return {
     id: lx.id, text: ex.replace(re, "___"), answer: surface,
     accepted: forms.concat([surface]), options, hu: (lx.examples[0].hu || ""),
@@ -478,7 +528,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.8.0", schemaVersion: 1,
+  id: "marta_english", version: "1.9.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

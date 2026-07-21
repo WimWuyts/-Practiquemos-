@@ -102,9 +102,10 @@ window.M = window.M || {};
       return (accepted || []).some(function (t) {
         var b = norm(t); if (!b) return false;
         if (a === b) return true;
-        // one slip is always forgiven, even on short words; longer words allow more.
-        // Kept tight enough that distinct short words (home/house, cat/cut) don't collide.
-        var tol = b.length <= 4 ? 1 : b.length <= 8 ? 2 : 3;
+        // Forgive ONE typo on any word up to 8 letters, two on longer words. Kept this
+        // tight on purpose so a different real word two edits away (home/house, sheep/ship,
+        // there/their) is NOT accepted as correct — that would praise a genuine error.
+        var tol = b.length <= 8 ? 1 : 2;
         return lev(a, b) <= tol;
       });
     },

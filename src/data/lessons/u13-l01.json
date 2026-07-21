@@ -197,7 +197,7 @@
       "items": [
         {
           "id": "lex_travel",
-          "text": "Mirella ___ for work.",
+          "text": "My friend Rita ___ for work.",
           "answer": "travels",
           "accepted": [
             "travel",
@@ -212,7 +212,7 @@
             "bring",
             "carry"
           ],
-          "hu": "Mirella munka miatt utazik."
+          "hu": "A barátnőm, Rita munka miatt utazik."
         },
         {
           "id": "lex_trip",

@@ -1,12 +1,16 @@
-/* Header / navigation */
+/* Header / navigation — never wraps; nav becomes a horizontal scroll strip when tight */
 .appbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
-  display:flex;align-items:center;gap:.8rem;padding:.6rem 1rem}
-.appbar .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+  display:flex;align-items:center;flex-wrap:wrap;gap:.4rem .8rem;padding:.6rem 1rem}
+.appbar .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;flex:0 0 auto}
 .appbar .brand svg{width:40px;height:40px;flex:0 0 auto}
-.appbar .spacer{flex:1}
-.appbar nav{display:flex;gap:.3rem;flex-wrap:wrap}
-.navbtn{min-height:44px;padding:.4rem .8rem;border-radius:10px;border:1px solid transparent;
+.appbar .spacer{display:none}
+.appbar nav{display:flex;gap:.3rem;flex-wrap:nowrap;overflow-x:auto;flex:1 1 360px;min-width:0;
+  justify-content:flex-end;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.appbar nav::-webkit-scrollbar{height:6px}
+.navbtn{min-height:44px;padding:.4rem .8rem;border-radius:10px;border:1px solid transparent;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.3rem;flex:0 0 auto;
   background:transparent;color:var(--ink);font-size:.95rem;cursor:pointer;font-weight:600}
+@media (max-width:720px){ .appbar nav{justify-content:flex-start} }
 .navbtn[aria-current="page"]{background:var(--good-bg);border-color:var(--accent);color:var(--accent)}
 .navbtn:hover{background:var(--surface-2)}
 
@@ -82,7 +86,7 @@
 .option.wrong{border-color:var(--gentle);background:var(--gentle-bg)}
 .option .mark{margin-left:auto;font-weight:800}
 .blocks,.builder{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
-.block{min-height:44px;padding:.5rem 1rem;border-radius:10px;border:2px solid var(--accent);background:var(--surface);
+.block{min-height:48px;padding:.6rem 1rem;border-radius:10px;border:2px solid var(--accent);background:var(--surface);
   color:var(--ink);cursor:pointer;font-size:1.05rem}
 .builder{min-height:56px;border:2px dashed var(--line);border-radius:12px;padding:.6rem;align-items:center}
 .builder:empty::before{content:attr(data-empty);color:var(--ink-soft)}
@@ -120,8 +124,30 @@
 .setrow{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .setrow:last-child{border-bottom:0}
 select,.setrow select{min-height:44px;font-size:1rem;padding:.4rem .6rem;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink)}
-.switch{min-height:44px}
-.recstate{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--accent-2)}
+/* real on/off switch */
+.switch{display:inline-flex;align-items:center;gap:.6rem;min-height:48px;padding:.3rem .5rem;cursor:pointer;
+  background:transparent;border:0;font-family:inherit;font-size:1rem;font-weight:700;color:var(--ink-soft)}
+.switch-track{position:relative;width:52px;height:30px;border-radius:999px;background:var(--surface-sunk);
+  border:1px solid var(--line);transition:background .18s var(--ease)}
+.switch-thumb{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;
+  box-shadow:var(--elev-1);transition:transform .18s var(--ease)}
+.switch.on .switch-track{background:var(--accent);border-color:var(--accent)}
+.switch.on .switch-thumb{transform:translateX(22px)}
+.switch.on{color:var(--accent)}
+.switch:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:10px}
+.recstate{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--accent-2);min-height:1.6rem;margin:.3rem 0}
+.rec-ok{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--good);color:#fff;font-size:.8rem}
+.block.hintme{border-color:var(--warm);box-shadow:0 0 0 3px var(--warm-soft)}
+body:not([data-motion="reduce"]) .block.hintme{animation:pulse 1.1s infinite}
+/* collapsible practice sections */
+.card.acc{padding:0}
+.acc-head{display:flex;align-items:center;gap:.8rem;width:100%;padding:1.1rem 1.2rem;background:transparent;
+  border:0;font-family:inherit;color:var(--ink);cursor:pointer;text-align:left}
+.acc-head:hover{background:var(--surface-2)}
+.acc-head .acc-chev{transition:transform .18s var(--ease);color:var(--ink-soft)}
+.acc-head.open .acc-chev{transform:rotate(90deg)}
+.acc > .hidden{display:none !important}
+.card.acc > div:not(.hidden){padding:0 1.2rem 1.2rem}
 .rec-dot{width:14px;height:14px;border-radius:50%;background:var(--accent-2)}
 @keyframes pulse{50%{opacity:.35}}
 body:not([data-motion="reduce"]) .rec-dot.on{animation:pulse 1s infinite}
@@ -164,8 +190,8 @@ body:not([data-motion="reduce"]) .rec-dot.on{animation:pulse 1s infinite}
 .scene{position:relative;height:120px;border-radius:var(--r-lg);overflow:hidden;margin:0 0 1rem;
   border:1px solid var(--line);box-shadow:var(--elev-1)}
 .scene svg{width:100%;height:100%;display:block}
-.scene::after{content:"";position:absolute;inset:auto 0 0 0;height:56%;
-  background:linear-gradient(180deg,transparent,rgba(35,31,26,.62));pointer-events:none}
+.scene::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 30%,rgba(35,31,26,.5) 72%,rgba(35,31,26,.72))}
 .scene .label{position:absolute;left:16px;bottom:12px;z-index:1;color:#fff;font-family:var(--font-display);
   font-size:1.15rem;font-weight:700;letter-spacing:-.01em;text-shadow:0 1px 4px rgba(0,0,0,.45)}
 .scene .label .sub{display:block;font-family:var(--font);font-weight:500;font-size:.82rem;opacity:.92;text-shadow:0 1px 3px rgba(0,0,0,.5)}

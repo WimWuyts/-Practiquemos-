@@ -77,7 +77,7 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "It is the ___ one.",
           "answer": "second",
           "options": [
             "second",
@@ -87,7 +87,7 @@
           "hu": "(második)"
         },
         {
-          "text": "It is very ___.",
+          "text": "It is the ___ one.",
           "answer": "third",
           "options": [
             "third",
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_second",
-          "text": "It is very ___.",
+          "text": "It is the ___ one.",
           "answer": "second",
           "accepted": [
             "second",
@@ -131,7 +131,7 @@
         },
         {
           "id": "lex_third",
-          "text": "It is very ___.",
+          "text": "It is the ___ one.",
           "answer": "third",
           "accepted": [
             "third",

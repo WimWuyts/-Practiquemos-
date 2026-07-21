@@ -128,57 +128,6 @@
             "nice"
           ],
           "hu": "Hogy hívnak?"
-        },
-        {
-          "id": "lex_i",
-          "text": "___ live in Hungary.",
-          "answer": "I",
-          "accepted": [
-            "I",
-            "I",
-            "I"
-          ],
-          "options": [
-            "I",
-            "you",
-            "he",
-            "she"
-          ],
-          "hu": "Magyarországon élek."
-        },
-        {
-          "id": "lex_you",
-          "text": "Where are ___ from?",
-          "answer": "you",
-          "accepted": [
-            "you",
-            "you",
-            "you"
-          ],
-          "options": [
-            "you",
-            "I",
-            "he",
-            "she"
-          ],
-          "hu": "Honnan jössz?"
-        },
-        {
-          "id": "lex_he",
-          "text": "___ is my nephew.",
-          "answer": "He",
-          "accepted": [
-            "he",
-            "he",
-            "He"
-          ],
-          "options": [
-            "He",
-            "I",
-            "you",
-            "she"
-          ],
-          "hu": "Ő az unokaöcsém."
         }
       ]
     },
