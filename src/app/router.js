@@ -3,7 +3,7 @@ window.M = window.M || {};
 (function (M) {
   var el, dom, main, liveRegion;
   var current = "home";
-  var reviewSkipBtn = null, reviewSkipHandler = null;
+  var reviewSkipBtn = null, reviewBadge = null, reviewSkipHandler = null;
 
   var NAV = [
     ["home", "nav.home", "home"], ["lessons", "nav.lessons", "book"],
@@ -30,17 +30,22 @@ window.M = window.M || {};
     document.body.appendChild(main);
     liveRegion = el("div", { class: "sr-only", "aria-live": "polite" });
     document.body.appendChild(liveRegion);
-    if (M.reviewMode()) {
-      reviewSkipBtn = el("button", { class: "reviewskip", type: "button", "aria-label": "Reviewer: skip this step" }, ["Skip ▸"]);
-      reviewSkipBtn.style.display = "none";
-      reviewSkipBtn.addEventListener("click", function () { if (reviewSkipHandler) reviewSkipHandler(); });
-      document.body.appendChild(reviewSkipBtn);
-      document.body.appendChild(el("div", { class: "reviewbadge", text: "REVIEWER MODE" }));
-    }
+    // Reviewer chrome is always created (hidden); the Settings toggle / flag shows it.
+    reviewSkipBtn = el("button", { class: "reviewskip hidden", type: "button", "aria-label": "Reviewer: skip this step" }, ["Skip ▸"]);
+    reviewSkipBtn.addEventListener("click", function () { if (reviewSkipHandler) reviewSkipHandler(); });
+    document.body.appendChild(reviewSkipBtn);
+    reviewBadge = el("div", { class: "reviewbadge hidden", text: "REVIEWER MODE" });
+    document.body.appendChild(reviewBadge);
+    M.updateReviewChrome();
   }
   // Fixed reviewer Skip: point it at the current activity's advance; hide it elsewhere.
-  M.setReviewSkip = function (fn) { reviewSkipHandler = fn; if (reviewSkipBtn) reviewSkipBtn.style.display = ""; };
-  M.clearReviewSkip = function () { reviewSkipHandler = null; if (reviewSkipBtn) reviewSkipBtn.style.display = "none"; };
+  M.setReviewSkip = function (fn) { reviewSkipHandler = fn; if (reviewSkipBtn) reviewSkipBtn.classList.toggle("hidden", !M.reviewMode()); };
+  M.clearReviewSkip = function () { reviewSkipHandler = null; if (reviewSkipBtn) reviewSkipBtn.classList.add("hidden"); };
+  // Reflect the current review mode on the badge (Skip stays hidden until an activity sets it).
+  M.updateReviewChrome = function () {
+    if (reviewBadge) reviewBadge.classList.toggle("hidden", !M.reviewMode());
+    if (reviewSkipBtn && !M.reviewMode()) reviewSkipBtn.classList.add("hidden");
+  };
 
   function setActive(screen) {
     Array.prototype.forEach.call(document.querySelectorAll(".navbtn"), function (b) {
@@ -55,6 +60,7 @@ window.M = window.M || {};
     current = hash;
     dom.clear(main);
     if (M.clearReviewSkip) M.clearReviewSkip(); // activities re-show it; nav screens don't
+    if (M.updateReviewChrome) M.updateReviewChrome();
     M.ui.init();
     if (screen === "lesson") { M.ui.lessonRunner(main, parts[1]); setActive("lessons"); }
     else if (screen === "talk") { M.ui.talk(main, parts[1]); setActive("conversations"); }

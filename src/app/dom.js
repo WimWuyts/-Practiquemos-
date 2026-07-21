@@ -15,10 +15,13 @@ window.M = window.M || {};
     return n;
   }
   // Reviewer/demo mode: lets a helper page through every activity without answering.
-  // On when the file bakes in window.MARTA_REVIEW, or when the URL carries ?review / #review.
+  // On when: the Settings toggle is set, the file bakes in window.MARTA_REVIEW,
+  // or the URL carries ?review / #review.
   M.reviewMode = function () {
-    try { return window.MARTA_REVIEW === true || /[?#&]review\b/i.test(location.href || ""); }
-    catch (e) { return false; }
+    try {
+      if (M.store && M.store.settings && M.store.settings().reviewer === true) return true;
+      return window.MARTA_REVIEW === true || /[?#&]review\b/i.test(location.href || "");
+    } catch (e) { return false; }
   };
   M.dom = {
     el: el,

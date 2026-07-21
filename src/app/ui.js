@@ -507,6 +507,16 @@ window.M = window.M || {};
     card.appendChild(row(M.i18n.t("settings.open_conv"), toggle(s.allowOpenConv, function (v) { M.store.setSetting("allowOpenConv", v); })));
     mount.appendChild(card);
 
+    // reviewer mode — browse the whole app with a Skip button on every step
+    var revCard = el("div", { class: "card" }, [
+      row(M.i18n.t("settings.reviewer"), toggle(s.reviewer, function (v) {
+        M.store.setSetting("reviewer", v);
+        if (M.updateReviewChrome) M.updateReviewChrome();
+      })),
+      el("p", { class: "muted", style: "margin:.4rem 0 0", text: M.i18n.t("settings.reviewer.note") + (M.i18n.helpAvailable() ? " · " + M.i18n.hu("settings.reviewer.note") : "") }),
+    ]);
+    mount.appendChild(revCard);
+
     // capability report
     var capCard = el("div", { class: "card" }, [el("h2", { text: M.i18n.t("nav.help") })]);
     M.caps.report().forEach(function (r) {

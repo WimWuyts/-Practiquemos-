@@ -29,7 +29,13 @@ The **single-file learner build is the primary delivery**. The `src/` tree is th
 
 ### Reviewer / demo build
 
-`npm run build` also emits **`dist/Marta_English_REVIEW.html`** — the same app with a fixed **`Skip ▸`** button (bottom-right) that advances the current step, so you can page through the whole course (diagnostic, lessons, drills, dialogues) without answering. A "REVIEWER MODE" badge marks it; the button hides on plain navigation screens. The learner build is unaffected; you can also enable the mode on the normal file by adding `#review` to the URL.
+Reviewer mode adds a fixed **`Skip ▸`** button (bottom-right) that advances the current step, so you can page through the whole course (diagnostic, lessons, drills, dialogues) without answering. A "REVIEWER MODE" badge marks it; the button hides on plain navigation screens. Three ways to turn it on:
+
+- **Settings → Reviewer mode** (a toggle; persists in this browser) — works in the normal `Marta_English.html`.
+- Add `#review` to the URL of the normal file.
+- Open **`dist/Marta_English_REVIEW.html`** — the same app with the mode baked in (also emitted by `npm run build`).
+
+The learner never sees it unless the toggle is switched on (it defaults off).
 
 ## What's in the box
 

@@ -140,6 +140,8 @@
   "settings.help.panels": "Hungarian help panels",
   "settings.help.heavy": "Lots of Hungarian",
   "settings.open_conv": "Allow open conversations now",
+  "settings.reviewer": "Reviewer mode",
+  "settings.reviewer.note": "Adds a Skip button on every step so you can browse the whole app without answering.",
   "backup.title": "Backup",
   "backup.export": "Make a backup",
   "backup.import": "Restore a backup",

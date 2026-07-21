@@ -16,7 +16,7 @@ window.M = window.M || {};
       helpLang: "hu",        // hu | en  (Hungarian help availability)
       helpMode: "menu",      // menu | panels | heavy
       voiceURI: null, textSize: "normal", reduceMotion: false,
-      allowOpenConv: false, lastLocation: null,
+      allowOpenConv: false, lastLocation: null, reviewer: false,
     },
     progress: {
       schemaVersion: SCHEMA, appVersion: APP_VERSION,

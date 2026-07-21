@@ -140,6 +140,8 @@ ui_string,settings.help.menu,interface,Hungarian menu labels,Magyar menüfelirat
 ui_string,settings.help.panels,interface,Hungarian help panels,Magyar segítő panelek,yes
 ui_string,settings.help.heavy,interface,Lots of Hungarian,Sok magyar,yes
 ui_string,settings.open_conv,interface,Allow open conversations now,Szabad beszélgetések engedélyezése most,yes
+ui_string,settings.reviewer,interface,Reviewer mode,Áttekintő mód,yes
+ui_string,settings.reviewer.note,interface,Adds a Skip button on every step so you can browse the whole app without answering.,"Minden lépésnél megjelenik egy Skip gomb, így válaszadás nélkül átnézheted az egész appot.",yes
 ui_string,backup.title,interface,Backup,Biztonsági mentés,yes
 ui_string,backup.export,interface,Make a backup,Back-up készítése,yes
 ui_string,backup.import,interface,Restore a backup,Biztonsági mentés visszaállítása,yes

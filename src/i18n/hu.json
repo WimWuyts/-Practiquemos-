@@ -140,6 +140,8 @@
   "settings.help.panels": "Magyar segítő panelek",
   "settings.help.heavy": "Sok magyar",
   "settings.open_conv": "Szabad beszélgetések engedélyezése most",
+  "settings.reviewer": "Áttekintő mód",
+  "settings.reviewer.note": "Minden lépésnél megjelenik egy Skip gomb, így válaszadás nélkül átnézheted az egész appot.",
   "backup.title": "Biztonsági mentés",
   "backup.export": "Back-up készítése",
   "backup.import": "Biztonsági mentés visszaállítása",
