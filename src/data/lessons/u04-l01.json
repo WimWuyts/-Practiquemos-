@@ -132,7 +132,11 @@
     "lex_age",
     "lex_address"
   ],
-  "chunks": [],
+  "chunks": [
+    "chunk_dl_getup",
+    "chunk_dl_usually",
+    "chunk_dl_everyday"
+  ],
   "grammarCards": [
     "gr_presentsimple",
     "gr_dodoes",
@@ -144,7 +148,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_52",
+      "id": "act_82",
       "type": "intro",
       "items": [
         "lex_day",
@@ -158,7 +162,7 @@
       ]
     },
     {
-      "id": "act_53",
+      "id": "act_83",
       "type": "listen-choose",
       "items": [
         "lex_day",
@@ -170,7 +174,18 @@
       ]
     },
     {
-      "id": "act_54",
+      "id": "act_84",
+      "type": "icon-choice",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening",
+        "lex_night"
+      ]
+    },
+    {
+      "id": "act_85",
       "type": "match",
       "items": [
         "lex_day",
@@ -182,28 +197,101 @@
       ]
     },
     {
-      "id": "act_55",
+      "id": "act_86",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "afternoon"
     },
     {
-      "id": "act_56",
+      "id": "act_87",
       "type": "grammar",
       "grammarId": "gr_presentsimple"
     },
     {
-      "id": "act_57",
+      "id": "act_88",
       "type": "grammar",
       "grammarId": "gr_dodoes"
     },
     {
-      "id": "act_58",
+      "id": "act_89",
       "type": "grammar",
       "grammarId": "gr_frequency"
     },
     {
-      "id": "act_59",
+      "id": "act_90",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "day",
+          "options": [
+            "day",
+            "morning",
+            "afternoon"
+          ],
+          "hu": "(nap)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "morning",
+          "options": [
+            "morning",
+            "day",
+            "afternoon"
+          ],
+          "hu": "(reggel)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "afternoon",
+          "options": [
+            "afternoon",
+            "day",
+            "morning"
+          ],
+          "hu": "(délután)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "evening",
+          "options": [
+            "evening",
+            "day",
+            "morning"
+          ],
+          "hu": "(este)"
+        }
+      ]
+    },
+    {
+      "id": "act_91",
+      "type": "phrase-match",
+      "items": [
+        "chunk_dl_getup",
+        "chunk_dl_usually",
+        "chunk_dl_everyday"
+      ]
+    },
+    {
+      "id": "act_92",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I get up at seven o'clock.",
+          "hu": "Hétkor kelek."
+        },
+        {
+          "en": "I usually cook in the evening.",
+          "hu": "Általában este főzök."
+        },
+        {
+          "en": "I do this every day.",
+          "hu": "Ezt minden nap csinálom."
+        }
+      ]
+    },
+    {
+      "id": "act_93",
       "type": "typed",
       "items": [
         "lex_day",
@@ -213,12 +301,26 @@
       ]
     },
     {
-      "id": "act_60",
+      "id": "act_94",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_61",
+      "id": "act_95",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "day",
+            "morning",
+            "afternoon"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_96",
       "type": "review",
       "items": [
         "lex_hello",

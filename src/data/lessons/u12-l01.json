@@ -131,7 +131,10 @@
     "lex_push",
     "lex_let"
   ],
-  "chunks": [],
+  "chunks": [
+    "chunk_pa_wasat",
+    "chunk_pa_wentto"
+  ],
   "grammarCards": [
     "gr_waswere"
   ],
@@ -141,7 +144,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_188",
+      "id": "act_286",
       "type": "intro",
       "items": [
         "lex_was",
@@ -153,7 +156,7 @@
       ]
     },
     {
-      "id": "act_189",
+      "id": "act_287",
       "type": "listen-choose",
       "items": [
         "lex_was",
@@ -165,7 +168,18 @@
       ]
     },
     {
-      "id": "act_190",
+      "id": "act_288",
+      "type": "icon-choice",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit",
+        "lex_last_week"
+      ]
+    },
+    {
+      "id": "act_289",
       "type": "match",
       "items": [
         "lex_was",
@@ -177,12 +191,80 @@
       ]
     },
     {
-      "id": "act_191",
+      "id": "act_290",
       "type": "grammar",
       "grammarId": "gr_waswere"
     },
     {
-      "id": "act_192",
+      "id": "act_291",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ every day.",
+          "answer": "was",
+          "options": [
+            "was",
+            "went",
+            "saw"
+          ],
+          "hu": "(voltam / volt)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "went",
+          "options": [
+            "went",
+            "was",
+            "saw"
+          ],
+          "hu": "(ment (megy múlt))"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "saw",
+          "options": [
+            "saw",
+            "was",
+            "went"
+          ],
+          "hu": "(látott (lát múlt))"
+        },
+        {
+          "text": "___.",
+          "answer": "last week",
+          "options": [
+            "last week",
+            "hello",
+            "hi"
+          ],
+          "hu": "(múlt héten)"
+        }
+      ]
+    },
+    {
+      "id": "act_292",
+      "type": "phrase-match",
+      "items": [
+        "chunk_pa_wasat",
+        "chunk_pa_wentto"
+      ]
+    },
+    {
+      "id": "act_293",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I was at home yesterday.",
+          "hu": "Tegnap otthon voltam."
+        },
+        {
+          "en": "I went to the market.",
+          "hu": "Elmentem a piacra."
+        }
+      ]
+    },
+    {
+      "id": "act_294",
       "type": "typed",
       "items": [
         "lex_was",
@@ -192,12 +274,26 @@
       ]
     },
     {
-      "id": "act_193",
+      "id": "act_295",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_194",
+      "id": "act_296",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "was",
+            "went",
+            "saw"
+          ],
+          "odd": "be"
+        }
+      ]
+    },
+    {
+      "id": "act_297",
       "type": "review",
       "items": [
         "lex_street",

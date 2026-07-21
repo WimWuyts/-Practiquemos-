@@ -11,8 +11,9 @@ None of these are release blockers. They are the planned path from the core-firs
 
 ## Language quality
 
-5. **Hungarian human review.** `docs/HUNGARIAN_REVIEW_QUEUE.csv` (617 rows) is machine-drafted. A native proofread of UI strings, translations, and grammar explanations before wide use.
-6. **Auto-generated example sentences** are simple templates for some words; replace with hand-written natural examples during the HU review pass.
+5. **Hungarian human review.** `docs/HUNGARIAN_REVIEW_QUEUE.csv` is machine-drafted. A native proofread of UI strings, translations, and grammar explanations before wide use.
+6. **Example sentences:** ~180 are now hand-written and tied to Marta's world; the remaining **111** productive words still use a grammar-safe template (flagged in the validator). Curate natural examples for those during the HU review pass.
+7. **Chunks:** now 137 (was 65). Grow toward the ~250 target and add dialogue placements. Receptive items (76) can also grow toward ~350.
 
 ## Accessibility & UX polish
 

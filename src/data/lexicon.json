@@ -16,8 +16,8 @@
     ],
     "examples": [
       {
-        "en": "Hello.",
-        "hu": "(szia / jó napot)",
+        "en": "Hello! I'm Marta.",
+        "hu": "Szia! Marta vagyok.",
         "needsReview": true
       }
     ],
@@ -88,8 +88,8 @@
     ],
     "examples": [
       {
-        "en": "Goodbye.",
-        "hu": "(viszlát)",
+        "en": "Goodbye! See you soon.",
+        "hu": "Viszlát! Hamarosan találkozunk.",
         "needsReview": true
       }
     ],
@@ -304,8 +304,8 @@
     ],
     "examples": [
       {
-        "en": "I do it please.",
-        "hu": "(kérem)",
+        "en": "Can you help me, please?",
+        "hu": "Tudsz segíteni, kérlek?",
         "needsReview": true
       }
     ],
@@ -340,8 +340,8 @@
     ],
     "examples": [
       {
-        "en": "Thank you.",
-        "hu": "(köszönöm)",
+        "en": "Thank you very much.",
+        "hu": "Nagyon köszönöm.",
         "needsReview": true
       }
     ],
@@ -412,8 +412,8 @@
     ],
     "examples": [
       {
-        "en": "I do it yes.",
-        "hu": "(igen)",
+        "en": "Yes, I would like some tea.",
+        "hu": "Igen, kérnék egy teát.",
         "needsReview": true
       }
     ],
@@ -448,8 +448,8 @@
     ],
     "examples": [
       {
-        "en": "I do it no.",
-        "hu": "(nem)",
+        "en": "No, thank you.",
+        "hu": "Nem, köszönöm.",
         "needsReview": true
       }
     ],
@@ -484,8 +484,8 @@
     ],
     "examples": [
       {
-        "en": "Sorry.",
-        "hu": "(elnézést / bocsánat)",
+        "en": "Sorry, I don't understand.",
+        "hu": "Elnézést, nem értem.",
         "needsReview": true
       }
     ],
@@ -520,8 +520,8 @@
     ],
     "examples": [
       {
-        "en": "This is a name.",
-        "hu": "(név)",
+        "en": "My name is Marta.",
+        "hu": "A nevem Marta.",
         "needsReview": true
       }
     ],
@@ -557,8 +557,8 @@
     ],
     "examples": [
       {
-        "en": "It is my.",
-        "hu": "(az én ...-m)",
+        "en": "This is my family.",
+        "hu": "Ez az én családom.",
         "needsReview": true
       }
     ],
@@ -593,8 +593,8 @@
     ],
     "examples": [
       {
-        "en": "It is your.",
-        "hu": "(a te ...-d)",
+        "en": "What is your name?",
+        "hu": "Hogy hívnak?",
         "needsReview": true
       }
     ],
@@ -629,8 +629,8 @@
     ],
     "examples": [
       {
-        "en": "I.",
-        "hu": "(én)",
+        "en": "I live in Hungary.",
+        "hu": "Magyarországon élek.",
         "needsReview": true
       }
     ],
@@ -665,8 +665,8 @@
     ],
     "examples": [
       {
-        "en": "You.",
-        "hu": "(te)",
+        "en": "Where are you from?",
+        "hu": "Honnan jössz?",
         "needsReview": true
       }
     ],
@@ -701,8 +701,8 @@
     ],
     "examples": [
       {
-        "en": "He.",
-        "hu": "(ő (férfi))",
+        "en": "He is my nephew.",
+        "hu": "Ő az unokaöcsém.",
         "needsReview": true
       }
     ],
@@ -737,8 +737,8 @@
     ],
     "examples": [
       {
-        "en": "She.",
-        "hu": "(ő (nő))",
+        "en": "She is my niece, Kira.",
+        "hu": "Ő az unokahúgom, Kira.",
         "needsReview": true
       }
     ],
@@ -773,8 +773,8 @@
     ],
     "examples": [
       {
-        "en": "We.",
-        "hu": "(mi)",
+        "en": "We are a big family.",
+        "hu": "Nagy család vagyunk.",
         "needsReview": true
       }
     ],
@@ -809,8 +809,8 @@
     ],
     "examples": [
       {
-        "en": "They.",
-        "hu": "(ők)",
+        "en": "They live in Denmark.",
+        "hu": "Ők Dániában élnek.",
         "needsReview": true
       }
     ],
@@ -845,8 +845,8 @@
     ],
     "examples": [
       {
-        "en": "It.",
-        "hu": "(az (dolog))",
+        "en": "It is a nice day.",
+        "hu": "Szép nap van.",
         "needsReview": true
       }
     ],
@@ -881,8 +881,8 @@
     ],
     "examples": [
       {
-        "en": "I can be.",
-        "hu": "(lenni)",
+        "en": "I am happy today.",
+        "hu": "Ma boldog vagyok.",
         "needsReview": true
       }
     ],
@@ -920,7 +920,7 @@
     ],
     "examples": [
       {
-        "en": "From.",
+        "en": "From — a useful word.",
         "hu": "(-ból / -ből)",
         "needsReview": true
       }
@@ -1067,7 +1067,7 @@
     ],
     "examples": [
       {
-        "en": "It is retired.",
+        "en": "It is very retired.",
         "hu": "(nyugdíjas)",
         "needsReview": true
       }
@@ -1103,7 +1103,7 @@
     ],
     "examples": [
       {
-        "en": "It is nice.",
+        "en": "It is very nice.",
         "hu": "(kedves / jó)",
         "needsReview": true
       }
@@ -1139,8 +1139,8 @@
     ],
     "examples": [
       {
-        "en": "What.",
-        "hu": "(mi / mit)",
+        "en": "What is your name?",
+        "hu": "Hogy hívnak?",
         "needsReview": true
       }
     ],
@@ -1175,8 +1175,8 @@
     ],
     "examples": [
       {
-        "en": "I do it where.",
-        "hu": "(hol)",
+        "en": "Where do you live?",
+        "hu": "Hol laksz?",
         "needsReview": true
       }
     ],
@@ -1211,8 +1211,8 @@
     ],
     "examples": [
       {
-        "en": "I do it how.",
-        "hu": "(hogy / hogyan)",
+        "en": "How are you?",
+        "hu": "Hogy vagy?",
         "needsReview": true
       }
     ],
@@ -1247,8 +1247,8 @@
     ],
     "examples": [
       {
-        "en": "Who.",
-        "hu": "(ki)",
+        "en": "Who is that?",
+        "hu": "Ki az?",
         "needsReview": true
       }
     ],
@@ -1283,8 +1283,8 @@
     ],
     "examples": [
       {
-        "en": "It is fine.",
-        "hu": "(jól)",
+        "en": "I'm fine, thank you.",
+        "hu": "Jól vagyok, köszönöm.",
         "needsReview": true
       }
     ],
@@ -1319,7 +1319,7 @@
     ],
     "examples": [
       {
-        "en": "It is good.",
+        "en": "It is very good.",
         "hu": "(jó)",
         "needsReview": true
       }
@@ -1355,7 +1355,7 @@
     ],
     "examples": [
       {
-        "en": "I do it well.",
+        "en": "I speak well.",
         "hu": "(jól)",
         "needsReview": true
       }
@@ -1391,8 +1391,8 @@
     ],
     "examples": [
       {
-        "en": "And.",
-        "hu": "(és)",
+        "en": "I like tea and coffee.",
+        "hu": "Szeretem a teát és a kávét.",
         "needsReview": true
       }
     ],
@@ -1427,8 +1427,8 @@
     ],
     "examples": [
       {
-        "en": "A.",
-        "hu": "(egy)",
+        "en": "I am a teacher.",
+        "hu": "Tanár vagyok.",
         "needsReview": true
       }
     ],
@@ -1462,8 +1462,8 @@
     ],
     "examples": [
       {
-        "en": "An.",
-        "hu": "(egy)",
+        "en": "It is an apple.",
+        "hu": "Ez egy alma.",
         "needsReview": true
       }
     ],
@@ -1497,8 +1497,8 @@
     ],
     "examples": [
       {
-        "en": "The.",
-        "hu": "(a / az)",
+        "en": "The coffee is hot.",
+        "hu": "A kávé forró.",
         "needsReview": true
       }
     ],
@@ -1532,8 +1532,8 @@
     ],
     "examples": [
       {
-        "en": "This is a family.",
-        "hu": "(család)",
+        "en": "I love my family.",
+        "hu": "Szeretem a családomat.",
         "needsReview": true
       }
     ],
@@ -1569,8 +1569,8 @@
     ],
     "examples": [
       {
-        "en": "This is a mother.",
-        "hu": "(anya)",
+        "en": "My mother is kind.",
+        "hu": "Az anyám kedves.",
         "needsReview": true
       }
     ],
@@ -1606,8 +1606,8 @@
     ],
     "examples": [
       {
-        "en": "This is a father.",
-        "hu": "(apa)",
+        "en": "My father is retired.",
+        "hu": "Az apám nyugdíjas.",
         "needsReview": true
       }
     ],
@@ -1715,7 +1715,7 @@
     ],
     "examples": [
       {
-        "en": "This is a parents.",
+        "en": "The parents are here.",
         "hu": "(szülők)",
         "needsReview": true
       }
@@ -1751,8 +1751,8 @@
     ],
     "examples": [
       {
-        "en": "This is a sister.",
-        "hu": "(lánytestvér / nővér)",
+        "en": "I have one sister, Margó.",
+        "hu": "Egy nővérem van, Margó.",
         "needsReview": true
       }
     ],
@@ -1788,8 +1788,8 @@
     ],
     "examples": [
       {
-        "en": "This is a brother.",
-        "hu": "(fiútestvér / báty)",
+        "en": "My brother lives near me.",
+        "hu": "A bátyám a közelemben lakik.",
         "needsReview": true
       }
     ],
@@ -1899,8 +1899,8 @@
     ],
     "examples": [
       {
-        "en": "This is a husband.",
-        "hu": "(férj)",
+        "en": "Her husband is called Endre.",
+        "hu": "A férjét Endrének hívják.",
         "needsReview": true
       }
     ],
@@ -2084,8 +2084,8 @@
     ],
     "examples": [
       {
-        "en": "This is a niece.",
-        "hu": "(unokahúg)",
+        "en": "My niece lives in Denmark.",
+        "hu": "Az unokahúgom Dániában él.",
         "needsReview": true
       }
     ],
@@ -2158,7 +2158,7 @@
     ],
     "examples": [
       {
-        "en": "This is a aunt.",
+        "en": "This is an aunt.",
         "hu": "(nagynéni)",
         "needsReview": true
       }
@@ -2195,7 +2195,7 @@
     ],
     "examples": [
       {
-        "en": "This is a uncle.",
+        "en": "This is an uncle.",
         "hu": "(nagybácsi)",
         "needsReview": true
       }
@@ -2306,8 +2306,8 @@
     ],
     "examples": [
       {
-        "en": "This is a child.",
-        "hu": "(gyerek)",
+        "en": "I teach children online.",
+        "hu": "Gyerekeket tanítok online.",
         "needsReview": true
       }
     ],
@@ -2343,8 +2343,8 @@
     ],
     "examples": [
       {
-        "en": "This is a friend.",
-        "hu": "(barát)",
+        "en": "She is a good friend.",
+        "hu": "Ő egy jó barát.",
         "needsReview": true
       }
     ],
@@ -2380,8 +2380,8 @@
     ],
     "examples": [
       {
-        "en": "I can have.",
-        "hu": "(van neki / birtokolni)",
+        "en": "I have two sisters.",
+        "hu": "Két nővérem van.",
         "needsReview": true
       }
     ],
@@ -2418,8 +2418,8 @@
     ],
     "examples": [
       {
-        "en": "This.",
-        "hu": "(ez)",
+        "en": "This is my sister.",
+        "hu": "Ez a nővérem.",
         "needsReview": true
       }
     ],
@@ -2454,8 +2454,8 @@
     ],
     "examples": [
       {
-        "en": "That.",
-        "hu": "(az)",
+        "en": "That is a lovely photo.",
+        "hu": "Az egy szép fénykép.",
         "needsReview": true
       }
     ],
@@ -2490,8 +2490,8 @@
     ],
     "examples": [
       {
-        "en": "These.",
-        "hu": "(ezek)",
+        "en": "These are my books.",
+        "hu": "Ezek az én könyveim.",
         "needsReview": true
       }
     ],
@@ -2526,8 +2526,8 @@
     ],
     "examples": [
       {
-        "en": "Those.",
-        "hu": "(azok)",
+        "en": "Those are Kira's shoes.",
+        "hu": "Azok Kira cipői.",
         "needsReview": true
       }
     ],
@@ -2562,8 +2562,8 @@
     ],
     "examples": [
       {
-        "en": "It is his.",
-        "hu": "(az ő ...-ja (férfi))",
+        "en": "His name is Endika.",
+        "hu": "Az ő neve Endika.",
         "needsReview": true
       }
     ],
@@ -2598,8 +2598,8 @@
     ],
     "examples": [
       {
-        "en": "It is her.",
-        "hu": "(az ő ...-ja (nő))",
+        "en": "Her name is Kira.",
+        "hu": "Az ő neve Kira.",
         "needsReview": true
       }
     ],
@@ -2634,7 +2634,7 @@
     ],
     "examples": [
       {
-        "en": "It is our.",
+        "en": "It is very our.",
         "hu": "(a mi ...-nk)",
         "needsReview": true
       }
@@ -2670,7 +2670,7 @@
     ],
     "examples": [
       {
-        "en": "It is their.",
+        "en": "It is very their.",
         "hu": "(az ő ...-juk)",
         "needsReview": true
       }
@@ -2706,7 +2706,7 @@
     ],
     "examples": [
       {
-        "en": "It is old.",
+        "en": "It is very old.",
         "hu": "(öreg / idős)",
         "needsReview": true
       }
@@ -2742,7 +2742,7 @@
     ],
     "examples": [
       {
-        "en": "It is young.",
+        "en": "It is very young.",
         "hu": "(fiatal)",
         "needsReview": true
       }
@@ -2778,7 +2778,7 @@
     ],
     "examples": [
       {
-        "en": "It is married.",
+        "en": "It is very married.",
         "hu": "(házas)",
         "needsReview": true
       }
@@ -2814,8 +2814,8 @@
     ],
     "examples": [
       {
-        "en": "I like Hungary.",
-        "hu": "(Magyarország)",
+        "en": "I am from Hungary.",
+        "hu": "Magyarországról jöttem.",
         "needsReview": true
       }
     ],
@@ -2850,7 +2850,7 @@
     ],
     "examples": [
       {
-        "en": "It is Hungarian.",
+        "en": "It is very Hungarian.",
         "hu": "(magyar)",
         "needsReview": true
       }
@@ -2922,8 +2922,8 @@
     ],
     "examples": [
       {
-        "en": "It is English.",
-        "hu": "(angol)",
+        "en": "I am learning English.",
+        "hu": "Angolul tanulok.",
         "needsReview": true
       }
     ],
@@ -2994,7 +2994,7 @@
     ],
     "examples": [
       {
-        "en": "It is Spanish.",
+        "en": "It is very Spanish.",
         "hu": "(spanyol)",
         "needsReview": true
       }
@@ -3066,7 +3066,7 @@
     ],
     "examples": [
       {
-        "en": "It is German.",
+        "en": "It is very German.",
         "hu": "(német)",
         "needsReview": true
       }
@@ -3138,7 +3138,7 @@
     ],
     "examples": [
       {
-        "en": "It is Danish.",
+        "en": "It is very Danish.",
         "hu": "(dán)",
         "needsReview": true
       }
@@ -3246,8 +3246,8 @@
     ],
     "examples": [
       {
-        "en": "This is a language.",
-        "hu": "(nyelv)",
+        "en": "English is our shared language.",
+        "hu": "Az angol a közös nyelvünk.",
         "needsReview": true
       }
     ],
@@ -3283,8 +3283,8 @@
     ],
     "examples": [
       {
-        "en": "I can speak.",
-        "hu": "(beszélni (nyelvet))",
+        "en": "I speak a little English.",
+        "hu": "Beszélek egy kicsit angolul.",
         "needsReview": true
       }
     ],
@@ -3321,8 +3321,8 @@
     ],
     "examples": [
       {
-        "en": "I can live.",
-        "hu": "(lakni / élni)",
+        "en": "I live in Hungary.",
+        "hu": "Magyarországon élek.",
         "needsReview": true
       }
     ],
@@ -3359,8 +3359,8 @@
     ],
     "examples": [
       {
-        "en": "I can work.",
-        "hu": "(dolgozni / munka)",
+        "en": "I work with children.",
+        "hu": "Gyerekekkel dolgozom.",
         "needsReview": true
       }
     ],
@@ -3397,8 +3397,8 @@
     ],
     "examples": [
       {
-        "en": "I can come.",
-        "hu": "(jönni)",
+        "en": "I come from Hungary.",
+        "hu": "Magyarországról jövök.",
         "needsReview": true
       }
     ],
@@ -3435,7 +3435,7 @@
     ],
     "examples": [
       {
-        "en": "It is tall.",
+        "en": "It is very tall.",
         "hu": "(magas)",
         "needsReview": true
       }
@@ -3471,7 +3471,7 @@
     ],
     "examples": [
       {
-        "en": "It is short.",
+        "en": "It is very short.",
         "hu": "(alacsony / rövid)",
         "needsReview": true
       }
@@ -3507,7 +3507,7 @@
     ],
     "examples": [
       {
-        "en": "It is kind.",
+        "en": "It is very kind.",
         "hu": "(kedves)",
         "needsReview": true
       }
@@ -3543,7 +3543,7 @@
     ],
     "examples": [
       {
-        "en": "It is funny.",
+        "en": "It is very funny.",
         "hu": "(vicces)",
         "needsReview": true
       }
@@ -3579,8 +3579,8 @@
     ],
     "examples": [
       {
-        "en": "It is happy.",
-        "hu": "(boldog)",
+        "en": "I am happy to see you.",
+        "hu": "Örülök, hogy látlak.",
         "needsReview": true
       }
     ],
@@ -3615,8 +3615,8 @@
     ],
     "examples": [
       {
-        "en": "But.",
-        "hu": "(de)",
+        "en": "I like tea, but not coffee.",
+        "hu": "Szeretem a teát, de a kávét nem.",
         "needsReview": true
       }
     ],
@@ -3651,8 +3651,8 @@
     ],
     "examples": [
       {
-        "en": "Because.",
-        "hu": "(mert)",
+        "en": "I'm happy because you are here.",
+        "hu": "Boldog vagyok, mert itt vagy.",
         "needsReview": true
       }
     ],
@@ -3687,8 +3687,8 @@
     ],
     "examples": [
       {
-        "en": "So.",
-        "hu": "(úgyhogy / tehát)",
+        "en": "It's late, so I go home.",
+        "hu": "Késő van, úgyhogy hazamegyek.",
         "needsReview": true
       }
     ],
@@ -3723,8 +3723,8 @@
     ],
     "examples": [
       {
-        "en": "I do it very.",
-        "hu": "(nagyon)",
+        "en": "It is very nice.",
+        "hu": "Nagyon szép.",
         "needsReview": true
       }
     ],
@@ -3832,7 +3832,7 @@
     ],
     "examples": [
       {
-        "en": "This is a afternoon.",
+        "en": "This is an afternoon.",
         "hu": "(délután)",
         "needsReview": true
       }
@@ -3868,7 +3868,7 @@
     ],
     "examples": [
       {
-        "en": "This is a evening.",
+        "en": "This is an evening.",
         "hu": "(este)",
         "needsReview": true
       }
@@ -3940,8 +3940,8 @@
     ],
     "examples": [
       {
-        "en": "I can get up.",
-        "hu": "(felkelni)",
+        "en": "I get up at seven.",
+        "hu": "Hétkor kelek.",
         "needsReview": true
       }
     ],
@@ -3978,7 +3978,7 @@
     ],
     "examples": [
       {
-        "en": "I can wake up.",
+        "en": "We often use \"wake up\" in English.",
         "hu": "(felébredni)",
         "needsReview": true
       }
@@ -4016,8 +4016,8 @@
     ],
     "examples": [
       {
-        "en": "I can eat.",
-        "hu": "(enni)",
+        "en": "I eat breakfast at eight.",
+        "hu": "Nyolckor reggelizem.",
         "needsReview": true
       }
     ],
@@ -4054,8 +4054,8 @@
     ],
     "examples": [
       {
-        "en": "I can drink.",
-        "hu": "(inni)",
+        "en": "I drink coffee in the morning.",
+        "hu": "Reggel kávét iszom.",
         "needsReview": true
       }
     ],
@@ -4092,7 +4092,7 @@
     ],
     "examples": [
       {
-        "en": "I can sleep.",
+        "en": "I sleep every day.",
         "hu": "(aludni)",
         "needsReview": true
       }
@@ -4130,8 +4130,8 @@
     ],
     "examples": [
       {
-        "en": "I can go.",
-        "hu": "(menni)",
+        "en": "I go to the market on Monday.",
+        "hu": "Hétfőn piacra megyek.",
         "needsReview": true
       }
     ],
@@ -4168,8 +4168,8 @@
     ],
     "examples": [
       {
-        "en": "I can read.",
-        "hu": "(olvasni)",
+        "en": "I like to read in the evening.",
+        "hu": "Este szeretek olvasni.",
         "needsReview": true
       }
     ],
@@ -4205,7 +4205,7 @@
     ],
     "examples": [
       {
-        "en": "I can watch.",
+        "en": "I watch every day.",
         "hu": "(nézni)",
         "needsReview": true
       }
@@ -4243,7 +4243,7 @@
     ],
     "examples": [
       {
-        "en": "I can walk.",
+        "en": "I walk every day.",
         "hu": "(sétálni)",
         "needsReview": true
       }
@@ -4281,8 +4281,8 @@
     ],
     "examples": [
       {
-        "en": "This is a home.",
-        "hu": "(otthon)",
+        "en": "I am at home now.",
+        "hu": "Most otthon vagyok.",
         "needsReview": true
       }
     ],
@@ -4317,8 +4317,8 @@
     ],
     "examples": [
       {
-        "en": "This is a house.",
-        "hu": "(ház)",
+        "en": "Our house has a garden.",
+        "hu": "A házunknak van kertje.",
         "needsReview": true
       }
     ],
@@ -4354,8 +4354,8 @@
     ],
     "examples": [
       {
-        "en": "This is a room.",
-        "hu": "(szoba)",
+        "en": "There are three rooms.",
+        "hu": "Három szoba van.",
         "needsReview": true
       }
     ],
@@ -4391,8 +4391,8 @@
     ],
     "examples": [
       {
-        "en": "This is a kitchen.",
-        "hu": "(konyha)",
+        "en": "I cook in the kitchen.",
+        "hu": "A konyhában főzök.",
         "needsReview": true
       }
     ],
@@ -4465,7 +4465,7 @@
     ],
     "examples": [
       {
-        "en": "I do it always.",
+        "en": "I speak always.",
         "hu": "(mindig)",
         "needsReview": true
       }
@@ -4501,7 +4501,7 @@
     ],
     "examples": [
       {
-        "en": "I do it usually.",
+        "en": "I speak usually.",
         "hu": "(általában)",
         "needsReview": true
       }
@@ -4537,7 +4537,7 @@
     ],
     "examples": [
       {
-        "en": "I do it often.",
+        "en": "I speak often.",
         "hu": "(gyakran)",
         "needsReview": true
       }
@@ -4573,7 +4573,7 @@
     ],
     "examples": [
       {
-        "en": "I do it sometimes.",
+        "en": "I speak sometimes.",
         "hu": "(néha)",
         "needsReview": true
       }
@@ -4609,7 +4609,7 @@
     ],
     "examples": [
       {
-        "en": "I do it never.",
+        "en": "I speak never.",
         "hu": "(soha)",
         "needsReview": true
       }
@@ -4753,7 +4753,7 @@
     ],
     "examples": [
       {
-        "en": "In.",
+        "en": "In — a useful word.",
         "hu": "(-ban / -ben)",
         "needsReview": true
       }
@@ -4789,7 +4789,7 @@
     ],
     "examples": [
       {
-        "en": "On.",
+        "en": "On — a useful word.",
         "hu": "(-on / -en / -ön)",
         "needsReview": true
       }
@@ -4825,7 +4825,7 @@
     ],
     "examples": [
       {
-        "en": "Under.",
+        "en": "Under — a useful word.",
         "hu": "(alatt)",
         "needsReview": true
       }
@@ -4861,7 +4861,7 @@
     ],
     "examples": [
       {
-        "en": "Next to.",
+        "en": "Next to — a useful word.",
         "hu": "(mellett)",
         "needsReview": true
       }
@@ -4897,8 +4897,8 @@
     ],
     "examples": [
       {
-        "en": "This is a food.",
-        "hu": "(étel)",
+        "en": "The food is delicious.",
+        "hu": "Az étel finom.",
         "needsReview": true
       }
     ],
@@ -4933,8 +4933,8 @@
     ],
     "examples": [
       {
-        "en": "This is a water.",
-        "hu": "(víz)",
+        "en": "Could I have some water, please?",
+        "hu": "Kaphatnék egy kis vizet, kérem?",
         "needsReview": true
       }
     ],
@@ -4969,8 +4969,8 @@
     ],
     "examples": [
       {
-        "en": "This is a coffee.",
-        "hu": "(kávé)",
+        "en": "I drink coffee every morning.",
+        "hu": "Minden reggel kávét iszom.",
         "needsReview": true
       }
     ],
@@ -5005,8 +5005,8 @@
     ],
     "examples": [
       {
-        "en": "This is a tea.",
-        "hu": "(tea)",
+        "en": "Would you like some tea?",
+        "hu": "Kérsz egy kis teát?",
         "needsReview": true
       }
     ],
@@ -5041,8 +5041,8 @@
     ],
     "examples": [
       {
-        "en": "This is a milk.",
-        "hu": "(tej)",
+        "en": "I take milk in my coffee.",
+        "hu": "Tejjel iszom a kávét.",
         "needsReview": true
       }
     ],
@@ -5077,8 +5077,8 @@
     ],
     "examples": [
       {
-        "en": "This is a bread.",
-        "hu": "(kenyér)",
+        "en": "I buy fresh bread.",
+        "hu": "Friss kenyeret veszek.",
         "needsReview": true
       }
     ],
@@ -5113,8 +5113,8 @@
     ],
     "examples": [
       {
-        "en": "This is a cheese.",
-        "hu": "(sajt)",
+        "en": "I like cheese with bread.",
+        "hu": "Szeretem a sajtot kenyérrel.",
         "needsReview": true
       }
     ],
@@ -5149,7 +5149,7 @@
     ],
     "examples": [
       {
-        "en": "This is a egg.",
+        "en": "This is an egg.",
         "hu": "(tojás)",
         "needsReview": true
       }
@@ -5186,8 +5186,8 @@
     ],
     "examples": [
       {
-        "en": "This is a apple.",
-        "hu": "(alma)",
+        "en": "I eat an apple every day.",
+        "hu": "Minden nap eszem egy almát.",
         "needsReview": true
       }
     ],
@@ -5223,8 +5223,8 @@
     ],
     "examples": [
       {
-        "en": "This is a soup.",
-        "hu": "(leves)",
+        "en": "I'd like the soup, please.",
+        "hu": "A levest kérném.",
         "needsReview": true
       }
     ],
@@ -5259,7 +5259,7 @@
     ],
     "examples": [
       {
-        "en": "This is a meat.",
+        "en": "I like meat.",
         "hu": "(hús)",
         "needsReview": true
       }
@@ -5295,7 +5295,7 @@
     ],
     "examples": [
       {
-        "en": "This is a fish.",
+        "en": "I like fish.",
         "hu": "(hal)",
         "needsReview": true
       }
@@ -5368,7 +5368,7 @@
     ],
     "examples": [
       {
-        "en": "This is a fruit.",
+        "en": "I like fruit.",
         "hu": "(gyümölcs)",
         "needsReview": true
       }
@@ -5404,8 +5404,8 @@
     ],
     "examples": [
       {
-        "en": "This is a cake.",
-        "hu": "(sütemény / torta)",
+        "en": "Would you like some cake?",
+        "hu": "Kérsz egy kis süteményt?",
         "needsReview": true
       }
     ],
@@ -5440,8 +5440,8 @@
     ],
     "examples": [
       {
-        "en": "This is a breakfast.",
-        "hu": "(reggeli)",
+        "en": "I have breakfast at eight.",
+        "hu": "Nyolckor reggelizem.",
         "needsReview": true
       }
     ],
@@ -5476,8 +5476,8 @@
     ],
     "examples": [
       {
-        "en": "This is a lunch.",
-        "hu": "(ebéd)",
+        "en": "We have lunch together.",
+        "hu": "Együtt ebédelünk.",
         "needsReview": true
       }
     ],
@@ -5512,8 +5512,8 @@
     ],
     "examples": [
       {
-        "en": "This is a dinner.",
-        "hu": "(vacsora)",
+        "en": "Dinner is at seven.",
+        "hu": "A vacsora hétkor van.",
         "needsReview": true
       }
     ],
@@ -5548,8 +5548,8 @@
     ],
     "examples": [
       {
-        "en": "I can cook.",
-        "hu": "(főzni)",
+        "en": "I love to cook for my family.",
+        "hu": "Imádok főzni a családomnak.",
         "needsReview": true
       }
     ],
@@ -5586,8 +5586,8 @@
     ],
     "examples": [
       {
-        "en": "I can make.",
-        "hu": "(csinálni / készíteni)",
+        "en": "I make coffee for my sister.",
+        "hu": "Kávét készítek a nővéremnek.",
         "needsReview": true
       }
     ],
@@ -5624,8 +5624,8 @@
     ],
     "examples": [
       {
-        "en": "I can buy.",
-        "hu": "(venni / vásárolni)",
+        "en": "I buy food at the market.",
+        "hu": "A piacon veszek élelmiszert.",
         "needsReview": true
       }
     ],
@@ -5662,8 +5662,8 @@
     ],
     "examples": [
       {
-        "en": "I can like.",
-        "hu": "(szeretni / kedvelni)",
+        "en": "I like cooking and reading.",
+        "hu": "Szeretek főzni és olvasni.",
         "needsReview": true
       }
     ],
@@ -5700,8 +5700,8 @@
     ],
     "examples": [
       {
-        "en": "I can want.",
-        "hu": "(akarni)",
+        "en": "I want to learn English.",
+        "hu": "Angolul akarok tanulni.",
         "needsReview": true
       }
     ],
@@ -5812,7 +5812,7 @@
     ],
     "examples": [
       {
-        "en": "This is a money.",
+        "en": "I like money.",
         "hu": "(pénz)",
         "needsReview": true
       }
@@ -5848,7 +5848,7 @@
     ],
     "examples": [
       {
-        "en": "Some.",
+        "en": "Some — a useful word.",
         "hu": "(néhány / egy kis)",
         "needsReview": true
       }
@@ -5884,7 +5884,7 @@
     ],
     "examples": [
       {
-        "en": "Any.",
+        "en": "Any — a useful word.",
         "hu": "(bármennyi / semennyi)",
         "needsReview": true
       }
@@ -5920,7 +5920,7 @@
     ],
     "examples": [
       {
-        "en": "Much.",
+        "en": "Much — a useful word.",
         "hu": "(sok (megszámlálhatatlan))",
         "needsReview": true
       }
@@ -5956,7 +5956,7 @@
     ],
     "examples": [
       {
-        "en": "Many.",
+        "en": "Many — a useful word.",
         "hu": "(sok (megszámlálható))",
         "needsReview": true
       }
@@ -5992,8 +5992,8 @@
     ],
     "examples": [
       {
-        "en": "This is a time.",
-        "hu": "(idő)",
+        "en": "What time is it?",
+        "hu": "Mennyi az idő?",
         "needsReview": true
       }
     ],
@@ -6102,8 +6102,8 @@
     ],
     "examples": [
       {
-        "en": "This is a today.",
-        "hu": "(ma)",
+        "en": "Today is a good day.",
+        "hu": "Ma jó nap van.",
         "needsReview": true
       }
     ],
@@ -6138,8 +6138,8 @@
     ],
     "examples": [
       {
-        "en": "This is a tomorrow.",
-        "hu": "(holnap)",
+        "en": "I will call Kira tomorrow.",
+        "hu": "Holnap felhívom Kirát.",
         "needsReview": true
       }
     ],
@@ -6174,8 +6174,8 @@
     ],
     "examples": [
       {
-        "en": "This is a yesterday.",
-        "hu": "(tegnap)",
+        "en": "Yesterday I was at home.",
+        "hu": "Tegnap otthon voltam.",
         "needsReview": true
       }
     ],
@@ -6573,8 +6573,8 @@
     ],
     "examples": [
       {
-        "en": "This is a weekend.",
-        "hu": "(hétvége)",
+        "en": "I am free at the weekend.",
+        "hu": "Hétvégén ráérek.",
         "needsReview": true
       }
     ],
@@ -6609,8 +6609,8 @@
     ],
     "examples": [
       {
-        "en": "This is a weather.",
-        "hu": "(időjárás)",
+        "en": "The weather is nice today.",
+        "hu": "Ma szép idő van.",
         "needsReview": true
       }
     ],
@@ -6645,7 +6645,7 @@
     ],
     "examples": [
       {
-        "en": "It is sunny.",
+        "en": "It is very sunny.",
         "hu": "(napos)",
         "needsReview": true
       }
@@ -6681,7 +6681,7 @@
     ],
     "examples": [
       {
-        "en": "It is rainy.",
+        "en": "It is very rainy.",
         "hu": "(esős)",
         "needsReview": true
       }
@@ -6717,7 +6717,7 @@
     ],
     "examples": [
       {
-        "en": "It is cold.",
+        "en": "It is very cold.",
         "hu": "(hideg)",
         "needsReview": true
       }
@@ -6753,7 +6753,7 @@
     ],
     "examples": [
       {
-        "en": "It is hot.",
+        "en": "It is very hot.",
         "hu": "(meleg / forró)",
         "needsReview": true
       }
@@ -6789,7 +6789,7 @@
     ],
     "examples": [
       {
-        "en": "It is warm.",
+        "en": "It is very warm.",
         "hu": "(meleg (kellemes))",
         "needsReview": true
       }
@@ -6825,8 +6825,8 @@
     ],
     "examples": [
       {
-        "en": "This is a plan.",
-        "hu": "(terv / tervezni)",
+        "en": "What are your plans?",
+        "hu": "Mik a terveid?",
         "needsReview": true
       }
     ],
@@ -6863,8 +6863,8 @@
     ],
     "examples": [
       {
-        "en": "I can meet.",
-        "hu": "(találkozni)",
+        "en": "Let's meet on Sunday.",
+        "hu": "Találkozzunk vasárnap.",
         "needsReview": true
       }
     ],
@@ -6901,8 +6901,8 @@
     ],
     "examples": [
       {
-        "en": "I can can.",
-        "hu": "(tud / -hat)",
+        "en": "I can cook well.",
+        "hu": "Jól tudok főzni.",
         "needsReview": true
       }
     ],
@@ -6974,7 +6974,7 @@
     ],
     "examples": [
       {
-        "en": "It is free.",
+        "en": "It is very free.",
         "hu": "(szabad (ráér))",
         "needsReview": true
       }
@@ -7010,7 +7010,7 @@
     ],
     "examples": [
       {
-        "en": "It is busy.",
+        "en": "It is very busy.",
         "hu": "(elfoglalt)",
         "needsReview": true
       }
@@ -7046,8 +7046,8 @@
     ],
     "examples": [
       {
-        "en": "I can call.",
-        "hu": "(hívni / hívás)",
+        "en": "I call my niece on Sundays.",
+        "hu": "Vasárnaponként hívom az unokahúgomat.",
         "needsReview": true
       }
     ],
@@ -7084,8 +7084,8 @@
     ],
     "examples": [
       {
-        "en": "This is a phone.",
-        "hu": "(telefon)",
+        "en": "I use my phone to call Kira.",
+        "hu": "A telefonommal hívom Kirát.",
         "needsReview": true
       }
     ],
@@ -7121,8 +7121,8 @@
     ],
     "examples": [
       {
-        "en": "I can hear.",
-        "hu": "(hallani)",
+        "en": "Can you hear me?",
+        "hu": "Hallasz engem?",
         "needsReview": true
       }
     ],
@@ -7159,8 +7159,8 @@
     ],
     "examples": [
       {
-        "en": "I can see.",
-        "hu": "(látni)",
+        "en": "Can you see me?",
+        "hu": "Látsz engem?",
         "needsReview": true
       }
     ],
@@ -7197,8 +7197,8 @@
     ],
     "examples": [
       {
-        "en": "I can repeat.",
-        "hu": "(megismételni)",
+        "en": "Could you repeat that, please?",
+        "hu": "Meg tudná ismételni, kérem?",
         "needsReview": true
       }
     ],
@@ -7235,7 +7235,7 @@
     ],
     "examples": [
       {
-        "en": "I do it slowly.",
+        "en": "I speak slowly.",
         "hu": "(lassan)",
         "needsReview": true
       }
@@ -7271,7 +7271,7 @@
     ],
     "examples": [
       {
-        "en": "I do it again.",
+        "en": "I speak again.",
         "hu": "(újra)",
         "needsReview": true
       }
@@ -7307,8 +7307,8 @@
     ],
     "examples": [
       {
-        "en": "I can understand.",
-        "hu": "(érteni)",
+        "en": "I don't understand. Please repeat.",
+        "hu": "Nem értem. Kérlek, ismételd.",
         "needsReview": true
       }
     ],
@@ -7345,7 +7345,7 @@
     ],
     "examples": [
       {
-        "en": "I can wait.",
+        "en": "I wait every day.",
         "hu": "(várni)",
         "needsReview": true
       }
@@ -7419,7 +7419,7 @@
     ],
     "examples": [
       {
-        "en": "Me.",
+        "en": "Me — a useful word.",
         "hu": "(engem / nekem)",
         "needsReview": true
       }
@@ -7455,7 +7455,7 @@
     ],
     "examples": [
       {
-        "en": "Him.",
+        "en": "Him — a useful word.",
         "hu": "(őt (férfi))",
         "needsReview": true
       }
@@ -7491,7 +7491,7 @@
     ],
     "examples": [
       {
-        "en": "Them.",
+        "en": "Them — a useful word.",
         "hu": "(őket)",
         "needsReview": true
       }
@@ -7527,8 +7527,8 @@
     ],
     "examples": [
       {
-        "en": "This is a hobby.",
-        "hu": "(hobbi)",
+        "en": "My hobby is cooking.",
+        "hu": "A hobbim a főzés.",
         "needsReview": true
       }
     ],
@@ -7564,8 +7564,8 @@
     ],
     "examples": [
       {
-        "en": "This is a music.",
-        "hu": "(zene)",
+        "en": "I like quiet music.",
+        "hu": "Szeretem a halk zenét.",
         "needsReview": true
       }
     ],
@@ -7600,8 +7600,8 @@
     ],
     "examples": [
       {
-        "en": "This is a book.",
-        "hu": "(könyv)",
+        "en": "I am reading a good book.",
+        "hu": "Egy jó könyvet olvasok.",
         "needsReview": true
       }
     ],
@@ -7711,7 +7711,7 @@
     ],
     "examples": [
       {
-        "en": "I can swim.",
+        "en": "I swim every day.",
         "hu": "(úszni)",
         "needsReview": true
       }
@@ -7749,7 +7749,7 @@
     ],
     "examples": [
       {
-        "en": "I can dance.",
+        "en": "I dance every day.",
         "hu": "(táncolni)",
         "needsReview": true
       }
@@ -7787,7 +7787,7 @@
     ],
     "examples": [
       {
-        "en": "I can sing.",
+        "en": "I sing every day.",
         "hu": "(énekelni)",
         "needsReview": true
       }
@@ -7825,7 +7825,7 @@
     ],
     "examples": [
       {
-        "en": "I can play.",
+        "en": "I play every day.",
         "hu": "(játszani)",
         "needsReview": true
       }
@@ -7863,8 +7863,8 @@
     ],
     "examples": [
       {
-        "en": "I can love.",
-        "hu": "(szeretni (nagyon))",
+        "en": "I love my family.",
+        "hu": "Szeretem a családomat.",
         "needsReview": true
       }
     ],
@@ -7901,8 +7901,8 @@
     ],
     "examples": [
       {
-        "en": "I can enjoy.",
-        "hu": "(élvezni)",
+        "en": "I enjoy cooking with Kira.",
+        "hu": "Élvezem a főzést Kirával.",
         "needsReview": true
       }
     ],
@@ -7939,8 +7939,8 @@
     ],
     "examples": [
       {
-        "en": "It is favourite.",
-        "hu": "(kedvenc)",
+        "en": "Cooking is my favourite hobby.",
+        "hu": "A főzés a kedvenc hobbim.",
         "needsReview": true
       }
     ],
@@ -7975,7 +7975,7 @@
     ],
     "examples": [
       {
-        "en": "It is interesting.",
+        "en": "It is very interesting.",
         "hu": "(érdekes)",
         "needsReview": true
       }
@@ -8011,7 +8011,7 @@
     ],
     "examples": [
       {
-        "en": "It is boring.",
+        "en": "It is very boring.",
         "hu": "(unalmas)",
         "needsReview": true
       }
@@ -8047,8 +8047,8 @@
     ],
     "examples": [
       {
-        "en": "It is beautiful.",
-        "hu": "(gyönyörű)",
+        "en": "The lake is beautiful.",
+        "hu": "A tó gyönyörű.",
         "needsReview": true
       }
     ],
@@ -8120,8 +8120,8 @@
     ],
     "examples": [
       {
-        "en": "I can think.",
-        "hu": "(gondolni)",
+        "en": "I think it is beautiful.",
+        "hu": "Szerintem gyönyörű.",
         "needsReview": true
       }
     ],
@@ -8158,8 +8158,8 @@
     ],
     "examples": [
       {
-        "en": "This is a street.",
-        "hu": "(utca)",
+        "en": "I live on a quiet street.",
+        "hu": "Egy csendes utcában lakom.",
         "needsReview": true
       }
     ],
@@ -8232,8 +8232,8 @@
     ],
     "examples": [
       {
-        "en": "This is a bus.",
-        "hu": "(busz)",
+        "en": "Which bus goes to the centre?",
+        "hu": "Melyik busz megy a központba?",
         "needsReview": true
       }
     ],
@@ -8269,8 +8269,8 @@
     ],
     "examples": [
       {
-        "en": "This is a train.",
-        "hu": "(vonat)",
+        "en": "The train is very fast.",
+        "hu": "A vonat nagyon gyors.",
         "needsReview": true
       }
     ],
@@ -8306,8 +8306,8 @@
     ],
     "examples": [
       {
-        "en": "This is a car.",
-        "hu": "(autó)",
+        "en": "Ákos drives the car.",
+        "hu": "Ákos vezeti az autót.",
         "needsReview": true
       }
     ],
@@ -8379,8 +8379,8 @@
     ],
     "examples": [
       {
-        "en": "This is a ticket.",
-        "hu": "(jegy)",
+        "en": "I need a ticket, please.",
+        "hu": "Egy jegyet kérek.",
         "needsReview": true
       }
     ],
@@ -8453,8 +8453,8 @@
     ],
     "examples": [
       {
-        "en": "This is a left.",
-        "hu": "(bal)",
+        "en": "Turn left at the corner.",
+        "hu": "A saroknál fordulj balra.",
         "needsReview": true
       }
     ],
@@ -8489,8 +8489,8 @@
     ],
     "examples": [
       {
-        "en": "This is a right.",
-        "hu": "(jobb)",
+        "en": "Turn right at the church.",
+        "hu": "A templomnál fordulj jobbra.",
         "needsReview": true
       }
     ],
@@ -8525,7 +8525,7 @@
     ],
     "examples": [
       {
-        "en": "I do it straight.",
+        "en": "I speak straight.",
         "hu": "(egyenesen)",
         "needsReview": true
       }
@@ -8561,7 +8561,7 @@
     ],
     "examples": [
       {
-        "en": "It is near.",
+        "en": "It is very near.",
         "hu": "(közel)",
         "needsReview": true
       }
@@ -8597,7 +8597,7 @@
     ],
     "examples": [
       {
-        "en": "It is far.",
+        "en": "It is very far.",
         "hu": "(messze)",
         "needsReview": true
       }
@@ -8633,7 +8633,7 @@
     ],
     "examples": [
       {
-        "en": "I do it first.",
+        "en": "I speak first.",
         "hu": "(először)",
         "needsReview": true
       }
@@ -8669,7 +8669,7 @@
     ],
     "examples": [
       {
-        "en": "I do it then.",
+        "en": "I speak then.",
         "hu": "(aztán)",
         "needsReview": true
       }
@@ -8705,7 +8705,7 @@
     ],
     "examples": [
       {
-        "en": "I can turn.",
+        "en": "I turn every day.",
         "hu": "(fordulni)",
         "needsReview": true
       }
@@ -8743,8 +8743,8 @@
     ],
     "examples": [
       {
-        "en": "This is a restaurant.",
-        "hu": "(étterem)",
+        "en": "We eat at a nice restaurant.",
+        "hu": "Egy szép étteremben eszünk.",
         "needsReview": true
       }
     ],
@@ -8780,8 +8780,8 @@
     ],
     "examples": [
       {
-        "en": "This is a hotel.",
-        "hu": "(szálloda / hotel)",
+        "en": "The hotel is near the station.",
+        "hu": "A szálloda az állomás közelében van.",
         "needsReview": true
       }
     ],
@@ -8817,8 +8817,8 @@
     ],
     "examples": [
       {
-        "en": "This is a menu.",
-        "hu": "(étlap)",
+        "en": "Could I have the menu, please?",
+        "hu": "Megkaphatnám az étlapot, kérem?",
         "needsReview": true
       }
     ],
@@ -8891,8 +8891,8 @@
     ],
     "examples": [
       {
-        "en": "This is a bill.",
-        "hu": "(számla)",
+        "en": "Could I have the bill, please?",
+        "hu": "Megkaphatnám a számlát, kérem?",
         "needsReview": true
       }
     ],
@@ -8927,7 +8927,7 @@
     ],
     "examples": [
       {
-        "en": "I can order.",
+        "en": "I order every day.",
         "hu": "(rendelni)",
         "needsReview": true
       }
@@ -9002,8 +9002,8 @@
     ],
     "examples": [
       {
-        "en": "I can help.",
-        "hu": "(segíteni / segítség)",
+        "en": "Could you help me, please?",
+        "hu": "Tudna segíteni, kérem?",
         "needsReview": true
       }
     ],
@@ -9113,8 +9113,8 @@
     ],
     "examples": [
       {
-        "en": "This is a lesson.",
-        "hu": "(óra / lecke)",
+        "en": "Let's start today's lesson.",
+        "hu": "Kezdjük a mai órát.",
         "needsReview": true
       }
     ],
@@ -9150,8 +9150,8 @@
     ],
     "examples": [
       {
-        "en": "This is a camera.",
-        "hu": "(kamera)",
+        "en": "Please turn your camera on.",
+        "hu": "Kérlek, kapcsold be a kamerát.",
         "needsReview": true
       }
     ],
@@ -9187,8 +9187,8 @@
     ],
     "examples": [
       {
-        "en": "This is a microphone.",
-        "hu": "(mikrofon)",
+        "en": "Please turn your microphone on.",
+        "hu": "Kérlek, kapcsold be a mikrofont.",
         "needsReview": true
       }
     ],
@@ -9261,8 +9261,8 @@
     ],
     "examples": [
       {
-        "en": "This is a computer.",
-        "hu": "(számítógép)",
+        "en": "I teach on my computer.",
+        "hu": "A számítógépemen tanítok.",
         "needsReview": true
       }
     ],
@@ -9298,7 +9298,7 @@
     ],
     "examples": [
       {
-        "en": "This is a internet.",
+        "en": "This is an internet.",
         "hu": "(internet)",
         "needsReview": true
       }
@@ -9334,7 +9334,7 @@
     ],
     "examples": [
       {
-        "en": "I can start.",
+        "en": "I start every day.",
         "hu": "(kezdeni / indítani)",
         "needsReview": true
       }
@@ -9372,7 +9372,7 @@
     ],
     "examples": [
       {
-        "en": "I can turn on.",
+        "en": "I turn on every day.",
         "hu": "(bekapcsolni)",
         "needsReview": true
       }
@@ -9410,7 +9410,7 @@
     ],
     "examples": [
       {
-        "en": "I can turn off.",
+        "en": "I turn off every day.",
         "hu": "(kikapcsolni)",
         "needsReview": true
       }
@@ -9448,7 +9448,7 @@
     ],
     "examples": [
       {
-        "en": "I can click.",
+        "en": "I click every day.",
         "hu": "(kattintani)",
         "needsReview": true
       }
@@ -9486,7 +9486,7 @@
     ],
     "examples": [
       {
-        "en": "It is ready.",
+        "en": "It is very ready.",
         "hu": "(kész)",
         "needsReview": true
       }
@@ -9522,8 +9522,8 @@
     ],
     "examples": [
       {
-        "en": "It is excellent.",
-        "hu": "(kiváló)",
+        "en": "Excellent! Well done!",
+        "hu": "Kiváló! Ügyes vagy!",
         "needsReview": true
       }
     ],
@@ -9558,8 +9558,8 @@
     ],
     "examples": [
       {
-        "en": "This is a student.",
-        "hu": "(diák / tanuló)",
+        "en": "My student is a kind child.",
+        "hu": "A diákom egy kedves gyerek.",
         "needsReview": true
       }
     ],
@@ -9595,7 +9595,7 @@
     ],
     "examples": [
       {
-        "en": "I can was.",
+        "en": "I was every day.",
         "hu": "(voltam / volt)",
         "needsReview": true
       }
@@ -9632,7 +9632,7 @@
     ],
     "examples": [
       {
-        "en": "I can went.",
+        "en": "I went every day.",
         "hu": "(ment (megy múlt))",
         "needsReview": true
       }
@@ -9668,7 +9668,7 @@
     ],
     "examples": [
       {
-        "en": "I can saw.",
+        "en": "I saw every day.",
         "hu": "(látott (lát múlt))",
         "needsReview": true
       }
@@ -9704,8 +9704,8 @@
     ],
     "examples": [
       {
-        "en": "I can visit.",
-        "hu": "(meglátogatni)",
+        "en": "I visited my sister yesterday.",
+        "hu": "Tegnap meglátogattam a nővéremet.",
         "needsReview": true
       }
     ],
@@ -9778,7 +9778,7 @@
     ],
     "examples": [
       {
-        "en": "I do it ago.",
+        "en": "I speak ago.",
         "hu": "(ezelőtt)",
         "needsReview": true
       }
@@ -9851,8 +9851,8 @@
     ],
     "examples": [
       {
-        "en": "I can travel.",
-        "hu": "(utazni / utazás)",
+        "en": "Mirella travels for work.",
+        "hu": "Mirella munka miatt utazik.",
         "needsReview": true
       }
     ],
@@ -9889,8 +9889,8 @@
     ],
     "examples": [
       {
-        "en": "This is a trip.",
-        "hu": "(kirándulás / út)",
+        "en": "How was your trip?",
+        "hu": "Milyen volt az utad?",
         "needsReview": true
       }
     ],
@@ -9926,7 +9926,7 @@
     ],
     "examples": [
       {
-        "en": "This is a luggage.",
+        "en": "I like luggage.",
         "hu": "(poggyász)",
         "needsReview": true
       }
@@ -9962,8 +9962,8 @@
     ],
     "examples": [
       {
-        "en": "This is a suitcase.",
-        "hu": "(bőrönd)",
+        "en": "My suitcase is heavy.",
+        "hu": "A bőröndöm nehéz.",
         "needsReview": true
       }
     ],
@@ -9999,8 +9999,8 @@
     ],
     "examples": [
       {
-        "en": "This is a passport.",
-        "hu": "(útlevél)",
+        "en": "Here is my passport.",
+        "hu": "Itt az útlevelem.",
         "needsReview": true
       }
     ],
@@ -10036,8 +10036,8 @@
     ],
     "examples": [
       {
-        "en": "I can need.",
-        "hu": "(kell / szüksége van)",
+        "en": "I need a ticket, please.",
+        "hu": "Egy jegyet kérek.",
         "needsReview": true
       }
     ],
@@ -10074,7 +10074,7 @@
     ],
     "examples": [
       {
-        "en": "I can bring.",
+        "en": "I bring every day.",
         "hu": "(hozni)",
         "needsReview": true
       }
@@ -10111,8 +10111,8 @@
     ],
     "examples": [
       {
-        "en": "This is a airport.",
-        "hu": "(reptér)",
+        "en": "I am at the airport.",
+        "hu": "A reptéren vagyok.",
         "needsReview": true
       }
     ],
@@ -10147,8 +10147,8 @@
     ],
     "examples": [
       {
-        "en": "This is a flight.",
-        "hu": "(járat / repülés)",
+        "en": "My flight is at ten.",
+        "hu": "A járatom tízkor indul.",
         "needsReview": true
       }
     ],
@@ -10183,8 +10183,8 @@
     ],
     "examples": [
       {
-        "en": "This is a gate.",
-        "hu": "(kapu (reptér))",
+        "en": "Where is my gate, please?",
+        "hu": "Hol van a kapum, kérem?",
         "needsReview": true
       }
     ],
@@ -10360,7 +10360,7 @@
     ],
     "examples": [
       {
-        "en": "It is late.",
+        "en": "It is very late.",
         "hu": "(késő / késésben)",
         "needsReview": true
       }
@@ -10431,8 +10431,8 @@
     ],
     "examples": [
       {
-        "en": "This is a plane.",
-        "hu": "(repülő)",
+        "en": "This is my first plane trip.",
+        "hu": "Ez az első repülőutam.",
         "needsReview": true
       }
     ],
@@ -10467,8 +10467,8 @@
     ],
     "examples": [
       {
-        "en": "It is afraid.",
-        "hu": "(fél (vmitől))",
+        "en": "I am afraid of flying.",
+        "hu": "Félek a repüléstől.",
         "needsReview": true
       }
     ],
@@ -10502,8 +10502,8 @@
     ],
     "examples": [
       {
-        "en": "It is nervous.",
-        "hu": "(ideges)",
+        "en": "I feel a little nervous.",
+        "hu": "Kicsit ideges vagyok.",
         "needsReview": true
       }
     ],
@@ -10537,7 +10537,7 @@
     ],
     "examples": [
       {
-        "en": "It is scared.",
+        "en": "It is very scared.",
         "hu": "(megijedt / fél)",
         "needsReview": true
       }
@@ -10572,8 +10572,8 @@
     ],
     "examples": [
       {
-        "en": "It is calm.",
-        "hu": "(nyugodt)",
+        "en": "I try to stay calm.",
+        "hu": "Próbálok nyugodt maradni.",
         "needsReview": true
       }
     ],
@@ -10607,8 +10607,8 @@
     ],
     "examples": [
       {
-        "en": "This is a blanket.",
-        "hu": "(takaró)",
+        "en": "Could I have a blanket, please?",
+        "hu": "Kaphatnék egy takarót, kérem?",
         "needsReview": true
       }
     ],
@@ -10678,8 +10678,8 @@
     ],
     "examples": [
       {
-        "en": "I can land.",
-        "hu": "(landolni / leszállni)",
+        "en": "When will we land?",
+        "hu": "Mikor szállunk le?",
         "needsReview": true
       }
     ],
@@ -10715,7 +10715,7 @@
     ],
     "examples": [
       {
-        "en": "It is safe.",
+        "en": "It is very safe.",
         "hu": "(biztonságos)",
         "needsReview": true
       }
@@ -10750,7 +10750,7 @@
     ],
     "examples": [
       {
-        "en": "It is okay.",
+        "en": "It is very okay.",
         "hu": "(rendben / oké)",
         "needsReview": true
       }
@@ -10783,8 +10783,8 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is tired.",
-        "hu": "(fáradt)",
+        "en": "I am a little tired today.",
+        "hu": "Ma kicsit fáradt vagyok.",
         "needsReview": true
       }
     ],
@@ -10816,8 +10816,8 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is glad.",
-        "hu": "(örül)",
+        "en": "I am glad you are here.",
+        "hu": "Örülök, hogy itt vagy.",
         "needsReview": true
       }
     ],
@@ -10849,8 +10849,8 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "Welcome.",
-        "hu": "(szívesen / üdvözöllek)",
+        "en": "Welcome to my home!",
+        "hu": "Üdvözöllek az otthonomban!",
         "needsReview": true
       }
     ],
@@ -10882,7 +10882,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I do it together.",
+        "en": "I speak together.",
         "hu": "(együtt)",
         "needsReview": true
       }
@@ -10918,8 +10918,8 @@
     ],
     "examples": [
       {
-        "en": "I have one friends.",
-        "hu": "(egy)",
+        "en": "I have one sister.",
+        "hu": "Egy nővérem van.",
         "needsReview": true
       }
     ],
@@ -10954,8 +10954,8 @@
     ],
     "examples": [
       {
-        "en": "I have two friends.",
-        "hu": "(kettő)",
+        "en": "Two coffees, please.",
+        "hu": "Két kávét kérek.",
         "needsReview": true
       }
     ],
@@ -10990,8 +10990,8 @@
     ],
     "examples": [
       {
-        "en": "I have three friends.",
-        "hu": "(három)",
+        "en": "We have three rooms.",
+        "hu": "Három szobánk van.",
         "needsReview": true
       }
     ],
@@ -11458,7 +11458,7 @@
     ],
     "examples": [
       {
-        "en": "It is red.",
+        "en": "It is very red.",
         "hu": "(piros)",
         "needsReview": true
       }
@@ -11494,7 +11494,7 @@
     ],
     "examples": [
       {
-        "en": "It is blue.",
+        "en": "It is very blue.",
         "hu": "(kék)",
         "needsReview": true
       }
@@ -11530,7 +11530,7 @@
     ],
     "examples": [
       {
-        "en": "It is green.",
+        "en": "It is very green.",
         "hu": "(zöld)",
         "needsReview": true
       }
@@ -11566,7 +11566,7 @@
     ],
     "examples": [
       {
-        "en": "It is white.",
+        "en": "It is very white.",
         "hu": "(fehér)",
         "needsReview": true
       }
@@ -11602,7 +11602,7 @@
     ],
     "examples": [
       {
-        "en": "It is black.",
+        "en": "It is very black.",
         "hu": "(fekete)",
         "needsReview": true
       }
@@ -12178,7 +12178,7 @@
     ],
     "examples": [
       {
-        "en": "It is second.",
+        "en": "It is very second.",
         "hu": "(második)",
         "needsReview": true
       }
@@ -12214,7 +12214,7 @@
     ],
     "examples": [
       {
-        "en": "It is third.",
+        "en": "It is very third.",
         "hu": "(harmadik)",
         "needsReview": true
       }
@@ -12287,7 +12287,7 @@
     ],
     "examples": [
       {
-        "en": "I do it o'clock.",
+        "en": "I speak o'clock.",
         "hu": "(óra (pontos idő))",
         "needsReview": true
       }
@@ -12395,7 +12395,7 @@
     ],
     "examples": [
       {
-        "en": "I do it early.",
+        "en": "I speak early.",
         "hu": "(korán)",
         "needsReview": true
       }
@@ -12431,7 +12431,7 @@
     ],
     "examples": [
       {
-        "en": "I do it now.",
+        "en": "I speak now.",
         "hu": "(most)",
         "needsReview": true
       }
@@ -12467,7 +12467,7 @@
     ],
     "examples": [
       {
-        "en": "I do it soon.",
+        "en": "I speak soon.",
         "hu": "(hamarosan)",
         "needsReview": true
       }
@@ -12503,7 +12503,7 @@
     ],
     "examples": [
       {
-        "en": "Before.",
+        "en": "Before — a useful word.",
         "hu": "(előtt)",
         "needsReview": true
       }
@@ -12539,7 +12539,7 @@
     ],
     "examples": [
       {
-        "en": "After.",
+        "en": "After — a useful word.",
         "hu": "(után)",
         "needsReview": true
       }
@@ -13154,7 +13154,7 @@
     ],
     "examples": [
       {
-        "en": "This is a eye.",
+        "en": "This is an eye.",
         "hu": "(szem)",
         "needsReview": true
       }
@@ -13191,7 +13191,7 @@
     ],
     "examples": [
       {
-        "en": "This is a ear.",
+        "en": "This is an ear.",
         "hu": "(fül)",
         "needsReview": true
       }
@@ -13302,7 +13302,7 @@
     ],
     "examples": [
       {
-        "en": "This is a hair.",
+        "en": "I like hair.",
         "hu": "(haj)",
         "needsReview": true
       }
@@ -13375,7 +13375,7 @@
     ],
     "examples": [
       {
-        "en": "This is a arm.",
+        "en": "This is an arm.",
         "hu": "(kar)",
         "needsReview": true
       }
@@ -13670,7 +13670,7 @@
     ],
     "examples": [
       {
-        "en": "It is ill.",
+        "en": "It is very ill.",
         "hu": "(beteg)",
         "needsReview": true
       }
@@ -13706,7 +13706,7 @@
     ],
     "examples": [
       {
-        "en": "It is sick.",
+        "en": "It is very sick.",
         "hu": "(beteg / rosszul)",
         "needsReview": true
       }
@@ -13778,7 +13778,7 @@
     ],
     "examples": [
       {
-        "en": "It is better.",
+        "en": "It is very better.",
         "hu": "(jobban / jobb)",
         "needsReview": true
       }
@@ -13852,7 +13852,7 @@
     ],
     "examples": [
       {
-        "en": "I can hurt.",
+        "en": "I hurt every day.",
         "hu": "(fájni)",
         "needsReview": true
       }
@@ -13889,7 +13889,7 @@
     ],
     "examples": [
       {
-        "en": "This is a clothes.",
+        "en": "I like clothes.",
         "hu": "(ruhák)",
         "needsReview": true
       }
@@ -13962,7 +13962,7 @@
     ],
     "examples": [
       {
-        "en": "This is a trousers.",
+        "en": "The trousers are here.",
         "hu": "(nadrág)",
         "needsReview": true
       }
@@ -13998,7 +13998,7 @@
     ],
     "examples": [
       {
-        "en": "This is a dress.",
+        "en": "The dress are here.",
         "hu": "(ruha (női))",
         "needsReview": true
       }
@@ -14035,7 +14035,7 @@
     ],
     "examples": [
       {
-        "en": "This is a shoes.",
+        "en": "The shoes are here.",
         "hu": "(cipő)",
         "needsReview": true
       }
@@ -14182,7 +14182,7 @@
     ],
     "examples": [
       {
-        "en": "I can wear.",
+        "en": "I wear every day.",
         "hu": "(viselni)",
         "needsReview": true
       }
@@ -14220,8 +14220,8 @@
     ],
     "examples": [
       {
-        "en": "This is a window.",
-        "hu": "(ablak)",
+        "en": "The window is open.",
+        "hu": "Az ablak nyitva van.",
         "needsReview": true
       }
     ],
@@ -14257,8 +14257,8 @@
     ],
     "examples": [
       {
-        "en": "This is a door.",
-        "hu": "(ajtó)",
+        "en": "Please close the door.",
+        "hu": "Kérlek, csukd be az ajtót.",
         "needsReview": true
       }
     ],
@@ -14701,7 +14701,7 @@
     ],
     "examples": [
       {
-        "en": "This is a rice.",
+        "en": "I like rice.",
         "hu": "(rizs)",
         "needsReview": true
       }
@@ -14811,7 +14811,7 @@
     ],
     "examples": [
       {
-        "en": "This is a onion.",
+        "en": "This is an onion.",
         "hu": "(hagyma)",
         "needsReview": true
       }
@@ -14921,7 +14921,7 @@
     ],
     "examples": [
       {
-        "en": "This is a sugar.",
+        "en": "I like sugar.",
         "hu": "(cukor)",
         "needsReview": true
       }
@@ -14957,7 +14957,7 @@
     ],
     "examples": [
       {
-        "en": "This is a salt.",
+        "en": "I like salt.",
         "hu": "(só)",
         "needsReview": true
       }
@@ -14993,7 +14993,7 @@
     ],
     "examples": [
       {
-        "en": "This is a butter.",
+        "en": "I like butter.",
         "hu": "(vaj)",
         "needsReview": true
       }
@@ -15029,7 +15029,7 @@
     ],
     "examples": [
       {
-        "en": "This is a chocolate.",
+        "en": "I like chocolate.",
         "hu": "(csokoládé)",
         "needsReview": true
       }
@@ -15065,7 +15065,7 @@
     ],
     "examples": [
       {
-        "en": "This is a orange.",
+        "en": "This is an orange.",
         "hu": "(narancs)",
         "needsReview": true
       }
@@ -15176,7 +15176,7 @@
     ],
     "examples": [
       {
-        "en": "This is a juice.",
+        "en": "I like juice.",
         "hu": "(gyümölcslé)",
         "needsReview": true
       }
@@ -15212,7 +15212,7 @@
     ],
     "examples": [
       {
-        "en": "This is a wine.",
+        "en": "I like wine.",
         "hu": "(bor)",
         "needsReview": true
       }
@@ -15284,7 +15284,7 @@
     ],
     "examples": [
       {
-        "en": "It is hungry.",
+        "en": "It is very hungry.",
         "hu": "(éhes)",
         "needsReview": true
       }
@@ -15320,7 +15320,7 @@
     ],
     "examples": [
       {
-        "en": "It is thirsty.",
+        "en": "It is very thirsty.",
         "hu": "(szomjas)",
         "needsReview": true
       }
@@ -15356,7 +15356,7 @@
     ],
     "examples": [
       {
-        "en": "It is delicious.",
+        "en": "It is very delicious.",
         "hu": "(finom)",
         "needsReview": true
       }
@@ -15392,7 +15392,7 @@
     ],
     "examples": [
       {
-        "en": "I can taste.",
+        "en": "I taste every day.",
         "hu": "(íz / ízlelni)",
         "needsReview": true
       }
@@ -16427,7 +16427,7 @@
     ],
     "examples": [
       {
-        "en": "This is a rain.",
+        "en": "I like rain.",
         "hu": "(eső)",
         "needsReview": true
       }
@@ -16463,7 +16463,7 @@
     ],
     "examples": [
       {
-        "en": "This is a snow.",
+        "en": "I like snow.",
         "hu": "(hó)",
         "needsReview": true
       }
@@ -16499,7 +16499,7 @@
     ],
     "examples": [
       {
-        "en": "This is a wind.",
+        "en": "I like wind.",
         "hu": "(szél)",
         "needsReview": true
       }
@@ -16572,7 +16572,7 @@
     ],
     "examples": [
       {
-        "en": "It is cloudy.",
+        "en": "It is very cloudy.",
         "hu": "(felhős)",
         "needsReview": true
       }
@@ -16608,7 +16608,7 @@
     ],
     "examples": [
       {
-        "en": "It is windy.",
+        "en": "It is very windy.",
         "hu": "(szeles)",
         "needsReview": true
       }
@@ -16644,7 +16644,7 @@
     ],
     "examples": [
       {
-        "en": "It is wet.",
+        "en": "It is very wet.",
         "hu": "(nedves / esős)",
         "needsReview": true
       }
@@ -16680,7 +16680,7 @@
     ],
     "examples": [
       {
-        "en": "It is dry.",
+        "en": "It is very dry.",
         "hu": "(száraz)",
         "needsReview": true
       }
@@ -16716,7 +16716,7 @@
     ],
     "examples": [
       {
-        "en": "This is a animal.",
+        "en": "This is an animal.",
         "hu": "(állat)",
         "needsReview": true
       }
@@ -16975,7 +16975,7 @@
     ],
     "examples": [
       {
-        "en": "This is a engineer.",
+        "en": "This is an engineer.",
         "hu": "(mérnök)",
         "needsReview": true
       }
@@ -17049,7 +17049,7 @@
     ],
     "examples": [
       {
-        "en": "This is a artist.",
+        "en": "This is an artist.",
         "hu": "(művész)",
         "needsReview": true
       }
@@ -17086,8 +17086,8 @@
     ],
     "examples": [
       {
-        "en": "This is a baby.",
-        "hu": "(baba)",
+        "en": "The baby is very small.",
+        "hu": "A baba nagyon kicsi.",
         "needsReview": true
       }
     ],
@@ -17160,7 +17160,7 @@
     ],
     "examples": [
       {
-        "en": "This is a grandparents.",
+        "en": "The grandparents are here.",
         "hu": "(nagyszülők)",
         "needsReview": true
       }
@@ -17196,8 +17196,8 @@
     ],
     "examples": [
       {
-        "en": "This is a people.",
-        "hu": "(emberek)",
+        "en": "I love the people in my family.",
+        "hu": "Szeretem a családom tagjait.",
         "needsReview": true
       }
     ],
@@ -17232,8 +17232,8 @@
     ],
     "examples": [
       {
-        "en": "This is a man.",
-        "hu": "(férfi)",
+        "en": "That man is my brother.",
+        "hu": "Az a férfi a bátyám.",
         "needsReview": true
       }
     ],
@@ -17269,8 +17269,8 @@
     ],
     "examples": [
       {
-        "en": "This is a woman.",
-        "hu": "(nő)",
+        "en": "The woman is my sister.",
+        "hu": "A nő a nővérem.",
         "needsReview": true
       }
     ],
@@ -17417,7 +17417,7 @@
     ],
     "examples": [
       {
-        "en": "I can open.",
+        "en": "I open every day.",
         "hu": "(kinyitni)",
         "needsReview": true
       }
@@ -17455,7 +17455,7 @@
     ],
     "examples": [
       {
-        "en": "I can close.",
+        "en": "I close every day.",
         "hu": "(becsukni)",
         "needsReview": true
       }
@@ -17493,7 +17493,7 @@
     ],
     "examples": [
       {
-        "en": "I can stop.",
+        "en": "I stop every day.",
         "hu": "(megállni / abbahagyni)",
         "needsReview": true
       }
@@ -17531,8 +17531,8 @@
     ],
     "examples": [
       {
-        "en": "I can give.",
-        "hu": "(adni)",
+        "en": "Please give me the menu.",
+        "hu": "Kérem, adja ide az étlapot.",
         "needsReview": true
       }
     ],
@@ -17569,8 +17569,8 @@
     ],
     "examples": [
       {
-        "en": "I can take.",
-        "hu": "(venni / vinni)",
+        "en": "I take the bus to the centre.",
+        "hu": "Busszal megyek a központba.",
         "needsReview": true
       }
     ],
@@ -17607,7 +17607,7 @@
     ],
     "examples": [
       {
-        "en": "I can put.",
+        "en": "I put every day.",
         "hu": "(tenni)",
         "needsReview": true
       }
@@ -17644,7 +17644,7 @@
     ],
     "examples": [
       {
-        "en": "I can get.",
+        "en": "I get every day.",
         "hu": "(kapni / szerezni)",
         "needsReview": true
       }
@@ -17682,7 +17682,7 @@
     ],
     "examples": [
       {
-        "en": "I can find.",
+        "en": "I find every day.",
         "hu": "(megtalálni)",
         "needsReview": true
       }
@@ -17720,8 +17720,8 @@
     ],
     "examples": [
       {
-        "en": "I can know.",
-        "hu": "(tudni / ismerni)",
+        "en": "I know a little English.",
+        "hu": "Tudok egy kicsit angolul.",
         "needsReview": true
       }
     ],
@@ -17758,8 +17758,8 @@
     ],
     "examples": [
       {
-        "en": "I can ask.",
-        "hu": "(kérdezni)",
+        "en": "Can I ask a question?",
+        "hu": "Kérdezhetek valamit?",
         "needsReview": true
       }
     ],
@@ -17796,7 +17796,7 @@
     ],
     "examples": [
       {
-        "en": "I can answer.",
+        "en": "I answer every day.",
         "hu": "(válaszolni)",
         "needsReview": true
       }
@@ -17834,7 +17834,7 @@
     ],
     "examples": [
       {
-        "en": "I can tell.",
+        "en": "I tell every day.",
         "hu": "(mondani (vkinek))",
         "needsReview": true
       }
@@ -17872,8 +17872,8 @@
     ],
     "examples": [
       {
-        "en": "I can say.",
-        "hu": "(mondani)",
+        "en": "How do you say this in English?",
+        "hu": "Hogy mondják ezt angolul?",
         "needsReview": true
       }
     ],
@@ -17910,7 +17910,7 @@
     ],
     "examples": [
       {
-        "en": "I can show.",
+        "en": "I show every day.",
         "hu": "(megmutatni)",
         "needsReview": true
       }
@@ -17948,7 +17948,7 @@
     ],
     "examples": [
       {
-        "en": "I can use.",
+        "en": "I use every day.",
         "hu": "(használni)",
         "needsReview": true
       }
@@ -17986,7 +17986,7 @@
     ],
     "examples": [
       {
-        "en": "I can pay.",
+        "en": "I pay every day.",
         "hu": "(fizetni)",
         "needsReview": true
       }
@@ -18024,7 +18024,7 @@
     ],
     "examples": [
       {
-        "en": "I can send.",
+        "en": "I send every day.",
         "hu": "(küldeni)",
         "needsReview": true
       }
@@ -18062,7 +18062,7 @@
     ],
     "examples": [
       {
-        "en": "I can carry.",
+        "en": "I carry every day.",
         "hu": "(cipelni / vinni)",
         "needsReview": true
       }
@@ -18100,7 +18100,7 @@
     ],
     "examples": [
       {
-        "en": "I can wash.",
+        "en": "I wash every day.",
         "hu": "(mosni / mosakodni)",
         "needsReview": true
       }
@@ -18138,7 +18138,7 @@
     ],
     "examples": [
       {
-        "en": "I can clean.",
+        "en": "I clean every day.",
         "hu": "(takarítani / tiszta)",
         "needsReview": true
       }
@@ -18176,7 +18176,7 @@
     ],
     "examples": [
       {
-        "en": "I can stay.",
+        "en": "I stay every day.",
         "hu": "(maradni)",
         "needsReview": true
       }
@@ -18214,7 +18214,7 @@
     ],
     "examples": [
       {
-        "en": "I can leave.",
+        "en": "I leave every day.",
         "hu": "(elmenni / elhagyni)",
         "needsReview": true
       }
@@ -18252,7 +18252,7 @@
     ],
     "examples": [
       {
-        "en": "I can arrive.",
+        "en": "I arrive every day.",
         "hu": "(megérkezni)",
         "needsReview": true
       }
@@ -18290,7 +18290,7 @@
     ],
     "examples": [
       {
-        "en": "I can drive.",
+        "en": "I drive every day.",
         "hu": "(vezetni (autót))",
         "needsReview": true
       }
@@ -18327,7 +18327,7 @@
     ],
     "examples": [
       {
-        "en": "I can fly.",
+        "en": "I fly every day.",
         "hu": "(repülni)",
         "needsReview": true
       }
@@ -18365,7 +18365,7 @@
     ],
     "examples": [
       {
-        "en": "I can run.",
+        "en": "I run every day.",
         "hu": "(futni)",
         "needsReview": true
       }
@@ -18403,7 +18403,7 @@
     ],
     "examples": [
       {
-        "en": "I can sit.",
+        "en": "I sit every day.",
         "hu": "(ülni)",
         "needsReview": true
       }
@@ -18441,7 +18441,7 @@
     ],
     "examples": [
       {
-        "en": "I can stand.",
+        "en": "I stand every day.",
         "hu": "(állni)",
         "needsReview": true
       }
@@ -18479,7 +18479,7 @@
     ],
     "examples": [
       {
-        "en": "I can look.",
+        "en": "I look every day.",
         "hu": "(nézni)",
         "needsReview": true
       }
@@ -18517,7 +18517,7 @@
     ],
     "examples": [
       {
-        "en": "I can listen.",
+        "en": "I listen every day.",
         "hu": "(hallgatni)",
         "needsReview": true
       }
@@ -18555,7 +18555,7 @@
     ],
     "examples": [
       {
-        "en": "I can write.",
+        "en": "I write every day.",
         "hu": "(írni)",
         "needsReview": true
       }
@@ -18593,8 +18593,8 @@
     ],
     "examples": [
       {
-        "en": "I can learn.",
-        "hu": "(tanulni)",
+        "en": "I want to learn English for my family.",
+        "hu": "A családomért akarok angolul tanulni.",
         "needsReview": true
       }
     ],
@@ -18631,8 +18631,8 @@
     ],
     "examples": [
       {
-        "en": "I can teach.",
-        "hu": "(tanítani)",
+        "en": "I teach Hungarian online.",
+        "hu": "Magyart tanítok online.",
         "needsReview": true
       }
     ],
@@ -18669,7 +18669,7 @@
     ],
     "examples": [
       {
-        "en": "I can remember.",
+        "en": "I remember every day.",
         "hu": "(emlékezni)",
         "needsReview": true
       }
@@ -18706,7 +18706,7 @@
     ],
     "examples": [
       {
-        "en": "I can feel.",
+        "en": "I feel every day.",
         "hu": "(érezni)",
         "needsReview": true
       }
@@ -18741,7 +18741,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can hope.",
+        "en": "I hope every day.",
         "hu": "(remélni)",
         "needsReview": true
       }
@@ -18779,7 +18779,7 @@
     ],
     "examples": [
       {
-        "en": "I can try.",
+        "en": "I try every day.",
         "hu": "(megpróbálni)",
         "needsReview": true
       }
@@ -18817,7 +18817,7 @@
     ],
     "examples": [
       {
-        "en": "I can begin.",
+        "en": "I begin every day.",
         "hu": "(elkezdeni)",
         "needsReview": true
       }
@@ -18855,7 +18855,7 @@
     ],
     "examples": [
       {
-        "en": "I can finish.",
+        "en": "I finish every day.",
         "hu": "(befejezni)",
         "needsReview": true
       }
@@ -18893,7 +18893,7 @@
     ],
     "examples": [
       {
-        "en": "I can change.",
+        "en": "I change every day.",
         "hu": "(változtatni / átszállni)",
         "needsReview": true
       }
@@ -18931,7 +18931,7 @@
     ],
     "examples": [
       {
-        "en": "I can sell.",
+        "en": "I sell every day.",
         "hu": "(eladni)",
         "needsReview": true
       }
@@ -18969,7 +18969,7 @@
     ],
     "examples": [
       {
-        "en": "It is big.",
+        "en": "It is very big.",
         "hu": "(nagy)",
         "needsReview": true
       }
@@ -19005,7 +19005,7 @@
     ],
     "examples": [
       {
-        "en": "It is small.",
+        "en": "It is very small.",
         "hu": "(kicsi)",
         "needsReview": true
       }
@@ -19041,7 +19041,7 @@
     ],
     "examples": [
       {
-        "en": "It is long.",
+        "en": "It is very long.",
         "hu": "(hosszú)",
         "needsReview": true
       }
@@ -19077,7 +19077,7 @@
     ],
     "examples": [
       {
-        "en": "It is new.",
+        "en": "It is very new.",
         "hu": "(új)",
         "needsReview": true
       }
@@ -19113,7 +19113,7 @@
     ],
     "examples": [
       {
-        "en": "It is bad.",
+        "en": "It is very bad.",
         "hu": "(rossz)",
         "needsReview": true
       }
@@ -19148,7 +19148,7 @@
     ],
     "examples": [
       {
-        "en": "It is sad.",
+        "en": "It is very sad.",
         "hu": "(szomorú)",
         "needsReview": true
       }
@@ -19184,7 +19184,7 @@
     ],
     "examples": [
       {
-        "en": "It is easy.",
+        "en": "It is very easy.",
         "hu": "(könnyű)",
         "needsReview": true
       }
@@ -19220,7 +19220,7 @@
     ],
     "examples": [
       {
-        "en": "It is difficult.",
+        "en": "It is very difficult.",
         "hu": "(nehéz (bonyolult))",
         "needsReview": true
       }
@@ -19256,7 +19256,7 @@
     ],
     "examples": [
       {
-        "en": "It is hard.",
+        "en": "It is very hard.",
         "hu": "(nehéz / kemény)",
         "needsReview": true
       }
@@ -19292,7 +19292,7 @@
     ],
     "examples": [
       {
-        "en": "It is fast.",
+        "en": "It is very fast.",
         "hu": "(gyors)",
         "needsReview": true
       }
@@ -19328,7 +19328,7 @@
     ],
     "examples": [
       {
-        "en": "It is slow.",
+        "en": "It is very slow.",
         "hu": "(lassú)",
         "needsReview": true
       }
@@ -19364,7 +19364,7 @@
     ],
     "examples": [
       {
-        "en": "It is high.",
+        "en": "It is very high.",
         "hu": "(magas (tárgy))",
         "needsReview": true
       }
@@ -19400,7 +19400,7 @@
     ],
     "examples": [
       {
-        "en": "It is dirty.",
+        "en": "It is very dirty.",
         "hu": "(piszkos)",
         "needsReview": true
       }
@@ -19436,7 +19436,7 @@
     ],
     "examples": [
       {
-        "en": "It is expensive.",
+        "en": "It is very expensive.",
         "hu": "(drága)",
         "needsReview": true
       }
@@ -19472,7 +19472,7 @@
     ],
     "examples": [
       {
-        "en": "It is cheap.",
+        "en": "It is very cheap.",
         "hu": "(olcsó)",
         "needsReview": true
       }
@@ -19508,7 +19508,7 @@
     ],
     "examples": [
       {
-        "en": "It is important.",
+        "en": "It is very important.",
         "hu": "(fontos)",
         "needsReview": true
       }
@@ -19544,7 +19544,7 @@
     ],
     "examples": [
       {
-        "en": "It is different.",
+        "en": "It is very different.",
         "hu": "(különböző / más)",
         "needsReview": true
       }
@@ -19580,7 +19580,7 @@
     ],
     "examples": [
       {
-        "en": "It is same.",
+        "en": "It is very same.",
         "hu": "(ugyanaz)",
         "needsReview": true
       }
@@ -19616,7 +19616,7 @@
     ],
     "examples": [
       {
-        "en": "It is lovely.",
+        "en": "It is very lovely.",
         "hu": "(kedves / bájos)",
         "needsReview": true
       }
@@ -19652,7 +19652,7 @@
     ],
     "examples": [
       {
-        "en": "It is friendly.",
+        "en": "It is very friendly.",
         "hu": "(barátságos)",
         "needsReview": true
       }
@@ -19688,7 +19688,7 @@
     ],
     "examples": [
       {
-        "en": "It is quiet.",
+        "en": "It is very quiet.",
         "hu": "(csendes)",
         "needsReview": true
       }
@@ -19724,7 +19724,7 @@
     ],
     "examples": [
       {
-        "en": "It is loud.",
+        "en": "It is very loud.",
         "hu": "(hangos)",
         "needsReview": true
       }
@@ -19760,7 +19760,7 @@
     ],
     "examples": [
       {
-        "en": "It is dark.",
+        "en": "It is very dark.",
         "hu": "(sötét)",
         "needsReview": true
       }
@@ -19796,7 +19796,7 @@
     ],
     "examples": [
       {
-        "en": "It is light.",
+        "en": "It is very light.",
         "hu": "(világos / könnyű)",
         "needsReview": true
       }
@@ -19832,7 +19832,7 @@
     ],
     "examples": [
       {
-        "en": "It is full.",
+        "en": "It is very full.",
         "hu": "(tele)",
         "needsReview": true
       }
@@ -19868,7 +19868,7 @@
     ],
     "examples": [
       {
-        "en": "It is empty.",
+        "en": "It is very empty.",
         "hu": "(üres)",
         "needsReview": true
       }
@@ -19904,7 +19904,7 @@
     ],
     "examples": [
       {
-        "en": "It is wrong.",
+        "en": "It is very wrong.",
         "hu": "(rossz / helytelen)",
         "needsReview": true
       }
@@ -19940,7 +19940,7 @@
     ],
     "examples": [
       {
-        "en": "It is strong.",
+        "en": "It is very strong.",
         "hu": "(erős)",
         "needsReview": true
       }
@@ -19973,7 +19973,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is angry.",
+        "en": "It is very angry.",
         "hu": "(mérges)",
         "needsReview": true
       }
@@ -20006,7 +20006,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is surprised.",
+        "en": "It is very surprised.",
         "hu": "(meglepett)",
         "needsReview": true
       }
@@ -20039,7 +20039,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is excited.",
+        "en": "It is very excited.",
         "hu": "(izgatott)",
         "needsReview": true
       }
@@ -20075,7 +20075,7 @@
     ],
     "examples": [
       {
-        "en": "It is yellow.",
+        "en": "It is very yellow.",
         "hu": "(sárga)",
         "needsReview": true
       }
@@ -20111,7 +20111,7 @@
     ],
     "examples": [
       {
-        "en": "It is brown.",
+        "en": "It is very brown.",
         "hu": "(barna)",
         "needsReview": true
       }
@@ -20147,7 +20147,7 @@
     ],
     "examples": [
       {
-        "en": "It is grey.",
+        "en": "It is very grey.",
         "hu": "(szürke)",
         "needsReview": true
       }
@@ -20183,7 +20183,7 @@
     ],
     "examples": [
       {
-        "en": "It is pink.",
+        "en": "It is very pink.",
         "hu": "(rózsaszín)",
         "needsReview": true
       }
@@ -20219,7 +20219,7 @@
     ],
     "examples": [
       {
-        "en": "I do it here.",
+        "en": "I speak here.",
         "hu": "(itt)",
         "needsReview": true
       }
@@ -20255,7 +20255,7 @@
     ],
     "examples": [
       {
-        "en": "I do it there.",
+        "en": "I speak there.",
         "hu": "(ott)",
         "needsReview": true
       }
@@ -20291,7 +20291,7 @@
     ],
     "examples": [
       {
-        "en": "I do it too.",
+        "en": "I speak too.",
         "hu": "(is / túl)",
         "needsReview": true
       }
@@ -20327,7 +20327,7 @@
     ],
     "examples": [
       {
-        "en": "I do it also.",
+        "en": "I speak also.",
         "hu": "(szintén)",
         "needsReview": true
       }
@@ -20363,7 +20363,7 @@
     ],
     "examples": [
       {
-        "en": "I do it only.",
+        "en": "I speak only.",
         "hu": "(csak)",
         "needsReview": true
       }
@@ -20399,7 +20399,7 @@
     ],
     "examples": [
       {
-        "en": "I do it maybe.",
+        "en": "I speak maybe.",
         "hu": "(talán)",
         "needsReview": true
       }
@@ -20435,7 +20435,7 @@
     ],
     "examples": [
       {
-        "en": "I do it really.",
+        "en": "I speak really.",
         "hu": "(tényleg)",
         "needsReview": true
       }
@@ -20471,7 +20471,7 @@
     ],
     "examples": [
       {
-        "en": "I do it just.",
+        "en": "I speak just.",
         "hu": "(épp / csak)",
         "needsReview": true
       }
@@ -20507,7 +20507,7 @@
     ],
     "examples": [
       {
-        "en": "About.",
+        "en": "About — a useful word.",
         "hu": "(-ról / -ről / kb.)",
         "needsReview": true
       }
@@ -20543,7 +20543,7 @@
     ],
     "examples": [
       {
-        "en": "I do it up.",
+        "en": "I speak up.",
         "hu": "(fel)",
         "needsReview": true
       }
@@ -20579,7 +20579,7 @@
     ],
     "examples": [
       {
-        "en": "I do it down.",
+        "en": "I speak down.",
         "hu": "(le)",
         "needsReview": true
       }
@@ -20615,7 +20615,7 @@
     ],
     "examples": [
       {
-        "en": "I do it out.",
+        "en": "I speak out.",
         "hu": "(ki / kint)",
         "needsReview": true
       }
@@ -20651,7 +20651,7 @@
     ],
     "examples": [
       {
-        "en": "With.",
+        "en": "With — a useful word.",
         "hu": "(-val / -vel)",
         "needsReview": true
       }
@@ -20687,7 +20687,7 @@
     ],
     "examples": [
       {
-        "en": "For.",
+        "en": "For — a useful word.",
         "hu": "(-nak / -ért)",
         "needsReview": true
       }
@@ -20723,7 +20723,7 @@
     ],
     "examples": [
       {
-        "en": "At.",
+        "en": "At — a useful word.",
         "hu": "(-nál / -kor)",
         "needsReview": true
       }
@@ -20759,7 +20759,7 @@
     ],
     "examples": [
       {
-        "en": "To.",
+        "en": "To — a useful word.",
         "hu": "(-hoz / -ba)",
         "needsReview": true
       }
@@ -20795,7 +20795,7 @@
     ],
     "examples": [
       {
-        "en": "Of.",
+        "en": "Of — a useful word.",
         "hu": "(-nak a ...)",
         "needsReview": true
       }
@@ -20831,7 +20831,7 @@
     ],
     "examples": [
       {
-        "en": "By.",
+        "en": "By — a useful word.",
         "hu": "(-val (közlekedés) / mellett)",
         "needsReview": true
       }
@@ -20867,7 +20867,7 @@
     ],
     "examples": [
       {
-        "en": "Over.",
+        "en": "Over — a useful word.",
         "hu": "(fölött / vége)",
         "needsReview": true
       }
@@ -20903,7 +20903,7 @@
     ],
     "examples": [
       {
-        "en": "Behind.",
+        "en": "Behind — a useful word.",
         "hu": "(mögött)",
         "needsReview": true
       }
@@ -20939,7 +20939,7 @@
     ],
     "examples": [
       {
-        "en": "I can cost.",
+        "en": "I cost every day.",
         "hu": "(kerülni (vmennyibe))",
         "needsReview": true
       }
@@ -20976,7 +20976,7 @@
     ],
     "examples": [
       {
-        "en": "This is a euro.",
+        "en": "This is an euro.",
         "hu": "(euró)",
         "needsReview": true
       }
@@ -21050,7 +21050,7 @@
     ],
     "examples": [
       {
-        "en": "This is a cash.",
+        "en": "I like cash.",
         "hu": "(készpénz)",
         "needsReview": true
       }
@@ -21271,7 +21271,7 @@
     ],
     "examples": [
       {
-        "en": "This is a email.",
+        "en": "This is an email.",
         "hu": "(e-mail)",
         "needsReview": true
       }
@@ -21382,7 +21382,7 @@
     ],
     "examples": [
       {
-        "en": "This is a app.",
+        "en": "This is an app.",
         "hu": "(alkalmazás / app)",
         "needsReview": true
       }
@@ -21677,7 +21677,7 @@
     ],
     "examples": [
       {
-        "en": "This is a homework.",
+        "en": "I like homework.",
         "hu": "(házi feladat)",
         "needsReview": true
       }
@@ -21713,7 +21713,7 @@
     ],
     "examples": [
       {
-        "en": "I do it sure.",
+        "en": "I speak sure.",
         "hu": "(persze)",
         "needsReview": true
       }
@@ -21884,8 +21884,8 @@
     ],
     "examples": [
       {
-        "en": "I do it when.",
-        "hu": "(mikor)",
+        "en": "When do we meet?",
+        "hu": "Mikor találkozunk?",
         "needsReview": true
       }
     ],
@@ -21920,8 +21920,8 @@
     ],
     "examples": [
       {
-        "en": "I do it why.",
-        "hu": "(miért)",
+        "en": "Why do you like it?",
+        "hu": "Miért szereted?",
         "needsReview": true
       }
     ],
@@ -21956,8 +21956,8 @@
     ],
     "examples": [
       {
-        "en": "Which.",
-        "hu": "(melyik)",
+        "en": "Which bus goes to the centre?",
+        "hu": "Melyik busz megy a központba?",
         "needsReview": true
       }
     ],
@@ -22140,7 +22140,7 @@
     ],
     "examples": [
       {
-        "en": "This is a end.",
+        "en": "This is an end.",
         "hu": "(vég)",
         "needsReview": true
       }
@@ -22501,7 +22501,7 @@
     ],
     "examples": [
       {
-        "en": "This is a news.",
+        "en": "I like news.",
         "hu": "(hír(ek))",
         "needsReview": true
       }
@@ -22537,7 +22537,7 @@
     ],
     "examples": [
       {
-        "en": "This is a idea.",
+        "en": "This is an idea.",
         "hu": "(ötlet)",
         "needsReview": true
       }
@@ -22574,7 +22574,7 @@
     ],
     "examples": [
       {
-        "en": "This is a office.",
+        "en": "This is an office.",
         "hu": "(iroda)",
         "needsReview": true
       }
@@ -22722,7 +22722,7 @@
     ],
     "examples": [
       {
-        "en": "This is a glass.",
+        "en": "The glass are here.",
         "hu": "(pohár)",
         "needsReview": true
       }
@@ -23055,7 +23055,7 @@
     ],
     "examples": [
       {
-        "en": "This is a umbrella.",
+        "en": "This is an umbrella.",
         "hu": "(esernyő)",
         "needsReview": true
       }
@@ -23163,8 +23163,8 @@
     ],
     "examples": [
       {
-        "en": "I can talk.",
-        "hu": "(beszélgetni)",
+        "en": "I want to talk to Endika.",
+        "hu": "Szeretnék beszélni Endikával.",
         "needsReview": true
       }
     ],
@@ -23198,7 +23198,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can smile.",
+        "en": "I smile every day.",
         "hu": "(mosolyogni)",
         "needsReview": true
       }
@@ -23233,7 +23233,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can laugh.",
+        "en": "I laugh every day.",
         "hu": "(nevetni)",
         "needsReview": true
       }
@@ -23271,7 +23271,7 @@
     ],
     "examples": [
       {
-        "en": "I can jump.",
+        "en": "I jump every day.",
         "hu": "(ugrani)",
         "needsReview": true
       }
@@ -23309,7 +23309,7 @@
     ],
     "examples": [
       {
-        "en": "I can draw.",
+        "en": "I draw every day.",
         "hu": "(rajzolni)",
         "needsReview": true
       }
@@ -23347,7 +23347,7 @@
     ],
     "examples": [
       {
-        "en": "I can paint.",
+        "en": "I paint every day.",
         "hu": "(festeni)",
         "needsReview": true
       }
@@ -23385,7 +23385,7 @@
     ],
     "examples": [
       {
-        "en": "I can cut.",
+        "en": "I cut every day.",
         "hu": "(vágni)",
         "needsReview": true
       }
@@ -23422,7 +23422,7 @@
     ],
     "examples": [
       {
-        "en": "I can catch.",
+        "en": "I catch every day.",
         "hu": "(elkapni / elérni)",
         "needsReview": true
       }
@@ -23460,7 +23460,7 @@
     ],
     "examples": [
       {
-        "en": "I can win.",
+        "en": "I win every day.",
         "hu": "(nyerni)",
         "needsReview": true
       }
@@ -23495,7 +23495,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can invite.",
+        "en": "I invite every day.",
         "hu": "(meghívni)",
         "needsReview": true
       }
@@ -23533,7 +23533,7 @@
     ],
     "examples": [
       {
-        "en": "I can fill.",
+        "en": "I fill every day.",
         "hu": "(megtölteni / kitölteni)",
         "needsReview": true
       }
@@ -23571,7 +23571,7 @@
     ],
     "examples": [
       {
-        "en": "I can choose.",
+        "en": "I choose every day.",
         "hu": "(választani)",
         "needsReview": true
       }
@@ -23609,7 +23609,7 @@
     ],
     "examples": [
       {
-        "en": "I can thank.",
+        "en": "I thank every day.",
         "hu": "(megköszönni)",
         "needsReview": true
       }
@@ -23646,7 +23646,7 @@
     ],
     "examples": [
       {
-        "en": "I can worry.",
+        "en": "I worry every day.",
         "hu": "(aggódni)",
         "needsReview": true
       }
@@ -23684,7 +23684,7 @@
     ],
     "examples": [
       {
-        "en": "I can practise.",
+        "en": "I practise every day.",
         "hu": "(gyakorolni)",
         "needsReview": true
       }
@@ -23722,7 +23722,7 @@
     ],
     "examples": [
       {
-        "en": "I can decide.",
+        "en": "I decide every day.",
         "hu": "(eldönteni)",
         "needsReview": true
       }
@@ -23760,7 +23760,7 @@
     ],
     "examples": [
       {
-        "en": "I can spend.",
+        "en": "I spend every day.",
         "hu": "(költeni / tölteni)",
         "needsReview": true
       }
@@ -23798,7 +23798,7 @@
     ],
     "examples": [
       {
-        "en": "I can save.",
+        "en": "I save every day.",
         "hu": "(megspórolni / menteni)",
         "needsReview": true
       }
@@ -23836,7 +23836,7 @@
     ],
     "examples": [
       {
-        "en": "It is low.",
+        "en": "It is very low.",
         "hu": "(alacsony (tárgy))",
         "needsReview": true
       }
@@ -23872,7 +23872,7 @@
     ],
     "examples": [
       {
-        "en": "It is cool.",
+        "en": "It is very cool.",
         "hu": "(hűvös / menő)",
         "needsReview": true
       }
@@ -23908,7 +23908,7 @@
     ],
     "examples": [
       {
-        "en": "It is wonderful.",
+        "en": "It is very wonderful.",
         "hu": "(csodálatos)",
         "needsReview": true
       }
@@ -23944,7 +23944,7 @@
     ],
     "examples": [
       {
-        "en": "It is great.",
+        "en": "It is very great.",
         "hu": "(nagyszerű)",
         "needsReview": true
       }
@@ -23980,7 +23980,7 @@
     ],
     "examples": [
       {
-        "en": "It is true.",
+        "en": "It is very true.",
         "hu": "(igaz)",
         "needsReview": true
       }
@@ -24016,7 +24016,7 @@
     ],
     "examples": [
       {
-        "en": "It is real.",
+        "en": "It is very real.",
         "hu": "(valódi)",
         "needsReview": true
       }
@@ -24052,7 +24052,7 @@
     ],
     "examples": [
       {
-        "en": "It is best.",
+        "en": "It is very best.",
         "hu": "(legjobb)",
         "needsReview": true
       }
@@ -24088,7 +24088,7 @@
     ],
     "examples": [
       {
-        "en": "It is next.",
+        "en": "It is very next.",
         "hu": "(következő)",
         "needsReview": true
       }
@@ -24124,7 +24124,7 @@
     ],
     "examples": [
       {
-        "en": "It is last.",
+        "en": "It is very last.",
         "hu": "(utolsó / múlt)",
         "needsReview": true
       }
@@ -24160,7 +24160,7 @@
     ],
     "examples": [
       {
-        "en": "It is other.",
+        "en": "It is very other.",
         "hu": "(másik)",
         "needsReview": true
       }
@@ -24196,7 +24196,7 @@
     ],
     "examples": [
       {
-        "en": "Every.",
+        "en": "Every — a useful word.",
         "hu": "(minden)",
         "needsReview": true
       }
@@ -24232,7 +24232,7 @@
     ],
     "examples": [
       {
-        "en": "It is perfect.",
+        "en": "It is very perfect.",
         "hu": "(tökéletes)",
         "needsReview": true
       }
@@ -24268,7 +24268,7 @@
     ],
     "examples": [
       {
-        "en": "It is terrible.",
+        "en": "It is very terrible.",
         "hu": "(szörnyű)",
         "needsReview": true
       }
@@ -24304,7 +24304,7 @@
     ],
     "examples": [
       {
-        "en": "Into.",
+        "en": "Into — a useful word.",
         "hu": "(-ba / -be)",
         "needsReview": true
       }
@@ -24340,7 +24340,7 @@
     ],
     "examples": [
       {
-        "en": "Through.",
+        "en": "Through — a useful word.",
         "hu": "(át / keresztül)",
         "needsReview": true
       }
@@ -24376,7 +24376,7 @@
     ],
     "examples": [
       {
-        "en": "Around.",
+        "en": "Around — a useful word.",
         "hu": "(körül)",
         "needsReview": true
       }
@@ -24412,7 +24412,7 @@
     ],
     "examples": [
       {
-        "en": "I do it quite.",
+        "en": "I speak quite.",
         "hu": "(elég(gé))",
         "needsReview": true
       }
@@ -24448,7 +24448,7 @@
     ],
     "examples": [
       {
-        "en": "I do it almost.",
+        "en": "I speak almost.",
         "hu": "(majdnem)",
         "needsReview": true
       }
@@ -24484,7 +24484,7 @@
     ],
     "examples": [
       {
-        "en": "This is a age.",
+        "en": "This is an age.",
         "hu": "(kor / életkor)",
         "needsReview": true
       }
@@ -24521,7 +24521,7 @@
     ],
     "examples": [
       {
-        "en": "This is a address.",
+        "en": "The address are here.",
         "hu": "(cím)",
         "needsReview": true
       }
@@ -24847,7 +24847,7 @@
     ],
     "examples": [
       {
-        "en": "This is a east.",
+        "en": "This is an east.",
         "hu": "(kelet)",
         "needsReview": true
       }
@@ -24955,7 +24955,7 @@
     ],
     "examples": [
       {
-        "en": "This is a grass.",
+        "en": "I like grass.",
         "hu": "(fű)",
         "needsReview": true
       }
@@ -25065,7 +25065,7 @@
     ],
     "examples": [
       {
-        "en": "I can pull.",
+        "en": "I pull every day.",
         "hu": "(húzni)",
         "needsReview": true
       }
@@ -25103,7 +25103,7 @@
     ],
     "examples": [
       {
-        "en": "I can push.",
+        "en": "I push every day.",
         "hu": "(tolni / nyomni)",
         "needsReview": true
       }
@@ -25140,7 +25140,7 @@
     ],
     "examples": [
       {
-        "en": "I can hold.",
+        "en": "I hold every day.",
         "hu": "(tartani / fogni)",
         "needsReview": true
       }
@@ -25177,7 +25177,7 @@
     ],
     "examples": [
       {
-        "en": "I can miss.",
+        "en": "I miss every day.",
         "hu": "(lekésni / hiányozni)",
         "needsReview": true
       }
@@ -25215,7 +25215,7 @@
     ],
     "examples": [
       {
-        "en": "I can keep.",
+        "en": "I keep every day.",
         "hu": "(megtartani)",
         "needsReview": true
       }
@@ -25253,7 +25253,7 @@
     ],
     "examples": [
       {
-        "en": "I can let.",
+        "en": "I let every day.",
         "hu": "(hagyni / engedni)",
         "needsReview": true
       }
@@ -25290,7 +25290,7 @@
     ],
     "examples": [
       {
-        "en": "I can hate.",
+        "en": "I hate every day.",
         "hu": "(utálni)",
         "needsReview": true
       }
@@ -25328,7 +25328,7 @@
     ],
     "examples": [
       {
-        "en": "I can prefer.",
+        "en": "I prefer every day.",
         "hu": "(jobban szeretni)",
         "needsReview": true
       }
@@ -25366,7 +25366,7 @@
     ],
     "examples": [
       {
-        "en": "I can agree.",
+        "en": "I agree every day.",
         "hu": "(egyetérteni)",
         "needsReview": true
       }
@@ -25404,7 +25404,7 @@
     ],
     "examples": [
       {
-        "en": "It is closed.",
+        "en": "It is very closed.",
         "hu": "(zárva)",
         "needsReview": true
       }
@@ -25440,7 +25440,7 @@
     ],
     "examples": [
       {
-        "en": "It is heavy.",
+        "en": "It is very heavy.",
         "hu": "(nehéz (súly))",
         "needsReview": true
       }
@@ -25476,7 +25476,7 @@
     ],
     "examples": [
       {
-        "en": "It is soft.",
+        "en": "It is very soft.",
         "hu": "(puha)",
         "needsReview": true
       }
@@ -25512,7 +25512,7 @@
     ],
     "examples": [
       {
-        "en": "It is pretty.",
+        "en": "It is very pretty.",
         "hu": "(csinos / szép)",
         "needsReview": true
       }
@@ -25545,7 +25545,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "This is a announcement.",
+        "en": "This is an announcement.",
         "hu": "(bejelentés)",
         "needsReview": true
       }
@@ -25644,7 +25644,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "This is a arrival.",
+        "en": "This is an arrival.",
         "hu": "(érkezés)",
         "needsReview": true
       }
@@ -25710,7 +25710,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is cancelled.",
+        "en": "It is very cancelled.",
         "hu": "(törölve)",
         "needsReview": true
       }
@@ -25743,7 +25743,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can fasten.",
+        "en": "I fasten every day.",
         "hu": "(becsatolni)",
         "needsReview": true
       }
@@ -26238,7 +26238,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "Opposite.",
+        "en": "Opposite — a useful word.",
         "hu": "(szemben)",
         "needsReview": true
       }
@@ -26271,7 +26271,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "Between.",
+        "en": "Between — a useful word.",
         "hu": "(között)",
         "needsReview": true
       }
@@ -26337,7 +26337,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I do it upstairs.",
+        "en": "I speak upstairs.",
         "hu": "(emeleten)",
         "needsReview": true
       }
@@ -26370,7 +26370,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I do it downstairs.",
+        "en": "I speak downstairs.",
         "hu": "(földszinten)",
         "needsReview": true
       }
@@ -26436,7 +26436,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is healthy.",
+        "en": "It is very healthy.",
         "hu": "(egészséges)",
         "needsReview": true
       }
@@ -26469,7 +26469,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can celebrate.",
+        "en": "I celebrate every day.",
         "hu": "(ünnepelni)",
         "needsReview": true
       }
@@ -26700,7 +26700,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "This is a experience.",
+        "en": "This is an experience.",
         "hu": "(tapasztalat / élmény)",
         "needsReview": true
       }
@@ -26733,7 +26733,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I do it abroad.",
+        "en": "I speak abroad.",
         "hu": "(külföldön)",
         "needsReview": true
       }
@@ -26865,7 +26865,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "This is a university.",
+        "en": "This is an university.",
         "hu": "(egyetem)",
         "needsReview": true
       }
@@ -26964,7 +26964,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "This is a author.",
+        "en": "This is an author.",
         "hu": "(szerző)",
         "needsReview": true
       }
@@ -26997,7 +26997,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can recommend.",
+        "en": "I recommend every day.",
         "hu": "(ajánlani)",
         "needsReview": true
       }
@@ -27096,7 +27096,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can breathe.",
+        "en": "I breathe every day.",
         "hu": "(lélegezni)",
         "needsReview": true
       }
@@ -27129,7 +27129,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can relax.",
+        "en": "I relax every day.",
         "hu": "(ellazulni)",
         "needsReview": true
       }
@@ -27162,7 +27162,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is worried.",
+        "en": "It is very worried.",
         "hu": "(aggódó)",
         "needsReview": true
       }
@@ -27195,7 +27195,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is comfortable.",
+        "en": "It is very comfortable.",
         "hu": "(kényelmes)",
         "needsReview": true
       }
@@ -27294,7 +27294,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "It is online.",
+        "en": "It is very online.",
         "hu": "(online / interneten)",
         "needsReview": true
       }
@@ -27327,7 +27327,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "I can download.",
+        "en": "I download every day.",
         "hu": "(letölteni)",
         "needsReview": true
       }
@@ -27558,7 +27558,7 @@
     "reviewLessons": [],
     "examples": [
       {
-        "en": "This is a emergency.",
+        "en": "This is an emergency.",
         "hu": "(vészhelyzet)",
         "needsReview": true
       }

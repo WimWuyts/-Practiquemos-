@@ -389,6 +389,196 @@ window.M = window.M || {};
     R["listen-choose"](mount, { items: act.items }, done);
   };
 
+  // See an icon, choose the English word.
+  R["icon-choice"] = function (mount, act, done) {
+    var items = dom.shuffle(act.items.map(M.get.lex).filter(Boolean)).slice(0, 5);
+    if (!items.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var target = items[idx];
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.iconchoice.prompt") }));
+      mount.appendChild(el("div", { class: "card wordcard" }, [
+        el("div", { class: "wordicon", "aria-hidden": "true", html: dom.icon(target.icon || "dot") }),
+        M.i18n.helpAvailable() ? el("div", { class: "hu", text: target.hu }) : null,
+      ]));
+      var pool = dom.shuffle([target].concat(dom.shuffle(M.data.lexicon.filter(function (l) { return l.id !== target.id && l.partOfSpeech === target.partOfSpeech; })).slice(0, 3)));
+      var opts = el("div", { class: "options" });
+      pool.forEach(function (o) {
+        var b = el("button", { class: "option" }, [el("span", { text: o.headword })]);
+        b.addEventListener("click", function () {
+          var ok = o.id === target.id;
+          b.classList.add(ok ? "correct" : "wrong");
+          b.appendChild(el("span", { class: "mark", html: dom.icon(ok ? "check" : "again") }));
+          M.audio.speak(target.tts);
+          M.store.touchItem(target.id, "meaning", ok);
+          Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
+          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost") + " — " + target.headword));
+          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < items.length) round(); else done(true); } }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+        });
+        opts.appendChild(b);
+      });
+      mount.appendChild(opts);
+    }
+    round();
+  };
+
+  // Listen to one of a minimal pair, choose which word you heard (pronunciation discrimination).
+  R["minimal-pair"] = function (mount, act, done) {
+    var f = M.get.focus(act.focusId);
+    var pairs = (f && f.minimalPairs) || [];
+    if (!pairs.length) return done(true);
+    dom.clear(mount);
+    var sb = stepBadge(f.stage); if (sb) mount.appendChild(sb);
+    mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.minimalpair.prompt") }));
+    if (f) mount.appendChild(el("div", { class: "card" }, [el("h3", { text: f.focus.en }), el("p", { class: "muted", text: M.i18n.helpAvailable() ? f.tip.hu : f.tip.en })]));
+    var idx = 0;
+    function round() {
+      var pair = pairs[idx];
+      var target = dom.shuffle([pair.a, pair.b])[0];
+      var stage = el("div", {});
+      stage.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn secondary", onclick: function () { M.audio.speak(target); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")]),
+        el("button", { class: "btn ghost", onclick: function () { M.audio.speak(target, { slow: true }); } }, [el("span", { html: dom.icon("slow") }), " " + M.i18n.t("btn.listen.slow")]),
+      ]));
+      stage.appendChild(el("p", { class: "muted", text: M.i18n.t("act.minimalpair.which") }));
+      var opts = el("div", { class: "options" });
+      [pair.a, pair.b].forEach(function (w) {
+        var b = el("button", { class: "option" }, [el("span", { text: w })]);
+        b.addEventListener("click", function () {
+          var ok = w === target;
+          b.classList.add(ok ? "correct" : "wrong");
+          Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
+          feedback(stage, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.listen") + " — " + target));
+          stage.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < pairs.length) { dom.clear(mount); rebuild(); round(); } else done(true); } }, [idx < pairs.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+        });
+        opts.appendChild(b);
+      });
+      stage.appendChild(opts);
+      mount.appendChild(stage);
+      M.audio.speak(target);
+    }
+    function rebuild() { var s = stepBadge(f.stage); if (s) mount.appendChild(s); mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.minimalpair.prompt") })); }
+    round();
+  };
+
+  // Put the words in the right order to build a sentence.
+  R.reorder = function (mount, act, done) {
+    var sentences = act.sentences || [];
+    if (!sentences.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var s = sentences[idx];
+      var words = s.en.replace(/[.?!]$/, "").split(" ");
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.reorder.prompt") }));
+      mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.audio.speak(s.en); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")]), M.i18n.helpAvailable() && s.hu ? el("span", { class: "muted", style: "align-self:center", text: s.hu }) : null]));
+      var current = [];
+      var builder = el("div", { class: "builder", "data-empty": "…" });
+      var pool = el("div", { class: "blocks" });
+      var btns = [];
+      function refresh() { builder.textContent = current.join(" "); }
+      dom.shuffle(words).forEach(function (w, i2) {
+        var b = el("button", { class: "block", text: w });
+        b.addEventListener("click", function () { if (b.disabled) return; b.disabled = true; current.push(w); refresh(); });
+        btns.push(b); pool.appendChild(b);
+      });
+      builder.appendChild(el("button", { class: "btn ghost small", onclick: function () { current = []; btns.forEach(function (b) { b.disabled = false; }); refresh(); }, text: "⟲" }));
+      mount.appendChild(builder); mount.appendChild(pool);
+      mount.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn", onclick: function () {
+          var ok = M.match.norm(current.join(" ")) === M.match.norm(words.join(" "));
+          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost") + " — " + s.en));
+          if (ok) M.audio.speak(s.en);
+          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < sentences.length) round(); else done(true); } }, [idx < sentences.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+        } }, [M.i18n.t("btn.check")]),
+      ]));
+    }
+    round();
+  };
+
+  // Fill the gap: choose the missing word in a sentence.
+  R.gapfill = function (mount, act, done) {
+    var items = act.items || [];
+    if (!items.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var it = items[idx];
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.gapfill.prompt") }));
+      mount.appendChild(el("div", { class: "card" }, [
+        el("div", { style: "font-size:1.2rem", html: it.text.replace("___", '<b style="color:var(--accent)">_____</b>') }),
+        M.i18n.helpAvailable() && it.hu ? el("div", { class: "muted", text: it.hu }) : null,
+        el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.audio.speak(it.text.replace("___", it.answer)); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")])]),
+      ]));
+      var opts = el("div", { class: "options" });
+      dom.shuffle(it.options).forEach(function (o) {
+        var b = el("button", { class: "option" }, [el("span", { text: o })]);
+        b.addEventListener("click", function () {
+          var ok = M.match.norm(o) === M.match.norm(it.answer);
+          b.classList.add(ok ? "correct" : "wrong");
+          Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
+          if (ok) M.audio.speak(it.text.replace("___", it.answer));
+          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost") + " — " + it.answer));
+          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < items.length) round(); else done(true); } }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+        });
+        opts.appendChild(b);
+      });
+      mount.appendChild(opts);
+    }
+    round();
+  };
+
+  // Answer expansion: grow a short answer from one clause to three (from the brief).
+  R.expand = function (mount, act, done) {
+    var steps = act.steps || [];
+    if (!steps.length) return done(true);
+    dom.clear(mount);
+    mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.expand.prompt") }));
+    if (act.question) mount.appendChild(el("div", { class: "card" }, [el("strong", { text: act.question.en }), M.i18n.helpAvailable() && act.question.hu ? el("div", { class: "muted", text: act.question.hu }) : null]));
+    var i = 0;
+    var out = el("div", { class: "card" });
+    mount.appendChild(out);
+    var controls = el("div", { class: "btn-row" });
+    mount.appendChild(controls);
+    function draw() {
+      dom.clear(out); dom.clear(controls);
+      out.appendChild(el("div", { style: "font-size:1.15rem;font-weight:600", text: steps[i].en }));
+      if (M.i18n.helpAvailable() && steps[i].hu) out.appendChild(el("div", { class: "muted", text: steps[i].hu }));
+      out.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn secondary", onclick: function () { M.audio.speak(steps[i].en); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")])]));
+      out.appendChild(el("p", { class: "muted", text: (i + 1) + " / " + steps.length }));
+      if (i < steps.length - 1) controls.appendChild(el("button", { class: "btn", onclick: function () { i++; draw(); } }, [M.i18n.t("act.expand.more")]));
+      else controls.appendChild(el("button", { class: "btn", onclick: function () { done(true); } }, [M.i18n.t("btn.continue")]));
+    }
+    draw();
+  };
+
+  // Odd one out: choose the word that does not belong to the group.
+  R["odd-one-out"] = function (mount, act, done) {
+    var groups = act.groups || [];
+    if (!groups.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var g = groups[idx];
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.odd.prompt") }));
+      var opts = el("div", { class: "options" });
+      dom.shuffle(g.words.concat([g.odd])).forEach(function (w) {
+        var b = el("button", { class: "option" }, [el("span", { text: w })]);
+        b.addEventListener("click", function () {
+          var ok = w === g.odd;
+          b.classList.add(ok ? "correct" : "wrong");
+          Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
+          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.almost")));
+          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { idx++; if (idx < groups.length) round(); else done(true); } }, [idx < groups.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")])]));
+        });
+        opts.appendChild(b);
+      });
+      mount.appendChild(opts);
+    }
+    round();
+  };
+
   R.conversation = function (mount, act, done) {
     M.conversation.render(mount, act.dialogueId, done);
   };

@@ -167,7 +167,8 @@
   ],
   "chunks": [
     "chunk_op_like",
-    "chunk_op_dontlike"
+    "chunk_op_dontlike",
+    "chunk_fd_hungry"
   ],
   "grammarCards": [
     "gr_someany"
@@ -178,7 +179,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_69",
+      "id": "act_106",
       "type": "intro",
       "items": [
         "lex_food",
@@ -192,7 +193,7 @@
       ]
     },
     {
-      "id": "act_70",
+      "id": "act_107",
       "type": "listen-choose",
       "items": [
         "lex_food",
@@ -204,7 +205,18 @@
       ]
     },
     {
-      "id": "act_71",
+      "id": "act_108",
+      "type": "icon-choice",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea",
+        "lex_milk"
+      ]
+    },
+    {
+      "id": "act_109",
       "type": "match",
       "items": [
         "lex_food",
@@ -216,26 +228,91 @@
       ]
     },
     {
-      "id": "act_72",
+      "id": "act_110",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "food"
     },
     {
-      "id": "act_73",
+      "id": "act_111",
       "type": "grammar",
       "grammarId": "gr_someany"
     },
     {
-      "id": "act_74",
-      "type": "phrase-match",
+      "id": "act_112",
+      "type": "gapfill",
       "items": [
-        "chunk_op_like",
-        "chunk_op_dontlike"
+        {
+          "text": "The ___ is delicious.",
+          "answer": "food",
+          "options": [
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "Az étel finom."
+        },
+        {
+          "text": "Could I have some ___, please?",
+          "answer": "water",
+          "options": [
+            "water",
+            "food",
+            "coffee"
+          ],
+          "hu": "Kaphatnék egy kis vizet, kérem?"
+        },
+        {
+          "text": "I drink ___ every morning.",
+          "answer": "coffee",
+          "options": [
+            "coffee",
+            "food",
+            "water"
+          ],
+          "hu": "Minden reggel kávét iszom."
+        },
+        {
+          "text": "Would you like some ___?",
+          "answer": "tea",
+          "options": [
+            "tea",
+            "food",
+            "water"
+          ],
+          "hu": "Kérsz egy kis teát?"
+        }
       ]
     },
     {
-      "id": "act_75",
+      "id": "act_113",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_like",
+        "chunk_op_dontlike",
+        "chunk_fd_hungry"
+      ]
+    },
+    {
+      "id": "act_114",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I like it.",
+          "hu": "Szeretem."
+        },
+        {
+          "en": "I don't like it.",
+          "hu": "Nem szeretem."
+        },
+        {
+          "en": "I'm a little hungry.",
+          "hu": "Kicsit éhes vagyok."
+        }
+      ]
+    },
+    {
+      "id": "act_115",
       "type": "typed",
       "items": [
         "lex_food",
@@ -245,12 +322,31 @@
       ]
     },
     {
-      "id": "act_76",
+      "id": "act_116",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_77",
+      "id": "act_117",
+      "type": "minimal-pair",
+      "focusId": "snd_ee_i"
+    },
+    {
+      "id": "act_118",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "food",
+            "water",
+            "coffee"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_119",
       "type": "review",
       "items": [
         "lex_family",

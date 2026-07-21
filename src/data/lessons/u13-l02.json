@@ -39,7 +39,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_212",
+      "id": "act_323",
       "type": "intro",
       "items": [
         "lex_luggage",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": "act_213",
+      "id": "act_324",
       "type": "listen-choose",
       "items": [
         "lex_luggage",
@@ -65,7 +65,18 @@
       ]
     },
     {
-      "id": "act_214",
+      "id": "act_325",
+      "type": "icon-choice",
+      "items": [
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport",
+        "lex_bring",
+        "lex_carry"
+      ]
+    },
+    {
+      "id": "act_326",
       "type": "match",
       "items": [
         "lex_luggage",
@@ -77,7 +88,53 @@
       ]
     },
     {
-      "id": "act_215",
+      "id": "act_327",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I like ___.",
+          "answer": "luggage",
+          "options": [
+            "luggage",
+            "holiday",
+            "trip"
+          ],
+          "hu": "(poggyász)"
+        },
+        {
+          "text": "My ___ is heavy.",
+          "answer": "suitcase",
+          "options": [
+            "suitcase",
+            "holiday",
+            "trip"
+          ],
+          "hu": "A bőröndöm nehéz."
+        },
+        {
+          "text": "Here is my ___.",
+          "answer": "passport",
+          "options": [
+            "passport",
+            "holiday",
+            "trip"
+          ],
+          "hu": "Itt az útlevelem."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "bring",
+          "options": [
+            "bring",
+            "travel",
+            "need"
+          ],
+          "hu": "(hozni)"
+        }
+      ]
+    },
+    {
+      "id": "act_328",
       "type": "typed",
       "items": [
         "lex_luggage",
@@ -87,9 +144,28 @@
       ]
     },
     {
-      "id": "act_216",
+      "id": "act_329",
       "type": "pron-record",
       "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_330",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_331",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "luggage",
+            "suitcase",
+            "passport"
+          ],
+          "odd": "name"
+        }
+      ]
     }
   ],
   "completionRule": {

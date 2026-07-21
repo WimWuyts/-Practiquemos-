@@ -16,7 +16,8 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_fly_land"
+    "chunk_fly_land",
+    "chunk_fl_needanything"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -25,28 +26,43 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_243",
+      "id": "act_369",
       "type": "intro",
       "items": [
         "lex_land"
       ]
     },
     {
-      "id": "act_244",
+      "id": "act_370",
       "type": "phrase-match",
       "items": [
-        "chunk_fly_land"
+        "chunk_fly_land",
+        "chunk_fl_needanything"
       ]
     },
     {
-      "id": "act_245",
+      "id": "act_371",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "When will we land?",
+          "hu": "Mikor szállunk le?"
+        },
+        {
+          "en": "I'm okay now, thank you.",
+          "hu": "Most már jól vagyok, köszönöm."
+        }
+      ]
+    },
+    {
+      "id": "act_372",
       "type": "typed",
       "items": [
         "lex_land"
       ]
     },
     {
-      "id": "act_246",
+      "id": "act_373",
       "type": "pron-record",
       "focusId": "str_question"
     }

@@ -26,7 +26,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_227",
+      "id": "act_346",
       "type": "intro",
       "items": [
         "lex_boarding",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "id": "act_228",
+      "id": "act_347",
       "type": "listen-choose",
       "items": [
         "lex_boarding",
@@ -46,7 +46,17 @@
       ]
     },
     {
-      "id": "act_229",
+      "id": "act_348",
+      "type": "icon-choice",
+      "items": [
+        "lex_boarding",
+        "lex_seat",
+        "lex_late",
+        "lex_miss"
+      ]
+    },
+    {
+      "id": "act_349",
       "type": "match",
       "items": [
         "lex_boarding",
@@ -56,13 +66,59 @@
       ]
     },
     {
-      "id": "act_230",
+      "id": "act_350",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "late"
     },
     {
-      "id": "act_231",
+      "id": "act_351",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is a ___.",
+          "answer": "boarding",
+          "options": [
+            "boarding",
+            "airport",
+            "flight"
+          ],
+          "hu": "(beszállás)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "seat",
+          "options": [
+            "seat",
+            "airport",
+            "flight"
+          ],
+          "hu": "(ülés / hely)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "late",
+          "options": [
+            "late",
+            "cancelled",
+            "my"
+          ],
+          "hu": "(késő / késésben)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "miss",
+          "options": [
+            "miss",
+            "travel",
+            "need"
+          ],
+          "hu": "(lekésni / hiányozni)"
+        }
+      ]
+    },
+    {
+      "id": "act_352",
       "type": "typed",
       "items": [
         "lex_boarding",
@@ -72,9 +128,23 @@
       ]
     },
     {
-      "id": "act_232",
+      "id": "act_353",
       "type": "pron-record",
       "focusId": "str_word"
+    },
+    {
+      "id": "act_354",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "boarding",
+            "seat",
+            "late"
+          ],
+          "odd": "name"
+        }
+      ]
     }
   ],
   "completionRule": {

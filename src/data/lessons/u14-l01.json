@@ -84,7 +84,10 @@
   "chunks": [
     "chunk_air_gate",
     "chunk_air_checkin",
-    "chunk_air_help"
+    "chunk_air_help",
+    "chunk_ai_wherecheckin2",
+    "chunk_ai_myflight",
+    "chunk_ai_dontunderstand2"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -95,7 +98,7 @@
   "conversationId": "dlg_airport",
   "activities": [
     {
-      "id": "act_217",
+      "id": "act_332",
       "type": "intro",
       "items": [
         "lex_airport",
@@ -107,7 +110,7 @@
       ]
     },
     {
-      "id": "act_218",
+      "id": "act_333",
       "type": "listen-choose",
       "items": [
         "lex_airport",
@@ -119,7 +122,18 @@
       ]
     },
     {
-      "id": "act_219",
+      "id": "act_334",
+      "type": "icon-choice",
+      "items": [
+        "lex_airport",
+        "lex_flight",
+        "lex_gate",
+        "lex_check_in",
+        "lex_security"
+      ]
+    },
+    {
+      "id": "act_335",
       "type": "match",
       "items": [
         "lex_airport",
@@ -131,27 +145,94 @@
       ]
     },
     {
-      "id": "act_220",
+      "id": "act_336",
       "type": "spelling-build",
       "family": "sf_ar_or",
       "word": "airport"
     },
     {
-      "id": "act_221",
+      "id": "act_337",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_222",
+      "id": "act_338",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I am at the ___.",
+          "answer": "airport",
+          "options": [
+            "airport",
+            "flight",
+            "gate"
+          ],
+          "hu": "A reptéren vagyok."
+        },
+        {
+          "text": "My ___ is at ten.",
+          "answer": "flight",
+          "options": [
+            "flight",
+            "airport",
+            "gate"
+          ],
+          "hu": "A járatom tízkor indul."
+        },
+        {
+          "text": "Where is my ___, please?",
+          "answer": "gate",
+          "options": [
+            "gate",
+            "airport",
+            "flight"
+          ],
+          "hu": "Hol van a kapum, kérem?"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "check-in",
+          "options": [
+            "check-in",
+            "airport",
+            "flight"
+          ],
+          "hu": "(check-in / becsekkolás)"
+        }
+      ]
+    },
+    {
+      "id": "act_339",
       "type": "phrase-match",
       "items": [
         "chunk_air_gate",
         "chunk_air_checkin",
-        "chunk_air_help"
+        "chunk_air_help",
+        "chunk_ai_wherecheckin2",
+        "chunk_ai_myflight",
+        "chunk_ai_dontunderstand2"
       ]
     },
     {
-      "id": "act_223",
+      "id": "act_340",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where is my gate?",
+          "hu": "Hol van a kapum?"
+        },
+        {
+          "en": "Where is the check-in desk?",
+          "hu": "Hol van a check-in pult?"
+        },
+        {
+          "en": "Could you help me, please?",
+          "hu": "Tudna segíteni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_341",
       "type": "typed",
       "items": [
         "lex_airport",
@@ -161,17 +242,31 @@
       ]
     },
     {
-      "id": "act_224",
+      "id": "act_342",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_225",
+      "id": "act_343",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "airport",
+            "flight",
+            "gate"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_344",
       "type": "conversation",
       "dialogueId": "dlg_airport"
     },
     {
-      "id": "act_226",
+      "id": "act_345",
       "type": "review",
       "items": [
         "lex_lesson",

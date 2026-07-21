@@ -7,9 +7,11 @@ import { dirname, join } from "node:path";
 import { PRODUCTIVE, RECEPTIVE } from "./lexicon-source.mjs";
 import { EXTRA, EXTRA_RECEPTIVE } from "./lexicon-extra.mjs";
 import { CHUNKS } from "./chunks-source.mjs";
+import { EXTRA_CHUNKS } from "./chunks-extra.mjs";
 import { GRAMMAR } from "./grammar-source.mjs";
 import { SPELLING_FAMILIES, SOUND_FOCUS, PATH } from "./pronunciation-source.mjs";
 import { DIALOGUES } from "./dialogues-source.mjs";
+import { EXAMPLES } from "./examples-source.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "..", "src", "data");
@@ -46,20 +48,34 @@ const WORD_ICON = {
 };
 const iconFor = (head, theme) => WORD_ICON[head.toLowerCase()] || THEME_ICON[theme] || "dot";
 
-// ---------- Simple example generator (English natural-ish; HU flagged for review) ----------
-function exampleFor(head, hu, pos, theme) {
-  const w = head;
-  let en;
-  switch (pos) {
-    case "noun": en = /^[A-Z]/.test(w) ? `I like ${w}.` : `This is a ${w}.`; break;
-    case "verb": en = `I can ${w}.`; break;
-    case "adjective": en = `It is ${w}.`; break;
-    case "adverb": en = `I do it ${w}.`; break;
-    case "number": en = `I have ${w} friends.`; break;
-    case "phrase": en = `${w[0].toUpperCase()}${w.slice(1)}.`; break;
-    default: en = `${w[0].toUpperCase()}${w.slice(1)}.`;
+// ---------- Example generator: curated natural sentences + grammar-safe fallback ----------
+const UNCOUNTABLE = new Set(["food", "water", "coffee", "tea", "milk", "bread", "cheese", "meat", "fish", "fruit",
+  "rice", "sugar", "salt", "butter", "juice", "wine", "money", "cash", "news", "information", "homework",
+  "music", "weather", "time", "help", "work", "hair", "snow", "rain", "wind", "grass", "furniture", "luggage", "clothes", "chocolate"]);
+// verbs whose bare present is awkward with "I ___ every day."
+const VERB_SKIP = new Set(["be", "can", "do", "will", "would", "could", "should", "may", "might", "must", "have", "get up", "wake up", "going to"]);
+function safeTemplate(w, pos, theme) {
+  const isProper = /^[A-Z]/.test(w);
+  if (pos === "noun") {
+    if (isProper) return `I like ${w}.`;
+    if (UNCOUNTABLE.has(w.toLowerCase())) return `I like ${w}.`;
+    if (/s$/.test(w)) return `The ${w} are here.`;
+    return /^[aeiou]/i.test(w) ? `This is an ${w}.` : `This is a ${w}.`;
   }
-  return { en, hu: `(${hu})`, needsReview: true };
+  if (pos === "verb") {
+    if (VERB_SKIP.has(w.toLowerCase())) return `We often use "${w}" in English.`;
+    return `I ${w} every day.`;
+  }
+  if (pos === "adjective") return `It is very ${w}.`;
+  if (pos === "adverb") return `I speak ${w}.`;
+  if (pos === "number") return `I have ${w} friends.`;
+  if (pos === "preposition" || pos === "determiner" || pos === "pronoun" || pos === "article") return `${w[0].toUpperCase()}${w.slice(1)} — a useful word.`;
+  return `${w[0].toUpperCase()}${w.slice(1)}.`;
+}
+function exampleFor(head, hu, pos, theme) {
+  const cur = EXAMPLES[head.toLowerCase()];
+  if (cur) return { en: cur[0], hu: cur[1], needsReview: true };
+  return { en: safeTemplate(head, pos, theme), hu: `(${hu})`, needsReview: true };
 }
 
 // ---------- Lexicon ----------
@@ -119,11 +135,16 @@ for (const l of lexicon) {
 write(join(DATA, "lexicon.json"), lexicon);
 
 // ---------- Chunks ----------
-const chunks = CHUNKS.map(([id, intention, en, hu, register, firstLesson, variants, slots]) => ({
-  id: "chunk_" + id, intention, en, hu, register, firstLesson,
-  variants: variants || [], slots: slots || [], acceptedForms: [en, ...(variants || [])],
-  dialoguePlacements: [], needsReview: true,
-}));
+const seenChunkId = new Set();
+const chunks = CHUNKS.concat(EXTRA_CHUNKS).map(([id, intention, en, hu, register, firstLesson, variants, slots]) => {
+  let cid = "chunk_" + id;
+  if (seenChunkId.has(cid)) return null; seenChunkId.add(cid);
+  return {
+    id: cid, intention, en, hu, register, firstLesson,
+    variants: variants || [], slots: slots || [], acceptedForms: [en, ...(variants || [])],
+    dialoguePlacements: [], needsReview: true,
+  };
+}).filter(Boolean);
 write(join(DATA, "chunks.json"), chunks);
 
 // ---------- Grammar ----------
@@ -240,35 +261,84 @@ for (const ch of chunks) (chunkByLesson[ch.firstLesson] = chunkByLesson[ch.first
 let actSeq = 0;
 const A = (type, extra) => ({ id: "act_" + (++actSeq), type, ...extra });
 
+// hand-written "grow your answer" sets (from the source brief's expansion idea)
+const EXPAND = {
+  "u01-l01": { question: { en: "How are you?", hu: "Hogy vagy?" }, steps: [
+    { en: "I'm good.", hu: "Jól vagyok." },
+    { en: "I'm good. I'm at home.", hu: "Jól vagyok. Otthon vagyok." },
+    { en: "I'm good. I'm at home, and I'm making coffee.", hu: "Jól vagyok. Otthon vagyok, és kávét készítek." },
+  ] },
+  "u12-l02": { question: { en: "What did you do at the weekend?", hu: "Mit csináltál a hétvégén?" }, steps: [
+    { en: "I visited my sister.", hu: "Meglátogattam a nővéremet." },
+    { en: "I visited my sister and we had coffee.", hu: "Meglátogattam a nővéremet, és ittunk egy kávét." },
+    { en: "I visited my sister, we had coffee, and we talked about the family.", hu: "Meglátogattam a nővéremet, ittunk egy kávét, és a családról beszélgettünk." },
+  ] },
+  "u16-l01": { question: { en: "Tell me about your day.", hu: "Mesélj a napodról." }, steps: [
+    { en: "It was nice.", hu: "Szép volt." },
+    { en: "It was nice. I cooked lunch for the family.", hu: "Szép volt. Ebédet főztem a családnak." },
+    { en: "It was nice. I cooked lunch for the family, and later we sat in the garden.", hu: "Szép volt. Ebédet főztem a családnak, és később a kertben ültünk." },
+  ] },
+};
+
+function gapfillFrom(lx) {
+  const ex = lx.examples && lx.examples[0] && lx.examples[0].en;
+  if (!ex) return null;
+  const re = new RegExp("\\b" + lx.headword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+  if (!re.test(ex)) return null;
+  const opts = [lx.headword].concat((lx.distractors || []).slice(0, 2));
+  if (opts.length < 2) return null;
+  return { text: ex.replace(re, "___"), answer: lx.headword, options: opts, hu: (lx.examples[0].hu || "") };
+}
+
 function activitiesFor(lesson) {
   const acts = [];
   const newLex = (lexByLesson[lesson.id] || []).filter((l) => l.status === "productive");
   const newChunks = chunkByLesson[lesson.id] || [];
 
-  if (lesson.id === "u00-l01") {
-    acts.push(A("diagnostic", {}));
-    return acts;
-  }
-  // 1. See & hear meaning (intro carousel)
+  if (lesson.id === "u00-l01") { acts.push(A("diagnostic", {})); return acts; }
+
+  // 1. See & hear meaning
   if (newLex.length) acts.push(A("intro", { items: newLex.slice(0, 8).map((l) => l.id) }));
   // 2. Listen and choose
   if (newLex.length >= 2) acts.push(A("listen-choose", { items: newLex.slice(0, 6).map((l) => l.id) }));
-  // 3. Word-to-meaning match
+  // 3. Icon → word (visual recognition) for concrete words
+  const iconable = newLex.filter((l) => l.icon && l.icon !== "dot");
+  if (iconable.length >= 3) acts.push(A("icon-choice", { items: iconable.slice(0, 5).map((l) => l.id) }));
+  // 4. Word-to-meaning match
   if (newLex.length >= 3) acts.push(A("match", { items: newLex.slice(0, 6).map((l) => l.id) }));
-  // 4. Spelling-family builder (if any new word belongs to a family)
+  // 5. Spelling-family builder
   const famWord = newLex.find((l) => l.spellingFamily);
   if (famWord) acts.push(A("spelling-build", { family: famWord.spellingFamily, word: famWord.headword }));
-  // 5. Grammar card(s)
+  // 6. Grammar card(s)
   for (const g of lesson.grammar) acts.push(A("grammar", { grammarId: g }));
-  // 6. Chunk / phrase-to-situation
+  // 7. Gap-fill (apply a new word in a sentence)
+  const gaps = newLex.map(gapfillFrom).filter(Boolean).slice(0, 4);
+  if (gaps.length >= 2) acts.push(A("gapfill", { items: gaps }));
+  // 8. Chunk / phrase-to-situation
   if (newChunks.length) acts.push(A("phrase-match", { items: newChunks.slice(0, 6).map((c) => c.id) }));
-  // 7. Missing word / typed
+  // 9. Reorder a useful sentence (from chunks, 3–7 words)
+  const reord = newChunks.map((c) => ({ en: c.en, hu: c.hu })).filter((s) => { const n = s.en.replace(/[.?!]$/, "").split(" ").length; return n >= 3 && n <= 7; }).slice(0, 3);
+  if (reord.length) acts.push(A("reorder", { sentences: reord }));
+  // 10. Missing word / typed
   if (newLex.length) acts.push(A("typed", { items: newLex.slice(0, 4).map((l) => l.id) }));
-  // 8. Pronunciation listen-record
-  for (const p of lesson.pronunciation) acts.push(A("pron-record", { focusId: p }));
-  // 9. Conversation
+  // 11. Pronunciation: sounds (record) + minimal-pair discrimination where available
+  for (const p of lesson.pronunciation) {
+    acts.push(A("pron-record", { focusId: p }));
+    const f = pronunciation.soundFocus.find((x) => x.id === p);
+    if (f && f.minimalPairs && f.minimalPairs.length) acts.push(A("minimal-pair", { focusId: p }));
+  }
+  // 12. Odd-one-out (theme reinforcement)
+  if (newLex.length >= 3) {
+    const theme = newLex[0].themes[0];
+    const sameTheme = newLex.filter((l) => l.themes[0] === theme).slice(0, 3).map((l) => l.headword);
+    const other = lexicon.find((l) => l.status === "productive" && l.themes[0] !== theme && l.partOfSpeech === newLex[0].partOfSpeech);
+    if (sameTheme.length === 3 && other) acts.push(A("odd-one-out", { groups: [{ words: sameTheme, odd: other.headword }] }));
+  }
+  // 13. Grow-your-answer (speaking expansion)
+  if (EXPAND[lesson.id]) acts.push(A("expand", EXPAND[lesson.id]));
+  // 14. Conversation
   if (lesson.dialogue) acts.push(A("conversation", { dialogueId: lesson.dialogue }));
-  // 10. Gentle review round (earlier productive items reviewed here)
+  // 15. Gentle review round
   const reviewItems = lexicon.filter((l) => l.status === "productive" && (l.reviewLessons || []).includes(lesson.id));
   if (reviewItems.length) acts.push(A("review", { items: reviewItems.slice(0, 6).map((l) => l.id) }));
   return acts;
@@ -285,11 +355,33 @@ const lessonObjs = LESSONS.map((l) => {
     activities: activitiesFor(l), completionRule: { minActivities: 1 },
   };
 });
+// ---- guarantee every pronunciation element appears in at least one lesson ----
+const coveredSounds = new Set(), coveredFamilies = new Set();
+lessonObjs.forEach((L) => L.activities.forEach((a) => {
+  if (a.type === "pron-record" && a.focusId) coveredSounds.add(a.focusId);
+  if (a.type === "spelling-build" && a.family) coveredFamilies.add(a.family);
+}));
+const attachable = lessonObjs.filter((l) => l.id !== "u00-l01");
+let attachIdx = 0;
+pronunciation.soundFocus.map((f) => f.id).filter((id) => !coveredSounds.has(id)).forEach((id) => {
+  const L = attachable[attachIdx++ % attachable.length];
+  L.activities.push(A("pron-record", { focusId: id }));
+  if (!L.pronunciationFocus.includes(id)) L.pronunciationFocus.push(id);
+});
+pronunciation.spellingFamilies.map((f) => f.id).filter((id) => !coveredFamilies.has(id)).forEach((id) => {
+  const fam = pronunciation.spellingFamilies.find((f) => f.id === id);
+  const L = attachable[attachIdx++ % attachable.length];
+  L.activities.push(A("spelling-build", { family: id, word: fam.items[0].word }));
+});
+const pronCoverage = {
+  sounds: pronunciation.soundFocus.length, families: pronunciation.spellingFamilies.length,
+  allCovered: true,
+};
 for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.1.0", schemaVersion: 1,
+  id: "marta_english", version: "1.2.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

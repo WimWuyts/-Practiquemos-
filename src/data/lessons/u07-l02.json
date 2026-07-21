@@ -33,7 +33,11 @@
   "reviewItems": [],
   "chunks": [
     "chunk_repair_howsay",
-    "chunk_call_bye"
+    "chunk_call_bye",
+    "chunk_sm_takecare",
+    "chunk_sm_seeyou",
+    "chunk_ph_seeyoulater",
+    "chunk_ph_sendmessage"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -42,7 +46,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_114",
+      "id": "act_173",
       "type": "intro",
       "items": [
         "lex_me",
@@ -56,7 +60,7 @@
       ]
     },
     {
-      "id": "act_115",
+      "id": "act_174",
       "type": "listen-choose",
       "items": [
         "lex_me",
@@ -68,7 +72,18 @@
       ]
     },
     {
-      "id": "act_116",
+      "id": "act_175",
+      "type": "icon-choice",
+      "items": [
+        "lex_me",
+        "lex_him",
+        "lex_them",
+        "lex_know",
+        "lex_ask"
+      ]
+    },
+    {
+      "id": "act_176",
       "type": "match",
       "items": [
         "lex_me",
@@ -80,15 +95,83 @@
       ]
     },
     {
-      "id": "act_117",
-      "type": "phrase-match",
+      "id": "act_177",
+      "type": "gapfill",
       "items": [
-        "chunk_repair_howsay",
-        "chunk_call_bye"
+        {
+          "text": "___ — a useful word.",
+          "answer": "me",
+          "options": [
+            "me",
+            "what",
+            "who"
+          ],
+          "hu": "(engem / nekem)"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "him",
+          "options": [
+            "him",
+            "what",
+            "who"
+          ],
+          "hu": "(őt (férfi))"
+        },
+        {
+          "text": "___ — a useful word.",
+          "answer": "them",
+          "options": [
+            "them",
+            "what",
+            "who"
+          ],
+          "hu": "(őket)"
+        },
+        {
+          "text": "I ___ a little English.",
+          "answer": "know",
+          "options": [
+            "know",
+            "repeat",
+            "understand"
+          ],
+          "hu": "Tudok egy kicsit angolul."
+        }
       ]
     },
     {
-      "id": "act_118",
+      "id": "act_178",
+      "type": "phrase-match",
+      "items": [
+        "chunk_repair_howsay",
+        "chunk_call_bye",
+        "chunk_sm_takecare",
+        "chunk_sm_seeyou",
+        "chunk_ph_seeyoulater",
+        "chunk_ph_sendmessage"
+      ]
+    },
+    {
+      "id": "act_179",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "How do you say this in English?",
+          "hu": "Hogy mondják ezt angolul?"
+        },
+        {
+          "en": "Talk to you soon. Bye!",
+          "hu": "Hamarosan beszélünk. Szia!"
+        },
+        {
+          "en": "See you soon!",
+          "hu": "Hamarosan találkozunk!"
+        }
+      ]
+    },
+    {
+      "id": "act_180",
       "type": "typed",
       "items": [
         "lex_me",
@@ -98,9 +181,28 @@
       ]
     },
     {
-      "id": "act_119",
+      "id": "act_181",
       "type": "pron-record",
       "focusId": "snd_th"
+    },
+    {
+      "id": "act_182",
+      "type": "minimal-pair",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_183",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "me",
+            "him",
+            "them"
+          ],
+          "odd": "I"
+        }
+      ]
     }
   ],
   "completionRule": {

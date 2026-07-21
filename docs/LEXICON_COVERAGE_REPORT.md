@@ -11,7 +11,7 @@ Vocabulary is anchored to the **English Vocabulary Profile (EVP)** A1 core, prio
 | Category | Count | Note |
 |---|---|---|
 | Productive individual words | 699 | A1: 623 · A2: 76 |
-| Productive chunks / frames | 65 | fully wired |
+| Productive chunks / frames | 137 | fully wired |
 | Additional receptive items | 76 | listening/reading support |
 
 Every item appears in real lessons, exercises and/or conversations. The vocabulary target (~700) is met; chunks and receptive items grow via the same generator pipeline (see `OPEN_IMPROVEMENTS.md`).

@@ -261,7 +261,11 @@
   "chunks": [
     "chunk_ask_followup_where",
     "chunk_town_where",
-    "chunk_town_howget"
+    "chunk_town_howget",
+    "chunk_tw_wheretoilet",
+    "chunk_tw_isitfar",
+    "chunk_tw_lost",
+    "chunk_rp_writeit"
   ],
   "grammarCards": [
     "gr_imperatives"
@@ -272,7 +276,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_139",
+      "id": "act_212",
       "type": "intro",
       "items": [
         "lex_street",
@@ -286,7 +290,7 @@
       ]
     },
     {
-      "id": "act_140",
+      "id": "act_213",
       "type": "listen-choose",
       "items": [
         "lex_street",
@@ -298,7 +302,18 @@
       ]
     },
     {
-      "id": "act_141",
+      "id": "act_214",
+      "type": "icon-choice",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train",
+        "lex_car"
+      ]
+    },
+    {
+      "id": "act_215",
       "type": "match",
       "items": [
         "lex_street",
@@ -310,27 +325,94 @@
       ]
     },
     {
-      "id": "act_142",
+      "id": "act_216",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "station"
     },
     {
-      "id": "act_143",
+      "id": "act_217",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_144",
+      "id": "act_218",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I live on a quiet ___.",
+          "answer": "street",
+          "options": [
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "Egy csendes utcában lakom."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "station",
+          "options": [
+            "station",
+            "bus",
+            "train"
+          ],
+          "hu": "(állomás / megálló)"
+        },
+        {
+          "text": "Which ___ goes to the centre?",
+          "answer": "bus",
+          "options": [
+            "bus",
+            "station",
+            "train"
+          ],
+          "hu": "Melyik busz megy a központba?"
+        },
+        {
+          "text": "The ___ is very fast.",
+          "answer": "train",
+          "options": [
+            "train",
+            "station",
+            "bus"
+          ],
+          "hu": "A vonat nagyon gyors."
+        }
+      ]
+    },
+    {
+      "id": "act_219",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_where",
         "chunk_town_where",
-        "chunk_town_howget"
+        "chunk_town_howget",
+        "chunk_tw_wheretoilet",
+        "chunk_tw_isitfar",
+        "chunk_tw_lost"
       ]
     },
     {
-      "id": "act_145",
+      "id": "act_220",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where is the station?",
+          "hu": "Hol van az állomás?"
+        },
+        {
+          "en": "How do I get to the centre?",
+          "hu": "Hogy jutok el a központba?"
+        },
+        {
+          "en": "Where is the toilet, please?",
+          "hu": "Hol van a mosdó, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_221",
       "type": "typed",
       "items": [
         "lex_street",
@@ -340,12 +422,31 @@
       ]
     },
     {
-      "id": "act_146",
+      "id": "act_222",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_147",
+      "id": "act_223",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_224",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "street",
+            "left",
+            "right"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_225",
       "type": "review",
       "items": [
         "lex_time",

@@ -46,6 +46,14 @@ ui_string,act.typed.prompt,interface,Type the English word.,Írd be az angol sz�
 ui_string,act.spelling.prompt,interface,Build the word.,Építsd fel a szót.,yes
 ui_string,act.pron.prompt,interface,"Listen, then record yourself. Compare — no score, just practice.","Hallgasd meg, majd vedd fel magad. Hasonlítsd össze — nincs pontszám, csak gyakorlás.",yes
 ui_string,act.review.prompt,interface,A gentle review of words you have seen.,A már látott szavak nyugodt ismétlése.,yes
+ui_string,act.iconchoice.prompt,interface,Which word is this? Choose the English word.,Melyik szó ez? Válaszd ki az angol szót.,yes
+ui_string,act.minimalpair.prompt,interface,Listen carefully. These words sound similar.,Figyelj jól. Ezek a szavak hasonlóan hangzanak.,yes
+ui_string,act.minimalpair.which,interface,Which word did you hear?,Melyik szót hallottad?,yes
+ui_string,act.reorder.prompt,interface,Put the words in the right order.,Rakd a szavakat a helyes sorrendbe.,yes
+ui_string,act.gapfill.prompt,interface,Choose the missing word.,Válaszd ki a hiányzó szót.,yes
+ui_string,act.expand.prompt,interface,"Grow your answer, one step at a time.","Bővítsd a válaszodat, lépésről lépésre.",yes
+ui_string,act.expand.more,interface,Add more,Tegyél hozzá,yes
+ui_string,act.odd.prompt,interface,Which word is different? Choose the one that does not belong.,"Melyik szó a kakukktojás? Válaszd ki, amelyik nem illik a többihez.",yes
 ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
 ui_string,conv.support.choose,interface,Choose,Válassz,yes
 ui_string,conv.support.build,interface,Build,Építsd,yes
@@ -951,6 +959,78 @@ chunk,chunk_trans_which,phrase,Which bus goes to the airport?,Melyik busz megy a
 chunk,chunk_conv_thanks_visit,phrase,Thank you for coming.,"Köszönöm, hogy eljöttél.",yes
 chunk,chunk_conv_tellmore,phrase,Tell me more.,Mesélj még.,yes
 chunk,chunk_conv_expand,phrase,I'm good. I visited my sister and we had coffee.,"Jól vagyok. Meglátogattam a nővéremet, és ittunk egy kávét.",yes
+chunk,chunk_sm_longtime,phrase,It's lovely to see you!,De jó látni téged!,yes
+chunk,chunk_sm_howsfamily,phrase,How is your family?,Hogy van a családod?,yes
+chunk,chunk_sm_takecare,phrase,Take care!,Vigyázz magadra!,yes
+chunk,chunk_sm_seeyou,phrase,See you soon!,Hamarosan találkozunk!,yes
+chunk,chunk_sm_haveniceday,phrase,Have a nice day!,Szép napot!,yes
+chunk,chunk_sm_welcome,phrase,Welcome! Come in.,Üdvözöllek! Gyere be.,yes
+chunk,chunk_id_age,phrase,I'm over seventy.,Hetven fölött vagyok.,yes
+chunk,chunk_id_job2,phrase,I'm retired now.,Most nyugdíjas vagyok.,yes
+chunk,chunk_id_teachonline,phrase,I teach Hungarian online.,Magyart tanítok online.,yes
+chunk,chunk_id_thisis,phrase,"This is my sister, Margó.","Ez a nővérem, Margó.",yes
+chunk,chunk_fam_livesin,phrase,My niece lives in Denmark.,Az unokahúgom Dániában él.,yes
+chunk,chunk_fam_howmany,phrase,How many brothers and sisters do you have?,Hány testvéred van?,yes
+chunk,chunk_fam_married,phrase,Are you married?,Házas vagy?,yes
+chunk,chunk_fam_proud,phrase,I'm very proud of my family.,Nagyon büszke vagyok a családomra.,yes
+chunk,chunk_op_notsure,phrase,I'm not sure.,Nem vagyok biztos benne.,yes
+chunk,chunk_op_ilike2,phrase,I really enjoy it.,Nagyon élvezem.,yes
+chunk,chunk_op_favourite,phrase,My favourite hobby is cooking.,A kedvenc hobbim a főzés.,yes
+chunk,chunk_op_prefer,phrase,I prefer tea to coffee.,"Jobban szeretem a teát, mint a kávét.",yes
+chunk,chunk_fe_tired,phrase,I'm a little tired today.,Ma kicsit fáradt vagyok.,yes
+chunk,chunk_fe_happy,phrase,I'm so happy to see you.,"Nagyon örülök, hogy látlak.",yes
+chunk,chunk_dl_getup,phrase,I get up at seven o'clock.,Hétkor kelek.,yes
+chunk,chunk_dl_usually,phrase,I usually cook in the evening.,Általában este főzök.,yes
+chunk,chunk_dl_everyday,phrase,I do this every day.,Ezt minden nap csinálom.,yes
+chunk,chunk_fd_hungry,phrase,I'm a little hungry.,Kicsit éhes vagyok.,yes
+chunk,chunk_fd_recipe,phrase,I can show you the recipe.,Megmutathatom a receptet.,yes
+chunk,chunk_fd_howmuch2,phrase,"How much is this, please?","Mennyibe kerül ez, kérem?",yes
+chunk,chunk_fd_takeit,phrase,"I'll take it, thank you.","Megveszem, köszönöm.",yes
+chunk,chunk_fd_delicious,phrase,This is delicious!,Ez finom!,yes
+chunk,chunk_tm_whattime,phrase,What time is it?,Mennyi az idő?,yes
+chunk,chunk_tm_freeon,phrase,I'm free on Saturday afternoon.,Szombat délután ráérek.,yes
+chunk,chunk_we_nice,phrase,The weather is lovely today.,Ma csodás az idő.,yes
+chunk,chunk_we_cold,phrase,It's very cold today.,Ma nagyon hideg van.,yes
+chunk,chunk_pl_shallwe,phrase,Shall we meet on Sunday?,Találkozzunk vasárnap?,yes
+chunk,chunk_pl_goodidea,phrase,That's a good idea!,Ez jó ötlet!,yes
+chunk,chunk_pl_cantsorry,phrase,"I'm sorry, I can't that day.","Sajnálom, aznap nem tudok.",yes
+chunk,chunk_ph_callyou,phrase,I'll call you on Sunday.,Vasárnap felhívlak.,yes
+chunk,chunk_ph_badline,phrase,"Sorry, the line is bad.","Bocsi, rossz a vonal.",yes
+chunk,chunk_ph_seeyoulater,phrase,Talk to you soon. Bye!,Hamarosan beszélünk. Szia!,yes
+chunk,chunk_ph_sendmessage,phrase,I'll send you a message.,Küldök egy üzenetet.,yes
+chunk,chunk_tw_wheretoilet,phrase,"Where is the toilet, please?","Hol van a mosdó, kérem?",yes
+chunk,chunk_tw_isitfar,phrase,Is it far from here?,Messze van innen?,yes
+chunk,chunk_tw_lost,phrase,I think I'm lost.,"Azt hiszem, eltévedtem.",yes
+chunk,chunk_tr_whichbus,phrase,Which bus goes to the centre?,Melyik busz megy a központba?,yes
+chunk,chunk_tr_oneticket,phrase,"One ticket, please.",Egy jegyet kérek.,yes
+chunk,chunk_tr_getoff,phrase,Where do I get off?,Hol kell leszállnom?,yes
+chunk,chunk_sv_tablefor,phrase,"A table for two, please.",Egy asztalt kérnék kettőnek.,yes
+chunk,chunk_sv_recommend,phrase,What do you recommend?,Mit ajánl?,yes
+chunk,chunk_sv_water,phrase,"A glass of water, please.",Egy pohár vizet kérek.,yes
+chunk,chunk_sv_checkin,phrase,"I'd like to check in, please.",Szeretnék bejelentkezni.,yes
+chunk,chunk_sv_roomproblem,phrase,"Excuse me, there's a problem with my room.","Elnézést, gond van a szobámmal.",yes
+chunk,chunk_sv_whatstime_bf,phrase,What time is breakfast?,Hánykor van a reggeli?,yes
+chunk,chunk_te_canyousee,phrase,Can you see my screen?,Látod a képernyőmet?,yes
+chunk,chunk_te_looksgood,phrase,Very good! That's correct.,Nagyon jó! Ez helyes.,yes
+chunk,chunk_te_tryagain,phrase,Good try! Let's try again.,Jó próbálkozás! Próbáljuk újra.,yes
+chunk,chunk_te_openbook,phrase,"Open your book, please.","Nyisd ki a könyvet, kérlek.",yes
+chunk,chunk_te_seeyou,phrase,That's all for today. Well done!,Ez minden mára. Ügyes voltál!,yes
+chunk,chunk_pa_wasat,phrase,I was at home yesterday.,Tegnap otthon voltam.,yes
+chunk,chunk_pa_wentto,phrase,I went to the market.,Elmentem a piacra.,yes
+chunk,chunk_pa_wasnice,phrase,It was really nice.,Nagyon jó volt.,yes
+chunk,chunk_pa_howwas,phrase,How was your weekend?,Milyen volt a hétvégéd?,yes
+chunk,chunk_tv_needto,phrase,I need to pack my suitcase.,Be kell csomagolnom a bőröndöt.,yes
+chunk,chunk_tv_planto,phrase,I'm going to visit Kira in Denmark.,Meglátogatom Kirát Dániában.,yes
+chunk,chunk_ai_wherecheckin2,phrase,"Excuse me, where do I check in?","Elnézést, hol tudok becsekkolni?",yes
+chunk,chunk_ai_myflight,phrase,My flight is at ten o'clock.,A járatom tízkor indul.,yes
+chunk,chunk_ai_dontunderstand2,phrase,"Sorry, I didn't understand. Could you help me?","Elnézést, nem értettem. Tudna segíteni?",yes
+chunk,chunk_fl_firsttime,phrase,This is my first flight. I'm a little nervous.,Ez az első repülésem. Kicsit ideges vagyok.,yes
+chunk,chunk_fl_helpcalm,phrase,Could you help me? I'm afraid of flying.,Tudna segíteni? Félek a repüléstől.,yes
+chunk,chunk_fl_needanything,phrase,"I'm okay now, thank you.","Most már jól vagyok, köszönöm.",yes
+chunk,chunk_rp_saythatagain,phrase,Sorry? Could you say that again?,Tessék? Meg tudná ismételni?,yes
+chunk,chunk_rp_writeit,phrase,"Could you write it down, please?","Le tudná írni, kérem?",yes
+chunk,chunk_rp_isthisright,phrase,Is this right?,Ez így jó?,yes
+chunk,chunk_rp_onemoment,phrase,"Just a moment, please.","Egy pillanat, kérem.",yes
 grammar_title,gr_be,grammar card,The verb 'be',A 'be' (lenni) ige,yes
 grammar_title,gr_pronouns,grammar card,Subject pronouns,Alanyi névmások,yes
 grammar_title,gr_questions_wh,grammar card,Question words,Kérdőszavak,yes

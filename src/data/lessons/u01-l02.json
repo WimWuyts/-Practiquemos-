@@ -37,7 +37,10 @@
   "reviewItems": [],
   "chunks": [
     "chunk_intro_nice",
-    "chunk_intro_job"
+    "chunk_intro_job",
+    "chunk_sm_longtime",
+    "chunk_id_age",
+    "chunk_id_job2"
   ],
   "grammarCards": [
     "gr_pronouns"
@@ -48,7 +51,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_13",
+      "id": "act_19",
       "type": "intro",
       "items": [
         "lex_he",
@@ -62,7 +65,7 @@
       ]
     },
     {
-      "id": "act_14",
+      "id": "act_20",
       "type": "listen-choose",
       "items": [
         "lex_he",
@@ -74,7 +77,18 @@
       ]
     },
     {
-      "id": "act_15",
+      "id": "act_21",
+      "type": "icon-choice",
+      "items": [
+        "lex_he",
+        "lex_she",
+        "lex_we",
+        "lex_they",
+        "lex_it"
+      ]
+    },
+    {
+      "id": "act_22",
       "type": "match",
       "items": [
         "lex_he",
@@ -86,26 +100,93 @@
       ]
     },
     {
-      "id": "act_16",
+      "id": "act_23",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "three"
     },
     {
-      "id": "act_17",
+      "id": "act_24",
       "type": "grammar",
       "grammarId": "gr_pronouns"
     },
     {
-      "id": "act_18",
-      "type": "phrase-match",
+      "id": "act_25",
+      "type": "gapfill",
       "items": [
-        "chunk_intro_nice",
-        "chunk_intro_job"
+        {
+          "text": "___ is my nephew.",
+          "answer": "he",
+          "options": [
+            "he",
+            "I",
+            "you"
+          ],
+          "hu": "Ő az unokaöcsém."
+        },
+        {
+          "text": "___ is my niece, Kira.",
+          "answer": "she",
+          "options": [
+            "she",
+            "I",
+            "you"
+          ],
+          "hu": "Ő az unokahúgom, Kira."
+        },
+        {
+          "text": "___ are a big family.",
+          "answer": "we",
+          "options": [
+            "we",
+            "I",
+            "you"
+          ],
+          "hu": "Nagy család vagyunk."
+        },
+        {
+          "text": "___ live in Denmark.",
+          "answer": "they",
+          "options": [
+            "they",
+            "I",
+            "you"
+          ],
+          "hu": "Ők Dániában élnek."
+        }
       ]
     },
     {
-      "id": "act_19",
+      "id": "act_26",
+      "type": "phrase-match",
+      "items": [
+        "chunk_intro_nice",
+        "chunk_intro_job",
+        "chunk_sm_longtime",
+        "chunk_id_age",
+        "chunk_id_job2"
+      ]
+    },
+    {
+      "id": "act_27",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Nice to meet you.",
+          "hu": "Örülök, hogy megismerhetlek."
+        },
+        {
+          "en": "I am a retired teacher.",
+          "hu": "Nyugdíjas tanár vagyok."
+        },
+        {
+          "en": "It's lovely to see you!",
+          "hu": "De jó látni téged!"
+        }
+      ]
+    },
+    {
+      "id": "act_28",
       "type": "typed",
       "items": [
         "lex_he",
@@ -115,9 +196,34 @@
       ]
     },
     {
-      "id": "act_20",
+      "id": "act_29",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
+    },
+    {
+      "id": "act_30",
+      "type": "minimal-pair",
+      "focusId": "snd_long_vowels"
+    },
+    {
+      "id": "act_31",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "he",
+            "she",
+            "we"
+          ],
+          "odd": "what"
+        }
+      ]
+    },
+    {
+      "id": "act_388",
+      "type": "spelling-build",
+      "family": "sf_igh",
+      "word": "night"
     }
   ],
   "completionRule": {

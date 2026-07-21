@@ -135,7 +135,11 @@
     "chunk_serv_bill",
     "chunk_serv_help",
     "chunk_serv_howmuch",
-    "chunk_serv_excuse"
+    "chunk_serv_excuse",
+    "chunk_sm_haveniceday",
+    "chunk_sv_tablefor",
+    "chunk_sv_recommend",
+    "chunk_sv_water"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -146,7 +150,7 @@
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_154",
+      "id": "act_237",
       "type": "intro",
       "items": [
         "lex_restaurant",
@@ -160,7 +164,7 @@
       ]
     },
     {
-      "id": "act_155",
+      "id": "act_238",
       "type": "listen-choose",
       "items": [
         "lex_restaurant",
@@ -172,7 +176,18 @@
       ]
     },
     {
-      "id": "act_156",
+      "id": "act_239",
+      "type": "icon-choice",
+      "items": [
+        "lex_restaurant",
+        "lex_menu",
+        "lex_table",
+        "lex_bill",
+        "lex_order"
+      ]
+    },
+    {
+      "id": "act_240",
       "type": "match",
       "items": [
         "lex_restaurant",
@@ -184,23 +199,88 @@
       ]
     },
     {
-      "id": "act_157",
+      "id": "act_241",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_158",
+      "id": "act_242",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "We eat at a nice ___.",
+          "answer": "restaurant",
+          "options": [
+            "restaurant",
+            "menu",
+            "table"
+          ],
+          "hu": "Egy szép étteremben eszünk."
+        },
+        {
+          "text": "Could I have the ___, please?",
+          "answer": "menu",
+          "options": [
+            "menu",
+            "restaurant",
+            "table"
+          ],
+          "hu": "Megkaphatnám az étlapot, kérem?"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "table",
+          "options": [
+            "table",
+            "restaurant",
+            "menu"
+          ],
+          "hu": "(asztal)"
+        },
+        {
+          "text": "Could I have the ___, please?",
+          "answer": "bill",
+          "options": [
+            "bill",
+            "restaurant",
+            "menu"
+          ],
+          "hu": "Megkaphatnám a számlát, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_243",
       "type": "phrase-match",
       "items": [
         "chunk_serv_order",
         "chunk_serv_bill",
         "chunk_serv_help",
         "chunk_serv_howmuch",
-        "chunk_serv_excuse"
+        "chunk_serv_excuse",
+        "chunk_sm_haveniceday"
       ]
     },
     {
-      "id": "act_159",
+      "id": "act_244",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'd like the soup, please.",
+          "hu": "A levest kérném."
+        },
+        {
+          "en": "Could I have the bill, please?",
+          "hu": "Megkaphatnám a számlát, kérem?"
+        },
+        {
+          "en": "Could you help me, please?",
+          "hu": "Tudna segíteni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_245",
       "type": "typed",
       "items": [
         "lex_restaurant",
@@ -210,17 +290,31 @@
       ]
     },
     {
-      "id": "act_160",
+      "id": "act_246",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_161",
+      "id": "act_247",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "restaurant",
+            "menu",
+            "table"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_248",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_162",
+      "id": "act_249",
       "type": "review",
       "items": [
         "lex_call",

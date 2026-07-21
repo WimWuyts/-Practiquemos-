@@ -50,7 +50,10 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_op_wouldlike"
+    "chunk_op_wouldlike",
+    "chunk_fd_recipe",
+    "chunk_fd_howmuch2",
+    "chunk_fd_takeit"
   ],
   "grammarCards": [
     "gr_wouldlike"
@@ -61,7 +64,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_78",
+      "id": "act_120",
       "type": "intro",
       "items": [
         "lex_cake",
@@ -75,7 +78,7 @@
       ]
     },
     {
-      "id": "act_79",
+      "id": "act_121",
       "type": "listen-choose",
       "items": [
         "lex_cake",
@@ -87,7 +90,18 @@
       ]
     },
     {
-      "id": "act_80",
+      "id": "act_122",
+      "type": "icon-choice",
+      "items": [
+        "lex_cake",
+        "lex_cook",
+        "lex_make",
+        "lex_buy",
+        "lex_want"
+      ]
+    },
+    {
+      "id": "act_123",
       "type": "match",
       "items": [
         "lex_cake",
@@ -99,25 +113,92 @@
       ]
     },
     {
-      "id": "act_81",
+      "id": "act_124",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "cake"
     },
     {
-      "id": "act_82",
+      "id": "act_125",
       "type": "grammar",
       "grammarId": "gr_wouldlike"
     },
     {
-      "id": "act_83",
-      "type": "phrase-match",
+      "id": "act_126",
+      "type": "gapfill",
       "items": [
-        "chunk_op_wouldlike"
+        {
+          "text": "Would you like some ___?",
+          "answer": "cake",
+          "options": [
+            "cake",
+            "food",
+            "water"
+          ],
+          "hu": "Kérsz egy kis süteményt?"
+        },
+        {
+          "text": "I love to ___ for my family.",
+          "answer": "cook",
+          "options": [
+            "cook",
+            "eat",
+            "drink"
+          ],
+          "hu": "Imádok főzni a családomnak."
+        },
+        {
+          "text": "I ___ coffee for my sister.",
+          "answer": "make",
+          "options": [
+            "make",
+            "eat",
+            "drink"
+          ],
+          "hu": "Kávét készítek a nővéremnek."
+        },
+        {
+          "text": "I ___ food at the market.",
+          "answer": "buy",
+          "options": [
+            "buy",
+            "pay",
+            "sell"
+          ],
+          "hu": "A piacon veszek élelmiszert."
+        }
       ]
     },
     {
-      "id": "act_84",
+      "id": "act_127",
+      "type": "phrase-match",
+      "items": [
+        "chunk_op_wouldlike",
+        "chunk_fd_recipe",
+        "chunk_fd_howmuch2",
+        "chunk_fd_takeit"
+      ]
+    },
+    {
+      "id": "act_128",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'd like a coffee, please.",
+          "hu": "Kérnék egy kávét."
+        },
+        {
+          "en": "I can show you the recipe.",
+          "hu": "Megmutathatom a receptet."
+        },
+        {
+          "en": "How much is this, please?",
+          "hu": "Mennyibe kerül ez, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_129",
       "type": "typed",
       "items": [
         "lex_cake",
@@ -127,9 +208,28 @@
       ]
     },
     {
-      "id": "act_85",
+      "id": "act_130",
       "type": "pron-record",
       "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_131",
+      "type": "minimal-pair",
+      "focusId": "snd_shchj"
+    },
+    {
+      "id": "act_132",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "cake",
+            "cook",
+            "make"
+          ],
+          "odd": "name"
+        }
+      ]
     }
   ],
   "completionRule": {

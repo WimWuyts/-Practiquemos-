@@ -58,7 +58,10 @@
     "chunk_fly_nervous",
     "chunk_fly_water",
     "chunk_fly_blanket",
-    "chunk_fly_toilet"
+    "chunk_fly_toilet",
+    "chunk_fe_tired",
+    "chunk_fl_firsttime",
+    "chunk_fl_helpcalm"
   ],
   "grammarCards": [
     "gr_could_requests"
@@ -69,7 +72,7 @@
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_233",
+      "id": "act_355",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -83,7 +86,7 @@
       ]
     },
     {
-      "id": "act_234",
+      "id": "act_356",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -95,7 +98,18 @@
       ]
     },
     {
-      "id": "act_235",
+      "id": "act_357",
+      "type": "icon-choice",
+      "items": [
+        "lex_plane",
+        "lex_afraid",
+        "lex_nervous",
+        "lex_scared",
+        "lex_calm"
+      ]
+    },
+    {
+      "id": "act_358",
       "type": "match",
       "items": [
         "lex_plane",
@@ -107,18 +121,64 @@
       ]
     },
     {
-      "id": "act_236",
+      "id": "act_359",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_237",
+      "id": "act_360",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_238",
+      "id": "act_361",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "This is my first ___ trip.",
+          "answer": "plane",
+          "options": [
+            "plane",
+            "blanket",
+            "toilet"
+          ],
+          "hu": "Ez az első repülőutam."
+        },
+        {
+          "text": "I am ___ of flying.",
+          "answer": "afraid",
+          "options": [
+            "afraid",
+            "happy",
+            "nervous"
+          ],
+          "hu": "Félek a repüléstől."
+        },
+        {
+          "text": "I feel a little ___.",
+          "answer": "nervous",
+          "options": [
+            "nervous",
+            "happy",
+            "afraid"
+          ],
+          "hu": "Kicsit ideges vagyok."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "scared",
+          "options": [
+            "scared",
+            "happy",
+            "afraid"
+          ],
+          "hu": "(megijedt / fél)"
+        }
+      ]
+    },
+    {
+      "id": "act_362",
       "type": "phrase-match",
       "items": [
         "chunk_fly_afraid",
@@ -130,7 +190,25 @@
       ]
     },
     {
-      "id": "act_239",
+      "id": "act_363",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I am afraid of flying.",
+          "hu": "Félek a repüléstől."
+        },
+        {
+          "en": "This is my first flight.",
+          "hu": "Ez az első repülésem."
+        },
+        {
+          "en": "I feel nervous.",
+          "hu": "Ideges vagyok."
+        }
+      ]
+    },
+    {
+      "id": "act_364",
       "type": "typed",
       "items": [
         "lex_plane",
@@ -140,17 +218,31 @@
       ]
     },
     {
-      "id": "act_240",
+      "id": "act_365",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_241",
+      "id": "act_366",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "plane",
+            "blanket",
+            "toilet"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_367",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_242",
+      "id": "act_368",
       "type": "review",
       "items": [
         "lex_was",

@@ -1,7 +1,7 @@
 # Project state
 
 **Project:** Mirella tante — English with Marta
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Status:** ✅ Stable core-first release. All release-blocking gates pass.
 **Date:** 2026-07
 
@@ -10,11 +10,11 @@
 - [x] Inputs read (source brief, avatar reference, web source register, master prompt).
 - [x] Decisions locked (`docs/ASSUMPTIONS_AND_DECISIONS.md`).
 - [x] Curriculum: 17 units (Unit 0 diagnostic + 16), 32 micro-lessons, spiral review (`docs/CURRICULUM_MATRIX.csv`).
-- [x] Lexicon 699 productive (EVP A1+A2) + 76 receptive, chunks 65, all with HU + examples + distractors (`docs/LEXICON_COVERAGE_REPORT.md`).
+- [x] Lexicon 699 productive (EVP A1+A2) + 76 receptive, chunks 137, all with HU + examples + distractors (`docs/LEXICON_COVERAGE_REPORT.md`).
 - [x] Grammar: 27 functional bilingual spiral cards (EGP A1) (`docs/GRAMMAR_SPIRAL_MATRIX.csv`).
 - [x] Pronunciation: 2-step path — 11 spelling-sound families + 16 sound/stress sets, no IPA shown; word-builder engine.
 - [x] Conversations: 14 branching guided dialogues, 3 support levels, repair paths.
-- [x] Exercise engine: 12+ reusable data-driven activity types + calm feedback.
+- [x] Exercise engine: 18 reusable data-driven activity types (incl. reorder, gap-fill, minimal-pair, icon-choice, odd-one-out, answer-expansion) + calm feedback.
 - [x] Adaptive (deterministic) conversation engine with memory schema + variation support.
 - [x] Bilingual EN–HU UI, central i18n, `Magyar segítség` control, help modes.
 - [x] TTS (British, async voice handling), record/replay, optional experimental recognition.

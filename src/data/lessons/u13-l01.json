@@ -65,7 +65,9 @@
     "lex_closed"
   ],
   "chunks": [
-    "chunk_plan_going"
+    "chunk_plan_going",
+    "chunk_tv_needto",
+    "chunk_tv_planto"
   ],
   "grammarCards": [
     "gr_needhaveto"
@@ -76,7 +78,7 @@
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_203",
+      "id": "act_310",
       "type": "intro",
       "items": [
         "lex_travel",
@@ -90,7 +92,7 @@
       ]
     },
     {
-      "id": "act_204",
+      "id": "act_311",
       "type": "listen-choose",
       "items": [
         "lex_travel",
@@ -102,7 +104,18 @@
       ]
     },
     {
-      "id": "act_205",
+      "id": "act_312",
+      "type": "icon-choice",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_need",
+        "lex_stay",
+        "lex_leave"
+      ]
+    },
+    {
+      "id": "act_313",
       "type": "match",
       "items": [
         "lex_travel",
@@ -114,19 +127,85 @@
       ]
     },
     {
-      "id": "act_206",
+      "id": "act_314",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_207",
-      "type": "phrase-match",
+      "id": "act_315",
+      "type": "gapfill",
       "items": [
-        "chunk_plan_going"
+        {
+          "text": "How was your ___?",
+          "answer": "trip",
+          "options": [
+            "trip",
+            "holiday",
+            "luggage"
+          ],
+          "hu": "Milyen volt az utad?"
+        },
+        {
+          "text": "I ___ a ticket, please.",
+          "answer": "need",
+          "options": [
+            "need",
+            "travel",
+            "bring"
+          ],
+          "hu": "Egy jegyet kérek."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "stay",
+          "options": [
+            "stay",
+            "travel",
+            "need"
+          ],
+          "hu": "(maradni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "leave",
+          "options": [
+            "leave",
+            "travel",
+            "need"
+          ],
+          "hu": "(elmenni / elhagyni)"
+        }
       ]
     },
     {
-      "id": "act_208",
+      "id": "act_316",
+      "type": "phrase-match",
+      "items": [
+        "chunk_plan_going",
+        "chunk_tv_needto",
+        "chunk_tv_planto"
+      ]
+    },
+    {
+      "id": "act_317",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm going to visit my sister.",
+          "hu": "Meglátogatom a nővéremet."
+        },
+        {
+          "en": "I need to pack my suitcase.",
+          "hu": "Be kell csomagolnom a bőröndöt."
+        },
+        {
+          "en": "I'm going to visit Kira in Denmark.",
+          "hu": "Meglátogatom Kirát Dániában."
+        }
+      ]
+    },
+    {
+      "id": "act_318",
       "type": "typed",
       "items": [
         "lex_travel",
@@ -136,17 +215,31 @@
       ]
     },
     {
-      "id": "act_209",
+      "id": "act_319",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_210",
+      "id": "act_320",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "travel",
+            "trip",
+            "need"
+          ],
+          "odd": "be"
+        }
+      ]
+    },
+    {
+      "id": "act_321",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_211",
+      "id": "act_322",
       "type": "review",
       "items": [
         "lex_restaurant",

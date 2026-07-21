@@ -2,6 +2,21 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.2.0] — 2026-07 — Natural examples, full pronunciation coverage, more exercises
+
+### Added — exercise variety (6 new types, 18 total)
+- **Reorder** — put the words in the right order to build a useful sentence.
+- **Gap-fill** — choose the missing word in a real sentence (built from each word's example).
+- **Minimal pair** — hear one of a similar-sounding pair (west/vest, ship/sheep) and pick which; tied to the sounds step.
+- **Icon → word** — see the picture, choose the English word.
+- **Odd-one-out** — pick the word that doesn't belong (theme reinforcement).
+- **Grow-your-answer** — expand a reply from one clause to three (from the source brief).
+
+### Changed — content quality
+- **Natural example sentences:** ~180 hand-written examples tied to Marta's world, plus a grammar-safe fallback (handles uncountables, aux/modal verbs). 588/699 words now have a natural or safe example; the remaining 111 are flagged in the review queue.
+- **Full pronunciation coverage guaranteed:** a build-time completeness pass + validator gate ensure **all 16 sound-focus sets and all 11 spelling-sound families** appear in at least one lesson. Each activity shows its step (Step 1 sounds / Step 2 spelling / Step 3 stress).
+- **Chunks expanded 65 → 137** — more survival, question, opinion, plan, travel, teaching and family frames.
+
 ## [1.1.0] — 2026-07 — Visual redesign + vocabulary to ~700 (Phase 2)
 
 ### Changed — visual identity ("Rustig & modern", direction C)

@@ -33,7 +33,11 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_ask_family"
+    "chunk_ask_family",
+    "chunk_sm_howsfamily",
+    "chunk_id_thisis",
+    "chunk_fam_howmany",
+    "chunk_fam_married"
   ],
   "grammarCards": [
     "gr_have"
@@ -44,7 +48,7 @@
   "conversationId": "dlg_marlene_first",
   "activities": [
     {
-      "id": "act_30",
+      "id": "act_47",
       "type": "intro",
       "items": [
         "lex_wife",
@@ -58,7 +62,7 @@
       ]
     },
     {
-      "id": "act_31",
+      "id": "act_48",
       "type": "listen-choose",
       "items": [
         "lex_wife",
@@ -70,7 +74,18 @@
       ]
     },
     {
-      "id": "act_32",
+      "id": "act_49",
+      "type": "icon-choice",
+      "items": [
+        "lex_wife",
+        "lex_partner",
+        "lex_boyfriend",
+        "lex_girlfriend",
+        "lex_grandmother"
+      ]
+    },
+    {
+      "id": "act_50",
       "type": "match",
       "items": [
         "lex_wife",
@@ -82,19 +97,87 @@
       ]
     },
     {
-      "id": "act_33",
+      "id": "act_51",
       "type": "grammar",
       "grammarId": "gr_have"
     },
     {
-      "id": "act_34",
-      "type": "phrase-match",
+      "id": "act_52",
+      "type": "gapfill",
       "items": [
-        "chunk_ask_family"
+        {
+          "text": "This is a ___.",
+          "answer": "wife",
+          "options": [
+            "wife",
+            "family",
+            "mother"
+          ],
+          "hu": "(feleség)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "partner",
+          "options": [
+            "partner",
+            "family",
+            "mother"
+          ],
+          "hu": "(élettárs / partner)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "boyfriend",
+          "options": [
+            "boyfriend",
+            "family",
+            "mother"
+          ],
+          "hu": "(barát (párkapcsolat))"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "girlfriend",
+          "options": [
+            "girlfriend",
+            "family",
+            "mother"
+          ],
+          "hu": "(barátnő (párkapcsolat))"
+        }
       ]
     },
     {
-      "id": "act_35",
+      "id": "act_53",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_family",
+        "chunk_sm_howsfamily",
+        "chunk_id_thisis",
+        "chunk_fam_howmany",
+        "chunk_fam_married"
+      ]
+    },
+    {
+      "id": "act_54",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Do you have brothers or sisters?",
+          "hu": "Van testvéred?"
+        },
+        {
+          "en": "How is your family?",
+          "hu": "Hogy van a családod?"
+        },
+        {
+          "en": "This is my sister, Margó.",
+          "hu": "Ez a nővérem, Margó."
+        }
+      ]
+    },
+    {
+      "id": "act_55",
       "type": "typed",
       "items": [
         "lex_wife",
@@ -104,12 +187,26 @@
       ]
     },
     {
-      "id": "act_36",
+      "id": "act_56",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     },
     {
-      "id": "act_37",
+      "id": "act_57",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "wife",
+            "partner",
+            "boyfriend"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_58",
       "type": "conversation",
       "dialogueId": "dlg_marlene_first"
     }

@@ -87,6 +87,21 @@ const usedGrammar = new Set();
 Object.values(lessons).forEach((L) => (L.grammarCards || []).forEach((g) => usedGrammar.add(g)));
 grammar.forEach((g) => { if (!usedGrammar.has(g.id)) W(`grammar ${g.id} not used in any lesson`); });
 
+// pronunciation coverage: every sound-focus and spelling-family must appear in a lesson activity
+const usedSounds = new Set(), usedFamilies = new Set();
+Object.values(lessons).forEach((L) => (L.activities || []).forEach((a) => {
+  if (a.type === "pron-record" && a.focusId) usedSounds.add(a.focusId);
+  if (a.type === "minimal-pair" && a.focusId) usedSounds.add(a.focusId);
+  if (a.type === "spelling-build" && a.family) usedFamilies.add(a.family);
+}));
+(pron.soundFocus || []).forEach((f) => { if (!usedSounds.has(f.id)) E(`sound-focus ${f.id} never appears in a lesson`); });
+(pron.spellingFamilies || []).forEach((f) => { if (!usedFamilies.has(f.id)) E(`spelling-family ${f.id} never appears in a lesson`); });
+OK(`Pronunciation coverage: ${(pron.soundFocus || []).length} sounds + ${(pron.spellingFamilies || []).length} spelling families all used`);
+
+// example quality: flag remaining template-y examples for the review queue (not an error)
+const tmpl = prod.filter((l) => /every day\.$|use "|useful word|is here\.$/.test((l.examples[0] || {}).en || "")).length;
+OK(`Curated examples used; ${tmpl} productive words still on the safe template (flagged for review)`);
+
 // report
 console.log("\n=== CONTENT VALIDATION ===");
 ok.forEach((m) => console.log("  ok   " + m));

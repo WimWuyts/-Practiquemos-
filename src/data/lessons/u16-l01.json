@@ -77,7 +77,11 @@
   ],
   "chunks": [
     "chunk_conv_thanks_visit",
-    "chunk_conv_tellmore"
+    "chunk_conv_tellmore",
+    "chunk_sm_welcome",
+    "chunk_fam_proud",
+    "chunk_fe_happy",
+    "chunk_fd_delicious"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -86,7 +90,7 @@
   "conversationId": "dlg_balaton",
   "activities": [
     {
-      "id": "act_247",
+      "id": "act_374",
       "type": "intro",
       "items": [
         "lex_tired",
@@ -100,7 +104,7 @@
       ]
     },
     {
-      "id": "act_248",
+      "id": "act_375",
       "type": "listen-choose",
       "items": [
         "lex_tired",
@@ -112,7 +116,18 @@
       ]
     },
     {
-      "id": "act_249",
+      "id": "act_376",
+      "type": "icon-choice",
+      "items": [
+        "lex_tired",
+        "lex_glad",
+        "lex_welcome",
+        "lex_together",
+        "lex_hope"
+      ]
+    },
+    {
+      "id": "act_377",
       "type": "match",
       "items": [
         "lex_tired",
@@ -124,15 +139,83 @@
       ]
     },
     {
-      "id": "act_250",
-      "type": "phrase-match",
+      "id": "act_378",
+      "type": "gapfill",
       "items": [
-        "chunk_conv_thanks_visit",
-        "chunk_conv_tellmore"
+        {
+          "text": "I am a little ___ today.",
+          "answer": "tired",
+          "options": [
+            "tired",
+            "happy",
+            "afraid"
+          ],
+          "hu": "Ma kicsit fáradt vagyok."
+        },
+        {
+          "text": "I am ___ you are here.",
+          "answer": "glad",
+          "options": [
+            "glad",
+            "happy",
+            "afraid"
+          ],
+          "hu": "Örülök, hogy itt vagy."
+        },
+        {
+          "text": "___ to my home!",
+          "answer": "welcome",
+          "options": [
+            "welcome",
+            "hello",
+            "hi"
+          ],
+          "hu": "Üdvözöllek az otthonomban!"
+        },
+        {
+          "text": "I speak ___.",
+          "answer": "together",
+          "options": [
+            "together",
+            "please",
+            "yes"
+          ],
+          "hu": "(együtt)"
+        }
       ]
     },
     {
-      "id": "act_251",
+      "id": "act_379",
+      "type": "phrase-match",
+      "items": [
+        "chunk_conv_thanks_visit",
+        "chunk_conv_tellmore",
+        "chunk_sm_welcome",
+        "chunk_fam_proud",
+        "chunk_fe_happy",
+        "chunk_fd_delicious"
+      ]
+    },
+    {
+      "id": "act_380",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Thank you for coming.",
+          "hu": "Köszönöm, hogy eljöttél."
+        },
+        {
+          "en": "Tell me more.",
+          "hu": "Mesélj még."
+        },
+        {
+          "en": "Welcome! Come in.",
+          "hu": "Üdvözöllek! Gyere be."
+        }
+      ]
+    },
+    {
+      "id": "act_381",
       "type": "typed",
       "items": [
         "lex_tired",
@@ -142,17 +225,53 @@
       ]
     },
     {
-      "id": "act_252",
+      "id": "act_382",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_253",
+      "id": "act_383",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "tired",
+            "glad",
+            "angry"
+          ],
+          "odd": "my"
+        }
+      ]
+    },
+    {
+      "id": "act_384",
+      "type": "expand",
+      "question": {
+        "en": "Tell me about your day.",
+        "hu": "Mesélj a napodról."
+      },
+      "steps": [
+        {
+          "en": "It was nice.",
+          "hu": "Szép volt."
+        },
+        {
+          "en": "It was nice. I cooked lunch for the family.",
+          "hu": "Szép volt. Ebédet főztem a családnak."
+        },
+        {
+          "en": "It was nice. I cooked lunch for the family, and later we sat in the garden.",
+          "hu": "Szép volt. Ebédet főztem a családnak, és később a kertben ültünk."
+        }
+      ]
+    },
+    {
+      "id": "act_385",
       "type": "conversation",
       "dialogueId": "dlg_balaton"
     },
     {
-      "id": "act_254",
+      "id": "act_386",
       "type": "review",
       "items": [
         "lex_travel",

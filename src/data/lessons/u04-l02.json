@@ -66,7 +66,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_62",
+      "id": "act_97",
       "type": "intro",
       "items": [
         "lex_read",
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "id": "act_63",
+      "id": "act_98",
       "type": "listen-choose",
       "items": [
         "lex_read",
@@ -92,7 +92,18 @@
       ]
     },
     {
-      "id": "act_64",
+      "id": "act_99",
+      "type": "icon-choice",
+      "items": [
+        "lex_read",
+        "lex_watch",
+        "lex_walk",
+        "lex_home",
+        "lex_house"
+      ]
+    },
+    {
+      "id": "act_100",
       "type": "match",
       "items": [
         "lex_read",
@@ -104,18 +115,64 @@
       ]
     },
     {
-      "id": "act_65",
+      "id": "act_101",
       "type": "spelling-build",
       "family": "sf_ea",
       "word": "read"
     },
     {
-      "id": "act_66",
+      "id": "act_102",
       "type": "grammar",
       "grammarId": "gr_thereis"
     },
     {
-      "id": "act_67",
+      "id": "act_103",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I like to ___ in the evening.",
+          "answer": "read",
+          "options": [
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "Este szeretek olvasni."
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "watch",
+          "options": [
+            "watch",
+            "work",
+            "get up"
+          ],
+          "hu": "(nézni)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "walk",
+          "options": [
+            "walk",
+            "work",
+            "get up"
+          ],
+          "hu": "(sétálni)"
+        },
+        {
+          "text": "I am at ___ now.",
+          "answer": "home",
+          "options": [
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "Most otthon vagyok."
+        }
+      ]
+    },
+    {
+      "id": "act_104",
       "type": "typed",
       "items": [
         "lex_read",
@@ -125,7 +182,7 @@
       ]
     },
     {
-      "id": "act_68",
+      "id": "act_105",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

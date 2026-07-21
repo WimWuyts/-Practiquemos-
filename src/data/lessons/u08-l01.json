@@ -140,7 +140,8 @@
   ],
   "chunks": [
     "chunk_ask_hobbies",
-    "chunk_op_love"
+    "chunk_op_love",
+    "chunk_op_ilike2"
   ],
   "grammarCards": [
     "gr_likeing"
@@ -151,7 +152,7 @@
   "conversationId": "dlg_peter_dinner",
   "activities": [
     {
-      "id": "act_120",
+      "id": "act_184",
       "type": "intro",
       "items": [
         "lex_hobby",
@@ -165,7 +166,7 @@
       ]
     },
     {
-      "id": "act_121",
+      "id": "act_185",
       "type": "listen-choose",
       "items": [
         "lex_hobby",
@@ -177,7 +178,18 @@
       ]
     },
     {
-      "id": "act_122",
+      "id": "act_186",
+      "type": "icon-choice",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film",
+        "lex_sport"
+      ]
+    },
+    {
+      "id": "act_187",
       "type": "match",
       "items": [
         "lex_hobby",
@@ -189,26 +201,91 @@
       ]
     },
     {
-      "id": "act_123",
+      "id": "act_188",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "game"
     },
     {
-      "id": "act_124",
+      "id": "act_189",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_125",
-      "type": "phrase-match",
+      "id": "act_190",
+      "type": "gapfill",
       "items": [
-        "chunk_ask_hobbies",
-        "chunk_op_love"
+        {
+          "text": "My ___ is cooking.",
+          "answer": "hobby",
+          "options": [
+            "hobby",
+            "music",
+            "book"
+          ],
+          "hu": "A hobbim a főzés."
+        },
+        {
+          "text": "I like quiet ___.",
+          "answer": "music",
+          "options": [
+            "music",
+            "hobby",
+            "book"
+          ],
+          "hu": "Szeretem a halk zenét."
+        },
+        {
+          "text": "I am reading a good ___.",
+          "answer": "book",
+          "options": [
+            "book",
+            "hobby",
+            "music"
+          ],
+          "hu": "Egy jó könyvet olvasok."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "film",
+          "options": [
+            "film",
+            "hobby",
+            "music"
+          ],
+          "hu": "(film)"
+        }
       ]
     },
     {
-      "id": "act_126",
+      "id": "act_191",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_hobbies",
+        "chunk_op_love",
+        "chunk_op_ilike2"
+      ]
+    },
+    {
+      "id": "act_192",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What do you like doing?",
+          "hu": "Mit szeretsz csinálni?"
+        },
+        {
+          "en": "I love cooking.",
+          "hu": "Imádok főzni."
+        },
+        {
+          "en": "I really enjoy it.",
+          "hu": "Nagyon élvezem."
+        }
+      ]
+    },
+    {
+      "id": "act_193",
       "type": "typed",
       "items": [
         "lex_hobby",
@@ -218,17 +295,31 @@
       ]
     },
     {
-      "id": "act_127",
+      "id": "act_194",
       "type": "pron-record",
       "focusId": "snd_r"
     },
     {
-      "id": "act_128",
+      "id": "act_195",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "hobby",
+            "music",
+            "book"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_196",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_129",
+      "id": "act_197",
       "type": "review",
       "items": [
         "lex_food",

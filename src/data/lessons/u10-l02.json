@@ -30,7 +30,10 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_serv_checkin"
+    "chunk_serv_checkin",
+    "chunk_sv_checkin",
+    "chunk_sv_roomproblem",
+    "chunk_sv_whatstime_bf"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -39,7 +42,7 @@
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_163",
+      "id": "act_250",
       "type": "intro",
       "items": [
         "lex_hotel",
@@ -53,7 +56,7 @@
       ]
     },
     {
-      "id": "act_164",
+      "id": "act_251",
       "type": "listen-choose",
       "items": [
         "lex_hotel",
@@ -65,7 +68,18 @@
       ]
     },
     {
-      "id": "act_165",
+      "id": "act_252",
+      "type": "icon-choice",
+      "items": [
+        "lex_hotel",
+        "lex_key",
+        "lex_problem",
+        "lex_pharmacy",
+        "lex_fill"
+      ]
+    },
+    {
+      "id": "act_253",
       "type": "match",
       "items": [
         "lex_hotel",
@@ -77,14 +91,81 @@
       ]
     },
     {
-      "id": "act_166",
-      "type": "phrase-match",
+      "id": "act_254",
+      "type": "gapfill",
       "items": [
-        "chunk_serv_checkin"
+        {
+          "text": "The ___ is near the station.",
+          "answer": "hotel",
+          "options": [
+            "hotel",
+            "key",
+            "reception"
+          ],
+          "hu": "A szálloda az állomás közelében van."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "key",
+          "options": [
+            "key",
+            "hotel",
+            "reception"
+          ],
+          "hu": "(kulcs)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "problem",
+          "options": [
+            "problem",
+            "restaurant",
+            "menu"
+          ],
+          "hu": "(probléma / gond)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "doctor",
+          "options": [
+            "doctor",
+            "nurse",
+            "hospital"
+          ],
+          "hu": "(orvos)"
+        }
       ]
     },
     {
-      "id": "act_167",
+      "id": "act_255",
+      "type": "phrase-match",
+      "items": [
+        "chunk_serv_checkin",
+        "chunk_sv_checkin",
+        "chunk_sv_roomproblem",
+        "chunk_sv_whatstime_bf"
+      ]
+    },
+    {
+      "id": "act_256",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I have a reservation.",
+          "hu": "Van foglalásom."
+        },
+        {
+          "en": "I'd like to check in, please.",
+          "hu": "Szeretnék bejelentkezni."
+        },
+        {
+          "en": "What time is breakfast?",
+          "hu": "Hánykor van a reggeli?"
+        }
+      ]
+    },
+    {
+      "id": "act_257",
       "type": "typed",
       "items": [
         "lex_hotel",
@@ -94,12 +175,12 @@
       ]
     },
     {
-      "id": "act_168",
+      "id": "act_258",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_169",
+      "id": "act_259",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

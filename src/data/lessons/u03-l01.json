@@ -88,7 +88,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_38",
+      "id": "act_59",
       "type": "intro",
       "items": [
         "lex_hungary",
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "id": "act_39",
+      "id": "act_60",
       "type": "listen-choose",
       "items": [
         "lex_hungary",
@@ -114,7 +114,18 @@
       ]
     },
     {
-      "id": "act_40",
+      "id": "act_61",
+      "type": "icon-choice",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english",
+        "lex_spain"
+      ]
+    },
+    {
+      "id": "act_62",
       "type": "match",
       "items": [
         "lex_hungary",
@@ -126,19 +137,75 @@
       ]
     },
     {
-      "id": "act_41",
+      "id": "act_63",
       "type": "grammar",
       "grammarId": "gr_conjunctions"
     },
     {
-      "id": "act_42",
+      "id": "act_64",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I am from ___.",
+          "answer": "Hungary",
+          "options": [
+            "Hungary",
+            "England",
+            "Spain"
+          ],
+          "hu": "Magyarországról jöttem."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "Hungarian",
+          "options": [
+            "Hungarian",
+            "English",
+            "Spanish"
+          ],
+          "hu": "(magyar)"
+        },
+        {
+          "text": "I like ___.",
+          "answer": "England",
+          "options": [
+            "England",
+            "Hungary",
+            "Spain"
+          ],
+          "hu": "(Anglia)"
+        },
+        {
+          "text": "I am learning ___.",
+          "answer": "English",
+          "options": [
+            "English",
+            "Hungarian",
+            "Spanish"
+          ],
+          "hu": "Angolul tanulok."
+        }
+      ]
+    },
+    {
+      "id": "act_65",
       "type": "phrase-match",
       "items": [
         "chunk_ask_where_live"
       ]
     },
     {
-      "id": "act_43",
+      "id": "act_66",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where do you live?",
+          "hu": "Hol laksz?"
+        }
+      ]
+    },
+    {
+      "id": "act_67",
       "type": "typed",
       "items": [
         "lex_hungary",
@@ -148,12 +215,31 @@
       ]
     },
     {
-      "id": "act_44",
+      "id": "act_68",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_45",
+      "id": "act_69",
+      "type": "minimal-pair",
+      "focusId": "snd_wv"
+    },
+    {
+      "id": "act_70",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "Hungary",
+            "Hungarian",
+            "England"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_71",
       "type": "review",
       "items": [
         "lex_family",

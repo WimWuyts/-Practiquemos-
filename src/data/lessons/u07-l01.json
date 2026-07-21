@@ -202,7 +202,11 @@
     "chunk_repair_wait",
     "chunk_repair_sorry",
     "chunk_call_hearme",
-    "chunk_call_seeme"
+    "chunk_call_seeme",
+    "chunk_ph_callyou",
+    "chunk_ph_badline",
+    "chunk_rp_saythatagain",
+    "chunk_rp_onemoment"
   ],
   "grammarCards": [
     "gr_object_pronouns"
@@ -213,7 +217,7 @@
   "conversationId": "dlg_kira_phone",
   "activities": [
     {
-      "id": "act_104",
+      "id": "act_159",
       "type": "intro",
       "items": [
         "lex_call",
@@ -227,7 +231,7 @@
       ]
     },
     {
-      "id": "act_105",
+      "id": "act_160",
       "type": "listen-choose",
       "items": [
         "lex_call",
@@ -239,7 +243,18 @@
       ]
     },
     {
-      "id": "act_106",
+      "id": "act_161",
+      "type": "icon-choice",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see",
+        "lex_repeat"
+      ]
+    },
+    {
+      "id": "act_162",
       "type": "match",
       "items": [
         "lex_call",
@@ -251,18 +266,64 @@
       ]
     },
     {
-      "id": "act_107",
+      "id": "act_163",
       "type": "spelling-build",
       "family": "sf_ph",
       "word": "phone"
     },
     {
-      "id": "act_108",
+      "id": "act_164",
       "type": "grammar",
       "grammarId": "gr_object_pronouns"
     },
     {
-      "id": "act_109",
+      "id": "act_165",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ my niece on Sundays.",
+          "answer": "call",
+          "options": [
+            "call",
+            "hear",
+            "see"
+          ],
+          "hu": "Vasárnaponként hívom az unokahúgomat."
+        },
+        {
+          "text": "I use my ___ to call Kira.",
+          "answer": "phone",
+          "options": [
+            "phone",
+            "letter",
+            "news"
+          ],
+          "hu": "A telefonommal hívom Kirát."
+        },
+        {
+          "text": "Can you ___ me?",
+          "answer": "hear",
+          "options": [
+            "hear",
+            "call",
+            "see"
+          ],
+          "hu": "Hallasz engem?"
+        },
+        {
+          "text": "Can you ___ me?",
+          "answer": "see",
+          "options": [
+            "see",
+            "call",
+            "hear"
+          ],
+          "hu": "Látsz engem?"
+        }
+      ]
+    },
+    {
+      "id": "act_166",
       "type": "phrase-match",
       "items": [
         "chunk_repair_notunderstand",
@@ -274,7 +335,25 @@
       ]
     },
     {
-      "id": "act_110",
+      "id": "act_167",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I don't understand.",
+          "hu": "Nem értem."
+        },
+        {
+          "en": "Could you repeat that, please?",
+          "hu": "Meg tudná ismételni, kérem?"
+        },
+        {
+          "en": "Could you speak more slowly, please?",
+          "hu": "Tudna lassabban beszélni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_168",
       "type": "typed",
       "items": [
         "lex_call",
@@ -284,17 +363,31 @@
       ]
     },
     {
-      "id": "act_111",
+      "id": "act_169",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_112",
+      "id": "act_170",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "call",
+            "phone",
+            "hear"
+          ],
+          "odd": "be"
+        }
+      ]
+    },
+    {
+      "id": "act_171",
       "type": "conversation",
       "dialogueId": "dlg_kira_phone"
     },
     {
-      "id": "act_113",
+      "id": "act_172",
       "type": "review",
       "items": [
         "lex_day",

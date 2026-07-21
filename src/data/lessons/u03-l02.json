@@ -36,7 +36,8 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_ask_work"
+    "chunk_ask_work",
+    "chunk_id_teachonline"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -45,7 +46,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_46",
+      "id": "act_72",
       "type": "intro",
       "items": [
         "lex_work",
@@ -59,7 +60,7 @@
       ]
     },
     {
-      "id": "act_47",
+      "id": "act_73",
       "type": "listen-choose",
       "items": [
         "lex_work",
@@ -71,7 +72,18 @@
       ]
     },
     {
-      "id": "act_48",
+      "id": "act_74",
+      "type": "icon-choice",
+      "items": [
+        "lex_work",
+        "lex_tall",
+        "lex_short",
+        "lex_kind",
+        "lex_funny"
+      ]
+    },
+    {
+      "id": "act_75",
       "type": "match",
       "items": [
         "lex_work",
@@ -83,14 +95,75 @@
       ]
     },
     {
-      "id": "act_49",
-      "type": "phrase-match",
+      "id": "act_76",
+      "type": "gapfill",
       "items": [
-        "chunk_ask_work"
+        {
+          "text": "I ___ with children.",
+          "answer": "work",
+          "options": [
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "Gyerekekkel dolgozom."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "tall",
+          "options": [
+            "tall",
+            "my",
+            "your"
+          ],
+          "hu": "(magas)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "short",
+          "options": [
+            "short",
+            "my",
+            "your"
+          ],
+          "hu": "(alacsony / rövid)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "kind",
+          "options": [
+            "kind",
+            "my",
+            "your"
+          ],
+          "hu": "(kedves)"
+        }
       ]
     },
     {
-      "id": "act_50",
+      "id": "act_77",
+      "type": "phrase-match",
+      "items": [
+        "chunk_ask_work",
+        "chunk_id_teachonline"
+      ]
+    },
+    {
+      "id": "act_78",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What do you do?",
+          "hu": "Mivel foglalkozol?"
+        },
+        {
+          "en": "I teach Hungarian online.",
+          "hu": "Magyart tanítok online."
+        }
+      ]
+    },
+    {
+      "id": "act_79",
       "type": "typed",
       "items": [
         "lex_work",
@@ -100,8 +173,13 @@
       ]
     },
     {
-      "id": "act_51",
+      "id": "act_80",
       "type": "pron-record",
+      "focusId": "snd_h"
+    },
+    {
+      "id": "act_81",
+      "type": "minimal-pair",
       "focusId": "snd_h"
     }
   ],

@@ -147,7 +147,12 @@
     "chunk_call_start",
     "chunk_teach_wait",
     "chunk_teach_excellent",
-    "chunk_teach_repeat_me"
+    "chunk_teach_repeat_me",
+    "chunk_te_canyousee",
+    "chunk_te_looksgood",
+    "chunk_te_tryagain",
+    "chunk_te_openbook",
+    "chunk_rp_isthisright"
   ],
   "grammarCards": [
     "gr_imperatives"
@@ -158,7 +163,7 @@
   "conversationId": "dlg_student_mic",
   "activities": [
     {
-      "id": "act_170",
+      "id": "act_260",
       "type": "intro",
       "items": [
         "lex_lesson",
@@ -172,7 +177,7 @@
       ]
     },
     {
-      "id": "act_171",
+      "id": "act_261",
       "type": "listen-choose",
       "items": [
         "lex_lesson",
@@ -184,7 +189,18 @@
       ]
     },
     {
-      "id": "act_172",
+      "id": "act_262",
+      "type": "icon-choice",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen",
+        "lex_computer"
+      ]
+    },
+    {
+      "id": "act_263",
       "type": "match",
       "items": [
         "lex_lesson",
@@ -196,18 +212,64 @@
       ]
     },
     {
-      "id": "act_173",
+      "id": "act_264",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "question"
     },
     {
-      "id": "act_174",
+      "id": "act_265",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_175",
+      "id": "act_266",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Let's start today's ___.",
+          "answer": "lesson",
+          "options": [
+            "lesson",
+            "student",
+            "word"
+          ],
+          "hu": "Kezdjük a mai órát."
+        },
+        {
+          "text": "Please turn your ___ on.",
+          "answer": "camera",
+          "options": [
+            "camera",
+            "microphone",
+            "screen"
+          ],
+          "hu": "Kérlek, kapcsold be a kamerát."
+        },
+        {
+          "text": "Please turn your ___ on.",
+          "answer": "microphone",
+          "options": [
+            "microphone",
+            "camera",
+            "screen"
+          ],
+          "hu": "Kérlek, kapcsold be a mikrofont."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "screen",
+          "options": [
+            "screen",
+            "camera",
+            "microphone"
+          ],
+          "hu": "(képernyő)"
+        }
+      ]
+    },
+    {
+      "id": "act_267",
       "type": "phrase-match",
       "items": [
         "chunk_call_camera",
@@ -219,7 +281,25 @@
       ]
     },
     {
-      "id": "act_176",
+      "id": "act_268",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Please turn your camera on.",
+          "hu": "Kérlek, kapcsold be a kamerát."
+        },
+        {
+          "en": "Please turn your microphone on.",
+          "hu": "Kérlek, kapcsold be a mikrofont."
+        },
+        {
+          "en": "Let's start today's lesson.",
+          "hu": "Kezdjük a mai órát."
+        }
+      ]
+    },
+    {
+      "id": "act_269",
       "type": "typed",
       "items": [
         "lex_lesson",
@@ -229,17 +309,31 @@
       ]
     },
     {
-      "id": "act_177",
+      "id": "act_270",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_178",
+      "id": "act_271",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "lesson",
+            "start",
+            "ready"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_272",
       "type": "conversation",
       "dialogueId": "dlg_student_mic"
     },
     {
-      "id": "act_179",
+      "id": "act_273",
       "type": "review",
       "items": [
         "lex_hobby",

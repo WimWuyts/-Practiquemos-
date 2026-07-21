@@ -67,7 +67,10 @@
   "chunks": [
     "chunk_ask_followup_why",
     "chunk_op_ithink",
-    "chunk_op_agree"
+    "chunk_op_agree",
+    "chunk_op_notsure",
+    "chunk_op_favourite",
+    "chunk_op_prefer"
   ],
   "grammarCards": [
     "gr_comparatives"
@@ -78,7 +81,7 @@
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_130",
+      "id": "act_198",
       "type": "intro",
       "items": [
         "lex_favourite",
@@ -92,7 +95,7 @@
       ]
     },
     {
-      "id": "act_131",
+      "id": "act_199",
       "type": "listen-choose",
       "items": [
         "lex_favourite",
@@ -104,7 +107,18 @@
       ]
     },
     {
-      "id": "act_132",
+      "id": "act_200",
+      "type": "icon-choice",
+      "items": [
+        "lex_favourite",
+        "lex_interesting",
+        "lex_boring",
+        "lex_beautiful",
+        "lex_horse"
+      ]
+    },
+    {
+      "id": "act_201",
       "type": "match",
       "items": [
         "lex_favourite",
@@ -116,27 +130,94 @@
       ]
     },
     {
-      "id": "act_133",
+      "id": "act_202",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "green"
     },
     {
-      "id": "act_134",
+      "id": "act_203",
       "type": "grammar",
       "grammarId": "gr_comparatives"
     },
     {
-      "id": "act_135",
+      "id": "act_204",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Cooking is my ___ hobby.",
+          "answer": "favourite",
+          "options": [
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "A főzés a kedvenc hobbim."
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "interesting",
+          "options": [
+            "interesting",
+            "favourite",
+            "boring"
+          ],
+          "hu": "(érdekes)"
+        },
+        {
+          "text": "It is very ___.",
+          "answer": "boring",
+          "options": [
+            "boring",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "(unalmas)"
+        },
+        {
+          "text": "The lake is ___.",
+          "answer": "beautiful",
+          "options": [
+            "beautiful",
+            "favourite",
+            "interesting"
+          ],
+          "hu": "A tó gyönyörű."
+        }
+      ]
+    },
+    {
+      "id": "act_205",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_why",
         "chunk_op_ithink",
-        "chunk_op_agree"
+        "chunk_op_agree",
+        "chunk_op_notsure",
+        "chunk_op_favourite",
+        "chunk_op_prefer"
       ]
     },
     {
-      "id": "act_136",
+      "id": "act_206",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I think it's very nice.",
+          "hu": "Szerintem nagyon szép."
+        },
+        {
+          "en": "Yes, me too.",
+          "hu": "Igen, én is."
+        },
+        {
+          "en": "I'm not sure.",
+          "hu": "Nem vagyok biztos benne."
+        }
+      ]
+    },
+    {
+      "id": "act_207",
       "type": "typed",
       "items": [
         "lex_favourite",
@@ -146,12 +227,31 @@
       ]
     },
     {
-      "id": "act_137",
+      "id": "act_208",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_138",
+      "id": "act_209",
+      "type": "minimal-pair",
+      "focusId": "snd_th"
+    },
+    {
+      "id": "act_210",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "odd": "my"
+        }
+      ]
+    },
+    {
+      "id": "act_211",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

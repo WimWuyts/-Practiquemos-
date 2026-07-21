@@ -1240,5 +1240,1343 @@
     ],
     "dialoguePlacements": [],
     "needsReview": true
+  },
+  {
+    "id": "chunk_sm_longtime",
+    "intention": "greet warmly after time apart",
+    "en": "It's lovely to see you!",
+    "hu": "De jó látni téged!",
+    "register": "warm",
+    "firstLesson": "u01-l02",
+    "variants": [
+      "So nice to see you!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "It's lovely to see you!",
+      "So nice to see you!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sm_howsfamily",
+    "intention": "ask about the family",
+    "en": "How is your family?",
+    "hu": "Hogy van a családod?",
+    "register": "neutral",
+    "firstLesson": "u02-l02",
+    "variants": [
+      "How is everyone?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "How is your family?",
+      "How is everyone?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sm_takecare",
+    "intention": "close warmly",
+    "en": "Take care!",
+    "hu": "Vigyázz magadra!",
+    "register": "warm",
+    "firstLesson": "u07-l02",
+    "variants": [
+      "Take care of yourself!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Take care!",
+      "Take care of yourself!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sm_seeyou",
+    "intention": "say see you later",
+    "en": "See you soon!",
+    "hu": "Hamarosan találkozunk!",
+    "register": "neutral",
+    "firstLesson": "u07-l02",
+    "variants": [
+      "See you later!",
+      "See you next week!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "See you soon!",
+      "See you later!",
+      "See you next week!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sm_haveniceday",
+    "intention": "wish a nice day",
+    "en": "Have a nice day!",
+    "hu": "Szép napot!",
+    "register": "warm",
+    "firstLesson": "u10-l01",
+    "variants": [
+      "Have a lovely day!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Have a nice day!",
+      "Have a lovely day!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sm_welcome",
+    "intention": "welcome someone",
+    "en": "Welcome! Come in.",
+    "hu": "Üdvözöllek! Gyere be.",
+    "register": "warm",
+    "firstLesson": "u16-l01",
+    "variants": [
+      "Please come in."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Welcome! Come in.",
+      "Please come in."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_id_age",
+    "intention": "say your age area",
+    "en": "I'm over seventy.",
+    "hu": "Hetven fölött vagyok.",
+    "register": "neutral",
+    "firstLesson": "u01-l02",
+    "variants": [
+      "I'm in my seventies."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm over seventy.",
+      "I'm in my seventies."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_id_job2",
+    "intention": "say you are retired",
+    "en": "I'm retired now.",
+    "hu": "Most nyugdíjas vagyok.",
+    "register": "neutral",
+    "firstLesson": "u01-l02",
+    "variants": [
+      "I am retired."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm retired now.",
+      "I am retired."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_id_teachonline",
+    "intention": "say what you do",
+    "en": "I teach Hungarian online.",
+    "hu": "Magyart tanítok online.",
+    "register": "neutral",
+    "firstLesson": "u03-l02",
+    "variants": [
+      "I teach children online."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I teach Hungarian online.",
+      "I teach children online."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_id_thisis",
+    "intention": "introduce a third person",
+    "en": "This is my sister, Margó.",
+    "hu": "Ez a nővérem, Margó.",
+    "register": "neutral",
+    "firstLesson": "u02-l02",
+    "variants": [
+      "Let me introduce my sister."
+    ],
+    "slots": [
+      "name"
+    ],
+    "acceptedForms": [
+      "This is my sister, Margó.",
+      "Let me introduce my sister."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fam_livesin",
+    "intention": "say where a relative lives",
+    "en": "My niece lives in Denmark.",
+    "hu": "Az unokahúgom Dániában él.",
+    "register": "neutral",
+    "firstLesson": "u02-l01",
+    "variants": [
+      "She lives abroad."
+    ],
+    "slots": [
+      "place"
+    ],
+    "acceptedForms": [
+      "My niece lives in Denmark.",
+      "She lives abroad."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fam_howmany",
+    "intention": "ask number of siblings",
+    "en": "How many brothers and sisters do you have?",
+    "hu": "Hány testvéred van?",
+    "register": "neutral",
+    "firstLesson": "u02-l02",
+    "variants": [
+      "Do you have a big family?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "How many brothers and sisters do you have?",
+      "Do you have a big family?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fam_married",
+    "intention": "ask about partner",
+    "en": "Are you married?",
+    "hu": "Házas vagy?",
+    "register": "neutral",
+    "firstLesson": "u02-l02",
+    "variants": [
+      "Do you have a partner?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Are you married?",
+      "Do you have a partner?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fam_proud",
+    "intention": "express warmth about family",
+    "en": "I'm very proud of my family.",
+    "hu": "Nagyon büszke vagyok a családomra.",
+    "register": "warm",
+    "firstLesson": "u16-l01",
+    "variants": [
+      "I love my family very much."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm very proud of my family.",
+      "I love my family very much."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_op_notsure",
+    "intention": "say you're not sure",
+    "en": "I'm not sure.",
+    "hu": "Nem vagyok biztos benne.",
+    "register": "neutral",
+    "firstLesson": "u08-l02",
+    "variants": [
+      "I don't know."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm not sure.",
+      "I don't know."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_op_ilike2",
+    "intention": "say what you enjoy",
+    "en": "I really enjoy it.",
+    "hu": "Nagyon élvezem.",
+    "register": "neutral",
+    "firstLesson": "u08-l01",
+    "variants": [
+      "I love it."
+    ],
+    "slots": [
+      "activity"
+    ],
+    "acceptedForms": [
+      "I really enjoy it.",
+      "I love it."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_op_favourite",
+    "intention": "name a favourite",
+    "en": "My favourite hobby is cooking.",
+    "hu": "A kedvenc hobbim a főzés.",
+    "register": "neutral",
+    "firstLesson": "u08-l02",
+    "variants": [
+      "I love cooking most of all."
+    ],
+    "slots": [
+      "thing"
+    ],
+    "acceptedForms": [
+      "My favourite hobby is cooking.",
+      "I love cooking most of all."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_op_prefer",
+    "intention": "state a preference",
+    "en": "I prefer tea to coffee.",
+    "hu": "Jobban szeretem a teát, mint a kávét.",
+    "register": "neutral",
+    "firstLesson": "u08-l02",
+    "variants": [
+      "I like tea more than coffee."
+    ],
+    "slots": [
+      "a",
+      "b"
+    ],
+    "acceptedForms": [
+      "I prefer tea to coffee.",
+      "I like tea more than coffee."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fe_tired",
+    "intention": "say you feel tired",
+    "en": "I'm a little tired today.",
+    "hu": "Ma kicsit fáradt vagyok.",
+    "register": "neutral",
+    "firstLesson": "u15-l01",
+    "variants": [
+      "I feel tired."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm a little tired today.",
+      "I feel tired."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fe_happy",
+    "intention": "express happiness",
+    "en": "I'm so happy to see you.",
+    "hu": "Nagyon örülök, hogy látlak.",
+    "register": "warm",
+    "firstLesson": "u16-l01",
+    "variants": [
+      "It makes me happy."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm so happy to see you.",
+      "It makes me happy."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_dl_getup",
+    "intention": "say when you get up",
+    "en": "I get up at seven o'clock.",
+    "hu": "Hétkor kelek.",
+    "register": "neutral",
+    "firstLesson": "u04-l01",
+    "variants": [
+      "I wake up early."
+    ],
+    "slots": [
+      "time"
+    ],
+    "acceptedForms": [
+      "I get up at seven o'clock.",
+      "I wake up early."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_dl_usually",
+    "intention": "describe a habit",
+    "en": "I usually cook in the evening.",
+    "hu": "Általában este főzök.",
+    "register": "neutral",
+    "firstLesson": "u04-l01",
+    "variants": [
+      "I often cook dinner."
+    ],
+    "slots": [
+      "activity"
+    ],
+    "acceptedForms": [
+      "I usually cook in the evening.",
+      "I often cook dinner."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_dl_everyday",
+    "intention": "say something is daily",
+    "en": "I do this every day.",
+    "hu": "Ezt minden nap csinálom.",
+    "register": "neutral",
+    "firstLesson": "u04-l01",
+    "variants": [
+      "I do it every day."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I do this every day.",
+      "I do it every day."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fd_hungry",
+    "intention": "say you're hungry",
+    "en": "I'm a little hungry.",
+    "hu": "Kicsit éhes vagyok.",
+    "register": "neutral",
+    "firstLesson": "u05-l01",
+    "variants": [
+      "I'm hungry."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm a little hungry.",
+      "I'm hungry."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fd_recipe",
+    "intention": "offer to share cooking",
+    "en": "I can show you the recipe.",
+    "hu": "Megmutathatom a receptet.",
+    "register": "neutral",
+    "firstLesson": "u05-l02",
+    "variants": [
+      "Let me show you how I cook it."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I can show you the recipe.",
+      "Let me show you how I cook it."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fd_howmuch2",
+    "intention": "ask a price when shopping",
+    "en": "How much is this, please?",
+    "hu": "Mennyibe kerül ez, kérem?",
+    "register": "polite",
+    "firstLesson": "u05-l02",
+    "variants": [
+      "What's the price?"
+    ],
+    "slots": [
+      "item"
+    ],
+    "acceptedForms": [
+      "How much is this, please?",
+      "What's the price?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fd_takeit",
+    "intention": "decide to buy",
+    "en": "I'll take it, thank you.",
+    "hu": "Megveszem, köszönöm.",
+    "register": "neutral",
+    "firstLesson": "u05-l02",
+    "variants": [
+      "I'll take this one."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'll take it, thank you.",
+      "I'll take this one."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fd_delicious",
+    "intention": "praise food",
+    "en": "This is delicious!",
+    "hu": "Ez finom!",
+    "register": "warm",
+    "firstLesson": "u16-l01",
+    "variants": [
+      "It tastes wonderful!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "This is delicious!",
+      "It tastes wonderful!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tm_whattime",
+    "intention": "ask the time",
+    "en": "What time is it?",
+    "hu": "Mennyi az idő?",
+    "register": "neutral",
+    "firstLesson": "u06-l01",
+    "variants": [
+      "Do you have the time?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "What time is it?",
+      "Do you have the time?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tm_freeon",
+    "intention": "say when you're free",
+    "en": "I'm free on Saturday afternoon.",
+    "hu": "Szombat délután ráérek.",
+    "register": "neutral",
+    "firstLesson": "u06-l02",
+    "variants": [
+      "I have time at the weekend."
+    ],
+    "slots": [
+      "day"
+    ],
+    "acceptedForms": [
+      "I'm free on Saturday afternoon.",
+      "I have time at the weekend."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_we_nice",
+    "intention": "comment on nice weather",
+    "en": "The weather is lovely today.",
+    "hu": "Ma csodás az idő.",
+    "register": "neutral",
+    "firstLesson": "u06-l02",
+    "variants": [
+      "It's a beautiful day."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "The weather is lovely today.",
+      "It's a beautiful day."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_we_cold",
+    "intention": "comment on cold weather",
+    "en": "It's very cold today.",
+    "hu": "Ma nagyon hideg van.",
+    "register": "neutral",
+    "firstLesson": "u06-l02",
+    "variants": [
+      "It's freezing today."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "It's very cold today.",
+      "It's freezing today."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pl_shallwe",
+    "intention": "suggest doing something",
+    "en": "Shall we meet on Sunday?",
+    "hu": "Találkozzunk vasárnap?",
+    "register": "neutral",
+    "firstLesson": "u06-l02",
+    "variants": [
+      "Let's meet on Sunday."
+    ],
+    "slots": [
+      "day"
+    ],
+    "acceptedForms": [
+      "Shall we meet on Sunday?",
+      "Let's meet on Sunday."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pl_goodidea",
+    "intention": "accept an idea",
+    "en": "That's a good idea!",
+    "hu": "Ez jó ötlet!",
+    "register": "neutral",
+    "firstLesson": "u06-l02",
+    "variants": [
+      "Sounds good!",
+      "Great idea!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "That's a good idea!",
+      "Sounds good!",
+      "Great idea!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pl_cantsorry",
+    "intention": "decline politely",
+    "en": "I'm sorry, I can't that day.",
+    "hu": "Sajnálom, aznap nem tudok.",
+    "register": "polite",
+    "firstLesson": "u06-l02",
+    "variants": [
+      "I'm afraid I'm busy then."
+    ],
+    "slots": [
+      "day"
+    ],
+    "acceptedForms": [
+      "I'm sorry, I can't that day.",
+      "I'm afraid I'm busy then."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ph_callyou",
+    "intention": "say you'll call",
+    "en": "I'll call you on Sunday.",
+    "hu": "Vasárnap felhívlak.",
+    "register": "neutral",
+    "firstLesson": "u07-l01",
+    "variants": [
+      "I'll ring you later."
+    ],
+    "slots": [
+      "day"
+    ],
+    "acceptedForms": [
+      "I'll call you on Sunday.",
+      "I'll ring you later."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ph_badline",
+    "intention": "report a bad connection",
+    "en": "Sorry, the line is bad.",
+    "hu": "Bocsi, rossz a vonal.",
+    "register": "neutral",
+    "firstLesson": "u07-l01",
+    "variants": [
+      "The connection is bad."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Sorry, the line is bad.",
+      "The connection is bad."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ph_seeyoulater",
+    "intention": "end a video call",
+    "en": "Talk to you soon. Bye!",
+    "hu": "Hamarosan beszélünk. Szia!",
+    "register": "warm",
+    "firstLesson": "u07-l02",
+    "variants": [
+      "See you soon. Bye!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Talk to you soon. Bye!",
+      "See you soon. Bye!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ph_sendmessage",
+    "intention": "say you'll message",
+    "en": "I'll send you a message.",
+    "hu": "Küldök egy üzenetet.",
+    "register": "neutral",
+    "firstLesson": "u07-l02",
+    "variants": [
+      "I'll text you."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'll send you a message.",
+      "I'll text you."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tw_wheretoilet",
+    "intention": "ask for the toilet",
+    "en": "Where is the toilet, please?",
+    "hu": "Hol van a mosdó, kérem?",
+    "register": "polite",
+    "firstLesson": "u09-l01",
+    "variants": [
+      "Excuse me, where's the toilet?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Where is the toilet, please?",
+      "Excuse me, where's the toilet?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tw_isitfar",
+    "intention": "ask about distance",
+    "en": "Is it far from here?",
+    "hu": "Messze van innen?",
+    "register": "neutral",
+    "firstLesson": "u09-l01",
+    "variants": [
+      "How far is it?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Is it far from here?",
+      "How far is it?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tw_lost",
+    "intention": "say you are lost",
+    "en": "I think I'm lost.",
+    "hu": "Azt hiszem, eltévedtem.",
+    "register": "neutral",
+    "firstLesson": "u09-l01",
+    "variants": [
+      "I've lost my way."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I think I'm lost.",
+      "I've lost my way."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tr_whichbus",
+    "intention": "ask which bus",
+    "en": "Which bus goes to the centre?",
+    "hu": "Melyik busz megy a központba?",
+    "register": "neutral",
+    "firstLesson": "u09-l02",
+    "variants": [
+      "Which train do I take?"
+    ],
+    "slots": [
+      "place"
+    ],
+    "acceptedForms": [
+      "Which bus goes to the centre?",
+      "Which train do I take?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tr_oneticket",
+    "intention": "buy a ticket",
+    "en": "One ticket, please.",
+    "hu": "Egy jegyet kérek.",
+    "register": "polite",
+    "firstLesson": "u09-l02",
+    "variants": [
+      "Two tickets, please."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "One ticket, please.",
+      "Two tickets, please."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tr_getoff",
+    "intention": "ask where to get off",
+    "en": "Where do I get off?",
+    "hu": "Hol kell leszállnom?",
+    "register": "neutral",
+    "firstLesson": "u09-l02",
+    "variants": [
+      "Which stop is it?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Where do I get off?",
+      "Which stop is it?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sv_tablefor",
+    "intention": "ask for a table",
+    "en": "A table for two, please.",
+    "hu": "Egy asztalt kérnék kettőnek.",
+    "register": "polite",
+    "firstLesson": "u10-l01",
+    "variants": [
+      "Do you have a free table?"
+    ],
+    "slots": [
+      "number"
+    ],
+    "acceptedForms": [
+      "A table for two, please.",
+      "Do you have a free table?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sv_recommend",
+    "intention": "ask for a recommendation",
+    "en": "What do you recommend?",
+    "hu": "Mit ajánl?",
+    "register": "polite",
+    "firstLesson": "u10-l01",
+    "variants": [
+      "What's good here?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "What do you recommend?",
+      "What's good here?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sv_water",
+    "intention": "order water",
+    "en": "A glass of water, please.",
+    "hu": "Egy pohár vizet kérek.",
+    "register": "polite",
+    "firstLesson": "u10-l01",
+    "variants": [
+      "Some water, please."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "A glass of water, please.",
+      "Some water, please."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sv_checkin",
+    "intention": "hotel check-in",
+    "en": "I'd like to check in, please.",
+    "hu": "Szeretnék bejelentkezni.",
+    "register": "polite",
+    "firstLesson": "u10-l02",
+    "variants": [
+      "I have a booking."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'd like to check in, please.",
+      "I have a booking."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sv_roomproblem",
+    "intention": "report a small problem",
+    "en": "Excuse me, there's a problem with my room.",
+    "hu": "Elnézést, gond van a szobámmal.",
+    "register": "polite",
+    "firstLesson": "u10-l02",
+    "variants": [
+      "My room has a problem."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Excuse me, there's a problem with my room.",
+      "My room has a problem."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_sv_whatstime_bf",
+    "intention": "ask about breakfast time",
+    "en": "What time is breakfast?",
+    "hu": "Hánykor van a reggeli?",
+    "register": "neutral",
+    "firstLesson": "u10-l02",
+    "variants": [
+      "When is breakfast served?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "What time is breakfast?",
+      "When is breakfast served?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_te_canyousee",
+    "intention": "check the picture",
+    "en": "Can you see my screen?",
+    "hu": "Látod a képernyőmet?",
+    "register": "neutral",
+    "firstLesson": "u11-l01",
+    "variants": [
+      "Can you see this?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Can you see my screen?",
+      "Can you see this?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_te_looksgood",
+    "intention": "praise work",
+    "en": "Very good! That's correct.",
+    "hu": "Nagyon jó! Ez helyes.",
+    "register": "warm",
+    "firstLesson": "u11-l01",
+    "variants": [
+      "Well done, that's right!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Very good! That's correct.",
+      "Well done, that's right!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_te_tryagain",
+    "intention": "encourage a student",
+    "en": "Good try! Let's try again.",
+    "hu": "Jó próbálkozás! Próbáljuk újra.",
+    "register": "warm",
+    "firstLesson": "u11-l01",
+    "variants": [
+      "Nearly! Try once more."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Good try! Let's try again.",
+      "Nearly! Try once more."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_te_openbook",
+    "intention": "give an instruction",
+    "en": "Open your book, please.",
+    "hu": "Nyisd ki a könyvet, kérlek.",
+    "register": "neutral",
+    "firstLesson": "u11-l01",
+    "variants": [
+      "Please open your book."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Open your book, please.",
+      "Please open your book."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_te_seeyou",
+    "intention": "end a lesson",
+    "en": "That's all for today. Well done!",
+    "hu": "Ez minden mára. Ügyes voltál!",
+    "register": "warm",
+    "firstLesson": "u11-l02",
+    "variants": [
+      "Great work today!"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "That's all for today. Well done!",
+      "Great work today!"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pa_wasat",
+    "intention": "say where you were",
+    "en": "I was at home yesterday.",
+    "hu": "Tegnap otthon voltam.",
+    "register": "neutral",
+    "firstLesson": "u12-l01",
+    "variants": [
+      "I stayed at home."
+    ],
+    "slots": [
+      "place"
+    ],
+    "acceptedForms": [
+      "I was at home yesterday.",
+      "I stayed at home."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pa_wentto",
+    "intention": "say where you went",
+    "en": "I went to the market.",
+    "hu": "Elmentem a piacra.",
+    "register": "neutral",
+    "firstLesson": "u12-l01",
+    "variants": [
+      "We went to the lake."
+    ],
+    "slots": [
+      "place"
+    ],
+    "acceptedForms": [
+      "I went to the market.",
+      "We went to the lake."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pa_wasnice",
+    "intention": "give a past opinion",
+    "en": "It was really nice.",
+    "hu": "Nagyon jó volt.",
+    "register": "neutral",
+    "firstLesson": "u12-l02",
+    "variants": [
+      "It was wonderful."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "It was really nice.",
+      "It was wonderful."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_pa_howwas",
+    "intention": "ask about the past",
+    "en": "How was your weekend?",
+    "hu": "Milyen volt a hétvégéd?",
+    "register": "neutral",
+    "firstLesson": "u12-l02",
+    "variants": [
+      "How was your trip?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "How was your weekend?",
+      "How was your trip?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tv_needto",
+    "intention": "say what you must do",
+    "en": "I need to pack my suitcase.",
+    "hu": "Be kell csomagolnom a bőröndöt.",
+    "register": "neutral",
+    "firstLesson": "u13-l01",
+    "variants": [
+      "I have to get ready."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I need to pack my suitcase.",
+      "I have to get ready."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_tv_planto",
+    "intention": "share a travel plan",
+    "en": "I'm going to visit Kira in Denmark.",
+    "hu": "Meglátogatom Kirát Dániában.",
+    "register": "neutral",
+    "firstLesson": "u13-l01",
+    "variants": [
+      "I plan to travel to Denmark."
+    ],
+    "slots": [
+      "person",
+      "place"
+    ],
+    "acceptedForms": [
+      "I'm going to visit Kira in Denmark.",
+      "I plan to travel to Denmark."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ai_wherecheckin2",
+    "intention": "ask for check-in",
+    "en": "Excuse me, where do I check in?",
+    "hu": "Elnézést, hol tudok becsekkolni?",
+    "register": "polite",
+    "firstLesson": "u14-l01",
+    "variants": [
+      "Where is the check-in desk?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Excuse me, where do I check in?",
+      "Where is the check-in desk?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ai_myflight",
+    "intention": "state your flight",
+    "en": "My flight is at ten o'clock.",
+    "hu": "A járatom tízkor indul.",
+    "register": "neutral",
+    "firstLesson": "u14-l01",
+    "variants": [
+      "I'm on the ten o'clock flight."
+    ],
+    "slots": [
+      "time"
+    ],
+    "acceptedForms": [
+      "My flight is at ten o'clock.",
+      "I'm on the ten o'clock flight."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_ai_dontunderstand2",
+    "intention": "ask for help understanding",
+    "en": "Sorry, I didn't understand. Could you help me?",
+    "hu": "Elnézést, nem értettem. Tudna segíteni?",
+    "register": "polite",
+    "firstLesson": "u14-l01",
+    "variants": [
+      "I don't understand. Please help me."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Sorry, I didn't understand. Could you help me?",
+      "I don't understand. Please help me."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fl_firsttime",
+    "intention": "tell crew it's your first flight",
+    "en": "This is my first flight. I'm a little nervous.",
+    "hu": "Ez az első repülésem. Kicsit ideges vagyok.",
+    "register": "neutral",
+    "firstLesson": "u15-l01",
+    "variants": [
+      "It's my first time flying."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "This is my first flight. I'm a little nervous.",
+      "It's my first time flying."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fl_helpcalm",
+    "intention": "ask for reassurance",
+    "en": "Could you help me? I'm afraid of flying.",
+    "hu": "Tudna segíteni? Félek a repüléstől.",
+    "register": "polite",
+    "firstLesson": "u15-l01",
+    "variants": [
+      "I'm scared. Please help me."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Could you help me? I'm afraid of flying.",
+      "I'm scared. Please help me."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_fl_needanything",
+    "intention": "respond you're okay",
+    "en": "I'm okay now, thank you.",
+    "hu": "Most már jól vagyok, köszönöm.",
+    "register": "warm",
+    "firstLesson": "u15-l02",
+    "variants": [
+      "I feel better, thank you."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "I'm okay now, thank you.",
+      "I feel better, thank you."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_rp_saythatagain",
+    "intention": "ask to repeat gently",
+    "en": "Sorry? Could you say that again?",
+    "hu": "Tessék? Meg tudná ismételni?",
+    "register": "polite",
+    "firstLesson": "u07-l01",
+    "variants": [
+      "Pardon? Again, please?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Sorry? Could you say that again?",
+      "Pardon? Again, please?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_rp_writeit",
+    "intention": "ask someone to write it",
+    "en": "Could you write it down, please?",
+    "hu": "Le tudná írni, kérem?",
+    "register": "polite",
+    "firstLesson": "u09-l01",
+    "variants": [
+      "Please write it for me."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Could you write it down, please?",
+      "Please write it for me."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_rp_isthisright",
+    "intention": "check understanding",
+    "en": "Is this right?",
+    "hu": "Ez így jó?",
+    "register": "neutral",
+    "firstLesson": "u11-l01",
+    "variants": [
+      "Am I correct?"
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Is this right?",
+      "Am I correct?"
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
+  },
+  {
+    "id": "chunk_rp_onemoment",
+    "intention": "ask for a moment",
+    "en": "Just a moment, please.",
+    "hu": "Egy pillanat, kérem.",
+    "register": "polite",
+    "firstLesson": "u07-l01",
+    "variants": [
+      "One second, please."
+    ],
+    "slots": [],
+    "acceptedForms": [
+      "Just a moment, please.",
+      "One second, please."
+    ],
+    "dialoguePlacements": [],
+    "needsReview": true
   }
 ]

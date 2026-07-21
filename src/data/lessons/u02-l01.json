@@ -97,7 +97,9 @@
     "lex_age",
     "lex_address"
   ],
-  "chunks": [],
+  "chunks": [
+    "chunk_fam_livesin"
+  ],
   "grammarCards": [
     "gr_possadj",
     "gr_poss_s",
@@ -109,7 +111,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_21",
+      "id": "act_32",
       "type": "intro",
       "items": [
         "lex_family",
@@ -123,7 +125,7 @@
       ]
     },
     {
-      "id": "act_22",
+      "id": "act_33",
       "type": "listen-choose",
       "items": [
         "lex_family",
@@ -135,7 +137,18 @@
       ]
     },
     {
-      "id": "act_23",
+      "id": "act_34",
+      "type": "icon-choice",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad"
+      ]
+    },
+    {
+      "id": "act_35",
       "type": "match",
       "items": [
         "lex_family",
@@ -147,22 +160,85 @@
       ]
     },
     {
-      "id": "act_24",
+      "id": "act_36",
       "type": "grammar",
       "grammarId": "gr_possadj"
     },
     {
-      "id": "act_25",
+      "id": "act_37",
       "type": "grammar",
       "grammarId": "gr_poss_s"
     },
     {
-      "id": "act_26",
+      "id": "act_38",
       "type": "grammar",
       "grammarId": "gr_plural"
     },
     {
-      "id": "act_27",
+      "id": "act_39",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I love my ___.",
+          "answer": "family",
+          "options": [
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "Szeretem a családomat."
+        },
+        {
+          "text": "My ___ is kind.",
+          "answer": "mother",
+          "options": [
+            "mother",
+            "family",
+            "father"
+          ],
+          "hu": "Az anyám kedves."
+        },
+        {
+          "text": "My ___ is retired.",
+          "answer": "father",
+          "options": [
+            "father",
+            "family",
+            "mother"
+          ],
+          "hu": "Az apám nyugdíjas."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "mum",
+          "options": [
+            "mum",
+            "family",
+            "mother"
+          ],
+          "hu": "(anyu)"
+        }
+      ]
+    },
+    {
+      "id": "act_40",
+      "type": "phrase-match",
+      "items": [
+        "chunk_fam_livesin"
+      ]
+    },
+    {
+      "id": "act_41",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "My niece lives in Denmark.",
+          "hu": "Az unokahúgom Dániában él."
+        }
+      ]
+    },
+    {
+      "id": "act_42",
       "type": "typed",
       "items": [
         "lex_family",
@@ -172,12 +248,31 @@
       ]
     },
     {
-      "id": "act_28",
+      "id": "act_43",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_29",
+      "id": "act_44",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_45",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "family",
+            "mother",
+            "father"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_46",
       "type": "review",
       "items": [
         "lex_hello",
@@ -187,6 +282,12 @@
         "lex_good_morning",
         "lex_good_afternoon"
       ]
+    },
+    {
+      "id": "act_389",
+      "type": "spelling-build",
+      "family": "sf_wh",
+      "word": "what"
     }
   ],
   "completionRule": {

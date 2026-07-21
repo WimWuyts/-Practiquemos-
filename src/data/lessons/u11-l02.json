@@ -21,7 +21,8 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_teach_parent"
+    "chunk_teach_parent",
+    "chunk_te_seeyou"
   ],
   "grammarCards": [
     "gr_can"
@@ -32,7 +33,7 @@
   "conversationId": "dlg_student_parent",
   "activities": [
     {
-      "id": "act_180",
+      "id": "act_274",
       "type": "intro",
       "items": [
         "lex_click",
@@ -44,7 +45,7 @@
       ]
     },
     {
-      "id": "act_181",
+      "id": "act_275",
       "type": "listen-choose",
       "items": [
         "lex_click",
@@ -56,7 +57,18 @@
       ]
     },
     {
-      "id": "act_182",
+      "id": "act_276",
+      "type": "icon-choice",
+      "items": [
+        "lex_click",
+        "lex_use",
+        "lex_email",
+        "lex_mobile",
+        "lex_app"
+      ]
+    },
+    {
+      "id": "act_277",
       "type": "match",
       "items": [
         "lex_click",
@@ -68,19 +80,80 @@
       ]
     },
     {
-      "id": "act_183",
+      "id": "act_278",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_184",
-      "type": "phrase-match",
+      "id": "act_279",
+      "type": "gapfill",
       "items": [
-        "chunk_teach_parent"
+        {
+          "text": "I ___ every day.",
+          "answer": "click",
+          "options": [
+            "click",
+            "turn on",
+            "turn off"
+          ],
+          "hu": "(kattintani)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "use",
+          "options": [
+            "use",
+            "turn on",
+            "turn off"
+          ],
+          "hu": "(használni)"
+        },
+        {
+          "text": "This is an ___.",
+          "answer": "email",
+          "options": [
+            "email",
+            "camera",
+            "microphone"
+          ],
+          "hu": "(e-mail)"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "mobile",
+          "options": [
+            "mobile",
+            "camera",
+            "microphone"
+          ],
+          "hu": "(mobil(telefon))"
+        }
       ]
     },
     {
-      "id": "act_185",
+      "id": "act_280",
+      "type": "phrase-match",
+      "items": [
+        "chunk_teach_parent",
+        "chunk_te_seeyou"
+      ]
+    },
+    {
+      "id": "act_281",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Can you ask your parents to come?",
+          "hu": "Meg tudod kérni a szüleidet, hogy jöjjenek?"
+        },
+        {
+          "en": "That's all for today. Well done!",
+          "hu": "Ez minden mára. Ügyes voltál!"
+        }
+      ]
+    },
+    {
+      "id": "act_282",
       "type": "typed",
       "items": [
         "lex_click",
@@ -90,12 +163,26 @@
       ]
     },
     {
-      "id": "act_186",
+      "id": "act_283",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_187",
+      "id": "act_284",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "click",
+            "use",
+            "email"
+          ],
+          "odd": "be"
+        }
+      ]
+    },
+    {
+      "id": "act_285",
       "type": "conversation",
       "dialogueId": "dlg_student_parent"
     }

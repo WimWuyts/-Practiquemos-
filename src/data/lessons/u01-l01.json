@@ -96,6 +96,17 @@
     },
     {
       "id": "act_4",
+      "type": "icon-choice",
+      "items": [
+        "lex_hello",
+        "lex_hi",
+        "lex_goodbye",
+        "lex_bye",
+        "lex_good_morning"
+      ]
+    },
+    {
+      "id": "act_5",
       "type": "match",
       "items": [
         "lex_hello",
@@ -107,28 +118,74 @@
       ]
     },
     {
-      "id": "act_5",
+      "id": "act_6",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "name"
     },
     {
-      "id": "act_6",
+      "id": "act_7",
       "type": "grammar",
       "grammarId": "gr_be"
     },
     {
-      "id": "act_7",
+      "id": "act_8",
       "type": "grammar",
       "grammarId": "gr_questions_wh"
     },
     {
-      "id": "act_8",
+      "id": "act_9",
       "type": "grammar",
       "grammarId": "gr_articles"
     },
     {
-      "id": "act_9",
+      "id": "act_10",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___! I'm Marta.",
+          "answer": "hello",
+          "options": [
+            "hello",
+            "hi",
+            "goodbye"
+          ],
+          "hu": "Szia! Marta vagyok."
+        },
+        {
+          "text": "___.",
+          "answer": "hi",
+          "options": [
+            "hi",
+            "hello",
+            "goodbye"
+          ],
+          "hu": "(szia)"
+        },
+        {
+          "text": "___! See you soon.",
+          "answer": "goodbye",
+          "options": [
+            "goodbye",
+            "hello",
+            "hi"
+          ],
+          "hu": "Viszlát! Hamarosan találkozunk."
+        },
+        {
+          "text": "___.",
+          "answer": "bye",
+          "options": [
+            "bye",
+            "hello",
+            "hi"
+          ],
+          "hu": "(szia (búcsú))"
+        }
+      ]
+    },
+    {
+      "id": "act_11",
       "type": "phrase-match",
       "items": [
         "chunk_greet_hello",
@@ -140,7 +197,25 @@
       ]
     },
     {
-      "id": "act_10",
+      "id": "act_12",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Hello, how are you?",
+          "hu": "Szia, hogy vagy?"
+        },
+        {
+          "en": "I'm fine, thank you.",
+          "hu": "Jól vagyok, köszönöm."
+        },
+        {
+          "en": "My name is Marta.",
+          "hu": "A nevem Marta."
+        }
+      ]
+    },
+    {
+      "id": "act_13",
       "type": "typed",
       "items": [
         "lex_hello",
@@ -150,14 +225,61 @@
       ]
     },
     {
-      "id": "act_11",
+      "id": "act_14",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_12",
+      "id": "act_15",
+      "type": "minimal-pair",
+      "focusId": "snd_short_vowels"
+    },
+    {
+      "id": "act_16",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "hello",
+            "hi",
+            "goodbye"
+          ],
+          "odd": "every day"
+        }
+      ]
+    },
+    {
+      "id": "act_17",
+      "type": "expand",
+      "question": {
+        "en": "How are you?",
+        "hu": "Hogy vagy?"
+      },
+      "steps": [
+        {
+          "en": "I'm good.",
+          "hu": "Jól vagyok."
+        },
+        {
+          "en": "I'm good. I'm at home.",
+          "hu": "Jól vagyok. Otthon vagyok."
+        },
+        {
+          "en": "I'm good. I'm at home, and I'm making coffee.",
+          "hu": "Jól vagyok. Otthon vagyok, és kávét készítek."
+        }
+      ]
+    },
+    {
+      "id": "act_18",
       "type": "conversation",
       "dialogueId": "dlg_endika_first"
+    },
+    {
+      "id": "act_387",
+      "type": "spelling-build",
+      "family": "sf_magic_e_o",
+      "word": "home"
     }
   ],
   "completionRule": {

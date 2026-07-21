@@ -187,7 +187,9 @@
     "lex_cut",
     "lex_size"
   ],
-  "chunks": [],
+  "chunks": [
+    "chunk_tm_whattime"
+  ],
   "grammarCards": [
     "gr_prepositions_time"
   ],
@@ -197,7 +199,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_86",
+      "id": "act_133",
       "type": "intro",
       "items": [
         "lex_time",
@@ -211,7 +213,7 @@
       ]
     },
     {
-      "id": "act_87",
+      "id": "act_134",
       "type": "listen-choose",
       "items": [
         "lex_time",
@@ -223,7 +225,18 @@
       ]
     },
     {
-      "id": "act_88",
+      "id": "act_135",
+      "type": "icon-choice",
+      "items": [
+        "lex_time",
+        "lex_hour",
+        "lex_minute",
+        "lex_today",
+        "lex_tomorrow"
+      ]
+    },
+    {
+      "id": "act_136",
       "type": "match",
       "items": [
         "lex_time",
@@ -235,18 +248,81 @@
       ]
     },
     {
-      "id": "act_89",
+      "id": "act_137",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "time"
     },
     {
-      "id": "act_90",
+      "id": "act_138",
       "type": "grammar",
       "grammarId": "gr_prepositions_time"
     },
     {
-      "id": "act_91",
+      "id": "act_139",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "What ___ is it?",
+          "answer": "time",
+          "options": [
+            "time",
+            "hour",
+            "minute"
+          ],
+          "hu": "Mennyi az idő?"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "hour",
+          "options": [
+            "hour",
+            "time",
+            "minute"
+          ],
+          "hu": "(óra (időtartam))"
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "minute",
+          "options": [
+            "minute",
+            "time",
+            "hour"
+          ],
+          "hu": "(perc)"
+        },
+        {
+          "text": "___ is a good day.",
+          "answer": "today",
+          "options": [
+            "today",
+            "time",
+            "hour"
+          ],
+          "hu": "Ma jó nap van."
+        }
+      ]
+    },
+    {
+      "id": "act_140",
+      "type": "phrase-match",
+      "items": [
+        "chunk_tm_whattime"
+      ]
+    },
+    {
+      "id": "act_141",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What time is it?",
+          "hu": "Mennyi az idő?"
+        }
+      ]
+    },
+    {
+      "id": "act_142",
       "type": "typed",
       "items": [
         "lex_time",
@@ -256,12 +332,26 @@
       ]
     },
     {
-      "id": "act_92",
+      "id": "act_143",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_93",
+      "id": "act_144",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "time",
+            "hour",
+            "minute"
+          ],
+          "odd": "name"
+        }
+      ]
+    },
+    {
+      "id": "act_145",
       "type": "review",
       "items": [
         "lex_hungary",

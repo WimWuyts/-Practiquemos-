@@ -25,7 +25,10 @@
   ],
   "reviewItems": [],
   "chunks": [
-    "chunk_trans_which"
+    "chunk_trans_which",
+    "chunk_tr_whichbus",
+    "chunk_tr_oneticket",
+    "chunk_tr_getoff"
   ],
   "grammarCards": [],
   "pronunciationFocus": [
@@ -34,7 +37,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_148",
+      "id": "act_226",
       "type": "intro",
       "items": [
         "lex_ticket",
@@ -48,7 +51,7 @@
       ]
     },
     {
-      "id": "act_149",
+      "id": "act_227",
       "type": "listen-choose",
       "items": [
         "lex_ticket",
@@ -60,7 +63,18 @@
       ]
     },
     {
-      "id": "act_150",
+      "id": "act_228",
+      "type": "icon-choice",
+      "items": [
+        "lex_ticket",
+        "lex_platform",
+        "lex_drive",
+        "lex_change",
+        "lex_fast"
+      ]
+    },
+    {
+      "id": "act_229",
       "type": "match",
       "items": [
         "lex_ticket",
@@ -72,14 +86,81 @@
       ]
     },
     {
-      "id": "act_151",
-      "type": "phrase-match",
+      "id": "act_230",
+      "type": "gapfill",
       "items": [
-        "chunk_trans_which"
+        {
+          "text": "I need a ___, please.",
+          "answer": "ticket",
+          "options": [
+            "ticket",
+            "station",
+            "bus"
+          ],
+          "hu": "Egy jegyet kérek."
+        },
+        {
+          "text": "This is a ___.",
+          "answer": "platform",
+          "options": [
+            "platform",
+            "station",
+            "bus"
+          ],
+          "hu": "(vágány / peron)"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "drive",
+          "options": [
+            "drive",
+            "change",
+            "catch"
+          ],
+          "hu": "(vezetni (autót))"
+        },
+        {
+          "text": "I ___ every day.",
+          "answer": "change",
+          "options": [
+            "change",
+            "drive",
+            "catch"
+          ],
+          "hu": "(változtatni / átszállni)"
+        }
       ]
     },
     {
-      "id": "act_152",
+      "id": "act_231",
+      "type": "phrase-match",
+      "items": [
+        "chunk_trans_which",
+        "chunk_tr_whichbus",
+        "chunk_tr_oneticket",
+        "chunk_tr_getoff"
+      ]
+    },
+    {
+      "id": "act_232",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Which bus goes to the airport?",
+          "hu": "Melyik busz megy a reptérre?"
+        },
+        {
+          "en": "Which bus goes to the centre?",
+          "hu": "Melyik busz megy a központba?"
+        },
+        {
+          "en": "One ticket, please.",
+          "hu": "Egy jegyet kérek."
+        }
+      ]
+    },
+    {
+      "id": "act_233",
       "type": "typed",
       "items": [
         "lex_ticket",
@@ -89,9 +170,28 @@
       ]
     },
     {
-      "id": "act_153",
+      "id": "act_234",
       "type": "pron-record",
       "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_235",
+      "type": "minimal-pair",
+      "focusId": "snd_final_cons"
+    },
+    {
+      "id": "act_236",
+      "type": "odd-one-out",
+      "groups": [
+        {
+          "words": [
+            "ticket",
+            "platform",
+            "drive"
+          ],
+          "odd": "name"
+        }
+      ]
     }
   ],
   "completionRule": {
