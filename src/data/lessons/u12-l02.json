@@ -39,7 +39,7 @@
   "conversationId": "dlg_endika_followup",
   "activities": [
     {
-      "id": "act_881",
+      "id": "act_808",
       "type": "intro",
       "items": [
         "lex_try",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_882",
+      "id": "act_809",
       "type": "listen-choose",
       "items": [
         "lex_try",
@@ -64,18 +64,7 @@
       ]
     },
     {
-      "id": "act_883",
-      "type": "icon-choice",
-      "items": [
-        "lex_try",
-        "lex_end",
-        "lex_spend",
-        "lex_last",
-        "lex_almost"
-      ]
-    },
-    {
-      "id": "act_884",
+      "id": "act_810",
       "type": "match",
       "items": [
         "lex_try",
@@ -87,12 +76,12 @@
       ]
     },
     {
-      "id": "act_885",
+      "id": "act_811",
       "type": "grammar",
       "grammarId": "gr_pastsimple"
     },
     {
-      "id": "act_886",
+      "id": "act_812",
       "type": "gapfill",
       "items": [
         {
@@ -138,7 +127,7 @@
       ]
     },
     {
-      "id": "act_887",
+      "id": "act_813",
       "type": "phrase-match",
       "items": [
         "chunk_pa_howwas",
@@ -150,7 +139,7 @@
       ]
     },
     {
-      "id": "act_888",
+      "id": "act_814",
       "type": "reorder",
       "sentences": [
         {
@@ -168,7 +157,7 @@
       ]
     },
     {
-      "id": "act_889",
+      "id": "act_815",
       "type": "typed",
       "items": [
         "lex_try",
@@ -178,12 +167,12 @@
       ]
     },
     {
-      "id": "act_890",
+      "id": "act_816",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_891",
+      "id": "act_817",
       "type": "odd-one-out",
       "groups": [
         {
@@ -197,7 +186,7 @@
       ]
     },
     {
-      "id": "act_892",
+      "id": "act_818",
       "type": "listen-comprehension",
       "passage": "Hi Marta! At the weekend I visited my sister. We cooked lunch and talked for hours. It was lovely.",
       "question": {
@@ -212,7 +201,7 @@
       "answer": "Visited her sister"
     },
     {
-      "id": "act_893",
+      "id": "act_819",
       "type": "expand",
       "question": {
         "en": "What did you do at the weekend?",
@@ -234,7 +223,7 @@
       ]
     },
     {
-      "id": "act_894",
+      "id": "act_820",
       "type": "conversation",
       "dialogueId": "dlg_endika_followup"
     }

@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_31",
+      "id": "act_29",
       "type": "intro",
       "items": [
         "lex_your",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_32",
+      "id": "act_30",
       "type": "listen-choose",
       "items": [
         "lex_your",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_33",
-      "type": "icon-choice",
-      "items": [
-        "lex_your",
-        "lex_i",
-        "lex_you",
-        "lex_he",
-        "lex_she"
-      ]
-    },
-    {
-      "id": "act_34",
+      "id": "act_31",
       "type": "match",
       "items": [
         "lex_your",
@@ -84,7 +73,7 @@
       ]
     },
     {
-      "id": "act_35",
+      "id": "act_32",
       "type": "gapfill",
       "items": [
         {
@@ -130,7 +119,7 @@
       ]
     },
     {
-      "id": "act_36",
+      "id": "act_33",
       "type": "phrase-match",
       "items": [
         "chunk_intro_job",
@@ -140,7 +129,7 @@
       ]
     },
     {
-      "id": "act_37",
+      "id": "act_34",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +147,7 @@
       ]
     },
     {
-      "id": "act_38",
+      "id": "act_35",
       "type": "typed",
       "items": [
         "lex_your",
@@ -168,17 +157,17 @@
       ]
     },
     {
-      "id": "act_39",
+      "id": "act_36",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_40",
+      "id": "act_37",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_41",
+      "id": "act_38",
       "type": "odd-one-out",
       "groups": [
         {

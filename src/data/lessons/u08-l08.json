@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_637",
+      "id": "act_583",
       "type": "intro",
       "items": [
         "lex_jump",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_638",
+      "id": "act_584",
       "type": "listen-choose",
       "items": [
         "lex_jump",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_639",
-      "type": "icon-choice",
-      "items": [
-        "lex_jump",
-        "lex_draw",
-        "lex_paint",
-        "lex_win",
-        "lex_wonderful"
-      ]
-    },
-    {
-      "id": "act_640",
+      "id": "act_585",
       "type": "match",
       "items": [
         "lex_jump",
@@ -79,7 +68,7 @@
       ]
     },
     {
-      "id": "act_641",
+      "id": "act_586",
       "type": "gapfill",
       "items": [
         {
@@ -125,7 +114,7 @@
       ]
     },
     {
-      "id": "act_642",
+      "id": "act_587",
       "type": "typed",
       "items": [
         "lex_jump",
@@ -135,17 +124,17 @@
       ]
     },
     {
-      "id": "act_643",
+      "id": "act_588",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_644",
+      "id": "act_589",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_645",
+      "id": "act_590",
       "type": "odd-one-out",
       "groups": [
         {

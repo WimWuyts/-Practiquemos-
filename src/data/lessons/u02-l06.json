@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_136",
+      "id": "act_124",
       "type": "intro",
       "items": [
         "lex_woman",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_137",
+      "id": "act_125",
       "type": "listen-choose",
       "items": [
         "lex_woman",
@@ -49,18 +49,7 @@
       ]
     },
     {
-      "id": "act_138",
-      "type": "icon-choice",
-      "items": [
-        "lex_woman",
-        "lex_girl",
-        "lex_boy",
-        "lex_person",
-        "lex_with"
-      ]
-    },
-    {
-      "id": "act_139",
+      "id": "act_126",
       "type": "match",
       "items": [
         "lex_woman",
@@ -71,7 +60,7 @@
       ]
     },
     {
-      "id": "act_140",
+      "id": "act_127",
       "type": "gapfill",
       "items": [
         {
@@ -117,7 +106,7 @@
       ]
     },
     {
-      "id": "act_141",
+      "id": "act_128",
       "type": "typed",
       "items": [
         "lex_woman",
@@ -127,12 +116,12 @@
       ]
     },
     {
-      "id": "act_142",
+      "id": "act_129",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     },
     {
-      "id": "act_143",
+      "id": "act_130",
       "type": "odd-one-out",
       "groups": [
         {

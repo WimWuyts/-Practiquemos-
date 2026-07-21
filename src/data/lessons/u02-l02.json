@@ -37,7 +37,7 @@
   "conversationId": "dlg_marlene_first",
   "activities": [
     {
-      "id": "act_96",
+      "id": "act_88",
       "type": "intro",
       "items": [
         "lex_daughter",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_97",
+      "id": "act_89",
       "type": "listen-choose",
       "items": [
         "lex_daughter",
@@ -63,18 +63,7 @@
       ]
     },
     {
-      "id": "act_98",
-      "type": "icon-choice",
-      "items": [
-        "lex_daughter",
-        "lex_son",
-        "lex_husband",
-        "lex_wife",
-        "lex_partner"
-      ]
-    },
-    {
-      "id": "act_99",
+      "id": "act_90",
       "type": "match",
       "items": [
         "lex_daughter",
@@ -86,12 +75,12 @@
       ]
     },
     {
-      "id": "act_100",
+      "id": "act_91",
       "type": "grammar",
       "grammarId": "gr_have"
     },
     {
-      "id": "act_101",
+      "id": "act_92",
       "type": "gapfill",
       "items": [
         {
@@ -137,7 +126,7 @@
       ]
     },
     {
-      "id": "act_102",
+      "id": "act_93",
       "type": "phrase-match",
       "items": [
         "chunk_fam_howmany",
@@ -147,7 +136,7 @@
       ]
     },
     {
-      "id": "act_103",
+      "id": "act_94",
       "type": "reorder",
       "sentences": [
         {
@@ -165,7 +154,7 @@
       ]
     },
     {
-      "id": "act_104",
+      "id": "act_95",
       "type": "typed",
       "items": [
         "lex_daughter",
@@ -175,12 +164,12 @@
       ]
     },
     {
-      "id": "act_105",
+      "id": "act_96",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     },
     {
-      "id": "act_106",
+      "id": "act_97",
       "type": "odd-one-out",
       "groups": [
         {
@@ -194,7 +183,7 @@
       ]
     },
     {
-      "id": "act_107",
+      "id": "act_98",
       "type": "conversation",
       "dialogueId": "dlg_marlene_first"
     }

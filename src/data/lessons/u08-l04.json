@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_599",
+      "id": "act_548",
       "type": "intro",
       "items": [
         "lex_cat",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_600",
+      "id": "act_549",
       "type": "listen-choose",
       "items": [
         "lex_cat",
@@ -61,18 +61,16 @@
       ]
     },
     {
-      "id": "act_601",
+      "id": "act_550",
       "type": "icon-choice",
       "items": [
         "lex_cat",
         "lex_bird",
-        "lex_cow",
-        "lex_run",
-        "lex_listen"
+        "lex_cow"
       ]
     },
     {
-      "id": "act_602",
+      "id": "act_551",
       "type": "match",
       "items": [
         "lex_cat",
@@ -84,7 +82,7 @@
       ]
     },
     {
-      "id": "act_603",
+      "id": "act_552",
       "type": "gapfill",
       "items": [
         {
@@ -130,7 +128,7 @@
       ]
     },
     {
-      "id": "act_604",
+      "id": "act_553",
       "type": "phrase-match",
       "items": [
         "chunk_ag_inmyopinion",
@@ -140,7 +138,7 @@
       ]
     },
     {
-      "id": "act_605",
+      "id": "act_554",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +156,7 @@
       ]
     },
     {
-      "id": "act_606",
+      "id": "act_555",
       "type": "typed",
       "items": [
         "lex_cat",
@@ -168,17 +166,17 @@
       ]
     },
     {
-      "id": "act_607",
+      "id": "act_556",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_608",
+      "id": "act_557",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_609",
+      "id": "act_558",
       "type": "odd-one-out",
       "groups": [
         {

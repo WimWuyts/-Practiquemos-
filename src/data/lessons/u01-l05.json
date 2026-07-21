@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_54",
+      "id": "act_50",
       "type": "intro",
       "items": [
         "lex_where",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_55",
+      "id": "act_51",
       "type": "listen-choose",
       "items": [
         "lex_where",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_56",
-      "type": "icon-choice",
-      "items": [
-        "lex_where",
-        "lex_how",
-        "lex_who",
-        "lex_fine",
-        "lex_good"
-      ]
-    },
-    {
-      "id": "act_57",
+      "id": "act_52",
       "type": "match",
       "items": [
         "lex_where",
@@ -79,13 +68,13 @@
       ]
     },
     {
-      "id": "act_58",
+      "id": "act_53",
       "type": "spelling-build",
       "family": "sf_wh",
       "word": "where"
     },
     {
-      "id": "act_59",
+      "id": "act_54",
       "type": "gapfill",
       "items": [
         {
@@ -131,7 +120,7 @@
       ]
     },
     {
-      "id": "act_60",
+      "id": "act_55",
       "type": "typed",
       "items": [
         "lex_where",
@@ -141,17 +130,17 @@
       ]
     },
     {
-      "id": "act_61",
+      "id": "act_56",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_62",
+      "id": "act_57",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_63",
+      "id": "act_58",
       "type": "odd-one-out",
       "groups": [
         {

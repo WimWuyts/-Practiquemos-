@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_426",
+      "id": "act_390",
       "type": "intro",
       "items": [
         "lex_meet",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_427",
+      "id": "act_391",
       "type": "listen-choose",
       "items": [
         "lex_meet",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_428",
-      "type": "icon-choice",
-      "items": [
-        "lex_meet",
-        "lex_can",
-        "lex_going_to",
-        "lex_free",
-        "lex_busy"
-      ]
-    },
-    {
-      "id": "act_429",
+      "id": "act_392",
       "type": "match",
       "items": [
         "lex_meet",
@@ -84,13 +73,13 @@
       ]
     },
     {
-      "id": "act_430",
+      "id": "act_393",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "meet"
     },
     {
-      "id": "act_431",
+      "id": "act_394",
       "type": "gapfill",
       "items": [
         {
@@ -136,7 +125,7 @@
       ]
     },
     {
-      "id": "act_432",
+      "id": "act_395",
       "type": "phrase-match",
       "items": [
         "chunk_nm_whatsdate",
@@ -146,7 +135,7 @@
       ]
     },
     {
-      "id": "act_433",
+      "id": "act_396",
       "type": "reorder",
       "sentences": [
         {
@@ -164,7 +153,7 @@
       ]
     },
     {
-      "id": "act_434",
+      "id": "act_397",
       "type": "typed",
       "items": [
         "lex_meet",
@@ -174,12 +163,12 @@
       ]
     },
     {
-      "id": "act_435",
+      "id": "act_398",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_436",
+      "id": "act_399",
       "type": "odd-one-out",
       "groups": [
         {

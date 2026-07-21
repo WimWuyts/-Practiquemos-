@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_495",
+      "id": "act_451",
       "type": "intro",
       "items": [
         "lex_dark",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_496",
+      "id": "act_452",
       "type": "listen-choose",
       "items": [
         "lex_dark",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_497",
-      "type": "icon-choice",
-      "items": [
-        "lex_dark",
-        "lex_light",
-        "lex_maybe",
-        "lex_at",
-        "lex_sure"
-      ]
-    },
-    {
-      "id": "act_498",
+      "id": "act_453",
       "type": "match",
       "items": [
         "lex_dark",
@@ -79,13 +68,13 @@
       ]
     },
     {
-      "id": "act_499",
+      "id": "act_454",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "light"
     },
     {
-      "id": "act_500",
+      "id": "act_455",
       "type": "gapfill",
       "items": [
         {
@@ -131,7 +120,7 @@
       ]
     },
     {
-      "id": "act_501",
+      "id": "act_456",
       "type": "typed",
       "items": [
         "lex_dark",
@@ -141,12 +130,12 @@
       ]
     },
     {
-      "id": "act_502",
+      "id": "act_457",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_503",
+      "id": "act_458",
       "type": "odd-one-out",
       "groups": [
         {

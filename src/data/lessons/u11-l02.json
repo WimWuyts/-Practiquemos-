@@ -37,7 +37,7 @@
   "conversationId": "dlg_student_parent",
   "activities": [
     {
-      "id": "act_829",
+      "id": "act_760",
       "type": "intro",
       "items": [
         "lex_turn_off",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_830",
+      "id": "act_761",
       "type": "listen-choose",
       "items": [
         "lex_turn_off",
@@ -63,18 +63,7 @@
       ]
     },
     {
-      "id": "act_831",
-      "type": "icon-choice",
-      "items": [
-        "lex_turn_off",
-        "lex_click",
-        "lex_ready",
-        "lex_excellent",
-        "lex_student"
-      ]
-    },
-    {
-      "id": "act_832",
+      "id": "act_762",
       "type": "match",
       "items": [
         "lex_turn_off",
@@ -86,12 +75,12 @@
       ]
     },
     {
-      "id": "act_833",
+      "id": "act_763",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_834",
+      "id": "act_764",
       "type": "gapfill",
       "items": [
         {
@@ -137,7 +126,7 @@
       ]
     },
     {
-      "id": "act_835",
+      "id": "act_765",
       "type": "phrase-match",
       "items": [
         "chunk_teach_parent",
@@ -147,7 +136,7 @@
       ]
     },
     {
-      "id": "act_836",
+      "id": "act_766",
       "type": "reorder",
       "sentences": [
         {
@@ -165,7 +154,7 @@
       ]
     },
     {
-      "id": "act_837",
+      "id": "act_767",
       "type": "typed",
       "items": [
         "lex_turn_off",
@@ -175,12 +164,12 @@
       ]
     },
     {
-      "id": "act_838",
+      "id": "act_768",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_839",
+      "id": "act_769",
       "type": "odd-one-out",
       "groups": [
         {
@@ -194,7 +183,7 @@
       ]
     },
     {
-      "id": "act_840",
+      "id": "act_770",
       "type": "conversation",
       "dialogueId": "dlg_student_parent"
     }

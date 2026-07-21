@@ -46,6 +46,10 @@ window.M = window.M || {};
     M.ui.init();
     if (screen === "lesson") { M.ui.lessonRunner(main, parts[1]); setActive("lessons"); }
     else if (screen === "talk") { M.ui.talk(main, parts[1]); setActive("conversations"); }
+    else if (screen === "drill") { M.ui.vocabDrill(main, parts[1]); setActive("practice"); }
+    else if (screen === "gram") { M.ui.grammarDrill(main, parts[1]); setActive("practice"); }
+    else if (screen === "snd") { M.ui.soundDrill(main, parts[1]); setActive("practice"); }
+    else if (screen === "spell") { M.ui.spellDrill(main, parts[1]); setActive("practice"); }
     else if (M.ui.screens[screen]) { M.ui.screens[screen](main); setActive(screen); }
     else { M.ui.screens.home(main); setActive("home"); }
     main.focus();

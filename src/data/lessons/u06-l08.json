@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_463",
+      "id": "act_423",
       "type": "intro",
       "items": [
         "lex_before",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_464",
+      "id": "act_424",
       "type": "listen-choose",
       "items": [
         "lex_before",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_465",
-      "type": "icon-choice",
-      "items": [
-        "lex_before",
-        "lex_after",
-        "lex_date",
-        "lex_january",
-        "lex_february"
-      ]
-    },
-    {
-      "id": "act_466",
+      "id": "act_425",
       "type": "match",
       "items": [
         "lex_before",
@@ -79,7 +68,7 @@
       ]
     },
     {
-      "id": "act_467",
+      "id": "act_426",
       "type": "gapfill",
       "items": [
         {
@@ -125,7 +114,7 @@
       ]
     },
     {
-      "id": "act_468",
+      "id": "act_427",
       "type": "typed",
       "items": [
         "lex_before",
@@ -135,12 +124,12 @@
       ]
     },
     {
-      "id": "act_469",
+      "id": "act_428",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_470",
+      "id": "act_429",
       "type": "odd-one-out",
       "groups": [
         {

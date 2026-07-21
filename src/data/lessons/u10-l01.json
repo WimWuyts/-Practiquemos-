@@ -152,7 +152,7 @@
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_775",
+      "id": "act_708",
       "type": "intro",
       "items": [
         "lex_restaurant",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "act_776",
+      "id": "act_709",
       "type": "listen-choose",
       "items": [
         "lex_restaurant",
@@ -178,18 +178,18 @@
       ]
     },
     {
-      "id": "act_777",
+      "id": "act_710",
       "type": "icon-choice",
       "items": [
         "lex_restaurant",
         "lex_hotel",
         "lex_menu",
         "lex_table",
-        "lex_bill"
+        "lex_key"
       ]
     },
     {
-      "id": "act_778",
+      "id": "act_711",
       "type": "match",
       "items": [
         "lex_restaurant",
@@ -201,12 +201,12 @@
       ]
     },
     {
-      "id": "act_779",
+      "id": "act_712",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_780",
+      "id": "act_713",
       "type": "gapfill",
       "items": [
         {
@@ -252,7 +252,7 @@
       ]
     },
     {
-      "id": "act_781",
+      "id": "act_714",
       "type": "phrase-match",
       "items": [
         "chunk_serv_order",
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "id": "act_782",
+      "id": "act_715",
       "type": "reorder",
       "sentences": [
         {
@@ -280,7 +280,7 @@
       ]
     },
     {
-      "id": "act_783",
+      "id": "act_716",
       "type": "typed",
       "items": [
         "lex_restaurant",
@@ -290,12 +290,12 @@
       ]
     },
     {
-      "id": "act_784",
+      "id": "act_717",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_785",
+      "id": "act_718",
       "type": "odd-one-out",
       "groups": [
         {
@@ -309,12 +309,12 @@
       ]
     },
     {
-      "id": "act_786",
+      "id": "act_719",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_787",
+      "id": "act_720",
       "type": "review",
       "items": [
         "lex_call",

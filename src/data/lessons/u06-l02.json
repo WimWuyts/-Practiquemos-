@@ -39,7 +39,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_403",
+      "id": "act_369",
       "type": "intro",
       "items": [
         "lex_year",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": "act_404",
+      "id": "act_370",
       "type": "listen-choose",
       "items": [
         "lex_year",
@@ -65,18 +65,7 @@
       ]
     },
     {
-      "id": "act_405",
-      "type": "icon-choice",
-      "items": [
-        "lex_year",
-        "lex_monday",
-        "lex_tuesday",
-        "lex_wednesday",
-        "lex_thursday"
-      ]
-    },
-    {
-      "id": "act_406",
+      "id": "act_371",
       "type": "match",
       "items": [
         "lex_year",
@@ -88,22 +77,22 @@
       ]
     },
     {
-      "id": "act_407",
+      "id": "act_372",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_408",
+      "id": "act_373",
       "type": "grammar",
       "grammarId": "gr_goingto"
     },
     {
-      "id": "act_409",
+      "id": "act_374",
       "type": "grammar",
       "grammarId": "gr_presentcont"
     },
     {
-      "id": "act_410",
+      "id": "act_375",
       "type": "gapfill",
       "items": [
         {
@@ -149,7 +138,7 @@
       ]
     },
     {
-      "id": "act_411",
+      "id": "act_376",
       "type": "phrase-match",
       "items": [
         "chunk_tm_whattime",
@@ -159,7 +148,7 @@
       ]
     },
     {
-      "id": "act_412",
+      "id": "act_377",
       "type": "reorder",
       "sentences": [
         {
@@ -177,7 +166,7 @@
       ]
     },
     {
-      "id": "act_413",
+      "id": "act_378",
       "type": "typed",
       "items": [
         "lex_year",
@@ -187,12 +176,12 @@
       ]
     },
     {
-      "id": "act_414",
+      "id": "act_379",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_415",
+      "id": "act_380",
       "type": "odd-one-out",
       "groups": [
         {
@@ -206,7 +195,7 @@
       ]
     },
     {
-      "id": "act_416",
+      "id": "act_381",
       "type": "listen-comprehension",
       "passage": "Hi auntie, it's Kira. The weather here in Denmark is cold and rainy today. Let's talk on Sunday. Bye!",
       "question": {

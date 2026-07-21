@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_951",
+      "id": "act_876",
       "type": "intro",
       "items": [
         "lex_desk",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "act_952",
+      "id": "act_877",
       "type": "listen-choose",
       "items": [
         "lex_desk",
@@ -55,17 +55,7 @@
       ]
     },
     {
-      "id": "act_953",
-      "type": "icon-choice",
-      "items": [
-        "lex_desk",
-        "lex_miss",
-        "lex_lose",
-        "lex_airport_bus"
-      ]
-    },
-    {
-      "id": "act_954",
+      "id": "act_878",
       "type": "match",
       "items": [
         "lex_desk",
@@ -75,7 +65,7 @@
       ]
     },
     {
-      "id": "act_955",
+      "id": "act_879",
       "type": "gapfill",
       "items": [
         {
@@ -121,7 +111,7 @@
       ]
     },
     {
-      "id": "act_956",
+      "id": "act_880",
       "type": "phrase-match",
       "items": [
         "chunk_ai_myflight",
@@ -133,7 +123,7 @@
       ]
     },
     {
-      "id": "act_957",
+      "id": "act_881",
       "type": "reorder",
       "sentences": [
         {
@@ -151,7 +141,7 @@
       ]
     },
     {
-      "id": "act_958",
+      "id": "act_882",
       "type": "typed",
       "items": [
         "lex_desk",
@@ -161,12 +151,12 @@
       ]
     },
     {
-      "id": "act_959",
+      "id": "act_883",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_960",
+      "id": "act_884",
       "type": "listen-comprehension",
       "passage": "This is a final call for passenger Marta. Please go to gate twelve. The gate is closing soon.",
       "question": {

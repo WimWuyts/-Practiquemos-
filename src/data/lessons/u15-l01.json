@@ -65,7 +65,7 @@
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_961",
+      "id": "act_885",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": "act_962",
+      "id": "act_886",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -91,18 +91,16 @@
       ]
     },
     {
-      "id": "act_963",
+      "id": "act_887",
       "type": "icon-choice",
       "items": [
         "lex_plane",
-        "lex_afraid",
-        "lex_nervous",
-        "lex_scared",
-        "lex_calm"
+        "lex_blanket",
+        "lex_toilet"
       ]
     },
     {
-      "id": "act_964",
+      "id": "act_888",
       "type": "match",
       "items": [
         "lex_plane",
@@ -114,18 +112,18 @@
       ]
     },
     {
-      "id": "act_965",
+      "id": "act_889",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_966",
+      "id": "act_890",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_967",
+      "id": "act_891",
       "type": "gapfill",
       "items": [
         {
@@ -171,7 +169,7 @@
       ]
     },
     {
-      "id": "act_968",
+      "id": "act_892",
       "type": "phrase-match",
       "items": [
         "chunk_fly_afraid",
@@ -181,7 +179,7 @@
       ]
     },
     {
-      "id": "act_969",
+      "id": "act_893",
       "type": "reorder",
       "sentences": [
         {
@@ -199,7 +197,7 @@
       ]
     },
     {
-      "id": "act_970",
+      "id": "act_894",
       "type": "typed",
       "items": [
         "lex_plane",
@@ -209,12 +207,12 @@
       ]
     },
     {
-      "id": "act_971",
+      "id": "act_895",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_972",
+      "id": "act_896",
       "type": "odd-one-out",
       "groups": [
         {
@@ -228,12 +226,12 @@
       ]
     },
     {
-      "id": "act_973",
+      "id": "act_897",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_974",
+      "id": "act_898",
       "type": "review",
       "items": [
         "lex_was",

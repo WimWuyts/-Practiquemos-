@@ -95,7 +95,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_81",
+      "id": "act_74",
       "type": "intro",
       "items": [
         "lex_family",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "act_82",
+      "id": "act_75",
       "type": "listen-choose",
       "items": [
         "lex_family",
@@ -121,18 +121,7 @@
       ]
     },
     {
-      "id": "act_83",
-      "type": "icon-choice",
-      "items": [
-        "lex_family",
-        "lex_mother",
-        "lex_father",
-        "lex_mum",
-        "lex_dad"
-      ]
-    },
-    {
-      "id": "act_84",
+      "id": "act_76",
       "type": "match",
       "items": [
         "lex_family",
@@ -144,22 +133,22 @@
       ]
     },
     {
-      "id": "act_85",
+      "id": "act_77",
       "type": "grammar",
       "grammarId": "gr_possadj"
     },
     {
-      "id": "act_86",
+      "id": "act_78",
       "type": "grammar",
       "grammarId": "gr_poss_s"
     },
     {
-      "id": "act_87",
+      "id": "act_79",
       "type": "grammar",
       "grammarId": "gr_plural"
     },
     {
-      "id": "act_88",
+      "id": "act_80",
       "type": "gapfill",
       "items": [
         {
@@ -205,7 +194,7 @@
       ]
     },
     {
-      "id": "act_89",
+      "id": "act_81",
       "type": "phrase-match",
       "items": [
         "chunk_ask_family",
@@ -215,7 +204,7 @@
       ]
     },
     {
-      "id": "act_90",
+      "id": "act_82",
       "type": "reorder",
       "sentences": [
         {
@@ -233,7 +222,7 @@
       ]
     },
     {
-      "id": "act_91",
+      "id": "act_83",
       "type": "typed",
       "items": [
         "lex_family",
@@ -243,17 +232,17 @@
       ]
     },
     {
-      "id": "act_92",
+      "id": "act_84",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_93",
+      "id": "act_85",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_94",
+      "id": "act_86",
       "type": "odd-one-out",
       "groups": [
         {
@@ -267,7 +256,7 @@
       ]
     },
     {
-      "id": "act_95",
+      "id": "act_87",
       "type": "review",
       "items": [
         "lex_hello",

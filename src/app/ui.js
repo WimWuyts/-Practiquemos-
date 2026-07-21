@@ -220,44 +220,134 @@ window.M = window.M || {};
     M.conversation.render(stage, dialogueId, function () { M.router.go("conversations"); });
   }
 
-  // ---------------- PRACTICE ----------------
+  // ---------------- PRACTICE HUB ----------------
+  var seq = 0;
+  function actId() { return "p_" + (++seq); }
+  // generic mini-runner: play a list of activity specs, then callback
+  function runActivities(mount, acts, onDone) {
+    var idx = 0;
+    var bar = el("div", { class: "progress" }, [el("span", {})]);
+    var stage = el("div", { class: "stage card" });
+    mount.appendChild(bar); mount.appendChild(stage);
+    function step() {
+      bar.firstChild.style.width = Math.round((idx / acts.length) * 100) + "%";
+      dom.clear(stage);
+      if (idx >= acts.length) {
+        stage.appendChild(el("div", { class: "avatar-row" }, [avatar("small"), el("h2", { text: M.i18n.t("practice.done") })]));
+        stage.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: onDone }, [M.i18n.t("btn.continue")])]));
+        return;
+      }
+      M.exercise.render(stage, acts[idx], function () { idx++; step(); });
+    }
+    step();
+  }
+  function backBar(to) {
+    return el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.router.go(to || "practice"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.back")])]);
+  }
+
   function practice(mount) {
     mount.appendChild(el("h1", { text: M.i18n.label("nav.practice") }));
     var due = M.review.dueItems(8);
+    // Review
     mount.appendChild(el("div", { class: "card" }, [
-      el("h2", { text: M.i18n.t("lesson.review") }),
-      due.length ? el("div", { class: "btn-row" }, [
-        el("button", { class: "btn", onclick: function () { M.router.go("review"); } }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("lesson.review") + " (" + due.length + ")"]),
-      ]) : el("p", { class: "muted", text: M.i18n.t("act.review.prompt") }),
+      el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [
+        el("span", { class: "iconwell", html: dom.icon("again"), "aria-hidden": "true" }),
+        el("div", { style: "flex:1" }, [el("h2", { style: "margin:0;font-size:1.1rem", text: M.i18n.t("lesson.review") })]),
+        due.length ? el("span", { class: "pill", text: due.length }) : null,
+      ]),
+      el("div", { class: "btn-row" }, [
+        el("button", { class: "btn" + (due.length ? "" : " secondary"), onclick: function () { M.router.go("review"); } }, [M.i18n.t("practice.review")]),
+      ]),
     ]));
-    // sounds / spelling families quick practice
-    var famWrap = el("div", { class: "card" }, [el("h2", { text: M.i18n.label("lesson.pron") })]);
-    M.data.pronunciation.spellingFamilies.forEach(function (f) {
-      famWrap.appendChild(el("div", { class: "btn-row" }, [
-        el("button", { class: "btn secondary small", onclick: function () { openSingle({ type: "spelling-build", id: "act_p", family: f.id }); } }, [f.label.en]),
+    // Vocabulary practice — per unit
+    var vCard = el("div", { class: "card" }, [
+      el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [el("span", { class: "iconwell", html: dom.icon("list"), "aria-hidden": "true" }), el("h2", { style: "margin:0;flex:1;font-size:1.1rem", text: M.i18n.t("practice.vocab") })]),
+      el("p", { class: "muted", text: M.i18n.t("practice.choosetopic") }),
+    ]);
+    var vGrid = el("div", { class: "tilegrid" });
+    M.data.course.units.forEach(function (u) {
+      if (u.id === "u00") return;
+      var n = M.data.lexicon.filter(function (l) { return l.status === "productive" && l.firstLesson && l.firstLesson.slice(0, 3) === u.id; }).length;
+      if (!n) return;
+      var vis = unitVis(u.id);
+      vGrid.appendChild(el("button", { class: "themetile", onclick: function () { M.router.go("drill/" + u.id); } }, [
+        el("span", { class: "iconwell", style: "--tint:" + vis[1] + ";--tintink:" + vis[2], html: dom.icon(vis[0]), "aria-hidden": "true" }),
+        el("span", { class: "txt" }, [el("b", { text: u.title.en }), el("span", { text: n + " " + M.i18n.t("ref.words") })]),
       ]));
     });
-    mount.appendChild(famWrap);
+    vCard.appendChild(vGrid); mount.appendChild(vCard);
+    // Grammar practice — per point
+    var gCard = el("div", { class: "card" }, [
+      el("div", { style: "display:flex;align-items:center;gap:.8rem" }, [el("span", { class: "iconwell", html: dom.icon("book"), "aria-hidden": "true" }), el("h2", { style: "margin:0;flex:1;font-size:1.1rem", text: M.i18n.t("practice.grammar") })]),
+      el("p", { class: "muted", text: M.i18n.t("practice.choosepoint") }),
+    ]);
+    M.data.grammar.forEach(function (g) {
+      gCard.appendChild(el("button", { class: "lessonbtn", onclick: function () { M.router.go("gram/" + g.id); } }, [
+        el("span", { html: dom.icon("book") }),
+        el("span", { style: "flex:1" }, [el("strong", { text: g.title.en }), M.i18n.helpAvailable() ? el("div", { class: "muted", text: g.title.hu }) : null]),
+      ]));
+    });
+    mount.appendChild(gCard);
+    // Sounds & spelling — ALL of them
+    var sCard = el("div", { class: "card" }, [el("h2", { style: "font-size:1.1rem", text: M.i18n.label("lesson.pron") })]);
+    var groups = [["stage-1", "practice.sounds.step1"], ["stage-3", "practice.sounds.step3"]];
+    groups.forEach(function (grp) {
+      var fs = M.data.pronunciation.soundFocus.filter(function (f) { return f.stage === grp[0]; });
+      if (!fs.length) return;
+      sCard.appendChild(el("h3", { style: "margin:.6rem 0 .2rem", text: M.i18n.t(grp[1]) }));
+      var row2 = el("div", { class: "blocks" });
+      fs.forEach(function (f) { row2.appendChild(el("button", { class: "btn secondary small", onclick: function () { M.router.go("snd/" + f.id); } }, [f.focus.en])); });
+      sCard.appendChild(row2);
+    });
+    sCard.appendChild(el("h3", { style: "margin:.8rem 0 .2rem", text: M.i18n.t("practice.sounds.step2") }));
+    var spRow = el("div", { class: "blocks" });
+    M.data.pronunciation.spellingFamilies.forEach(function (f) { spRow.appendChild(el("button", { class: "btn secondary small", onclick: function () { M.router.go("spell/" + f.id); } }, [f.label.en])); });
+    sCard.appendChild(spRow);
+    mount.appendChild(sCard);
+  }
+
+  // vocabulary drill for one unit (Rosetta-flavored: picture & sound first)
+  function vocabDrill(mount, unitId) {
+    var unit = M.get.unit(unitId);
+    mount.appendChild(backBar("practice"));
+    mount.appendChild(el("h1", { text: (unit ? unit.title.en : "") + " · " + M.i18n.t("practice.vocab") }));
+    var words = M.data.lexicon.filter(function (l) { return l.status === "productive" && l.firstLesson && l.firstLesson.slice(0, 3) === unitId; });
+    if (!words.length) { mount.appendChild(el("p", { class: "muted", text: M.i18n.t("practice.nowords") })); return; }
+    var ids = dom.shuffle(words).slice(0, 8).map(function (l) { return l.id; });
+    var iconable = words.filter(function (l) { return l.iconSpecific; }).map(function (l) { return l.id; });
+    var acts = [];
+    if (iconable.length >= 3) acts.push({ id: actId(), type: "icon-choice", items: iconable.slice(0, 5) });
+    acts.push({ id: actId(), type: "listen-choose", items: ids.slice(0, 6) });
+    acts.push({ id: actId(), type: "match", items: ids.slice(0, 6) });
+    acts.push({ id: actId(), type: "typed", items: ids.slice(0, 4) });
+    runActivities(mount, acts, function () { M.router.go("practice"); });
+  }
+  function grammarDrill(mount, grammarId) {
+    var g = M.get.grammar(grammarId);
+    mount.appendChild(backBar("practice"));
+    mount.appendChild(el("h1", { text: (g ? g.title.en : "") + " · " + M.i18n.t("practice.grammar") }));
+    runActivities(mount, [{ id: actId(), type: "grammar", grammarId: grammarId }], function () { M.router.go("practice"); });
+  }
+  function soundDrill(mount, focusId) {
+    var f = M.get.focus(focusId);
+    mount.appendChild(backBar("practice"));
+    mount.appendChild(el("h1", { text: (f ? f.focus.en : "") }));
+    var acts = [{ id: actId(), type: "pron-record", focusId: focusId }];
+    if (f && f.minimalPairs && f.minimalPairs.length) acts.push({ id: actId(), type: "minimal-pair", focusId: focusId });
+    runActivities(mount, acts, function () { M.router.go("practice"); });
+  }
+  function spellDrill(mount, familyId) {
+    var f = M.get.family(familyId);
+    mount.appendChild(backBar("practice"));
+    mount.appendChild(el("h1", { text: (f ? f.label.en : "") }));
+    runActivities(mount, [{ id: actId(), type: "spelling-build", family: familyId, word: (f && f.items[0] && f.items[0].word) }], function () { M.router.go("practice"); });
   }
   function reviewScreen(mount) {
     var due = M.review.dueItems(8);
-    if (!due.length) { mount.appendChild(el("p", { class: "muted", text: M.i18n.t("act.review.prompt") })); return; }
-    var stage = el("div", { class: "card stage" });
+    if (!due.length) { mount.appendChild(backBar("practice")); mount.appendChild(el("p", { class: "muted", text: M.i18n.t("act.review.prompt") })); return; }
+    mount.appendChild(backBar("practice"));
     mount.appendChild(el("h1", { text: M.i18n.t("lesson.review") }));
-    mount.appendChild(stage);
-    M.exercise.render(stage, { id: "act_review", type: "review", items: due }, function () {
-      dom.clear(stage);
-      stage.appendChild(el("p", { text: M.i18n.t("lesson.complete.msg") }));
-      stage.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { M.router.go("practice"); } }, [M.i18n.t("btn.continue")])]));
-    });
-  }
-  function openSingle(act) {
-    M.router.mountScreen(function (mount) {
-      mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.router.go("practice"); } }, [M.i18n.t("nav.back")])]));
-      var stage = el("div", { class: "card stage" });
-      mount.appendChild(stage);
-      M.exercise.render(stage, act, function () { M.router.go("practice"); });
-    });
+    runActivities(mount, [{ id: "act_review", type: "review", items: due }], function () { M.router.go("practice"); });
   }
 
   // ---------------- SETTINGS ----------------
@@ -423,6 +513,7 @@ window.M = window.M || {};
       reference: reference, settings: settings, help: help, review: reviewScreen, diagnostic: diagnostic,
     },
     lessonRunner: lessonRunner, talk: talk,
+    vocabDrill: vocabDrill, grammarDrill: grammarDrill, soundDrill: soundDrill, spellDrill: spellDrill,
     avatar: avatar,
   };
 })(window.M);

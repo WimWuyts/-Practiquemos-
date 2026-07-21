@@ -100,7 +100,7 @@
   "conversationId": "dlg_airport",
   "activities": [
     {
-      "id": "act_936",
+      "id": "act_861",
       "type": "intro",
       "items": [
         "lex_airport",
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "act_937",
+      "id": "act_862",
       "type": "listen-choose",
       "items": [
         "lex_airport",
@@ -126,18 +126,16 @@
       ]
     },
     {
-      "id": "act_938",
+      "id": "act_863",
       "type": "icon-choice",
       "items": [
         "lex_airport",
         "lex_flight",
-        "lex_gate",
-        "lex_check_in",
-        "lex_security"
+        "lex_gate"
       ]
     },
     {
-      "id": "act_939",
+      "id": "act_864",
       "type": "match",
       "items": [
         "lex_airport",
@@ -149,18 +147,18 @@
       ]
     },
     {
-      "id": "act_940",
+      "id": "act_865",
       "type": "spelling-build",
       "family": "sf_ar_or",
       "word": "airport"
     },
     {
-      "id": "act_941",
+      "id": "act_866",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_942",
+      "id": "act_867",
       "type": "gapfill",
       "items": [
         {
@@ -206,7 +204,7 @@
       ]
     },
     {
-      "id": "act_943",
+      "id": "act_868",
       "type": "phrase-match",
       "items": [
         "chunk_air_gate",
@@ -216,7 +214,7 @@
       ]
     },
     {
-      "id": "act_944",
+      "id": "act_869",
       "type": "reorder",
       "sentences": [
         {
@@ -234,7 +232,7 @@
       ]
     },
     {
-      "id": "act_945",
+      "id": "act_870",
       "type": "typed",
       "items": [
         "lex_airport",
@@ -244,12 +242,12 @@
       ]
     },
     {
-      "id": "act_946",
+      "id": "act_871",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_947",
+      "id": "act_872",
       "type": "odd-one-out",
       "groups": [
         {
@@ -263,7 +261,7 @@
       ]
     },
     {
-      "id": "act_948",
+      "id": "act_873",
       "type": "listen-comprehension",
       "passage": "Attention please. The flight to Copenhagen is now boarding at gate twelve. Please have your passport ready.",
       "question": {
@@ -278,12 +276,12 @@
       "answer": "Gate twelve"
     },
     {
-      "id": "act_949",
+      "id": "act_874",
       "type": "conversation",
       "dialogueId": "dlg_airport"
     },
     {
-      "id": "act_950",
+      "id": "act_875",
       "type": "review",
       "items": [
         "lex_lesson",

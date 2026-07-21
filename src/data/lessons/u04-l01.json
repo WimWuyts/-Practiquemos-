@@ -132,7 +132,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_193",
+      "id": "act_175",
       "type": "intro",
       "items": [
         "lex_day",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "id": "act_194",
+      "id": "act_176",
       "type": "listen-choose",
       "items": [
         "lex_day",
@@ -158,18 +158,7 @@
       ]
     },
     {
-      "id": "act_195",
-      "type": "icon-choice",
-      "items": [
-        "lex_day",
-        "lex_morning",
-        "lex_afternoon",
-        "lex_evening",
-        "lex_night"
-      ]
-    },
-    {
-      "id": "act_196",
+      "id": "act_177",
       "type": "match",
       "items": [
         "lex_day",
@@ -181,28 +170,28 @@
       ]
     },
     {
-      "id": "act_197",
+      "id": "act_178",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "afternoon"
     },
     {
-      "id": "act_198",
+      "id": "act_179",
       "type": "grammar",
       "grammarId": "gr_presentsimple"
     },
     {
-      "id": "act_199",
+      "id": "act_180",
       "type": "grammar",
       "grammarId": "gr_dodoes"
     },
     {
-      "id": "act_200",
+      "id": "act_181",
       "type": "grammar",
       "grammarId": "gr_frequency"
     },
     {
-      "id": "act_201",
+      "id": "act_182",
       "type": "gapfill",
       "items": [
         {
@@ -248,7 +237,7 @@
       ]
     },
     {
-      "id": "act_202",
+      "id": "act_183",
       "type": "phrase-match",
       "items": [
         "chunk_dl_getup",
@@ -258,7 +247,7 @@
       ]
     },
     {
-      "id": "act_203",
+      "id": "act_184",
       "type": "reorder",
       "sentences": [
         {
@@ -276,7 +265,7 @@
       ]
     },
     {
-      "id": "act_204",
+      "id": "act_185",
       "type": "typed",
       "items": [
         "lex_day",
@@ -286,12 +275,12 @@
       ]
     },
     {
-      "id": "act_205",
+      "id": "act_186",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_206",
+      "id": "act_187",
       "type": "odd-one-out",
       "groups": [
         {
@@ -305,7 +294,7 @@
       ]
     },
     {
-      "id": "act_207",
+      "id": "act_188",
       "type": "review",
       "items": [
         "lex_hello",

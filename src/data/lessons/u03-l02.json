@@ -33,7 +33,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_157",
+      "id": "act_143",
       "type": "intro",
       "items": [
         "lex_denmark",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "act_158",
+      "id": "act_144",
       "type": "listen-choose",
       "items": [
         "lex_denmark",
@@ -59,18 +59,7 @@
       ]
     },
     {
-      "id": "act_159",
-      "type": "icon-choice",
-      "items": [
-        "lex_denmark",
-        "lex_danish",
-        "lex_belgium",
-        "lex_switzerland",
-        "lex_language"
-      ]
-    },
-    {
-      "id": "act_160",
+      "id": "act_145",
       "type": "match",
       "items": [
         "lex_denmark",
@@ -82,7 +71,7 @@
       ]
     },
     {
-      "id": "act_161",
+      "id": "act_146",
       "type": "gapfill",
       "items": [
         {
@@ -128,7 +117,7 @@
       ]
     },
     {
-      "id": "act_162",
+      "id": "act_147",
       "type": "phrase-match",
       "items": [
         "chunk_ds_looks",
@@ -136,7 +125,7 @@
       ]
     },
     {
-      "id": "act_163",
+      "id": "act_148",
       "type": "reorder",
       "sentences": [
         {
@@ -150,7 +139,7 @@
       ]
     },
     {
-      "id": "act_164",
+      "id": "act_149",
       "type": "typed",
       "items": [
         "lex_denmark",
@@ -160,17 +149,17 @@
       ]
     },
     {
-      "id": "act_165",
+      "id": "act_150",
       "type": "pron-record",
       "focusId": "snd_h"
     },
     {
-      "id": "act_166",
+      "id": "act_151",
       "type": "minimal-pair",
       "focusId": "snd_h"
     },
     {
-      "id": "act_167",
+      "id": "act_152",
       "type": "odd-one-out",
       "groups": [
         {

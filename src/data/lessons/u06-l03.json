@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_417",
+      "id": "act_382",
       "type": "intro",
       "items": [
         "lex_weekend",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_418",
+      "id": "act_383",
       "type": "listen-choose",
       "items": [
         "lex_weekend",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_419",
-      "type": "icon-choice",
-      "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy",
-        "lex_cold"
-      ]
-    },
-    {
-      "id": "act_420",
+      "id": "act_384",
       "type": "match",
       "items": [
         "lex_weekend",
@@ -84,7 +73,7 @@
       ]
     },
     {
-      "id": "act_421",
+      "id": "act_385",
       "type": "gapfill",
       "items": [
         {
@@ -130,7 +119,7 @@
       ]
     },
     {
-      "id": "act_422",
+      "id": "act_386",
       "type": "phrase-match",
       "items": [
         "chunk_pl_shallwe",
@@ -140,7 +129,7 @@
       ]
     },
     {
-      "id": "act_423",
+      "id": "act_387",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +147,7 @@
       ]
     },
     {
-      "id": "act_424",
+      "id": "act_388",
       "type": "typed",
       "items": [
         "lex_weekend",
@@ -168,7 +157,7 @@
       ]
     },
     {
-      "id": "act_425",
+      "id": "act_389",
       "type": "pron-record",
       "focusId": "str_word"
     }

@@ -66,17 +66,6 @@
     },
     {
       "id": "act_4",
-      "type": "icon-choice",
-      "items": [
-        "lex_hello",
-        "lex_hi",
-        "lex_goodbye",
-        "lex_bye",
-        "lex_good_morning"
-      ]
-    },
-    {
-      "id": "act_5",
       "type": "match",
       "items": [
         "lex_hello",
@@ -88,22 +77,22 @@
       ]
     },
     {
-      "id": "act_6",
+      "id": "act_5",
       "type": "grammar",
       "grammarId": "gr_be"
     },
     {
-      "id": "act_7",
+      "id": "act_6",
       "type": "grammar",
       "grammarId": "gr_questions_wh"
     },
     {
-      "id": "act_8",
+      "id": "act_7",
       "type": "grammar",
       "grammarId": "gr_articles"
     },
     {
-      "id": "act_9",
+      "id": "act_8",
       "type": "gapfill",
       "items": [
         {
@@ -149,7 +138,7 @@
       ]
     },
     {
-      "id": "act_10",
+      "id": "act_9",
       "type": "phrase-match",
       "items": [
         "chunk_greet_hello",
@@ -159,7 +148,7 @@
       ]
     },
     {
-      "id": "act_11",
+      "id": "act_10",
       "type": "reorder",
       "sentences": [
         {
@@ -177,7 +166,7 @@
       ]
     },
     {
-      "id": "act_12",
+      "id": "act_11",
       "type": "typed",
       "items": [
         "lex_hello",
@@ -187,17 +176,17 @@
       ]
     },
     {
-      "id": "act_13",
+      "id": "act_12",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_14",
+      "id": "act_13",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_15",
+      "id": "act_14",
       "type": "odd-one-out",
       "groups": [
         {
@@ -211,7 +200,7 @@
       ]
     },
     {
-      "id": "act_16",
+      "id": "act_15",
       "type": "expand",
       "question": {
         "en": "How are you?",
@@ -233,7 +222,7 @@
       ]
     },
     {
-      "id": "act_17",
+      "id": "act_16",
       "type": "conversation",
       "dialogueId": "dlg_endika_first"
     }

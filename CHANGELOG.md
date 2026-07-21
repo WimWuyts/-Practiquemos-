@@ -2,6 +2,21 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.5.0] — 2026-07 — Practice hub: separate vocabulary, grammar & all sounds
+
+### Added
+- **Practice is now a proper hub** with dedicated, lesson-based sections:
+  - **Practice vocabulary** — pick any unit/topic and drill its words (picture → word, listen & choose, match, type). Rosetta-flavored: picture & sound first, Hungarian optional.
+  - **Practice grammar** — pick any of the 27 grammar points and do its guided card + check on demand.
+  - **Practice sounds** — **all 16 sound sets are now here** (previously only the 11 spelling families showed), grouped as *The sounds*, *Stress & melody*, and *Spelling & sound*. Each sound also has a listen-and-choose minimal-pair drill where relevant.
+- New routes `drill/<unit>`, `gram/<id>`, `snd/<id>`, `spell/<id>`.
+
+### Fixed
+- **Picture exercises now only use words with a clear, specific icon** (96 words), so "which word is this?" is never ambiguous; added ~20 new icons (animals, home, body, clothes, nature). Words without a distinct picture no longer appear in image-based tasks.
+
+### Note
+- A full "Rosetta Stone" (translation-free immersion) rebuild was deliberately **not** done: it would remove the Hungarian scaffolding an older beginner benefits from and that the brief requires. The best of that approach (picture + sound first, translation on demand) is offered as the vocabulary practice mode instead.
+
 ## [1.4.0] — 2026-07 — Reference addendum, monthly gift system, Hungarian polish
 
 ### Added

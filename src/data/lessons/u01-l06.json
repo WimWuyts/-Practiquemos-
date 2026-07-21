@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_64",
+      "id": "act_59",
       "type": "intro",
       "items": [
         "lex_an",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_65",
+      "id": "act_60",
       "type": "listen-choose",
       "items": [
         "lex_an",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_66",
-      "type": "icon-choice",
-      "items": [
-        "lex_an",
-        "lex_the",
-        "lex_one",
-        "lex_two",
-        "lex_three"
-      ]
-    },
-    {
-      "id": "act_67",
+      "id": "act_61",
       "type": "match",
       "items": [
         "lex_an",
@@ -79,13 +68,13 @@
       ]
     },
     {
-      "id": "act_68",
+      "id": "act_62",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "three"
     },
     {
-      "id": "act_69",
+      "id": "act_63",
       "type": "gapfill",
       "items": [
         {
@@ -131,7 +120,7 @@
       ]
     },
     {
-      "id": "act_70",
+      "id": "act_64",
       "type": "typed",
       "items": [
         "lex_an",
@@ -141,12 +130,12 @@
       ]
     },
     {
-      "id": "act_71",
+      "id": "act_65",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_72",
+      "id": "act_66",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
     }

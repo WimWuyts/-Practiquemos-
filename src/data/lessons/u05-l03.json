@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_306",
+      "id": "act_282",
       "type": "intro",
       "items": [
         "lex_lunch",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_307",
+      "id": "act_283",
       "type": "listen-choose",
       "items": [
         "lex_lunch",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_308",
-      "type": "icon-choice",
-      "items": [
-        "lex_lunch",
-        "lex_dinner",
-        "lex_cook",
-        "lex_make",
-        "lex_buy"
-      ]
-    },
-    {
-      "id": "act_309",
+      "id": "act_284",
       "type": "match",
       "items": [
         "lex_lunch",
@@ -84,13 +73,13 @@
       ]
     },
     {
-      "id": "act_310",
+      "id": "act_285",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "make"
     },
     {
-      "id": "act_311",
+      "id": "act_286",
       "type": "gapfill",
       "items": [
         {
@@ -136,7 +125,7 @@
       ]
     },
     {
-      "id": "act_312",
+      "id": "act_287",
       "type": "phrase-match",
       "items": [
         "chunk_of_hereyouare",
@@ -146,7 +135,7 @@
       ]
     },
     {
-      "id": "act_313",
+      "id": "act_288",
       "type": "reorder",
       "sentences": [
         {
@@ -164,7 +153,7 @@
       ]
     },
     {
-      "id": "act_314",
+      "id": "act_289",
       "type": "typed",
       "items": [
         "lex_lunch",
@@ -174,17 +163,17 @@
       ]
     },
     {
-      "id": "act_315",
+      "id": "act_290",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_316",
+      "id": "act_291",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_317",
+      "id": "act_292",
       "type": "odd-one-out",
       "groups": [
         {

@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_243",
+      "id": "act_221",
       "type": "intro",
       "items": [
         "lex_arm",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_244",
+      "id": "act_222",
       "type": "listen-choose",
       "items": [
         "lex_arm",
@@ -56,17 +56,17 @@
       ]
     },
     {
-      "id": "act_245",
+      "id": "act_223",
       "type": "icon-choice",
       "items": [
+        "lex_foot",
         "lex_window",
         "lex_door",
-        "lex_chair",
-        "lex_bed"
+        "lex_chair"
       ]
     },
     {
-      "id": "act_246",
+      "id": "act_224",
       "type": "match",
       "items": [
         "lex_arm",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "id": "act_247",
+      "id": "act_225",
       "type": "gapfill",
       "items": [
         {
@@ -124,7 +124,7 @@
       ]
     },
     {
-      "id": "act_248",
+      "id": "act_226",
       "type": "typed",
       "items": [
         "lex_arm",
@@ -134,12 +134,12 @@
       ]
     },
     {
-      "id": "act_249",
+      "id": "act_227",
       "type": "pron-record",
       "focusId": "snd_ng"
     },
     {
-      "id": "act_250",
+      "id": "act_228",
       "type": "odd-one-out",
       "groups": [
         {

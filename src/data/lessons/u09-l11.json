@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_767",
+      "id": "act_701",
       "type": "intro",
       "items": [
         "lex_boat",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_768",
+      "id": "act_702",
       "type": "listen-choose",
       "items": [
         "lex_boat",
@@ -49,18 +49,7 @@
       ]
     },
     {
-      "id": "act_769",
-      "type": "icon-choice",
-      "items": [
-        "lex_boat",
-        "lex_bicycle",
-        "lex_corner_shop",
-        "lex_bench",
-        "lex_wide"
-      ]
-    },
-    {
-      "id": "act_770",
+      "id": "act_703",
       "type": "match",
       "items": [
         "lex_boat",
@@ -71,7 +60,7 @@
       ]
     },
     {
-      "id": "act_771",
+      "id": "act_704",
       "type": "gapfill",
       "items": [
         {
@@ -117,7 +106,7 @@
       ]
     },
     {
-      "id": "act_772",
+      "id": "act_705",
       "type": "typed",
       "items": [
         "lex_boat",
@@ -127,12 +116,12 @@
       ]
     },
     {
-      "id": "act_773",
+      "id": "act_706",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_774",
+      "id": "act_707",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

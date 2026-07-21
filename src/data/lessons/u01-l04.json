@@ -34,7 +34,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_42",
+      "id": "act_39",
       "type": "intro",
       "items": [
         "lex_be",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_43",
+      "id": "act_40",
       "type": "listen-choose",
       "items": [
         "lex_be",
@@ -60,18 +60,7 @@
       ]
     },
     {
-      "id": "act_44",
-      "type": "icon-choice",
-      "items": [
-        "lex_be",
-        "lex_from",
-        "lex_country",
-        "lex_city",
-        "lex_teacher"
-      ]
-    },
-    {
-      "id": "act_45",
+      "id": "act_41",
       "type": "match",
       "items": [
         "lex_be",
@@ -83,13 +72,13 @@
       ]
     },
     {
-      "id": "act_46",
+      "id": "act_42",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "nice"
     },
     {
-      "id": "act_47",
+      "id": "act_43",
       "type": "gapfill",
       "items": [
         {
@@ -135,7 +124,7 @@
       ]
     },
     {
-      "id": "act_48",
+      "id": "act_44",
       "type": "phrase-match",
       "items": [
         "chunk_id_job2",
@@ -144,7 +133,7 @@
       ]
     },
     {
-      "id": "act_49",
+      "id": "act_45",
       "type": "reorder",
       "sentences": [
         {
@@ -162,7 +151,7 @@
       ]
     },
     {
-      "id": "act_50",
+      "id": "act_46",
       "type": "typed",
       "items": [
         "lex_be",
@@ -172,17 +161,17 @@
       ]
     },
     {
-      "id": "act_51",
+      "id": "act_47",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_52",
+      "id": "act_48",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_53",
+      "id": "act_49",
       "type": "odd-one-out",
       "groups": [
         {

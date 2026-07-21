@@ -147,7 +147,7 @@
   "conversationId": "dlg_student_mic",
   "activities": [
     {
-      "id": "act_816",
+      "id": "act_747",
       "type": "intro",
       "items": [
         "lex_lesson",
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "id": "act_817",
+      "id": "act_748",
       "type": "listen-choose",
       "items": [
         "lex_lesson",
@@ -173,10 +173,9 @@
       ]
     },
     {
-      "id": "act_818",
+      "id": "act_749",
       "type": "icon-choice",
       "items": [
-        "lex_lesson",
         "lex_camera",
         "lex_microphone",
         "lex_screen",
@@ -184,7 +183,7 @@
       ]
     },
     {
-      "id": "act_819",
+      "id": "act_750",
       "type": "match",
       "items": [
         "lex_lesson",
@@ -196,12 +195,12 @@
       ]
     },
     {
-      "id": "act_820",
+      "id": "act_751",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_821",
+      "id": "act_752",
       "type": "gapfill",
       "items": [
         {
@@ -247,7 +246,7 @@
       ]
     },
     {
-      "id": "act_822",
+      "id": "act_753",
       "type": "phrase-match",
       "items": [
         "chunk_call_camera",
@@ -257,7 +256,7 @@
       ]
     },
     {
-      "id": "act_823",
+      "id": "act_754",
       "type": "reorder",
       "sentences": [
         {
@@ -275,7 +274,7 @@
       ]
     },
     {
-      "id": "act_824",
+      "id": "act_755",
       "type": "typed",
       "items": [
         "lex_lesson",
@@ -285,12 +284,12 @@
       ]
     },
     {
-      "id": "act_825",
+      "id": "act_756",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_826",
+      "id": "act_757",
       "type": "listen-comprehension",
       "passage": "Good morning class! Today we will read a short story. Please open your book and turn your camera on.",
       "question": {
@@ -305,12 +304,12 @@
       "answer": "Open the book and turn the camera on"
     },
     {
-      "id": "act_827",
+      "id": "act_758",
       "type": "conversation",
       "dialogueId": "dlg_student_mic"
     },
     {
-      "id": "act_828",
+      "id": "act_759",
       "type": "review",
       "items": [
         "lex_hobby",

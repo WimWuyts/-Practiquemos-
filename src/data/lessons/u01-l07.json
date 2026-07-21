@@ -29,7 +29,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_73",
+      "id": "act_67",
       "type": "intro",
       "items": [
         "lex_seven",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "id": "act_74",
+      "id": "act_68",
       "type": "listen-choose",
       "items": [
         "lex_seven",
@@ -54,18 +54,7 @@
       ]
     },
     {
-      "id": "act_75",
-      "type": "icon-choice",
-      "items": [
-        "lex_seven",
-        "lex_eight",
-        "lex_nine",
-        "lex_ten",
-        "lex_thank"
-      ]
-    },
-    {
-      "id": "act_76",
+      "id": "act_69",
       "type": "match",
       "items": [
         "lex_seven",
@@ -77,7 +66,7 @@
       ]
     },
     {
-      "id": "act_77",
+      "id": "act_70",
       "type": "gapfill",
       "items": [
         {
@@ -123,7 +112,7 @@
       ]
     },
     {
-      "id": "act_78",
+      "id": "act_71",
       "type": "typed",
       "items": [
         "lex_seven",
@@ -133,12 +122,12 @@
       ]
     },
     {
-      "id": "act_79",
+      "id": "act_72",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_80",
+      "id": "act_73",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     }

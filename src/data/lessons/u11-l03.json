@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_841",
+      "id": "act_771",
       "type": "intro",
       "items": [
         "lex_teach",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_842",
+      "id": "act_772",
       "type": "listen-choose",
       "items": [
         "lex_teach",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_843",
-      "type": "icon-choice",
-      "items": [
-        "lex_teach",
-        "lex_begin",
-        "lex_finish",
-        "lex_email",
-        "lex_mobile"
-      ]
-    },
-    {
-      "id": "act_844",
+      "id": "act_773",
       "type": "match",
       "items": [
         "lex_teach",
@@ -84,13 +73,13 @@
       ]
     },
     {
-      "id": "act_845",
+      "id": "act_774",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "question"
     },
     {
-      "id": "act_846",
+      "id": "act_775",
       "type": "gapfill",
       "items": [
         {
@@ -136,7 +125,7 @@
       ]
     },
     {
-      "id": "act_847",
+      "id": "act_776",
       "type": "phrase-match",
       "items": [
         "chunk_te_looksgood",
@@ -146,7 +135,7 @@
       ]
     },
     {
-      "id": "act_848",
+      "id": "act_777",
       "type": "reorder",
       "sentences": [
         {
@@ -164,7 +153,7 @@
       ]
     },
     {
-      "id": "act_849",
+      "id": "act_778",
       "type": "typed",
       "items": [
         "lex_teach",
@@ -174,12 +163,12 @@
       ]
     },
     {
-      "id": "act_850",
+      "id": "act_779",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_851",
+      "id": "act_780",
       "type": "odd-one-out",
       "groups": [
         {

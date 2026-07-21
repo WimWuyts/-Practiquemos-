@@ -1,7 +1,7 @@
 # English with Marta · Angol Martával
 
 **Internal project name:** *Mirella tante*
-**Version:** 1.4.0
+**Version:** 1.5.0
 
 A personal, calm, **Duolingo-style English course built for one learner — Marta**, a Hungarian woman in her seventies. The course is organised around her real family, her online Hungarian teaching, and travel — so every lesson feels like *"learning English to connect with the people I love."*
 
@@ -13,7 +13,7 @@ A personal, calm, **Duolingo-style English course built for one learner — Mart
 
 ## For Marta (the learner)
 
-Open **`dist/Marta_English.html`** (or the file inside `MARTA_ENGLISH_APP_LEARNER_v1.4.zip`) by double-clicking it in **Chrome or Edge**. That's it. See `docs/USER_GUIDE_FOR_MARTA_EN_HU.md`.
+Open **`dist/Marta_English.html`** (or the file inside `MARTA_ENGLISH_APP_LEARNER_v1.5.zip`) by double-clicking it in **Chrome or Edge**. That's it. See `docs/USER_GUIDE_FOR_MARTA_EN_HU.md`.
 
 ## For the helper (Wim)
 
@@ -32,8 +32,8 @@ The **single-file learner build is the primary delivery**. The `src/` tree is th
 | Area | Delivery |
 |---|---|
 | Learner app | `dist/Marta_English.html` (single file, ~600 KB) |
-| Learner ZIP | `releases/MARTA_ENGLISH_APP_LEARNER_v1.4.zip` (HTML + start guide) |
-| Source ZIP | `releases/MARTA_ENGLISH_APP_SOURCE_v1.4.zip` (reproducible) |
+| Learner ZIP | `releases/MARTA_ENGLISH_APP_LEARNER_v1.5.zip` (HTML + start guide) |
+| Source ZIP | `releases/MARTA_ENGLISH_APP_SOURCE_v1.5.zip` (reproducible) |
 | Curriculum | 17 units, 103 micro-lessons + 1 monthly lesson |
 | Vocabulary | 751 productive words, 246 chunks, 331 receptive (EVP-anchored) |
 | Grammar | 27 functional spiral grammar cards (EGP A1) |

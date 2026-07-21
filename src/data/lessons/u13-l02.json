@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_908",
+      "id": "act_834",
       "type": "intro",
       "items": [
         "lex_shirt",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_909",
+      "id": "act_835",
       "type": "listen-choose",
       "items": [
         "lex_shirt",
@@ -61,7 +61,18 @@
       ]
     },
     {
-      "id": "act_910",
+      "id": "act_836",
+      "type": "icon-choice",
+      "items": [
+        "lex_shirt",
+        "lex_dress",
+        "lex_shoes",
+        "lex_coat",
+        "lex_hat"
+      ]
+    },
+    {
+      "id": "act_837",
       "type": "match",
       "items": [
         "lex_shirt",
@@ -73,7 +84,7 @@
       ]
     },
     {
-      "id": "act_911",
+      "id": "act_838",
       "type": "gapfill",
       "items": [
         {
@@ -119,7 +130,7 @@
       ]
     },
     {
-      "id": "act_912",
+      "id": "act_839",
       "type": "phrase-match",
       "items": [
         "chunk_fu_wouldliketo",
@@ -129,7 +140,7 @@
       ]
     },
     {
-      "id": "act_913",
+      "id": "act_840",
       "type": "reorder",
       "sentences": [
         {
@@ -147,7 +158,7 @@
       ]
     },
     {
-      "id": "act_914",
+      "id": "act_841",
       "type": "typed",
       "items": [
         "lex_shirt",
@@ -157,17 +168,17 @@
       ]
     },
     {
-      "id": "act_915",
+      "id": "act_842",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_916",
+      "id": "act_843",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_917",
+      "id": "act_844",
       "type": "odd-one-out",
       "groups": [
         {

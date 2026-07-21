@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_629",
+      "id": "act_576",
       "type": "intro",
       "items": [
         "lex_why",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_630",
+      "id": "act_577",
       "type": "listen-choose",
       "items": [
         "lex_why",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_631",
-      "type": "icon-choice",
-      "items": [
-        "lex_why",
-        "lex_part",
-        "lex_story",
-        "lex_song",
-        "lex_game"
-      ]
-    },
-    {
-      "id": "act_632",
+      "id": "act_578",
       "type": "match",
       "items": [
         "lex_why",
@@ -79,13 +68,13 @@
       ]
     },
     {
-      "id": "act_633",
+      "id": "act_579",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "game"
     },
     {
-      "id": "act_634",
+      "id": "act_580",
       "type": "gapfill",
       "items": [
         {
@@ -131,7 +120,7 @@
       ]
     },
     {
-      "id": "act_635",
+      "id": "act_581",
       "type": "typed",
       "items": [
         "lex_why",
@@ -141,7 +130,7 @@
       ]
     },
     {
-      "id": "act_636",
+      "id": "act_582",
       "type": "pron-record",
       "focusId": "snd_r"
     }

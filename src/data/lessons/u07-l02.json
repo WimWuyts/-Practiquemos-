@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_531",
+      "id": "act_485",
       "type": "intro",
       "items": [
         "lex_wait",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_532",
+      "id": "act_486",
       "type": "listen-choose",
       "items": [
         "lex_wait",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_533",
-      "type": "icon-choice",
-      "items": [
-        "lex_wait",
-        "lex_moment",
-        "lex_me",
-        "lex_him",
-        "lex_them"
-      ]
-    },
-    {
-      "id": "act_534",
+      "id": "act_487",
       "type": "match",
       "items": [
         "lex_wait",
@@ -84,7 +73,7 @@
       ]
     },
     {
-      "id": "act_535",
+      "id": "act_488",
       "type": "gapfill",
       "items": [
         {
@@ -130,7 +119,7 @@
       ]
     },
     {
-      "id": "act_536",
+      "id": "act_489",
       "type": "phrase-match",
       "items": [
         "chunk_repair_sorry",
@@ -140,7 +129,7 @@
       ]
     },
     {
-      "id": "act_537",
+      "id": "act_490",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +147,7 @@
       ]
     },
     {
-      "id": "act_538",
+      "id": "act_491",
       "type": "typed",
       "items": [
         "lex_wait",
@@ -168,17 +157,17 @@
       ]
     },
     {
-      "id": "act_539",
+      "id": "act_492",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_540",
+      "id": "act_493",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_541",
+      "id": "act_494",
       "type": "odd-one-out",
       "groups": [
         {
@@ -192,7 +181,7 @@
       ]
     },
     {
-      "id": "act_542",
+      "id": "act_495",
       "type": "listen-comprehension",
       "passage": "Hello Marta, this is a short message. I will call you at seven o'clock this evening. Talk soon!",
       "question": {

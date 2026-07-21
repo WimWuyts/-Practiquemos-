@@ -42,7 +42,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_807",
+      "id": "act_739",
       "type": "intro",
       "items": [
         "lex_choose",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_808",
+      "id": "act_740",
       "type": "listen-choose",
       "items": [
         "lex_choose",
@@ -62,17 +62,7 @@
       ]
     },
     {
-      "id": "act_809",
-      "type": "icon-choice",
-      "items": [
-        "lex_choose",
-        "lex_closed",
-        "lex_break",
-        "lex_comfortable"
-      ]
-    },
-    {
-      "id": "act_810",
+      "id": "act_741",
       "type": "match",
       "items": [
         "lex_choose",
@@ -82,7 +72,7 @@
       ]
     },
     {
-      "id": "act_811",
+      "id": "act_742",
       "type": "gapfill",
       "items": [
         {
@@ -128,7 +118,7 @@
       ]
     },
     {
-      "id": "act_812",
+      "id": "act_743",
       "type": "phrase-match",
       "items": [
         "chunk_sv_whatstime_bf",
@@ -140,7 +130,7 @@
       ]
     },
     {
-      "id": "act_813",
+      "id": "act_744",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +148,7 @@
       ]
     },
     {
-      "id": "act_814",
+      "id": "act_745",
       "type": "typed",
       "items": [
         "lex_choose",
@@ -168,7 +158,7 @@
       ]
     },
     {
-      "id": "act_815",
+      "id": "act_746",
       "type": "pron-record",
       "focusId": "str_word"
     }

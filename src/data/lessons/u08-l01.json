@@ -152,7 +152,7 @@
   "conversationId": "dlg_peter_dinner",
   "activities": [
     {
-      "id": "act_564",
+      "id": "act_515",
       "type": "intro",
       "items": [
         "lex_hobby",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "act_565",
+      "id": "act_516",
       "type": "listen-choose",
       "items": [
         "lex_hobby",
@@ -178,10 +178,9 @@
       ]
     },
     {
-      "id": "act_566",
+      "id": "act_517",
       "type": "icon-choice",
       "items": [
-        "lex_hobby",
         "lex_music",
         "lex_book",
         "lex_film",
@@ -189,7 +188,7 @@
       ]
     },
     {
-      "id": "act_567",
+      "id": "act_518",
       "type": "match",
       "items": [
         "lex_hobby",
@@ -201,12 +200,12 @@
       ]
     },
     {
-      "id": "act_568",
+      "id": "act_519",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_569",
+      "id": "act_520",
       "type": "gapfill",
       "items": [
         {
@@ -252,7 +251,7 @@
       ]
     },
     {
-      "id": "act_570",
+      "id": "act_521",
       "type": "phrase-match",
       "items": [
         "chunk_ask_hobbies",
@@ -262,7 +261,7 @@
       ]
     },
     {
-      "id": "act_571",
+      "id": "act_522",
       "type": "reorder",
       "sentences": [
         {
@@ -280,7 +279,7 @@
       ]
     },
     {
-      "id": "act_572",
+      "id": "act_523",
       "type": "typed",
       "items": [
         "lex_hobby",
@@ -290,12 +289,12 @@
       ]
     },
     {
-      "id": "act_573",
+      "id": "act_524",
       "type": "pron-record",
       "focusId": "snd_r"
     },
     {
-      "id": "act_574",
+      "id": "act_525",
       "type": "odd-one-out",
       "groups": [
         {
@@ -309,12 +308,12 @@
       ]
     },
     {
-      "id": "act_575",
+      "id": "act_526",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_576",
+      "id": "act_527",
       "type": "review",
       "items": [
         "lex_food",

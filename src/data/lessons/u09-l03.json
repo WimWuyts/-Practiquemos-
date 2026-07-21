@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_690",
+      "id": "act_632",
       "type": "intro",
       "items": [
         "lex_second",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_691",
+      "id": "act_633",
       "type": "listen-choose",
       "items": [
         "lex_second",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_692",
-      "type": "icon-choice",
-      "items": [
-        "lex_second",
-        "lex_third",
-        "lex_town",
-        "lex_village",
-        "lex_road"
-      ]
-    },
-    {
-      "id": "act_693",
+      "id": "act_634",
       "type": "match",
       "items": [
         "lex_second",
@@ -84,7 +73,7 @@
       ]
     },
     {
-      "id": "act_694",
+      "id": "act_635",
       "type": "gapfill",
       "items": [
         {
@@ -130,7 +119,7 @@
       ]
     },
     {
-      "id": "act_695",
+      "id": "act_636",
       "type": "phrase-match",
       "items": [
         "chunk_tr_oneticket",
@@ -140,7 +129,7 @@
       ]
     },
     {
-      "id": "act_696",
+      "id": "act_637",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +147,7 @@
       ]
     },
     {
-      "id": "act_697",
+      "id": "act_638",
       "type": "typed",
       "items": [
         "lex_second",
@@ -168,12 +157,12 @@
       ]
     },
     {
-      "id": "act_698",
+      "id": "act_639",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_699",
+      "id": "act_640",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

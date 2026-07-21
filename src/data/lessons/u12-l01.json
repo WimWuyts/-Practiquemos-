@@ -157,7 +157,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_869",
+      "id": "act_797",
       "type": "intro",
       "items": [
         "lex_was",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "id": "act_870",
+      "id": "act_798",
       "type": "listen-choose",
       "items": [
         "lex_was",
@@ -183,18 +183,7 @@
       ]
     },
     {
-      "id": "act_871",
-      "type": "icon-choice",
-      "items": [
-        "lex_was",
-        "lex_went",
-        "lex_saw",
-        "lex_visit",
-        "lex_last_week"
-      ]
-    },
-    {
-      "id": "act_872",
+      "id": "act_799",
       "type": "match",
       "items": [
         "lex_was",
@@ -206,12 +195,12 @@
       ]
     },
     {
-      "id": "act_873",
+      "id": "act_800",
       "type": "grammar",
       "grammarId": "gr_waswere"
     },
     {
-      "id": "act_874",
+      "id": "act_801",
       "type": "gapfill",
       "items": [
         {
@@ -257,7 +246,7 @@
       ]
     },
     {
-      "id": "act_875",
+      "id": "act_802",
       "type": "phrase-match",
       "items": [
         "chunk_conv_expand",
@@ -267,7 +256,7 @@
       ]
     },
     {
-      "id": "act_876",
+      "id": "act_803",
       "type": "reorder",
       "sentences": [
         {
@@ -285,7 +274,7 @@
       ]
     },
     {
-      "id": "act_877",
+      "id": "act_804",
       "type": "typed",
       "items": [
         "lex_was",
@@ -295,12 +284,12 @@
       ]
     },
     {
-      "id": "act_878",
+      "id": "act_805",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_879",
+      "id": "act_806",
       "type": "odd-one-out",
       "groups": [
         {
@@ -314,7 +303,7 @@
       ]
     },
     {
-      "id": "act_880",
+      "id": "act_807",
       "type": "review",
       "items": [
         "lex_street",

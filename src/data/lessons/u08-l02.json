@@ -37,7 +37,7 @@
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_577",
+      "id": "act_528",
       "type": "intro",
       "items": [
         "lex_play",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_578",
+      "id": "act_529",
       "type": "listen-choose",
       "items": [
         "lex_play",
@@ -63,18 +63,7 @@
       ]
     },
     {
-      "id": "act_579",
-      "type": "icon-choice",
-      "items": [
-        "lex_play",
-        "lex_love",
-        "lex_enjoy",
-        "lex_favourite",
-        "lex_interesting"
-      ]
-    },
-    {
-      "id": "act_580",
+      "id": "act_530",
       "type": "match",
       "items": [
         "lex_play",
@@ -86,12 +75,12 @@
       ]
     },
     {
-      "id": "act_581",
+      "id": "act_531",
       "type": "grammar",
       "grammarId": "gr_comparatives"
     },
     {
-      "id": "act_582",
+      "id": "act_532",
       "type": "gapfill",
       "items": [
         {
@@ -137,7 +126,7 @@
       ]
     },
     {
-      "id": "act_583",
+      "id": "act_533",
       "type": "phrase-match",
       "items": [
         "chunk_op_agree",
@@ -147,7 +136,7 @@
       ]
     },
     {
-      "id": "act_584",
+      "id": "act_534",
       "type": "reorder",
       "sentences": [
         {
@@ -165,7 +154,7 @@
       ]
     },
     {
-      "id": "act_585",
+      "id": "act_535",
       "type": "typed",
       "items": [
         "lex_play",
@@ -175,17 +164,17 @@
       ]
     },
     {
-      "id": "act_586",
+      "id": "act_536",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_587",
+      "id": "act_537",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_588",
+      "id": "act_538",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

@@ -49,8 +49,26 @@ const WORD_ICON = {
   house: "home", home: "home", garden: "leaf", kitchen: "fork", horse: "star", music: "music",
   film: "film", sport: "star", money: "cart", price: "cart", airport: "plane", flight: "plane",
   gate: "door", blanket: "bed", toilet: "door", weekend: "calendar", family: "family",
+  // animals & nature
+  dog: "dog", cat: "cat", bird: "bird", duck: "bird", rabbit: "cat", cow: "dog",
+  tree: "tree", flower: "flower", moon: "moon", rain: "rain", snow: "snow", sun: "sun",
+  grass: "leaf", field: "leaf", star: "star",
+  // home & objects
+  chair: "chair", window: "window", door: "door", table: "list", clock: "clock", key: "key",
+  bag: "bag", box: "list", mirror: "window", television: "laptop", fridge: "bed", lamp: "sun",
+  // body
+  hand: "hand", eye: "eye", foot: "shoes",
+  // clothes
+  shirt: "shirt", hat: "hat", shoes: "shoes", coat: "shirt", jacket: "shirt", dress: "shirt",
+  // transport & misc
+  boat: "boat", bicycle: "bus", umbrella: "umbrella", pen: "pen", pencil: "pen",
+  game: "ball", sport: "ball", ball: "ball", country: "flag", flag: "flag",
+  glass: "cup", bottle: "droplet", plate: "bowl", cup: "cup",
 };
 const iconFor = (head, theme) => WORD_ICON[head.toLowerCase()] || THEME_ICON[theme] || "dot";
+// A "specific" icon uniquely depicts the word (from WORD_ICON) — only these are used
+// in picture-based exercises, so the picture is never ambiguous.
+const iconIsSpecific = (head) => !!WORD_ICON[head.toLowerCase()];
 
 // ---------- Example generator: curated natural sentences + grammar-safe fallback ----------
 const UNCOUNTABLE = new Set(["food", "water", "coffee", "tea", "milk", "bread", "cheese", "meat", "fish", "fruit",
@@ -98,7 +116,7 @@ function pushLex(head, hu, pos, theme, firstLesson, forms, status, level) {
     themes: [theme], firstLesson: firstLesson || null, reviewLessons: [],
     examples: [exampleFor(head, hu, pos, theme)],
     tts: head, pronunciationGroup: pos === "number" ? "numbers" : theme,
-    spellingFamily: familyOf[head] || null, icon: iconFor(head, theme),
+    spellingFamily: familyOf[head] || null, icon: iconFor(head, theme), iconSpecific: iconIsSpecific(head),
     acceptedForms: forms || [head], distractors: [], notes: "",
   });
 }
@@ -333,8 +351,8 @@ function activitiesFor(lesson) {
   if (newLex.length) acts.push(A("intro", { items: newLex.slice(0, 8).map((l) => l.id) }));
   // 2. Listen and choose
   if (newLex.length >= 2) acts.push(A("listen-choose", { items: newLex.slice(0, 6).map((l) => l.id) }));
-  // 3. Icon → word (visual recognition) for concrete words
-  const iconable = newLex.filter((l) => l.icon && l.icon !== "dot");
+  // 3. Icon → word (visual recognition) — only words with a specific, unambiguous icon
+  const iconable = newLex.filter((l) => l.iconSpecific);
   if (iconable.length >= 3) acts.push(A("icon-choice", { items: iconable.slice(0, 5).map((l) => l.id) }));
   // 4. Word-to-meaning match
   if (newLex.length >= 3) acts.push(A("match", { items: newLex.slice(0, 6).map((l) => l.id) }));
@@ -418,7 +436,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.4.0", schemaVersion: 1,
+  id: "marta_english", version: "1.5.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

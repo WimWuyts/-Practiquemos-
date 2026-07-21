@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_678",
+      "id": "act_621",
       "type": "intro",
       "items": [
         "lex_left",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_679",
+      "id": "act_622",
       "type": "listen-choose",
       "items": [
         "lex_left",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_680",
-      "type": "icon-choice",
-      "items": [
-        "lex_left",
-        "lex_right",
-        "lex_straight",
-        "lex_near",
-        "lex_far"
-      ]
-    },
-    {
-      "id": "act_681",
+      "id": "act_623",
       "type": "match",
       "items": [
         "lex_left",
@@ -84,13 +73,13 @@
       ]
     },
     {
-      "id": "act_682",
+      "id": "act_624",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "right"
     },
     {
-      "id": "act_683",
+      "id": "act_625",
       "type": "gapfill",
       "items": [
         {
@@ -136,7 +125,7 @@
       ]
     },
     {
-      "id": "act_684",
+      "id": "act_626",
       "type": "phrase-match",
       "items": [
         "chunk_tw_wheretoilet",
@@ -146,7 +135,7 @@
       ]
     },
     {
-      "id": "act_685",
+      "id": "act_627",
       "type": "reorder",
       "sentences": [
         {
@@ -164,7 +153,7 @@
       ]
     },
     {
-      "id": "act_686",
+      "id": "act_628",
       "type": "typed",
       "items": [
         "lex_left",
@@ -174,17 +163,17 @@
       ]
     },
     {
-      "id": "act_687",
+      "id": "act_629",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_688",
+      "id": "act_630",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_689",
+      "id": "act_631",
       "type": "odd-one-out",
       "groups": [
         {

@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_918",
+      "id": "act_845",
       "type": "intro",
       "items": [
         "lex_carry",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_919",
+      "id": "act_846",
       "type": "listen-choose",
       "items": [
         "lex_carry",
@@ -58,18 +58,7 @@
       ]
     },
     {
-      "id": "act_920",
-      "type": "icon-choice",
-      "items": [
-        "lex_carry",
-        "lex_stay",
-        "lex_leave",
-        "lex_arrive",
-        "lex_bag"
-      ]
-    },
-    {
-      "id": "act_921",
+      "id": "act_847",
       "type": "match",
       "items": [
         "lex_carry",
@@ -81,7 +70,7 @@
       ]
     },
     {
-      "id": "act_922",
+      "id": "act_848",
       "type": "gapfill",
       "items": [
         {
@@ -127,14 +116,14 @@
       ]
     },
     {
-      "id": "act_923",
+      "id": "act_849",
       "type": "phrase-match",
       "items": [
         "chunk_rp_letmecheck"
       ]
     },
     {
-      "id": "act_924",
+      "id": "act_850",
       "type": "reorder",
       "sentences": [
         {
@@ -144,7 +133,7 @@
       ]
     },
     {
-      "id": "act_925",
+      "id": "act_851",
       "type": "typed",
       "items": [
         "lex_carry",
@@ -154,12 +143,12 @@
       ]
     },
     {
-      "id": "act_926",
+      "id": "act_852",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_927",
+      "id": "act_853",
       "type": "odd-one-out",
       "groups": [
         {

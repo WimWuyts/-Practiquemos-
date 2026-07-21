@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_797",
+      "id": "act_730",
       "type": "intro",
       "items": [
         "lex_pain",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_798",
+      "id": "act_731",
       "type": "listen-choose",
       "items": [
         "lex_pain",
@@ -61,17 +61,7 @@
       ]
     },
     {
-      "id": "act_799",
-      "type": "icon-choice",
-      "items": [
-        "lex_pharmacy",
-        "lex_of_course",
-        "lex_cafe",
-        "lex_fill"
-      ]
-    },
-    {
-      "id": "act_800",
+      "id": "act_732",
       "type": "match",
       "items": [
         "lex_pain",
@@ -83,7 +73,7 @@
       ]
     },
     {
-      "id": "act_801",
+      "id": "act_733",
       "type": "gapfill",
       "items": [
         {
@@ -129,7 +119,7 @@
       ]
     },
     {
-      "id": "act_802",
+      "id": "act_734",
       "type": "phrase-match",
       "items": [
         "chunk_sv_recommend",
@@ -139,7 +129,7 @@
       ]
     },
     {
-      "id": "act_803",
+      "id": "act_735",
       "type": "reorder",
       "sentences": [
         {
@@ -157,7 +147,7 @@
       ]
     },
     {
-      "id": "act_804",
+      "id": "act_736",
       "type": "typed",
       "items": [
         "lex_pain",
@@ -167,12 +157,12 @@
       ]
     },
     {
-      "id": "act_805",
+      "id": "act_737",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_806",
+      "id": "act_738",
       "type": "odd-one-out",
       "groups": [
         {

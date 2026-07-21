@@ -225,7 +225,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_665",
+      "id": "act_608",
       "type": "intro",
       "items": [
         "lex_street",
@@ -239,7 +239,7 @@
       ]
     },
     {
-      "id": "act_666",
+      "id": "act_609",
       "type": "listen-choose",
       "items": [
         "lex_street",
@@ -251,18 +251,18 @@
       ]
     },
     {
-      "id": "act_667",
+      "id": "act_610",
       "type": "icon-choice",
       "items": [
-        "lex_street",
-        "lex_station",
         "lex_bus",
         "lex_train",
-        "lex_car"
+        "lex_car",
+        "lex_taxi",
+        "lex_ticket"
       ]
     },
     {
-      "id": "act_668",
+      "id": "act_611",
       "type": "match",
       "items": [
         "lex_street",
@@ -274,18 +274,18 @@
       ]
     },
     {
-      "id": "act_669",
+      "id": "act_612",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "station"
     },
     {
-      "id": "act_670",
+      "id": "act_613",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_671",
+      "id": "act_614",
       "type": "gapfill",
       "items": [
         {
@@ -331,7 +331,7 @@
       ]
     },
     {
-      "id": "act_672",
+      "id": "act_615",
       "type": "phrase-match",
       "items": [
         "chunk_ask_followup_where",
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "id": "act_673",
+      "id": "act_616",
       "type": "reorder",
       "sentences": [
         {
@@ -359,7 +359,7 @@
       ]
     },
     {
-      "id": "act_674",
+      "id": "act_617",
       "type": "typed",
       "items": [
         "lex_street",
@@ -369,17 +369,17 @@
       ]
     },
     {
-      "id": "act_675",
+      "id": "act_618",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_676",
+      "id": "act_619",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_677",
+      "id": "act_620",
       "type": "review",
       "items": [
         "lex_time",

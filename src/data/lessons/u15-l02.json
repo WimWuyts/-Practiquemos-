@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_975",
+      "id": "act_899",
       "type": "intro",
       "items": [
         "lex_safe",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_976",
+      "id": "act_900",
       "type": "listen-choose",
       "items": [
         "lex_safe",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_977",
-      "type": "icon-choice",
-      "items": [
-        "lex_safe",
-        "lex_okay",
-        "lex_fly",
-        "lex_feel",
-        "lex_sad"
-      ]
-    },
-    {
-      "id": "act_978",
+      "id": "act_901",
       "type": "match",
       "items": [
         "lex_safe",
@@ -84,7 +73,7 @@
       ]
     },
     {
-      "id": "act_979",
+      "id": "act_902",
       "type": "gapfill",
       "items": [
         {
@@ -130,7 +119,7 @@
       ]
     },
     {
-      "id": "act_980",
+      "id": "act_903",
       "type": "phrase-match",
       "items": [
         "chunk_fly_blanket",
@@ -140,7 +129,7 @@
       ]
     },
     {
-      "id": "act_981",
+      "id": "act_904",
       "type": "reorder",
       "sentences": [
         {
@@ -158,7 +147,7 @@
       ]
     },
     {
-      "id": "act_982",
+      "id": "act_905",
       "type": "typed",
       "items": [
         "lex_safe",
@@ -168,12 +157,12 @@
       ]
     },
     {
-      "id": "act_983",
+      "id": "act_906",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_984",
+      "id": "act_907",
       "type": "odd-one-out",
       "groups": [
         {
@@ -187,7 +176,7 @@
       ]
     },
     {
-      "id": "act_985",
+      "id": "act_908",
       "type": "listen-comprehension",
       "passage": "Ladies and gentlemen, we will land in about twenty minutes. Please fasten your seatbelt. Thank you.",
       "question": {

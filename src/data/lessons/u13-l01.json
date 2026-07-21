@@ -81,7 +81,7 @@
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_895",
+      "id": "act_821",
       "type": "intro",
       "items": [
         "lex_travel",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "id": "act_896",
+      "id": "act_822",
       "type": "listen-choose",
       "items": [
         "lex_travel",
@@ -107,18 +107,16 @@
       ]
     },
     {
-      "id": "act_897",
+      "id": "act_823",
       "type": "icon-choice",
       "items": [
-        "lex_travel",
-        "lex_trip",
         "lex_luggage",
         "lex_suitcase",
         "lex_passport"
       ]
     },
     {
-      "id": "act_898",
+      "id": "act_824",
       "type": "match",
       "items": [
         "lex_travel",
@@ -130,12 +128,12 @@
       ]
     },
     {
-      "id": "act_899",
+      "id": "act_825",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_900",
+      "id": "act_826",
       "type": "gapfill",
       "items": [
         {
@@ -181,7 +179,7 @@
       ]
     },
     {
-      "id": "act_901",
+      "id": "act_827",
       "type": "phrase-match",
       "items": [
         "chunk_plan_going",
@@ -191,7 +189,7 @@
       ]
     },
     {
-      "id": "act_902",
+      "id": "act_828",
       "type": "reorder",
       "sentences": [
         {
@@ -209,7 +207,7 @@
       ]
     },
     {
-      "id": "act_903",
+      "id": "act_829",
       "type": "typed",
       "items": [
         "lex_travel",
@@ -219,12 +217,12 @@
       ]
     },
     {
-      "id": "act_904",
+      "id": "act_830",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_905",
+      "id": "act_831",
       "type": "odd-one-out",
       "groups": [
         {
@@ -238,12 +236,12 @@
       ]
     },
     {
-      "id": "act_906",
+      "id": "act_832",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_907",
+      "id": "act_833",
       "type": "review",
       "items": [
         "lex_restaurant",

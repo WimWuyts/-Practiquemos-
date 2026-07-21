@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_479",
+      "id": "act_437",
       "type": "intro",
       "items": [
         "lex_flower",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_480",
+      "id": "act_438",
       "type": "listen-choose",
       "items": [
         "lex_flower",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_481",
-      "type": "icon-choice",
-      "items": [
-        "lex_flower",
-        "lex_sea",
-        "lex_river",
-        "lex_lake",
-        "lex_mountain"
-      ]
-    },
-    {
-      "id": "act_482",
+      "id": "act_439",
       "type": "match",
       "items": [
         "lex_flower",
@@ -79,7 +68,7 @@
       ]
     },
     {
-      "id": "act_483",
+      "id": "act_440",
       "type": "gapfill",
       "items": [
         {
@@ -125,7 +114,7 @@
       ]
     },
     {
-      "id": "act_484",
+      "id": "act_441",
       "type": "typed",
       "items": [
         "lex_flower",
@@ -135,12 +124,12 @@
       ]
     },
     {
-      "id": "act_485",
+      "id": "act_442",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_486",
+      "id": "act_443",
       "type": "odd-one-out",
       "groups": [
         {

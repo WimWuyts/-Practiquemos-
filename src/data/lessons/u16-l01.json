@@ -82,7 +82,7 @@
   "conversationId": "dlg_balaton",
   "activities": [
     {
-      "id": "act_993",
+      "id": "act_916",
       "type": "intro",
       "items": [
         "lex_tired",
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "id": "act_994",
+      "id": "act_917",
       "type": "listen-choose",
       "items": [
         "lex_tired",
@@ -108,18 +108,7 @@
       ]
     },
     {
-      "id": "act_995",
-      "type": "icon-choice",
-      "items": [
-        "lex_tired",
-        "lex_glad",
-        "lex_welcome",
-        "lex_together",
-        "lex_hope"
-      ]
-    },
-    {
-      "id": "act_996",
+      "id": "act_918",
       "type": "match",
       "items": [
         "lex_tired",
@@ -131,7 +120,7 @@
       ]
     },
     {
-      "id": "act_997",
+      "id": "act_919",
       "type": "gapfill",
       "items": [
         {
@@ -177,7 +166,7 @@
       ]
     },
     {
-      "id": "act_998",
+      "id": "act_920",
       "type": "phrase-match",
       "items": [
         "chunk_conv_thanks_visit",
@@ -187,7 +176,7 @@
       ]
     },
     {
-      "id": "act_999",
+      "id": "act_921",
       "type": "reorder",
       "sentences": [
         {
@@ -205,7 +194,7 @@
       ]
     },
     {
-      "id": "act_1000",
+      "id": "act_922",
       "type": "typed",
       "items": [
         "lex_tired",
@@ -215,12 +204,12 @@
       ]
     },
     {
-      "id": "act_1001",
+      "id": "act_923",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_1002",
+      "id": "act_924",
       "type": "odd-one-out",
       "groups": [
         {
@@ -234,7 +223,7 @@
       ]
     },
     {
-      "id": "act_1003",
+      "id": "act_925",
       "type": "expand",
       "question": {
         "en": "Tell me about your day.",
@@ -256,12 +245,12 @@
       ]
     },
     {
-      "id": "act_1004",
+      "id": "act_926",
       "type": "conversation",
       "dialogueId": "dlg_balaton"
     },
     {
-      "id": "act_1005",
+      "id": "act_927",
       "type": "review",
       "items": [
         "lex_travel",

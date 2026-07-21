@@ -160,7 +160,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_390",
+      "id": "act_357",
       "type": "intro",
       "items": [
         "lex_time",
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "id": "act_391",
+      "id": "act_358",
       "type": "listen-choose",
       "items": [
         "lex_time",
@@ -186,18 +186,7 @@
       ]
     },
     {
-      "id": "act_392",
-      "type": "icon-choice",
-      "items": [
-        "lex_time",
-        "lex_hour",
-        "lex_minute",
-        "lex_today",
-        "lex_tomorrow"
-      ]
-    },
-    {
-      "id": "act_393",
+      "id": "act_359",
       "type": "match",
       "items": [
         "lex_time",
@@ -209,18 +198,18 @@
       ]
     },
     {
-      "id": "act_394",
+      "id": "act_360",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "time"
     },
     {
-      "id": "act_395",
+      "id": "act_361",
       "type": "grammar",
       "grammarId": "gr_prepositions_time"
     },
     {
-      "id": "act_396",
+      "id": "act_362",
       "type": "gapfill",
       "items": [
         {
@@ -266,7 +255,7 @@
       ]
     },
     {
-      "id": "act_397",
+      "id": "act_363",
       "type": "phrase-match",
       "items": [
         "chunk_plan_free",
@@ -276,7 +265,7 @@
       ]
     },
     {
-      "id": "act_398",
+      "id": "act_364",
       "type": "reorder",
       "sentences": [
         {
@@ -294,7 +283,7 @@
       ]
     },
     {
-      "id": "act_399",
+      "id": "act_365",
       "type": "typed",
       "items": [
         "lex_time",
@@ -304,12 +293,12 @@
       ]
     },
     {
-      "id": "act_400",
+      "id": "act_366",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_401",
+      "id": "act_367",
       "type": "odd-one-out",
       "groups": [
         {
@@ -323,7 +312,7 @@
       ]
     },
     {
-      "id": "act_402",
+      "id": "act_368",
       "type": "review",
       "items": [
         "lex_hungary",

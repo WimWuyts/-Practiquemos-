@@ -218,7 +218,7 @@
   "conversationId": "dlg_kira_phone",
   "activities": [
     {
-      "id": "act_517",
+      "id": "act_472",
       "type": "intro",
       "items": [
         "lex_call",
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "id": "act_518",
+      "id": "act_473",
       "type": "listen-choose",
       "items": [
         "lex_call",
@@ -244,18 +244,7 @@
       ]
     },
     {
-      "id": "act_519",
-      "type": "icon-choice",
-      "items": [
-        "lex_call",
-        "lex_phone",
-        "lex_hear",
-        "lex_see",
-        "lex_repeat"
-      ]
-    },
-    {
-      "id": "act_520",
+      "id": "act_474",
       "type": "match",
       "items": [
         "lex_call",
@@ -267,18 +256,18 @@
       ]
     },
     {
-      "id": "act_521",
+      "id": "act_475",
       "type": "spelling-build",
       "family": "sf_ph",
       "word": "phone"
     },
     {
-      "id": "act_522",
+      "id": "act_476",
       "type": "grammar",
       "grammarId": "gr_object_pronouns"
     },
     {
-      "id": "act_523",
+      "id": "act_477",
       "type": "gapfill",
       "items": [
         {
@@ -324,7 +313,7 @@
       ]
     },
     {
-      "id": "act_524",
+      "id": "act_478",
       "type": "phrase-match",
       "items": [
         "chunk_repair_notunderstand",
@@ -334,7 +323,7 @@
       ]
     },
     {
-      "id": "act_525",
+      "id": "act_479",
       "type": "reorder",
       "sentences": [
         {
@@ -352,7 +341,7 @@
       ]
     },
     {
-      "id": "act_526",
+      "id": "act_480",
       "type": "typed",
       "items": [
         "lex_call",
@@ -362,12 +351,12 @@
       ]
     },
     {
-      "id": "act_527",
+      "id": "act_481",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_528",
+      "id": "act_482",
       "type": "odd-one-out",
       "groups": [
         {
@@ -381,12 +370,12 @@
       ]
     },
     {
-      "id": "act_529",
+      "id": "act_483",
       "type": "conversation",
       "dialogueId": "dlg_kira_phone"
     },
     {
-      "id": "act_530",
+      "id": "act_484",
       "type": "review",
       "items": [
         "lex_day",

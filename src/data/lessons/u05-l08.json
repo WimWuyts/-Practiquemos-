@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_355",
+      "id": "act_326",
       "type": "intro",
       "items": [
         "lex_empty",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_356",
+      "id": "act_327",
       "type": "listen-choose",
       "items": [
         "lex_empty",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_357",
-      "type": "icon-choice",
-      "items": [
-        "lex_empty",
-        "lex_for",
-        "lex_cost",
-        "lex_euro",
-        "lex_card"
-      ]
-    },
-    {
-      "id": "act_358",
+      "id": "act_328",
       "type": "match",
       "items": [
         "lex_empty",
@@ -79,7 +68,7 @@
       ]
     },
     {
-      "id": "act_359",
+      "id": "act_329",
       "type": "gapfill",
       "items": [
         {
@@ -125,7 +114,7 @@
       ]
     },
     {
-      "id": "act_360",
+      "id": "act_330",
       "type": "typed",
       "items": [
         "lex_empty",
@@ -135,12 +124,12 @@
       ]
     },
     {
-      "id": "act_361",
+      "id": "act_331",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_362",
+      "id": "act_332",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_446",
+      "id": "act_408",
       "type": "intro",
       "items": [
         "lex_eighteen",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_447",
+      "id": "act_409",
       "type": "listen-choose",
       "items": [
         "lex_eighteen",
@@ -58,18 +58,7 @@
       ]
     },
     {
-      "id": "act_448",
-      "type": "icon-choice",
-      "items": [
-        "lex_eighteen",
-        "lex_nineteen",
-        "lex_forty",
-        "lex_fifty",
-        "lex_sixty"
-      ]
-    },
-    {
-      "id": "act_449",
+      "id": "act_410",
       "type": "match",
       "items": [
         "lex_eighteen",
@@ -81,7 +70,7 @@
       ]
     },
     {
-      "id": "act_450",
+      "id": "act_411",
       "type": "gapfill",
       "items": [
         {
@@ -127,14 +116,14 @@
       ]
     },
     {
-      "id": "act_451",
+      "id": "act_412",
       "type": "phrase-match",
       "items": [
         "chunk_op_soundsgood"
       ]
     },
     {
-      "id": "act_452",
+      "id": "act_413",
       "type": "reorder",
       "sentences": [
         {
@@ -144,7 +133,7 @@
       ]
     },
     {
-      "id": "act_453",
+      "id": "act_414",
       "type": "typed",
       "items": [
         "lex_eighteen",
@@ -154,7 +143,7 @@
       ]
     },
     {
-      "id": "act_454",
+      "id": "act_415",
       "type": "pron-record",
       "focusId": "str_question"
     }

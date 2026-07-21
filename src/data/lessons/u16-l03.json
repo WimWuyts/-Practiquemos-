@@ -39,7 +39,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_1015",
+      "id": "act_936",
       "type": "intro",
       "items": [
         "lex_laugh",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_1016",
+      "id": "act_937",
       "type": "listen-choose",
       "items": [
         "lex_laugh",
@@ -57,16 +57,7 @@
       ]
     },
     {
-      "id": "act_1017",
-      "type": "icon-choice",
-      "items": [
-        "lex_laugh",
-        "lex_invite",
-        "lex_lucky"
-      ]
-    },
-    {
-      "id": "act_1018",
+      "id": "act_938",
       "type": "match",
       "items": [
         "lex_laugh",
@@ -75,7 +66,7 @@
       ]
     },
     {
-      "id": "act_1019",
+      "id": "act_939",
       "type": "gapfill",
       "items": [
         {
@@ -111,7 +102,7 @@
       ]
     },
     {
-      "id": "act_1020",
+      "id": "act_940",
       "type": "phrase-match",
       "items": [
         "chunk_of_wouldyoulike",
@@ -123,7 +114,7 @@
       ]
     },
     {
-      "id": "act_1021",
+      "id": "act_941",
       "type": "reorder",
       "sentences": [
         {
@@ -141,7 +132,7 @@
       ]
     },
     {
-      "id": "act_1022",
+      "id": "act_942",
       "type": "typed",
       "items": [
         "lex_laugh",
@@ -150,7 +141,7 @@
       ]
     },
     {
-      "id": "act_1023",
+      "id": "act_943",
       "type": "pron-record",
       "focusId": "str_sentence"
     }

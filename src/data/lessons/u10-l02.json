@@ -35,7 +35,7 @@
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_788",
+      "id": "act_721",
       "type": "intro",
       "items": [
         "lex_problem",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_789",
+      "id": "act_722",
       "type": "listen-choose",
       "items": [
         "lex_problem",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_790",
+      "id": "act_723",
       "type": "match",
       "items": [
         "lex_problem",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_791",
+      "id": "act_724",
       "type": "gapfill",
       "items": [
         {
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "id": "act_792",
+      "id": "act_725",
       "type": "phrase-match",
       "items": [
         "chunk_serv_howmuch",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "id": "act_793",
+      "id": "act_726",
       "type": "reorder",
       "sentences": [
         {
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "id": "act_794",
+      "id": "act_727",
       "type": "typed",
       "items": [
         "lex_problem",
@@ -157,12 +157,12 @@
       ]
     },
     {
-      "id": "act_795",
+      "id": "act_728",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_796",
+      "id": "act_729",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

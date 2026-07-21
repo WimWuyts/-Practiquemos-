@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_219",
+      "id": "act_199",
       "type": "intro",
       "items": [
         "lex_room",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_220",
+      "id": "act_200",
       "type": "listen-choose",
       "items": [
         "lex_room",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_221",
-      "type": "icon-choice",
-      "items": [
-        "lex_room",
-        "lex_kitchen",
-        "lex_garden",
-        "lex_always",
-        "lex_usually"
-      ]
-    },
-    {
-      "id": "act_222",
+      "id": "act_201",
       "type": "match",
       "items": [
         "lex_room",
@@ -79,13 +68,13 @@
       ]
     },
     {
-      "id": "act_223",
+      "id": "act_202",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "room"
     },
     {
-      "id": "act_224",
+      "id": "act_203",
       "type": "gapfill",
       "items": [
         {
@@ -131,7 +120,7 @@
       ]
     },
     {
-      "id": "act_225",
+      "id": "act_204",
       "type": "typed",
       "items": [
         "lex_room",
@@ -141,12 +130,12 @@
       ]
     },
     {
-      "id": "act_226",
+      "id": "act_205",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_227",
+      "id": "act_206",
       "type": "odd-one-out",
       "groups": [
         {

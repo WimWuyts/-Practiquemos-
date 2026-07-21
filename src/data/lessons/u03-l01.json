@@ -83,7 +83,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_144",
+      "id": "act_131",
       "type": "intro",
       "items": [
         "lex_hungary",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": "act_145",
+      "id": "act_132",
       "type": "listen-choose",
       "items": [
         "lex_hungary",
@@ -109,18 +109,7 @@
       ]
     },
     {
-      "id": "act_146",
-      "type": "icon-choice",
-      "items": [
-        "lex_hungary",
-        "lex_hungarian",
-        "lex_england",
-        "lex_english",
-        "lex_spain"
-      ]
-    },
-    {
-      "id": "act_147",
+      "id": "act_133",
       "type": "match",
       "items": [
         "lex_hungary",
@@ -132,12 +121,12 @@
       ]
     },
     {
-      "id": "act_148",
+      "id": "act_134",
       "type": "grammar",
       "grammarId": "gr_conjunctions"
     },
     {
-      "id": "act_149",
+      "id": "act_135",
       "type": "gapfill",
       "items": [
         {
@@ -183,7 +172,7 @@
       ]
     },
     {
-      "id": "act_150",
+      "id": "act_136",
       "type": "phrase-match",
       "items": [
         "chunk_ask_where_live",
@@ -193,7 +182,7 @@
       ]
     },
     {
-      "id": "act_151",
+      "id": "act_137",
       "type": "reorder",
       "sentences": [
         {
@@ -211,7 +200,7 @@
       ]
     },
     {
-      "id": "act_152",
+      "id": "act_138",
       "type": "typed",
       "items": [
         "lex_hungary",
@@ -221,17 +210,17 @@
       ]
     },
     {
-      "id": "act_153",
+      "id": "act_139",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_154",
+      "id": "act_140",
       "type": "minimal-pair",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_155",
+      "id": "act_141",
       "type": "odd-one-out",
       "groups": [
         {
@@ -245,7 +234,7 @@
       ]
     },
     {
-      "id": "act_156",
+      "id": "act_142",
       "type": "review",
       "items": [
         "lex_family",

@@ -66,6 +66,21 @@ ui_string,act.odd.prompt,interface,Which word is different? Choose the one that 
 ui_string,act.listencomp.prompt,interface,"Listen to the message, then answer.","Hallgasd meg az üzenetet, majd válaszolj.",yes
 ui_string,act.listencomp.again,interface,Play again,Játszd le újra,yes
 ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
+ui_string,practice.review,interface,Review words due today,Mai ismétlendő szavak,yes
+ui_string,practice.vocab,interface,Practice vocabulary,Szókincs gyakorlása,yes
+ui_string,practice.grammar,interface,Practice grammar,Nyelvtan gyakorlása,yes
+ui_string,practice.sounds,interface,Practice sounds,Hangok gyakorlása,yes
+ui_string,practice.spelling,interface,Spelling & sound,Írás és kiejtés,yes
+ui_string,practice.choosetopic,interface,Choose a topic to practise,Válassz témát a gyakorláshoz,yes
+ui_string,practice.choosepoint,interface,Choose a grammar point,Válassz nyelvtani pontot,yes
+ui_string,practice.immersion,interface,Picture & sound mode,Kép és hang mód,yes
+ui_string,practice.immersion.note,interface,See the picture and hear the word. Hungarian is hidden — turn it on any time.,Nézd a képet és hallgasd a szót. A magyar rejtve van — bármikor bekapcsolhatod.,yes
+ui_string,practice.start,interface,Practise,Gyakorlás,yes
+ui_string,practice.done,interface,Nice practice! Well done.,Szép gyakorlás! Ügyes voltál.,yes
+ui_string,practice.nowords,interface,Come back after a lesson or two.,Gyere vissza egy-két lecke után.,yes
+ui_string,practice.sounds.step1,interface,The sounds,A hangok,yes
+ui_string,practice.sounds.step2,interface,Spelling & sound,Írás és kiejtés,yes
+ui_string,practice.sounds.step3,interface,Stress & melody,Hangsúly és dallam,yes
 ui_string,conv.support.choose,interface,Choose,Válassz,yes
 ui_string,conv.support.build,interface,Build,Építsd,yes
 ui_string,conv.support.type,interface,Say or type,Mondd vagy írd,yes
