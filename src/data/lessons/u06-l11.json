@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_434",
+      "id": "act_517",
       "type": "intro",
       "items": [
         "lex_rain",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_435",
+      "id": "act_518",
       "type": "listen-choose",
       "items": [
         "lex_rain",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_436",
+      "id": "act_519",
       "type": "match",
       "items": [
         "lex_rain",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_437",
+      "id": "act_520",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,86 @@
             "tree"
           ],
           "hu": "(szél)"
+        }
+      ]
+    },
+    {
+      "id": "act_521",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_rain",
+          "text": "I like ___.",
+          "answer": "rain",
+          "accepted": [
+            "rain",
+            "rain",
+            "rain"
+          ],
+          "options": [
+            "rain",
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "(eső)"
         },
         {
+          "id": "lex_snow",
+          "text": "I like ___.",
+          "answer": "snow",
+          "accepted": [
+            "snow",
+            "snow",
+            "snow"
+          ],
+          "options": [
+            "snow",
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "(hó)"
+        },
+        {
+          "id": "lex_wind",
+          "text": "I like ___.",
+          "answer": "wind",
+          "accepted": [
+            "wind",
+            "wind",
+            "wind"
+          ],
+          "options": [
+            "wind",
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "(szél)"
+        },
+        {
+          "id": "lex_cloud",
           "text": "This is a ___.",
           "answer": "cloud",
+          "accepted": [
+            "cloud",
+            "cloud",
+            "clouds",
+            "cloud"
+          ],
           "options": [
             "cloud",
             "weather",
-            "tree"
+            "tree",
+            "flower"
           ],
           "hu": "(felhő)"
         }
       ]
     },
     {
-      "id": "act_438",
+      "id": "act_522",
       "type": "typed",
       "items": [
         "lex_rain",
@@ -125,7 +190,7 @@
       ]
     },
     {
-      "id": "act_439",
+      "id": "act_523",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +208,7 @@
       ]
     },
     {
-      "id": "act_440",
+      "id": "act_524",
       "type": "pron-record",
       "focusId": "str_word"
     }

@@ -31,7 +31,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_874",
+      "id": "act_1028",
       "type": "intro",
       "items": [
         "lex_drop",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "id": "act_875",
+      "id": "act_1029",
       "type": "listen-choose",
       "items": [
         "lex_drop",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "act_876",
+      "id": "act_1030",
       "type": "gapfill",
       "items": [
         {
@@ -73,7 +73,49 @@
       ]
     },
     {
-      "id": "act_877",
+      "id": "act_1031",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_drop",
+          "text": "I ___ every day.",
+          "answer": "drop",
+          "accepted": [
+            "drop",
+            "drop",
+            "drops",
+            "dropped",
+            "drop"
+          ],
+          "options": [
+            "drop",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "(leejteni)"
+        },
+        {
+          "id": "lex_sleepy",
+          "text": "It is very ___.",
+          "answer": "sleepy",
+          "accepted": [
+            "sleepy",
+            "sleepy",
+            "sleepy"
+          ],
+          "options": [
+            "sleepy",
+            "happy",
+            "afraid",
+            "nervous"
+          ],
+          "hu": "(álmos)"
+        }
+      ]
+    },
+    {
+      "id": "act_1032",
       "type": "reorder",
       "sentences": [
         {
@@ -87,7 +129,7 @@
       ]
     },
     {
-      "id": "act_878",
+      "id": "act_1033",
       "type": "typed",
       "items": [
         "lex_drop",
@@ -95,7 +137,7 @@
       ]
     },
     {
-      "id": "act_879",
+      "id": "act_1034",
       "type": "say-it",
       "phrases": [
         {
@@ -117,7 +159,7 @@
       ]
     },
     {
-      "id": "act_880",
+      "id": "act_1035",
       "type": "pron-record",
       "focusId": "str_chunking"
     }

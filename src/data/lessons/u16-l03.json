@@ -39,7 +39,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_900",
+      "id": "act_1057",
       "type": "intro",
       "items": [
         "lex_laugh",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_901",
+      "id": "act_1058",
       "type": "listen-choose",
       "items": [
         "lex_laugh",
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "id": "act_902",
+      "id": "act_1059",
       "type": "match",
       "items": [
         "lex_laugh",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": "act_903",
+      "id": "act_1060",
       "type": "gapfill",
       "items": [
         {
@@ -102,7 +102,68 @@
       ]
     },
     {
-      "id": "act_904",
+      "id": "act_1061",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_laugh",
+          "text": "I ___ every day.",
+          "answer": "laugh",
+          "accepted": [
+            "laugh",
+            "laugh",
+            "laughs",
+            "laughed",
+            "laugh"
+          ],
+          "options": [
+            "laugh",
+            "feel",
+            "smile",
+            "worry"
+          ],
+          "hu": "(nevetni)"
+        },
+        {
+          "id": "lex_invite",
+          "text": "I ___ every day.",
+          "answer": "invite",
+          "accepted": [
+            "invite",
+            "invite",
+            "invites",
+            "invited",
+            "invite"
+          ],
+          "options": [
+            "invite",
+            "have",
+            "celebrate",
+            "be"
+          ],
+          "hu": "(meghívni)"
+        },
+        {
+          "id": "lex_lucky",
+          "text": "It is very ___.",
+          "answer": "lucky",
+          "accepted": [
+            "lucky",
+            "lucky",
+            "lucky"
+          ],
+          "options": [
+            "lucky",
+            "happy",
+            "afraid",
+            "nervous"
+          ],
+          "hu": "(szerencsés)"
+        }
+      ]
+    },
+    {
+      "id": "act_1062",
       "type": "reorder",
       "sentences": [
         {
@@ -116,7 +177,7 @@
       ]
     },
     {
-      "id": "act_905",
+      "id": "act_1063",
       "type": "typed",
       "items": [
         "lex_laugh",
@@ -125,7 +186,7 @@
       ]
     },
     {
-      "id": "act_906",
+      "id": "act_1064",
       "type": "say-it",
       "phrases": [
         {
@@ -147,7 +208,7 @@
       ]
     },
     {
-      "id": "act_907",
+      "id": "act_1065",
       "type": "pron-record",
       "focusId": "str_sentence"
     }

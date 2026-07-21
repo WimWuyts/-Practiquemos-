@@ -157,7 +157,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_773",
+      "id": "act_908",
       "type": "intro",
       "items": [
         "lex_was",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "id": "act_774",
+      "id": "act_909",
       "type": "listen-choose",
       "items": [
         "lex_was",
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "id": "act_775",
+      "id": "act_910",
       "type": "match",
       "items": [
         "lex_was",
@@ -195,12 +195,53 @@
       ]
     },
     {
-      "id": "act_776",
+      "id": "act_911",
       "type": "grammar",
       "grammarId": "gr_waswere"
     },
     {
-      "id": "act_777",
+      "id": "act_912",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "They ___ very happy to see me.",
+          "answer": "were",
+          "options": [
+            "was",
+            "were"
+          ],
+          "hu": "Nagyon örültek, hogy láttak."
+        },
+        {
+          "text": "The flight ___ fine. I was calm.",
+          "answer": "was",
+          "options": [
+            "was",
+            "were"
+          ],
+          "hu": "A repülés jó volt. Nyugodt voltam."
+        }
+      ]
+    },
+    {
+      "id": "act_913",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "We ___ at Aunt Eva's for Christmas.",
+          "accepted": [
+            "were"
+          ],
+          "hint": {
+            "en": "we/you/they → were",
+            "hu": "we/you/they mellett: were"
+          },
+          "hu": "Karácsonykor Eva néninél voltunk."
+        }
+      ]
+    },
+    {
+      "id": "act_914",
       "type": "gapfill",
       "items": [
         {
@@ -232,21 +273,88 @@
             "went"
           ],
           "hu": "(látott (lát múlt))"
-        },
-        {
-          "text": "___.",
-          "answer": "last week",
-          "options": [
-            "last week",
-            "hello",
-            "hi"
-          ],
-          "hu": "(múlt héten)"
         }
       ]
     },
     {
-      "id": "act_778",
+      "id": "act_915",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_was",
+          "text": "I ___ every day.",
+          "answer": "was",
+          "accepted": [
+            "was",
+            "was",
+            "were",
+            "was"
+          ],
+          "options": [
+            "was",
+            "went",
+            "saw",
+            "visit"
+          ],
+          "hu": "(voltam / volt)"
+        },
+        {
+          "id": "lex_went",
+          "text": "I ___ every day.",
+          "answer": "went",
+          "accepted": [
+            "went",
+            "went",
+            "went"
+          ],
+          "options": [
+            "went",
+            "was",
+            "saw",
+            "visit"
+          ],
+          "hu": "(ment (megy múlt))"
+        },
+        {
+          "id": "lex_saw",
+          "text": "I ___ every day.",
+          "answer": "saw",
+          "accepted": [
+            "saw",
+            "saw",
+            "saw"
+          ],
+          "options": [
+            "saw",
+            "was",
+            "went",
+            "visit"
+          ],
+          "hu": "(látott (lát múlt))"
+        },
+        {
+          "id": "lex_visit",
+          "text": "I ___ my sister yesterday.",
+          "answer": "visited",
+          "accepted": [
+            "visit",
+            "visit",
+            "visits",
+            "visited",
+            "visited"
+          ],
+          "options": [
+            "visited",
+            "was",
+            "went",
+            "saw"
+          ],
+          "hu": "Tegnap meglátogattam a nővéremet."
+        }
+      ]
+    },
+    {
+      "id": "act_916",
       "type": "reorder",
       "sentences": [
         {
@@ -260,7 +368,7 @@
       ]
     },
     {
-      "id": "act_779",
+      "id": "act_917",
       "type": "typed",
       "items": [
         "lex_was",
@@ -271,7 +379,7 @@
       ]
     },
     {
-      "id": "act_780",
+      "id": "act_918",
       "type": "say-it",
       "phrases": [
         {
@@ -293,12 +401,12 @@
       ]
     },
     {
-      "id": "act_781",
+      "id": "act_919",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_782",
+      "id": "act_920",
       "type": "review",
       "items": [
         "lex_street",

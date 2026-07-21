@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_372",
+      "id": "act_447",
       "type": "intro",
       "items": [
         "lex_weekend",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_373",
+      "id": "act_448",
       "type": "listen-choose",
       "items": [
         "lex_weekend",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_374",
+      "id": "act_449",
       "type": "match",
       "items": [
         "lex_weekend",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_375",
+      "id": "act_450",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,85 @@
             "cold"
           ],
           "hu": "(napos)"
+        }
+      ]
+    },
+    {
+      "id": "act_451",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_weekend",
+          "text": "I am free at the ___.",
+          "answer": "weekend",
+          "accepted": [
+            "weekend",
+            "weekend",
+            "weekend"
+          ],
+          "options": [
+            "weekend",
+            "time",
+            "hour",
+            "minute"
+          ],
+          "hu": "Hétvégén ráérek."
         },
         {
+          "id": "lex_weather",
+          "text": "The ___ is nice today.",
+          "answer": "weather",
+          "accepted": [
+            "weather",
+            "weather",
+            "weather"
+          ],
+          "options": [
+            "weather",
+            "tree",
+            "flower",
+            "sea"
+          ],
+          "hu": "Ma szép idő van."
+        },
+        {
+          "id": "lex_sunny",
+          "text": "It is very ___.",
+          "answer": "sunny",
+          "accepted": [
+            "sunny",
+            "sunny",
+            "sunny"
+          ],
+          "options": [
+            "sunny",
+            "rainy",
+            "cold",
+            "hot"
+          ],
+          "hu": "(napos)"
+        },
+        {
+          "id": "lex_rainy",
           "text": "It is very ___.",
           "answer": "rainy",
+          "accepted": [
+            "rainy",
+            "rainy",
+            "rainy"
+          ],
           "options": [
             "rainy",
             "sunny",
-            "cold"
+            "cold",
+            "hot"
           ],
           "hu": "(esős)"
         }
       ]
     },
     {
-      "id": "act_376",
+      "id": "act_452",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +197,7 @@
       ]
     },
     {
-      "id": "act_377",
+      "id": "act_453",
       "type": "typed",
       "items": [
         "lex_weekend",
@@ -144,7 +208,7 @@
       ]
     },
     {
-      "id": "act_378",
+      "id": "act_454",
       "type": "say-it",
       "phrases": [
         {
@@ -166,7 +230,7 @@
       ]
     },
     {
-      "id": "act_379",
+      "id": "act_455",
       "type": "pron-record",
       "focusId": "str_word"
     }

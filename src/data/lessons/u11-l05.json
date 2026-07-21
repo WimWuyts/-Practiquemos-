@@ -29,7 +29,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_766",
+      "id": "act_900",
       "type": "intro",
       "items": [
         "lex_let",
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "act_767",
+      "id": "act_901",
       "type": "listen-choose",
       "items": [
         "lex_let",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "act_768",
+      "id": "act_902",
       "type": "gapfill",
       "items": [
         {
@@ -71,7 +71,50 @@
       ]
     },
     {
-      "id": "act_769",
+      "id": "act_903",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_let",
+          "text": "I ___ every day.",
+          "answer": "let",
+          "accepted": [
+            "let",
+            "let",
+            "lets",
+            "let"
+          ],
+          "options": [
+            "let",
+            "repeat",
+            "understand",
+            "wait"
+          ],
+          "hu": "(hagyni / engedni)"
+        },
+        {
+          "id": "lex_fix",
+          "text": "I ___ every day.",
+          "answer": "fix",
+          "accepted": [
+            "fix",
+            "fix",
+            "fixes",
+            "fixed",
+            "fix"
+          ],
+          "options": [
+            "fix",
+            "turn on",
+            "turn off",
+            "click"
+          ],
+          "hu": "(megjavítani)"
+        }
+      ]
+    },
+    {
+      "id": "act_904",
       "type": "reorder",
       "sentences": [
         {
@@ -85,7 +128,7 @@
       ]
     },
     {
-      "id": "act_770",
+      "id": "act_905",
       "type": "typed",
       "items": [
         "lex_let",
@@ -93,7 +136,7 @@
       ]
     },
     {
-      "id": "act_771",
+      "id": "act_906",
       "type": "say-it",
       "phrases": [
         {
@@ -115,7 +158,7 @@
       ]
     },
     {
-      "id": "act_772",
+      "id": "act_907",
       "type": "pron-record",
       "focusId": "str_chunking"
     }

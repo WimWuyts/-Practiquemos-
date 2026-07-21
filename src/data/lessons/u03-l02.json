@@ -33,7 +33,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_137",
+      "id": "act_167",
       "type": "intro",
       "items": [
         "lex_denmark",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "act_138",
+      "id": "act_168",
       "type": "listen-choose",
       "items": [
         "lex_denmark",
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "id": "act_139",
+      "id": "act_169",
       "type": "match",
       "items": [
         "lex_denmark",
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "id": "act_140",
+      "id": "act_170",
       "type": "gapfill",
       "items": [
         {
@@ -103,21 +103,85 @@
             "England"
           ],
           "hu": "(Belgium)"
+        }
+      ]
+    },
+    {
+      "id": "act_171",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_denmark",
+          "text": "I like ___.",
+          "answer": "Denmark",
+          "accepted": [
+            "Denmark",
+            "Denmark",
+            "Denmark"
+          ],
+          "options": [
+            "Denmark",
+            "Hungary",
+            "England",
+            "Spain"
+          ],
+          "hu": "(Dánia)"
         },
         {
+          "id": "lex_danish",
+          "text": "It is very ___.",
+          "answer": "Danish",
+          "accepted": [
+            "Danish",
+            "Danish",
+            "Danish"
+          ],
+          "options": [
+            "Danish",
+            "Hungarian",
+            "English",
+            "Spanish"
+          ],
+          "hu": "(dán)"
+        },
+        {
+          "id": "lex_belgium",
+          "text": "I like ___.",
+          "answer": "Belgium",
+          "accepted": [
+            "Belgium",
+            "Belgium",
+            "Belgium"
+          ],
+          "options": [
+            "Belgium",
+            "Hungary",
+            "England",
+            "Spain"
+          ],
+          "hu": "(Belgium)"
+        },
+        {
+          "id": "lex_switzerland",
           "text": "I like ___.",
           "answer": "Switzerland",
+          "accepted": [
+            "Switzerland",
+            "Switzerland",
+            "Switzerland"
+          ],
           "options": [
             "Switzerland",
             "Hungary",
-            "England"
+            "England",
+            "Spain"
           ],
           "hu": "(Svájc)"
         }
       ]
     },
     {
-      "id": "act_141",
+      "id": "act_172",
       "type": "reorder",
       "sentences": [
         {
@@ -131,7 +195,7 @@
       ]
     },
     {
-      "id": "act_142",
+      "id": "act_173",
       "type": "typed",
       "items": [
         "lex_denmark",
@@ -142,7 +206,7 @@
       ]
     },
     {
-      "id": "act_143",
+      "id": "act_174",
       "type": "say-it",
       "phrases": [
         {
@@ -156,12 +220,12 @@
       ]
     },
     {
-      "id": "act_144",
+      "id": "act_175",
       "type": "pron-record",
       "focusId": "snd_h"
     },
     {
-      "id": "act_145",
+      "id": "act_176",
       "type": "minimal-pair",
       "focusId": "snd_h"
     }

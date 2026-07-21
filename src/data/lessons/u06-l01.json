@@ -160,7 +160,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_349",
+      "id": "act_414",
       "type": "intro",
       "items": [
         "lex_time",
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "id": "act_350",
+      "id": "act_415",
       "type": "listen-choose",
       "items": [
         "lex_time",
@@ -186,7 +186,7 @@
       ]
     },
     {
-      "id": "act_351",
+      "id": "act_416",
       "type": "match",
       "items": [
         "lex_time",
@@ -198,18 +198,61 @@
       ]
     },
     {
-      "id": "act_352",
+      "id": "act_417",
       "type": "grammar",
       "grammarId": "gr_prepositions_time"
     },
     {
-      "id": "act_353",
+      "id": "act_418",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I teach ___ Monday.",
+          "answer": "on",
+          "options": [
+            "at",
+            "on",
+            "in"
+          ],
+          "hu": "Hétfőn tanítok."
+        },
+        {
+          "text": "The lesson starts ___ three o'clock.",
+          "answer": "at",
+          "options": [
+            "at",
+            "on",
+            "in"
+          ],
+          "hu": "Az óra háromkor kezdődik."
+        }
+      ]
+    },
+    {
+      "id": "act_419",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "My birthday is ___ May.",
+          "accepted": [
+            "in"
+          ],
+          "hint": {
+            "en": "months → in",
+            "hu": "hónapok előtt: in"
+          },
+          "hu": "A születésnapom májusban van."
+        }
+      ]
+    },
+    {
+      "id": "act_420",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "time"
     },
     {
-      "id": "act_354",
+      "id": "act_421",
       "type": "gapfill",
       "items": [
         {
@@ -241,21 +284,87 @@
             "hour"
           ],
           "hu": "(perc)"
+        }
+      ]
+    },
+    {
+      "id": "act_422",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_time",
+          "text": "What ___ is it?",
+          "answer": "time",
+          "accepted": [
+            "time",
+            "time",
+            "time"
+          ],
+          "options": [
+            "time",
+            "hour",
+            "minute",
+            "today"
+          ],
+          "hu": "Mennyi az idő?"
         },
         {
-          "text": "___ is a good day.",
-          "answer": "today",
-          "options": [
-            "today",
-            "time",
+          "id": "lex_hour",
+          "text": "This is a ___.",
+          "answer": "hour",
+          "accepted": [
+            "hour",
+            "hour",
+            "hours",
             "hour"
+          ],
+          "options": [
+            "hour",
+            "time",
+            "minute",
+            "today"
+          ],
+          "hu": "(óra (időtartam))"
+        },
+        {
+          "id": "lex_minute",
+          "text": "This is a ___.",
+          "answer": "minute",
+          "accepted": [
+            "minute",
+            "minute",
+            "minutes",
+            "minute"
+          ],
+          "options": [
+            "minute",
+            "time",
+            "hour",
+            "today"
+          ],
+          "hu": "(perc)"
+        },
+        {
+          "id": "lex_today",
+          "text": "___ is a good day.",
+          "answer": "Today",
+          "accepted": [
+            "today",
+            "today",
+            "Today"
+          ],
+          "options": [
+            "Today",
+            "time",
+            "hour",
+            "minute"
           ],
           "hu": "Ma jó nap van."
         }
       ]
     },
     {
-      "id": "act_355",
+      "id": "act_423",
       "type": "reorder",
       "sentences": [
         {
@@ -269,7 +378,7 @@
       ]
     },
     {
-      "id": "act_356",
+      "id": "act_424",
       "type": "typed",
       "items": [
         "lex_time",
@@ -280,7 +389,7 @@
       ]
     },
     {
-      "id": "act_357",
+      "id": "act_425",
       "type": "say-it",
       "phrases": [
         {
@@ -302,12 +411,12 @@
       ]
     },
     {
-      "id": "act_358",
+      "id": "act_426",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_359",
+      "id": "act_427",
       "type": "review",
       "items": [
         "lex_hungary",

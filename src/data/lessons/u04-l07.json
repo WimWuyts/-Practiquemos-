@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_223",
+      "id": "act_270",
       "type": "intro",
       "items": [
         "lex_sofa",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_224",
+      "id": "act_271",
       "type": "listen-choose",
       "items": [
         "lex_sofa",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_225",
+      "id": "act_272",
       "type": "match",
       "items": [
         "lex_sofa",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_226",
+      "id": "act_273",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,89 @@
             "house"
           ],
           "hu": "(padló / emelet)"
+        }
+      ]
+    },
+    {
+      "id": "act_274",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_sofa",
+          "text": "This is a ___.",
+          "answer": "sofa",
+          "accepted": [
+            "sofa",
+            "sofa",
+            "sofas",
+            "sofa"
+          ],
+          "options": [
+            "sofa",
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "(kanapé)"
         },
         {
+          "id": "lex_wall",
+          "text": "This is a ___.",
+          "answer": "wall",
+          "accepted": [
+            "wall",
+            "wall",
+            "walls",
+            "wall"
+          ],
+          "options": [
+            "wall",
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "(fal)"
+        },
+        {
+          "id": "lex_floor",
+          "text": "This is a ___.",
+          "answer": "floor",
+          "accepted": [
+            "floor",
+            "floor",
+            "floors",
+            "floor"
+          ],
+          "options": [
+            "floor",
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "(padló / emelet)"
+        },
+        {
+          "id": "lex_bathroom",
           "text": "This is a ___.",
           "answer": "bathroom",
+          "accepted": [
+            "bathroom",
+            "bathroom",
+            "bathrooms",
+            "bathroom"
+          ],
           "options": [
             "bathroom",
             "home",
-            "house"
+            "house",
+            "room"
           ],
           "hu": "(fürdőszoba)"
         }
       ]
     },
     {
-      "id": "act_227",
+      "id": "act_275",
       "type": "typed",
       "items": [
         "lex_sofa",
@@ -125,7 +193,7 @@
       ]
     },
     {
-      "id": "act_228",
+      "id": "act_276",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +211,7 @@
       ]
     },
     {
-      "id": "act_229",
+      "id": "act_277",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     }

@@ -87,6 +87,41 @@ const usedGrammar = new Set();
 Object.values(lessons).forEach((L) => (L.grammarCards || []).forEach((g) => usedGrammar.add(g)));
 grammar.forEach((g) => { if (!usedGrammar.has(g.id)) W(`grammar ${g.id} not used in any lesson`); });
 
+// activity-type whitelist: an unknown type renders NOTHING (silent skip) at runtime,
+// so a typo or an unregistered new type must fail the build loudly here.
+const KNOWN_TYPES = new Set([
+  "intro", "listen-choose", "match", "phrase-match", "icon-choice", "minimal-pair",
+  "minimal-pair-say", "shadow", "sound-sort", "reorder", "gapfill", "word-fill", "typed",
+  "say-it", "pron-record", "spelling-build", "grammar", "grammar-info", "gr-type", "gr-fix",
+  "listen-comprehension", "expand", "odd-one-out", "conversation", "diagnostic", "review",
+]);
+const allLessonSets = Object.values(lessons).concat(course.monthlyLessons || []);
+let badType = 0;
+allLessonSets.forEach((L) => (L.activities || []).forEach((a) => {
+  if (!KNOWN_TYPES.has(a.type)) { E(`unknown activity type "${a.type}" in ${L.id}`); badType++; }
+}));
+if (!badType) OK(`Activity types all known (${KNOWN_TYPES.size} registered)`);
+
+// grammar practice bank integrity: each card carries >=1 practice item, well-formed
+let gramItems = 0, gramBad = 0;
+grammar.forEach((g) => {
+  const bank = g.practice || [];
+  gramItems += bank.length;
+  bank.forEach((it, i) => {
+    const ref = `${g.id}#${i}`;
+    if (it.kind === "form" || it.kind === "type") {
+      if (!it.text || it.text.indexOf("___") < 0) { E(`grammar practice ${ref} (${it.kind}) missing ___ gap`); gramBad++; }
+      if (it.kind === "form" && !(it.options || []).includes(it.answer)) { E(`grammar practice ${ref} answer not in options`); gramBad++; }
+      if (it.kind === "type" && !(it.accepted || []).length) { E(`grammar practice ${ref} type item has no accepted answers`); gramBad++; }
+    } else if (it.kind === "fix") {
+      if (!Array.isArray(it.tokens) || typeof it.wrong !== "number" || !it.fix) { E(`grammar practice ${ref} fix item malformed`); gramBad++; }
+    } else if (it.kind === "build" || it.kind === "say") {
+      if (!it.en) { E(`grammar practice ${ref} (${it.kind}) missing en`); gramBad++; }
+    }
+  });
+});
+if (!gramBad) OK(`Grammar practice bank: ${gramItems} items across ${grammar.length} points`);
+
 // pronunciation coverage: every sound-focus and spelling-family must appear in a lesson activity
 const usedSounds = new Set(), usedFamilies = new Set();
 Object.values(lessons).forEach((L) => (L.activities || []).forEach((a) => {

@@ -83,7 +83,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_126",
+      "id": "act_154",
       "type": "intro",
       "items": [
         "lex_hungary",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": "act_127",
+      "id": "act_155",
       "type": "listen-choose",
       "items": [
         "lex_hungary",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "act_128",
+      "id": "act_156",
       "type": "match",
       "items": [
         "lex_hungary",
@@ -121,12 +121,36 @@
       ]
     },
     {
-      "id": "act_129",
+      "id": "act_157",
       "type": "grammar",
       "grammarId": "gr_conjunctions"
     },
     {
-      "id": "act_130",
+      "id": "act_158",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I'm tired ___ I worked a lot.",
+          "answer": "because",
+          "options": [
+            "but",
+            "because"
+          ],
+          "hu": "Fáradt vagyok, mert sokat dolgoztam."
+        },
+        {
+          "text": "I like tea ___ I love coffee.",
+          "answer": "but",
+          "options": [
+            "and",
+            "but"
+          ],
+          "hu": "Szeretem a teát, de imádom a kávét."
+        }
+      ]
+    },
+    {
+      "id": "act_159",
       "type": "gapfill",
       "items": [
         {
@@ -158,21 +182,85 @@
             "Spain"
           ],
           "hu": "(Anglia)"
+        }
+      ]
+    },
+    {
+      "id": "act_160",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_hungary",
+          "text": "I am from ___.",
+          "answer": "Hungary",
+          "accepted": [
+            "Hungary",
+            "Hungary",
+            "Hungary"
+          ],
+          "options": [
+            "Hungary",
+            "England",
+            "Spain",
+            "Germany"
+          ],
+          "hu": "Magyarországról jöttem."
         },
         {
+          "id": "lex_hungarian",
+          "text": "It is very ___.",
+          "answer": "Hungarian",
+          "accepted": [
+            "Hungarian",
+            "Hungarian",
+            "Hungarian"
+          ],
+          "options": [
+            "Hungarian",
+            "English",
+            "Spanish",
+            "German"
+          ],
+          "hu": "(magyar)"
+        },
+        {
+          "id": "lex_england",
+          "text": "I like ___.",
+          "answer": "England",
+          "accepted": [
+            "England",
+            "England",
+            "England"
+          ],
+          "options": [
+            "England",
+            "Hungary",
+            "Spain",
+            "Germany"
+          ],
+          "hu": "(Anglia)"
+        },
+        {
+          "id": "lex_english",
           "text": "I am learning ___.",
           "answer": "English",
+          "accepted": [
+            "English",
+            "English",
+            "English"
+          ],
           "options": [
             "English",
             "Hungarian",
-            "Spanish"
+            "Spanish",
+            "German"
           ],
           "hu": "Angolul tanulok."
         }
       ]
     },
     {
-      "id": "act_131",
+      "id": "act_161",
       "type": "reorder",
       "sentences": [
         {
@@ -186,7 +274,7 @@
       ]
     },
     {
-      "id": "act_132",
+      "id": "act_162",
       "type": "typed",
       "items": [
         "lex_hungary",
@@ -197,7 +285,7 @@
       ]
     },
     {
-      "id": "act_133",
+      "id": "act_163",
       "type": "say-it",
       "phrases": [
         {
@@ -219,17 +307,17 @@
       ]
     },
     {
-      "id": "act_134",
+      "id": "act_164",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_135",
+      "id": "act_165",
       "type": "minimal-pair",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_136",
+      "id": "act_166",
       "type": "review",
       "items": [
         "lex_family",

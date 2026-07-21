@@ -77,7 +77,44 @@ check("backup export downloads a file", !!download);
 const caps = await page.evaluate(() => ({ tts: M.caps.tts, storage: M.caps.storage, types: M.exercise.types.length }));
 check("TTS capability detected (bool)", typeof caps.tts === "boolean");
 check("storage capability works", caps.storage === true);
-check("exercise engine has many types", caps.types >= 10);
+check("exercise engine has many types", caps.types >= 15);
+
+// v1.8 productive types — typed word-fill accepts a (forgiving) typed answer
+await page.evaluate(() => {
+  const m = document.getElementById("main"); M.dom.clear(m);
+  M.exercise.render(m, { id: "wf", type: "word-fill", items: [
+    { id: "lex_coffee", text: "I drink ___ in the morning.", answer: "coffee", accepted: ["coffee"], options: ["coffee", "tea", "water"], hu: "Reggel kávét iszom." },
+  ] }, () => {});
+});
+await page.locator(".textin").fill("cofee"); // deliberate typo — must be forgiven
+await page.locator(".stage, #main").locator(".btn:not(.ghost):not(.secondary)").last().click();
+await page.waitForTimeout(150);
+check("word-fill accepts a forgiving typed answer", await page.locator(".feedback.good").count() >= 1);
+
+// grammar type-the-form is STRICT (teach != teaches) then accepts the exact form
+await page.evaluate(() => {
+  const m = document.getElementById("main"); M.dom.clear(m);
+  M.exercise.render(m, { id: "gt", type: "gr-type", items: [
+    { text: "She ___ Hungarian online.", accepted: ["teaches"], hint: { en: "add -s", hu: "tegyél -s-t" }, hu: "" },
+  ] }, () => {});
+});
+await page.locator(".textin").fill("teach");
+await page.locator("#main .btn:not(.ghost):not(.secondary)").last().click();
+await page.waitForTimeout(120);
+const grStrict = await page.locator(".textin").isEditable().catch(() => false); // still open = rejected
+await page.locator(".textin").fill("teaches");
+await page.locator("#main .btn:not(.ghost):not(.secondary)").last().click();
+await page.waitForTimeout(120);
+check("gr-type is strict on forms (rejects teach, accepts teaches)", grStrict && (await page.locator(".feedback.good").count()) >= 1);
+
+// grammar practice drill renders as a real session
+await page.evaluate(() => (location.hash = "gram/gr_be"));
+await page.waitForTimeout(300);
+check("grammar drill renders a session", await page.locator(".stage").count() === 1);
+
+// grammar practice bank shipped in the data
+const gram = await page.evaluate(() => M.data.grammar.reduce((n, g) => n + ((g.practice || []).length), 0));
+check("grammar practice bank present (>=100 items)", gram >= 100);
 
 // no network requests to remote hosts
 check("no uncaught console errors", consoleErrors.length === 0);

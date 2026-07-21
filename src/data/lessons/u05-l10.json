@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_333",
+      "id": "act_396",
       "type": "intro",
       "items": [
         "lex_size",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_334",
+      "id": "act_397",
       "type": "listen-choose",
       "items": [
         "lex_size",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_335",
+      "id": "act_398",
       "type": "match",
       "items": [
         "lex_size",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_336",
+      "id": "act_399",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,90 @@
             "water"
           ],
           "hu": "(csésze / bögre)"
+        }
+      ]
+    },
+    {
+      "id": "act_400",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_size",
+          "text": "This is a ___.",
+          "answer": "size",
+          "accepted": [
+            "size",
+            "size",
+            "sizes",
+            "size"
+          ],
+          "options": [
+            "size",
+            "shop",
+            "price",
+            "money"
+          ],
+          "hu": "(méret)"
         },
         {
+          "id": "lex_borrow",
+          "text": "I ___ every day.",
+          "answer": "borrow",
+          "accepted": [
+            "borrow",
+            "borrow",
+            "borrows",
+            "borrowed",
+            "borrow"
+          ],
+          "options": [
+            "borrow",
+            "buy",
+            "pay",
+            "sell"
+          ],
+          "hu": "(kölcsönkérni)"
+        },
+        {
+          "id": "lex_cup",
+          "text": "This is a ___.",
+          "answer": "cup",
+          "accepted": [
+            "cup",
+            "cup",
+            "cups",
+            "cup"
+          ],
+          "options": [
+            "cup",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(csésze / bögre)"
+        },
+        {
+          "id": "lex_pot",
           "text": "This is a ___.",
           "answer": "pot",
+          "accepted": [
+            "pot",
+            "pot",
+            "pots",
+            "pot"
+          ],
           "options": [
             "pot",
             "food",
-            "water"
+            "water",
+            "coffee"
           ],
           "hu": "(fazék)"
         }
       ]
     },
     {
-      "id": "act_337",
+      "id": "act_401",
       "type": "typed",
       "items": [
         "lex_size",
@@ -125,7 +194,7 @@
       ]
     },
     {
-      "id": "act_338",
+      "id": "act_402",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +212,12 @@
       ]
     },
     {
-      "id": "act_339",
+      "id": "act_403",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_340",
+      "id": "act_404",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

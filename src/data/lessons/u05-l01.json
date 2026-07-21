@@ -157,7 +157,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_250",
+      "id": "act_301",
       "type": "intro",
       "items": [
         "lex_food",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "id": "act_251",
+      "id": "act_302",
       "type": "listen-choose",
       "items": [
         "lex_food",
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "id": "act_252",
+      "id": "act_303",
       "type": "icon-choice",
       "items": [
         "lex_water",
@@ -194,7 +194,7 @@
       ]
     },
     {
-      "id": "act_253",
+      "id": "act_304",
       "type": "match",
       "items": [
         "lex_food",
@@ -206,18 +206,42 @@
       ]
     },
     {
-      "id": "act_254",
+      "id": "act_305",
       "type": "grammar",
       "grammarId": "gr_someany"
     },
     {
-      "id": "act_255",
+      "id": "act_306",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Do you have ___ tea?",
+          "answer": "any",
+          "options": [
+            "some",
+            "any"
+          ],
+          "hu": "Van teád?"
+        },
+        {
+          "text": "I would like ___ water, please.",
+          "answer": "some",
+          "options": [
+            "some",
+            "any"
+          ],
+          "hu": "Kérek egy kis vizet."
+        }
+      ]
+    },
+    {
+      "id": "act_307",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "food"
     },
     {
-      "id": "act_256",
+      "id": "act_308",
       "type": "gapfill",
       "items": [
         {
@@ -249,21 +273,85 @@
             "water"
           ],
           "hu": "Minden reggel kávét iszom."
+        }
+      ]
+    },
+    {
+      "id": "act_309",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_food",
+          "text": "The ___ is delicious.",
+          "answer": "food",
+          "accepted": [
+            "food",
+            "food",
+            "food"
+          ],
+          "options": [
+            "food",
+            "water",
+            "coffee",
+            "tea"
+          ],
+          "hu": "Az étel finom."
         },
         {
+          "id": "lex_water",
+          "text": "Could I have some ___, please?",
+          "answer": "water",
+          "accepted": [
+            "water",
+            "water",
+            "water"
+          ],
+          "options": [
+            "water",
+            "food",
+            "coffee",
+            "tea"
+          ],
+          "hu": "Kaphatnék egy kis vizet, kérem?"
+        },
+        {
+          "id": "lex_coffee",
+          "text": "I drink ___ every morning.",
+          "answer": "coffee",
+          "accepted": [
+            "coffee",
+            "coffee",
+            "coffee"
+          ],
+          "options": [
+            "coffee",
+            "food",
+            "water",
+            "tea"
+          ],
+          "hu": "Minden reggel kávét iszom."
+        },
+        {
+          "id": "lex_tea",
           "text": "Would you like some ___?",
           "answer": "tea",
+          "accepted": [
+            "tea",
+            "tea",
+            "tea"
+          ],
           "options": [
             "tea",
             "food",
-            "water"
+            "water",
+            "coffee"
           ],
           "hu": "Kérsz egy kis teát?"
         }
       ]
     },
     {
-      "id": "act_257",
+      "id": "act_310",
       "type": "reorder",
       "sentences": [
         {
@@ -277,7 +365,7 @@
       ]
     },
     {
-      "id": "act_258",
+      "id": "act_311",
       "type": "typed",
       "items": [
         "lex_food",
@@ -288,7 +376,7 @@
       ]
     },
     {
-      "id": "act_259",
+      "id": "act_312",
       "type": "say-it",
       "phrases": [
         {
@@ -310,17 +398,17 @@
       ]
     },
     {
-      "id": "act_260",
+      "id": "act_313",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_261",
+      "id": "act_314",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_262",
+      "id": "act_315",
       "type": "review",
       "items": [
         "lex_family",

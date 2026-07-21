@@ -73,6 +73,18 @@ ui_string,act.listencomp.prompt,interface,"Listen to the message, then answer.",
 ui_string,act.listencomp.again,interface,Play again,Játszd le újra,yes
 ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
 ui_string,act.sayit.prompt,interface,Now say it out loud. Record yourself and listen back.,"Most mondd ki hangosan. Vedd fel magad, és hallgasd vissza.",yes
+ui_string,act.wordfill.prompt,interface,Type the missing word.,Írd be a hiányzó szót.,yes
+ui_string,act.wordfill.tap,interface,Show word choices,Mutasd a szóválasztékot,yes
+ui_string,act.wordfill.type,interface,I'll type it,Inkább beírom,yes
+ui_string,act.wordfill.reveal,interface,Show the answer,Mutasd a választ,yes
+ui_string,act.wordfill.copy,interface,Type the word to continue.,Írd be a szót a folytatáshoz.,yes
+ui_string,act.grtype.prompt,interface,Type the correct form.,Írd be a helyes alakot.,yes
+ui_string,act.grfix.prompt,interface,One word is not right. Tap it.,Egy szó nem jó. Koppints rá.,yes
+ui_string,act.grfix.fixed,interface,Fixed:,Javítva:,yes
+ui_string,act.soundsort.prompt,interface,Listen. Which group does the word belong to?,Hallgasd meg. Melyik csoportba tartozik a szó?,yes
+ui_string,act.shadow.prompt,interface,"Listen, then say each word out loud.","Hallgasd meg, majd mondd ki hangosan mindegyik szót.",yes
+ui_string,act.pairsay.prompt,interface,Now you say it. Record yourself.,Most te mondd ki. Vedd fel magad.,yes
+ui_string,btn.hearword,interface,Hear the word,Hallgasd meg a szót,yes
 ui_string,say.title,interface,Say it,Mondd ki,yes
 ui_string,say.hear,interface,Hear it,Hallgasd meg,yes
 ui_string,say.hearme,interface,Hear me,Hallgasd vissza magad,yes
@@ -93,6 +105,13 @@ ui_string,practice.nowords,interface,Come back after a lesson or two.,Gyere viss
 ui_string,practice.sounds.step1,interface,The sounds,A hangok,yes
 ui_string,practice.sounds.step2,interface,Spelling & sound,Írás és kiejtés,yes
 ui_string,practice.sounds.step3,interface,Stress & melody,Hangsúly és dallam,yes
+ui_string,practice.quick,interface,Quick practice,Gyors gyakorlás,yes
+ui_string,practice.quick.note,interface,A short mixed session — a few words to say and write.,"Rövid, vegyes gyakorlás — néhány szó kimondva és leírva.",yes
+ui_string,practice.more,interface,Practise more,Gyakorolj még,yes
+ui_string,practice.showall,interface,Show all,Mutasd mind,yes
+ui_string,practice.hideall,interface,Show fewer,Mutass kevesebbet,yes
+ui_string,practice.growth,interface,{n} of {m} words practised,{n} / {m} szó gyakorolva,yes
+ui_string,practice.pickone,interface,One to try,Egy próbára,yes
 ui_string,conv.support.choose,interface,Choose,Válassz,yes
 ui_string,conv.support.build,interface,Build,Építsd,yes
 ui_string,conv.support.type,interface,Say or type,Mondd vagy írd,yes

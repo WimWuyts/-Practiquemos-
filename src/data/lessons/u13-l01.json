@@ -81,7 +81,7 @@
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_795",
+      "id": "act_935",
       "type": "intro",
       "items": [
         "lex_travel",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "id": "act_796",
+      "id": "act_936",
       "type": "listen-choose",
       "items": [
         "lex_travel",
@@ -107,7 +107,7 @@
       ]
     },
     {
-      "id": "act_797",
+      "id": "act_937",
       "type": "match",
       "items": [
         "lex_travel",
@@ -119,12 +119,44 @@
       ]
     },
     {
-      "id": "act_798",
+      "id": "act_938",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_799",
+      "id": "act_939",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "I ___ to pack my bag.",
+          "answer": "need",
+          "options": [
+            "need",
+            "needs"
+          ],
+          "hu": "Be kell csomagolnom a táskámat."
+        }
+      ]
+    },
+    {
+      "id": "act_940",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "She ___ to check in at the airport.",
+          "accepted": [
+            "has"
+          ],
+          "hint": {
+            "en": "she → has to",
+            "hu": "she mellett: has to"
+          },
+          "hu": "Be kell jelentkeznie a reptéren."
+        }
+      ]
+    },
+    {
+      "id": "act_941",
       "type": "gapfill",
       "items": [
         {
@@ -156,21 +188,89 @@
             "trip"
           ],
           "hu": "A bőröndöm nehéz."
-        },
-        {
-          "text": "Here is my ___.",
-          "answer": "passport",
-          "options": [
-            "passport",
-            "holiday",
-            "trip"
-          ],
-          "hu": "Itt az útlevelem."
         }
       ]
     },
     {
-      "id": "act_800",
+      "id": "act_942",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_travel",
+          "text": "Mirella ___ for work.",
+          "answer": "travels",
+          "accepted": [
+            "travel",
+            "travel",
+            "travels",
+            "travelled",
+            "travels"
+          ],
+          "options": [
+            "travels",
+            "need",
+            "bring",
+            "carry"
+          ],
+          "hu": "Mirella munka miatt utazik."
+        },
+        {
+          "id": "lex_trip",
+          "text": "How was your ___?",
+          "answer": "trip",
+          "accepted": [
+            "trip",
+            "trip",
+            "trips",
+            "trip"
+          ],
+          "options": [
+            "trip",
+            "holiday",
+            "luggage",
+            "suitcase"
+          ],
+          "hu": "Milyen volt az utad?"
+        },
+        {
+          "id": "lex_luggage",
+          "text": "I like ___.",
+          "answer": "luggage",
+          "accepted": [
+            "luggage",
+            "luggage",
+            "luggage"
+          ],
+          "options": [
+            "luggage",
+            "holiday",
+            "trip",
+            "suitcase"
+          ],
+          "hu": "(poggyász)"
+        },
+        {
+          "id": "lex_suitcase",
+          "text": "My ___ is heavy.",
+          "answer": "suitcase",
+          "accepted": [
+            "suitcase",
+            "suitcase",
+            "suitcases",
+            "suitcase"
+          ],
+          "options": [
+            "suitcase",
+            "holiday",
+            "trip",
+            "luggage"
+          ],
+          "hu": "A bőröndöm nehéz."
+        }
+      ]
+    },
+    {
+      "id": "act_943",
       "type": "reorder",
       "sentences": [
         {
@@ -184,7 +284,7 @@
       ]
     },
     {
-      "id": "act_801",
+      "id": "act_944",
       "type": "typed",
       "items": [
         "lex_travel",
@@ -195,7 +295,7 @@
       ]
     },
     {
-      "id": "act_802",
+      "id": "act_945",
       "type": "say-it",
       "phrases": [
         {
@@ -217,17 +317,17 @@
       ]
     },
     {
-      "id": "act_803",
+      "id": "act_946",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_804",
+      "id": "act_947",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_805",
+      "id": "act_948",
       "type": "review",
       "items": [
         "lex_restaurant",

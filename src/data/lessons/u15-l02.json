@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_865",
+      "id": "act_1018",
       "type": "intro",
       "items": [
         "lex_safe",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_866",
+      "id": "act_1019",
       "type": "listen-choose",
       "items": [
         "lex_safe",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_867",
+      "id": "act_1020",
       "type": "match",
       "items": [
         "lex_safe",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_868",
+      "id": "act_1021",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,89 @@
             "fasten"
           ],
           "hu": "(repülni)"
+        }
+      ]
+    },
+    {
+      "id": "act_1022",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_safe",
+          "text": "It is very ___.",
+          "answer": "safe",
+          "accepted": [
+            "safe",
+            "safe",
+            "safe"
+          ],
+          "options": [
+            "safe",
+            "happy",
+            "afraid",
+            "nervous"
+          ],
+          "hu": "(biztonságos)"
         },
         {
+          "id": "lex_okay",
+          "text": "It is very ___.",
+          "answer": "okay",
+          "accepted": [
+            "okay",
+            "okay",
+            "okay"
+          ],
+          "options": [
+            "okay",
+            "happy",
+            "afraid",
+            "nervous"
+          ],
+          "hu": "(rendben / oké)"
+        },
+        {
+          "id": "lex_fly",
+          "text": "I ___ every day.",
+          "answer": "fly",
+          "accepted": [
+            "fly",
+            "fly",
+            "flies",
+            "flew",
+            "fly"
+          ],
+          "options": [
+            "fly",
+            "land",
+            "fasten",
+            "be"
+          ],
+          "hu": "(repülni)"
+        },
+        {
+          "id": "lex_feel",
           "text": "I ___ every day.",
           "answer": "feel",
+          "accepted": [
+            "feel",
+            "feel",
+            "feels",
+            "felt",
+            "feel"
+          ],
           "options": [
             "feel",
             "smile",
-            "laugh"
+            "laugh",
+            "worry"
           ],
           "hu": "(érezni)"
         }
       ]
     },
     {
-      "id": "act_869",
+      "id": "act_1023",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +201,7 @@
       ]
     },
     {
-      "id": "act_870",
+      "id": "act_1024",
       "type": "typed",
       "items": [
         "lex_safe",
@@ -144,7 +212,7 @@
       ]
     },
     {
-      "id": "act_871",
+      "id": "act_1025",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +234,12 @@
       ]
     },
     {
-      "id": "act_872",
+      "id": "act_1026",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_873",
+      "id": "act_1027",
       "type": "listen-comprehension",
       "passage": "Ladies and gentlemen, we will land in about twenty minutes. Please fasten your seatbelt. Thank you.",
       "question": {

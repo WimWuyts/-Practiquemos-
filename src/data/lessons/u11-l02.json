@@ -37,7 +37,7 @@
   "conversationId": "dlg_student_parent",
   "activities": [
     {
-      "id": "act_739",
+      "id": "act_868",
       "type": "intro",
       "items": [
         "lex_turn_off",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_740",
+      "id": "act_869",
       "type": "listen-choose",
       "items": [
         "lex_turn_off",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_741",
+      "id": "act_870",
       "type": "match",
       "items": [
         "lex_turn_off",
@@ -75,12 +75,44 @@
       ]
     },
     {
-      "id": "act_742",
+      "id": "act_871",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_743",
+      "id": "act_872",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ you swim?",
+          "answer": "Can",
+          "options": [
+            "Can",
+            "Do"
+          ],
+          "hu": "Tudsz úszni?"
+        }
+      ]
+    },
+    {
+      "id": "act_873",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "___ you hear me? The connection is bad.",
+          "accepted": [
+            "can"
+          ],
+          "hint": {
+            "en": "ability/possibility → can",
+            "hu": "képesség → can"
+          },
+          "hu": "Hallasz engem? Rossz a kapcsolat."
+        }
+      ]
+    },
+    {
+      "id": "act_874",
       "type": "gapfill",
       "items": [
         {
@@ -112,21 +144,89 @@
             "my"
           ],
           "hu": "(kész)"
+        }
+      ]
+    },
+    {
+      "id": "act_875",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_turn_off",
+          "text": "I ___ every day.",
+          "answer": "turn off",
+          "accepted": [
+            "turn off",
+            "turn off",
+            "turns off",
+            "turned off",
+            "turn off"
+          ],
+          "options": [
+            "turn off",
+            "turn on",
+            "click",
+            "use"
+          ],
+          "hu": "(kikapcsolni)"
         },
         {
-          "text": "___! Well done!",
-          "answer": "excellent",
+          "id": "lex_click",
+          "text": "I ___ every day.",
+          "answer": "click",
+          "accepted": [
+            "click",
+            "click",
+            "clicks",
+            "clicked",
+            "click"
+          ],
           "options": [
-            "excellent",
+            "click",
+            "turn on",
+            "turn off",
+            "use"
+          ],
+          "hu": "(kattintani)"
+        },
+        {
+          "id": "lex_ready",
+          "text": "It is very ___.",
+          "answer": "ready",
+          "accepted": [
             "ready",
-            "my"
+            "ready",
+            "ready"
+          ],
+          "options": [
+            "ready",
+            "excellent",
+            "my",
+            "your"
+          ],
+          "hu": "(kész)"
+        },
+        {
+          "id": "lex_excellent",
+          "text": "___! Well done!",
+          "answer": "Excellent",
+          "accepted": [
+            "excellent",
+            "excellent",
+            "Excellent"
+          ],
+          "options": [
+            "Excellent",
+            "ready",
+            "my",
+            "your"
           ],
           "hu": "Kiváló! Ügyes vagy!"
         }
       ]
     },
     {
-      "id": "act_744",
+      "id": "act_876",
       "type": "reorder",
       "sentences": [
         {
@@ -140,7 +240,7 @@
       ]
     },
     {
-      "id": "act_745",
+      "id": "act_877",
       "type": "typed",
       "items": [
         "lex_turn_off",
@@ -151,7 +251,7 @@
       ]
     },
     {
-      "id": "act_746",
+      "id": "act_878",
       "type": "say-it",
       "phrases": [
         {
@@ -173,12 +273,12 @@
       ]
     },
     {
-      "id": "act_747",
+      "id": "act_879",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_748",
+      "id": "act_880",
       "type": "conversation",
       "dialogueId": "dlg_student_parent"
     }

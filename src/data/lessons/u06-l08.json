@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_413",
+      "id": "act_493",
       "type": "intro",
       "items": [
         "lex_before",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_414",
+      "id": "act_494",
       "type": "listen-choose",
       "items": [
         "lex_before",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_415",
+      "id": "act_495",
       "type": "match",
       "items": [
         "lex_before",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_416",
+      "id": "act_496",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,86 @@
             "hour"
           ],
           "hu": "(dátum)"
+        }
+      ]
+    },
+    {
+      "id": "act_497",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_before",
+          "text": "___ — a useful word.",
+          "answer": "Before",
+          "accepted": [
+            "before",
+            "before",
+            "Before"
+          ],
+          "options": [
+            "Before",
+            "after",
+            "at",
+            "from"
+          ],
+          "hu": "(előtt)"
         },
         {
+          "id": "lex_after",
+          "text": "___ — a useful word.",
+          "answer": "After",
+          "accepted": [
+            "after",
+            "after",
+            "After"
+          ],
+          "options": [
+            "After",
+            "before",
+            "at",
+            "from"
+          ],
+          "hu": "(után)"
+        },
+        {
+          "id": "lex_date",
+          "text": "This is a ___.",
+          "answer": "date",
+          "accepted": [
+            "date",
+            "date",
+            "dates",
+            "date"
+          ],
+          "options": [
+            "date",
+            "time",
+            "hour",
+            "minute"
+          ],
+          "hu": "(dátum)"
+        },
+        {
+          "id": "lex_january",
           "text": "I like ___.",
           "answer": "January",
+          "accepted": [
+            "January",
+            "January",
+            "January"
+          ],
           "options": [
             "January",
             "time",
-            "hour"
+            "hour",
+            "minute"
           ],
           "hu": "(január)"
         }
       ]
     },
     {
-      "id": "act_417",
+      "id": "act_498",
       "type": "typed",
       "items": [
         "lex_before",
@@ -125,7 +190,7 @@
       ]
     },
     {
-      "id": "act_418",
+      "id": "act_499",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +208,7 @@
       ]
     },
     {
-      "id": "act_419",
+      "id": "act_500",
       "type": "pron-record",
       "focusId": "str_question"
     }

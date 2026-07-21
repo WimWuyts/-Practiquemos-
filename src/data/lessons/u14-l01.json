@@ -100,7 +100,7 @@
   "conversationId": "dlg_airport",
   "activities": [
     {
-      "id": "act_831",
+      "id": "act_977",
       "type": "intro",
       "items": [
         "lex_airport",
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "act_832",
+      "id": "act_978",
       "type": "listen-choose",
       "items": [
         "lex_airport",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "id": "act_833",
+      "id": "act_979",
       "type": "match",
       "items": [
         "lex_airport",
@@ -138,18 +138,51 @@
       ]
     },
     {
-      "id": "act_834",
+      "id": "act_980",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_835",
+      "id": "act_981",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ you help me, please?",
+          "answer": "Could",
+          "options": [
+            "Could",
+            "Do",
+            "Are"
+          ],
+          "hu": "Tudna segíteni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_982",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Could I ___ some water, please?",
+          "accepted": [
+            "have"
+          ],
+          "hint": {
+            "en": "Could I + base verb",
+            "hu": "Could I + alapige"
+          },
+          "hu": "Kaphatnék egy kis vizet, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_983",
       "type": "spelling-build",
       "family": "sf_ar_or",
       "word": "airport"
     },
     {
-      "id": "act_836",
+      "id": "act_984",
       "type": "gapfill",
       "items": [
         {
@@ -181,21 +214,88 @@
             "flight"
           ],
           "hu": "Hol van a kapum, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_985",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_airport",
+          "text": "I am at the ___.",
+          "answer": "airport",
+          "accepted": [
+            "airport",
+            "airport",
+            "airports",
+            "airport"
+          ],
+          "options": [
+            "airport",
+            "flight",
+            "gate",
+            "check-in"
+          ],
+          "hu": "A reptéren vagyok."
         },
         {
+          "id": "lex_flight",
+          "text": "My ___ is at ten.",
+          "answer": "flight",
+          "accepted": [
+            "flight",
+            "flight",
+            "flights",
+            "flight"
+          ],
+          "options": [
+            "flight",
+            "airport",
+            "gate",
+            "check-in"
+          ],
+          "hu": "A járatom tízkor indul."
+        },
+        {
+          "id": "lex_gate",
+          "text": "Where is my ___, please?",
+          "answer": "gate",
+          "accepted": [
+            "gate",
+            "gate",
+            "gates",
+            "gate"
+          ],
+          "options": [
+            "gate",
+            "airport",
+            "flight",
+            "check-in"
+          ],
+          "hu": "Hol van a kapum, kérem?"
+        },
+        {
+          "id": "lex_check_in",
           "text": "This is a ___.",
           "answer": "check-in",
+          "accepted": [
+            "check-in",
+            "check-in",
+            "check-in"
+          ],
           "options": [
             "check-in",
             "airport",
-            "flight"
+            "flight",
+            "gate"
           ],
           "hu": "(check-in / becsekkolás)"
         }
       ]
     },
     {
-      "id": "act_837",
+      "id": "act_986",
       "type": "reorder",
       "sentences": [
         {
@@ -209,7 +309,7 @@
       ]
     },
     {
-      "id": "act_838",
+      "id": "act_987",
       "type": "typed",
       "items": [
         "lex_airport",
@@ -220,7 +320,7 @@
       ]
     },
     {
-      "id": "act_839",
+      "id": "act_988",
       "type": "say-it",
       "phrases": [
         {
@@ -242,12 +342,12 @@
       ]
     },
     {
-      "id": "act_840",
+      "id": "act_989",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_841",
+      "id": "act_990",
       "type": "listen-comprehension",
       "passage": "Attention please. The flight to Copenhagen is now boarding at gate twelve. Please have your passport ready.",
       "question": {
@@ -262,12 +362,12 @@
       "answer": "Gate twelve"
     },
     {
-      "id": "act_842",
+      "id": "act_991",
       "type": "conversation",
       "dialogueId": "dlg_airport"
     },
     {
-      "id": "act_843",
+      "id": "act_992",
       "type": "review",
       "items": [
         "lex_lesson",

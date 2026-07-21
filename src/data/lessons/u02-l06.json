@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_119",
+      "id": "act_146",
       "type": "intro",
       "items": [
         "lex_woman",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_120",
+      "id": "act_147",
       "type": "listen-choose",
       "items": [
         "lex_woman",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_121",
+      "id": "act_148",
       "type": "match",
       "items": [
         "lex_woman",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_122",
+      "id": "act_149",
       "type": "gapfill",
       "items": [
         {
@@ -92,21 +92,89 @@
             "mother"
           ],
           "hu": "(fiú)"
+        }
+      ]
+    },
+    {
+      "id": "act_150",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_woman",
+          "text": "The ___ is my sister.",
+          "answer": "woman",
+          "accepted": [
+            "woman",
+            "woman",
+            "women",
+            "woman"
+          ],
+          "options": [
+            "woman",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "A nő a nővérem."
         },
         {
+          "id": "lex_girl",
+          "text": "This is a ___.",
+          "answer": "girl",
+          "accepted": [
+            "girl",
+            "girl",
+            "girls",
+            "girl"
+          ],
+          "options": [
+            "girl",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(lány)"
+        },
+        {
+          "id": "lex_boy",
+          "text": "This is a ___.",
+          "answer": "boy",
+          "accepted": [
+            "boy",
+            "boy",
+            "boys",
+            "boy"
+          ],
+          "options": [
+            "boy",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(fiú)"
+        },
+        {
+          "id": "lex_person",
           "text": "This is a ___.",
           "answer": "person",
+          "accepted": [
+            "person",
+            "person",
+            "people",
+            "person"
+          ],
           "options": [
             "person",
             "family",
-            "mother"
+            "mother",
+            "father"
           ],
           "hu": "(személy)"
         }
       ]
     },
     {
-      "id": "act_123",
+      "id": "act_151",
       "type": "typed",
       "items": [
         "lex_woman",
@@ -117,7 +185,7 @@
       ]
     },
     {
-      "id": "act_124",
+      "id": "act_152",
       "type": "say-it",
       "phrases": [
         {
@@ -135,7 +203,7 @@
       ]
     },
     {
-      "id": "act_125",
+      "id": "act_153",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     }

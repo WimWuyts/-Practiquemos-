@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_27",
+      "id": "act_36",
       "type": "intro",
       "items": [
         "lex_your",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_28",
+      "id": "act_37",
       "type": "listen-choose",
       "items": [
         "lex_your",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_29",
+      "id": "act_38",
       "type": "match",
       "items": [
         "lex_your",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_30",
+      "id": "act_39",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,85 @@
             "he"
           ],
           "hu": "Honnan jössz?"
+        }
+      ]
+    },
+    {
+      "id": "act_40",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_your",
+          "text": "What is ___ name?",
+          "answer": "your",
+          "accepted": [
+            "your",
+            "your",
+            "your"
+          ],
+          "options": [
+            "your",
+            "my",
+            "retired",
+            "nice"
+          ],
+          "hu": "Hogy hívnak?"
         },
         {
-          "text": "___ is my nephew.",
-          "answer": "he",
-          "options": [
-            "he",
+          "id": "lex_i",
+          "text": "___ live in Hungary.",
+          "answer": "I",
+          "accepted": [
             "I",
+            "I",
+            "I"
+          ],
+          "options": [
+            "I",
+            "you",
+            "he",
+            "she"
+          ],
+          "hu": "Magyarországon élek."
+        },
+        {
+          "id": "lex_you",
+          "text": "Where are ___ from?",
+          "answer": "you",
+          "accepted": [
+            "you",
+            "you",
             "you"
+          ],
+          "options": [
+            "you",
+            "I",
+            "he",
+            "she"
+          ],
+          "hu": "Honnan jössz?"
+        },
+        {
+          "id": "lex_he",
+          "text": "___ is my nephew.",
+          "answer": "He",
+          "accepted": [
+            "he",
+            "he",
+            "He"
+          ],
+          "options": [
+            "He",
+            "I",
+            "you",
+            "she"
           ],
           "hu": "Ő az unokaöcsém."
         }
       ]
     },
     {
-      "id": "act_31",
+      "id": "act_41",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +197,7 @@
       ]
     },
     {
-      "id": "act_32",
+      "id": "act_42",
       "type": "typed",
       "items": [
         "lex_your",
@@ -144,7 +208,7 @@
       ]
     },
     {
-      "id": "act_33",
+      "id": "act_43",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +230,12 @@
       ]
     },
     {
-      "id": "act_34",
+      "id": "act_44",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_35",
+      "id": "act_45",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     }

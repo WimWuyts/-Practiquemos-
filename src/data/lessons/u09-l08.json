@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_659",
+      "id": "act_775",
       "type": "intro",
       "items": [
         "lex_way",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_660",
+      "id": "act_776",
       "type": "listen-choose",
       "items": [
         "lex_way",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_661",
+      "id": "act_777",
       "type": "match",
       "items": [
         "lex_way",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_662",
+      "id": "act_778",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,89 @@
             "left"
           ],
           "hu": "(iroda)"
+        }
+      ]
+    },
+    {
+      "id": "act_779",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_way",
+          "text": "Is this the ___ to the station?",
+          "answer": "way",
+          "accepted": [
+            "way",
+            "way",
+            "ways",
+            "way"
+          ],
+          "options": [
+            "way",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "Erre van az állomás?"
         },
         {
+          "id": "lex_side",
+          "text": "The shop is on the other ___.",
+          "answer": "side",
+          "accepted": [
+            "side",
+            "side",
+            "sides",
+            "side"
+          ],
+          "options": [
+            "side",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "A bolt a másik oldalon van."
+        },
+        {
+          "id": "lex_office",
+          "text": "This is an ___.",
+          "answer": "office",
+          "accepted": [
+            "office",
+            "office",
+            "offices",
+            "office"
+          ],
+          "options": [
+            "office",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(iroda)"
+        },
+        {
+          "id": "lex_building",
           "text": "This is a ___.",
           "answer": "building",
+          "accepted": [
+            "building",
+            "building",
+            "buildings",
+            "building"
+          ],
           "options": [
             "building",
             "street",
-            "left"
+            "left",
+            "right"
           ],
           "hu": "(épület)"
         }
       ]
     },
     {
-      "id": "act_663",
+      "id": "act_780",
       "type": "typed",
       "items": [
         "lex_way",
@@ -125,7 +193,7 @@
       ]
     },
     {
-      "id": "act_664",
+      "id": "act_781",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +211,12 @@
       ]
     },
     {
-      "id": "act_665",
+      "id": "act_782",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_666",
+      "id": "act_783",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

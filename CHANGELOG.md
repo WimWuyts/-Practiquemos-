@@ -2,6 +2,30 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.8.0] — 2026-07 — Rosetta for Marta: the productive turn (8-agent design team)
+
+An 8-agent design-and-build team (Rosetta method, productive-vocab & typing, grammar exercises, pronunciation variety, drill flow, older-adult ergonomics, engine feasibility, Marta-relevance) drove this release — see `docs/REVIEW_TEAM_v3.md` and `docs/REVIEW_FINDINGS_AND_ACTIONS.md`. The theme: **the app had lots of words but did too little with them** — Marta only pointed and spoke; grammar was one info card; pronunciation had two exercise types. This release makes her *produce*.
+
+### Typing — she now writes words (the headline)
+- **New `word-fill` activity**: a real sentence from her life with a blank she **types** (not taps), Hungarian help on demand, hear-the-whole-sentence on success. Derived automatically from every word's example — **396 items across 102 lessons**, plus in the vocabulary drill and Quick practice.
+- **A scaffold ladder so getting stuck is impossible**: type *or* tap a word bank, a first-letter hint, and unlimited gentle retries that always end in success.
+- **Forgiving matching** for typed answers: tolerates a stray accent, British/US spelling (colour/color, mum/mom), a hyphen, and a single-key typo on short words — while staying strict where it matters.
+
+### Grammar — real, varied, spoken exercises
+- **A practice bank of 108 items across all 27 A1 points**, grounded in her world (Kira in Denmark, "please turn your microphone on", coffee in the garden). Kinds: choose-the-form, **type-the-form** (strict: *teach* ≠ *teaches*), **spot-the-error**, build-the-sentence, and say-it.
+- **`grammarDrill` rebuilt** from a single info card into a teach → apply → speak session; grammar items now also appear productively **inside lessons**.
+
+### Pronunciation — variety at last
+- Three new exercise types on top of the existing framework: **say-the-pair** (production), **shadowing / repeat-chain**, and **listen-and-sort**. Every sound — including those without minimal pairs (ng, r, -s, -ed) — now runs a full *hear → tell apart → say it yourself* session.
+
+### Practice — a continuous session, and full-corpus coverage
+- **Drills rebuilt** into smooth recognition → tap → **type** → say-it arcs with a warm closure and "Practise more".
+- **An item-picker** (due-for-review → least-practised → fresh) so that, over time, **all 751 words cycle through production**, not just the handful introduced each lesson.
+- **Quick practice**: a one-tap mixed session from the hub, plus a non-punitive "N of 751 words practised" growth line.
+
+### Under the hood
+- Validator now rejects unknown activity types (they used to render as nothing) and checks the grammar bank's integrity; new UI strings live in the i18n generator; smoke tests cover the typed and grammar paths (20 checks).
+
 ## [1.7.0] — 2026-07 — De-clunk & flow: 11-agent "feel" review acted on
 
 The content was good, but the app felt *houterig* (clunky/stiff) and the layout a bit boring. An 11-agent review focused entirely on **feel, flow, motion and visual craft** (see `docs/REVIEW_TEAM_v2.md` and `docs/REVIEW_FINDINGS_AND_ACTIONS.md`) drove this release.

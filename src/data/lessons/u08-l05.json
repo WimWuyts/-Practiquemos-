@@ -33,7 +33,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_541",
+      "id": "act_641",
       "type": "intro",
       "items": [
         "lex_important",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "act_542",
+      "id": "act_642",
       "type": "listen-choose",
       "items": [
         "lex_important",
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "id": "act_543",
+      "id": "act_643",
       "type": "match",
       "items": [
         "lex_important",
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "id": "act_544",
+      "id": "act_644",
       "type": "gapfill",
       "items": [
         {
@@ -103,21 +103,85 @@
             "interesting"
           ],
           "hu": "(ugyanaz)"
+        }
+      ]
+    },
+    {
+      "id": "act_645",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_important",
+          "text": "It is very ___.",
+          "answer": "important",
+          "accepted": [
+            "important",
+            "important",
+            "important"
+          ],
+          "options": [
+            "important",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(fontos)"
         },
         {
+          "id": "lex_different",
+          "text": "It is very ___.",
+          "answer": "different",
+          "accepted": [
+            "different",
+            "different",
+            "different"
+          ],
+          "options": [
+            "different",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(különböző / más)"
+        },
+        {
+          "id": "lex_same",
+          "text": "It is very ___.",
+          "answer": "same",
+          "accepted": [
+            "same",
+            "same",
+            "same"
+          ],
+          "options": [
+            "same",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(ugyanaz)"
+        },
+        {
+          "id": "lex_lovely",
           "text": "It is very ___.",
           "answer": "lovely",
+          "accepted": [
+            "lovely",
+            "lovely",
+            "lovely"
+          ],
           "options": [
             "lovely",
             "favourite",
-            "interesting"
+            "interesting",
+            "boring"
           ],
           "hu": "(kedves / bájos)"
         }
       ]
     },
     {
-      "id": "act_545",
+      "id": "act_646",
       "type": "reorder",
       "sentences": [
         {
@@ -127,7 +191,7 @@
       ]
     },
     {
-      "id": "act_546",
+      "id": "act_647",
       "type": "typed",
       "items": [
         "lex_important",
@@ -138,7 +202,7 @@
       ]
     },
     {
-      "id": "act_547",
+      "id": "act_648",
       "type": "say-it",
       "phrases": [
         {
@@ -152,7 +216,7 @@
       ]
     },
     {
-      "id": "act_548",
+      "id": "act_649",
       "type": "pron-record",
       "focusId": "snd_r"
     }

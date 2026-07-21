@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_633",
+      "id": "act_746",
       "type": "intro",
       "items": [
         "lex_centre",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_634",
+      "id": "act_747",
       "type": "listen-choose",
       "items": [
         "lex_centre",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_635",
+      "id": "act_748",
       "type": "match",
       "items": [
         "lex_centre",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_636",
+      "id": "act_749",
       "type": "spelling-build",
       "family": "sf_magic_e_o",
       "word": "close"
     },
     {
-      "id": "act_637",
+      "id": "act_750",
       "type": "gapfill",
       "items": [
         {
@@ -111,21 +111,90 @@
             "left"
           ],
           "hu": "(sarok)"
+        }
+      ]
+    },
+    {
+      "id": "act_751",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_centre",
+          "text": "This is a ___.",
+          "answer": "centre",
+          "accepted": [
+            "centre",
+            "centre",
+            "centres",
+            "centre"
+          ],
+          "options": [
+            "centre",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(központ)"
         },
         {
+          "id": "lex_place",
+          "text": "This is a ___.",
+          "answer": "place",
+          "accepted": [
+            "place",
+            "place",
+            "places",
+            "place"
+          ],
+          "options": [
+            "place",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(hely)"
+        },
+        {
+          "id": "lex_corner",
+          "text": "This is a ___.",
+          "answer": "corner",
+          "accepted": [
+            "corner",
+            "corner",
+            "corners",
+            "corner"
+          ],
+          "options": [
+            "corner",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(sarok)"
+        },
+        {
+          "id": "lex_open",
           "text": "I ___ every day.",
           "answer": "open",
+          "accepted": [
+            "open",
+            "open",
+            "opens",
+            "opened",
+            "open"
+          ],
           "options": [
             "open",
             "work",
-            "get up"
+            "get up",
+            "wake up"
           ],
           "hu": "(kinyitni)"
         }
       ]
     },
     {
-      "id": "act_638",
+      "id": "act_752",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +208,7 @@
       ]
     },
     {
-      "id": "act_639",
+      "id": "act_753",
       "type": "typed",
       "items": [
         "lex_centre",
@@ -150,7 +219,7 @@
       ]
     },
     {
-      "id": "act_640",
+      "id": "act_754",
       "type": "say-it",
       "phrases": [
         {
@@ -172,12 +241,12 @@
       ]
     },
     {
-      "id": "act_641",
+      "id": "act_755",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_642",
+      "id": "act_756",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

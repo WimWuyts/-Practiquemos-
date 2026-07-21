@@ -37,7 +37,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_263",
+      "id": "act_316",
       "type": "intro",
       "items": [
         "lex_apple",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_264",
+      "id": "act_317",
       "type": "listen-choose",
       "items": [
         "lex_apple",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_265",
+      "id": "act_318",
       "type": "match",
       "items": [
         "lex_apple",
@@ -75,18 +75,53 @@
       ]
     },
     {
-      "id": "act_266",
+      "id": "act_319",
       "type": "grammar",
       "grammarId": "gr_wouldlike"
     },
     {
-      "id": "act_267",
+      "id": "act_320",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ you like some tea?",
+          "answer": "Would",
+          "options": [
+            "Would",
+            "Do",
+            "Are"
+          ],
+          "hu": "Kérsz egy kis teát?"
+        }
+      ]
+    },
+    {
+      "id": "act_321",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "I ___ a coffee, please.",
+          "accepted": [
+            "would like",
+            "'d like",
+            "would like to"
+          ],
+          "hint": {
+            "en": "polite: I'd like",
+            "hu": "udvarias: I'd like"
+          },
+          "hu": "Egy kávét kérek."
+        }
+      ]
+    },
+    {
+      "id": "act_322",
       "type": "spelling-build",
       "family": "sf_ea",
       "word": "meat"
     },
     {
-      "id": "act_268",
+      "id": "act_323",
       "type": "gapfill",
       "items": [
         {
@@ -118,21 +153,86 @@
             "water"
           ],
           "hu": "(hús)"
+        }
+      ]
+    },
+    {
+      "id": "act_324",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_apple",
+          "text": "I eat an ___ every day.",
+          "answer": "apple",
+          "accepted": [
+            "apple",
+            "apple",
+            "apples",
+            "apple"
+          ],
+          "options": [
+            "apple",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "Minden nap eszem egy almát."
         },
         {
+          "id": "lex_soup",
+          "text": "I'd like the ___, please.",
+          "answer": "soup",
+          "accepted": [
+            "soup",
+            "soup",
+            "soup"
+          ],
+          "options": [
+            "soup",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "A levest kérném."
+        },
+        {
+          "id": "lex_meat",
+          "text": "I like ___.",
+          "answer": "meat",
+          "accepted": [
+            "meat",
+            "meat",
+            "meat"
+          ],
+          "options": [
+            "meat",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(hús)"
+        },
+        {
+          "id": "lex_fish",
           "text": "I like ___.",
           "answer": "fish",
+          "accepted": [
+            "fish",
+            "fish",
+            "fish"
+          ],
           "options": [
             "fish",
             "food",
-            "water"
+            "water",
+            "coffee"
           ],
           "hu": "(hal)"
         }
       ]
     },
     {
-      "id": "act_269",
+      "id": "act_325",
       "type": "reorder",
       "sentences": [
         {
@@ -146,7 +246,7 @@
       ]
     },
     {
-      "id": "act_270",
+      "id": "act_326",
       "type": "typed",
       "items": [
         "lex_apple",
@@ -157,7 +257,7 @@
       ]
     },
     {
-      "id": "act_271",
+      "id": "act_327",
       "type": "say-it",
       "phrases": [
         {
@@ -179,12 +279,12 @@
       ]
     },
     {
-      "id": "act_272",
+      "id": "act_328",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_273",
+      "id": "act_329",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

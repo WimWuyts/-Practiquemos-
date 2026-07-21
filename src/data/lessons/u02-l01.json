@@ -95,7 +95,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_72",
+      "id": "act_86",
       "type": "intro",
       "items": [
         "lex_family",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "act_73",
+      "id": "act_87",
       "type": "listen-choose",
       "items": [
         "lex_family",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "id": "act_74",
+      "id": "act_88",
       "type": "match",
       "items": [
         "lex_family",
@@ -133,22 +133,131 @@
       ]
     },
     {
-      "id": "act_75",
+      "id": "act_89",
       "type": "grammar",
       "grammarId": "gr_possadj"
     },
     {
-      "id": "act_76",
+      "id": "act_90",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Kira is a woman. ___ boyfriend is Endika.",
+          "answer": "Her",
+          "options": [
+            "His",
+            "Her",
+            "Their"
+          ],
+          "hu": "Kira nő. A barátja Endika."
+        },
+        {
+          "text": "This is ___ family. I love them.",
+          "answer": "my",
+          "options": [
+            "my",
+            "your",
+            "his"
+          ],
+          "hu": "Ez az én családom. Szeretem őket."
+        }
+      ]
+    },
+    {
+      "id": "act_91",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "David studies a lot. ___ subject is computer science.",
+          "accepted": [
+            "his"
+          ],
+          "hint": {
+            "en": "a man → his",
+            "hu": "férfié → his"
+          },
+          "hu": "David sokat tanul. A szakja informatika."
+        }
+      ]
+    },
+    {
+      "id": "act_92",
       "type": "grammar",
       "grammarId": "gr_poss_s"
     },
     {
-      "id": "act_77",
+      "id": "act_93",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Endika is ___ boyfriend.",
+          "answer": "Kira's",
+          "options": [
+            "Kira's",
+            "Kiras",
+            "Kira"
+          ],
+          "hu": "Endika Kira barátja."
+        }
+      ]
+    },
+    {
+      "id": "act_94",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "This is Marta___ house.",
+          "accepted": [
+            "'s",
+            "s"
+          ],
+          "hint": {
+            "en": "add 's to the name",
+            "hu": "tegyél 's-t a név után"
+          },
+          "hu": "Ez Marta háza."
+        }
+      ]
+    },
+    {
+      "id": "act_95",
       "type": "grammar",
       "grammarId": "gr_plural"
     },
     {
-      "id": "act_78",
+      "id": "act_96",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Two ___, please.",
+          "answer": "coffees",
+          "options": [
+            "coffee",
+            "coffees"
+          ],
+          "hu": "Két kávét kérek."
+        }
+      ]
+    },
+    {
+      "id": "act_97",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "I have three ___.",
+          "accepted": [
+            "children"
+          ],
+          "hint": {
+            "en": "child → children",
+            "hu": "child → children"
+          },
+          "hu": "Három gyerekem van."
+        }
+      ]
+    },
+    {
+      "id": "act_98",
       "type": "gapfill",
       "items": [
         {
@@ -180,21 +289,88 @@
             "mother"
           ],
           "hu": "Az apám nyugdíjas."
+        }
+      ]
+    },
+    {
+      "id": "act_99",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_family",
+          "text": "I love my ___.",
+          "answer": "family",
+          "accepted": [
+            "family",
+            "family",
+            "families",
+            "family"
+          ],
+          "options": [
+            "family",
+            "mother",
+            "father",
+            "mum"
+          ],
+          "hu": "Szeretem a családomat."
         },
         {
+          "id": "lex_mother",
+          "text": "My ___ is kind.",
+          "answer": "mother",
+          "accepted": [
+            "mother",
+            "mother",
+            "mothers",
+            "mother"
+          ],
+          "options": [
+            "mother",
+            "family",
+            "father",
+            "mum"
+          ],
+          "hu": "Az anyám kedves."
+        },
+        {
+          "id": "lex_father",
+          "text": "My ___ is retired.",
+          "answer": "father",
+          "accepted": [
+            "father",
+            "father",
+            "fathers",
+            "father"
+          ],
+          "options": [
+            "father",
+            "family",
+            "mother",
+            "mum"
+          ],
+          "hu": "Az apám nyugdíjas."
+        },
+        {
+          "id": "lex_mum",
           "text": "This is a ___.",
           "answer": "mum",
+          "accepted": [
+            "mum",
+            "mum",
+            "mum"
+          ],
           "options": [
             "mum",
             "family",
-            "mother"
+            "mother",
+            "father"
           ],
           "hu": "(anyu)"
         }
       ]
     },
     {
-      "id": "act_79",
+      "id": "act_100",
       "type": "reorder",
       "sentences": [
         {
@@ -208,7 +384,7 @@
       ]
     },
     {
-      "id": "act_80",
+      "id": "act_101",
       "type": "typed",
       "items": [
         "lex_family",
@@ -219,7 +395,7 @@
       ]
     },
     {
-      "id": "act_81",
+      "id": "act_102",
       "type": "say-it",
       "phrases": [
         {
@@ -241,17 +417,17 @@
       ]
     },
     {
-      "id": "act_82",
+      "id": "act_103",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_83",
+      "id": "act_104",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_84",
+      "id": "act_105",
       "type": "review",
       "items": [
         "lex_hello",

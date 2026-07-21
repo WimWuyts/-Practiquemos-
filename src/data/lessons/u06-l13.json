@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_449",
+      "id": "act_534",
       "type": "intro",
       "items": [
         "lex_umbrella",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_450",
+      "id": "act_535",
       "type": "listen-choose",
       "items": [
         "lex_umbrella",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_451",
+      "id": "act_536",
       "type": "match",
       "items": [
         "lex_umbrella",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_452",
+      "id": "act_537",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,86 @@
             "your"
           ],
           "hu": "(következő)"
+        }
+      ]
+    },
+    {
+      "id": "act_538",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_umbrella",
+          "text": "This is an ___.",
+          "answer": "umbrella",
+          "accepted": [
+            "umbrella",
+            "umbrella",
+            "umbrellas",
+            "umbrella"
+          ],
+          "options": [
+            "umbrella",
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "(esernyő)"
         },
         {
+          "id": "lex_cool",
+          "text": "It is very ___.",
+          "answer": "cool",
+          "accepted": [
+            "cool",
+            "cool",
+            "cool"
+          ],
+          "options": [
+            "cool",
+            "sunny",
+            "rainy",
+            "cold"
+          ],
+          "hu": "(hűvös / menő)"
+        },
+        {
+          "id": "lex_next",
+          "text": "It is very ___.",
+          "answer": "next",
+          "accepted": [
+            "next",
+            "next",
+            "next"
+          ],
+          "options": [
+            "next",
+            "my",
+            "your",
+            "retired"
+          ],
+          "hu": "(következő)"
+        },
+        {
+          "id": "lex_moon",
           "text": "This is a ___.",
           "answer": "moon",
+          "accepted": [
+            "moon",
+            "moon",
+            "moon"
+          ],
           "options": [
             "moon",
             "weather",
-            "tree"
+            "tree",
+            "flower"
           ],
           "hu": "(hold)"
         }
       ]
     },
     {
-      "id": "act_453",
+      "id": "act_539",
       "type": "typed",
       "items": [
         "lex_umbrella",
@@ -125,7 +190,7 @@
       ]
     },
     {
-      "id": "act_454",
+      "id": "act_540",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +208,7 @@
       ]
     },
     {
-      "id": "act_455",
+      "id": "act_541",
       "type": "pron-record",
       "focusId": "str_word"
     }

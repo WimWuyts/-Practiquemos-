@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_46",
+      "id": "act_57",
       "type": "intro",
       "items": [
         "lex_where",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_47",
+      "id": "act_58",
       "type": "listen-choose",
       "items": [
         "lex_where",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_48",
+      "id": "act_59",
       "type": "match",
       "items": [
         "lex_where",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_49",
+      "id": "act_60",
       "type": "spelling-build",
       "family": "sf_wh",
       "word": "where"
     },
     {
-      "id": "act_50",
+      "id": "act_61",
       "type": "gapfill",
       "items": [
         {
@@ -106,21 +106,85 @@
             "me"
           ],
           "hu": "Ki az?"
+        }
+      ]
+    },
+    {
+      "id": "act_62",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_where",
+          "text": "___ do you live?",
+          "answer": "Where",
+          "accepted": [
+            "where",
+            "where",
+            "Where"
+          ],
+          "options": [
+            "Where",
+            "how",
+            "very",
+            "slowly"
+          ],
+          "hu": "Hol laksz?"
         },
         {
+          "id": "lex_how",
+          "text": "___ are you?",
+          "answer": "How",
+          "accepted": [
+            "how",
+            "how",
+            "How"
+          ],
+          "options": [
+            "How",
+            "where",
+            "very",
+            "slowly"
+          ],
+          "hu": "Hogy vagy?"
+        },
+        {
+          "id": "lex_who",
+          "text": "___ is that?",
+          "answer": "Who",
+          "accepted": [
+            "who",
+            "who",
+            "Who"
+          ],
+          "options": [
+            "Who",
+            "what",
+            "me",
+            "him"
+          ],
+          "hu": "Ki az?"
+        },
+        {
+          "id": "lex_fine",
           "text": "I'm ___, thank you.",
           "answer": "fine",
+          "accepted": [
+            "fine",
+            "fine",
+            "fine"
+          ],
           "options": [
             "fine",
             "good",
-            "my"
+            "my",
+            "your"
           ],
           "hu": "Jól vagyok, köszönöm."
         }
       ]
     },
     {
-      "id": "act_51",
+      "id": "act_63",
       "type": "typed",
       "items": [
         "lex_where",
@@ -131,7 +195,7 @@
       ]
     },
     {
-      "id": "act_52",
+      "id": "act_64",
       "type": "say-it",
       "phrases": [
         {
@@ -149,12 +213,12 @@
       ]
     },
     {
-      "id": "act_53",
+      "id": "act_65",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_54",
+      "id": "act_66",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     }

@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_111",
+      "id": "act_137",
       "type": "intro",
       "items": [
         "lex_old",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_112",
+      "id": "act_138",
       "type": "listen-choose",
       "items": [
         "lex_old",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_113",
+      "id": "act_139",
       "type": "match",
       "items": [
         "lex_old",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_114",
+      "id": "act_140",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,86 @@
             "her"
           ],
           "hu": "(házas)"
+        }
+      ]
+    },
+    {
+      "id": "act_141",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_old",
+          "text": "It is very ___.",
+          "answer": "old",
+          "accepted": [
+            "old",
+            "old",
+            "old"
+          ],
+          "options": [
+            "old",
+            "his",
+            "her",
+            "our"
+          ],
+          "hu": "(öreg / idős)"
         },
         {
+          "id": "lex_young",
+          "text": "It is very ___.",
+          "answer": "young",
+          "accepted": [
+            "young",
+            "young",
+            "young"
+          ],
+          "options": [
+            "young",
+            "his",
+            "her",
+            "our"
+          ],
+          "hu": "(fiatal)"
+        },
+        {
+          "id": "lex_married",
+          "text": "It is very ___.",
+          "answer": "married",
+          "accepted": [
+            "married",
+            "married",
+            "married"
+          ],
+          "options": [
+            "married",
+            "his",
+            "her",
+            "our"
+          ],
+          "hu": "(házas)"
+        },
+        {
+          "id": "lex_baby",
           "text": "The ___ is very small.",
           "answer": "baby",
+          "accepted": [
+            "baby",
+            "baby",
+            "babies",
+            "baby"
+          ],
           "options": [
             "baby",
             "family",
-            "mother"
+            "mother",
+            "father"
           ],
           "hu": "A baba nagyon kicsi."
         }
       ]
     },
     {
-      "id": "act_115",
+      "id": "act_142",
       "type": "typed",
       "items": [
         "lex_old",
@@ -125,7 +190,7 @@
       ]
     },
     {
-      "id": "act_116",
+      "id": "act_143",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +208,12 @@
       ]
     },
     {
-      "id": "act_117",
+      "id": "act_144",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_118",
+      "id": "act_145",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

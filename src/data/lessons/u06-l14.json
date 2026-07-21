@@ -24,7 +24,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_456",
+      "id": "act_542",
       "type": "intro",
       "items": [
         "lex_bright",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "id": "act_457",
+      "id": "act_543",
       "type": "listen-choose",
       "items": [
         "lex_bright",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "act_458",
+      "id": "act_544",
       "type": "gapfill",
       "items": [
         {
@@ -66,7 +66,47 @@
       ]
     },
     {
-      "id": "act_459",
+      "id": "act_545",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_bright",
+          "text": "It is very ___.",
+          "answer": "bright",
+          "accepted": [
+            "bright",
+            "bright",
+            "bright"
+          ],
+          "options": [
+            "bright",
+            "sunny",
+            "rainy",
+            "cold"
+          ],
+          "hu": "(világos / ragyogó)"
+        },
+        {
+          "id": "lex_deep",
+          "text": "It is very ___.",
+          "answer": "deep",
+          "accepted": [
+            "deep",
+            "deep",
+            "deep"
+          ],
+          "options": [
+            "deep",
+            "sunny",
+            "rainy",
+            "cold"
+          ],
+          "hu": "(mély)"
+        }
+      ]
+    },
+    {
+      "id": "act_546",
       "type": "typed",
       "items": [
         "lex_bright",
@@ -74,7 +114,7 @@
       ]
     },
     {
-      "id": "act_460",
+      "id": "act_547",
       "type": "say-it",
       "phrases": [
         {
@@ -88,7 +128,7 @@
       ]
     },
     {
-      "id": "act_461",
+      "id": "act_548",
       "type": "pron-record",
       "focusId": "str_question"
     }

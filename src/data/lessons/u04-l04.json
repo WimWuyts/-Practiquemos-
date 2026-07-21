@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_201",
+      "id": "act_245",
       "type": "intro",
       "items": [
         "lex_every_day",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_202",
+      "id": "act_246",
       "type": "listen-choose",
       "items": [
         "lex_every_day",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_203",
+      "id": "act_247",
       "type": "match",
       "items": [
         "lex_every_day",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_204",
+      "id": "act_248",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "living room"
           ],
           "hu": "(vannak (ott))"
+        }
+      ]
+    },
+    {
+      "id": "act_249",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_every_day",
+          "text": "___.",
+          "answer": "Every day",
+          "accepted": [
+            "every day",
+            "every day",
+            "Every day"
+          ],
+          "options": [
+            "Every day",
+            "hello",
+            "hi",
+            "goodbye"
+          ],
+          "hu": "(minden nap)"
         },
         {
+          "id": "lex_there_is",
+          "text": "___.",
+          "answer": "There is",
+          "accepted": [
+            "there is",
+            "there is",
+            "There is"
+          ],
+          "options": [
+            "There is",
+            "there are",
+            "living room",
+            "dining room"
+          ],
+          "hu": "(van (ott))"
+        },
+        {
+          "id": "lex_there_are",
+          "text": "___.",
+          "answer": "There are",
+          "accepted": [
+            "there are",
+            "there are",
+            "There are"
+          ],
+          "options": [
+            "There are",
+            "there is",
+            "living room",
+            "dining room"
+          ],
+          "hu": "(vannak (ott))"
+        },
+        {
+          "id": "lex_in",
           "text": "The keys are ___ the kitchen.",
           "answer": "in",
+          "accepted": [
+            "in",
+            "in",
+            "in"
+          ],
           "options": [
             "in",
             "on",
-            "under"
+            "under",
+            "next to"
           ],
           "hu": "A kulcsok a konyhában vannak."
         }
       ]
     },
     {
-      "id": "act_205",
+      "id": "act_250",
       "type": "typed",
       "items": [
         "lex_every_day",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_206",
+      "id": "act_251",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +207,7 @@
       ]
     },
     {
-      "id": "act_207",
+      "id": "act_252",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

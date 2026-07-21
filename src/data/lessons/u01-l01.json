@@ -83,16 +83,134 @@
     },
     {
       "id": "act_6",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "My niece Kira ___ in Denmark.",
+          "answer": "is",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ],
+          "hu": "Kira unokahúgom Dániában van."
+        }
+      ]
+    },
+    {
+      "id": "act_7",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "I ___ a retired teacher.",
+          "accepted": [
+            "am",
+            "'m"
+          ],
+          "hint": {
+            "en": "I → am",
+            "hu": "I mellett: am"
+          },
+          "hu": "Nyugdíjas tanár vagyok."
+        }
+      ]
+    },
+    {
+      "id": "act_8",
       "type": "grammar",
       "grammarId": "gr_questions_wh"
     },
     {
-      "id": "act_7",
+      "id": "act_9",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ are you from?",
+          "answer": "Where",
+          "options": [
+            "What",
+            "Where",
+            "How"
+          ],
+          "hu": "Honnan jössz?"
+        },
+        {
+          "text": "___ is your name?",
+          "answer": "What",
+          "options": [
+            "What",
+            "Where",
+            "When"
+          ],
+          "hu": "Hogy hívnak?"
+        }
+      ]
+    },
+    {
+      "id": "act_10",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "___ are you? I'm fine, thank you.",
+          "accepted": [
+            "how"
+          ],
+          "hint": {
+            "en": "asks about the way",
+            "hu": "a módra kérdez"
+          },
+          "hu": "Hogy vagy? Jól vagyok, köszönöm."
+        }
+      ]
+    },
+    {
+      "id": "act_11",
       "type": "grammar",
       "grammarId": "gr_articles"
     },
     {
-      "id": "act_8",
+      "id": "act_12",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "It is ___ apple.",
+          "answer": "an",
+          "options": [
+            "a",
+            "an"
+          ],
+          "hu": "Ez egy alma."
+        },
+        {
+          "text": "I am ___ teacher.",
+          "answer": "a",
+          "options": [
+            "a",
+            "an"
+          ],
+          "hu": "Tanár vagyok."
+        }
+      ]
+    },
+    {
+      "id": "act_13",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "I would like ___ orange, please.",
+          "accepted": [
+            "an"
+          ],
+          "hint": {
+            "en": "before a vowel sound → an",
+            "hu": "magánhangzó előtt: an"
+          },
+          "hu": "Egy narancsot kérek."
+        }
+      ]
+    },
+    {
+      "id": "act_14",
       "type": "gapfill",
       "items": [
         {
@@ -124,21 +242,85 @@
             "hi"
           ],
           "hu": "Viszlát! Hamarosan találkozunk."
+        }
+      ]
+    },
+    {
+      "id": "act_15",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_hello",
+          "text": "___! I'm Marta.",
+          "answer": "Hello",
+          "accepted": [
+            "hello",
+            "hello",
+            "Hello"
+          ],
+          "options": [
+            "Hello",
+            "hi",
+            "goodbye",
+            "bye"
+          ],
+          "hu": "Szia! Marta vagyok."
         },
         {
+          "id": "lex_hi",
           "text": "___.",
-          "answer": "bye",
+          "answer": "Hi",
+          "accepted": [
+            "hi",
+            "hi",
+            "Hi"
+          ],
           "options": [
-            "bye",
+            "Hi",
             "hello",
-            "hi"
+            "goodbye",
+            "bye"
+          ],
+          "hu": "(szia)"
+        },
+        {
+          "id": "lex_goodbye",
+          "text": "___! See you soon.",
+          "answer": "Goodbye",
+          "accepted": [
+            "goodbye",
+            "goodbye",
+            "Goodbye"
+          ],
+          "options": [
+            "Goodbye",
+            "hello",
+            "hi",
+            "bye"
+          ],
+          "hu": "Viszlát! Hamarosan találkozunk."
+        },
+        {
+          "id": "lex_bye",
+          "text": "___.",
+          "answer": "Bye",
+          "accepted": [
+            "bye",
+            "bye",
+            "Bye"
+          ],
+          "options": [
+            "Bye",
+            "hello",
+            "hi",
+            "goodbye"
           ],
           "hu": "(szia (búcsú))"
         }
       ]
     },
     {
-      "id": "act_9",
+      "id": "act_16",
       "type": "reorder",
       "sentences": [
         {
@@ -152,7 +334,7 @@
       ]
     },
     {
-      "id": "act_10",
+      "id": "act_17",
       "type": "typed",
       "items": [
         "lex_hello",
@@ -163,7 +345,7 @@
       ]
     },
     {
-      "id": "act_11",
+      "id": "act_18",
       "type": "say-it",
       "phrases": [
         {
@@ -185,17 +367,17 @@
       ]
     },
     {
-      "id": "act_12",
+      "id": "act_19",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_13",
+      "id": "act_20",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_14",
+      "id": "act_21",
       "type": "expand",
       "question": {
         "en": "How are you?",
@@ -217,7 +399,7 @@
       ]
     },
     {
-      "id": "act_15",
+      "id": "act_22",
       "type": "conversation",
       "dialogueId": "dlg_endika_first"
     }

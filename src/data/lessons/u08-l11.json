@@ -23,21 +23,44 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_588",
+      "id": "act_694",
       "type": "intro",
       "items": [
         "lex_modern"
       ]
     },
     {
-      "id": "act_589",
+      "id": "act_695",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_modern",
+          "text": "It is very ___.",
+          "answer": "modern",
+          "accepted": [
+            "modern",
+            "modern",
+            "modern"
+          ],
+          "options": [
+            "modern",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(modern)"
+        }
+      ]
+    },
+    {
+      "id": "act_696",
       "type": "typed",
       "items": [
         "lex_modern"
       ]
     },
     {
-      "id": "act_590",
+      "id": "act_697",
       "type": "say-it",
       "phrases": [
         {
@@ -47,7 +70,7 @@
       ]
     },
     {
-      "id": "act_591",
+      "id": "act_698",
       "type": "pron-record",
       "focusId": "snd_r"
     }

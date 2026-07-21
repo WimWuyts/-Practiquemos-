@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_325",
+      "id": "act_387",
       "type": "intro",
       "items": [
         "lex_glass",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_326",
+      "id": "act_388",
       "type": "listen-choose",
       "items": [
         "lex_glass",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_327",
+      "id": "act_389",
       "type": "match",
       "items": [
         "lex_glass",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_328",
+      "id": "act_390",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,89 @@
             "water"
           ],
           "hu": "(kés)"
+        }
+      ]
+    },
+    {
+      "id": "act_391",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_glass",
+          "text": "The ___ are here.",
+          "answer": "glass",
+          "accepted": [
+            "glass",
+            "glass",
+            "glasses",
+            "glass"
+          ],
+          "options": [
+            "glass",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(pohár)"
         },
         {
+          "id": "lex_plate",
+          "text": "This is a ___.",
+          "answer": "plate",
+          "accepted": [
+            "plate",
+            "plate",
+            "plates",
+            "plate"
+          ],
+          "options": [
+            "plate",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(tányér)"
+        },
+        {
+          "id": "lex_knife",
+          "text": "This is a ___.",
+          "answer": "knife",
+          "accepted": [
+            "knife",
+            "knife",
+            "knives",
+            "knife"
+          ],
+          "options": [
+            "knife",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(kés)"
+        },
+        {
+          "id": "lex_spoon",
           "text": "This is a ___.",
           "answer": "spoon",
+          "accepted": [
+            "spoon",
+            "spoon",
+            "spoons",
+            "spoon"
+          ],
           "options": [
             "spoon",
             "food",
-            "water"
+            "water",
+            "coffee"
           ],
           "hu": "(kanál)"
         }
       ]
     },
     {
-      "id": "act_329",
+      "id": "act_392",
       "type": "typed",
       "items": [
         "lex_glass",
@@ -125,7 +193,7 @@
       ]
     },
     {
-      "id": "act_330",
+      "id": "act_393",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +211,12 @@
       ]
     },
     {
-      "id": "act_331",
+      "id": "act_394",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_332",
+      "id": "act_395",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     }

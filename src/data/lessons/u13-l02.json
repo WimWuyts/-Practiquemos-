@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_806",
+      "id": "act_949",
       "type": "intro",
       "items": [
         "lex_shirt",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_807",
+      "id": "act_950",
       "type": "listen-choose",
       "items": [
         "lex_shirt",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_808",
+      "id": "act_951",
       "type": "match",
       "items": [
         "lex_shirt",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_809",
+      "id": "act_952",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,87 @@
             "shirt"
           ],
           "hu": "(ruha (női))"
+        }
+      ]
+    },
+    {
+      "id": "act_953",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_shirt",
+          "text": "This is a ___.",
+          "answer": "shirt",
+          "accepted": [
+            "shirt",
+            "shirt",
+            "shirts",
+            "shirt"
+          ],
+          "options": [
+            "shirt",
+            "clothes",
+            "trousers",
+            "dress"
+          ],
+          "hu": "(ing)"
         },
         {
+          "id": "lex_trousers",
+          "text": "The ___ are here.",
+          "answer": "trousers",
+          "accepted": [
+            "trousers",
+            "trousers",
+            "trousers"
+          ],
+          "options": [
+            "trousers",
+            "clothes",
+            "shirt",
+            "dress"
+          ],
+          "hu": "(nadrág)"
+        },
+        {
+          "id": "lex_dress",
+          "text": "The ___ are here.",
+          "answer": "dress",
+          "accepted": [
+            "dress",
+            "dress",
+            "dresses",
+            "dress"
+          ],
+          "options": [
+            "dress",
+            "clothes",
+            "shirt",
+            "trousers"
+          ],
+          "hu": "(ruha (női))"
+        },
+        {
+          "id": "lex_shoes",
           "text": "The ___ are here.",
           "answer": "shoes",
+          "accepted": [
+            "shoes",
+            "shoes",
+            "shoes"
+          ],
           "options": [
             "shoes",
             "clothes",
-            "shirt"
+            "shirt",
+            "trousers"
           ],
           "hu": "(cipő)"
         }
       ]
     },
     {
-      "id": "act_810",
+      "id": "act_954",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +199,7 @@
       ]
     },
     {
-      "id": "act_811",
+      "id": "act_955",
       "type": "typed",
       "items": [
         "lex_shirt",
@@ -144,7 +210,7 @@
       ]
     },
     {
-      "id": "act_812",
+      "id": "act_956",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +232,12 @@
       ]
     },
     {
-      "id": "act_813",
+      "id": "act_957",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_814",
+      "id": "act_958",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

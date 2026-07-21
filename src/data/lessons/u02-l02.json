@@ -37,7 +37,7 @@
   "conversationId": "dlg_marlene_first",
   "activities": [
     {
-      "id": "act_85",
+      "id": "act_106",
       "type": "intro",
       "items": [
         "lex_daughter",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_86",
+      "id": "act_107",
       "type": "listen-choose",
       "items": [
         "lex_daughter",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_87",
+      "id": "act_108",
       "type": "match",
       "items": [
         "lex_daughter",
@@ -75,12 +75,53 @@
       ]
     },
     {
-      "id": "act_88",
+      "id": "act_109",
       "type": "grammar",
       "grammarId": "gr_have"
     },
     {
-      "id": "act_89",
+      "id": "act_110",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "She ___ a nice house.",
+          "answer": "has",
+          "options": [
+            "have",
+            "has"
+          ],
+          "hu": "Szép háza van."
+        },
+        {
+          "text": "I ___ two nieces.",
+          "answer": "have",
+          "options": [
+            "have",
+            "has"
+          ],
+          "hu": "Két unokahúgom van."
+        }
+      ]
+    },
+    {
+      "id": "act_111",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "David ___ a girlfriend, Marlene.",
+          "accepted": [
+            "has"
+          ],
+          "hint": {
+            "en": "he/she/it → has",
+            "hu": "he/she/it mellett: has"
+          },
+          "hu": "Davidnek van egy barátnője, Marlene."
+        }
+      ]
+    },
+    {
+      "id": "act_112",
       "type": "gapfill",
       "items": [
         {
@@ -112,21 +153,89 @@
             "mother"
           ],
           "hu": "A férjét Endrének hívják."
+        }
+      ]
+    },
+    {
+      "id": "act_113",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_daughter",
+          "text": "This is a ___.",
+          "answer": "daughter",
+          "accepted": [
+            "daughter",
+            "daughter",
+            "daughters",
+            "daughter"
+          ],
+          "options": [
+            "daughter",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(lánya vkinek)"
         },
         {
+          "id": "lex_son",
+          "text": "This is a ___.",
+          "answer": "son",
+          "accepted": [
+            "son",
+            "son",
+            "sons",
+            "son"
+          ],
+          "options": [
+            "son",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(fia vkinek)"
+        },
+        {
+          "id": "lex_husband",
+          "text": "Her ___ is called Endre.",
+          "answer": "husband",
+          "accepted": [
+            "husband",
+            "husband",
+            "husbands",
+            "husband"
+          ],
+          "options": [
+            "husband",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "A férjét Endrének hívják."
+        },
+        {
+          "id": "lex_wife",
           "text": "This is a ___.",
           "answer": "wife",
+          "accepted": [
+            "wife",
+            "wife",
+            "wives",
+            "wife"
+          ],
           "options": [
             "wife",
             "family",
-            "mother"
+            "mother",
+            "father"
           ],
           "hu": "(feleség)"
         }
       ]
     },
     {
-      "id": "act_90",
+      "id": "act_114",
       "type": "reorder",
       "sentences": [
         {
@@ -140,7 +249,7 @@
       ]
     },
     {
-      "id": "act_91",
+      "id": "act_115",
       "type": "typed",
       "items": [
         "lex_daughter",
@@ -151,7 +260,7 @@
       ]
     },
     {
-      "id": "act_92",
+      "id": "act_116",
       "type": "say-it",
       "phrases": [
         {
@@ -173,12 +282,12 @@
       ]
     },
     {
-      "id": "act_93",
+      "id": "act_117",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     },
     {
-      "id": "act_94",
+      "id": "act_118",
       "type": "conversation",
       "dialogueId": "dlg_marlene_first"
     }

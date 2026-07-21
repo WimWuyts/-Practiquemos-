@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_284",
+      "id": "act_341",
       "type": "intro",
       "items": [
         "lex_price",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_285",
+      "id": "act_342",
       "type": "listen-choose",
       "items": [
         "lex_price",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "act_286",
+      "id": "act_343",
       "type": "match",
       "items": [
         "lex_price",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "act_287",
+      "id": "act_344",
       "type": "gapfill",
       "items": [
         {
@@ -102,21 +102,86 @@
             "much"
           ],
           "hu": "Kérnék egy kis vizet."
+        }
+      ]
+    },
+    {
+      "id": "act_345",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_price",
+          "text": "This is a ___.",
+          "answer": "price",
+          "accepted": [
+            "price",
+            "price",
+            "prices",
+            "price"
+          ],
+          "options": [
+            "price",
+            "shop",
+            "money",
+            "euro"
+          ],
+          "hu": "(ár)"
         },
         {
+          "id": "lex_money",
+          "text": "I like ___.",
+          "answer": "money",
+          "accepted": [
+            "money",
+            "money",
+            "money"
+          ],
+          "options": [
+            "money",
+            "shop",
+            "price",
+            "euro"
+          ],
+          "hu": "(pénz)"
+        },
+        {
+          "id": "lex_some",
+          "text": "I'd like ___ water.",
+          "answer": "some",
+          "accepted": [
+            "some",
+            "some",
+            "some"
+          ],
+          "options": [
+            "some",
+            "any",
+            "much",
+            "many"
+          ],
+          "hu": "Kérnék egy kis vizet."
+        },
+        {
+          "id": "lex_any",
           "text": "Do you have ___ tea?",
           "answer": "any",
+          "accepted": [
+            "any",
+            "any",
+            "any"
+          ],
           "options": [
             "any",
             "some",
-            "much"
+            "much",
+            "many"
           ],
           "hu": "Van teád?"
         }
       ]
     },
     {
-      "id": "act_288",
+      "id": "act_346",
       "type": "reorder",
       "sentences": [
         {
@@ -126,7 +191,7 @@
       ]
     },
     {
-      "id": "act_289",
+      "id": "act_347",
       "type": "typed",
       "items": [
         "lex_price",
@@ -137,7 +202,7 @@
       ]
     },
     {
-      "id": "act_290",
+      "id": "act_348",
       "type": "say-it",
       "phrases": [
         {
@@ -147,12 +212,12 @@
       ]
     },
     {
-      "id": "act_291",
+      "id": "act_349",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_292",
+      "id": "act_350",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

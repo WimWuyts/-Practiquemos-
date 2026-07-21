@@ -147,7 +147,7 @@
   "conversationId": "dlg_student_mic",
   "activities": [
     {
-      "id": "act_727",
+      "id": "act_853",
       "type": "intro",
       "items": [
         "lex_lesson",
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "id": "act_728",
+      "id": "act_854",
       "type": "listen-choose",
       "items": [
         "lex_lesson",
@@ -173,7 +173,7 @@
       ]
     },
     {
-      "id": "act_729",
+      "id": "act_855",
       "type": "match",
       "items": [
         "lex_lesson",
@@ -185,12 +185,44 @@
       ]
     },
     {
-      "id": "act_730",
+      "id": "act_856",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_731",
+      "id": "act_857",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ left at the corner.",
+          "answer": "Turn",
+          "options": [
+            "Turn",
+            "Turning"
+          ],
+          "hu": "A sarkon fordulj balra."
+        }
+      ]
+    },
+    {
+      "id": "act_858",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Please ___ your microphone on.",
+          "accepted": [
+            "turn"
+          ],
+          "hint": {
+            "en": "instruction → base verb",
+            "hu": "utasítás → alapige"
+          },
+          "hu": "Kérlek, kapcsold be a mikrofont."
+        }
+      ]
+    },
+    {
+      "id": "act_859",
       "type": "gapfill",
       "items": [
         {
@@ -222,21 +254,89 @@
             "screen"
           ],
           "hu": "Kérlek, kapcsold be a mikrofont."
+        }
+      ]
+    },
+    {
+      "id": "act_860",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_lesson",
+          "text": "Let's start today's ___.",
+          "answer": "lesson",
+          "accepted": [
+            "lesson",
+            "lesson",
+            "lessons",
+            "lesson"
+          ],
+          "options": [
+            "lesson",
+            "student",
+            "word",
+            "question"
+          ],
+          "hu": "Kezdjük a mai órát."
         },
         {
+          "id": "lex_camera",
+          "text": "Please turn your ___ on.",
+          "answer": "camera",
+          "accepted": [
+            "camera",
+            "camera",
+            "cameras",
+            "camera"
+          ],
+          "options": [
+            "camera",
+            "microphone",
+            "screen",
+            "computer"
+          ],
+          "hu": "Kérlek, kapcsold be a kamerát."
+        },
+        {
+          "id": "lex_microphone",
+          "text": "Please turn your ___ on.",
+          "answer": "microphone",
+          "accepted": [
+            "microphone",
+            "microphone",
+            "microphones",
+            "microphone"
+          ],
+          "options": [
+            "microphone",
+            "camera",
+            "screen",
+            "computer"
+          ],
+          "hu": "Kérlek, kapcsold be a mikrofont."
+        },
+        {
+          "id": "lex_screen",
           "text": "This is a ___.",
           "answer": "screen",
+          "accepted": [
+            "screen",
+            "screen",
+            "screens",
+            "screen"
+          ],
           "options": [
             "screen",
             "camera",
-            "microphone"
+            "microphone",
+            "computer"
           ],
           "hu": "(képernyő)"
         }
       ]
     },
     {
-      "id": "act_732",
+      "id": "act_861",
       "type": "reorder",
       "sentences": [
         {
@@ -250,7 +350,7 @@
       ]
     },
     {
-      "id": "act_733",
+      "id": "act_862",
       "type": "typed",
       "items": [
         "lex_lesson",
@@ -261,7 +361,7 @@
       ]
     },
     {
-      "id": "act_734",
+      "id": "act_863",
       "type": "say-it",
       "phrases": [
         {
@@ -283,12 +383,12 @@
       ]
     },
     {
-      "id": "act_735",
+      "id": "act_864",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_736",
+      "id": "act_865",
       "type": "listen-comprehension",
       "passage": "Good morning class! Today we will read a short story. Please open your book and turn your camera on.",
       "question": {
@@ -303,12 +403,12 @@
       "answer": "Open the book and turn the camera on"
     },
     {
-      "id": "act_737",
+      "id": "act_866",
       "type": "conversation",
       "dialogueId": "dlg_student_mic"
     },
     {
-      "id": "act_738",
+      "id": "act_867",
       "type": "review",
       "items": [
         "lex_hobby",

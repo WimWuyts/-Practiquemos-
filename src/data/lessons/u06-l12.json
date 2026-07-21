@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_441",
+      "id": "act_525",
       "type": "intro",
       "items": [
         "lex_dark",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_442",
+      "id": "act_526",
       "type": "listen-choose",
       "items": [
         "lex_dark",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_443",
+      "id": "act_527",
       "type": "match",
       "items": [
         "lex_dark",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_444",
+      "id": "act_528",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "light"
     },
     {
-      "id": "act_445",
+      "id": "act_529",
       "type": "gapfill",
       "items": [
         {
@@ -106,21 +106,85 @@
             "how"
           ],
           "hu": "Talán találkozhatunk vasárnap."
+        }
+      ]
+    },
+    {
+      "id": "act_530",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_dark",
+          "text": "It is very ___.",
+          "answer": "dark",
+          "accepted": [
+            "dark",
+            "dark",
+            "dark"
+          ],
+          "options": [
+            "dark",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(sötét)"
         },
         {
+          "id": "lex_light",
+          "text": "It is very ___.",
+          "answer": "light",
+          "accepted": [
+            "light",
+            "light",
+            "light"
+          ],
+          "options": [
+            "light",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(világos / könnyű)"
+        },
+        {
+          "id": "lex_maybe",
+          "text": "___ we can meet on Sunday.",
+          "answer": "Maybe",
+          "accepted": [
+            "maybe",
+            "maybe",
+            "Maybe"
+          ],
+          "options": [
+            "Maybe",
+            "where",
+            "how",
+            "very"
+          ],
+          "hu": "Talán találkozhatunk vasárnap."
+        },
+        {
+          "id": "lex_at",
           "text": "The lesson is ___ ten.",
           "answer": "at",
+          "accepted": [
+            "at",
+            "at",
+            "at"
+          ],
           "options": [
             "at",
             "before",
-            "after"
+            "after",
+            "from"
           ],
           "hu": "Az óra tízkor van."
         }
       ]
     },
     {
-      "id": "act_446",
+      "id": "act_531",
       "type": "typed",
       "items": [
         "lex_dark",
@@ -131,7 +195,7 @@
       ]
     },
     {
-      "id": "act_447",
+      "id": "act_532",
       "type": "say-it",
       "phrases": [
         {
@@ -149,7 +213,7 @@
       ]
     },
     {
-      "id": "act_448",
+      "id": "act_533",
       "type": "pron-record",
       "focusId": "str_question"
     }

@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_892",
+      "id": "act_1048",
       "type": "intro",
       "items": [
         "lex_welcome_back",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_893",
+      "id": "act_1049",
       "type": "listen-choose",
       "items": [
         "lex_welcome_back",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_894",
+      "id": "act_1050",
       "type": "match",
       "items": [
         "lex_welcome_back",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_895",
+      "id": "act_1051",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,86 @@
             "in-laws"
           ],
           "hu": "(gratulálok)"
+        }
+      ]
+    },
+    {
+      "id": "act_1052",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_welcome_back",
+          "text": "___.",
+          "answer": "Welcome back",
+          "accepted": [
+            "welcome back",
+            "welcome back",
+            "Welcome back"
+          ],
+          "options": [
+            "Welcome back",
+            "hello",
+            "hi",
+            "goodbye"
+          ],
+          "hu": "(üdv újra)"
         },
         {
+          "id": "lex_good_luck",
+          "text": "___.",
+          "answer": "Good luck",
+          "accepted": [
+            "good luck",
+            "good luck",
+            "Good luck"
+          ],
+          "options": [
+            "Good luck",
+            "of course",
+            "how long",
+            "by the way"
+          ],
+          "hu": "(sok sikert)"
+        },
+        {
+          "id": "lex_congratulations",
+          "text": "___.",
+          "answer": "Congratulations",
+          "accepted": [
+            "congratulations",
+            "congratulations",
+            "Congratulations"
+          ],
+          "options": [
+            "Congratulations",
+            "toast (drink)",
+            "in-laws",
+            "family reunion"
+          ],
+          "hu": "(gratulálok)"
+        },
+        {
+          "id": "lex_group",
           "text": "This is a ___.",
           "answer": "group",
+          "accepted": [
+            "group",
+            "group",
+            "groups",
+            "group"
+          ],
           "options": [
             "group",
             "moment",
-            "thing"
+            "thing",
+            "part"
           ],
           "hu": "(csoport)"
         }
       ]
     },
     {
-      "id": "act_896",
+      "id": "act_1053",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +198,7 @@
       ]
     },
     {
-      "id": "act_897",
+      "id": "act_1054",
       "type": "typed",
       "items": [
         "lex_welcome_back",
@@ -144,7 +209,7 @@
       ]
     },
     {
-      "id": "act_898",
+      "id": "act_1055",
       "type": "say-it",
       "phrases": [
         {
@@ -166,7 +231,7 @@
       ]
     },
     {
-      "id": "act_899",
+      "id": "act_1056",
       "type": "pron-record",
       "focusId": "str_sentence"
     }

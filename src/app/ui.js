@@ -5,6 +5,39 @@ window.M = window.M || {};
   function init() { el = M.dom.el; dom = M.dom; }
   function escapeHtml(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
+  // Pick words for a production session so that, over time, ALL productive words cycle
+  // through: due-for-review first, then least-practised, then fresh — deduped.
+  function pickPractice(unitId, n) {
+    n = n || 8;
+    var inScope = function (l) { return l.status === "productive" && (!unitId || (l.firstLesson && l.firstLesson.slice(0, 3) === unitId)); };
+    var lex = M.data.lexicon.filter(inScope);
+    var seen = {}, out = [];
+    function add(l) { if (l && inScope(l) && !seen[l.id]) { seen[l.id] = 1; out.push(l); } }
+    M.review.dueItems(60).forEach(function (id) { add(M.get.lex(id)); });
+    var rank = { "new": 0, "review": 1, "practising": 2, "familiar": 3, "ready": 4 };
+    lex.slice().sort(function (a, b) { return (rank[M.store.itemStatus(a.id)] || 0) - (rank[M.store.itemStatus(b.id)] || 0); }).forEach(add);
+    dom.shuffle(lex).forEach(add);
+    return out.slice(0, n);
+  }
+  // Build a typed word-fill item from a word's own example sentence (runtime mirror of the generator).
+  function buildWordFill(lex) {
+    var ex = lex.examples && lex.examples[0] && lex.examples[0].en;
+    if (!ex) return null;
+    var forms = [lex.headword].concat(lex.acceptedForms || []);
+    var re = null, surface = null;
+    for (var i = 0; i < forms.length; i++) {
+      var r = new RegExp("\\b" + forms[i].replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+      var m = ex.match(r);
+      if (m) { re = r; surface = m[0]; break; }
+    }
+    if (!surface) return null;
+    return { id: lex.id, text: ex.replace(re, "___"), answer: surface, accepted: forms.concat([surface]),
+      options: [surface].concat((lex.distractors || []).slice(0, 3)), hu: (lex.examples[0].hu || "") };
+  }
+  function sayPhrasesFrom(words) {
+    return words.slice(0, 3).map(function (l) { return { en: l.examples[0].en, hu: l.examples[0].hu }; }).filter(function (p) { return p.en; });
+  }
+
   function avatar(cls) { return el("span", { class: "avatar " + (cls || ""), html: M.data.avatarSvg, role: "img", "aria-label": "Marta" }); }
 
   // unit visual identity: icon + colour tint per unit
@@ -235,17 +268,23 @@ window.M = window.M || {};
   var seq = 0;
   function actId() { return "p_" + (++seq); }
   // generic mini-runner: play a list of activity specs, then callback
-  function runActivities(mount, acts, onDone) {
+  function runActivities(mount, acts, onDone, opts) {
+    opts = opts || {};
     var idx = 0;
     var bar = el("div", { class: "progress" }, [el("span", {})]);
     var stage = el("div", { class: "stage card" });
     mount.appendChild(bar); mount.appendChild(stage);
+    function fadeStage() { if (document.body.dataset.motion === "reduce") return; stage.style.animation = "none"; void stage.offsetWidth; stage.style.animation = ""; }
     function step() {
-      bar.firstChild.style.width = Math.round((idx / acts.length) * 100) + "%";
-      dom.clear(stage);
+      bar.firstChild.style.width = Math.round((idx / Math.max(acts.length, 1)) * 100) + "%";
+      dom.clear(stage); fadeStage();
       if (idx >= acts.length) {
-        stage.appendChild(el("div", { class: "avatar-row" }, [avatar("small"), el("h2", { text: M.i18n.t("practice.done") })]));
-        stage.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: onDone }, [M.i18n.t("btn.continue")])]));
+        stage.appendChild(el("div", { class: "done-badge", "aria-hidden": "true", html: dom.icon("check") }));
+        stage.appendChild(el("div", { class: "avatar-row", style: "justify-content:center" }, [avatar("small"), el("h2", { style: "margin:0", text: M.i18n.t("practice.done") })]));
+        var row = el("div", { class: "btn-row", style: "justify-content:center" }, []);
+        if (opts.replay) row.appendChild(el("button", { class: "btn secondary", onclick: opts.replay }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("practice.more")]));
+        row.appendChild(el("button", { class: "btn", onclick: onDone }, [M.i18n.t("btn.continue")]));
+        stage.appendChild(row);
         return;
       }
       M.exercise.render(stage, acts[idx], function () { idx++; step(); });
@@ -258,6 +297,17 @@ window.M = window.M || {};
 
   function practice(mount) {
     mount.appendChild(el("h1", { text: M.i18n.label("nav.practice") }));
+    // one warm primary action: a short mixed session (say + write) — momentum without pressure
+    var prodAll = M.data.lexicon.filter(function (l) { return l.status === "productive"; });
+    var practised = prodAll.filter(function (l) { return M.store.itemStatus(l.id) !== "new"; }).length;
+    mount.appendChild(el("div", { class: "recommend" }, [
+      el("div", { class: "k", text: M.i18n.t("practice.quick") }),
+      el("p", { class: "muted", style: "margin:.2rem 0 .6rem", text: M.i18n.t("practice.quick.note") }),
+      el("div", { class: "btn-row" }, [
+        el("button", { class: "btn", onclick: function () { M.router.go("quick"); } }, [el("span", { html: dom.icon("star") }), " " + M.i18n.t("practice.quick")]),
+      ]),
+      el("div", { class: "muted", style: "font-size:.9rem", text: M.i18n.t("practice.growth").replace("{n}", practised).replace("{m}", prodAll.length) }),
+    ]));
     var due = M.review.dueItems(8);
     // Review
     mount.appendChild(el("div", { class: "card" }, [
@@ -317,41 +367,97 @@ window.M = window.M || {};
     mount.appendChild(sCard);
   }
 
-  // vocabulary drill for one unit (Rosetta-flavored: picture & sound first)
+  // Vocabulary session: see/hear → recognise → tap → TYPE → say it. Items are picked so
+  // that, across sessions, every word in the unit eventually reaches production.
   function vocabDrill(mount, unitId) {
     var unit = M.get.unit(unitId);
     mount.appendChild(backBar("practice"));
     mount.appendChild(el("h1", { text: (unit ? unit.title.en : "") + " · " + M.i18n.t("practice.vocab") }));
-    var words = M.data.lexicon.filter(function (l) { return l.status === "productive" && l.firstLesson && l.firstLesson.slice(0, 3) === unitId; });
+    var words = pickPractice(unitId, 8);
     if (!words.length) { mount.appendChild(el("p", { class: "muted", text: M.i18n.t("practice.nowords") })); return; }
-    var ids = dom.shuffle(words).slice(0, 8).map(function (l) { return l.id; });
+    var ids = words.map(function (l) { return l.id; });
     var iconable = words.filter(function (l) { return l.iconSpecific; }).map(function (l) { return l.id; });
-    var acts = [];
+    var fills = words.map(buildWordFill).filter(Boolean).slice(0, 4);
+    var acts = [{ id: actId(), type: "intro", items: ids.slice(0, 6) }];
     if (iconable.length >= 3) acts.push({ id: actId(), type: "icon-choice", items: iconable.slice(0, 5) });
-    acts.push({ id: actId(), type: "listen-choose", items: ids.slice(0, 6) });
+    else acts.push({ id: actId(), type: "listen-choose", items: ids.slice(0, 6) });
     acts.push({ id: actId(), type: "match", items: ids.slice(0, 6) });
+    if (fills.length) acts.push({ id: actId(), type: "word-fill", items: fills });
     acts.push({ id: actId(), type: "typed", items: ids.slice(0, 4) });
-    runActivities(mount, acts, function () { M.router.go("practice"); });
+    acts.push({ id: actId(), type: "say-it", phrases: sayPhrasesFrom(words) });
+    runActivities(mount, acts, function () { M.router.go("practice"); }, { replay: function () { M.router.go("drill/" + unitId); } });
+  }
+  // Quick mixed session across the whole corpus — one tap from the hub.
+  function quickPractice(mount) {
+    mount.appendChild(backBar("practice"));
+    mount.appendChild(el("h1", { text: M.i18n.t("practice.quick") }));
+    var words = pickPractice(null, 8);
+    if (!words.length) { mount.appendChild(el("p", { class: "muted", text: M.i18n.t("practice.nowords") })); return; }
+    var ids = words.map(function (l) { return l.id; });
+    var fills = words.map(buildWordFill).filter(Boolean).slice(0, 4);
+    var acts = [
+      { id: actId(), type: "listen-choose", items: ids.slice(0, 6) },
+      { id: actId(), type: "match", items: ids.slice(0, 6) },
+    ];
+    if (fills.length) acts.push({ id: actId(), type: "word-fill", items: fills });
+    acts.push({ id: actId(), type: "typed", items: ids.slice(0, 4) });
+    acts.push({ id: actId(), type: "say-it", phrases: sayPhrasesFrom(words) });
+    runActivities(mount, acts, function () { M.router.go("practice"); }, { replay: function () { M.router.go("quick"); } });
+  }
+  // Map a grammar point's practice bank into a varied activity session.
+  function grammarPracticeActs(g) {
+    var acts = [{ id: actId(), type: "grammar", grammarId: g.id }]; // teach card first
+    var bank = (g && g.practice) || [];
+    var forms = bank.filter(function (x) { return x.kind === "form"; });
+    if (forms.length) acts.push({ id: actId(), type: "gapfill", items: forms.map(function (f) { return { text: f.text, answer: f.answer, options: f.options, hu: f.hu }; }) });
+    bank.filter(function (x) { return x.kind === "type"; }).forEach(function (it) {
+      acts.push({ id: actId(), type: "gr-type", items: [{ text: it.text, accepted: it.accepted, hint: it.hint, hu: it.hu }] });
+    });
+    bank.filter(function (x) { return x.kind === "fix"; }).forEach(function (it) {
+      acts.push({ id: actId(), type: "gr-fix", item: it });
+    });
+    var builds = bank.filter(function (x) { return x.kind === "build"; });
+    if (builds.length) acts.push({ id: actId(), type: "reorder", sentences: builds.map(function (b) { return { en: b.en, hu: b.hu }; }) });
+    var says = bank.filter(function (x) { return x.kind === "say"; });
+    if (says.length) acts.push({ id: actId(), type: "say-it", phrases: says.map(function (s) { return { en: s.en, hu: s.hu }; }) });
+    return acts;
   }
   function grammarDrill(mount, grammarId) {
     var g = M.get.grammar(grammarId);
     mount.appendChild(backBar("practice"));
     mount.appendChild(el("h1", { text: (g ? g.title.en : "") + " · " + M.i18n.t("practice.grammar") }));
-    runActivities(mount, [{ id: actId(), type: "grammar", grammarId: grammarId }], function () { M.router.go("practice"); });
+    runActivities(mount, g ? grammarPracticeActs(g) : [], function () { M.router.go("practice"); });
   }
+  // A sound session: hear the model (record) → tell the pair apart → say it yourself.
+  // Sounds without minimal pairs still get a real production step via shadowing.
   function soundDrill(mount, focusId) {
     var f = M.get.focus(focusId);
     mount.appendChild(backBar("practice"));
     mount.appendChild(el("h1", { text: (f ? f.focus.en : "") }));
     var acts = [{ id: actId(), type: "pron-record", focusId: focusId }];
-    if (f && f.minimalPairs && f.minimalPairs.length) acts.push({ id: actId(), type: "minimal-pair", focusId: focusId });
+    if (f && f.minimalPairs && f.minimalPairs.length) {
+      acts.push({ id: actId(), type: "minimal-pair", focusId: focusId });
+      acts.push({ id: actId(), type: "minimal-pair-say", focusId: focusId });
+    } else {
+      acts.push({ id: actId(), type: "shadow", focusId: focusId });
+    }
     runActivities(mount, acts, function () { M.router.go("practice"); });
   }
   function spellDrill(mount, familyId) {
     var f = M.get.family(familyId);
     mount.appendChild(backBar("practice"));
     mount.appendChild(el("h1", { text: (f ? f.label.en : "") }));
-    runActivities(mount, [{ id: actId(), type: "spelling-build", family: familyId, word: (f && f.items[0] && f.items[0].word) }], function () { M.router.go("practice"); });
+    var acts = [{ id: actId(), type: "spelling-build", family: familyId, word: (f && f.items[0] && f.items[0].word) }];
+    // add a listen-and-sort discrimination step against a contrasting family
+    var others = (M.data.pronunciation.spellingFamilies || []).filter(function (x) { return x.id !== familyId; });
+    if (f && f.items && f.items.length >= 2 && others.length) {
+      var other = others[0];
+      acts.push({ id: actId(), type: "sound-sort", groups: [
+        { label: f.label.en, words: f.items.slice(0, 3).map(function (i) { return i.word; }) },
+        { label: other.label.en, words: other.items.slice(0, 3).map(function (i) { return i.word; }) },
+      ] });
+    }
+    runActivities(mount, acts, function () { M.router.go("practice"); });
   }
   function reviewScreen(mount) {
     var due = M.review.dueItems(8);
@@ -522,6 +628,7 @@ window.M = window.M || {};
     screens: {
       home: home, lessons: lessons, conversations: conversations, practice: practice,
       reference: reference, settings: settings, help: help, review: reviewScreen, diagnostic: diagnostic,
+      quick: quickPractice,
     },
     lessonRunner: lessonRunner, talk: talk,
     vocabDrill: vocabDrill, grammarDrill: grammarDrill, soundDrill: soundDrill, spellDrill: spellDrill,

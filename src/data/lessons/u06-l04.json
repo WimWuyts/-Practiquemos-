@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_380",
+      "id": "act_456",
       "type": "intro",
       "items": [
         "lex_meet",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_381",
+      "id": "act_457",
       "type": "listen-choose",
       "items": [
         "lex_meet",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_382",
+      "id": "act_458",
       "type": "match",
       "items": [
         "lex_meet",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_383",
+      "id": "act_459",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "meet"
     },
     {
-      "id": "act_384",
+      "id": "act_460",
       "type": "gapfill",
       "items": [
         {
@@ -111,21 +111,88 @@
             "hi"
           ],
           "hu": "(fog (jövő idő))"
+        }
+      ]
+    },
+    {
+      "id": "act_461",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_meet",
+          "text": "Let's ___ on Sunday.",
+          "answer": "meet",
+          "accepted": [
+            "meet",
+            "meet",
+            "meets",
+            "met",
+            "meet"
+          ],
+          "options": [
+            "meet",
+            "can",
+            "decide",
+            "be"
+          ],
+          "hu": "Találkozzunk vasárnap."
         },
         {
+          "id": "lex_can",
+          "text": "I ___ cook well.",
+          "answer": "can",
+          "accepted": [
+            "can",
+            "can",
+            "could",
+            "can"
+          ],
+          "options": [
+            "can",
+            "meet",
+            "decide",
+            "be"
+          ],
+          "hu": "Jól tudok főzni."
+        },
+        {
+          "id": "lex_going_to",
+          "text": "___.",
+          "answer": "Going to",
+          "accepted": [
+            "going to",
+            "going to",
+            "Going to"
+          ],
+          "options": [
+            "Going to",
+            "hello",
+            "hi",
+            "goodbye"
+          ],
+          "hu": "(fog (jövő idő))"
+        },
+        {
+          "id": "lex_free",
           "text": "It is very ___.",
           "answer": "free",
+          "accepted": [
+            "free",
+            "free",
+            "free"
+          ],
           "options": [
             "free",
             "busy",
-            "my"
+            "my",
+            "your"
           ],
           "hu": "(szabad (ráér))"
         }
       ]
     },
     {
-      "id": "act_385",
+      "id": "act_462",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +206,7 @@
       ]
     },
     {
-      "id": "act_386",
+      "id": "act_463",
       "type": "typed",
       "items": [
         "lex_meet",
@@ -150,7 +217,7 @@
       ]
     },
     {
-      "id": "act_387",
+      "id": "act_464",
       "type": "say-it",
       "phrases": [
         {
@@ -172,7 +239,7 @@
       ]
     },
     {
-      "id": "act_388",
+      "id": "act_465",
       "type": "pron-record",
       "focusId": "str_question"
     }

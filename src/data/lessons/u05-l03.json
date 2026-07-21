@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_274",
+      "id": "act_330",
       "type": "intro",
       "items": [
         "lex_lunch",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_275",
+      "id": "act_331",
       "type": "listen-choose",
       "items": [
         "lex_lunch",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_276",
+      "id": "act_332",
       "type": "match",
       "items": [
         "lex_lunch",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_277",
+      "id": "act_333",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "make"
     },
     {
-      "id": "act_278",
+      "id": "act_334",
       "type": "gapfill",
       "items": [
         {
@@ -111,21 +111,89 @@
             "drink"
           ],
           "hu": "Imádok főzni a családomnak."
+        }
+      ]
+    },
+    {
+      "id": "act_335",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_lunch",
+          "text": "We have ___ together.",
+          "answer": "lunch",
+          "accepted": [
+            "lunch",
+            "lunch",
+            "lunch"
+          ],
+          "options": [
+            "lunch",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "Együtt ebédelünk."
         },
         {
+          "id": "lex_dinner",
+          "text": "___ is at seven.",
+          "answer": "Dinner",
+          "accepted": [
+            "dinner",
+            "dinner",
+            "Dinner"
+          ],
+          "options": [
+            "Dinner",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "A vacsora hétkor van."
+        },
+        {
+          "id": "lex_cook",
+          "text": "I love to ___ for my family.",
+          "answer": "cook",
+          "accepted": [
+            "cook",
+            "cook",
+            "cooks",
+            "cooked",
+            "cook"
+          ],
+          "options": [
+            "cook",
+            "eat",
+            "drink",
+            "make"
+          ],
+          "hu": "Imádok főzni a családomnak."
+        },
+        {
+          "id": "lex_make",
           "text": "I ___ coffee for my sister.",
           "answer": "make",
+          "accepted": [
+            "make",
+            "make",
+            "makes",
+            "made",
+            "make"
+          ],
           "options": [
             "make",
             "eat",
-            "drink"
+            "drink",
+            "cook"
           ],
           "hu": "Kávét készítek a nővéremnek."
         }
       ]
     },
     {
-      "id": "act_279",
+      "id": "act_336",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +207,7 @@
       ]
     },
     {
-      "id": "act_280",
+      "id": "act_337",
       "type": "typed",
       "items": [
         "lex_lunch",
@@ -150,7 +218,7 @@
       ]
     },
     {
-      "id": "act_281",
+      "id": "act_338",
       "type": "say-it",
       "phrases": [
         {
@@ -172,12 +240,12 @@
       ]
     },
     {
-      "id": "act_282",
+      "id": "act_339",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_283",
+      "id": "act_340",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     }

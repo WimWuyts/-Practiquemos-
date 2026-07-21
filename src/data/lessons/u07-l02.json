@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_474",
+      "id": "act_563",
       "type": "intro",
       "items": [
         "lex_wait",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_475",
+      "id": "act_564",
       "type": "listen-choose",
       "items": [
         "lex_wait",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_476",
+      "id": "act_565",
       "type": "match",
       "items": [
         "lex_wait",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_477",
+      "id": "act_566",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,87 @@
             "who"
           ],
           "hu": "Hallasz engem?"
+        }
+      ]
+    },
+    {
+      "id": "act_567",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_wait",
+          "text": "I ___ every day.",
+          "answer": "wait",
+          "accepted": [
+            "wait",
+            "wait",
+            "waits",
+            "waited",
+            "wait"
+          ],
+          "options": [
+            "wait",
+            "repeat",
+            "understand",
+            "know"
+          ],
+          "hu": "(várni)"
         },
         {
+          "id": "lex_moment",
+          "text": "This is a ___.",
+          "answer": "moment",
+          "accepted": [
+            "moment",
+            "moment",
+            "moment"
+          ],
+          "options": [
+            "moment",
+            "thing",
+            "part",
+            "end"
+          ],
+          "hu": "(pillanat)"
+        },
+        {
+          "id": "lex_me",
+          "text": "Can you hear ___?",
+          "answer": "me",
+          "accepted": [
+            "me",
+            "me",
+            "me"
+          ],
+          "options": [
+            "me",
+            "what",
+            "who",
+            "him"
+          ],
+          "hu": "Hallasz engem?"
+        },
+        {
+          "id": "lex_him",
           "text": "I like ___ very much.",
           "answer": "him",
+          "accepted": [
+            "him",
+            "him",
+            "him"
+          ],
           "options": [
             "him",
             "what",
-            "who"
+            "who",
+            "me"
           ],
           "hu": "Nagyon kedvelem őt."
         }
       ]
     },
     {
-      "id": "act_478",
+      "id": "act_568",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +199,7 @@
       ]
     },
     {
-      "id": "act_479",
+      "id": "act_569",
       "type": "typed",
       "items": [
         "lex_wait",
@@ -144,7 +210,7 @@
       ]
     },
     {
-      "id": "act_480",
+      "id": "act_570",
       "type": "say-it",
       "phrases": [
         {
@@ -166,17 +232,17 @@
       ]
     },
     {
-      "id": "act_481",
+      "id": "act_571",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_482",
+      "id": "act_572",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_483",
+      "id": "act_573",
       "type": "listen-comprehension",
       "passage": "Hello Marta, this is a short message. I will call you at seven o'clock this evening. Talk soon!",
       "question": {

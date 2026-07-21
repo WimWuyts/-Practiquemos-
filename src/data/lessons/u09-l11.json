@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_683",
+      "id": "act_802",
       "type": "intro",
       "items": [
         "lex_boat",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_684",
+      "id": "act_803",
       "type": "listen-choose",
       "items": [
         "lex_boat",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_685",
+      "id": "act_804",
       "type": "match",
       "items": [
         "lex_boat",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_686",
+      "id": "act_805",
       "type": "gapfill",
       "items": [
         {
@@ -92,21 +92,88 @@
             "turn right"
           ],
           "hu": "(sarki bolt)"
+        }
+      ]
+    },
+    {
+      "id": "act_806",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_boat",
+          "text": "This is a ___.",
+          "answer": "boat",
+          "accepted": [
+            "boat",
+            "boat",
+            "boats",
+            "boat"
+          ],
+          "options": [
+            "boat",
+            "station",
+            "bus",
+            "train"
+          ],
+          "hu": "(csónak / hajó)"
         },
         {
+          "id": "lex_bicycle",
+          "text": "This is a ___.",
+          "answer": "bicycle",
+          "accepted": [
+            "bicycle",
+            "bicycle",
+            "bicycles",
+            "bicycle"
+          ],
+          "options": [
+            "bicycle",
+            "station",
+            "bus",
+            "train"
+          ],
+          "hu": "(kerékpár)"
+        },
+        {
+          "id": "lex_corner_shop",
+          "text": "___.",
+          "answer": "Corner shop",
+          "accepted": [
+            "corner shop",
+            "corner shop",
+            "Corner shop"
+          ],
+          "options": [
+            "Corner shop",
+            "turn left",
+            "turn right",
+            "go straight on"
+          ],
+          "hu": "(sarki bolt)"
+        },
+        {
+          "id": "lex_bench",
           "text": "This is a ___.",
           "answer": "bench",
+          "accepted": [
+            "bench",
+            "bench",
+            "benches",
+            "bench"
+          ],
           "options": [
             "bench",
             "street",
-            "left"
+            "left",
+            "right"
           ],
           "hu": "(pad)"
         }
       ]
     },
     {
-      "id": "act_687",
+      "id": "act_807",
       "type": "typed",
       "items": [
         "lex_boat",
@@ -117,7 +184,7 @@
       ]
     },
     {
-      "id": "act_688",
+      "id": "act_808",
       "type": "say-it",
       "phrases": [
         {
@@ -135,12 +202,12 @@
       ]
     },
     {
-      "id": "act_689",
+      "id": "act_809",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_690",
+      "id": "act_810",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

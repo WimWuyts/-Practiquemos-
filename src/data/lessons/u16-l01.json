@@ -82,7 +82,7 @@
   "conversationId": "dlg_balaton",
   "activities": [
     {
-      "id": "act_881",
+      "id": "act_1036",
       "type": "intro",
       "items": [
         "lex_tired",
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "id": "act_882",
+      "id": "act_1037",
       "type": "listen-choose",
       "items": [
         "lex_tired",
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "id": "act_883",
+      "id": "act_1038",
       "type": "match",
       "items": [
         "lex_tired",
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "id": "act_884",
+      "id": "act_1039",
       "type": "gapfill",
       "items": [
         {
@@ -152,21 +152,85 @@
             "hi"
           ],
           "hu": "Üdvözöllek az otthonomban!"
+        }
+      ]
+    },
+    {
+      "id": "act_1040",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_tired",
+          "text": "I am a little ___ today.",
+          "answer": "tired",
+          "accepted": [
+            "tired",
+            "tired",
+            "tired"
+          ],
+          "options": [
+            "tired",
+            "happy",
+            "afraid",
+            "nervous"
+          ],
+          "hu": "Ma kicsit fáradt vagyok."
         },
         {
+          "id": "lex_glad",
+          "text": "I am ___ you are here.",
+          "answer": "glad",
+          "accepted": [
+            "glad",
+            "glad",
+            "glad"
+          ],
+          "options": [
+            "glad",
+            "happy",
+            "afraid",
+            "nervous"
+          ],
+          "hu": "Örülök, hogy itt vagy."
+        },
+        {
+          "id": "lex_welcome",
+          "text": "___ to my home!",
+          "answer": "Welcome",
+          "accepted": [
+            "welcome",
+            "welcome",
+            "Welcome"
+          ],
+          "options": [
+            "Welcome",
+            "hello",
+            "hi",
+            "goodbye"
+          ],
+          "hu": "Üdvözöllek az otthonomban!"
+        },
+        {
+          "id": "lex_together",
           "text": "I speak ___.",
           "answer": "together",
+          "accepted": [
+            "together",
+            "together",
+            "together"
+          ],
           "options": [
             "together",
             "please",
-            "yes"
+            "yes",
+            "no"
           ],
           "hu": "(együtt)"
         }
       ]
     },
     {
-      "id": "act_885",
+      "id": "act_1041",
       "type": "reorder",
       "sentences": [
         {
@@ -180,7 +244,7 @@
       ]
     },
     {
-      "id": "act_886",
+      "id": "act_1042",
       "type": "typed",
       "items": [
         "lex_tired",
@@ -191,7 +255,7 @@
       ]
     },
     {
-      "id": "act_887",
+      "id": "act_1043",
       "type": "say-it",
       "phrases": [
         {
@@ -213,12 +277,12 @@
       ]
     },
     {
-      "id": "act_888",
+      "id": "act_1044",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_889",
+      "id": "act_1045",
       "type": "expand",
       "question": {
         "en": "Tell me about your day.",
@@ -240,12 +304,12 @@
       ]
     },
     {
-      "id": "act_890",
+      "id": "act_1046",
       "type": "conversation",
       "dialogueId": "dlg_balaton"
     },
     {
-      "id": "act_891",
+      "id": "act_1047",
       "type": "review",
       "items": [
         "lex_travel",

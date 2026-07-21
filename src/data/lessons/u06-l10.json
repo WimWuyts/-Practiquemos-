@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_427",
+      "id": "act_509",
       "type": "intro",
       "items": [
         "lex_flower",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_428",
+      "id": "act_510",
       "type": "listen-choose",
       "items": [
         "lex_flower",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_429",
+      "id": "act_511",
       "type": "match",
       "items": [
         "lex_flower",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_430",
+      "id": "act_512",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,89 @@
             "tree"
           ],
           "hu": "(folyó)"
+        }
+      ]
+    },
+    {
+      "id": "act_513",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_flower",
+          "text": "This is a ___.",
+          "answer": "flower",
+          "accepted": [
+            "flower",
+            "flower",
+            "flowers",
+            "flower"
+          ],
+          "options": [
+            "flower",
+            "weather",
+            "tree",
+            "sea"
+          ],
+          "hu": "(virág)"
         },
         {
+          "id": "lex_sea",
+          "text": "This is a ___.",
+          "answer": "sea",
+          "accepted": [
+            "sea",
+            "sea",
+            "seas",
+            "sea"
+          ],
+          "options": [
+            "sea",
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "(tenger)"
+        },
+        {
+          "id": "lex_river",
+          "text": "This is a ___.",
+          "answer": "river",
+          "accepted": [
+            "river",
+            "river",
+            "rivers",
+            "river"
+          ],
+          "options": [
+            "river",
+            "weather",
+            "tree",
+            "flower"
+          ],
+          "hu": "(folyó)"
+        },
+        {
+          "id": "lex_lake",
           "text": "This is a ___.",
           "answer": "lake",
+          "accepted": [
+            "lake",
+            "lake",
+            "lakes",
+            "lake"
+          ],
           "options": [
             "lake",
             "weather",
-            "tree"
+            "tree",
+            "flower"
           ],
           "hu": "(tó)"
         }
       ]
     },
     {
-      "id": "act_431",
+      "id": "act_514",
       "type": "typed",
       "items": [
         "lex_flower",
@@ -125,7 +193,7 @@
       ]
     },
     {
-      "id": "act_432",
+      "id": "act_515",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +211,7 @@
       ]
     },
     {
-      "id": "act_433",
+      "id": "act_516",
       "type": "pron-record",
       "focusId": "str_question"
     }

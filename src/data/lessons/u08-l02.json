@@ -37,7 +37,7 @@
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_512",
+      "id": "act_607",
       "type": "intro",
       "items": [
         "lex_play",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_513",
+      "id": "act_608",
       "type": "listen-choose",
       "items": [
         "lex_play",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_514",
+      "id": "act_609",
       "type": "match",
       "items": [
         "lex_play",
@@ -75,12 +75,44 @@
       ]
     },
     {
-      "id": "act_515",
+      "id": "act_610",
       "type": "grammar",
       "grammarId": "gr_comparatives"
     },
     {
-      "id": "act_516",
+      "id": "act_611",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Prague is ___ beautiful than I remembered.",
+          "answer": "more",
+          "options": [
+            "more",
+            "most"
+          ],
+          "hu": "Prága szebb, mint emlékeztem."
+        }
+      ]
+    },
+    {
+      "id": "act_612",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Denmark is ___ than Hungary. (big)",
+          "accepted": [
+            "bigger"
+          ],
+          "hint": {
+            "en": "short word → -er",
+            "hu": "rövid szó → -er"
+          },
+          "hu": "Dánia nagyobb, mint Magyarország."
+        }
+      ]
+    },
+    {
+      "id": "act_613",
       "type": "gapfill",
       "items": [
         {
@@ -112,21 +144,91 @@
             "want"
           ],
           "hu": "Élvezem a főzést Kirával."
+        }
+      ]
+    },
+    {
+      "id": "act_614",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_play",
+          "text": "I ___ every day.",
+          "answer": "play",
+          "accepted": [
+            "play",
+            "play",
+            "plays",
+            "played",
+            "play"
+          ],
+          "options": [
+            "play",
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "(játszani)"
         },
         {
+          "id": "lex_love",
+          "text": "I ___ my family.",
+          "answer": "love",
+          "accepted": [
+            "love",
+            "love",
+            "loves",
+            "loved",
+            "love"
+          ],
+          "options": [
+            "love",
+            "like",
+            "want",
+            "enjoy"
+          ],
+          "hu": "Szeretem a családomat."
+        },
+        {
+          "id": "lex_enjoy",
+          "text": "I ___ cooking with Kira.",
+          "answer": "enjoy",
+          "accepted": [
+            "enjoy",
+            "enjoy",
+            "enjoys",
+            "enjoyed",
+            "enjoy"
+          ],
+          "options": [
+            "enjoy",
+            "like",
+            "want",
+            "love"
+          ],
+          "hu": "Élvezem a főzést Kirával."
+        },
+        {
+          "id": "lex_favourite",
           "text": "Cooking is my ___ hobby.",
           "answer": "favourite",
+          "accepted": [
+            "favourite",
+            "favourite",
+            "favourite"
+          ],
           "options": [
             "favourite",
             "interesting",
-            "boring"
+            "boring",
+            "beautiful"
           ],
           "hu": "A főzés a kedvenc hobbim."
         }
       ]
     },
     {
-      "id": "act_517",
+      "id": "act_615",
       "type": "reorder",
       "sentences": [
         {
@@ -140,7 +242,7 @@
       ]
     },
     {
-      "id": "act_518",
+      "id": "act_616",
       "type": "typed",
       "items": [
         "lex_play",
@@ -151,7 +253,7 @@
       ]
     },
     {
-      "id": "act_519",
+      "id": "act_617",
       "type": "say-it",
       "phrases": [
         {
@@ -173,17 +275,17 @@
       ]
     },
     {
-      "id": "act_520",
+      "id": "act_618",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_521",
+      "id": "act_619",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_522",
+      "id": "act_620",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

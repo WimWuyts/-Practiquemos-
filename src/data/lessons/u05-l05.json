@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_293",
+      "id": "act_351",
       "type": "intro",
       "items": [
         "lex_tomato",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_294",
+      "id": "act_352",
       "type": "listen-choose",
       "items": [
         "lex_tomato",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_295",
+      "id": "act_353",
       "type": "match",
       "items": [
         "lex_tomato",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_296",
+      "id": "act_354",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,88 @@
             "water"
           ],
           "hu": "(csirke)"
+        }
+      ]
+    },
+    {
+      "id": "act_355",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_tomato",
+          "text": "This is a ___.",
+          "answer": "tomato",
+          "accepted": [
+            "tomato",
+            "tomato",
+            "tomatoes",
+            "tomato"
+          ],
+          "options": [
+            "tomato",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(paradicsom)"
         },
         {
+          "id": "lex_onion",
+          "text": "This is an ___.",
+          "answer": "onion",
+          "accepted": [
+            "onion",
+            "onion",
+            "onions",
+            "onion"
+          ],
+          "options": [
+            "onion",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(hagyma)"
+        },
+        {
+          "id": "lex_chicken",
+          "text": "This is a ___.",
+          "answer": "chicken",
+          "accepted": [
+            "chicken",
+            "chicken",
+            "chicken"
+          ],
+          "options": [
+            "chicken",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(csirke)"
+        },
+        {
+          "id": "lex_salad",
           "text": "This is a ___.",
           "answer": "salad",
+          "accepted": [
+            "salad",
+            "salad",
+            "salads",
+            "salad"
+          ],
           "options": [
             "salad",
             "food",
-            "water"
+            "water",
+            "coffee"
           ],
           "hu": "(saláta)"
         }
       ]
     },
     {
-      "id": "act_297",
+      "id": "act_356",
       "type": "typed",
       "items": [
         "lex_tomato",
@@ -125,7 +192,7 @@
       ]
     },
     {
-      "id": "act_298",
+      "id": "act_357",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +210,12 @@
       ]
     },
     {
-      "id": "act_299",
+      "id": "act_358",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_300",
+      "id": "act_359",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     }

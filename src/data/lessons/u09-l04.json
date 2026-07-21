@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_624",
+      "id": "act_736",
       "type": "intro",
       "items": [
         "lex_school",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_625",
+      "id": "act_737",
       "type": "listen-choose",
       "items": [
         "lex_school",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_626",
+      "id": "act_738",
       "type": "match",
       "items": [
         "lex_school",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_627",
+      "id": "act_739",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,89 @@
             "left"
           ],
           "hu": "(szupermarket)"
+        }
+      ]
+    },
+    {
+      "id": "act_740",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_school",
+          "text": "This is a ___.",
+          "answer": "school",
+          "accepted": [
+            "school",
+            "school",
+            "schools",
+            "school"
+          ],
+          "options": [
+            "school",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(iskola)"
         },
         {
+          "id": "lex_market",
+          "text": "This is a ___.",
+          "answer": "market",
+          "accepted": [
+            "market",
+            "market",
+            "markets",
+            "market"
+          ],
+          "options": [
+            "market",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(piac)"
+        },
+        {
+          "id": "lex_supermarket",
+          "text": "This is a ___.",
+          "answer": "supermarket",
+          "accepted": [
+            "supermarket",
+            "supermarket",
+            "supermarkets",
+            "supermarket"
+          ],
+          "options": [
+            "supermarket",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(szupermarket)"
+        },
+        {
+          "id": "lex_cinema",
           "text": "This is a ___.",
           "answer": "cinema",
+          "accepted": [
+            "cinema",
+            "cinema",
+            "cinemas",
+            "cinema"
+          ],
           "options": [
             "cinema",
             "street",
-            "left"
+            "left",
+            "right"
           ],
           "hu": "(mozi)"
         }
       ]
     },
     {
-      "id": "act_628",
+      "id": "act_741",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +201,7 @@
       ]
     },
     {
-      "id": "act_629",
+      "id": "act_742",
       "type": "typed",
       "items": [
         "lex_school",
@@ -144,7 +212,7 @@
       ]
     },
     {
-      "id": "act_630",
+      "id": "act_743",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +234,12 @@
       ]
     },
     {
-      "id": "act_631",
+      "id": "act_744",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_632",
+      "id": "act_745",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

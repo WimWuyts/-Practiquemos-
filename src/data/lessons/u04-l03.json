@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_193",
+      "id": "act_236",
       "type": "intro",
       "items": [
         "lex_room",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_194",
+      "id": "act_237",
       "type": "listen-choose",
       "items": [
         "lex_room",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_195",
+      "id": "act_238",
       "type": "match",
       "items": [
         "lex_room",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_196",
+      "id": "act_239",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "room"
     },
     {
-      "id": "act_197",
+      "id": "act_240",
       "type": "gapfill",
       "items": [
         {
@@ -106,21 +106,88 @@
             "often"
           ],
           "hu": "(mindig)"
-        },
-        {
-          "text": "I speak ___.",
-          "answer": "usually",
-          "options": [
-            "usually",
-            "always",
-            "often"
-          ],
-          "hu": "(általában)"
         }
       ]
     },
     {
-      "id": "act_198",
+      "id": "act_241",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_room",
+          "text": "There are three ___.",
+          "answer": "rooms",
+          "accepted": [
+            "room",
+            "room",
+            "rooms",
+            "rooms"
+          ],
+          "options": [
+            "rooms",
+            "home",
+            "house",
+            "kitchen"
+          ],
+          "hu": "Három szoba van."
+        },
+        {
+          "id": "lex_kitchen",
+          "text": "I cook in the ___.",
+          "answer": "kitchen",
+          "accepted": [
+            "kitchen",
+            "kitchen",
+            "kitchens",
+            "kitchen"
+          ],
+          "options": [
+            "kitchen",
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "A konyhában főzök."
+        },
+        {
+          "id": "lex_garden",
+          "text": "This is a ___.",
+          "answer": "garden",
+          "accepted": [
+            "garden",
+            "garden",
+            "gardens",
+            "garden"
+          ],
+          "options": [
+            "garden",
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "(kert)"
+        },
+        {
+          "id": "lex_always",
+          "text": "I speak ___.",
+          "answer": "always",
+          "accepted": [
+            "always",
+            "always",
+            "always"
+          ],
+          "options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ],
+          "hu": "(mindig)"
+        }
+      ]
+    },
+    {
+      "id": "act_242",
       "type": "typed",
       "items": [
         "lex_room",
@@ -131,7 +198,7 @@
       ]
     },
     {
-      "id": "act_199",
+      "id": "act_243",
       "type": "say-it",
       "phrases": [
         {
@@ -149,7 +216,7 @@
       ]
     },
     {
-      "id": "act_200",
+      "id": "act_244",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     }

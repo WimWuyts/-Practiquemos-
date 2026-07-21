@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_523",
+      "id": "act_621",
       "type": "intro",
       "items": [
         "lex_think",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_524",
+      "id": "act_622",
       "type": "listen-choose",
       "items": [
         "lex_think",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_525",
+      "id": "act_623",
       "type": "match",
       "items": [
         "lex_think",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_526",
+      "id": "act_624",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "green"
     },
     {
-      "id": "act_527",
+      "id": "act_625",
       "type": "gapfill",
       "items": [
         {
@@ -111,21 +111,87 @@
             "green"
           ],
           "hu": "(kék)"
+        }
+      ]
+    },
+    {
+      "id": "act_626",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_think",
+          "text": "I ___ it is beautiful.",
+          "answer": "think",
+          "accepted": [
+            "think",
+            "think",
+            "thinks",
+            "thought",
+            "think"
+          ],
+          "options": [
+            "think",
+            "like",
+            "want",
+            "love"
+          ],
+          "hu": "Szerintem gyönyörű."
         },
         {
+          "id": "lex_red",
+          "text": "It is very ___.",
+          "answer": "red",
+          "accepted": [
+            "red",
+            "red",
+            "red"
+          ],
+          "options": [
+            "red",
+            "blue",
+            "green",
+            "white"
+          ],
+          "hu": "(piros)"
+        },
+        {
+          "id": "lex_blue",
+          "text": "It is very ___.",
+          "answer": "blue",
+          "accepted": [
+            "blue",
+            "blue",
+            "blue"
+          ],
+          "options": [
+            "blue",
+            "red",
+            "green",
+            "white"
+          ],
+          "hu": "(kék)"
+        },
+        {
+          "id": "lex_green",
           "text": "It is very ___.",
           "answer": "green",
+          "accepted": [
+            "green",
+            "green",
+            "green"
+          ],
           "options": [
             "green",
             "red",
-            "blue"
+            "blue",
+            "white"
           ],
           "hu": "(zöld)"
         }
       ]
     },
     {
-      "id": "act_528",
+      "id": "act_627",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +205,7 @@
       ]
     },
     {
-      "id": "act_529",
+      "id": "act_628",
       "type": "typed",
       "items": [
         "lex_think",
@@ -150,7 +216,7 @@
       ]
     },
     {
-      "id": "act_530",
+      "id": "act_629",
       "type": "say-it",
       "phrases": [
         {
@@ -172,7 +238,7 @@
       ]
     },
     {
-      "id": "act_531",
+      "id": "act_630",
       "type": "pron-record",
       "focusId": "snd_r"
     }

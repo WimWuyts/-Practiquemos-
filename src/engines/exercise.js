@@ -539,6 +539,179 @@ window.M = window.M || {};
     round();
   };
 
+  // Word-fill: TYPE the missing word into a real sentence from Marta's life.
+  // Designed so getting stuck is impossible: type OR tap, a first-letter hint,
+  // and unlimited gentle retries that always end in success. No auto-advance —
+  // she reads at her own pace. Forgiving matching via M.match.close.
+  R["word-fill"] = function (mount, act, done) {
+    var items = (act.items || []).slice(0, 6);
+    if (!items.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var it = items[idx];
+      var answer = it.answer;
+      var accepted = [answer].concat(it.accepted || []);
+      var tries = 0, solved = false;
+      var full = it.text.replace("___", answer);
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.wordfill.prompt") }));
+      var sentence = el("div", { class: "card" }, [
+        el("div", { style: "font-size:1.25rem;line-height:1.7", html: it.text.replace("___", '<b style="color:var(--accent)">_____</b>') }),
+      ]);
+      var help = helpPanel(it.hu);
+      if (help) sentence.appendChild(help);
+      mount.appendChild(sentence);
+
+      var input = el("input", { class: "textin", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", "aria-label": M.i18n.t("act.wordfill.prompt") });
+      var inputWrap = el("div", {}, [input]);
+      mount.appendChild(inputWrap);
+      var msg = el("div", {});
+      mount.appendChild(msg);
+
+      function hint() { return answer.charAt(0) + " " + answer.slice(1).replace(/[^ ]/g, "_ ").trim(); }
+      function showHint() {
+        dom.clear(msg);
+        msg.appendChild(el("div", { style: "font-size:1.3rem;letter-spacing:.12em;color:var(--ink)", text: hint() }));
+      }
+      var bankShown = false;
+      function toggleBank() {
+        if (bankShown) return;
+        bankShown = true;
+        var pool = dom.shuffle([answer].concat((it.options || []).filter(function (o) { return M.match.norm(o) !== M.match.norm(answer); }).slice(0, 3)));
+        var bank = el("div", { class: "options" });
+        pool.forEach(function (o) {
+          bank.appendChild(el("button", { class: "option", onclick: function () { if (!solved) { input.value = o; check(); } } }, [el("span", { text: o })]));
+        });
+        inputWrap.appendChild(bank);
+      }
+
+      function goNext() { idx++; if (idx < items.length) round(); else done(true); }
+      function succeed() {
+        solved = true;
+        M.store.touchItem(it.id, "written", tries === 0);
+        input.disabled = true;
+        Array.prototype.forEach.call(controls.children, function (c) { c.disabled = true; });
+        dom.clear(msg);
+        feedback(msg, true, M.i18n.t("fb.correct"));
+        M.audio.speak(full);
+        var cont = el("button", { class: "btn", onclick: goNext }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]);
+        mount.appendChild(el("div", { class: "btn-row" }, [cont]));
+        cont.focus();
+      }
+      function check() {
+        if (solved) return;
+        if (M.match.close(input.value, accepted)) return succeed();
+        tries++;
+        dom.clear(msg);
+        if (tries === 1) {
+          feedback(msg, false, M.i18n.t("fb.almost"));
+          msg.appendChild(el("div", { style: "font-size:1.3rem;letter-spacing:.12em;color:var(--ink)", text: hint() }));
+        } else {
+          feedback(msg, false, M.i18n.t("act.wordfill.copy") + " — " + answer);
+          input.value = ""; input.focus();
+          toggleBank();
+        }
+      }
+
+      var controls = el("div", { class: "btn-row" }, [
+        el("button", { class: "btn ghost small", onclick: function () { M.audio.speak(full); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")]),
+        el("button", { class: "btn secondary small", onclick: showHint }, [el("span", { html: dom.icon("help") }), " " + M.i18n.t("btn.hint")]),
+        el("button", { class: "btn secondary small", onclick: toggleBank }, [M.i18n.t("act.wordfill.tap")]),
+        el("button", { class: "btn", onclick: check }, [M.i18n.t("btn.check")]),
+      ]);
+      mount.appendChild(controls);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); check(); } });
+      input.focus();
+    }
+    round();
+  };
+
+  // Grammar: type the correct form (transform / fill the form). Forgiving, with a hint
+  // and a reveal after two tries so it always ends in success.
+  R["gr-type"] = function (mount, act, done) {
+    var items = act.items || [];
+    if (!items.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var it = items[idx];
+      var answer = (it.accepted && it.accepted[0]) || "";
+      var solved = false, tries = 0;
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.grtype.prompt") }));
+      var card = el("div", { class: "card" }, [
+        el("div", { style: "font-size:1.25rem;line-height:1.7", html: it.text.replace("___", '<b style="color:var(--accent)">_____</b>') }),
+      ]);
+      if (M.i18n.helpAvailable() && it.hu) card.appendChild(el("div", { class: "muted", text: it.hu }));
+      mount.appendChild(card);
+      var input = el("input", { class: "textin", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", "aria-label": M.i18n.t("act.grtype.prompt") });
+      mount.appendChild(input);
+      var msg = el("div", {}); mount.appendChild(msg);
+      function hintBox() {
+        return el("div", { class: "grammarbox" }, [
+          el("div", { class: "lbl", text: M.i18n.t("btn.hint") }),
+          el("div", { class: "eg", text: (M.i18n.helpAvailable() && it.hint && it.hint.hu) ? it.hint.hu : (it.hint ? it.hint.en : "") }),
+        ]);
+      }
+      function goNext() { idx++; if (idx < items.length) round(); else done(true); }
+      function succeed() {
+        solved = true; input.disabled = true;
+        Array.prototype.forEach.call(controls.children, function (c) { c.disabled = true; });
+        dom.clear(msg); feedback(msg, true, M.i18n.t("fb.correct"));
+        M.audio.speak(it.text.replace("___", answer));
+        var cont = el("button", { class: "btn", onclick: goNext }, [idx < items.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]);
+        mount.appendChild(el("div", { class: "btn-row" }, [cont])); cont.focus();
+      }
+      function check() {
+        if (solved) return;
+        // strict on grammar forms (teach ≠ teaches); the hint + reveal keep it stress-free
+        if (M.match.exact(input.value, it.accepted || [])) return succeed();
+        tries++;
+        dom.clear(msg); feedback(msg, false, M.i18n.t("fb.almost"));
+        if (it.hint) msg.appendChild(hintBox());
+        if (tries >= 2) msg.appendChild(el("div", { style: "font-size:1.2rem;color:var(--ink)", text: answer }));
+      }
+      var controls = el("div", { class: "btn-row" }, [
+        it.hint ? el("button", { class: "btn secondary small", onclick: function () { dom.clear(msg); msg.appendChild(hintBox()); } }, [el("span", { html: dom.icon("help") }), " " + M.i18n.t("btn.hint")]) : null,
+        el("button", { class: "btn", onclick: check }, [M.i18n.t("btn.check")]),
+      ]);
+      mount.appendChild(controls);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); check(); } });
+      input.focus();
+    }
+    round();
+  };
+
+  // Grammar: one word in the sentence is wrong — tap it to correct it.
+  R["gr-fix"] = function (mount, act, done) {
+    var it = act.item; if (!it || !it.tokens) return done(true);
+    dom.clear(mount);
+    mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.grfix.prompt") }));
+    if (M.i18n.helpAvailable() && it.hu) mount.appendChild(el("div", { class: "card" }, [el("div", { class: "muted", text: it.hu })]));
+    var wrap = el("div", { class: "blocks", style: "font-size:1.2rem" });
+    var solved = false;
+    it.tokens.forEach(function (tok, i) {
+      var b = el("button", { class: "block" }, [tok]);
+      b.addEventListener("click", function () {
+        if (solved) return;
+        if (i === it.wrong) {
+          solved = true;
+          b.classList.add("correct"); b.textContent = it.fix;
+          var corrected = it.tokens.slice(); corrected[it.wrong] = it.fix;
+          var sentence = corrected.join(" ").replace(/\s+([.,!?])/g, "$1");
+          M.audio.speak(sentence);
+          feedback(mount, true, M.i18n.t("act.grfix.fixed") + " " + it.fix);
+          Array.prototype.forEach.call(wrap.children, function (c) { c.disabled = true; });
+          mount.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { done(true); } }, [M.i18n.t("btn.continue")])]));
+        } else {
+          b.classList.add("wrong");
+          setTimeout(function () { b.classList.remove("wrong"); }, 500);
+        }
+      });
+      wrap.appendChild(b);
+    });
+    mount.appendChild(wrap);
+  };
+
   // Answer expansion: grow a short answer from one clause to three (from the brief).
   R.expand = function (mount, act, done) {
     var steps = act.steps || [];
@@ -698,6 +871,94 @@ window.M = window.M || {};
       mount.appendChild(el("div", { class: "btn-row" }, [
         el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < phrases.length) round(); else done(true); } }, [idx < phrases.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
       ]));
+    }
+    round();
+  };
+
+  // Shadowing / repeat-chain: hear each word, then say it yourself. Production for
+  // every sound-focus — including the ones with no minimal pairs (ng, r, -s, -ed).
+  R.shadow = function (mount, act, done) {
+    var f = M.get.focus(act.focusId);
+    var words = (f && f.examples) || act.words || [];
+    if (!words.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      if (f) { var sb = stepBadge(f.stage); if (sb) mount.appendChild(sb); }
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.shadow.prompt") }));
+      var word = words[idx];
+      var card = el("div", { class: "card wordcard" }, [
+        el("div", { class: "en", text: word }),
+        el("p", { class: "muted", text: (idx + 1) + " / " + words.length }),
+      ]);
+      card.appendChild(M.speakRecord(word));
+      mount.appendChild(card);
+      M.store.touchItem("_pron_" + word, "spoken", true);
+      mount.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < words.length) round(); else done(true); } },
+          [idx < words.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
+      ]));
+      M.audio.speak(word);
+    }
+    round();
+  };
+
+  // Minimal-pair PRODUCTION: after telling the pair apart, say the target yourself.
+  R["minimal-pair-say"] = function (mount, act, done) {
+    var f = M.get.focus(act.focusId);
+    var pairs = (f && f.minimalPairs) || [];
+    if (!pairs.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      if (f) { var sb = stepBadge(f.stage); if (sb) mount.appendChild(sb); }
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.pairsay.prompt") }));
+      var pair = pairs[idx];
+      var target = dom.shuffle([pair.a, pair.b])[0];
+      var card = el("div", { class: "card wordcard" }, [
+        el("div", { class: "muted", style: "font-size:1rem", text: pair.a + " · " + pair.b }),
+        el("div", { class: "en", text: target }),
+      ]);
+      card.appendChild(M.speakRecord(target));
+      mount.appendChild(card);
+      M.store.touchItem("_pron_" + target, "spoken", true);
+      mount.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < pairs.length) round(); else done(true); } },
+          [idx < pairs.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
+      ]));
+      M.audio.speak(target);
+    }
+    round();
+  };
+
+  // Sound-sort: hear a word, choose which sound-group / spelling pattern it belongs to.
+  R["sound-sort"] = function (mount, act, done) {
+    var groups = act.groups || [];
+    if (groups.length < 2) return done(true);
+    var queue = [];
+    groups.forEach(function (g, gi) { (g.words || []).slice(0, 3).forEach(function (w) { queue.push({ word: w, gi: gi }); }); });
+    queue = dom.shuffle(queue);
+    if (!queue.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.soundsort.prompt") }));
+      var q = queue[idx];
+      mount.appendChild(speakBtn(q.word, M.i18n.t("btn.hearword")));
+      var opts = el("div", { class: "options" });
+      groups.forEach(function (g, gi) {
+        var b = el("button", { class: "option" }, [el("span", { text: g.label })]);
+        b.addEventListener("click", function () {
+          var ok = gi === q.gi;
+          b.classList.add(ok ? "correct" : "wrong");
+          Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
+          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.listen") + " — " + groups[q.gi].label));
+          advance(mount, ok, function () { idx++; if (idx < queue.length) round(); else done(true); });
+        });
+        opts.appendChild(b);
+      });
+      mount.appendChild(opts);
+      M.audio.speak(q.word);
     }
     round();
   };

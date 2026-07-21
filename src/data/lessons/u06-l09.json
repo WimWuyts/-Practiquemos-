@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_420",
+      "id": "act_501",
       "type": "intro",
       "items": [
         "lex_june",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_421",
+      "id": "act_502",
       "type": "listen-choose",
       "items": [
         "lex_june",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_422",
+      "id": "act_503",
       "type": "match",
       "items": [
         "lex_june",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_423",
+      "id": "act_504",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "hour"
           ],
           "hu": "(augusztus)"
+        }
+      ]
+    },
+    {
+      "id": "act_505",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_june",
+          "text": "I like ___.",
+          "answer": "June",
+          "accepted": [
+            "June",
+            "June",
+            "June"
+          ],
+          "options": [
+            "June",
+            "time",
+            "hour",
+            "minute"
+          ],
+          "hu": "(június)"
         },
         {
+          "id": "lex_july",
+          "text": "I like ___.",
+          "answer": "July",
+          "accepted": [
+            "July",
+            "July",
+            "July"
+          ],
+          "options": [
+            "July",
+            "time",
+            "hour",
+            "minute"
+          ],
+          "hu": "(július)"
+        },
+        {
+          "id": "lex_august",
+          "text": "I like ___.",
+          "answer": "August",
+          "accepted": [
+            "August",
+            "August",
+            "August"
+          ],
+          "options": [
+            "August",
+            "time",
+            "hour",
+            "minute"
+          ],
+          "hu": "(augusztus)"
+        },
+        {
+          "id": "lex_september",
           "text": "I like ___.",
           "answer": "September",
+          "accepted": [
+            "September",
+            "September",
+            "September"
+          ],
           "options": [
             "September",
             "time",
-            "hour"
+            "hour",
+            "minute"
           ],
           "hu": "(szeptember)"
         }
       ]
     },
     {
-      "id": "act_424",
+      "id": "act_506",
       "type": "typed",
       "items": [
         "lex_june",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_425",
+      "id": "act_507",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +207,7 @@
       ]
     },
     {
-      "id": "act_426",
+      "id": "act_508",
       "type": "pron-record",
       "focusId": "str_word"
     }

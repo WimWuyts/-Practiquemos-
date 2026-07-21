@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_549",
+      "id": "act_650",
       "type": "intro",
       "items": [
         "lex_brown",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_550",
+      "id": "act_651",
       "type": "listen-choose",
       "items": [
         "lex_brown",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_551",
+      "id": "act_652",
       "type": "match",
       "items": [
         "lex_brown",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_552",
+      "id": "act_653",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "blue"
           ],
           "hu": "(rózsaszín)"
+        }
+      ]
+    },
+    {
+      "id": "act_654",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_brown",
+          "text": "It is very ___.",
+          "answer": "brown",
+          "accepted": [
+            "brown",
+            "brown",
+            "brown"
+          ],
+          "options": [
+            "brown",
+            "red",
+            "blue",
+            "green"
+          ],
+          "hu": "(barna)"
         },
         {
+          "id": "lex_grey",
+          "text": "It is very ___.",
+          "answer": "grey",
+          "accepted": [
+            "grey",
+            "grey",
+            "grey"
+          ],
+          "options": [
+            "grey",
+            "red",
+            "blue",
+            "green"
+          ],
+          "hu": "(szürke)"
+        },
+        {
+          "id": "lex_pink",
+          "text": "It is very ___.",
+          "answer": "pink",
+          "accepted": [
+            "pink",
+            "pink",
+            "pink"
+          ],
+          "options": [
+            "pink",
+            "red",
+            "blue",
+            "green"
+          ],
+          "hu": "(rózsaszín)"
+        },
+        {
+          "id": "lex_too",
           "text": "I'm happy, and my sister is happy ___.",
           "answer": "too",
+          "accepted": [
+            "too",
+            "too",
+            "too"
+          ],
           "options": [
             "too",
             "where",
-            "how"
+            "how",
+            "very"
           ],
           "hu": "Boldog vagyok, és a nővérem is."
         }
       ]
     },
     {
-      "id": "act_553",
+      "id": "act_655",
       "type": "typed",
       "items": [
         "lex_brown",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_554",
+      "id": "act_656",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +207,12 @@
       ]
     },
     {
-      "id": "act_555",
+      "id": "act_657",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_556",
+      "id": "act_658",
       "type": "minimal-pair",
       "focusId": "snd_th"
     }

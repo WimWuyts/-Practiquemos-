@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_749",
+      "id": "act_881",
       "type": "intro",
       "items": [
         "lex_teach",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_750",
+      "id": "act_882",
       "type": "listen-choose",
       "items": [
         "lex_teach",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_751",
+      "id": "act_883",
       "type": "match",
       "items": [
         "lex_teach",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_752",
+      "id": "act_884",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "question"
     },
     {
-      "id": "act_753",
+      "id": "act_885",
       "type": "gapfill",
       "items": [
         {
@@ -111,21 +111,92 @@
             "write"
           ],
           "hu": "(befejezni)"
+        }
+      ]
+    },
+    {
+      "id": "act_886",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_teach",
+          "text": "I ___ Hungarian online.",
+          "answer": "teach",
+          "accepted": [
+            "teach",
+            "teach",
+            "teaches",
+            "taught",
+            "teach"
+          ],
+          "options": [
+            "teach",
+            "start",
+            "write",
+            "learn"
+          ],
+          "hu": "Magyart tanítok online."
         },
         {
+          "id": "lex_begin",
+          "text": "I ___ every day.",
+          "answer": "begin",
+          "accepted": [
+            "begin",
+            "begin",
+            "begins",
+            "began",
+            "begin"
+          ],
+          "options": [
+            "begin",
+            "start",
+            "write",
+            "learn"
+          ],
+          "hu": "(elkezdeni)"
+        },
+        {
+          "id": "lex_finish",
+          "text": "I ___ every day.",
+          "answer": "finish",
+          "accepted": [
+            "finish",
+            "finish",
+            "finishes",
+            "finished",
+            "finish"
+          ],
+          "options": [
+            "finish",
+            "start",
+            "write",
+            "learn"
+          ],
+          "hu": "(befejezni)"
+        },
+        {
+          "id": "lex_email",
           "text": "This is an ___.",
           "answer": "email",
+          "accepted": [
+            "email",
+            "email",
+            "emails",
+            "email"
+          ],
           "options": [
             "email",
             "camera",
-            "microphone"
+            "microphone",
+            "screen"
           ],
           "hu": "(e-mail)"
         }
       ]
     },
     {
-      "id": "act_754",
+      "id": "act_887",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +210,7 @@
       ]
     },
     {
-      "id": "act_755",
+      "id": "act_888",
       "type": "typed",
       "items": [
         "lex_teach",
@@ -150,7 +221,7 @@
       ]
     },
     {
-      "id": "act_756",
+      "id": "act_889",
       "type": "say-it",
       "phrases": [
         {
@@ -172,7 +243,7 @@
       ]
     },
     {
-      "id": "act_757",
+      "id": "act_890",
       "type": "pron-record",
       "focusId": "str_chunking"
     }

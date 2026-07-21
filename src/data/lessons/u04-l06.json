@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_216",
+      "id": "act_262",
       "type": "intro",
       "items": [
         "lex_arm",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_217",
+      "id": "act_263",
       "type": "listen-choose",
       "items": [
         "lex_arm",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_218",
+      "id": "act_264",
       "type": "match",
       "items": [
         "lex_arm",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_219",
+      "id": "act_265",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,89 @@
             "head"
           ],
           "hu": "(lábfej)"
+        }
+      ]
+    },
+    {
+      "id": "act_266",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_arm",
+          "text": "This is an ___.",
+          "answer": "arm",
+          "accepted": [
+            "arm",
+            "arm",
+            "arms",
+            "arm"
+          ],
+          "options": [
+            "arm",
+            "body",
+            "head",
+            "face"
+          ],
+          "hu": "(kar)"
         },
         {
+          "id": "lex_leg",
+          "text": "This is a ___.",
+          "answer": "leg",
+          "accepted": [
+            "leg",
+            "leg",
+            "legs",
+            "leg"
+          ],
+          "options": [
+            "leg",
+            "body",
+            "head",
+            "face"
+          ],
+          "hu": "(láb (comb))"
+        },
+        {
+          "id": "lex_foot",
+          "text": "This is a ___.",
+          "answer": "foot",
+          "accepted": [
+            "foot",
+            "foot",
+            "feet",
+            "foot"
+          ],
+          "options": [
+            "foot",
+            "body",
+            "head",
+            "face"
+          ],
+          "hu": "(lábfej)"
+        },
+        {
+          "id": "lex_tooth",
           "text": "This is a ___.",
           "answer": "tooth",
+          "accepted": [
+            "tooth",
+            "tooth",
+            "teeth",
+            "tooth"
+          ],
           "options": [
             "tooth",
             "body",
-            "head"
+            "head",
+            "face"
           ],
           "hu": "(fog)"
         }
       ]
     },
     {
-      "id": "act_220",
+      "id": "act_267",
       "type": "typed",
       "items": [
         "lex_arm",
@@ -125,7 +193,7 @@
       ]
     },
     {
-      "id": "act_221",
+      "id": "act_268",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +211,7 @@
       ]
     },
     {
-      "id": "act_222",
+      "id": "act_269",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_615",
+      "id": "act_726",
       "type": "intro",
       "items": [
         "lex_second",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_616",
+      "id": "act_727",
       "type": "listen-choose",
       "items": [
         "lex_second",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_617",
+      "id": "act_728",
       "type": "match",
       "items": [
         "lex_second",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_618",
+      "id": "act_729",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,87 @@
             "left"
           ],
           "hu": "(kisváros)"
+        }
+      ]
+    },
+    {
+      "id": "act_730",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_second",
+          "text": "It is very ___.",
+          "answer": "second",
+          "accepted": [
+            "second",
+            "second",
+            "second"
+          ],
+          "options": [
+            "second",
+            "third",
+            "my",
+            "your"
+          ],
+          "hu": "(második)"
         },
         {
+          "id": "lex_third",
+          "text": "It is very ___.",
+          "answer": "third",
+          "accepted": [
+            "third",
+            "third",
+            "third"
+          ],
+          "options": [
+            "third",
+            "second",
+            "my",
+            "your"
+          ],
+          "hu": "(harmadik)"
+        },
+        {
+          "id": "lex_town",
+          "text": "This is a ___.",
+          "answer": "town",
+          "accepted": [
+            "town",
+            "town",
+            "towns",
+            "town"
+          ],
+          "options": [
+            "town",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(kisváros)"
+        },
+        {
+          "id": "lex_village",
           "text": "This is a ___.",
           "answer": "village",
+          "accepted": [
+            "village",
+            "village",
+            "villages",
+            "village"
+          ],
           "options": [
             "village",
             "street",
-            "left"
+            "left",
+            "right"
           ],
           "hu": "(falu)"
         }
       ]
     },
     {
-      "id": "act_619",
+      "id": "act_731",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +199,7 @@
       ]
     },
     {
-      "id": "act_620",
+      "id": "act_732",
       "type": "typed",
       "items": [
         "lex_second",
@@ -144,7 +210,7 @@
       ]
     },
     {
-      "id": "act_621",
+      "id": "act_733",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +232,12 @@
       ]
     },
     {
-      "id": "act_622",
+      "id": "act_734",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_623",
+      "id": "act_735",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

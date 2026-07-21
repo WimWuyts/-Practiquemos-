@@ -34,7 +34,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_36",
+      "id": "act_46",
       "type": "intro",
       "items": [
         "lex_be",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_37",
+      "id": "act_47",
       "type": "listen-choose",
       "items": [
         "lex_be",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_38",
+      "id": "act_48",
       "type": "match",
       "items": [
         "lex_be",
@@ -72,13 +72,13 @@
       ]
     },
     {
-      "id": "act_39",
+      "id": "act_49",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "nice"
     },
     {
-      "id": "act_40",
+      "id": "act_50",
       "type": "gapfill",
       "items": [
         {
@@ -110,21 +110,90 @@
             "country"
           ],
           "hu": "(város)"
-        },
-        {
-          "text": "This is a ___.",
-          "answer": "teacher",
-          "options": [
-            "teacher",
-            "name",
-            "country"
-          ],
-          "hu": "(tanár / tanárnő)"
         }
       ]
     },
     {
-      "id": "act_41",
+      "id": "act_51",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_be",
+          "text": "I ___ happy today.",
+          "answer": "am",
+          "accepted": [
+            "be",
+            "am",
+            "is",
+            "are",
+            "be",
+            "am"
+          ],
+          "options": [
+            "am",
+            "have",
+            "speak",
+            "live"
+          ],
+          "hu": "Ma boldog vagyok."
+        },
+        {
+          "id": "lex_from",
+          "text": "I'm ___ Hungary.",
+          "answer": "from",
+          "accepted": [
+            "from",
+            "from",
+            "from"
+          ],
+          "options": [
+            "from",
+            "in",
+            "on",
+            "under"
+          ],
+          "hu": "Magyarországról jöttem."
+        },
+        {
+          "id": "lex_country",
+          "text": "This is a ___.",
+          "answer": "country",
+          "accepted": [
+            "country",
+            "country",
+            "countries",
+            "country"
+          ],
+          "options": [
+            "country",
+            "name",
+            "city",
+            "teacher"
+          ],
+          "hu": "(ország)"
+        },
+        {
+          "id": "lex_city",
+          "text": "This is a ___.",
+          "answer": "city",
+          "accepted": [
+            "city",
+            "city",
+            "cities",
+            "city"
+          ],
+          "options": [
+            "city",
+            "name",
+            "country",
+            "teacher"
+          ],
+          "hu": "(város)"
+        }
+      ]
+    },
+    {
+      "id": "act_52",
       "type": "reorder",
       "sentences": [
         {
@@ -138,7 +207,7 @@
       ]
     },
     {
-      "id": "act_42",
+      "id": "act_53",
       "type": "typed",
       "items": [
         "lex_be",
@@ -149,7 +218,7 @@
       ]
     },
     {
-      "id": "act_43",
+      "id": "act_54",
       "type": "say-it",
       "phrases": [
         {
@@ -167,12 +236,12 @@
       ]
     },
     {
-      "id": "act_44",
+      "id": "act_55",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_45",
+      "id": "act_56",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
     }

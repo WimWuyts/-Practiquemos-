@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_154",
+      "id": "act_186",
       "type": "intro",
       "items": [
         "lex_so",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_155",
+      "id": "act_187",
       "type": "listen-choose",
       "items": [
         "lex_so",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_156",
+      "id": "act_188",
       "type": "match",
       "items": [
         "lex_so",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_157",
+      "id": "act_189",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,87 @@
             "country"
           ],
           "hu": "(állás / munka)"
+        }
+      ]
+    },
+    {
+      "id": "act_190",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_so",
+          "text": "It's late, ___ I go home.",
+          "answer": "so",
+          "accepted": [
+            "so",
+            "so",
+            "so"
+          ],
+          "options": [
+            "so",
+            "and",
+            "but",
+            "because"
+          ],
+          "hu": "Késő van, úgyhogy hazamegyek."
         },
         {
+          "id": "lex_very",
+          "text": "It is ___ nice.",
+          "answer": "very",
+          "accepted": [
+            "very",
+            "very",
+            "very"
+          ],
+          "options": [
+            "very",
+            "where",
+            "how",
+            "slowly"
+          ],
+          "hu": "Nagyon szép."
+        },
+        {
+          "id": "lex_job",
+          "text": "This is a ___.",
+          "answer": "job",
+          "accepted": [
+            "job",
+            "job",
+            "jobs",
+            "job"
+          ],
+          "options": [
+            "job",
+            "name",
+            "country",
+            "city"
+          ],
+          "hu": "(állás / munka)"
+        },
+        {
+          "id": "lex_driver",
           "text": "This is a ___.",
           "answer": "driver",
+          "accepted": [
+            "driver",
+            "driver",
+            "drivers",
+            "driver"
+          ],
           "options": [
             "driver",
             "name",
-            "country"
+            "country",
+            "city"
           ],
           "hu": "(sofőr)"
         }
       ]
     },
     {
-      "id": "act_158",
+      "id": "act_191",
       "type": "typed",
       "items": [
         "lex_so",
@@ -125,7 +191,7 @@
       ]
     },
     {
-      "id": "act_159",
+      "id": "act_192",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +209,12 @@
       ]
     },
     {
-      "id": "act_160",
+      "id": "act_193",
       "type": "pron-record",
       "focusId": "snd_h"
     },
     {
-      "id": "act_161",
+      "id": "act_194",
       "type": "minimal-pair",
       "focusId": "snd_h"
     }

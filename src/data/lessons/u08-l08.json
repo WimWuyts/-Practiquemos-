@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_565",
+      "id": "act_668",
       "type": "intro",
       "items": [
         "lex_jump",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_566",
+      "id": "act_669",
       "type": "listen-choose",
       "items": [
         "lex_jump",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_567",
+      "id": "act_670",
       "type": "match",
       "items": [
         "lex_jump",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_568",
+      "id": "act_671",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,93 @@
             "swim"
           ],
           "hu": "(festeni)"
+        }
+      ]
+    },
+    {
+      "id": "act_672",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_jump",
+          "text": "I ___ every day.",
+          "answer": "jump",
+          "accepted": [
+            "jump",
+            "jump",
+            "jumps",
+            "jumped",
+            "jump"
+          ],
+          "options": [
+            "jump",
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "(ugrani)"
         },
         {
+          "id": "lex_draw",
+          "text": "I ___ every day.",
+          "answer": "draw",
+          "accepted": [
+            "draw",
+            "draw",
+            "draws",
+            "drew",
+            "draw"
+          ],
+          "options": [
+            "draw",
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "(rajzolni)"
+        },
+        {
+          "id": "lex_paint",
+          "text": "I ___ every day.",
+          "answer": "paint",
+          "accepted": [
+            "paint",
+            "paint",
+            "paints",
+            "painted",
+            "paint"
+          ],
+          "options": [
+            "paint",
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "(festeni)"
+        },
+        {
+          "id": "lex_win",
           "text": "I ___ every day.",
           "answer": "win",
+          "accepted": [
+            "win",
+            "win",
+            "wins",
+            "won",
+            "win"
+          ],
           "options": [
             "win",
             "read",
-            "swim"
+            "swim",
+            "dance"
           ],
           "hu": "(nyerni)"
         }
       ]
     },
     {
-      "id": "act_569",
+      "id": "act_673",
       "type": "typed",
       "items": [
         "lex_jump",
@@ -125,7 +197,7 @@
       ]
     },
     {
-      "id": "act_570",
+      "id": "act_674",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +215,12 @@
       ]
     },
     {
-      "id": "act_571",
+      "id": "act_675",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_572",
+      "id": "act_676",
       "type": "minimal-pair",
       "focusId": "snd_th"
     }

@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_405",
+      "id": "act_484",
       "type": "intro",
       "items": [
         "lex_thousand",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_406",
+      "id": "act_485",
       "type": "listen-choose",
       "items": [
         "lex_thousand",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_407",
+      "id": "act_486",
       "type": "match",
       "items": [
         "lex_thousand",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_408",
+      "id": "act_487",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "soon"
     },
     {
-      "id": "act_409",
+      "id": "act_488",
       "type": "gapfill",
       "items": [
         {
@@ -106,21 +106,86 @@
             "now"
           ],
           "hu": "(óra (pontos idő))"
+        }
+      ]
+    },
+    {
+      "id": "act_489",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_thousand",
+          "text": "I have ___ friends.",
+          "answer": "thousand",
+          "accepted": [
+            "thousand",
+            "thousand",
+            "thousand"
+          ],
+          "options": [
+            "thousand",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(ezer)"
         },
         {
+          "id": "lex_number",
+          "text": "This is a ___.",
+          "answer": "number",
+          "accepted": [
+            "number",
+            "number",
+            "numbers",
+            "number"
+          ],
+          "options": [
+            "number",
+            "name",
+            "country",
+            "city"
+          ],
+          "hu": "(szám)"
+        },
+        {
+          "id": "lex_o_clock",
+          "text": "I speak ___.",
+          "answer": "o'clock",
+          "accepted": [
+            "o'clock",
+            "o'clock",
+            "o'clock"
+          ],
+          "options": [
+            "o'clock",
+            "early",
+            "now",
+            "soon"
+          ],
+          "hu": "(óra (pontos idő))"
+        },
+        {
+          "id": "lex_half",
           "text": "This is a ___.",
           "answer": "half",
+          "accepted": [
+            "half",
+            "half",
+            "half"
+          ],
           "options": [
             "half",
             "time",
-            "hour"
+            "hour",
+            "minute"
           ],
           "hu": "(fél)"
         }
       ]
     },
     {
-      "id": "act_410",
+      "id": "act_490",
       "type": "typed",
       "items": [
         "lex_thousand",
@@ -131,7 +196,7 @@
       ]
     },
     {
-      "id": "act_411",
+      "id": "act_491",
       "type": "say-it",
       "phrases": [
         {
@@ -149,7 +214,7 @@
       ]
     },
     {
-      "id": "act_412",
+      "id": "act_492",
       "type": "pron-record",
       "focusId": "str_word"
     }

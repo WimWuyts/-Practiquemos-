@@ -39,7 +39,7 @@
   "conversationId": "dlg_endika_followup",
   "activities": [
     {
-      "id": "act_783",
+      "id": "act_921",
       "type": "intro",
       "items": [
         "lex_try",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_784",
+      "id": "act_922",
       "type": "listen-choose",
       "items": [
         "lex_try",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "id": "act_785",
+      "id": "act_923",
       "type": "match",
       "items": [
         "lex_try",
@@ -76,12 +76,29 @@
       ]
     },
     {
-      "id": "act_786",
+      "id": "act_924",
       "type": "grammar",
       "grammarId": "gr_pastsimple"
     },
     {
-      "id": "act_787",
+      "id": "act_925",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Yesterday I ___ Kira on the phone.",
+          "accepted": [
+            "called"
+          ],
+          "hint": {
+            "en": "add -ed",
+            "hu": "tegyél -ed-t"
+          },
+          "hu": "Tegnap felhívtam Kirát telefonon."
+        }
+      ]
+    },
+    {
+      "id": "act_926",
       "type": "gapfill",
       "items": [
         {
@@ -113,21 +130,90 @@
             "pay"
           ],
           "hu": "(költeni / tölteni)"
+        }
+      ]
+    },
+    {
+      "id": "act_927",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_try",
+          "text": "I ___ every day.",
+          "answer": "try",
+          "accepted": [
+            "try",
+            "try",
+            "tries",
+            "tried",
+            "try"
+          ],
+          "options": [
+            "try",
+            "repeat",
+            "understand",
+            "wait"
+          ],
+          "hu": "(megpróbálni)"
         },
         {
+          "id": "lex_end",
+          "text": "The station is at the ___ of the street.",
+          "answer": "end",
+          "accepted": [
+            "end",
+            "end",
+            "ends",
+            "end"
+          ],
+          "options": [
+            "end",
+            "moment",
+            "thing",
+            "part"
+          ],
+          "hu": "Az állomás az utca végén van."
+        },
+        {
+          "id": "lex_spend",
+          "text": "I ___ every day.",
+          "answer": "spend",
+          "accepted": [
+            "spend",
+            "spend",
+            "spends",
+            "spent",
+            "spend"
+          ],
+          "options": [
+            "spend",
+            "buy",
+            "pay",
+            "sell"
+          ],
+          "hu": "(költeni / tölteni)"
+        },
+        {
+          "id": "lex_last",
           "text": "It is very ___.",
           "answer": "last",
+          "accepted": [
+            "last",
+            "last",
+            "last"
+          ],
           "options": [
             "last",
             "my",
-            "your"
+            "your",
+            "retired"
           ],
           "hu": "(utolsó / múlt)"
         }
       ]
     },
     {
-      "id": "act_788",
+      "id": "act_928",
       "type": "reorder",
       "sentences": [
         {
@@ -141,7 +227,7 @@
       ]
     },
     {
-      "id": "act_789",
+      "id": "act_929",
       "type": "typed",
       "items": [
         "lex_try",
@@ -152,7 +238,7 @@
       ]
     },
     {
-      "id": "act_790",
+      "id": "act_930",
       "type": "say-it",
       "phrases": [
         {
@@ -174,12 +260,12 @@
       ]
     },
     {
-      "id": "act_791",
+      "id": "act_931",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_792",
+      "id": "act_932",
       "type": "listen-comprehension",
       "passage": "Hi Marta! At the weekend I visited my sister. We cooked lunch and talked for hours. It was lovely.",
       "question": {
@@ -194,7 +280,7 @@
       "answer": "Visited her sister"
     },
     {
-      "id": "act_793",
+      "id": "act_933",
       "type": "expand",
       "question": {
         "en": "What did you do at the weekend?",
@@ -216,7 +302,7 @@
       ]
     },
     {
-      "id": "act_794",
+      "id": "act_934",
       "type": "conversation",
       "dialogueId": "dlg_endika_followup"
     }

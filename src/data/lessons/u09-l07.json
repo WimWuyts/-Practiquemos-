@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_651",
+      "id": "act_766",
       "type": "intro",
       "items": [
         "lex_up",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_652",
+      "id": "act_767",
       "type": "listen-choose",
       "items": [
         "lex_up",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_653",
+      "id": "act_768",
       "type": "match",
       "items": [
         "lex_up",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_654",
+      "id": "act_769",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "behind"
           ],
           "hu": "Hétfőn a piacra megyek."
+        }
+      ]
+    },
+    {
+      "id": "act_770",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_up",
+          "text": "I get ___ at seven.",
+          "answer": "up",
+          "accepted": [
+            "up",
+            "up",
+            "up"
+          ],
+          "options": [
+            "up",
+            "straight",
+            "first",
+            "then"
+          ],
+          "hu": "Hétkor kelek."
         },
         {
+          "id": "lex_down",
+          "text": "Please sit ___.",
+          "answer": "down",
+          "accepted": [
+            "down",
+            "down",
+            "down"
+          ],
+          "options": [
+            "down",
+            "straight",
+            "first",
+            "then"
+          ],
+          "hu": "Kérlek, ülj le."
+        },
+        {
+          "id": "lex_to",
+          "text": "I go ___ the market on Monday.",
+          "answer": "to",
+          "accepted": [
+            "to",
+            "to",
+            "to"
+          ],
+          "options": [
+            "to",
+            "over",
+            "behind",
+            "into"
+          ],
+          "hu": "Hétfőn a piacra megyek."
+        },
+        {
+          "id": "lex_by",
           "text": "I travel ___ train.",
           "answer": "by",
+          "accepted": [
+            "by",
+            "by",
+            "by"
+          ],
           "options": [
             "by",
             "from",
-            "in"
+            "in",
+            "on"
           ],
           "hu": "Vonattal utazom."
         }
       ]
     },
     {
-      "id": "act_655",
+      "id": "act_771",
       "type": "typed",
       "items": [
         "lex_up",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_656",
+      "id": "act_772",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +207,12 @@
       ]
     },
     {
-      "id": "act_657",
+      "id": "act_773",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_658",
+      "id": "act_774",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

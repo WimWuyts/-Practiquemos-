@@ -56,7 +56,27 @@ window.M = window.M || {};
   };
 
   // ---- text matching for typed answers ----
-  function norm(s) { return String(s || "").toLowerCase().replace(/[’']/g, "'").replace(/[.,!?;:"]/g, "").replace(/\s+/g, " ").trim(); }
+  // Forgiving on purpose: a 70+ learner on a real keyboard should never be punished
+  // for a stray accent, British/US spelling, a hyphen, or a single-key slip.
+  var BRIT_US = [
+    ["colour", "color"], ["favourite", "favorite"], ["neighbour", "neighbor"], ["flavour", "flavor"],
+    ["centre", "center"], ["theatre", "theater"], ["metre", "meter"], ["litre", "liter"],
+    ["realise", "realize"], ["organise", "organize"], ["recognise", "recognize"], ["apologise", "apologize"],
+    ["travelling", "traveling"], ["cancelled", "canceled"], ["grey", "gray"], ["practise", "practice"],
+    ["mum", "mom"], ["aeroplane", "airplane"],
+  ];
+  function norm(s) {
+    var t = String(s || "").toLowerCase()
+      .normalize("NFD").replace(/[̀-ͯ]/g, "")   // strip diacritics (á→a, é→e)
+      .replace(/[’']/g, "'").replace(/[.,!?;:"]/g, "")
+      .replace(/[-–—]/g, " ")                    // hyphen/dash → space (re-book ≈ rebook)
+      .replace(/\s+/g, " ").trim();
+    // normalise British/US spelling to a single canonical form, both directions
+    BRIT_US.forEach(function (p) {
+      t = (" " + t + " ").split(" " + p[1] + " ").join(" " + p[0] + " ").trim();
+    });
+    return t;
+  }
   function lev(a, b) {
     var m = a.length, n = b.length, d = [];
     for (var i = 0; i <= m; i++) d[i] = [i];
@@ -73,9 +93,17 @@ window.M = window.M || {};
       return (accepted || []).some(function (t) {
         var b = norm(t); if (!b) return false;
         if (a === b) return true;
-        var tol = b.length <= 4 ? 0 : b.length <= 8 ? 1 : 2;
+        // one slip is always forgiven, even on short words; longer words allow more.
+        // Kept tight enough that distinct short words (home/house, cat/cut) don't collide.
+        var tol = b.length <= 4 ? 1 : b.length <= 8 ? 2 : 3;
         return lev(a, b) <= tol;
       });
+    },
+    // strict-but-fair: normalised equality (case/accent/punct/spelling-variant tolerant)
+    // but NOT typo-tolerant — for grammar forms where teach≠teaches is the whole point.
+    exact: function (input, accepted) {
+      var a = norm(input); if (!a) return false;
+      return (accepted || []).some(function (t) { return norm(t) === a; });
     },
     // intent: any keyword group present
     hasKeyword: function (input, keywords) {

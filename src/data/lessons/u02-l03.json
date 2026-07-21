@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_95",
+      "id": "act_119",
       "type": "intro",
       "items": [
         "lex_nephew",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_96",
+      "id": "act_120",
       "type": "listen-choose",
       "items": [
         "lex_nephew",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "act_97",
+      "id": "act_121",
       "type": "match",
       "items": [
         "lex_nephew",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "act_98",
+      "id": "act_122",
       "type": "gapfill",
       "items": [
         {
@@ -102,21 +102,89 @@
             "mother"
           ],
           "hu": "(nagybácsi)"
+        }
+      ]
+    },
+    {
+      "id": "act_123",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_nephew",
+          "text": "This is a ___.",
+          "answer": "nephew",
+          "accepted": [
+            "nephew",
+            "nephew",
+            "nephews",
+            "nephew"
+          ],
+          "options": [
+            "nephew",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(unokaöcs)"
         },
         {
+          "id": "lex_aunt",
+          "text": "This is an ___.",
+          "answer": "aunt",
+          "accepted": [
+            "aunt",
+            "aunt",
+            "aunts",
+            "aunt"
+          ],
+          "options": [
+            "aunt",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(nagynéni)"
+        },
+        {
+          "id": "lex_uncle",
+          "text": "This is an ___.",
+          "answer": "uncle",
+          "accepted": [
+            "uncle",
+            "uncle",
+            "uncles",
+            "uncle"
+          ],
+          "options": [
+            "uncle",
+            "family",
+            "mother",
+            "father"
+          ],
+          "hu": "(nagybácsi)"
+        },
+        {
+          "id": "lex_grandmother",
           "text": "This is a ___.",
           "answer": "grandmother",
+          "accepted": [
+            "grandmother",
+            "grandmother",
+            "grandmothers",
+            "grandmother"
+          ],
           "options": [
             "grandmother",
             "family",
-            "mother"
+            "mother",
+            "father"
           ],
           "hu": "(nagymama)"
         }
       ]
     },
     {
-      "id": "act_99",
+      "id": "act_124",
       "type": "reorder",
       "sentences": [
         {
@@ -126,7 +194,7 @@
       ]
     },
     {
-      "id": "act_100",
+      "id": "act_125",
       "type": "typed",
       "items": [
         "lex_nephew",
@@ -137,7 +205,7 @@
       ]
     },
     {
-      "id": "act_101",
+      "id": "act_126",
       "type": "say-it",
       "phrases": [
         {
@@ -147,12 +215,12 @@
       ]
     },
     {
-      "id": "act_102",
+      "id": "act_127",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_103",
+      "id": "act_128",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

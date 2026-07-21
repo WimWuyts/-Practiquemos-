@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_230",
+      "id": "act_278",
       "type": "intro",
       "items": [
         "lex_flat",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_231",
+      "id": "act_279",
       "type": "listen-choose",
       "items": [
         "lex_flat",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_232",
+      "id": "act_280",
       "type": "match",
       "items": [
         "lex_flat",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_233",
+      "id": "act_281",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,91 @@
             "get up"
           ],
           "hu": "(kapni / szerezni)"
+        }
+      ]
+    },
+    {
+      "id": "act_282",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_flat",
+          "text": "This is a ___.",
+          "answer": "flat",
+          "accepted": [
+            "flat",
+            "flat",
+            "flats",
+            "flat"
+          ],
+          "options": [
+            "flat",
+            "home",
+            "house",
+            "room"
+          ],
+          "hu": "(lakás)"
         },
         {
+          "id": "lex_put",
+          "text": "I ___ every day.",
+          "answer": "put",
+          "accepted": [
+            "put",
+            "put",
+            "puts",
+            "put"
+          ],
+          "options": [
+            "put",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "(tenni)"
+        },
+        {
+          "id": "lex_get",
+          "text": "I ___ every day.",
+          "answer": "get",
+          "accepted": [
+            "get",
+            "get",
+            "gets",
+            "got",
+            "get"
+          ],
+          "options": [
+            "get",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "(kapni / szerezni)"
+        },
+        {
+          "id": "lex_wash",
           "text": "I ___ every day.",
           "answer": "wash",
+          "accepted": [
+            "wash",
+            "wash",
+            "washes",
+            "washed",
+            "wash"
+          ],
           "options": [
             "wash",
             "work",
-            "get up"
+            "get up",
+            "wake up"
           ],
           "hu": "(mosni / mosakodni)"
         }
       ]
     },
     {
-      "id": "act_234",
+      "id": "act_283",
       "type": "typed",
       "items": [
         "lex_flat",
@@ -125,7 +195,7 @@
       ]
     },
     {
-      "id": "act_235",
+      "id": "act_284",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +213,7 @@
       ]
     },
     {
-      "id": "act_236",
+      "id": "act_285",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

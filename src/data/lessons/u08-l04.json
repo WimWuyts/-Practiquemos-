@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_532",
+      "id": "act_631",
       "type": "intro",
       "items": [
         "lex_cat",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_533",
+      "id": "act_632",
       "type": "listen-choose",
       "items": [
         "lex_cat",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_534",
+      "id": "act_633",
       "type": "match",
       "items": [
         "lex_cat",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_535",
+      "id": "act_634",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,90 @@
             "music"
           ],
           "hu": "(tehén)"
+        }
+      ]
+    },
+    {
+      "id": "act_635",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_cat",
+          "text": "This is a ___.",
+          "answer": "cat",
+          "accepted": [
+            "cat",
+            "cat",
+            "cats",
+            "cat"
+          ],
+          "options": [
+            "cat",
+            "hobby",
+            "music",
+            "book"
+          ],
+          "hu": "(macska)"
         },
         {
+          "id": "lex_bird",
+          "text": "This is a ___.",
+          "answer": "bird",
+          "accepted": [
+            "bird",
+            "bird",
+            "birds",
+            "bird"
+          ],
+          "options": [
+            "bird",
+            "hobby",
+            "music",
+            "book"
+          ],
+          "hu": "(madár)"
+        },
+        {
+          "id": "lex_cow",
+          "text": "This is a ___.",
+          "answer": "cow",
+          "accepted": [
+            "cow",
+            "cow",
+            "cows",
+            "cow"
+          ],
+          "options": [
+            "cow",
+            "hobby",
+            "music",
+            "book"
+          ],
+          "hu": "(tehén)"
+        },
+        {
+          "id": "lex_run",
           "text": "I ___ every day.",
           "answer": "run",
+          "accepted": [
+            "run",
+            "run",
+            "runs",
+            "ran",
+            "run"
+          ],
           "options": [
             "run",
             "read",
-            "swim"
+            "swim",
+            "dance"
           ],
           "hu": "(futni)"
         }
       ]
     },
     {
-      "id": "act_536",
+      "id": "act_636",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +202,7 @@
       ]
     },
     {
-      "id": "act_537",
+      "id": "act_637",
       "type": "typed",
       "items": [
         "lex_cat",
@@ -144,7 +213,7 @@
       ]
     },
     {
-      "id": "act_538",
+      "id": "act_638",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +235,12 @@
       ]
     },
     {
-      "id": "act_539",
+      "id": "act_639",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_540",
+      "id": "act_640",
       "type": "minimal-pair",
       "focusId": "snd_th"
     }

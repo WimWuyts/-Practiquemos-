@@ -225,7 +225,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_592",
+      "id": "act_699",
       "type": "intro",
       "items": [
         "lex_street",
@@ -239,7 +239,7 @@
       ]
     },
     {
-      "id": "act_593",
+      "id": "act_700",
       "type": "listen-choose",
       "items": [
         "lex_street",
@@ -251,7 +251,7 @@
       ]
     },
     {
-      "id": "act_594",
+      "id": "act_701",
       "type": "icon-choice",
       "items": [
         "lex_bus",
@@ -261,7 +261,7 @@
       ]
     },
     {
-      "id": "act_595",
+      "id": "act_702",
       "type": "match",
       "items": [
         "lex_street",
@@ -273,18 +273,50 @@
       ]
     },
     {
-      "id": "act_596",
+      "id": "act_703",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_597",
+      "id": "act_704",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ left at the corner.",
+          "answer": "Turn",
+          "options": [
+            "Turn",
+            "Turning"
+          ],
+          "hu": "A sarkon fordulj balra."
+        }
+      ]
+    },
+    {
+      "id": "act_705",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Please ___ your microphone on.",
+          "accepted": [
+            "turn"
+          ],
+          "hint": {
+            "en": "instruction → base verb",
+            "hu": "utasítás → alapige"
+          },
+          "hu": "Kérlek, kapcsold be a mikrofont."
+        }
+      ]
+    },
+    {
+      "id": "act_706",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "station"
     },
     {
-      "id": "act_598",
+      "id": "act_707",
       "type": "gapfill",
       "items": [
         {
@@ -316,21 +348,89 @@
             "train"
           ],
           "hu": "Melyik busz megy a központba?"
+        }
+      ]
+    },
+    {
+      "id": "act_708",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_street",
+          "text": "I live on a quiet ___.",
+          "answer": "street",
+          "accepted": [
+            "street",
+            "street",
+            "streets",
+            "street"
+          ],
+          "options": [
+            "street",
+            "left",
+            "right",
+            "town"
+          ],
+          "hu": "Egy csendes utcában lakom."
         },
         {
+          "id": "lex_station",
+          "text": "This is a ___.",
+          "answer": "station",
+          "accepted": [
+            "station",
+            "station",
+            "stations",
+            "station"
+          ],
+          "options": [
+            "station",
+            "bus",
+            "train",
+            "car"
+          ],
+          "hu": "(állomás / megálló)"
+        },
+        {
+          "id": "lex_bus",
+          "text": "Which ___ goes to the centre?",
+          "answer": "bus",
+          "accepted": [
+            "bus",
+            "bus",
+            "buses",
+            "bus"
+          ],
+          "options": [
+            "bus",
+            "station",
+            "train",
+            "car"
+          ],
+          "hu": "Melyik busz megy a központba?"
+        },
+        {
+          "id": "lex_train",
           "text": "The ___ is very fast.",
           "answer": "train",
+          "accepted": [
+            "train",
+            "train",
+            "trains",
+            "train"
+          ],
           "options": [
             "train",
             "station",
-            "bus"
+            "bus",
+            "car"
           ],
           "hu": "A vonat nagyon gyors."
         }
       ]
     },
     {
-      "id": "act_599",
+      "id": "act_709",
       "type": "reorder",
       "sentences": [
         {
@@ -344,7 +444,7 @@
       ]
     },
     {
-      "id": "act_600",
+      "id": "act_710",
       "type": "typed",
       "items": [
         "lex_street",
@@ -355,7 +455,7 @@
       ]
     },
     {
-      "id": "act_601",
+      "id": "act_711",
       "type": "say-it",
       "phrases": [
         {
@@ -377,17 +477,17 @@
       ]
     },
     {
-      "id": "act_602",
+      "id": "act_712",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_603",
+      "id": "act_713",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_604",
+      "id": "act_714",
       "type": "review",
       "items": [
         "lex_time",

@@ -12,6 +12,7 @@ import { CHUNKS } from "./chunks-source.mjs";
 import { EXTRA_CHUNKS } from "./chunks-extra.mjs";
 import { EXTRA_CHUNKS2 } from "./chunks-extra2.mjs";
 import { GRAMMAR } from "./grammar-source.mjs";
+import { GRAMMAR_PRACTICE } from "./grammar-practice-source.mjs";
 import { SPELLING_FAMILIES, SOUND_FOCUS, PATH } from "./pronunciation-source.mjs";
 import { DIALOGUES } from "./dialogues-source.mjs";
 import { EXAMPLES } from "./examples-source.mjs";
@@ -184,8 +185,10 @@ const grammar = GRAMMAR.map(([id, unit, tEn, tHu, purpose, exEn, exHu, examples,
   explanation: { en: exEn, hu: exHu },
   examples: examples.map(([en, hu]) => ({ en, hu })),
   useWhen: { en: useWhen }, check: { question: checkQ, answer: checkA },
+  practice: GRAMMAR_PRACTICE[id] || [],
   appearsIn: [], needsReview: true,
 }));
+const grammarById = Object.fromEntries(grammar.map((g) => [g.id, g]));
 write(join(DATA, "grammar.json"), grammar);
 
 // ---------- Pronunciation ----------
@@ -348,6 +351,29 @@ function gapfillFrom(lx) {
   return { text: ex.replace(re, "___"), answer: lx.headword, options: opts, hu: (lx.examples[0].hu || "") };
 }
 
+// Typed word-fill: blank the exact surface form of the word in its own example sentence.
+// Accepts the headword + all acceptedForms + the surface form; carries options for the
+// "tap instead" fallback. Derived — no authoring needed (every productive word has an example).
+function wordFillFrom(lx) {
+  const ex = lx.examples && lx.examples[0] && lx.examples[0].en;
+  if (!ex) return null;
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const forms = [lx.headword].concat(lx.acceptedForms || []);
+  let re = null, surface = null;
+  for (const f of forms) {
+    const r = new RegExp("\\b" + esc(f) + "\\b", "i");
+    const m = ex.match(r);
+    if (m) { re = r; surface = m[0]; break; }
+  }
+  if (!surface) return null;
+  // avoid trivially short gaps that are hard to guess ("a", "is") unless they carry meaning
+  const options = [surface].concat((lx.distractors || []).slice(0, 3));
+  return {
+    id: lx.id, text: ex.replace(re, "___"), answer: surface,
+    accepted: forms.concat([surface]), options, hu: (lx.examples[0].hu || ""),
+  };
+}
+
 function activitiesFor(lesson) {
   const acts = [];
   const newLex = (lexByLesson[lesson.id] || []).filter((l) => l.status === "productive");
@@ -365,16 +391,27 @@ function activitiesFor(lesson) {
   if (iconable.length >= 4) acts.push(A("icon-choice", { items: iconable.slice(0, 5).map((l) => l.id) }));
   // 4. Word-to-meaning match
   if (newLex.length >= 3) acts.push(A("match", { items: newLex.slice(0, 6).map((l) => l.id) }));
-  // 5. Grammar card(s)
-  for (const g of lesson.grammar) acts.push(A("grammar", { grammarId: g }));
+  // 5. Grammar card(s) — teach, then apply a couple of items productively
+  for (const gid of lesson.grammar) {
+    acts.push(A("grammar", { grammarId: gid }));
+    const bank = grammarById[gid] ? grammarById[gid].practice || [] : [];
+    const forms = bank.filter((x) => x.kind === "form").slice(0, 2)
+      .map((f) => ({ text: f.text, answer: f.answer, options: f.options, hu: f.hu }));
+    if (forms.length) acts.push(A("gapfill", { items: forms }));
+    const typ = bank.find((x) => x.kind === "type");
+    if (typ) acts.push(A("gr-type", { items: [{ text: typ.text, accepted: typ.accepted, hint: typ.hint, hu: typ.hu }] }));
+  }
   // 6. Spelling-family builder (sound & spelling)
   const famWord = newLex.find((l) => l.spellingFamily);
   if (famWord) acts.push(A("spelling-build", { family: famWord.spellingFamily, word: famWord.headword }));
 
   // ---- PART 2: produce it (write & SPEAK — the second half is production) ----
-  // 7. Gap-fill (apply a word in a real sentence)
-  const gaps = newLex.map(gapfillFrom).filter(Boolean).slice(0, 4);
+  // 7. Gap-fill (apply a word in a real sentence — a gentle tap warm-up)
+  const gaps = newLex.map(gapfillFrom).filter(Boolean).slice(0, 3);
   if (gaps.length >= 2) acts.push(A("gapfill", { items: gaps }));
+  // 7b. Word-fill — TYPE the missing word in a real sentence (production by writing)
+  const fills = newLex.map(wordFillFrom).filter(Boolean).slice(0, 4);
+  if (fills.length >= 1) acts.push(A("word-fill", { items: fills }));
   // 8. Reorder a useful sentence (from chunks) — build language
   const reord = newChunks.map((c) => ({ en: c.en, hu: c.hu })).filter((s) => { const n = s.en.replace(/[.?!]$/, "").split(" ").length; return n >= 3 && n <= 7; }).slice(0, 2);
   if (reord.length) acts.push(A("reorder", { sentences: reord }));
@@ -441,7 +478,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.7.0", schemaVersion: 1,
+  id: "marta_english", version: "1.8.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

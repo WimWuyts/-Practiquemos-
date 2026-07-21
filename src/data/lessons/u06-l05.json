@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_389",
+      "id": "act_466",
       "type": "intro",
       "items": [
         "lex_thirty",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_390",
+      "id": "act_467",
       "type": "listen-choose",
       "items": [
         "lex_thirty",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_391",
+      "id": "act_468",
       "type": "match",
       "items": [
         "lex_thirty",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_392",
+      "id": "act_469",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,85 @@
             "two"
           ],
           "hu": "(nulla)"
+        }
+      ]
+    },
+    {
+      "id": "act_470",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_thirty",
+          "text": "I have ___ friends.",
+          "answer": "thirty",
+          "accepted": [
+            "thirty",
+            "thirty",
+            "thirty"
+          ],
+          "options": [
+            "thirty",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(harminc)"
         },
         {
+          "id": "lex_hundred",
+          "text": "I have ___ friends.",
+          "answer": "hundred",
+          "accepted": [
+            "hundred",
+            "hundred",
+            "hundred"
+          ],
+          "options": [
+            "hundred",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(száz)"
+        },
+        {
+          "id": "lex_zero",
+          "text": "I have ___ friends.",
+          "answer": "zero",
+          "accepted": [
+            "zero",
+            "zero",
+            "zero"
+          ],
+          "options": [
+            "zero",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(nulla)"
+        },
+        {
+          "id": "lex_thirteen",
           "text": "I have ___ friends.",
           "answer": "thirteen",
+          "accepted": [
+            "thirteen",
+            "thirteen",
+            "thirteen"
+          ],
           "options": [
             "thirteen",
             "one",
-            "two"
+            "two",
+            "three"
           ],
           "hu": "(tizenhárom)"
         }
       ]
     },
     {
-      "id": "act_393",
+      "id": "act_471",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +197,7 @@
       ]
     },
     {
-      "id": "act_394",
+      "id": "act_472",
       "type": "typed",
       "items": [
         "lex_thirty",
@@ -144,7 +208,7 @@
       ]
     },
     {
-      "id": "act_395",
+      "id": "act_473",
       "type": "say-it",
       "phrases": [
         {
@@ -166,7 +230,7 @@
       ]
     },
     {
-      "id": "act_396",
+      "id": "act_474",
       "type": "pron-record",
       "focusId": "str_word"
     }

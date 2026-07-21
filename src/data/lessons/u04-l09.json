@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_237",
+      "id": "act_286",
       "type": "intro",
       "items": [
         "lex_dirty",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_238",
+      "id": "act_287",
       "type": "listen-choose",
       "items": [
         "lex_dirty",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_239",
+      "id": "act_288",
       "type": "match",
       "items": [
         "lex_dirty",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_240",
+      "id": "act_289",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,87 @@
             "any"
           ],
           "hu": "(minden)"
+        }
+      ]
+    },
+    {
+      "id": "act_290",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_dirty",
+          "text": "It is very ___.",
+          "answer": "dirty",
+          "accepted": [
+            "dirty",
+            "dirty",
+            "dirty"
+          ],
+          "options": [
+            "dirty",
+            "my",
+            "your",
+            "retired"
+          ],
+          "hu": "(piszkos)"
         },
         {
+          "id": "lex_out",
+          "text": "Let's go ___ for a walk.",
+          "answer": "out",
+          "accepted": [
+            "out",
+            "out",
+            "out"
+          ],
+          "options": [
+            "out",
+            "always",
+            "usually",
+            "often"
+          ],
+          "hu": "Menjünk ki sétálni."
+        },
+        {
+          "id": "lex_every",
+          "text": "___ — a useful word.",
+          "answer": "Every",
+          "accepted": [
+            "every",
+            "every",
+            "Every"
+          ],
+          "options": [
+            "Every",
+            "some",
+            "any",
+            "much"
+          ],
+          "hu": "(minden)"
+        },
+        {
+          "id": "lex_move",
           "text": "I ___ every day.",
           "answer": "move",
+          "accepted": [
+            "move",
+            "move",
+            "moves",
+            "moved",
+            "move"
+          ],
           "options": [
             "move",
             "work",
-            "get up"
+            "get up",
+            "wake up"
           ],
           "hu": "(mozogni / költözni)"
         }
       ]
     },
     {
-      "id": "act_241",
+      "id": "act_291",
       "type": "typed",
       "items": [
         "lex_dirty",
@@ -125,7 +191,7 @@
       ]
     },
     {
-      "id": "act_242",
+      "id": "act_292",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +209,7 @@
       ]
     },
     {
-      "id": "act_243",
+      "id": "act_293",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     }

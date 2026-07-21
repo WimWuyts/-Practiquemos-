@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_484",
+      "id": "act_574",
       "type": "intro",
       "items": [
         "lex_tell",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_485",
+      "id": "act_575",
       "type": "listen-choose",
       "items": [
         "lex_tell",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_486",
+      "id": "act_576",
       "type": "match",
       "items": [
         "lex_tell",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_487",
+      "id": "act_577",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,91 @@
             "hear"
           ],
           "hu": "(küldeni)"
+        }
+      ]
+    },
+    {
+      "id": "act_578",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_tell",
+          "text": "I ___ every day.",
+          "answer": "tell",
+          "accepted": [
+            "tell",
+            "tell",
+            "tells",
+            "told",
+            "tell"
+          ],
+          "options": [
+            "tell",
+            "repeat",
+            "understand",
+            "wait"
+          ],
+          "hu": "(mondani (vkinek))"
         },
         {
+          "id": "lex_say",
+          "text": "How do you ___ this in English?",
+          "answer": "say",
+          "accepted": [
+            "say",
+            "say",
+            "says",
+            "said",
+            "say"
+          ],
+          "options": [
+            "say",
+            "repeat",
+            "understand",
+            "wait"
+          ],
+          "hu": "Hogy mondják ezt angolul?"
+        },
+        {
+          "id": "lex_send",
+          "text": "I ___ every day.",
+          "answer": "send",
+          "accepted": [
+            "send",
+            "send",
+            "sends",
+            "sent",
+            "send"
+          ],
+          "options": [
+            "send",
+            "call",
+            "hear",
+            "see"
+          ],
+          "hu": "(küldeni)"
+        },
+        {
+          "id": "lex_wrong",
           "text": "It is very ___.",
           "answer": "wrong",
+          "accepted": [
+            "wrong",
+            "wrong",
+            "wrong"
+          ],
           "options": [
             "wrong",
             "true",
-            "other"
+            "other",
+            "my"
           ],
           "hu": "(rossz / helytelen)"
         }
       ]
     },
     {
-      "id": "act_488",
+      "id": "act_579",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +203,7 @@
       ]
     },
     {
-      "id": "act_489",
+      "id": "act_580",
       "type": "typed",
       "items": [
         "lex_tell",
@@ -144,7 +214,7 @@
       ]
     },
     {
-      "id": "act_490",
+      "id": "act_581",
       "type": "say-it",
       "phrases": [
         {
@@ -166,7 +236,7 @@
       ]
     },
     {
-      "id": "act_491",
+      "id": "act_582",
       "type": "pron-record",
       "focusId": "str_question"
     }

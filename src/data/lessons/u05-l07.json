@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_309",
+      "id": "act_369",
       "type": "intro",
       "items": [
         "lex_delicious",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_310",
+      "id": "act_370",
       "type": "listen-choose",
       "items": [
         "lex_delicious",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_311",
+      "id": "act_371",
       "type": "match",
       "items": [
         "lex_delicious",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_312",
+      "id": "act_372",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,91 @@
             "get up"
           ],
           "hu": "Kérem, adja ide az étlapot."
+        }
+      ]
+    },
+    {
+      "id": "act_373",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_delicious",
+          "text": "It is very ___.",
+          "answer": "delicious",
+          "accepted": [
+            "delicious",
+            "delicious",
+            "delicious"
+          ],
+          "options": [
+            "delicious",
+            "hungry",
+            "thirsty",
+            "full"
+          ],
+          "hu": "(finom)"
         },
         {
+          "id": "lex_taste",
+          "text": "I ___ every day.",
+          "answer": "taste",
+          "accepted": [
+            "taste",
+            "taste",
+            "tastes",
+            "tasted",
+            "taste"
+          ],
+          "options": [
+            "taste",
+            "eat",
+            "drink",
+            "cook"
+          ],
+          "hu": "(íz / ízlelni)"
+        },
+        {
+          "id": "lex_give",
+          "text": "Please ___ me the menu.",
+          "answer": "give",
+          "accepted": [
+            "give",
+            "give",
+            "gives",
+            "gave",
+            "give"
+          ],
+          "options": [
+            "give",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "Kérem, adja ide az étlapot."
+        },
+        {
+          "id": "lex_pay",
           "text": "I ___ every day.",
           "answer": "pay",
+          "accepted": [
+            "pay",
+            "pay",
+            "pays",
+            "paid",
+            "pay"
+          ],
           "options": [
             "pay",
             "buy",
-            "sell"
+            "sell",
+            "cost"
           ],
           "hu": "(fizetni)"
         }
       ]
     },
     {
-      "id": "act_313",
+      "id": "act_374",
       "type": "typed",
       "items": [
         "lex_delicious",
@@ -125,7 +195,7 @@
       ]
     },
     {
-      "id": "act_314",
+      "id": "act_375",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +213,12 @@
       ]
     },
     {
-      "id": "act_315",
+      "id": "act_376",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_316",
+      "id": "act_377",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     }

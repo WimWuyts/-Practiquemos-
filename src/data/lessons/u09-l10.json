@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_675",
+      "id": "act_793",
       "type": "intro",
       "items": [
         "lex_south",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_676",
+      "id": "act_794",
       "type": "listen-choose",
       "items": [
         "lex_south",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_677",
+      "id": "act_795",
       "type": "match",
       "items": [
         "lex_south",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_678",
+      "id": "act_796",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,87 @@
             "left"
           ],
           "hu": "(nyugat)"
+        }
+      ]
+    },
+    {
+      "id": "act_797",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_south",
+          "text": "This is a ___.",
+          "answer": "south",
+          "accepted": [
+            "south",
+            "south",
+            "south"
+          ],
+          "options": [
+            "south",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(dél)"
         },
         {
+          "id": "lex_east",
+          "text": "This is an ___.",
+          "answer": "east",
+          "accepted": [
+            "east",
+            "east",
+            "east"
+          ],
+          "options": [
+            "east",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(kelet)"
+        },
+        {
+          "id": "lex_west",
+          "text": "This is a ___.",
+          "answer": "west",
+          "accepted": [
+            "west",
+            "west",
+            "west"
+          ],
+          "options": [
+            "west",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(nyugat)"
+        },
+        {
+          "id": "lex_pull",
           "text": "I ___ every day.",
           "answer": "pull",
+          "accepted": [
+            "pull",
+            "pull",
+            "pulls",
+            "pulled",
+            "pull"
+          ],
           "options": [
             "pull",
             "work",
-            "get up"
+            "get up",
+            "wake up"
           ],
           "hu": "(húzni)"
         }
       ]
     },
     {
-      "id": "act_679",
+      "id": "act_798",
       "type": "typed",
       "items": [
         "lex_south",
@@ -125,7 +191,7 @@
       ]
     },
     {
-      "id": "act_680",
+      "id": "act_799",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +209,12 @@
       ]
     },
     {
-      "id": "act_681",
+      "id": "act_800",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_682",
+      "id": "act_801",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

@@ -35,7 +35,7 @@
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_702",
+      "id": "act_825",
       "type": "intro",
       "items": [
         "lex_problem",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_703",
+      "id": "act_826",
       "type": "listen-choose",
       "items": [
         "lex_problem",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_704",
+      "id": "act_827",
       "type": "match",
       "items": [
         "lex_problem",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_705",
+      "id": "act_828",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,88 @@
             "hospital"
           ],
           "hu": "(orvos)"
+        }
+      ]
+    },
+    {
+      "id": "act_829",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_problem",
+          "text": "This is a ___.",
+          "answer": "problem",
+          "accepted": [
+            "problem",
+            "problem",
+            "problems",
+            "problem"
+          ],
+          "options": [
+            "problem",
+            "restaurant",
+            "menu",
+            "table"
+          ],
+          "hu": "(probléma / gond)"
         },
         {
+          "id": "lex_excuse_me",
+          "text": "___.",
+          "answer": "Excuse me",
+          "accepted": [
+            "excuse me",
+            "excuse me",
+            "Excuse me"
+          ],
+          "options": [
+            "Excuse me",
+            "still water",
+            "sparkling water",
+            "table for two"
+          ],
+          "hu": "(elnézést)"
+        },
+        {
+          "id": "lex_doctor",
+          "text": "This is a ___.",
+          "answer": "doctor",
+          "accepted": [
+            "doctor",
+            "doctor",
+            "doctors",
+            "doctor"
+          ],
+          "options": [
+            "doctor",
+            "nurse",
+            "hospital",
+            "medicine"
+          ],
+          "hu": "(orvos)"
+        },
+        {
+          "id": "lex_nurse",
           "text": "This is a ___.",
           "answer": "nurse",
+          "accepted": [
+            "nurse",
+            "nurse",
+            "nurses",
+            "nurse"
+          ],
           "options": [
             "nurse",
             "doctor",
-            "hospital"
+            "hospital",
+            "medicine"
           ],
           "hu": "(nővér (ápoló))"
         }
       ]
     },
     {
-      "id": "act_706",
+      "id": "act_830",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +200,7 @@
       ]
     },
     {
-      "id": "act_707",
+      "id": "act_831",
       "type": "typed",
       "items": [
         "lex_problem",
@@ -144,7 +211,7 @@
       ]
     },
     {
-      "id": "act_708",
+      "id": "act_832",
       "type": "say-it",
       "phrases": [
         {
@@ -166,12 +233,12 @@
       ]
     },
     {
-      "id": "act_709",
+      "id": "act_833",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_710",
+      "id": "act_834",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

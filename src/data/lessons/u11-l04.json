@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_758",
+      "id": "act_891",
       "type": "intro",
       "items": [
         "lex_pen",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_759",
+      "id": "act_892",
       "type": "listen-choose",
       "items": [
         "lex_pen",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_760",
+      "id": "act_893",
       "type": "match",
       "items": [
         "lex_pen",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_761",
+      "id": "act_894",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,88 @@
             "student"
           ],
           "hu": "(papír)"
+        }
+      ]
+    },
+    {
+      "id": "act_895",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_pen",
+          "text": "This is a ___.",
+          "answer": "pen",
+          "accepted": [
+            "pen",
+            "pen",
+            "pens",
+            "pen"
+          ],
+          "options": [
+            "pen",
+            "lesson",
+            "student",
+            "word"
+          ],
+          "hu": "(toll)"
         },
         {
+          "id": "lex_pencil",
+          "text": "This is a ___.",
+          "answer": "pencil",
+          "accepted": [
+            "pencil",
+            "pencil",
+            "pencils",
+            "pencil"
+          ],
+          "options": [
+            "pencil",
+            "lesson",
+            "student",
+            "word"
+          ],
+          "hu": "(ceruza)"
+        },
+        {
+          "id": "lex_paper",
+          "text": "This is a ___.",
+          "answer": "paper",
+          "accepted": [
+            "paper",
+            "paper",
+            "paper"
+          ],
+          "options": [
+            "paper",
+            "lesson",
+            "student",
+            "word"
+          ],
+          "hu": "(papír)"
+        },
+        {
+          "id": "lex_page",
           "text": "This is a ___.",
           "answer": "page",
+          "accepted": [
+            "page",
+            "page",
+            "pages",
+            "page"
+          ],
           "options": [
             "page",
             "lesson",
-            "student"
+            "student",
+            "word"
           ],
           "hu": "(oldal)"
         }
       ]
     },
     {
-      "id": "act_762",
+      "id": "act_896",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +200,7 @@
       ]
     },
     {
-      "id": "act_763",
+      "id": "act_897",
       "type": "typed",
       "items": [
         "lex_pen",
@@ -144,7 +211,7 @@
       ]
     },
     {
-      "id": "act_764",
+      "id": "act_898",
       "type": "say-it",
       "phrases": [
         {
@@ -166,7 +233,7 @@
       ]
     },
     {
-      "id": "act_765",
+      "id": "act_899",
       "type": "pron-record",
       "focusId": "str_question"
     }

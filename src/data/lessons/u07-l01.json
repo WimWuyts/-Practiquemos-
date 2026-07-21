@@ -218,7 +218,7 @@
   "conversationId": "dlg_kira_phone",
   "activities": [
     {
-      "id": "act_462",
+      "id": "act_549",
       "type": "intro",
       "items": [
         "lex_call",
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "id": "act_463",
+      "id": "act_550",
       "type": "listen-choose",
       "items": [
         "lex_call",
@@ -244,7 +244,7 @@
       ]
     },
     {
-      "id": "act_464",
+      "id": "act_551",
       "type": "match",
       "items": [
         "lex_call",
@@ -256,18 +256,42 @@
       ]
     },
     {
-      "id": "act_465",
+      "id": "act_552",
       "type": "grammar",
       "grammarId": "gr_object_pronouns"
     },
     {
-      "id": "act_466",
+      "id": "act_553",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "Can you hear ___?",
+          "answer": "me",
+          "options": [
+            "I",
+            "me"
+          ],
+          "hu": "Hallasz engem?"
+        },
+        {
+          "text": "I love my family. I miss ___.",
+          "answer": "them",
+          "options": [
+            "they",
+            "them"
+          ],
+          "hu": "Szeretem a családomat. Hiányoznak."
+        }
+      ]
+    },
+    {
+      "id": "act_554",
       "type": "spelling-build",
       "family": "sf_ph",
       "word": "phone"
     },
     {
-      "id": "act_467",
+      "id": "act_555",
       "type": "gapfill",
       "items": [
         {
@@ -299,21 +323,92 @@
             "see"
           ],
           "hu": "Hallasz engem?"
+        }
+      ]
+    },
+    {
+      "id": "act_556",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_call",
+          "text": "I ___ my niece on Sundays.",
+          "answer": "call",
+          "accepted": [
+            "call",
+            "call",
+            "calls",
+            "called",
+            "call"
+          ],
+          "options": [
+            "call",
+            "hear",
+            "see",
+            "send"
+          ],
+          "hu": "Vasárnaponként hívom az unokahúgomat."
         },
         {
+          "id": "lex_phone",
+          "text": "I use my ___ to call Kira.",
+          "answer": "phone",
+          "accepted": [
+            "phone",
+            "phone",
+            "phones",
+            "phone"
+          ],
+          "options": [
+            "phone",
+            "letter",
+            "news",
+            "message"
+          ],
+          "hu": "A telefonommal hívom Kirát."
+        },
+        {
+          "id": "lex_hear",
+          "text": "Can you ___ me?",
+          "answer": "hear",
+          "accepted": [
+            "hear",
+            "hear",
+            "hears",
+            "heard",
+            "hear"
+          ],
+          "options": [
+            "hear",
+            "call",
+            "see",
+            "send"
+          ],
+          "hu": "Hallasz engem?"
+        },
+        {
+          "id": "lex_see",
           "text": "Can you ___ me?",
           "answer": "see",
+          "accepted": [
+            "see",
+            "see",
+            "sees",
+            "saw",
+            "see"
+          ],
           "options": [
             "see",
             "call",
-            "hear"
+            "hear",
+            "send"
           ],
           "hu": "Látsz engem?"
         }
       ]
     },
     {
-      "id": "act_468",
+      "id": "act_557",
       "type": "reorder",
       "sentences": [
         {
@@ -327,7 +422,7 @@
       ]
     },
     {
-      "id": "act_469",
+      "id": "act_558",
       "type": "typed",
       "items": [
         "lex_call",
@@ -338,7 +433,7 @@
       ]
     },
     {
-      "id": "act_470",
+      "id": "act_559",
       "type": "say-it",
       "phrases": [
         {
@@ -360,17 +455,17 @@
       ]
     },
     {
-      "id": "act_471",
+      "id": "act_560",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_472",
+      "id": "act_561",
       "type": "conversation",
       "dialogueId": "dlg_kira_phone"
     },
     {
-      "id": "act_473",
+      "id": "act_562",
       "type": "review",
       "items": [
         "lex_day",

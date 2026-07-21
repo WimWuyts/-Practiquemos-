@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_580",
+      "id": "act_685",
       "type": "intro",
       "items": [
         "lex_pretty",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_581",
+      "id": "act_686",
       "type": "listen-choose",
       "items": [
         "lex_pretty",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_582",
+      "id": "act_687",
       "type": "match",
       "items": [
         "lex_pretty",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_583",
+      "id": "act_688",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,91 @@
             "swim"
           ],
           "hu": "(mászni)"
+        }
+      ]
+    },
+    {
+      "id": "act_689",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_pretty",
+          "text": "It is very ___.",
+          "answer": "pretty",
+          "accepted": [
+            "pretty",
+            "pretty",
+            "pretty"
+          ],
+          "options": [
+            "pretty",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(csinos / szép)"
         },
         {
+          "id": "lex_ride",
+          "text": "I ___ every day.",
+          "answer": "ride",
+          "accepted": [
+            "ride",
+            "ride",
+            "rides",
+            "rode",
+            "ride"
+          ],
+          "options": [
+            "ride",
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "(lovagolni / biciklizni)"
+        },
+        {
+          "id": "lex_climb",
+          "text": "I ___ every day.",
+          "answer": "climb",
+          "accepted": [
+            "climb",
+            "climb",
+            "climbs",
+            "climbed",
+            "climb"
+          ],
+          "options": [
+            "climb",
+            "read",
+            "swim",
+            "dance"
+          ],
+          "hu": "(mászni)"
+        },
+        {
+          "id": "lex_build",
           "text": "I ___ every day.",
           "answer": "build",
+          "accepted": [
+            "build",
+            "build",
+            "builds",
+            "built",
+            "build"
+          ],
           "options": [
             "build",
             "read",
-            "swim"
+            "swim",
+            "dance"
           ],
           "hu": "(építeni)"
         }
       ]
     },
     {
-      "id": "act_584",
+      "id": "act_690",
       "type": "typed",
       "items": [
         "lex_pretty",
@@ -125,7 +195,7 @@
       ]
     },
     {
-      "id": "act_585",
+      "id": "act_691",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +213,12 @@
       ]
     },
     {
-      "id": "act_586",
+      "id": "act_692",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_587",
+      "id": "act_693",
       "type": "minimal-pair",
       "focusId": "snd_th"
     }

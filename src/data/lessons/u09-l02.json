@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_605",
+      "id": "act_715",
       "type": "intro",
       "items": [
         "lex_left",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_606",
+      "id": "act_716",
       "type": "listen-choose",
       "items": [
         "lex_left",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_607",
+      "id": "act_717",
       "type": "match",
       "items": [
         "lex_left",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_608",
+      "id": "act_718",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "right"
     },
     {
-      "id": "act_609",
+      "id": "act_719",
       "type": "gapfill",
       "items": [
         {
@@ -111,21 +111,85 @@
             "then"
           ],
           "hu": "(egyenesen)"
+        }
+      ]
+    },
+    {
+      "id": "act_720",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_left",
+          "text": "Turn ___ at the corner.",
+          "answer": "left",
+          "accepted": [
+            "left",
+            "left",
+            "left"
+          ],
+          "options": [
+            "left",
+            "street",
+            "right",
+            "town"
+          ],
+          "hu": "A saroknál fordulj balra."
         },
         {
+          "id": "lex_right",
+          "text": "Turn ___ at the church.",
+          "answer": "right",
+          "accepted": [
+            "right",
+            "right",
+            "right"
+          ],
+          "options": [
+            "right",
+            "street",
+            "left",
+            "town"
+          ],
+          "hu": "A templomnál fordulj jobbra."
+        },
+        {
+          "id": "lex_straight",
+          "text": "I speak ___.",
+          "answer": "straight",
+          "accepted": [
+            "straight",
+            "straight",
+            "straight"
+          ],
+          "options": [
+            "straight",
+            "first",
+            "then",
+            "here"
+          ],
+          "hu": "(egyenesen)"
+        },
+        {
+          "id": "lex_near",
           "text": "It is very ___.",
           "answer": "near",
+          "accepted": [
+            "near",
+            "near",
+            "near"
+          ],
           "options": [
             "near",
             "far",
-            "high"
+            "high",
+            "low"
           ],
           "hu": "(közel)"
         }
       ]
     },
     {
-      "id": "act_610",
+      "id": "act_721",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +203,7 @@
       ]
     },
     {
-      "id": "act_611",
+      "id": "act_722",
       "type": "typed",
       "items": [
         "lex_left",
@@ -150,7 +214,7 @@
       ]
     },
     {
-      "id": "act_612",
+      "id": "act_723",
       "type": "say-it",
       "phrases": [
         {
@@ -172,12 +236,12 @@
       ]
     },
     {
-      "id": "act_613",
+      "id": "act_724",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_614",
+      "id": "act_725",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

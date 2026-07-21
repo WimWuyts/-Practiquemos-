@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_643",
+      "id": "act_757",
       "type": "intro",
       "items": [
         "lex_show",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_644",
+      "id": "act_758",
       "type": "listen-choose",
       "items": [
         "lex_show",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_645",
+      "id": "act_759",
       "type": "match",
       "items": [
         "lex_show",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_646",
+      "id": "act_760",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,91 @@
             "catch"
           ],
           "hu": "(változtatni / átszállni)"
+        }
+      ]
+    },
+    {
+      "id": "act_761",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_show",
+          "text": "I ___ every day.",
+          "answer": "show",
+          "accepted": [
+            "show",
+            "show",
+            "shows",
+            "showed",
+            "show"
+          ],
+          "options": [
+            "show",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "(megmutatni)"
         },
         {
+          "id": "lex_drive",
+          "text": "I ___ every day.",
+          "answer": "drive",
+          "accepted": [
+            "drive",
+            "drive",
+            "drives",
+            "drove",
+            "drive"
+          ],
+          "options": [
+            "drive",
+            "change",
+            "catch",
+            "be"
+          ],
+          "hu": "(vezetni (autót))"
+        },
+        {
+          "id": "lex_change",
+          "text": "I ___ every day.",
+          "answer": "change",
+          "accepted": [
+            "change",
+            "change",
+            "changes",
+            "changed",
+            "change"
+          ],
+          "options": [
+            "change",
+            "drive",
+            "catch",
+            "be"
+          ],
+          "hu": "(változtatni / átszállni)"
+        },
+        {
+          "id": "lex_fast",
           "text": "It is very ___.",
           "answer": "fast",
+          "accepted": [
+            "fast",
+            "fast",
+            "fast"
+          ],
           "options": [
             "fast",
             "slow",
-            "my"
+            "my",
+            "your"
           ],
           "hu": "(gyors)"
         }
       ]
     },
     {
-      "id": "act_647",
+      "id": "act_762",
       "type": "typed",
       "items": [
         "lex_show",
@@ -125,7 +195,7 @@
       ]
     },
     {
-      "id": "act_648",
+      "id": "act_763",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +213,12 @@
       ]
     },
     {
-      "id": "act_649",
+      "id": "act_764",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_650",
+      "id": "act_765",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

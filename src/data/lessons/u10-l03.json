@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_711",
+      "id": "act_835",
       "type": "intro",
       "items": [
         "lex_pain",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_712",
+      "id": "act_836",
       "type": "listen-choose",
       "items": [
         "lex_pain",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_713",
+      "id": "act_837",
       "type": "match",
       "items": [
         "lex_pain",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_714",
+      "id": "act_838",
       "type": "gapfill",
       "items": [
         {
@@ -105,21 +105,88 @@
             "nurse"
           ],
           "hu": "(pihenés / pihenni)"
+        }
+      ]
+    },
+    {
+      "id": "act_839",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_pain",
+          "text": "This is a ___.",
+          "answer": "pain",
+          "accepted": [
+            "pain",
+            "pain",
+            "pain"
+          ],
+          "options": [
+            "pain",
+            "doctor",
+            "nurse",
+            "hospital"
+          ],
+          "hu": "(fájdalom)"
         },
         {
+          "id": "lex_better",
+          "text": "It is very ___.",
+          "answer": "better",
+          "accepted": [
+            "better",
+            "better",
+            "better"
+          ],
+          "options": [
+            "better",
+            "ill",
+            "sick",
+            "my"
+          ],
+          "hu": "(jobban / jobb)"
+        },
+        {
+          "id": "lex_rest",
+          "text": "This is a ___.",
+          "answer": "rest",
+          "accepted": [
+            "rest",
+            "rest",
+            "rests",
+            "rested",
+            "rest"
+          ],
+          "options": [
+            "rest",
+            "doctor",
+            "nurse",
+            "hospital"
+          ],
+          "hu": "(pihenés / pihenni)"
+        },
+        {
+          "id": "lex_hurt",
           "text": "I ___ every day.",
           "answer": "hurt",
+          "accepted": [
+            "hurt",
+            "hurt",
+            "hurts",
+            "hurt"
+          ],
           "options": [
             "hurt",
             "be",
-            "have"
+            "have",
+            "speak"
           ],
           "hu": "(fájni)"
         }
       ]
     },
     {
-      "id": "act_715",
+      "id": "act_840",
       "type": "reorder",
       "sentences": [
         {
@@ -133,7 +200,7 @@
       ]
     },
     {
-      "id": "act_716",
+      "id": "act_841",
       "type": "typed",
       "items": [
         "lex_pain",
@@ -144,7 +211,7 @@
       ]
     },
     {
-      "id": "act_717",
+      "id": "act_842",
       "type": "say-it",
       "phrases": [
         {
@@ -166,7 +233,7 @@
       ]
     },
     {
-      "id": "act_718",
+      "id": "act_843",
       "type": "pron-record",
       "focusId": "str_sentence"
     }

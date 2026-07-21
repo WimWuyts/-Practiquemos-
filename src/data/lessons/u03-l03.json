@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_146",
+      "id": "act_177",
       "type": "intro",
       "items": [
         "lex_come",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_147",
+      "id": "act_178",
       "type": "listen-choose",
       "items": [
         "lex_come",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_148",
+      "id": "act_179",
       "type": "match",
       "items": [
         "lex_come",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_149",
+      "id": "act_180",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,87 @@
             "your"
           ],
           "hu": "(alacsony / rövid)"
+        }
+      ]
+    },
+    {
+      "id": "act_181",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_come",
+          "text": "I ___ from Hungary.",
+          "answer": "come",
+          "accepted": [
+            "come",
+            "come",
+            "comes",
+            "came",
+            "come"
+          ],
+          "options": [
+            "come",
+            "speak",
+            "live",
+            "be"
+          ],
+          "hu": "Magyarországról jövök."
         },
         {
+          "id": "lex_tall",
+          "text": "It is very ___.",
+          "answer": "tall",
+          "accepted": [
+            "tall",
+            "tall",
+            "tall"
+          ],
+          "options": [
+            "tall",
+            "my",
+            "your",
+            "retired"
+          ],
+          "hu": "(magas)"
+        },
+        {
+          "id": "lex_short",
+          "text": "It is very ___.",
+          "answer": "short",
+          "accepted": [
+            "short",
+            "short",
+            "short"
+          ],
+          "options": [
+            "short",
+            "my",
+            "your",
+            "retired"
+          ],
+          "hu": "(alacsony / rövid)"
+        },
+        {
+          "id": "lex_kind",
           "text": "It is very ___.",
           "answer": "kind",
+          "accepted": [
+            "kind",
+            "kind",
+            "kind"
+          ],
           "options": [
             "kind",
             "my",
-            "your"
+            "your",
+            "retired"
           ],
           "hu": "(kedves)"
         }
       ]
     },
     {
-      "id": "act_150",
+      "id": "act_182",
       "type": "typed",
       "items": [
         "lex_come",
@@ -125,7 +191,7 @@
       ]
     },
     {
-      "id": "act_151",
+      "id": "act_183",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +209,12 @@
       ]
     },
     {
-      "id": "act_152",
+      "id": "act_184",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_153",
+      "id": "act_185",
       "type": "minimal-pair",
       "focusId": "snd_wv"
     }

@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_104",
+      "id": "act_129",
       "type": "intro",
       "items": [
         "lex_this",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_105",
+      "id": "act_130",
       "type": "listen-choose",
       "items": [
         "lex_this",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_106",
+      "id": "act_131",
       "type": "match",
       "items": [
         "lex_this",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_107",
+      "id": "act_132",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "that"
           ],
           "hu": "Ezek az én könyveim."
+        }
+      ]
+    },
+    {
+      "id": "act_133",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_this",
+          "text": "___ is my sister.",
+          "answer": "This",
+          "accepted": [
+            "this",
+            "this",
+            "This"
+          ],
+          "options": [
+            "This",
+            "that",
+            "these",
+            "those"
+          ],
+          "hu": "Ez a nővérem."
         },
         {
-          "text": "___ are Kira's shoes.",
-          "answer": "those",
+          "id": "lex_that",
+          "text": "___ is a lovely photo.",
+          "answer": "That",
+          "accepted": [
+            "that",
+            "that",
+            "That"
+          ],
           "options": [
-            "those",
+            "That",
             "this",
-            "that"
+            "these",
+            "those"
+          ],
+          "hu": "Az egy szép fénykép."
+        },
+        {
+          "id": "lex_these",
+          "text": "___ are my books.",
+          "answer": "These",
+          "accepted": [
+            "these",
+            "these",
+            "These"
+          ],
+          "options": [
+            "These",
+            "this",
+            "that",
+            "those"
+          ],
+          "hu": "Ezek az én könyveim."
+        },
+        {
+          "id": "lex_those",
+          "text": "___ are Kira's shoes.",
+          "answer": "Those",
+          "accepted": [
+            "those",
+            "those",
+            "Those"
+          ],
+          "options": [
+            "Those",
+            "this",
+            "that",
+            "these"
           ],
           "hu": "Azok Kira cipői."
         }
       ]
     },
     {
-      "id": "act_108",
+      "id": "act_134",
       "type": "typed",
       "items": [
         "lex_this",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_109",
+      "id": "act_135",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +207,7 @@
       ]
     },
     {
-      "id": "act_110",
+      "id": "act_136",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     }

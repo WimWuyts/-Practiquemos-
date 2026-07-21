@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_301",
+      "id": "act_360",
       "type": "intro",
       "items": [
         "lex_orange",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_302",
+      "id": "act_361",
       "type": "listen-choose",
       "items": [
         "lex_orange",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_303",
+      "id": "act_362",
       "type": "match",
       "items": [
         "lex_orange",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_304",
+      "id": "act_363",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,88 @@
             "water"
           ],
           "hu": "(szendvics)"
+        }
+      ]
+    },
+    {
+      "id": "act_364",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_orange",
+          "text": "This is an ___.",
+          "answer": "orange",
+          "accepted": [
+            "orange",
+            "orange",
+            "oranges",
+            "orange"
+          ],
+          "options": [
+            "orange",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(narancs)"
         },
         {
+          "id": "lex_banana",
+          "text": "This is a ___.",
+          "answer": "banana",
+          "accepted": [
+            "banana",
+            "banana",
+            "bananas",
+            "banana"
+          ],
+          "options": [
+            "banana",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(banán)"
+        },
+        {
+          "id": "lex_sandwich",
+          "text": "This is a ___.",
+          "answer": "sandwich",
+          "accepted": [
+            "sandwich",
+            "sandwich",
+            "sandwiches",
+            "sandwich"
+          ],
+          "options": [
+            "sandwich",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(szendvics)"
+        },
+        {
+          "id": "lex_juice",
           "text": "I like ___.",
           "answer": "juice",
+          "accepted": [
+            "juice",
+            "juice",
+            "juice"
+          ],
           "options": [
             "juice",
             "food",
-            "water"
+            "water",
+            "coffee"
           ],
           "hu": "(gyümölcslé)"
         }
       ]
     },
     {
-      "id": "act_305",
+      "id": "act_365",
       "type": "typed",
       "items": [
         "lex_orange",
@@ -125,7 +192,7 @@
       ]
     },
     {
-      "id": "act_306",
+      "id": "act_366",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +210,12 @@
       ]
     },
     {
-      "id": "act_307",
+      "id": "act_367",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_308",
+      "id": "act_368",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

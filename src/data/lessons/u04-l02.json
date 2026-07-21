@@ -34,7 +34,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_183",
+      "id": "act_223",
       "type": "intro",
       "items": [
         "lex_drink",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_184",
+      "id": "act_224",
       "type": "listen-choose",
       "items": [
         "lex_drink",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_185",
+      "id": "act_225",
       "type": "match",
       "items": [
         "lex_drink",
@@ -72,18 +72,59 @@
       ]
     },
     {
-      "id": "act_186",
+      "id": "act_226",
       "type": "grammar",
       "grammarId": "gr_thereis"
     },
     {
-      "id": "act_187",
+      "id": "act_227",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ three chairs in the kitchen.",
+          "answer": "There are",
+          "options": [
+            "There is",
+            "There are"
+          ],
+          "hu": "Három szék van a konyhában."
+        },
+        {
+          "text": "___ a problem with my laptop.",
+          "answer": "There is",
+          "options": [
+            "There is",
+            "There are"
+          ],
+          "hu": "Van egy gond a laptopommal."
+        }
+      ]
+    },
+    {
+      "id": "act_228",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "___ a lot of people at the airport.",
+          "accepted": [
+            "there are"
+          ],
+          "hint": {
+            "en": "plural → there are",
+            "hu": "többes szám → there are"
+          },
+          "hu": "Sok ember van a reptéren."
+        }
+      ]
+    },
+    {
+      "id": "act_229",
       "type": "spelling-build",
       "family": "sf_ea",
       "word": "read"
     },
     {
-      "id": "act_188",
+      "id": "act_230",
       "type": "gapfill",
       "items": [
         {
@@ -115,21 +156,92 @@
             "get up"
           ],
           "hu": "Hétfőn piacra megyek."
+        }
+      ]
+    },
+    {
+      "id": "act_231",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_drink",
+          "text": "I ___ coffee in the morning.",
+          "answer": "drink",
+          "accepted": [
+            "drink",
+            "drink",
+            "drinks",
+            "drank",
+            "drink"
+          ],
+          "options": [
+            "drink",
+            "eat",
+            "cook",
+            "make"
+          ],
+          "hu": "Reggel kávét iszom."
         },
         {
+          "id": "lex_sleep",
+          "text": "I ___ every day.",
+          "answer": "sleep",
+          "accepted": [
+            "sleep",
+            "sleep",
+            "sleeps",
+            "slept",
+            "sleep"
+          ],
+          "options": [
+            "sleep",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "(aludni)"
+        },
+        {
+          "id": "lex_go",
+          "text": "I ___ to the market on Monday.",
+          "answer": "go",
+          "accepted": [
+            "go",
+            "go",
+            "goes",
+            "went",
+            "go"
+          ],
+          "options": [
+            "go",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "Hétfőn piacra megyek."
+        },
+        {
+          "id": "lex_read",
           "text": "I like to ___ in the evening.",
           "answer": "read",
+          "accepted": [
+            "read",
+            "read",
+            "reads",
+            "read"
+          ],
           "options": [
             "read",
             "swim",
-            "dance"
+            "dance",
+            "sing"
           ],
           "hu": "Este szeretek olvasni."
         }
       ]
     },
     {
-      "id": "act_189",
+      "id": "act_232",
       "type": "reorder",
       "sentences": [
         {
@@ -139,7 +251,7 @@
       ]
     },
     {
-      "id": "act_190",
+      "id": "act_233",
       "type": "typed",
       "items": [
         "lex_drink",
@@ -150,7 +262,7 @@
       ]
     },
     {
-      "id": "act_191",
+      "id": "act_234",
       "type": "say-it",
       "phrases": [
         {
@@ -160,7 +272,7 @@
       ]
     },
     {
-      "id": "act_192",
+      "id": "act_235",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

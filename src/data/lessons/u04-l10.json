@@ -24,7 +24,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_244",
+      "id": "act_294",
       "type": "intro",
       "items": [
         "lex_outside",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "id": "act_245",
+      "id": "act_295",
       "type": "listen-choose",
       "items": [
         "lex_outside",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "act_246",
+      "id": "act_296",
       "type": "gapfill",
       "items": [
         {
@@ -66,7 +66,47 @@
       ]
     },
     {
-      "id": "act_247",
+      "id": "act_297",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_outside",
+          "text": "I speak ___.",
+          "answer": "outside",
+          "accepted": [
+            "outside",
+            "outside",
+            "outside"
+          ],
+          "options": [
+            "outside",
+            "inside",
+            "upstairs",
+            "downstairs"
+          ],
+          "hu": "(kint)"
+        },
+        {
+          "id": "lex_inside",
+          "text": "I speak ___.",
+          "answer": "inside",
+          "accepted": [
+            "inside",
+            "inside",
+            "inside"
+          ],
+          "options": [
+            "inside",
+            "outside",
+            "upstairs",
+            "downstairs"
+          ],
+          "hu": "(bent)"
+        }
+      ]
+    },
+    {
+      "id": "act_298",
       "type": "typed",
       "items": [
         "lex_outside",
@@ -74,7 +114,7 @@
       ]
     },
     {
-      "id": "act_248",
+      "id": "act_299",
       "type": "say-it",
       "phrases": [
         {
@@ -88,7 +128,7 @@
       ]
     },
     {
-      "id": "act_249",
+      "id": "act_300",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

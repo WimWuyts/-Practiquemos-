@@ -42,7 +42,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_719",
+      "id": "act_844",
       "type": "intro",
       "items": [
         "lex_choose",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_720",
+      "id": "act_845",
       "type": "listen-choose",
       "items": [
         "lex_choose",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "id": "act_721",
+      "id": "act_846",
       "type": "match",
       "items": [
         "lex_choose",
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "id": "act_722",
+      "id": "act_847",
       "type": "gapfill",
       "items": [
         {
@@ -104,21 +104,89 @@
             "be"
           ],
           "hu": "(eltörni)"
+        }
+      ]
+    },
+    {
+      "id": "act_848",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_choose",
+          "text": "I ___ every day.",
+          "answer": "choose",
+          "accepted": [
+            "choose",
+            "choose",
+            "chooses",
+            "chose",
+            "choose"
+          ],
+          "options": [
+            "choose",
+            "order",
+            "help",
+            "fill"
+          ],
+          "hu": "(választani)"
         },
         {
+          "id": "lex_closed",
+          "text": "It is very ___.",
+          "answer": "closed",
+          "accepted": [
+            "closed",
+            "closed",
+            "closed"
+          ],
+          "options": [
+            "closed",
+            "vegetarian",
+            "my",
+            "your"
+          ],
+          "hu": "(zárva)"
+        },
+        {
+          "id": "lex_break",
+          "text": "I ___ every day.",
+          "answer": "break",
+          "accepted": [
+            "break",
+            "break",
+            "breaks",
+            "broke",
+            "break"
+          ],
+          "options": [
+            "break",
+            "knock",
+            "be",
+            "have"
+          ],
+          "hu": "(eltörni)"
+        },
+        {
+          "id": "lex_comfortable",
           "text": "It is very ___.",
           "answer": "comfortable",
+          "accepted": [
+            "comfortable",
+            "comfortable",
+            "comfortable"
+          ],
           "options": [
             "comfortable",
             "happy",
-            "afraid"
+            "afraid",
+            "nervous"
           ],
           "hu": "(kényelmes)"
         }
       ]
     },
     {
-      "id": "act_723",
+      "id": "act_849",
       "type": "reorder",
       "sentences": [
         {
@@ -132,7 +200,7 @@
       ]
     },
     {
-      "id": "act_724",
+      "id": "act_850",
       "type": "typed",
       "items": [
         "lex_choose",
@@ -142,7 +210,7 @@
       ]
     },
     {
-      "id": "act_725",
+      "id": "act_851",
       "type": "say-it",
       "phrases": [
         {
@@ -164,7 +232,7 @@
       ]
     },
     {
-      "id": "act_726",
+      "id": "act_852",
       "type": "pron-record",
       "focusId": "str_word"
     }

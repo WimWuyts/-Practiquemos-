@@ -26,7 +26,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_823",
+      "id": "act_968",
       "type": "intro",
       "items": [
         "lex_decide",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "id": "act_824",
+      "id": "act_969",
       "type": "listen-choose",
       "items": [
         "lex_decide",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_825",
+      "id": "act_970",
       "type": "match",
       "items": [
         "lex_decide",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_826",
+      "id": "act_971",
       "type": "gapfill",
       "items": [
         {
@@ -88,21 +88,91 @@
             "my"
           ],
           "hu": "(nehéz (súly))"
+        }
+      ]
+    },
+    {
+      "id": "act_972",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_decide",
+          "text": "I ___ every day.",
+          "answer": "decide",
+          "accepted": [
+            "decide",
+            "decide",
+            "decides",
+            "decided",
+            "decide"
+          ],
+          "options": [
+            "decide",
+            "meet",
+            "can",
+            "be"
+          ],
+          "hu": "(eldönteni)"
         },
         {
+          "id": "lex_keep",
+          "text": "I ___ every day.",
+          "answer": "keep",
+          "accepted": [
+            "keep",
+            "keep",
+            "keeps",
+            "kept",
+            "keep"
+          ],
+          "options": [
+            "keep",
+            "work",
+            "get up",
+            "wake up"
+          ],
+          "hu": "(megtartani)"
+        },
+        {
+          "id": "lex_heavy",
+          "text": "It is very ___.",
+          "answer": "heavy",
+          "accepted": [
+            "heavy",
+            "heavy",
+            "heavy"
+          ],
+          "options": [
+            "heavy",
+            "local",
+            "my",
+            "your"
+          ],
+          "hu": "(nehéz (súly))"
+        },
+        {
+          "id": "lex_return",
           "text": "I ___ every day.",
           "answer": "return",
+          "accepted": [
+            "return",
+            "return",
+            "returns",
+            "returned",
+            "return"
+          ],
           "options": [
             "return",
             "travel",
-            "need"
+            "need",
+            "bring"
           ],
           "hu": "(visszatérni / visszaadni)"
         }
       ]
     },
     {
-      "id": "act_827",
+      "id": "act_973",
       "type": "typed",
       "items": [
         "lex_decide",
@@ -112,7 +182,7 @@
       ]
     },
     {
-      "id": "act_828",
+      "id": "act_974",
       "type": "say-it",
       "phrases": [
         {
@@ -130,12 +200,12 @@
       ]
     },
     {
-      "id": "act_829",
+      "id": "act_975",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_830",
+      "id": "act_976",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

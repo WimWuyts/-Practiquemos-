@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_317",
+      "id": "act_378",
       "type": "intro",
       "items": [
         "lex_empty",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_318",
+      "id": "act_379",
       "type": "listen-choose",
       "items": [
         "lex_empty",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_319",
+      "id": "act_380",
       "type": "match",
       "items": [
         "lex_empty",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_320",
+      "id": "act_381",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,87 @@
             "pay"
           ],
           "hu": "(kerülni (vmennyibe))"
+        }
+      ]
+    },
+    {
+      "id": "act_382",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_empty",
+          "text": "It is very ___.",
+          "answer": "empty",
+          "accepted": [
+            "empty",
+            "empty",
+            "empty"
+          ],
+          "options": [
+            "empty",
+            "hungry",
+            "thirsty",
+            "delicious"
+          ],
+          "hu": "(üres)"
         },
         {
+          "id": "lex_for",
+          "text": "This is ___ you.",
+          "answer": "for",
+          "accepted": [
+            "for",
+            "for",
+            "for"
+          ],
+          "options": [
+            "for",
+            "about",
+            "with",
+            "of"
+          ],
+          "hu": "Ez neked van."
+        },
+        {
+          "id": "lex_cost",
+          "text": "I ___ every day.",
+          "answer": "cost",
+          "accepted": [
+            "cost",
+            "cost",
+            "costs",
+            "cost"
+          ],
+          "options": [
+            "cost",
+            "buy",
+            "pay",
+            "sell"
+          ],
+          "hu": "(kerülni (vmennyibe))"
+        },
+        {
+          "id": "lex_euro",
           "text": "This is an ___.",
           "answer": "euro",
+          "accepted": [
+            "euro",
+            "euro",
+            "euros",
+            "euro"
+          ],
           "options": [
             "euro",
             "shop",
-            "price"
+            "price",
+            "money"
           ],
           "hu": "(euró)"
         }
       ]
     },
     {
-      "id": "act_321",
+      "id": "act_383",
       "type": "typed",
       "items": [
         "lex_empty",
@@ -125,7 +191,7 @@
       ]
     },
     {
-      "id": "act_322",
+      "id": "act_384",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +209,12 @@
       ]
     },
     {
-      "id": "act_323",
+      "id": "act_385",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_324",
+      "id": "act_386",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

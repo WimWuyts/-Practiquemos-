@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_844",
+      "id": "act_993",
       "type": "intro",
       "items": [
         "lex_desk",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "act_845",
+      "id": "act_994",
       "type": "listen-choose",
       "items": [
         "lex_desk",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": "act_846",
+      "id": "act_995",
       "type": "match",
       "items": [
         "lex_desk",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "id": "act_847",
+      "id": "act_996",
       "type": "gapfill",
       "items": [
         {
@@ -97,21 +97,90 @@
             "need"
           ],
           "hu": "(elveszíteni)"
+        }
+      ]
+    },
+    {
+      "id": "act_997",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_desk",
+          "text": "This is a ___.",
+          "answer": "desk",
+          "accepted": [
+            "desk",
+            "desk",
+            "desks",
+            "desk"
+          ],
+          "options": [
+            "desk",
+            "airport",
+            "flight",
+            "gate"
+          ],
+          "hu": "(pult)"
         },
         {
-          "text": "___.",
-          "answer": "airport bus",
+          "id": "lex_miss",
+          "text": "I ___ every day.",
+          "answer": "miss",
+          "accepted": [
+            "miss",
+            "miss",
+            "misses",
+            "missed",
+            "miss"
+          ],
           "options": [
+            "miss",
+            "travel",
+            "need",
+            "bring"
+          ],
+          "hu": "(lekésni / hiányozni)"
+        },
+        {
+          "id": "lex_lose",
+          "text": "I ___ every day.",
+          "answer": "lose",
+          "accepted": [
+            "lose",
+            "lose",
+            "loses",
+            "lost",
+            "lose"
+          ],
+          "options": [
+            "lose",
+            "travel",
+            "need",
+            "bring"
+          ],
+          "hu": "(elveszíteni)"
+        },
+        {
+          "id": "lex_airport_bus",
+          "text": "___.",
+          "answer": "Airport bus",
+          "accepted": [
             "airport bus",
+            "airport bus",
+            "Airport bus"
+          ],
+          "options": [
+            "Airport bus",
             "return ticket",
-            "single ticket"
+            "single ticket",
+            "platform number"
           ],
           "hu": "(reptéri busz)"
         }
       ]
     },
     {
-      "id": "act_848",
+      "id": "act_998",
       "type": "reorder",
       "sentences": [
         {
@@ -125,7 +194,7 @@
       ]
     },
     {
-      "id": "act_849",
+      "id": "act_999",
       "type": "typed",
       "items": [
         "lex_desk",
@@ -135,7 +204,7 @@
       ]
     },
     {
-      "id": "act_850",
+      "id": "act_1000",
       "type": "say-it",
       "phrases": [
         {
@@ -157,12 +226,12 @@
       ]
     },
     {
-      "id": "act_851",
+      "id": "act_1001",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_852",
+      "id": "act_1002",
       "type": "listen-comprehension",
       "passage": "This is a final call for passenger Marta. Please go to gate twelve. The gate is closing soon.",
       "question": {

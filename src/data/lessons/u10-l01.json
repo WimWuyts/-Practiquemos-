@@ -152,7 +152,7 @@
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_691",
+      "id": "act_811",
       "type": "intro",
       "items": [
         "lex_restaurant",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "act_692",
+      "id": "act_812",
       "type": "listen-choose",
       "items": [
         "lex_restaurant",
@@ -178,7 +178,7 @@
       ]
     },
     {
-      "id": "act_693",
+      "id": "act_813",
       "type": "match",
       "items": [
         "lex_restaurant",
@@ -190,12 +190,45 @@
       ]
     },
     {
-      "id": "act_694",
+      "id": "act_814",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_695",
+      "id": "act_815",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ you help me, please?",
+          "answer": "Could",
+          "options": [
+            "Could",
+            "Do",
+            "Are"
+          ],
+          "hu": "Tudna segíteni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_816",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Could I ___ some water, please?",
+          "accepted": [
+            "have"
+          ],
+          "hint": {
+            "en": "Could I + base verb",
+            "hu": "Could I + alapige"
+          },
+          "hu": "Kaphatnék egy kis vizet, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_817",
       "type": "gapfill",
       "items": [
         {
@@ -227,21 +260,89 @@
             "table"
           ],
           "hu": "Megkaphatnám az étlapot, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_818",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_restaurant",
+          "text": "We eat at a nice ___.",
+          "answer": "restaurant",
+          "accepted": [
+            "restaurant",
+            "restaurant",
+            "restaurants",
+            "restaurant"
+          ],
+          "options": [
+            "restaurant",
+            "menu",
+            "table",
+            "bill"
+          ],
+          "hu": "Egy szép étteremben eszünk."
         },
         {
+          "id": "lex_hotel",
+          "text": "The ___ is near the station.",
+          "answer": "hotel",
+          "accepted": [
+            "hotel",
+            "hotel",
+            "hotels",
+            "hotel"
+          ],
+          "options": [
+            "hotel",
+            "key",
+            "reception",
+            "reservation"
+          ],
+          "hu": "A szálloda az állomás közelében van."
+        },
+        {
+          "id": "lex_menu",
+          "text": "Could I have the ___, please?",
+          "answer": "menu",
+          "accepted": [
+            "menu",
+            "menu",
+            "menus",
+            "menu"
+          ],
+          "options": [
+            "menu",
+            "restaurant",
+            "table",
+            "bill"
+          ],
+          "hu": "Megkaphatnám az étlapot, kérem?"
+        },
+        {
+          "id": "lex_table",
           "text": "This is a ___.",
           "answer": "table",
+          "accepted": [
+            "table",
+            "table",
+            "tables",
+            "table"
+          ],
           "options": [
             "table",
             "restaurant",
-            "menu"
+            "menu",
+            "bill"
           ],
           "hu": "(asztal)"
         }
       ]
     },
     {
-      "id": "act_696",
+      "id": "act_819",
       "type": "reorder",
       "sentences": [
         {
@@ -255,7 +356,7 @@
       ]
     },
     {
-      "id": "act_697",
+      "id": "act_820",
       "type": "typed",
       "items": [
         "lex_restaurant",
@@ -266,7 +367,7 @@
       ]
     },
     {
-      "id": "act_698",
+      "id": "act_821",
       "type": "say-it",
       "phrases": [
         {
@@ -288,17 +389,17 @@
       ]
     },
     {
-      "id": "act_699",
+      "id": "act_822",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_700",
+      "id": "act_823",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_701",
+      "id": "act_824",
       "type": "review",
       "items": [
         "lex_call",

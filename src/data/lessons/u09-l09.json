@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_667",
+      "id": "act_784",
       "type": "intro",
       "items": [
         "lex_through",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_668",
+      "id": "act_785",
       "type": "listen-choose",
       "items": [
         "lex_through",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_669",
+      "id": "act_786",
       "type": "match",
       "items": [
         "lex_through",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_670",
+      "id": "act_787",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "left"
           ],
           "hu": "(eleje / elöl)"
+        }
+      ]
+    },
+    {
+      "id": "act_788",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_through",
+          "text": "We walked ___ the park.",
+          "answer": "through",
+          "accepted": [
+            "through",
+            "through",
+            "through"
+          ],
+          "options": [
+            "through",
+            "to",
+            "over",
+            "behind"
+          ],
+          "hu": "Átsétáltunk a parkon."
         },
         {
+          "id": "lex_around",
+          "text": "It's just ___ the corner.",
+          "answer": "around",
+          "accepted": [
+            "around",
+            "around",
+            "around"
+          ],
+          "options": [
+            "around",
+            "to",
+            "over",
+            "behind"
+          ],
+          "hu": "Ott van a sarok mögött."
+        },
+        {
+          "id": "lex_front",
+          "text": "This is a ___.",
+          "answer": "front",
+          "accepted": [
+            "front",
+            "front",
+            "front"
+          ],
+          "options": [
+            "front",
+            "street",
+            "left",
+            "right"
+          ],
+          "hu": "(eleje / elöl)"
+        },
+        {
+          "id": "lex_back",
           "text": "This is a ___.",
           "answer": "back",
+          "accepted": [
+            "back",
+            "back",
+            "back"
+          ],
           "options": [
             "back",
             "street",
-            "left"
+            "left",
+            "right"
           ],
           "hu": "(hátulja / hát)"
         }
       ]
     },
     {
-      "id": "act_671",
+      "id": "act_789",
       "type": "typed",
       "items": [
         "lex_through",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_672",
+      "id": "act_790",
       "type": "say-it",
       "phrases": [
         {
@@ -143,12 +207,12 @@
       ]
     },
     {
-      "id": "act_673",
+      "id": "act_791",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_674",
+      "id": "act_792",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

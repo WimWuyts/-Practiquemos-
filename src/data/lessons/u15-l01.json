@@ -65,7 +65,7 @@
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_853",
+      "id": "act_1003",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": "act_854",
+      "id": "act_1004",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "id": "act_855",
+      "id": "act_1005",
       "type": "match",
       "items": [
         "lex_plane",
@@ -103,18 +103,51 @@
       ]
     },
     {
-      "id": "act_856",
+      "id": "act_1006",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_857",
+      "id": "act_1007",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "___ you help me, please?",
+          "answer": "Could",
+          "options": [
+            "Could",
+            "Do",
+            "Are"
+          ],
+          "hu": "Tudna segíteni, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_1008",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "Could I ___ some water, please?",
+          "accepted": [
+            "have"
+          ],
+          "hint": {
+            "en": "Could I + base verb",
+            "hu": "Could I + alapige"
+          },
+          "hu": "Kaphatnék egy kis vizet, kérem?"
+        }
+      ]
+    },
+    {
+      "id": "act_1009",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_858",
+      "id": "act_1010",
       "type": "gapfill",
       "items": [
         {
@@ -146,21 +179,86 @@
             "afraid"
           ],
           "hu": "Kicsit ideges vagyok."
+        }
+      ]
+    },
+    {
+      "id": "act_1011",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_plane",
+          "text": "This is my first ___ trip.",
+          "answer": "plane",
+          "accepted": [
+            "plane",
+            "plane",
+            "planes",
+            "plane"
+          ],
+          "options": [
+            "plane",
+            "blanket",
+            "toilet",
+            "seatbelt"
+          ],
+          "hu": "Ez az első repülőutam."
         },
         {
+          "id": "lex_afraid",
+          "text": "I am ___ of flying.",
+          "answer": "afraid",
+          "accepted": [
+            "afraid",
+            "afraid",
+            "afraid"
+          ],
+          "options": [
+            "afraid",
+            "happy",
+            "nervous",
+            "scared"
+          ],
+          "hu": "Félek a repüléstől."
+        },
+        {
+          "id": "lex_nervous",
+          "text": "I feel a little ___.",
+          "answer": "nervous",
+          "accepted": [
+            "nervous",
+            "nervous",
+            "nervous"
+          ],
+          "options": [
+            "nervous",
+            "happy",
+            "afraid",
+            "scared"
+          ],
+          "hu": "Kicsit ideges vagyok."
+        },
+        {
+          "id": "lex_scared",
           "text": "It is very ___.",
           "answer": "scared",
+          "accepted": [
+            "scared",
+            "scared",
+            "scared"
+          ],
           "options": [
             "scared",
             "happy",
-            "afraid"
+            "afraid",
+            "nervous"
           ],
           "hu": "(megijedt / fél)"
         }
       ]
     },
     {
-      "id": "act_859",
+      "id": "act_1012",
       "type": "reorder",
       "sentences": [
         {
@@ -174,7 +272,7 @@
       ]
     },
     {
-      "id": "act_860",
+      "id": "act_1013",
       "type": "typed",
       "items": [
         "lex_plane",
@@ -185,7 +283,7 @@
       ]
     },
     {
-      "id": "act_861",
+      "id": "act_1014",
       "type": "say-it",
       "phrases": [
         {
@@ -207,17 +305,17 @@
       ]
     },
     {
-      "id": "act_862",
+      "id": "act_1015",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_863",
+      "id": "act_1016",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_864",
+      "id": "act_1017",
       "type": "review",
       "items": [
         "lex_was",

@@ -41,7 +41,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_492",
+      "id": "act_583",
       "type": "intro",
       "items": [
         "lex_letter",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_493",
+      "id": "act_584",
       "type": "listen-choose",
       "items": [
         "lex_letter",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_494",
+      "id": "act_585",
       "type": "match",
       "items": [
         "lex_letter",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "id": "act_495",
+      "id": "act_586",
       "type": "gapfill",
       "items": [
         {
@@ -106,21 +106,90 @@
             "understand"
           ],
           "hu": "Szeretnék beszélni Endikával."
+        }
+      ]
+    },
+    {
+      "id": "act_587",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_letter",
+          "text": "This is a ___.",
+          "answer": "letter",
+          "accepted": [
+            "letter",
+            "letter",
+            "letters",
+            "letter"
+          ],
+          "options": [
+            "letter",
+            "phone",
+            "news",
+            "message"
+          ],
+          "hu": "(levél / betű)"
         },
         {
+          "id": "lex_news",
+          "text": "I like ___.",
+          "answer": "news",
+          "accepted": [
+            "news",
+            "news",
+            "news"
+          ],
+          "options": [
+            "news",
+            "phone",
+            "letter",
+            "message"
+          ],
+          "hu": "(hír(ek))"
+        },
+        {
+          "id": "lex_talk",
+          "text": "I want to ___ to Endika.",
+          "answer": "talk",
+          "accepted": [
+            "talk",
+            "talk",
+            "talks",
+            "talked",
+            "talk"
+          ],
+          "options": [
+            "talk",
+            "repeat",
+            "understand",
+            "wait"
+          ],
+          "hu": "Szeretnék beszélni Endikával."
+        },
+        {
+          "id": "lex_ring",
           "text": "I ___ every day.",
           "answer": "ring",
+          "accepted": [
+            "ring",
+            "ring",
+            "rings",
+            "rang",
+            "ring"
+          ],
           "options": [
             "ring",
             "call",
-            "hear"
+            "hear",
+            "see"
           ],
           "hu": "(csengetni / felhívni)"
         }
       ]
     },
     {
-      "id": "act_496",
+      "id": "act_588",
       "type": "reorder",
       "sentences": [
         {
@@ -134,7 +203,7 @@
       ]
     },
     {
-      "id": "act_497",
+      "id": "act_589",
       "type": "typed",
       "items": [
         "lex_letter",
@@ -145,7 +214,7 @@
       ]
     },
     {
-      "id": "act_498",
+      "id": "act_590",
       "type": "say-it",
       "phrases": [
         {
@@ -167,12 +236,12 @@
       ]
     },
     {
-      "id": "act_499",
+      "id": "act_591",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_500",
+      "id": "act_592",
       "type": "minimal-pair",
       "focusId": "snd_th"
     }

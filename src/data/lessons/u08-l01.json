@@ -152,7 +152,7 @@
   "conversationId": "dlg_peter_dinner",
   "activities": [
     {
-      "id": "act_501",
+      "id": "act_593",
       "type": "intro",
       "items": [
         "lex_hobby",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "act_502",
+      "id": "act_594",
       "type": "listen-choose",
       "items": [
         "lex_hobby",
@@ -178,7 +178,7 @@
       ]
     },
     {
-      "id": "act_503",
+      "id": "act_595",
       "type": "match",
       "items": [
         "lex_hobby",
@@ -190,12 +190,44 @@
       ]
     },
     {
-      "id": "act_504",
+      "id": "act_596",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_505",
+      "id": "act_597",
+      "type": "gapfill",
+      "items": [
+        {
+          "text": "She loves ___ with the children.",
+          "answer": "working",
+          "options": [
+            "work",
+            "working"
+          ],
+          "hu": "Szeret a gyerekekkel dolgozni."
+        }
+      ]
+    },
+    {
+      "id": "act_598",
+      "type": "gr-type",
+      "items": [
+        {
+          "text": "I like ___ books in the garden.",
+          "accepted": [
+            "reading"
+          ],
+          "hint": {
+            "en": "like + verb-ing",
+            "hu": "like + ige-ing"
+          },
+          "hu": "Szeretek könyvet olvasni a kertben."
+        }
+      ]
+    },
+    {
+      "id": "act_599",
       "type": "gapfill",
       "items": [
         {
@@ -227,21 +259,88 @@
             "music"
           ],
           "hu": "Egy jó könyvet olvasok."
+        }
+      ]
+    },
+    {
+      "id": "act_600",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_hobby",
+          "text": "My ___ is cooking.",
+          "answer": "hobby",
+          "accepted": [
+            "hobby",
+            "hobby",
+            "hobbies",
+            "hobby"
+          ],
+          "options": [
+            "hobby",
+            "music",
+            "book",
+            "film"
+          ],
+          "hu": "A hobbim a főzés."
         },
         {
+          "id": "lex_music",
+          "text": "I like quiet ___.",
+          "answer": "music",
+          "accepted": [
+            "music",
+            "music",
+            "music"
+          ],
+          "options": [
+            "music",
+            "hobby",
+            "book",
+            "film"
+          ],
+          "hu": "Szeretem a halk zenét."
+        },
+        {
+          "id": "lex_book",
+          "text": "I am reading a good ___.",
+          "answer": "book",
+          "accepted": [
+            "book",
+            "book",
+            "books",
+            "book"
+          ],
+          "options": [
+            "book",
+            "hobby",
+            "music",
+            "film"
+          ],
+          "hu": "Egy jó könyvet olvasok."
+        },
+        {
+          "id": "lex_film",
           "text": "This is a ___.",
           "answer": "film",
+          "accepted": [
+            "film",
+            "film",
+            "films",
+            "film"
+          ],
           "options": [
             "film",
             "hobby",
-            "music"
+            "music",
+            "book"
           ],
           "hu": "(film)"
         }
       ]
     },
     {
-      "id": "act_506",
+      "id": "act_601",
       "type": "reorder",
       "sentences": [
         {
@@ -255,7 +354,7 @@
       ]
     },
     {
-      "id": "act_507",
+      "id": "act_602",
       "type": "typed",
       "items": [
         "lex_hobby",
@@ -266,7 +365,7 @@
       ]
     },
     {
-      "id": "act_508",
+      "id": "act_603",
       "type": "say-it",
       "phrases": [
         {
@@ -288,17 +387,17 @@
       ]
     },
     {
-      "id": "act_509",
+      "id": "act_604",
       "type": "pron-record",
       "focusId": "snd_r"
     },
     {
-      "id": "act_510",
+      "id": "act_605",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_511",
+      "id": "act_606",
       "type": "review",
       "items": [
         "lex_food",

@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_397",
+      "id": "act_475",
       "type": "intro",
       "items": [
         "lex_eighteen",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_398",
+      "id": "act_476",
       "type": "listen-choose",
       "items": [
         "lex_eighteen",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "act_399",
+      "id": "act_477",
       "type": "match",
       "items": [
         "lex_eighteen",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "act_400",
+      "id": "act_478",
       "type": "gapfill",
       "items": [
         {
@@ -102,21 +102,85 @@
             "two"
           ],
           "hu": "(negyven)"
+        }
+      ]
+    },
+    {
+      "id": "act_479",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_eighteen",
+          "text": "I have ___ friends.",
+          "answer": "eighteen",
+          "accepted": [
+            "eighteen",
+            "eighteen",
+            "eighteen"
+          ],
+          "options": [
+            "eighteen",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(tizennyolc)"
         },
         {
+          "id": "lex_nineteen",
+          "text": "I have ___ friends.",
+          "answer": "nineteen",
+          "accepted": [
+            "nineteen",
+            "nineteen",
+            "nineteen"
+          ],
+          "options": [
+            "nineteen",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(tizenkilenc)"
+        },
+        {
+          "id": "lex_forty",
+          "text": "I have ___ friends.",
+          "answer": "forty",
+          "accepted": [
+            "forty",
+            "forty",
+            "forty"
+          ],
+          "options": [
+            "forty",
+            "one",
+            "two",
+            "three"
+          ],
+          "hu": "(negyven)"
+        },
+        {
+          "id": "lex_fifty",
           "text": "I have ___ friends.",
           "answer": "fifty",
+          "accepted": [
+            "fifty",
+            "fifty",
+            "fifty"
+          ],
           "options": [
             "fifty",
             "one",
-            "two"
+            "two",
+            "three"
           ],
           "hu": "(ötven)"
         }
       ]
     },
     {
-      "id": "act_401",
+      "id": "act_480",
       "type": "reorder",
       "sentences": [
         {
@@ -126,7 +190,7 @@
       ]
     },
     {
-      "id": "act_402",
+      "id": "act_481",
       "type": "typed",
       "items": [
         "lex_eighteen",
@@ -137,7 +201,7 @@
       ]
     },
     {
-      "id": "act_403",
+      "id": "act_482",
       "type": "say-it",
       "phrases": [
         {
@@ -147,7 +211,7 @@
       ]
     },
     {
-      "id": "act_404",
+      "id": "act_483",
       "type": "pron-record",
       "focusId": "str_question"
     }

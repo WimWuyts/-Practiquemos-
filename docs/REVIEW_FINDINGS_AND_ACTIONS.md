@@ -2,6 +2,34 @@
 
 ---
 
+## v1.8 — "Rosetta for Marta: the productive turn" design team (8 agents)
+
+Brief: the app held a lot of content but *did too little with it*. Owner: **"Lots of words, but so little is done with them — Marta only points and speaks; nowhere is a word typed in. Grammar is offered very sparsely per category, barely any exercises. Pronunciation: the framework is there but little variation."** Vision: **"a kind of Rosetta Stone, but for Marta's situation."** Eight design agents (see `docs/REVIEW_TEAM_v3.md`); their findings converged and were implemented in one pass as v1.8.
+
+### Converged findings → actions
+
+1. **Taught by exercise-type across a batch, not per word (P0, A1/A3).** A word was introduced, then matched much later, then typed much later — so little was "done" with it in one pass, and typing was rare.
+   - **Done:** each word/session now climbs **see/hear → tap → type → say → reuse**. The vocabulary drill and Quick practice run this arc.
+
+2. **No real typing anywhere (P0, A2/A6).** `typed` was one HU→word step; `gapfill` was multiple-choice only.
+   - **Done:** new **`word-fill`** — type the blanked word in a real sentence, derived from every word's own example (**396 items / 102 lessons** + drills). A **scaffold ladder** (type-or-tap, first-letter hint, unlimited gentle retries that always end in success) keeps it stress-free at 70+. **Forgiving matching** (accents, British/US spelling, hyphen, one short-word typo) with a separate **strict** matcher for grammar forms.
+
+3. **Grammar was a display card, not practice (P0, A3).** One info card + a trivial check; barely any exercises per point.
+   - **Done:** a **practice bank of 108 items across all 27 A1 points** in Marta's world — choose-form, **type-form** (strict), **spot-the-error**, build, and say-it. `grammarDrill` rebuilt into a teach→apply→speak session; grammar items also appear productively inside lessons.
+
+4. **Pronunciation had only two exercise types (P1, A4).**
+   - **Done:** **say-the-pair**, **shadowing/repeat-chain**, and **listen-and-sort**; soundDrill now runs hear→discriminate→produce, and sounds without minimal pairs still get real production.
+
+5. **Only the ~5 new words per lesson ever reached production (P1, A5).**
+   - **Done:** an **item-picker** (due → least-practised → fresh) drives drills and Quick practice so all 751 words cycle through production over time; a non-punitive "N of 751 practised" growth line.
+
+6. **New content could ship silently broken (P2, A7).** Unknown activity types rendered nothing; i18n JSON is regenerated.
+   - **Done:** validator `KNOWN_TYPES` whitelist + grammar-bank integrity checks; UI strings added in the i18n generator; smoke tests extended to the typed and grammar paths (20 checks).
+
+Constraints preserved throughout: offline single file, no external fonts/CDN/AI, 70+ accessibility, reduced-motion, bilingual Hungarian help.
+
+---
+
 ## v1.7 — "De-clunk & flow" panel (11 agents)
 
 Brief: the content was good, but the app felt **houterig** (clunky/stiff), lacked the *natural flow* that makes Rosetta Stone feel good, and the **layout was a bit boring**. Eleven read-only reviewers examined feel, flow, motion and visual craft (see `docs/REVIEW_TEAM_v2.md` for the full briefings). Their findings converged; the highest-impact, non-conflicting recommendations were implemented in one coherent pass and shipped as **v1.7**.

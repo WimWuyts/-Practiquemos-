@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_341",
+      "id": "act_405",
       "type": "intro",
       "items": [
         "lex_lemon",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_342",
+      "id": "act_406",
       "type": "listen-choose",
       "items": [
         "lex_lemon",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_343",
+      "id": "act_407",
       "type": "match",
       "items": [
         "lex_lemon",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_344",
+      "id": "act_408",
       "type": "gapfill",
       "items": [
         {
@@ -92,21 +92,87 @@
             "water"
           ],
           "hu": "(méz)"
+        }
+      ]
+    },
+    {
+      "id": "act_409",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_lemon",
+          "text": "This is a ___.",
+          "answer": "lemon",
+          "accepted": [
+            "lemon",
+            "lemon",
+            "lemons",
+            "lemon"
+          ],
+          "options": [
+            "lemon",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(citrom)"
         },
         {
+          "id": "lex_biscuit",
+          "text": "This is a ___.",
+          "answer": "biscuit",
+          "accepted": [
+            "biscuit",
+            "biscuit",
+            "biscuits",
+            "biscuit"
+          ],
+          "options": [
+            "biscuit",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(keksz)"
+        },
+        {
+          "id": "lex_honey",
+          "text": "This is a ___.",
+          "answer": "honey",
+          "accepted": [
+            "honey",
+            "honey",
+            "honey"
+          ],
+          "options": [
+            "honey",
+            "food",
+            "water",
+            "coffee"
+          ],
+          "hu": "(méz)"
+        },
+        {
+          "id": "lex_sweet",
           "text": "It is very ___.",
           "answer": "sweet",
+          "accepted": [
+            "sweet",
+            "sweet",
+            "sweet"
+          ],
           "options": [
             "sweet",
             "hungry",
-            "thirsty"
+            "thirsty",
+            "delicious"
           ],
           "hu": "(édes)"
         }
       ]
     },
     {
-      "id": "act_345",
+      "id": "act_410",
       "type": "typed",
       "items": [
         "lex_lemon",
@@ -117,7 +183,7 @@
       ]
     },
     {
-      "id": "act_346",
+      "id": "act_411",
       "type": "say-it",
       "phrases": [
         {
@@ -135,12 +201,12 @@
       ]
     },
     {
-      "id": "act_347",
+      "id": "act_412",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_348",
+      "id": "act_413",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     }

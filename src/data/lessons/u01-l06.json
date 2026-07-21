@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_55",
+      "id": "act_67",
       "type": "intro",
       "items": [
         "lex_an",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_56",
+      "id": "act_68",
       "type": "listen-choose",
       "items": [
         "lex_an",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_57",
+      "id": "act_69",
       "type": "match",
       "items": [
         "lex_an",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_58",
+      "id": "act_70",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "three"
     },
     {
-      "id": "act_59",
+      "id": "act_71",
       "type": "gapfill",
       "items": [
         {
@@ -106,21 +106,83 @@
             "three"
           ],
           "hu": "Egy nővérem van."
+        }
+      ]
+    },
+    {
+      "id": "act_72",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_an",
+          "text": "It is ___ apple.",
+          "answer": "an",
+          "accepted": [
+            "an",
+            "an",
+            "an"
+          ],
+          "options": [
+            "an",
+            "a",
+            "the"
+          ],
+          "hu": "Ez egy alma."
         },
         {
-          "text": "___ coffees, please.",
-          "answer": "two",
+          "id": "lex_the",
+          "text": "___ coffee is hot.",
+          "answer": "The",
+          "accepted": [
+            "the",
+            "the",
+            "The"
+          ],
           "options": [
-            "two",
+            "The",
+            "a",
+            "an"
+          ],
+          "hu": "A kávé forró."
+        },
+        {
+          "id": "lex_one",
+          "text": "I have ___ sister.",
+          "answer": "one",
+          "accepted": [
             "one",
-            "three"
+            "one",
+            "one"
+          ],
+          "options": [
+            "one",
+            "two",
+            "three",
+            "four"
+          ],
+          "hu": "Egy nővérem van."
+        },
+        {
+          "id": "lex_two",
+          "text": "___ coffees, please.",
+          "answer": "Two",
+          "accepted": [
+            "two",
+            "two",
+            "Two"
+          ],
+          "options": [
+            "Two",
+            "one",
+            "three",
+            "four"
           ],
           "hu": "Két kávét kérek."
         }
       ]
     },
     {
-      "id": "act_60",
+      "id": "act_73",
       "type": "typed",
       "items": [
         "lex_an",
@@ -131,7 +193,7 @@
       ]
     },
     {
-      "id": "act_61",
+      "id": "act_74",
       "type": "say-it",
       "phrases": [
         {
@@ -149,12 +211,12 @@
       ]
     },
     {
-      "id": "act_62",
+      "id": "act_75",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_63",
+      "id": "act_76",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
     }

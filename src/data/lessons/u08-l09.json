@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_573",
+      "id": "act_677",
       "type": "intro",
       "items": [
         "lex_best",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_574",
+      "id": "act_678",
       "type": "listen-choose",
       "items": [
         "lex_best",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_575",
+      "id": "act_679",
       "type": "match",
       "items": [
         "lex_best",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_576",
+      "id": "act_680",
       "type": "gapfill",
       "items": [
         {
@@ -100,21 +100,85 @@
             "interesting"
           ],
           "hu": "(szörnyű)"
+        }
+      ]
+    },
+    {
+      "id": "act_681",
+      "type": "word-fill",
+      "items": [
+        {
+          "id": "lex_best",
+          "text": "It is very ___.",
+          "answer": "best",
+          "accepted": [
+            "best",
+            "best",
+            "best"
+          ],
+          "options": [
+            "best",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(legjobb)"
         },
         {
+          "id": "lex_perfect",
+          "text": "It is very ___.",
+          "answer": "perfect",
+          "accepted": [
+            "perfect",
+            "perfect",
+            "perfect"
+          ],
+          "options": [
+            "perfect",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(tökéletes)"
+        },
+        {
+          "id": "lex_terrible",
+          "text": "It is very ___.",
+          "answer": "terrible",
+          "accepted": [
+            "terrible",
+            "terrible",
+            "terrible"
+          ],
+          "options": [
+            "terrible",
+            "favourite",
+            "interesting",
+            "boring"
+          ],
+          "hu": "(szörnyű)"
+        },
+        {
+          "id": "lex_quite",
           "text": "I speak ___.",
           "answer": "quite",
+          "accepted": [
+            "quite",
+            "quite",
+            "quite"
+          ],
           "options": [
             "quite",
             "really",
-            "please"
+            "please",
+            "yes"
           ],
           "hu": "(elég(gé))"
         }
       ]
     },
     {
-      "id": "act_577",
+      "id": "act_682",
       "type": "typed",
       "items": [
         "lex_best",
@@ -125,7 +189,7 @@
       ]
     },
     {
-      "id": "act_578",
+      "id": "act_683",
       "type": "say-it",
       "phrases": [
         {
@@ -143,7 +207,7 @@
       ]
     },
     {
-      "id": "act_579",
+      "id": "act_684",
       "type": "pron-record",
       "focusId": "snd_r"
     }
