@@ -175,10 +175,16 @@ body:not([data-motion="reduce"]) .rec-dot.on{animation:pulse 1s infinite}
 .hero h1{font-family:var(--font-display)}
 .recommend{box-shadow:var(--elev-2),var(--hairline)}
 .recommend h2{font-family:var(--font-display)}
-/* reviewer/demo badge */
-.reviewbadge{position:fixed;right:10px;bottom:10px;z-index:50;background:var(--accent-2);color:#fff;
-  font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:.35rem .7rem;border-radius:999px;
-  box-shadow:var(--elev-2);pointer-events:none;opacity:.9}
+/* reviewer/demo badge + fixed Skip button */
+.reviewbadge{position:fixed;right:14px;bottom:14px;z-index:60;background:var(--accent-2);color:#fff;
+  font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.3rem .6rem;border-radius:999px;
+  box-shadow:var(--elev-1);pointer-events:none;opacity:.85}
+.reviewskip{position:fixed;right:14px;bottom:44px;z-index:61;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.4rem;min-height:var(--tap);padding:.6rem 1.3rem;
+  border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);
+  font-family:inherit;font-size:1rem;font-weight:700;box-shadow:var(--elev-2)}
+.reviewskip:hover{filter:brightness(1.05)}
+.reviewskip:active{transform:translateY(1px)}
 /* completion check draw */
 .done-badge{width:64px;height:64px;border-radius:50%;background:var(--good-bg);display:grid;place-items:center;color:var(--good);margin:0 auto .4rem}
 body:not([data-motion="reduce"]) .done-badge{animation:popCheck .4s var(--ease) both}

@@ -3,6 +3,7 @@ window.M = window.M || {};
 (function (M) {
   var el, dom, main, liveRegion;
   var current = "home";
+  var reviewSkipBtn = null, reviewSkipHandler = null;
 
   var NAV = [
     ["home", "nav.home", "home"], ["lessons", "nav.lessons", "book"],
@@ -29,8 +30,17 @@ window.M = window.M || {};
     document.body.appendChild(main);
     liveRegion = el("div", { class: "sr-only", "aria-live": "polite" });
     document.body.appendChild(liveRegion);
-    if (M.reviewMode()) document.body.appendChild(el("div", { class: "reviewbadge", text: "REVIEWER — Skip enabled" }));
+    if (M.reviewMode()) {
+      reviewSkipBtn = el("button", { class: "reviewskip", type: "button", "aria-label": "Reviewer: skip this step" }, ["Skip ▸"]);
+      reviewSkipBtn.style.display = "none";
+      reviewSkipBtn.addEventListener("click", function () { if (reviewSkipHandler) reviewSkipHandler(); });
+      document.body.appendChild(reviewSkipBtn);
+      document.body.appendChild(el("div", { class: "reviewbadge", text: "REVIEWER MODE" }));
+    }
   }
+  // Fixed reviewer Skip: point it at the current activity's advance; hide it elsewhere.
+  M.setReviewSkip = function (fn) { reviewSkipHandler = fn; if (reviewSkipBtn) reviewSkipBtn.style.display = ""; };
+  M.clearReviewSkip = function () { reviewSkipHandler = null; if (reviewSkipBtn) reviewSkipBtn.style.display = "none"; };
 
   function setActive(screen) {
     Array.prototype.forEach.call(document.querySelectorAll(".navbtn"), function (b) {
@@ -44,6 +54,7 @@ window.M = window.M || {};
     var screen = parts[0] || "home";
     current = hash;
     dom.clear(main);
+    if (M.clearReviewSkip) M.clearReviewSkip(); // activities re-show it; nav screens don't
     M.ui.init();
     if (screen === "lesson") { M.ui.lessonRunner(main, parts[1]); setActive("lessons"); }
     else if (screen === "talk") { M.ui.talk(main, parts[1]); setActive("conversations"); }

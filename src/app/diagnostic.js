@@ -5,6 +5,11 @@ window.M = window.M || {};
     render: function (mount, done) {
       var el = M.dom.el, dom = M.dom;
       dom.clear(mount);
+      // Reviewer mode: skip the whole warm-up and land on Home (not the diagnostic lesson).
+      if (M.reviewMode() && M.setReviewSkip) M.setReviewSkip(function () {
+        M.store.setDiagnostic({ known: 0, total: probe.length, recommend: "u01-l01", at: 0 });
+        M.router.go("home");
+      });
       // small familiar-word probe (all easy words Marta likely half-knows)
       var probe = ["hello", "family", "coffee", "thank you", "water", "airport"].map(function (w) {
         return M.data.lexicon.find(function (l) { return l.headword === w; });

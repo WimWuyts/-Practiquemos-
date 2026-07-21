@@ -290,10 +290,16 @@ body:not([data-motion="reduce"]) .rec-dot.on{animation:pulse 1s infinite}
 .hero h1{font-family:var(--font-display)}
 .recommend{box-shadow:var(--elev-2),var(--hairline)}
 .recommend h2{font-family:var(--font-display)}
-/* reviewer/demo badge */
-.reviewbadge{position:fixed;right:10px;bottom:10px;z-index:50;background:var(--accent-2);color:#fff;
-  font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:.35rem .7rem;border-radius:999px;
-  box-shadow:var(--elev-2);pointer-events:none;opacity:.9}
+/* reviewer/demo badge + fixed Skip button */
+.reviewbadge{position:fixed;right:14px;bottom:14px;z-index:60;background:var(--accent-2);color:#fff;
+  font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:.3rem .6rem;border-radius:999px;
+  box-shadow:var(--elev-1);pointer-events:none;opacity:.85}
+.reviewskip{position:fixed;right:14px;bottom:44px;z-index:61;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.4rem;min-height:var(--tap);padding:.6rem 1.3rem;
+  border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);
+  font-family:inherit;font-size:1rem;font-weight:700;box-shadow:var(--elev-2)}
+.reviewskip:hover{filter:brightness(1.05)}
+.reviewskip:active{transform:translateY(1px)}
 /* completion check draw */
 .done-badge{width:64px;height:64px;border-radius:50%;background:var(--good-bg);display:grid;place-items:center;color:var(--good);margin:0 auto .4rem}
 body:not([data-motion="reduce"]) .done-badge{animation:popCheck .4s var(--ease) both}
@@ -1048,6 +1054,11 @@ window.M = window.M || {};
     render: function (mount, done) {
       var el = M.dom.el, dom = M.dom;
       dom.clear(mount);
+      // Reviewer mode: skip the whole warm-up and land on Home (not the diagnostic lesson).
+      if (M.reviewMode() && M.setReviewSkip) M.setReviewSkip(function () {
+        M.store.setDiagnostic({ known: 0, total: probe.length, recommend: "u01-l01", at: 0 });
+        M.router.go("home");
+      });
       // small familiar-word probe (all easy words Marta likely half-knows)
       var probe = ["hello", "family", "coffee", "thank you", "water", "airport"].map(function (w) {
         return M.data.lexicon.find(function (l) { return l.headword === w; });
@@ -2066,14 +2077,9 @@ window.M = window.M || {};
       var finished = false;
       function finish(ok) { if (finished) return; finished = true; done(ok); }
       fn(mount, act, finish);
-      // Reviewer mode: one Skip button covers EVERY activity type — page through without answering.
-      // (Conversations add their own Skip inside the dialogue, so don't double up.)
-      if (M.reviewMode() && act.type !== "conversation") {
-        mount.appendChild(el("div", { class: "btn-row", style: "margin-top:.3rem;justify-content:flex-end" }, [
-          el("button", { class: "btn ghost small", style: "opacity:.7;font-size:.85rem", title: "Reviewer: skip without answering", onclick: function () { finish(true); } },
-            ["Skip ▸"]),
-        ]));
-      }
+      // Reviewer mode: point the fixed, always-on-top Skip button at THIS activity, so a
+      // helper can page through every type without answering (survives internal re-renders).
+      if (M.reviewMode() && M.setReviewSkip) M.setReviewSkip(function () { finish(true); });
     },
     types: Object.keys(R),
   };
@@ -2105,13 +2111,8 @@ window.M = window.M || {};
       ]));
       mount.appendChild(chat);
       mount.appendChild(interact);
-      // Reviewer mode: skip the whole dialogue and move straight on (advance the lesson
-      // / leave the Talk screen) rather than showing the finished screen.
-      if (M.reviewMode()) {
-        mount.appendChild(el("div", { class: "btn-row", style: "justify-content:flex-end" }, [
-          el("button", { class: "btn ghost small", style: "opacity:.7;font-size:.85rem", onclick: function () { done(true); } }, ["Skip ▸"]),
-        ]));
-      }
+      // Reviewer mode: the fixed Skip button jumps straight past the whole dialogue.
+      if (M.reviewMode() && M.setReviewSkip) M.setReviewSkip(function () { done(true); });
 
       function who(id) { return CHAR[id] || id; }
       function bubble(side, name, text, charId) {
@@ -2938,6 +2939,7 @@ window.M = window.M || {};
 (function (M) {
   var el, dom, main, liveRegion;
   var current = "home";
+  var reviewSkipBtn = null, reviewSkipHandler = null;
 
   var NAV = [
     ["home", "nav.home", "home"], ["lessons", "nav.lessons", "book"],
@@ -2964,8 +2966,17 @@ window.M = window.M || {};
     document.body.appendChild(main);
     liveRegion = el("div", { class: "sr-only", "aria-live": "polite" });
     document.body.appendChild(liveRegion);
-    if (M.reviewMode()) document.body.appendChild(el("div", { class: "reviewbadge", text: "REVIEWER — Skip enabled" }));
+    if (M.reviewMode()) {
+      reviewSkipBtn = el("button", { class: "reviewskip", type: "button", "aria-label": "Reviewer: skip this step" }, ["Skip ▸"]);
+      reviewSkipBtn.style.display = "none";
+      reviewSkipBtn.addEventListener("click", function () { if (reviewSkipHandler) reviewSkipHandler(); });
+      document.body.appendChild(reviewSkipBtn);
+      document.body.appendChild(el("div", { class: "reviewbadge", text: "REVIEWER MODE" }));
+    }
   }
+  // Fixed reviewer Skip: point it at the current activity's advance; hide it elsewhere.
+  M.setReviewSkip = function (fn) { reviewSkipHandler = fn; if (reviewSkipBtn) reviewSkipBtn.style.display = ""; };
+  M.clearReviewSkip = function () { reviewSkipHandler = null; if (reviewSkipBtn) reviewSkipBtn.style.display = "none"; };
 
   function setActive(screen) {
     Array.prototype.forEach.call(document.querySelectorAll(".navbtn"), function (b) {
@@ -2979,6 +2990,7 @@ window.M = window.M || {};
     var screen = parts[0] || "home";
     current = hash;
     dom.clear(main);
+    if (M.clearReviewSkip) M.clearReviewSkip(); // activities re-show it; nav screens don't
     M.ui.init();
     if (screen === "lesson") { M.ui.lessonRunner(main, parts[1]); setActive("lessons"); }
     else if (screen === "talk") { M.ui.talk(main, parts[1]); setActive("conversations"); }

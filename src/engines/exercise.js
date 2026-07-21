@@ -972,14 +972,9 @@ window.M = window.M || {};
       var finished = false;
       function finish(ok) { if (finished) return; finished = true; done(ok); }
       fn(mount, act, finish);
-      // Reviewer mode: one Skip button covers EVERY activity type — page through without answering.
-      // (Conversations add their own Skip inside the dialogue, so don't double up.)
-      if (M.reviewMode() && act.type !== "conversation") {
-        mount.appendChild(el("div", { class: "btn-row", style: "margin-top:.3rem;justify-content:flex-end" }, [
-          el("button", { class: "btn ghost small", style: "opacity:.7;font-size:.85rem", title: "Reviewer: skip without answering", onclick: function () { finish(true); } },
-            ["Skip ▸"]),
-        ]));
-      }
+      // Reviewer mode: point the fixed, always-on-top Skip button at THIS activity, so a
+      // helper can page through every type without answering (survives internal re-renders).
+      if (M.reviewMode() && M.setReviewSkip) M.setReviewSkip(function () { finish(true); });
     },
     types: Object.keys(R),
   };
