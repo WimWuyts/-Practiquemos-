@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_430",
+      "id": "act_420",
       "type": "intro",
       "items": [
         "lex_june",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_431",
+      "id": "act_421",
       "type": "listen-choose",
       "items": [
         "lex_june",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_432",
+      "id": "act_422",
       "type": "match",
       "items": [
         "lex_june",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_433",
+      "id": "act_423",
       "type": "gapfill",
       "items": [
         {
@@ -114,33 +114,38 @@
       ]
     },
     {
-      "id": "act_434",
+      "id": "act_424",
       "type": "typed",
       "items": [
         "lex_june",
         "lex_july",
         "lex_august",
-        "lex_september"
+        "lex_september",
+        "lex_october"
       ]
     },
     {
-      "id": "act_435",
-      "type": "pron-record",
-      "focusId": "str_word"
-    },
-    {
-      "id": "act_436",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_425",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "June",
-            "July",
-            "August"
-          ],
-          "odd": "name"
+          "en": "I like June.",
+          "hu": "(június)"
+        },
+        {
+          "en": "I like July.",
+          "hu": "(július)"
+        },
+        {
+          "en": "I like August.",
+          "hu": "(augusztus)"
         }
       ]
+    },
+    {
+      "id": "act_426",
+      "type": "pron-record",
+      "focusId": "str_word"
     }
   ],
   "completionRule": {

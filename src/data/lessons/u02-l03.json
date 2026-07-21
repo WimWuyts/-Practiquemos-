@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_99",
+      "id": "act_95",
       "type": "intro",
       "items": [
         "lex_nephew",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_100",
+      "id": "act_96",
       "type": "listen-choose",
       "items": [
         "lex_nephew",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "act_101",
+      "id": "act_97",
       "type": "match",
       "items": [
         "lex_nephew",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "act_102",
+      "id": "act_98",
       "type": "gapfill",
       "items": [
         {
@@ -116,14 +116,7 @@
       ]
     },
     {
-      "id": "act_103",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fam_youngest"
-      ]
-    },
-    {
-      "id": "act_104",
+      "id": "act_99",
       "type": "reorder",
       "sentences": [
         {
@@ -133,38 +126,35 @@
       ]
     },
     {
-      "id": "act_105",
+      "id": "act_100",
       "type": "typed",
       "items": [
         "lex_nephew",
         "lex_aunt",
         "lex_uncle",
-        "lex_grandmother"
+        "lex_grandmother",
+        "lex_grandfather"
       ]
     },
     {
-      "id": "act_106",
+      "id": "act_101",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I'm the oldest in the family.",
+          "hu": "Én vagyok a legidősebb a családban."
+        }
+      ]
+    },
+    {
+      "id": "act_102",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_107",
+      "id": "act_103",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_108",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "nephew",
-            "aunt",
-            "uncle"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

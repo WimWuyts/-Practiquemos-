@@ -18,6 +18,7 @@ window.M = window.M || {};
     margo:   { bg: "#ece4d6", skin: "#f0cdb4", hair: "#c0bbb0", style: "grey", eye: "#5a6a4a", collar: "#a8895f" },
     eva:     { bg: "#efe7dc", skin: "#f0cdb4", hair: "#c9c2b6", style: "grey", eye: "#5a6a4a", collar: "#9a7a5f", glasses: true },
     akos:    { bg: "#dde5e8", skin: "#e6b48c", hair: "#8a8078", style: "grey", eye: "#4a4a3a", collar: "#5a6a72" },
+    endre:   { bg: "#e3e8df", skin: "#e6b48c", hair: "#5a5048", style: "short", eye: "#4a3a2a", collar: "#6a7250", glasses: true },
     // roles (neutral, friendly)
     student: { bg: "#eef1dc", skin: "#f2d2b6", hair: "#3a2c1e", style: "short", eye: "#3a2a1e", collar: "#c7a23a" },
     parent:  { bg: "#e8e6f0", skin: "#e8b892", hair: "#4a3a2a", style: "short", eye: "#3a2a1e", collar: "#6a6a9a" },

@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_459",
+      "id": "act_449",
       "type": "intro",
       "items": [
         "lex_umbrella",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_460",
+      "id": "act_450",
       "type": "listen-choose",
       "items": [
         "lex_umbrella",
@@ -56,18 +56,7 @@
       ]
     },
     {
-      "id": "act_461",
-      "type": "icon-choice",
-      "items": [
-        "lex_umbrella",
-        "lex_moon",
-        "lex_grass",
-        "lex_field",
-        "lex_star"
-      ]
-    },
-    {
-      "id": "act_462",
+      "id": "act_451",
       "type": "match",
       "items": [
         "lex_umbrella",
@@ -79,7 +68,7 @@
       ]
     },
     {
-      "id": "act_463",
+      "id": "act_452",
       "type": "gapfill",
       "items": [
         {
@@ -125,33 +114,38 @@
       ]
     },
     {
-      "id": "act_464",
+      "id": "act_453",
       "type": "typed",
       "items": [
         "lex_umbrella",
         "lex_cool",
         "lex_next",
-        "lex_moon"
+        "lex_moon",
+        "lex_grass"
       ]
     },
     {
-      "id": "act_465",
-      "type": "pron-record",
-      "focusId": "str_word"
-    },
-    {
-      "id": "act_466",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_454",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "umbrella",
-            "cool",
-            "moon"
-          ],
-          "odd": "name"
+          "en": "This is an umbrella.",
+          "hu": "(esernyő)"
+        },
+        {
+          "en": "It is very cool.",
+          "hu": "(hűvös / menő)"
+        },
+        {
+          "en": "It is very next.",
+          "hu": "(következő)"
         }
       ]
+    },
+    {
+      "id": "act_455",
+      "type": "pron-record",
+      "focusId": "str_word"
     }
   ],
   "completionRule": {

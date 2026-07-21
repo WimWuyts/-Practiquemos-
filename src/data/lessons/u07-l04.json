@@ -41,7 +41,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_505",
+      "id": "act_492",
       "type": "intro",
       "items": [
         "lex_letter",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_506",
+      "id": "act_493",
       "type": "listen-choose",
       "items": [
         "lex_letter",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_507",
+      "id": "act_494",
       "type": "match",
       "items": [
         "lex_letter",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "id": "act_508",
+      "id": "act_495",
       "type": "gapfill",
       "items": [
         {
@@ -120,21 +120,34 @@
       ]
     },
     {
-      "id": "act_509",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ph_badline",
-        "chunk_ph_seeyoulater",
-        "chunk_ph_sendmessage",
-        "chunk_rp_saythatagain",
-        "chunk_rp_onemoment",
-        "chunk_nm_myphone"
+      "id": "act_496",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Sorry, the line is bad.",
+          "hu": "Bocsi, rossz a vonal."
+        },
+        {
+          "en": "Talk to you soon. Bye!",
+          "hu": "Hamarosan beszélünk. Szia!"
+        }
       ]
     },
     {
-      "id": "act_510",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_497",
+      "type": "typed",
+      "items": [
+        "lex_letter",
+        "lex_news",
+        "lex_talk",
+        "lex_ring",
+        "lex_wait_for"
+      ]
+    },
+    {
+      "id": "act_498",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Sorry, the line is bad.",
           "hu": "Bocsi, rossz a vonal."
@@ -146,42 +159,22 @@
         {
           "en": "I'll send you a message.",
           "hu": "Küldök egy üzenetet."
+        },
+        {
+          "en": "Sorry? Could you say that again?",
+          "hu": "Tessék? Meg tudná ismételni?"
         }
       ]
     },
     {
-      "id": "act_511",
-      "type": "typed",
-      "items": [
-        "lex_letter",
-        "lex_news",
-        "lex_talk",
-        "lex_ring"
-      ]
-    },
-    {
-      "id": "act_512",
+      "id": "act_499",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_513",
+      "id": "act_500",
       "type": "minimal-pair",
       "focusId": "snd_th"
-    },
-    {
-      "id": "act_514",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "letter",
-            "news",
-            "ring"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

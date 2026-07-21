@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_496",
+      "id": "act_484",
       "type": "intro",
       "items": [
         "lex_tell",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_497",
+      "id": "act_485",
       "type": "listen-choose",
       "items": [
         "lex_tell",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_498",
+      "id": "act_486",
       "type": "match",
       "items": [
         "lex_tell",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_499",
+      "id": "act_487",
       "type": "gapfill",
       "items": [
         {
@@ -119,22 +119,41 @@
       ]
     },
     {
-      "id": "act_500",
-      "type": "phrase-match",
-      "items": [
-        "chunk_call_bye",
-        "chunk_sm_takecare",
-        "chunk_sm_seeyou",
-        "chunk_ph_callyou"
-      ]
-    },
-    {
-      "id": "act_501",
+      "id": "act_488",
       "type": "reorder",
       "sentences": [
         {
           "en": "Talk to you soon. Bye!",
           "hu": "Hamarosan beszélünk. Szia!"
+        },
+        {
+          "en": "See you soon!",
+          "hu": "Hamarosan találkozunk!"
+        }
+      ]
+    },
+    {
+      "id": "act_489",
+      "type": "typed",
+      "items": [
+        "lex_tell",
+        "lex_say",
+        "lex_send",
+        "lex_wrong",
+        "lex_just"
+      ]
+    },
+    {
+      "id": "act_490",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Talk to you soon. Bye!",
+          "hu": "Hamarosan beszélünk. Szia!"
+        },
+        {
+          "en": "Take care!",
+          "hu": "Vigyázz magadra!"
         },
         {
           "en": "See you soon!",
@@ -147,33 +166,9 @@
       ]
     },
     {
-      "id": "act_502",
-      "type": "typed",
-      "items": [
-        "lex_tell",
-        "lex_say",
-        "lex_send",
-        "lex_wrong"
-      ]
-    },
-    {
-      "id": "act_503",
+      "id": "act_491",
       "type": "pron-record",
       "focusId": "str_question"
-    },
-    {
-      "id": "act_504",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "tell",
-            "say",
-            "wrong"
-          ],
-          "odd": "be"
-        }
-      ]
     }
   ],
   "completionRule": {

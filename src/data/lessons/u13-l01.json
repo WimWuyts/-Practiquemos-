@@ -81,7 +81,7 @@
   "conversationId": "dlg_mirella_travel",
   "activities": [
     {
-      "id": "act_821",
+      "id": "act_795",
       "type": "intro",
       "items": [
         "lex_travel",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "id": "act_822",
+      "id": "act_796",
       "type": "listen-choose",
       "items": [
         "lex_travel",
@@ -107,16 +107,7 @@
       ]
     },
     {
-      "id": "act_823",
-      "type": "icon-choice",
-      "items": [
-        "lex_luggage",
-        "lex_suitcase",
-        "lex_passport"
-      ]
-    },
-    {
-      "id": "act_824",
+      "id": "act_797",
       "type": "match",
       "items": [
         "lex_travel",
@@ -128,12 +119,12 @@
       ]
     },
     {
-      "id": "act_825",
+      "id": "act_798",
       "type": "grammar",
       "grammarId": "gr_needhaveto"
     },
     {
-      "id": "act_826",
+      "id": "act_799",
       "type": "gapfill",
       "items": [
         {
@@ -179,19 +170,34 @@
       ]
     },
     {
-      "id": "act_827",
-      "type": "phrase-match",
-      "items": [
-        "chunk_plan_going",
-        "chunk_tv_needto",
-        "chunk_tv_planto",
-        "chunk_fu_planto"
+      "id": "act_800",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm going to visit my sister.",
+          "hu": "Meglátogatom a nővéremet."
+        },
+        {
+          "en": "I need to pack my suitcase.",
+          "hu": "Be kell csomagolnom a bőröndöt."
+        }
       ]
     },
     {
-      "id": "act_828",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_801",
+      "type": "typed",
+      "items": [
+        "lex_travel",
+        "lex_trip",
+        "lex_luggage",
+        "lex_suitcase",
+        "lex_passport"
+      ]
+    },
+    {
+      "id": "act_802",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I'm going to visit my sister.",
           "hu": "Meglátogatom a nővéremet."
@@ -203,45 +209,25 @@
         {
           "en": "I'm going to visit Kira in Denmark.",
           "hu": "Meglátogatom Kirát Dániában."
+        },
+        {
+          "en": "Next week I'm going to visit my sister.",
+          "hu": "Jövő héten meglátogatom a nővéremet."
         }
       ]
     },
     {
-      "id": "act_829",
-      "type": "typed",
-      "items": [
-        "lex_travel",
-        "lex_trip",
-        "lex_luggage",
-        "lex_suitcase"
-      ]
-    },
-    {
-      "id": "act_830",
+      "id": "act_803",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_831",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "travel",
-            "trip",
-            "luggage"
-          ],
-          "odd": "be"
-        }
-      ]
-    },
-    {
-      "id": "act_832",
+      "id": "act_804",
       "type": "conversation",
       "dialogueId": "dlg_mirella_travel"
     },
     {
-      "id": "act_833",
+      "id": "act_805",
       "type": "review",
       "items": [
         "lex_restaurant",

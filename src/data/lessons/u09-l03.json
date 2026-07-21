@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_632",
+      "id": "act_615",
       "type": "intro",
       "items": [
         "lex_second",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_633",
+      "id": "act_616",
       "type": "listen-choose",
       "items": [
         "lex_second",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_634",
+      "id": "act_617",
       "type": "match",
       "items": [
         "lex_second",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_635",
+      "id": "act_618",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_636",
-      "type": "phrase-match",
-      "items": [
-        "chunk_tr_oneticket",
-        "chunk_tr_getoff",
-        "chunk_rp_writeit",
-        "chunk_ds_verynice"
+      "id": "act_619",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "One ticket, please.",
+          "hu": "Egy jegyet kérek."
+        },
+        {
+          "en": "Where do I get off?",
+          "hu": "Hol kell leszállnom?"
+        }
       ]
     },
     {
-      "id": "act_637",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_620",
+      "type": "typed",
+      "items": [
+        "lex_second",
+        "lex_third",
+        "lex_town",
+        "lex_village",
+        "lex_road"
+      ]
+    },
+    {
+      "id": "act_621",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "One ticket, please.",
           "hu": "Egy jegyet kérek."
@@ -143,26 +158,20 @@
         {
           "en": "Could you write it down, please?",
           "hu": "Le tudná írni, kérem?"
+        },
+        {
+          "en": "It's a beautiful place.",
+          "hu": "Gyönyörű hely."
         }
       ]
     },
     {
-      "id": "act_638",
-      "type": "typed",
-      "items": [
-        "lex_second",
-        "lex_third",
-        "lex_town",
-        "lex_village"
-      ]
-    },
-    {
-      "id": "act_639",
+      "id": "act_622",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_640",
+      "id": "act_623",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

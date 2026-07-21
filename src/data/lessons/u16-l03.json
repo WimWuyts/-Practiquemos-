@@ -39,7 +39,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_936",
+      "id": "act_900",
       "type": "intro",
       "items": [
         "lex_laugh",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_937",
+      "id": "act_901",
       "type": "listen-choose",
       "items": [
         "lex_laugh",
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "id": "act_938",
+      "id": "act_902",
       "type": "match",
       "items": [
         "lex_laugh",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": "act_939",
+      "id": "act_903",
       "type": "gapfill",
       "items": [
         {
@@ -102,21 +102,32 @@
       ]
     },
     {
-      "id": "act_940",
-      "type": "phrase-match",
-      "items": [
-        "chunk_of_wouldyoulike",
-        "chunk_of_letme",
-        "chunk_th_kind",
-        "chunk_ev_comingover",
-        "chunk_ev_happybday",
-        "chunk_ev_merryxmas"
+      "id": "act_904",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Would you like some coffee?",
+          "hu": "Kérsz egy kis kávét?"
+        },
+        {
+          "en": "Let me help you.",
+          "hu": "Hadd segítsek."
+        }
       ]
     },
     {
-      "id": "act_941",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_905",
+      "type": "typed",
+      "items": [
+        "lex_laugh",
+        "lex_invite",
+        "lex_lucky"
+      ]
+    },
+    {
+      "id": "act_906",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Would you like some coffee?",
           "hu": "Kérsz egy kis kávét?"
@@ -128,20 +139,15 @@
         {
           "en": "That's very kind of you.",
           "hu": "Nagyon kedves tőled."
+        },
+        {
+          "en": "Come to dinner on Sunday.",
+          "hu": "Gyere vacsorára vasárnap."
         }
       ]
     },
     {
-      "id": "act_942",
-      "type": "typed",
-      "items": [
-        "lex_laugh",
-        "lex_invite",
-        "lex_lucky"
-      ]
-    },
-    {
-      "id": "act_943",
+      "id": "act_907",
       "type": "pron-record",
       "focusId": "str_sentence"
     }

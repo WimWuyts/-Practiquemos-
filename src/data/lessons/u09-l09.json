@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_685",
+      "id": "act_667",
       "type": "intro",
       "items": [
         "lex_through",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_686",
+      "id": "act_668",
       "type": "listen-choose",
       "items": [
         "lex_through",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_687",
+      "id": "act_669",
       "type": "match",
       "items": [
         "lex_through",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_688",
+      "id": "act_670",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_689",
+      "id": "act_671",
       "type": "typed",
       "items": [
         "lex_through",
         "lex_around",
         "lex_front",
-        "lex_back"
+        "lex_back",
+        "lex_middle"
       ]
     },
     {
-      "id": "act_690",
+      "id": "act_672",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "We walked through the park.",
+          "hu": "Átsétáltunk a parkon."
+        },
+        {
+          "en": "It's just around the corner.",
+          "hu": "Ott van a sarok mögött."
+        },
+        {
+          "en": "This is a front.",
+          "hu": "(eleje / elöl)"
+        }
+      ]
+    },
+    {
+      "id": "act_673",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_691",
+      "id": "act_674",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
-    },
-    {
-      "id": "act_692",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "through",
-            "around",
-            "front"
-          ],
-          "odd": "from"
-        }
-      ]
     }
   ],
   "completionRule": {

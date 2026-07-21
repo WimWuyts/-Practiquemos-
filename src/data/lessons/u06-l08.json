@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_423",
+      "id": "act_413",
       "type": "intro",
       "items": [
         "lex_before",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_424",
+      "id": "act_414",
       "type": "listen-choose",
       "items": [
         "lex_before",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_425",
+      "id": "act_415",
       "type": "match",
       "items": [
         "lex_before",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_426",
+      "id": "act_416",
       "type": "gapfill",
       "items": [
         {
@@ -114,33 +114,38 @@
       ]
     },
     {
-      "id": "act_427",
+      "id": "act_417",
       "type": "typed",
       "items": [
         "lex_before",
         "lex_after",
         "lex_date",
-        "lex_january"
+        "lex_january",
+        "lex_february"
       ]
     },
     {
-      "id": "act_428",
-      "type": "pron-record",
-      "focusId": "str_question"
-    },
-    {
-      "id": "act_429",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_418",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "before",
-            "after",
-            "date"
-          ],
-          "odd": "from"
+          "en": "Before — a useful word.",
+          "hu": "(előtt)"
+        },
+        {
+          "en": "After — a useful word.",
+          "hu": "(után)"
+        },
+        {
+          "en": "This is a date.",
+          "hu": "(dátum)"
         }
       ]
+    },
+    {
+      "id": "act_419",
+      "type": "pron-record",
+      "focusId": "str_question"
     }
   ],
   "completionRule": {

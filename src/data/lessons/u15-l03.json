@@ -31,7 +31,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_909",
+      "id": "act_874",
       "type": "intro",
       "items": [
         "lex_drop",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "id": "act_910",
+      "id": "act_875",
       "type": "listen-choose",
       "items": [
         "lex_drop",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "act_911",
+      "id": "act_876",
       "type": "gapfill",
       "items": [
         {
@@ -73,19 +73,7 @@
       ]
     },
     {
-      "id": "act_912",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fl_firsttime",
-        "chunk_fl_helpcalm",
-        "chunk_fl_needanything",
-        "chunk_fe_worried",
-        "chunk_fl_thankyou",
-        "chunk_fl_couldyourepeat"
-      ]
-    },
-    {
-      "id": "act_913",
+      "id": "act_877",
       "type": "reorder",
       "sentences": [
         {
@@ -95,15 +83,11 @@
         {
           "en": "I'm a little worried.",
           "hu": "Kicsit aggódom."
-        },
-        {
-          "en": "Thank you, that's very kind.",
-          "hu": "Köszönöm, nagyon kedves."
         }
       ]
     },
     {
-      "id": "act_914",
+      "id": "act_878",
       "type": "typed",
       "items": [
         "lex_drop",
@@ -111,7 +95,29 @@
       ]
     },
     {
-      "id": "act_915",
+      "id": "act_879",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is my first flight. I'm a little nervous.",
+          "hu": "Ez az első repülésem. Kicsit ideges vagyok."
+        },
+        {
+          "en": "Could you help me? I'm afraid of flying.",
+          "hu": "Tudna segíteni? Félek a repüléstől."
+        },
+        {
+          "en": "I'm okay now, thank you.",
+          "hu": "Most már jól vagyok, köszönöm."
+        },
+        {
+          "en": "I'm a little worried.",
+          "hu": "Kicsit aggódom."
+        }
+      ]
+    },
+    {
+      "id": "act_880",
       "type": "pron-record",
       "focusId": "str_chunking"
     }

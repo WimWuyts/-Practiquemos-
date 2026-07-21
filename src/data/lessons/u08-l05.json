@@ -33,7 +33,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_559",
+      "id": "act_541",
       "type": "intro",
       "items": [
         "lex_important",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "id": "act_560",
+      "id": "act_542",
       "type": "listen-choose",
       "items": [
         "lex_important",
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "id": "act_561",
+      "id": "act_543",
       "type": "match",
       "items": [
         "lex_important",
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "id": "act_562",
+      "id": "act_544",
       "type": "gapfill",
       "items": [
         {
@@ -117,15 +117,7 @@
       ]
     },
     {
-      "id": "act_563",
-      "type": "phrase-match",
-      "items": [
-        "chunk_op_dependson",
-        "chunk_dl_freetime"
-      ]
-    },
-    {
-      "id": "act_564",
+      "id": "act_545",
       "type": "reorder",
       "sentences": [
         {
@@ -135,33 +127,34 @@
       ]
     },
     {
-      "id": "act_565",
+      "id": "act_546",
       "type": "typed",
       "items": [
         "lex_important",
         "lex_different",
         "lex_same",
-        "lex_lovely"
+        "lex_lovely",
+        "lex_quiet"
       ]
     },
     {
-      "id": "act_566",
-      "type": "pron-record",
-      "focusId": "snd_r"
-    },
-    {
-      "id": "act_567",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_547",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "important",
-            "different",
-            "same"
-          ],
-          "odd": "my"
+          "en": "It depends.",
+          "hu": "Attól függ."
+        },
+        {
+          "en": "In my free time I like reading.",
+          "hu": "A szabadidőmben szeretek olvasni."
         }
       ]
+    },
+    {
+      "id": "act_548",
+      "type": "pron-record",
+      "focusId": "snd_r"
     }
   ],
   "completionRule": {

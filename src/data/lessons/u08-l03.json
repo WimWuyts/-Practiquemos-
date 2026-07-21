@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_539",
+      "id": "act_523",
       "type": "intro",
       "items": [
         "lex_think",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_540",
+      "id": "act_524",
       "type": "listen-choose",
       "items": [
         "lex_think",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_541",
+      "id": "act_525",
       "type": "match",
       "items": [
         "lex_think",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_542",
+      "id": "act_526",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "green"
     },
     {
-      "id": "act_543",
+      "id": "act_527",
       "type": "gapfill",
       "items": [
         {
@@ -125,19 +125,34 @@
       ]
     },
     {
-      "id": "act_544",
-      "type": "phrase-match",
-      "items": [
-        "chunk_op_prefer",
-        "chunk_ds_bigger",
-        "chunk_ag_iagree",
-        "chunk_ag_notreally"
+      "id": "act_528",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I prefer tea to coffee.",
+          "hu": "Jobban szeretem a teát, mint a kávét."
+        },
+        {
+          "en": "This one is bigger than that one.",
+          "hu": "Ez nagyobb, mint az."
+        }
       ]
     },
     {
-      "id": "act_545",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_529",
+      "type": "typed",
+      "items": [
+        "lex_think",
+        "lex_red",
+        "lex_blue",
+        "lex_green",
+        "lex_white"
+      ]
+    },
+    {
+      "id": "act_530",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I prefer tea to coffee.",
           "hu": "Jobban szeretem a teát, mint a kávét."
@@ -149,21 +164,15 @@
         {
           "en": "Yes, I agree.",
           "hu": "Igen, egyetértek."
+        },
+        {
+          "en": "I'm not sure about that.",
+          "hu": "Ebben nem vagyok biztos."
         }
       ]
     },
     {
-      "id": "act_546",
-      "type": "typed",
-      "items": [
-        "lex_think",
-        "lex_red",
-        "lex_blue",
-        "lex_green"
-      ]
-    },
-    {
-      "id": "act_547",
+      "id": "act_531",
       "type": "pron-record",
       "focusId": "snd_r"
     }

@@ -139,16 +139,6 @@
     },
     {
       "id": "act_9",
-      "type": "phrase-match",
-      "items": [
-        "chunk_greet_hello",
-        "chunk_reply_fine",
-        "chunk_reply_and_you",
-        "chunk_intro_name"
-      ]
-    },
-    {
-      "id": "act_10",
       "type": "reorder",
       "sentences": [
         {
@@ -158,21 +148,40 @@
         {
           "en": "I'm fine, thank you.",
           "hu": "Jól vagyok, köszönöm."
-        },
-        {
-          "en": "My name is Marta.",
-          "hu": "A nevem Marta."
         }
       ]
     },
     {
-      "id": "act_11",
+      "id": "act_10",
       "type": "typed",
       "items": [
         "lex_hello",
         "lex_hi",
         "lex_goodbye",
-        "lex_bye"
+        "lex_bye",
+        "lex_good_morning"
+      ]
+    },
+    {
+      "id": "act_11",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Hello, how are you?",
+          "hu": "Szia, hogy vagy?"
+        },
+        {
+          "en": "I'm fine, thank you.",
+          "hu": "Jól vagyok, köszönöm."
+        },
+        {
+          "en": "And you?",
+          "hu": "És te?"
+        },
+        {
+          "en": "My name is Marta.",
+          "hu": "A nevem Marta."
+        }
       ]
     },
     {
@@ -187,20 +196,6 @@
     },
     {
       "id": "act_14",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "hello",
-            "hi",
-            "goodbye"
-          ],
-          "odd": "every day"
-        }
-      ]
-    },
-    {
-      "id": "act_15",
       "type": "expand",
       "question": {
         "en": "How are you?",
@@ -222,7 +217,7 @@
       ]
     },
     {
-      "id": "act_16",
+      "id": "act_15",
       "type": "conversation",
       "dialogueId": "dlg_endika_first"
     }

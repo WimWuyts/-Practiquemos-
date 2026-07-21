@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_237",
+      "id": "act_230",
       "type": "intro",
       "items": [
         "lex_flat",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_238",
+      "id": "act_231",
       "type": "listen-choose",
       "items": [
         "lex_flat",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_239",
+      "id": "act_232",
       "type": "match",
       "items": [
         "lex_flat",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_240",
+      "id": "act_233",
       "type": "gapfill",
       "items": [
         {
@@ -114,17 +114,36 @@
       ]
     },
     {
-      "id": "act_241",
+      "id": "act_234",
       "type": "typed",
       "items": [
         "lex_flat",
         "lex_put",
         "lex_get",
-        "lex_wash"
+        "lex_wash",
+        "lex_clean"
       ]
     },
     {
-      "id": "act_242",
+      "id": "act_235",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is a flat.",
+          "hu": "(lakás)"
+        },
+        {
+          "en": "I put every day.",
+          "hu": "(tenni)"
+        },
+        {
+          "en": "I get every day.",
+          "hu": "(kapni / szerezni)"
+        }
+      ]
+    },
+    {
+      "id": "act_236",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

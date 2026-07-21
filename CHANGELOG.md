@@ -2,6 +2,24 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.6.0] — 2026-07 — Speaking-first: 5-agent review acted on
+
+A 5-agent critical review (pedagogy, exercises, speaking, UX, relevance) drove this release — see `docs/REVIEW_FINDINGS_AND_ACTIONS.md`.
+
+### Speaking & production (the headline)
+- **Marta now speaks on every turn.** New reusable speak widget (Hear it → Record me → Hear me → optional check). New **`say-it`** activity in all 103 lessons; **`expand`** ends by saying the full answer aloud; **every conversation turn** gets a "🎤 Say it" record step. Production rose from <11% to ~45% of activities; sentence-level speaking from <2% to present everywhere.
+
+### Realistic exercises
+- **Distractors are now same-theme + same part-of-speech** (no more "time" vs "rabbit"); wrong answers reveal the correct word; `odd-one-out` constrained to one part of speech.
+- **Picture tasks only use words whose icon truly depicts them** (49-word "clearly depicts" set); borrowed icons (rabbit→cat…) are decoration only. Removed redundant recognition steps; lessons are shorter and end in production.
+
+### One guided journey (UX)
+- **Home is now one next step** ("Your next step" + optional "Warm up: N words"); the unit grid moved behind "Browse all lessons". Lesson completion deep-links to **Practise these words** / **Try a conversation**. Diagnostic routes into the first lesson. Unit pills show real progress (3/7). "Open conversations" string moved to i18n.
+
+### Content & tone
+- Removed childish praise aimed at Marta ("Ügyes vagy" → "Pontosan!"/"Szép munka"); praise she gives to child students kept.
+- Added 2 more online-teaching sims (connection delay; a full lesson) → 4 total, and an **Endre laptop-help** scene. Dialogues 21 → 24; new avatars (Endre).
+
 ## [1.5.0] — 2026-07 — Practice hub: separate vocabulary, grammar & all sounds
 
 ### Added

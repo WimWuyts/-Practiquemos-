@@ -132,7 +132,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_175",
+      "id": "act_170",
       "type": "intro",
       "items": [
         "lex_day",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "id": "act_176",
+      "id": "act_171",
       "type": "listen-choose",
       "items": [
         "lex_day",
@@ -158,7 +158,7 @@
       ]
     },
     {
-      "id": "act_177",
+      "id": "act_172",
       "type": "match",
       "items": [
         "lex_day",
@@ -170,28 +170,28 @@
       ]
     },
     {
-      "id": "act_178",
+      "id": "act_173",
+      "type": "grammar",
+      "grammarId": "gr_presentsimple"
+    },
+    {
+      "id": "act_174",
+      "type": "grammar",
+      "grammarId": "gr_dodoes"
+    },
+    {
+      "id": "act_175",
+      "type": "grammar",
+      "grammarId": "gr_frequency"
+    },
+    {
+      "id": "act_176",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "afternoon"
     },
     {
-      "id": "act_179",
-      "type": "grammar",
-      "grammarId": "gr_presentsimple"
-    },
-    {
-      "id": "act_180",
-      "type": "grammar",
-      "grammarId": "gr_dodoes"
-    },
-    {
-      "id": "act_181",
-      "type": "grammar",
-      "grammarId": "gr_frequency"
-    },
-    {
-      "id": "act_182",
+      "id": "act_177",
       "type": "gapfill",
       "items": [
         {
@@ -237,19 +237,34 @@
       ]
     },
     {
-      "id": "act_183",
-      "type": "phrase-match",
-      "items": [
-        "chunk_dl_getup",
-        "chunk_dl_usually",
-        "chunk_dl_everyday",
-        "chunk_sm_howwasday"
+      "id": "act_178",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I get up at seven o'clock.",
+          "hu": "Hétkor kelek."
+        },
+        {
+          "en": "I usually cook in the evening.",
+          "hu": "Általában este főzök."
+        }
       ]
     },
     {
-      "id": "act_184",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_179",
+      "type": "typed",
+      "items": [
+        "lex_day",
+        "lex_morning",
+        "lex_afternoon",
+        "lex_evening",
+        "lex_night"
+      ]
+    },
+    {
+      "id": "act_180",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I get up at seven o'clock.",
           "hu": "Hétkor kelek."
@@ -261,40 +276,20 @@
         {
           "en": "I do this every day.",
           "hu": "Ezt minden nap csinálom."
+        },
+        {
+          "en": "How was your day?",
+          "hu": "Milyen napod volt?"
         }
       ]
     },
     {
-      "id": "act_185",
-      "type": "typed",
-      "items": [
-        "lex_day",
-        "lex_morning",
-        "lex_afternoon",
-        "lex_evening"
-      ]
-    },
-    {
-      "id": "act_186",
+      "id": "act_181",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_187",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "day",
-            "morning",
-            "afternoon"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_188",
+      "id": "act_182",
       "type": "review",
       "items": [
         "lex_hello",

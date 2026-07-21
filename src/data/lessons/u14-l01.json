@@ -100,7 +100,7 @@
   "conversationId": "dlg_airport",
   "activities": [
     {
-      "id": "act_861",
+      "id": "act_831",
       "type": "intro",
       "items": [
         "lex_airport",
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "act_862",
+      "id": "act_832",
       "type": "listen-choose",
       "items": [
         "lex_airport",
@@ -126,16 +126,7 @@
       ]
     },
     {
-      "id": "act_863",
-      "type": "icon-choice",
-      "items": [
-        "lex_airport",
-        "lex_flight",
-        "lex_gate"
-      ]
-    },
-    {
-      "id": "act_864",
+      "id": "act_833",
       "type": "match",
       "items": [
         "lex_airport",
@@ -147,18 +138,18 @@
       ]
     },
     {
-      "id": "act_865",
+      "id": "act_834",
+      "type": "grammar",
+      "grammarId": "gr_could_requests"
+    },
+    {
+      "id": "act_835",
       "type": "spelling-build",
       "family": "sf_ar_or",
       "word": "airport"
     },
     {
-      "id": "act_866",
-      "type": "grammar",
-      "grammarId": "gr_could_requests"
-    },
-    {
-      "id": "act_867",
+      "id": "act_836",
       "type": "gapfill",
       "items": [
         {
@@ -204,19 +195,34 @@
       ]
     },
     {
-      "id": "act_868",
-      "type": "phrase-match",
-      "items": [
-        "chunk_air_gate",
-        "chunk_air_checkin",
-        "chunk_air_help",
-        "chunk_ai_wherecheckin2"
+      "id": "act_837",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where is my gate?",
+          "hu": "Hol van a kapum?"
+        },
+        {
+          "en": "Where is the check-in desk?",
+          "hu": "Hol van a check-in pult?"
+        }
       ]
     },
     {
-      "id": "act_869",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_838",
+      "type": "typed",
+      "items": [
+        "lex_airport",
+        "lex_flight",
+        "lex_gate",
+        "lex_check_in",
+        "lex_security"
+      ]
+    },
+    {
+      "id": "act_839",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Where is my gate?",
           "hu": "Hol van a kapum?"
@@ -228,40 +234,20 @@
         {
           "en": "Could you help me, please?",
           "hu": "Tudna segíteni, kérem?"
+        },
+        {
+          "en": "Excuse me, where do I check in?",
+          "hu": "Elnézést, hol tudok becsekkolni?"
         }
       ]
     },
     {
-      "id": "act_870",
-      "type": "typed",
-      "items": [
-        "lex_airport",
-        "lex_flight",
-        "lex_gate",
-        "lex_check_in"
-      ]
-    },
-    {
-      "id": "act_871",
+      "id": "act_840",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_872",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "airport",
-            "flight",
-            "gate"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_873",
+      "id": "act_841",
       "type": "listen-comprehension",
       "passage": "Attention please. The flight to Copenhagen is now boarding at gate twelve. Please have your passport ready.",
       "question": {
@@ -276,12 +262,12 @@
       "answer": "Gate twelve"
     },
     {
-      "id": "act_874",
+      "id": "act_842",
       "type": "conversation",
       "dialogueId": "dlg_airport"
     },
     {
-      "id": "act_875",
+      "id": "act_843",
       "type": "review",
       "items": [
         "lex_lesson",

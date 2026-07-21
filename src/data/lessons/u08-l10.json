@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_598",
+      "id": "act_580",
       "type": "intro",
       "items": [
         "lex_pretty",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_599",
+      "id": "act_581",
       "type": "listen-choose",
       "items": [
         "lex_pretty",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_600",
+      "id": "act_582",
       "type": "match",
       "items": [
         "lex_pretty",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_601",
+      "id": "act_583",
       "type": "gapfill",
       "items": [
         {
@@ -114,22 +114,41 @@
       ]
     },
     {
-      "id": "act_602",
+      "id": "act_584",
       "type": "typed",
       "items": [
         "lex_pretty",
         "lex_ride",
         "lex_climb",
-        "lex_build"
+        "lex_build",
+        "lex_grow"
       ]
     },
     {
-      "id": "act_603",
+      "id": "act_585",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very pretty.",
+          "hu": "(csinos / szép)"
+        },
+        {
+          "en": "I ride every day.",
+          "hu": "(lovagolni / biciklizni)"
+        },
+        {
+          "en": "I climb every day.",
+          "hu": "(mászni)"
+        }
+      ]
+    },
+    {
+      "id": "act_586",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_604",
+      "id": "act_587",
       "type": "minimal-pair",
       "focusId": "snd_th"
     }

@@ -83,7 +83,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_131",
+      "id": "act_126",
       "type": "intro",
       "items": [
         "lex_hungary",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": "act_132",
+      "id": "act_127",
       "type": "listen-choose",
       "items": [
         "lex_hungary",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "act_133",
+      "id": "act_128",
       "type": "match",
       "items": [
         "lex_hungary",
@@ -121,12 +121,12 @@
       ]
     },
     {
-      "id": "act_134",
+      "id": "act_129",
       "type": "grammar",
       "grammarId": "gr_conjunctions"
     },
     {
-      "id": "act_135",
+      "id": "act_130",
       "type": "gapfill",
       "items": [
         {
@@ -172,19 +172,34 @@
       ]
     },
     {
-      "id": "act_136",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ask_where_live",
-        "chunk_ask_work",
-        "chunk_id_teachonline",
-        "chunk_ds_tall"
+      "id": "act_131",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where do you live?",
+          "hu": "Hol laksz?"
+        },
+        {
+          "en": "What do you do?",
+          "hu": "Mivel foglalkozol?"
+        }
       ]
     },
     {
-      "id": "act_137",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_132",
+      "type": "typed",
+      "items": [
+        "lex_hungary",
+        "lex_hungarian",
+        "lex_england",
+        "lex_english",
+        "lex_spain"
+      ]
+    },
+    {
+      "id": "act_133",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Where do you live?",
           "hu": "Hol laksz?"
@@ -196,45 +211,25 @@
         {
           "en": "I teach Hungarian online.",
           "hu": "Magyart tanítok online."
+        },
+        {
+          "en": "She is tall and friendly.",
+          "hu": "Magas és barátságos."
         }
       ]
     },
     {
-      "id": "act_138",
-      "type": "typed",
-      "items": [
-        "lex_hungary",
-        "lex_hungarian",
-        "lex_england",
-        "lex_english"
-      ]
-    },
-    {
-      "id": "act_139",
+      "id": "act_134",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_140",
+      "id": "act_135",
       "type": "minimal-pair",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_141",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "Hungary",
-            "Hungarian",
-            "England"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_142",
+      "id": "act_136",
       "type": "review",
       "items": [
         "lex_family",

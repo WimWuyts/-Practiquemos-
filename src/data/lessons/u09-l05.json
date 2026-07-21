@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_651",
+      "id": "act_633",
       "type": "intro",
       "items": [
         "lex_centre",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_652",
+      "id": "act_634",
       "type": "listen-choose",
       "items": [
         "lex_centre",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_653",
+      "id": "act_635",
       "type": "match",
       "items": [
         "lex_centre",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_654",
+      "id": "act_636",
       "type": "spelling-build",
       "family": "sf_magic_e_o",
       "word": "close"
     },
     {
-      "id": "act_655",
+      "id": "act_637",
       "type": "gapfill",
       "items": [
         {
@@ -125,19 +125,34 @@
       ]
     },
     {
-      "id": "act_656",
-      "type": "phrase-match",
-      "items": [
-        "chunk_rp_howspell",
-        "chunk_tw_isitclose",
-        "chunk_tr_lastbus",
-        "chunk_tw_canyoushow"
+      "id": "act_638",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "How do you spell that?",
+          "hu": "Hogy írják ezt?"
+        },
+        {
+          "en": "Is it near here?",
+          "hu": "Közel van ide?"
+        }
       ]
     },
     {
-      "id": "act_657",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_639",
+      "type": "typed",
+      "items": [
+        "lex_centre",
+        "lex_place",
+        "lex_corner",
+        "lex_open",
+        "lex_close"
+      ]
+    },
+    {
+      "id": "act_640",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "How do you spell that?",
           "hu": "Hogy írják ezt?"
@@ -149,42 +164,22 @@
         {
           "en": "When is the last bus?",
           "hu": "Mikor megy az utolsó busz?"
+        },
+        {
+          "en": "Could you show me on the map?",
+          "hu": "Meg tudná mutatni a térképen?"
         }
       ]
     },
     {
-      "id": "act_658",
-      "type": "typed",
-      "items": [
-        "lex_centre",
-        "lex_place",
-        "lex_corner",
-        "lex_open"
-      ]
-    },
-    {
-      "id": "act_659",
+      "id": "act_641",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_660",
+      "id": "act_642",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
-    },
-    {
-      "id": "act_661",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "centre",
-            "place",
-            "corner"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

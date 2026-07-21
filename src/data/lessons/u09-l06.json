@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_662",
+      "id": "act_643",
       "type": "intro",
       "items": [
         "lex_show",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_663",
+      "id": "act_644",
       "type": "listen-choose",
       "items": [
         "lex_show",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_664",
+      "id": "act_645",
       "type": "match",
       "items": [
         "lex_show",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_665",
+      "id": "act_646",
       "type": "gapfill",
       "items": [
         {
@@ -114,22 +114,41 @@
       ]
     },
     {
-      "id": "act_666",
+      "id": "act_647",
       "type": "typed",
       "items": [
         "lex_show",
         "lex_drive",
         "lex_change",
-        "lex_fast"
+        "lex_fast",
+        "lex_slow"
       ]
     },
     {
-      "id": "act_667",
+      "id": "act_648",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I show every day.",
+          "hu": "(megmutatni)"
+        },
+        {
+          "en": "I drive every day.",
+          "hu": "(vezetni (autót))"
+        },
+        {
+          "en": "I change every day.",
+          "hu": "(változtatni / átszállni)"
+        }
+      ]
+    },
+    {
+      "id": "act_649",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_668",
+      "id": "act_650",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_701",
+      "id": "act_683",
       "type": "intro",
       "items": [
         "lex_boat",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_702",
+      "id": "act_684",
       "type": "listen-choose",
       "items": [
         "lex_boat",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_703",
+      "id": "act_685",
       "type": "match",
       "items": [
         "lex_boat",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_704",
+      "id": "act_686",
       "type": "gapfill",
       "items": [
         {
@@ -106,22 +106,41 @@
       ]
     },
     {
-      "id": "act_705",
+      "id": "act_687",
       "type": "typed",
       "items": [
         "lex_boat",
         "lex_bicycle",
         "lex_corner_shop",
-        "lex_bench"
+        "lex_bench",
+        "lex_wide"
       ]
     },
     {
-      "id": "act_706",
+      "id": "act_688",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is a boat.",
+          "hu": "(csónak / hajó)"
+        },
+        {
+          "en": "This is a bicycle.",
+          "hu": "(kerékpár)"
+        },
+        {
+          "en": "Corner shop.",
+          "hu": "(sarki bolt)"
+        }
+      ]
+    },
+    {
+      "id": "act_689",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_707",
+      "id": "act_690",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

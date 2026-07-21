@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_485",
+      "id": "act_474",
       "type": "intro",
       "items": [
         "lex_wait",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_486",
+      "id": "act_475",
       "type": "listen-choose",
       "items": [
         "lex_wait",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_487",
+      "id": "act_476",
       "type": "match",
       "items": [
         "lex_wait",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_488",
+      "id": "act_477",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_489",
-      "type": "phrase-match",
-      "items": [
-        "chunk_repair_sorry",
-        "chunk_repair_howsay",
-        "chunk_call_hearme",
-        "chunk_call_seeme"
+      "id": "act_478",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Sorry, I didn't hear you.",
+          "hu": "Elnézést, nem hallottam."
+        },
+        {
+          "en": "How do you say this in English?",
+          "hu": "Hogy mondják ezt angolul?"
+        }
       ]
     },
     {
-      "id": "act_490",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_479",
+      "type": "typed",
+      "items": [
+        "lex_wait",
+        "lex_moment",
+        "lex_me",
+        "lex_him",
+        "lex_them"
+      ]
+    },
+    {
+      "id": "act_480",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Sorry, I didn't hear you.",
           "hu": "Elnézést, nem hallottam."
@@ -143,45 +158,25 @@
         {
           "en": "Can you hear me?",
           "hu": "Hallasz engem?"
+        },
+        {
+          "en": "Can you see me?",
+          "hu": "Látsz engem?"
         }
       ]
     },
     {
-      "id": "act_491",
-      "type": "typed",
-      "items": [
-        "lex_wait",
-        "lex_moment",
-        "lex_me",
-        "lex_him"
-      ]
-    },
-    {
-      "id": "act_492",
+      "id": "act_481",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_493",
+      "id": "act_482",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_494",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "wait",
-            "moment",
-            "me"
-          ],
-          "odd": "be"
-        }
-      ]
-    },
-    {
-      "id": "act_495",
+      "id": "act_483",
       "type": "listen-comprehension",
       "passage": "Hello Marta, this is a short message. I will call you at seven o'clock this evening. Talk soon!",
       "question": {

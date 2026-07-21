@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_318",
+      "id": "act_309",
       "type": "intro",
       "items": [
         "lex_delicious",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_319",
+      "id": "act_310",
       "type": "listen-choose",
       "items": [
         "lex_delicious",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_320",
+      "id": "act_311",
       "type": "match",
       "items": [
         "lex_delicious",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_321",
+      "id": "act_312",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_322",
+      "id": "act_313",
       "type": "typed",
       "items": [
         "lex_delicious",
         "lex_taste",
         "lex_give",
-        "lex_pay"
+        "lex_pay",
+        "lex_sell"
       ]
     },
     {
-      "id": "act_323",
+      "id": "act_314",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very delicious.",
+          "hu": "(finom)"
+        },
+        {
+          "en": "I taste every day.",
+          "hu": "(íz / ízlelni)"
+        },
+        {
+          "en": "Please give me the menu.",
+          "hu": "Kérem, adja ide az étlapot."
+        }
+      ]
+    },
+    {
+      "id": "act_315",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_324",
+      "id": "act_316",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
-    },
-    {
-      "id": "act_325",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "delicious",
-            "taste",
-            "full"
-          ],
-          "odd": "my"
-        }
-      ]
     }
   ],
   "completionRule": {

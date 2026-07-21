@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_677",
+      "id": "act_659",
       "type": "intro",
       "items": [
         "lex_way",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_678",
+      "id": "act_660",
       "type": "listen-choose",
       "items": [
         "lex_way",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_679",
+      "id": "act_661",
       "type": "match",
       "items": [
         "lex_way",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_680",
+      "id": "act_662",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_681",
+      "id": "act_663",
       "type": "typed",
       "items": [
         "lex_way",
         "lex_side",
         "lex_office",
-        "lex_building"
+        "lex_building",
+        "lex_catch"
       ]
     },
     {
-      "id": "act_682",
+      "id": "act_664",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Is this the way to the station?",
+          "hu": "Erre van az állomás?"
+        },
+        {
+          "en": "The shop is on the other side.",
+          "hu": "A bolt a másik oldalon van."
+        },
+        {
+          "en": "This is an office.",
+          "hu": "(iroda)"
+        }
+      ]
+    },
+    {
+      "id": "act_665",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_683",
+      "id": "act_666",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_684",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "way",
-            "side",
-            "office"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

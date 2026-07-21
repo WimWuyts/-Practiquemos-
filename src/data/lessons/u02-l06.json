@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_124",
+      "id": "act_119",
       "type": "intro",
       "items": [
         "lex_woman",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_125",
+      "id": "act_120",
       "type": "listen-choose",
       "items": [
         "lex_woman",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_126",
+      "id": "act_121",
       "type": "match",
       "items": [
         "lex_woman",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_127",
+      "id": "act_122",
       "type": "gapfill",
       "items": [
         {
@@ -106,33 +106,38 @@
       ]
     },
     {
-      "id": "act_128",
+      "id": "act_123",
       "type": "typed",
       "items": [
         "lex_woman",
         "lex_girl",
         "lex_boy",
-        "lex_person"
+        "lex_person",
+        "lex_with"
       ]
     },
     {
-      "id": "act_129",
-      "type": "pron-record",
-      "focusId": "snd_s_endings"
-    },
-    {
-      "id": "act_130",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_124",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "woman",
-            "girl",
-            "boy"
-          ],
-          "odd": "name"
+          "en": "The woman is my sister.",
+          "hu": "A nő a nővérem."
+        },
+        {
+          "en": "This is a girl.",
+          "hu": "(lány)"
+        },
+        {
+          "en": "This is a boy.",
+          "hu": "(fiú)"
         }
       ]
+    },
+    {
+      "id": "act_125",
+      "type": "pron-record",
+      "focusId": "snd_s_endings"
     }
   ],
   "completionRule": {

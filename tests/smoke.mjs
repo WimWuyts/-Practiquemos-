@@ -26,7 +26,7 @@ check("appbar nav present", await page.locator(".navbtn").count() >= 5);
 // go home
 await page.evaluate(() => (location.hash = "home"));
 await page.waitForTimeout(300);
-check("home shows recommended", (await page.locator("text=/Recommended|Neked/").count()) >= 1);
+check("home shows next step", (await page.locator("text=/Your next step|következő lépés/").count()) >= 1 && (await page.locator(".recommend").count()) >= 1);
 
 // open lessons, start first lesson
 await page.evaluate(() => (location.hash = "lessons"));

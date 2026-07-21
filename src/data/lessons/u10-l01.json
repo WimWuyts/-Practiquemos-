@@ -152,7 +152,7 @@
   "conversationId": "dlg_restaurant",
   "activities": [
     {
-      "id": "act_708",
+      "id": "act_691",
       "type": "intro",
       "items": [
         "lex_restaurant",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "act_709",
+      "id": "act_692",
       "type": "listen-choose",
       "items": [
         "lex_restaurant",
@@ -178,18 +178,7 @@
       ]
     },
     {
-      "id": "act_710",
-      "type": "icon-choice",
-      "items": [
-        "lex_restaurant",
-        "lex_hotel",
-        "lex_menu",
-        "lex_table",
-        "lex_key"
-      ]
-    },
-    {
-      "id": "act_711",
+      "id": "act_693",
       "type": "match",
       "items": [
         "lex_restaurant",
@@ -201,12 +190,12 @@
       ]
     },
     {
-      "id": "act_712",
+      "id": "act_694",
       "type": "grammar",
       "grammarId": "gr_could_requests"
     },
     {
-      "id": "act_713",
+      "id": "act_695",
       "type": "gapfill",
       "items": [
         {
@@ -252,19 +241,34 @@
       ]
     },
     {
-      "id": "act_714",
-      "type": "phrase-match",
-      "items": [
-        "chunk_serv_order",
-        "chunk_serv_bill",
-        "chunk_serv_checkin",
-        "chunk_serv_help"
+      "id": "act_696",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'd like the soup, please.",
+          "hu": "A levest kérném."
+        },
+        {
+          "en": "Could I have the bill, please?",
+          "hu": "Megkaphatnám a számlát, kérem?"
+        }
       ]
     },
     {
-      "id": "act_715",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_697",
+      "type": "typed",
+      "items": [
+        "lex_restaurant",
+        "lex_hotel",
+        "lex_menu",
+        "lex_table",
+        "lex_bill"
+      ]
+    },
+    {
+      "id": "act_698",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I'd like the soup, please.",
           "hu": "A levest kérném."
@@ -276,45 +280,25 @@
         {
           "en": "I have a reservation.",
           "hu": "Van foglalásom."
+        },
+        {
+          "en": "Could you help me, please?",
+          "hu": "Tudna segíteni, kérem?"
         }
       ]
     },
     {
-      "id": "act_716",
-      "type": "typed",
-      "items": [
-        "lex_restaurant",
-        "lex_hotel",
-        "lex_menu",
-        "lex_table"
-      ]
-    },
-    {
-      "id": "act_717",
+      "id": "act_699",
       "type": "pron-record",
       "focusId": "str_sentence"
     },
     {
-      "id": "act_718",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "restaurant",
-            "menu",
-            "table"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_719",
+      "id": "act_700",
       "type": "conversation",
       "dialogueId": "dlg_restaurant"
     },
     {
-      "id": "act_720",
+      "id": "act_701",
       "type": "review",
       "items": [
         "lex_call",

@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_576",
+      "id": "act_557",
       "type": "intro",
       "items": [
         "lex_why",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_577",
+      "id": "act_558",
       "type": "listen-choose",
       "items": [
         "lex_why",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_578",
+      "id": "act_559",
       "type": "match",
       "items": [
         "lex_why",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_579",
+      "id": "act_560",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "game"
     },
     {
-      "id": "act_580",
+      "id": "act_561",
       "type": "gapfill",
       "items": [
         {
@@ -120,17 +120,36 @@
       ]
     },
     {
-      "id": "act_581",
+      "id": "act_562",
       "type": "typed",
       "items": [
         "lex_why",
         "lex_part",
         "lex_story",
-        "lex_song"
+        "lex_song",
+        "lex_game"
       ]
     },
     {
-      "id": "act_582",
+      "id": "act_563",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Why do you like it?",
+          "hu": "Miért szereted?"
+        },
+        {
+          "en": "This is my favourite part.",
+          "hu": "Ez a kedvenc részem."
+        },
+        {
+          "en": "This is a story.",
+          "hu": "(történet)"
+        }
+      ]
+    },
+    {
+      "id": "act_564",
       "type": "pron-record",
       "focusId": "snd_r"
     }

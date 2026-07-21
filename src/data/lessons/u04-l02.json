@@ -34,7 +34,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_189",
+      "id": "act_183",
       "type": "intro",
       "items": [
         "lex_drink",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_190",
+      "id": "act_184",
       "type": "listen-choose",
       "items": [
         "lex_drink",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_191",
+      "id": "act_185",
       "type": "match",
       "items": [
         "lex_drink",
@@ -72,18 +72,18 @@
       ]
     },
     {
-      "id": "act_192",
+      "id": "act_186",
+      "type": "grammar",
+      "grammarId": "gr_thereis"
+    },
+    {
+      "id": "act_187",
       "type": "spelling-build",
       "family": "sf_ea",
       "word": "read"
     },
     {
-      "id": "act_193",
-      "type": "grammar",
-      "grammarId": "gr_thereis"
-    },
-    {
-      "id": "act_194",
+      "id": "act_188",
       "type": "gapfill",
       "items": [
         {
@@ -129,14 +129,7 @@
       ]
     },
     {
-      "id": "act_195",
-      "type": "phrase-match",
-      "items": [
-        "chunk_sm_goodnight"
-      ]
-    },
-    {
-      "id": "act_196",
+      "id": "act_189",
       "type": "reorder",
       "sentences": [
         {
@@ -146,17 +139,28 @@
       ]
     },
     {
-      "id": "act_197",
+      "id": "act_190",
       "type": "typed",
       "items": [
         "lex_drink",
         "lex_sleep",
         "lex_go",
-        "lex_read"
+        "lex_read",
+        "lex_watch"
       ]
     },
     {
-      "id": "act_198",
+      "id": "act_191",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Good night, sleep well.",
+          "hu": "Jó éjt, aludj jól."
+        }
+      ]
+    },
+    {
+      "id": "act_192",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

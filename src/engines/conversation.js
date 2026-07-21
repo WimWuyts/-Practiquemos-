@@ -4,7 +4,7 @@ window.M = window.M || {};
   var CHAR = {
     endika: "Endika", marlene: "Marlene", kira: "Kira", esztella: "Esztella", mirella: "Mirella",
     peter: "Peter", emma: "Emma", margo: "Margó", martin: "Martin", david: "David", panna: "Panna",
-    eva: "Aunt Eva", akos: "Ákos", student: "Student", parent: "Parent",
+    eva: "Aunt Eva", akos: "Ákos", endre: "Endre", student: "Student", parent: "Parent",
     agent: "Airport staff", attendant: "Flight attendant", waiter: "Waiter", receptionist: "Receptionist",
   };
 
@@ -72,8 +72,12 @@ window.M = window.M || {};
             bubble("me", "Marta", ch.text.en);
             M.audio.speak(ch.text.en);
             interact.appendChild(mkFeedback(ch.correct, ch.feedback && ch.feedback.en));
-            interact.appendChild(el("div", { class: "btn-row" }, [
-              el("button", { class: "btn", onclick: function () { go(ch.next); } }, [M.i18n.t("btn.continue")]),
+            // say your answer aloud (speaking practice on every turn)
+            interact.appendChild(el("div", { class: "card", style: "margin-top:.6rem" }, [
+              el("div", { class: "stepbadge", text: "🎤 " + M.i18n.t("say.title") }),
+              el("div", { style: "font-size:1.1rem;font-weight:700", text: ch.text.en }),
+              M.speakRecord(ch.text.en),
+              el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); go(ch.next); } }, [M.i18n.t("btn.continue")])]),
             ]));
           });
           opts.appendChild(b);
@@ -114,12 +118,21 @@ window.M = window.M || {};
       }
 
       var fails = {};
+      function speakStep(sayText, nextNode) {
+        interact.appendChild(el("div", { class: "card", style: "margin-top:.6rem" }, [
+          el("div", { class: "stepbadge", text: "🎤 " + M.i18n.t("say.title") }),
+          el("div", { style: "font-size:1.15rem;font-weight:700", text: sayText }),
+          M.speakRecord(sayText),
+          el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); go(nextNode); } }, [M.i18n.t("btn.continue")])]),
+        ]));
+      }
       function handleAnswer(node, r, ok, ans, reset) {
         if (ok) {
           bubble("me", "Marta", ans);
           interact.appendChild(mkFeedback(true, M.i18n.t("fb.correct")));
           interact.querySelectorAll("button,input").forEach(function (x) { x.disabled = true; });
-          interact.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { go(r.next); } }, [M.i18n.t("btn.continue")])]));
+          M.store.markSpoken && M.store.markSpoken();
+          speakStep(r.modelAnswer || ans, r.next);
         } else {
           var key = node.speaker + (r.next || "");
           fails[key] = (fails[key] || 0) + 1;

@@ -34,7 +34,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_39",
+      "id": "act_36",
       "type": "intro",
       "items": [
         "lex_be",
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "id": "act_40",
+      "id": "act_37",
       "type": "listen-choose",
       "items": [
         "lex_be",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_41",
+      "id": "act_38",
       "type": "match",
       "items": [
         "lex_be",
@@ -72,13 +72,13 @@
       ]
     },
     {
-      "id": "act_42",
+      "id": "act_39",
       "type": "spelling-build",
       "family": "sf_magic_e_i",
       "word": "nice"
     },
     {
-      "id": "act_43",
+      "id": "act_40",
       "type": "gapfill",
       "items": [
         {
@@ -124,18 +124,34 @@
       ]
     },
     {
-      "id": "act_44",
-      "type": "phrase-match",
-      "items": [
-        "chunk_id_job2",
-        "chunk_sm_longtime2",
-        "chunk_id_pleased"
+      "id": "act_41",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'm retired now.",
+          "hu": "Most nyugdíjas vagyok."
+        },
+        {
+          "en": "It's been a long time!",
+          "hu": "Rég találkoztunk!"
+        }
       ]
     },
     {
-      "id": "act_45",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_42",
+      "type": "typed",
+      "items": [
+        "lex_be",
+        "lex_from",
+        "lex_country",
+        "lex_city",
+        "lex_teacher"
+      ]
+    },
+    {
+      "id": "act_43",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I'm retired now.",
           "hu": "Most nyugdíjas vagyok."
@@ -151,38 +167,14 @@
       ]
     },
     {
-      "id": "act_46",
-      "type": "typed",
-      "items": [
-        "lex_be",
-        "lex_from",
-        "lex_country",
-        "lex_city"
-      ]
-    },
-    {
-      "id": "act_47",
+      "id": "act_44",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_48",
+      "id": "act_45",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
-    },
-    {
-      "id": "act_49",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "be",
-            "from",
-            "country"
-          ],
-          "odd": "have"
-        }
-      ]
     }
   ],
   "completionRule": {

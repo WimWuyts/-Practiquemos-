@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_382",
+      "id": "act_372",
       "type": "intro",
       "items": [
         "lex_weekend",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_383",
+      "id": "act_373",
       "type": "listen-choose",
       "items": [
         "lex_weekend",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_384",
+      "id": "act_374",
       "type": "match",
       "items": [
         "lex_weekend",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_385",
+      "id": "act_375",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_386",
-      "type": "phrase-match",
-      "items": [
-        "chunk_pl_shallwe",
-        "chunk_pl_goodidea",
-        "chunk_pl_cantsorry",
-        "chunk_ap_solate"
+      "id": "act_376",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Shall we meet on Sunday?",
+          "hu": "Találkozzunk vasárnap?"
+        },
+        {
+          "en": "That's a good idea!",
+          "hu": "Ez jó ötlet!"
+        }
       ]
     },
     {
-      "id": "act_387",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_377",
+      "type": "typed",
+      "items": [
+        "lex_weekend",
+        "lex_weather",
+        "lex_sunny",
+        "lex_rainy",
+        "lex_cold"
+      ]
+    },
+    {
+      "id": "act_378",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Shall we meet on Sunday?",
           "hu": "Találkozzunk vasárnap?"
@@ -143,21 +158,15 @@
         {
           "en": "I'm sorry, I can't that day.",
           "hu": "Sajnálom, aznap nem tudok."
+        },
+        {
+          "en": "Sorry I'm late.",
+          "hu": "Bocsánat a késésért."
         }
       ]
     },
     {
-      "id": "act_388",
-      "type": "typed",
-      "items": [
-        "lex_weekend",
-        "lex_weather",
-        "lex_sunny",
-        "lex_rainy"
-      ]
-    },
-    {
-      "id": "act_389",
+      "id": "act_379",
       "type": "pron-record",
       "focusId": "str_word"
     }

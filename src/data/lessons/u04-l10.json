@@ -24,7 +24,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_250",
+      "id": "act_244",
       "type": "intro",
       "items": [
         "lex_outside",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "id": "act_251",
+      "id": "act_245",
       "type": "listen-choose",
       "items": [
         "lex_outside",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "act_252",
+      "id": "act_246",
       "type": "gapfill",
       "items": [
         {
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": "act_253",
+      "id": "act_247",
       "type": "typed",
       "items": [
         "lex_outside",
@@ -74,7 +74,21 @@
       ]
     },
     {
-      "id": "act_254",
+      "id": "act_248",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I speak outside.",
+          "hu": "(kint)"
+        },
+        {
+          "en": "I speak inside.",
+          "hu": "(bent)"
+        }
+      ]
+    },
+    {
+      "id": "act_249",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

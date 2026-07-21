@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_349",
+      "id": "act_341",
       "type": "intro",
       "items": [
         "lex_lemon",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_350",
+      "id": "act_342",
       "type": "listen-choose",
       "items": [
         "lex_lemon",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_351",
+      "id": "act_343",
       "type": "match",
       "items": [
         "lex_lemon",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_352",
+      "id": "act_344",
       "type": "gapfill",
       "items": [
         {
@@ -106,38 +106,43 @@
       ]
     },
     {
-      "id": "act_353",
+      "id": "act_345",
       "type": "typed",
       "items": [
         "lex_lemon",
         "lex_biscuit",
         "lex_honey",
-        "lex_sweet"
+        "lex_sweet",
+        "lex_fresh"
       ]
     },
     {
-      "id": "act_354",
+      "id": "act_346",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is a lemon.",
+          "hu": "(citrom)"
+        },
+        {
+          "en": "This is a biscuit.",
+          "hu": "(keksz)"
+        },
+        {
+          "en": "This is a honey.",
+          "hu": "(méz)"
+        }
+      ]
+    },
+    {
+      "id": "act_347",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_355",
+      "id": "act_348",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
-    },
-    {
-      "id": "act_356",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "lemon",
-            "biscuit",
-            "honey"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

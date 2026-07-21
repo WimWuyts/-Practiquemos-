@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_326",
+      "id": "act_317",
       "type": "intro",
       "items": [
         "lex_empty",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_327",
+      "id": "act_318",
       "type": "listen-choose",
       "items": [
         "lex_empty",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_328",
+      "id": "act_319",
       "type": "match",
       "items": [
         "lex_empty",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_329",
+      "id": "act_320",
       "type": "gapfill",
       "items": [
         {
@@ -114,22 +114,41 @@
       ]
     },
     {
-      "id": "act_330",
+      "id": "act_321",
       "type": "typed",
       "items": [
         "lex_empty",
         "lex_for",
         "lex_cost",
-        "lex_euro"
+        "lex_euro",
+        "lex_card"
       ]
     },
     {
-      "id": "act_331",
+      "id": "act_322",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very empty.",
+          "hu": "(üres)"
+        },
+        {
+          "en": "This is for you.",
+          "hu": "Ez neked van."
+        },
+        {
+          "en": "I cost every day.",
+          "hu": "(kerülni (vmennyibe))"
+        }
+      ]
+    },
+    {
+      "id": "act_323",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_332",
+      "id": "act_324",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     }

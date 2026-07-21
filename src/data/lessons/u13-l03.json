@@ -32,7 +32,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_845",
+      "id": "act_815",
       "type": "intro",
       "items": [
         "lex_carry",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_846",
+      "id": "act_816",
       "type": "listen-choose",
       "items": [
         "lex_carry",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "act_847",
+      "id": "act_817",
       "type": "match",
       "items": [
         "lex_carry",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "act_848",
+      "id": "act_818",
       "type": "gapfill",
       "items": [
         {
@@ -116,14 +116,7 @@
       ]
     },
     {
-      "id": "act_849",
-      "type": "phrase-match",
-      "items": [
-        "chunk_rp_letmecheck"
-      ]
-    },
-    {
-      "id": "act_850",
+      "id": "act_819",
       "type": "reorder",
       "sentences": [
         {
@@ -133,33 +126,30 @@
       ]
     },
     {
-      "id": "act_851",
+      "id": "act_820",
       "type": "typed",
       "items": [
         "lex_carry",
         "lex_stay",
         "lex_leave",
-        "lex_arrive"
+        "lex_arrive",
+        "lex_bag"
       ]
     },
     {
-      "id": "act_852",
-      "type": "pron-record",
-      "focusId": "str_word"
-    },
-    {
-      "id": "act_853",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_821",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "carry",
-            "stay",
-            "leave"
-          ],
-          "odd": "be"
+          "en": "Let me check.",
+          "hu": "Hadd nézzem meg."
         }
       ]
+    },
+    {
+      "id": "act_822",
+      "type": "pron-record",
+      "focusId": "str_word"
     }
   ],
   "completionRule": {

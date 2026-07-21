@@ -100,8 +100,8 @@
               "correct": true,
               "next": "n2",
               "feedback": {
-                "en": "There it is. Well done.",
-                "hu": "Ez az. Ügyes vagy."
+                "en": "There it is. Exactly.",
+                "hu": "Ez az. Pontosan."
               }
             },
             {
@@ -1558,8 +1558,8 @@
               "correct": true,
               "next": "n3",
               "feedback": {
-                "en": "Well done.",
-                "hu": "Ügyes."
+                "en": "Exactly.",
+                "hu": "Pontosan."
               }
             }
           ],
@@ -2006,8 +2006,8 @@
               "correct": true,
               "next": "n2",
               "feedback": {
-                "en": "Well done.",
-                "hu": "Ügyes."
+                "en": "Exactly.",
+                "hu": "Pontosan."
               }
             }
           ],
@@ -3669,6 +3669,517 @@
           "hu": "Üljünk a tűz mellé együtt. Gyönyörű este van."
         },
         "tts": "Let's sit by the fire together. It's a beautiful night.",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_student_delay",
+    "characterId": "student",
+    "scene": {
+      "en": "Online lesson: the connection is slow",
+      "hu": "Online óra: lassú a kapcsolat"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "student",
+        "text": {
+          "en": "(The picture freezes and the sound cuts out.)",
+          "hu": "(A kép megáll, a hang elakad.)"
+        },
+        "tts": "(The picture freezes and the sound cuts out.)",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Please wait a moment. The connection is slow.",
+                "hu": "Kérlek, várj egy pillanatot. Lassú a kapcsolat."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Clear and calm — well handled.",
+                "hu": "Világos és nyugodt — jól kezelted."
+              }
+            },
+            {
+              "text": {
+                "en": "Can you hear me now?",
+                "hu": "Most hallasz engem?"
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Good — checking the sound.",
+                "hu": "Jó — ellenőrzöd a hangot."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "student",
+        "text": {
+          "en": "Sorry teacher, my internet is bad today.",
+          "hu": "Bocsánat tanárnő, ma rossz az internetem."
+        },
+        "tts": "Sorry teacher, my internet is bad today.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "No problem. Let's try again in a moment.",
+                "hu": "Semmi baj. Próbáljuk újra egy perc múlva."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Kind and patient.",
+                "hu": "Kedves és türelmes."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "student",
+        "text": {
+          "en": "Okay, it works now! What do we do today?",
+          "hu": "Oké, most működik! Mit csinálunk ma?"
+        },
+        "tts": "Okay, it works now! What do we do today?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "read",
+            "story",
+            "words",
+            "start",
+            "lesson",
+            "book",
+            "today"
+          ],
+          "keywords": [
+            "read",
+            "story",
+            "word",
+            "start",
+            "lesson",
+            "book",
+            "learn"
+          ],
+          "modelAnswer": "Today we read a short story.",
+          "next": "n4",
+          "hints": [
+            "Today we ..."
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "student",
+        "text": {
+          "en": "Choose what to say:",
+          "hu": "Válaszd ki, mit mondasz:"
+        },
+        "tts": "Choose what to say:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Let's start today's lesson.",
+                "hu": "Kezdjük a mai órát."
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Perfect.",
+                "hu": "Tökéletes."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "student",
+        "text": {
+          "en": "Great! I'm ready now. Thank you, teacher!",
+          "hu": "Remek! Most kész vagyok. Köszönöm, tanárnő!"
+        },
+        "tts": "Great! I'm ready now. Thank you, teacher!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_student_lesson",
+    "characterId": "student",
+    "scene": {
+      "en": "Online lesson: start to finish",
+      "hu": "Online óra: elejétől a végéig"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "student",
+        "text": {
+          "en": "Hello teacher! I'm ready for my Hungarian lesson.",
+          "hu": "Szia tanárnő! Kész vagyok a magyarórára."
+        },
+        "tts": "Hello teacher! I'm ready for my Hungarian lesson.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Hello! Let's start today's lesson.",
+                "hu": "Szia! Kezdjük a mai órát."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Warm and clear.",
+                "hu": "Meleg és világos."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "student",
+        "text": {
+          "en": "What should I do first?",
+          "hu": "Mit csináljak először?"
+        },
+        "tts": "What should I do first?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Open your book, please.",
+                "hu": "Nyisd ki a könyvet, kérlek."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Good instruction.",
+                "hu": "Jó utasítás."
+              }
+            },
+            {
+              "text": {
+                "en": "Repeat after me, please.",
+                "hu": "Ismételd utánam, kérlek."
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Also perfect.",
+                "hu": "Szintén tökéletes."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "student",
+        "text": {
+          "en": "Like this? Szia, jó napot!",
+          "hu": "Így? Szia, jó napot!"
+        },
+        "tts": "Like this? Szia, jó napot!",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "yes",
+            "good",
+            "very good",
+            "excellent",
+            "well done",
+            "correct",
+            "right"
+          ],
+          "keywords": [
+            "yes",
+            "good",
+            "excellent",
+            "well",
+            "correct",
+            "right",
+            "great"
+          ],
+          "modelAnswer": "Yes, very good!",
+          "next": "n4",
+          "hints": [
+            "Praise the child: Yes, very good!"
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "student",
+        "text": {
+          "en": "Praise your student:",
+          "hu": "Dicsérd a diákodat:"
+        },
+        "tts": "Praise your student:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Excellent! Well done!",
+                "hu": "Kiváló! Ügyes vagy!"
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Lovely, warm praise for a child.",
+                "hu": "Kedves, meleg dicséret egy gyereknek."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "student",
+        "text": {
+          "en": "Thank you teacher! Is the lesson finished?",
+          "hu": "Köszönöm tanárnő! Vége az órának?"
+        },
+        "tts": "Thank you teacher! Is the lesson finished?",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, that's all for today. See you next week!",
+                "hu": "Igen, ez minden mára. Jövő héten találkozunk!"
+              },
+              "correct": true,
+              "next": "n5",
+              "feedback": {
+                "en": "A warm goodbye.",
+                "hu": "Meleg búcsú."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n5": {
+        "speaker": "student",
+        "text": {
+          "en": "Goodbye teacher! Thank you!",
+          "hu": "Viszlát tanárnő! Köszönöm!"
+        },
+        "tts": "Goodbye teacher! Thank you!",
+        "huHelp": "",
+        "response": {
+          "mode": "end"
+        }
+      }
+    }
+  },
+  {
+    "id": "dlg_endre_tech",
+    "characterId": "endre",
+    "scene": {
+      "en": "Endre helps with a laptop problem",
+      "hu": "Endre segít a laptop-gonddal"
+    },
+    "supportLevels": [
+      "choose",
+      "build",
+      "type-speak"
+    ],
+    "startNode": "n1",
+    "memorySchema": {},
+    "nodes": {
+      "n1": {
+        "speaker": "endre",
+        "text": {
+          "en": "Marta, you said the camera doesn't work. Show me.",
+          "hu": "Marta, azt mondtad, nem működik a kamera. Mutasd meg."
+        },
+        "tts": "Marta, you said the camera doesn't work. Show me.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes. I can't turn my camera on.",
+                "hu": "Igen. Nem tudom bekapcsolni a kamerát."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Clear problem — well described.",
+                "hu": "Világos probléma — jól leírtad."
+              }
+            },
+            {
+              "text": {
+                "en": "The camera is a problem.",
+                "hu": "A kamera egy probléma."
+              },
+              "correct": true,
+              "next": "n2",
+              "feedback": {
+                "en": "Good. A full sentence is even clearer.",
+                "hu": "Jó. Teljes mondattal még érthetőbb."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n2": {
+        "speaker": "endre",
+        "text": {
+          "en": "Okay. Click here, on the little camera picture.",
+          "hu": "Rendben. Kattints ide, a kis kamera-ikonra."
+        },
+        "tts": "Okay. Click here, on the little camera picture.",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Like this?",
+                "hu": "Így?"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Yes, exactly.",
+                "hu": "Igen, pontosan."
+              }
+            },
+            {
+              "text": {
+                "en": "I don't understand. Can you show me?",
+                "hu": "Nem értem. Meg tudod mutatni?"
+              },
+              "correct": true,
+              "next": "n3",
+              "feedback": {
+                "en": "Great repair phrase.",
+                "hu": "Remek javító mondat."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n3": {
+        "speaker": "endre",
+        "text": {
+          "en": "There! Now the camera works. Can you see the picture?",
+          "hu": "Tessék! Most működik a kamera. Látod a képet?"
+        },
+        "tts": "There! Now the camera works. Can you see the picture?",
+        "huHelp": "",
+        "response": {
+          "mode": "type",
+          "accepted": [
+            "yes",
+            "works",
+            "thank",
+            "see",
+            "picture",
+            "now"
+          ],
+          "keywords": [
+            "yes",
+            "work",
+            "thank",
+            "see",
+            "picture",
+            "now"
+          ],
+          "modelAnswer": "Yes, it works now. Thank you!",
+          "next": "n4",
+          "hints": [
+            "Yes, it works now. Thank you!"
+          ],
+          "fallbackNode": "n3b"
+        }
+      },
+      "n3b": {
+        "speaker": "endre",
+        "text": {
+          "en": "Choose an answer:",
+          "hu": "Válassz választ:"
+        },
+        "tts": "Choose an answer:",
+        "huHelp": "",
+        "response": {
+          "mode": "choose",
+          "choices": [
+            {
+              "text": {
+                "en": "Yes, it works now. Thank you, Endre!",
+                "hu": "Igen, most működik. Köszönöm, Endre!"
+              },
+              "correct": true,
+              "next": "n4",
+              "feedback": {
+                "en": "Lovely.",
+                "hu": "Kedves."
+              }
+            }
+          ],
+          "fallbackNode": null
+        }
+      },
+      "n4": {
+        "speaker": "endre",
+        "text": {
+          "en": "You're welcome. Call me any time you need help.",
+          "hu": "Szívesen. Hívj bármikor, ha segítség kell."
+        },
+        "tts": "You're welcome. Call me any time you need help.",
         "huHelp": "",
         "response": {
           "mode": "end"

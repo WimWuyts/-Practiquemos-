@@ -37,7 +37,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_269",
+      "id": "act_263",
       "type": "intro",
       "items": [
         "lex_apple",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_270",
+      "id": "act_264",
       "type": "listen-choose",
       "items": [
         "lex_apple",
@@ -63,18 +63,7 @@
       ]
     },
     {
-      "id": "act_271",
-      "type": "icon-choice",
-      "items": [
-        "lex_apple",
-        "lex_soup",
-        "lex_meat",
-        "lex_fish",
-        "lex_vegetable"
-      ]
-    },
-    {
-      "id": "act_272",
+      "id": "act_265",
       "type": "match",
       "items": [
         "lex_apple",
@@ -86,18 +75,18 @@
       ]
     },
     {
-      "id": "act_273",
+      "id": "act_266",
+      "type": "grammar",
+      "grammarId": "gr_wouldlike"
+    },
+    {
+      "id": "act_267",
       "type": "spelling-build",
       "family": "sf_ea",
       "word": "meat"
     },
     {
-      "id": "act_274",
-      "type": "grammar",
-      "grammarId": "gr_wouldlike"
-    },
-    {
-      "id": "act_275",
+      "id": "act_268",
       "type": "gapfill",
       "items": [
         {
@@ -143,19 +132,34 @@
       ]
     },
     {
-      "id": "act_276",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fd_recipe",
-        "chunk_fd_howmuch2",
-        "chunk_fd_takeit",
-        "chunk_pm_canihave"
+      "id": "act_269",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I can show you the recipe.",
+          "hu": "Megmutathatom a receptet."
+        },
+        {
+          "en": "How much is this, please?",
+          "hu": "Mennyibe kerül ez, kérem?"
+        }
       ]
     },
     {
-      "id": "act_277",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_270",
+      "type": "typed",
+      "items": [
+        "lex_apple",
+        "lex_soup",
+        "lex_meat",
+        "lex_fish",
+        "lex_vegetable"
+      ]
+    },
+    {
+      "id": "act_271",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I can show you the recipe.",
           "hu": "Megmutathatom a receptet."
@@ -167,42 +171,22 @@
         {
           "en": "I'll take it, thank you.",
           "hu": "Megveszem, köszönöm."
+        },
+        {
+          "en": "Can I have this, please?",
+          "hu": "Megkaphatnám ezt, kérem?"
         }
       ]
     },
     {
-      "id": "act_278",
-      "type": "typed",
-      "items": [
-        "lex_apple",
-        "lex_soup",
-        "lex_meat",
-        "lex_fish"
-      ]
-    },
-    {
-      "id": "act_279",
+      "id": "act_272",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_280",
+      "id": "act_273",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
-    },
-    {
-      "id": "act_281",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "apple",
-            "soup",
-            "meat"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

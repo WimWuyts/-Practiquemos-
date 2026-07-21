@@ -157,7 +157,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_797",
+      "id": "act_773",
       "type": "intro",
       "items": [
         "lex_was",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "id": "act_798",
+      "id": "act_774",
       "type": "listen-choose",
       "items": [
         "lex_was",
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "id": "act_799",
+      "id": "act_775",
       "type": "match",
       "items": [
         "lex_was",
@@ -195,12 +195,12 @@
       ]
     },
     {
-      "id": "act_800",
+      "id": "act_776",
       "type": "grammar",
       "grammarId": "gr_waswere"
     },
     {
-      "id": "act_801",
+      "id": "act_777",
       "type": "gapfill",
       "items": [
         {
@@ -246,19 +246,38 @@
       ]
     },
     {
-      "id": "act_802",
-      "type": "phrase-match",
-      "items": [
-        "chunk_conv_expand",
-        "chunk_pa_wasat",
-        "chunk_pa_wentto",
-        "chunk_pa_wasnice"
+      "id": "act_778",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I was at home yesterday.",
+          "hu": "Tegnap otthon voltam."
+        },
+        {
+          "en": "I went to the market.",
+          "hu": "Elmentem a piacra."
+        }
       ]
     },
     {
-      "id": "act_803",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_779",
+      "type": "typed",
+      "items": [
+        "lex_was",
+        "lex_went",
+        "lex_saw",
+        "lex_visit",
+        "lex_last_week"
+      ]
+    },
+    {
+      "id": "act_780",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I'm good. I visited my sister and we had coffee.",
+          "hu": "Jól vagyok. Meglátogattam a nővéremet, és ittunk egy kávét."
+        },
         {
           "en": "I was at home yesterday.",
           "hu": "Tegnap otthon voltam."
@@ -274,36 +293,12 @@
       ]
     },
     {
-      "id": "act_804",
-      "type": "typed",
-      "items": [
-        "lex_was",
-        "lex_went",
-        "lex_saw",
-        "lex_visit"
-      ]
-    },
-    {
-      "id": "act_805",
+      "id": "act_781",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_806",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "was",
-            "went",
-            "saw"
-          ],
-          "odd": "be"
-        }
-      ]
-    },
-    {
-      "id": "act_807",
+      "id": "act_782",
       "type": "review",
       "items": [
         "lex_street",

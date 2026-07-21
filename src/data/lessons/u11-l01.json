@@ -147,7 +147,7 @@
   "conversationId": "dlg_student_mic",
   "activities": [
     {
-      "id": "act_747",
+      "id": "act_727",
       "type": "intro",
       "items": [
         "lex_lesson",
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "id": "act_748",
+      "id": "act_728",
       "type": "listen-choose",
       "items": [
         "lex_lesson",
@@ -173,17 +173,7 @@
       ]
     },
     {
-      "id": "act_749",
-      "type": "icon-choice",
-      "items": [
-        "lex_camera",
-        "lex_microphone",
-        "lex_screen",
-        "lex_computer"
-      ]
-    },
-    {
-      "id": "act_750",
+      "id": "act_729",
       "type": "match",
       "items": [
         "lex_lesson",
@@ -195,12 +185,12 @@
       ]
     },
     {
-      "id": "act_751",
+      "id": "act_730",
       "type": "grammar",
       "grammarId": "gr_imperatives"
     },
     {
-      "id": "act_752",
+      "id": "act_731",
       "type": "gapfill",
       "items": [
         {
@@ -246,19 +236,34 @@
       ]
     },
     {
-      "id": "act_753",
-      "type": "phrase-match",
-      "items": [
-        "chunk_call_camera",
-        "chunk_call_mic",
-        "chunk_call_start",
-        "chunk_teach_wait"
+      "id": "act_732",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Please turn your camera on.",
+          "hu": "Kérlek, kapcsold be a kamerát."
+        },
+        {
+          "en": "Please turn your microphone on.",
+          "hu": "Kérlek, kapcsold be a mikrofont."
+        }
       ]
     },
     {
-      "id": "act_754",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_733",
+      "type": "typed",
+      "items": [
+        "lex_lesson",
+        "lex_camera",
+        "lex_microphone",
+        "lex_screen",
+        "lex_computer"
+      ]
+    },
+    {
+      "id": "act_734",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Please turn your camera on.",
           "hu": "Kérlek, kapcsold be a kamerát."
@@ -270,26 +275,20 @@
         {
           "en": "Let's start today's lesson.",
           "hu": "Kezdjük a mai órát."
+        },
+        {
+          "en": "Please wait a moment.",
+          "hu": "Kérlek, várj egy pillanatot."
         }
       ]
     },
     {
-      "id": "act_755",
-      "type": "typed",
-      "items": [
-        "lex_lesson",
-        "lex_camera",
-        "lex_microphone",
-        "lex_screen"
-      ]
-    },
-    {
-      "id": "act_756",
+      "id": "act_735",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_757",
+      "id": "act_736",
       "type": "listen-comprehension",
       "passage": "Good morning class! Today we will read a short story. Please open your book and turn your camera on.",
       "question": {
@@ -304,12 +303,12 @@
       "answer": "Open the book and turn the camera on"
     },
     {
-      "id": "act_758",
+      "id": "act_737",
       "type": "conversation",
       "dialogueId": "dlg_student_mic"
     },
     {
-      "id": "act_759",
+      "id": "act_738",
       "type": "review",
       "items": [
         "lex_hobby",

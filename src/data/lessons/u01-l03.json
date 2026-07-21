@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_29",
+      "id": "act_27",
       "type": "intro",
       "items": [
         "lex_your",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_30",
+      "id": "act_28",
       "type": "listen-choose",
       "items": [
         "lex_your",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_31",
+      "id": "act_29",
       "type": "match",
       "items": [
         "lex_your",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_32",
+      "id": "act_30",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_33",
-      "type": "phrase-match",
-      "items": [
-        "chunk_intro_job",
-        "chunk_ask_howareyou",
-        "chunk_sm_longtime",
-        "chunk_id_age"
+      "id": "act_31",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I am a retired teacher.",
+          "hu": "Nyugdíjas tanár vagyok."
+        },
+        {
+          "en": "How are you?",
+          "hu": "Hogy vagy?"
+        }
       ]
     },
     {
-      "id": "act_34",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_32",
+      "type": "typed",
+      "items": [
+        "lex_your",
+        "lex_i",
+        "lex_you",
+        "lex_he",
+        "lex_she"
+      ]
+    },
+    {
+      "id": "act_33",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I am a retired teacher.",
           "hu": "Nyugdíjas tanár vagyok."
@@ -143,42 +158,22 @@
         {
           "en": "It's lovely to see you!",
           "hu": "De jó látni téged!"
+        },
+        {
+          "en": "I'm over seventy.",
+          "hu": "Hetven fölött vagyok."
         }
       ]
     },
     {
-      "id": "act_35",
-      "type": "typed",
-      "items": [
-        "lex_your",
-        "lex_i",
-        "lex_you",
-        "lex_he"
-      ]
-    },
-    {
-      "id": "act_36",
+      "id": "act_34",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_37",
+      "id": "act_35",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
-    },
-    {
-      "id": "act_38",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "your",
-            "I",
-            "you"
-          ],
-          "odd": "fine"
-        }
-      ]
     }
   ],
   "completionRule": {

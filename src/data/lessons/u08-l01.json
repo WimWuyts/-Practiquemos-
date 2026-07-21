@@ -152,7 +152,7 @@
   "conversationId": "dlg_peter_dinner",
   "activities": [
     {
-      "id": "act_515",
+      "id": "act_501",
       "type": "intro",
       "items": [
         "lex_hobby",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "act_516",
+      "id": "act_502",
       "type": "listen-choose",
       "items": [
         "lex_hobby",
@@ -178,17 +178,7 @@
       ]
     },
     {
-      "id": "act_517",
-      "type": "icon-choice",
-      "items": [
-        "lex_music",
-        "lex_book",
-        "lex_film",
-        "lex_sport"
-      ]
-    },
-    {
-      "id": "act_518",
+      "id": "act_503",
       "type": "match",
       "items": [
         "lex_hobby",
@@ -200,12 +190,12 @@
       ]
     },
     {
-      "id": "act_519",
+      "id": "act_504",
       "type": "grammar",
       "grammarId": "gr_likeing"
     },
     {
-      "id": "act_520",
+      "id": "act_505",
       "type": "gapfill",
       "items": [
         {
@@ -251,22 +241,41 @@
       ]
     },
     {
-      "id": "act_521",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ask_hobbies",
-        "chunk_ask_followup_why",
-        "chunk_op_love",
-        "chunk_op_ithink"
-      ]
-    },
-    {
-      "id": "act_522",
+      "id": "act_506",
       "type": "reorder",
       "sentences": [
         {
           "en": "What do you like doing?",
           "hu": "Mit szeretsz csinálni?"
+        },
+        {
+          "en": "I love cooking.",
+          "hu": "Imádok főzni."
+        }
+      ]
+    },
+    {
+      "id": "act_507",
+      "type": "typed",
+      "items": [
+        "lex_hobby",
+        "lex_music",
+        "lex_book",
+        "lex_film",
+        "lex_sport"
+      ]
+    },
+    {
+      "id": "act_508",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "What do you like doing?",
+          "hu": "Mit szeretsz csinálni?"
+        },
+        {
+          "en": "Really? Why?",
+          "hu": "Tényleg? Miért?"
         },
         {
           "en": "I love cooking.",
@@ -279,41 +288,17 @@
       ]
     },
     {
-      "id": "act_523",
-      "type": "typed",
-      "items": [
-        "lex_hobby",
-        "lex_music",
-        "lex_book",
-        "lex_film"
-      ]
-    },
-    {
-      "id": "act_524",
+      "id": "act_509",
       "type": "pron-record",
       "focusId": "snd_r"
     },
     {
-      "id": "act_525",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "hobby",
-            "music",
-            "book"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_526",
+      "id": "act_510",
       "type": "conversation",
       "dialogueId": "dlg_peter_dinner"
     },
     {
-      "id": "act_527",
+      "id": "act_511",
       "type": "review",
       "items": [
         "lex_food",

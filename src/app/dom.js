@@ -37,6 +37,22 @@ window.M = window.M || {};
     family: function (id) { return (M.data.pronunciation.spellingFamilies || []).find(function (f) { return f.id === id; }); },
     focus: function (id) { return (M.data.pronunciation.soundFocus || []).find(function (f) { return f.id === id; }); },
     unit: function (id) { return (M.data.course.units || []).find(function (u) { return u.id === id; }); },
+    // Realistic distractor words for a multiple-choice item: prefer the item's own
+    // pre-computed same-theme/same-POS distractors, then same theme+POS, then same POS.
+    // opts.iconSpecific -> only words that have their own picture (for icon tasks).
+    distractorWords: function (target, n, opts) {
+      opts = opts || {};
+      var out = [], seen = {}; seen[target.id] = 1;
+      function add(l) { if (l && !seen[l.id] && (!opts.iconSpecific || l.iconSpecific) && out.length < n) { seen[l.id] = 1; out.push(l); } }
+      (target.distractors || []).forEach(function (hw) { add(M.data._lexByWord[hw]); });
+      if (out.length < n) M.dom.shuffle(M.data.lexicon.filter(function (l) {
+        return l.partOfSpeech === target.partOfSpeech && l.themes[0] === target.themes[0];
+      })).forEach(add);
+      if (out.length < n) M.dom.shuffle(M.data.lexicon.filter(function (l) {
+        return l.partOfSpeech === target.partOfSpeech;
+      })).forEach(add);
+      return out;
+    },
   };
 
   // ---- text matching for typed answers ----

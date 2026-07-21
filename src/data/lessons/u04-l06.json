@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_221",
+      "id": "act_216",
       "type": "intro",
       "items": [
         "lex_arm",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_222",
+      "id": "act_217",
       "type": "listen-choose",
       "items": [
         "lex_arm",
@@ -56,17 +56,7 @@
       ]
     },
     {
-      "id": "act_223",
-      "type": "icon-choice",
-      "items": [
-        "lex_foot",
-        "lex_window",
-        "lex_door",
-        "lex_chair"
-      ]
-    },
-    {
-      "id": "act_224",
+      "id": "act_218",
       "type": "match",
       "items": [
         "lex_arm",
@@ -78,7 +68,7 @@
       ]
     },
     {
-      "id": "act_225",
+      "id": "act_219",
       "type": "gapfill",
       "items": [
         {
@@ -124,33 +114,38 @@
       ]
     },
     {
-      "id": "act_226",
+      "id": "act_220",
       "type": "typed",
       "items": [
         "lex_arm",
         "lex_leg",
         "lex_foot",
-        "lex_tooth"
+        "lex_tooth",
+        "lex_window"
       ]
     },
     {
-      "id": "act_227",
-      "type": "pron-record",
-      "focusId": "snd_ng"
-    },
-    {
-      "id": "act_228",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_221",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "arm",
-            "leg",
-            "foot"
-          ],
-          "odd": "name"
+          "en": "This is an arm.",
+          "hu": "(kar)"
+        },
+        {
+          "en": "This is a leg.",
+          "hu": "(láb (comb))"
+        },
+        {
+          "en": "This is a foot.",
+          "hu": "(lábfej)"
         }
       ]
+    },
+    {
+      "id": "act_222",
+      "type": "pron-record",
+      "focusId": "snd_ng"
     }
   ],
   "completionRule": {

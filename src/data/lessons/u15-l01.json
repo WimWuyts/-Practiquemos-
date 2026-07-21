@@ -65,7 +65,7 @@
   "conversationId": "dlg_plane_help",
   "activities": [
     {
-      "id": "act_885",
+      "id": "act_853",
       "type": "intro",
       "items": [
         "lex_plane",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": "act_886",
+      "id": "act_854",
       "type": "listen-choose",
       "items": [
         "lex_plane",
@@ -91,16 +91,7 @@
       ]
     },
     {
-      "id": "act_887",
-      "type": "icon-choice",
-      "items": [
-        "lex_plane",
-        "lex_blanket",
-        "lex_toilet"
-      ]
-    },
-    {
-      "id": "act_888",
+      "id": "act_855",
       "type": "match",
       "items": [
         "lex_plane",
@@ -112,18 +103,18 @@
       ]
     },
     {
-      "id": "act_889",
+      "id": "act_856",
+      "type": "grammar",
+      "grammarId": "gr_could_requests"
+    },
+    {
+      "id": "act_857",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "plane"
     },
     {
-      "id": "act_890",
-      "type": "grammar",
-      "grammarId": "gr_could_requests"
-    },
-    {
-      "id": "act_891",
+      "id": "act_858",
       "type": "gapfill",
       "items": [
         {
@@ -169,19 +160,34 @@
       ]
     },
     {
-      "id": "act_892",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fly_afraid",
-        "chunk_fly_first",
-        "chunk_fly_nervous",
-        "chunk_fly_water"
+      "id": "act_859",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I am afraid of flying.",
+          "hu": "Félek a repüléstől."
+        },
+        {
+          "en": "This is my first flight.",
+          "hu": "Ez az első repülésem."
+        }
       ]
     },
     {
-      "id": "act_893",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_860",
+      "type": "typed",
+      "items": [
+        "lex_plane",
+        "lex_afraid",
+        "lex_nervous",
+        "lex_scared",
+        "lex_calm"
+      ]
+    },
+    {
+      "id": "act_861",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I am afraid of flying.",
           "hu": "Félek a repüléstől."
@@ -193,45 +199,25 @@
         {
           "en": "I feel nervous.",
           "hu": "Ideges vagyok."
+        },
+        {
+          "en": "Could I have some water, please?",
+          "hu": "Kaphatnék egy kis vizet, kérem?"
         }
       ]
     },
     {
-      "id": "act_894",
-      "type": "typed",
-      "items": [
-        "lex_plane",
-        "lex_afraid",
-        "lex_nervous",
-        "lex_scared"
-      ]
-    },
-    {
-      "id": "act_895",
+      "id": "act_862",
       "type": "pron-record",
       "focusId": "str_chunking"
     },
     {
-      "id": "act_896",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "plane",
-            "blanket",
-            "toilet"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_897",
+      "id": "act_863",
       "type": "conversation",
       "dialogueId": "dlg_plane_help"
     },
     {
-      "id": "act_898",
+      "id": "act_864",
       "type": "review",
       "items": [
         "lex_was",

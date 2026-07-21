@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_50",
+      "id": "act_46",
       "type": "intro",
       "items": [
         "lex_where",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_51",
+      "id": "act_47",
       "type": "listen-choose",
       "items": [
         "lex_where",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_52",
+      "id": "act_48",
       "type": "match",
       "items": [
         "lex_where",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_53",
+      "id": "act_49",
       "type": "spelling-build",
       "family": "sf_wh",
       "word": "where"
     },
     {
-      "id": "act_54",
+      "id": "act_50",
       "type": "gapfill",
       "items": [
         {
@@ -120,38 +120,43 @@
       ]
     },
     {
-      "id": "act_55",
+      "id": "act_51",
       "type": "typed",
       "items": [
         "lex_where",
         "lex_how",
         "lex_who",
-        "lex_fine"
+        "lex_fine",
+        "lex_good"
       ]
     },
     {
-      "id": "act_56",
+      "id": "act_52",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Where do you live?",
+          "hu": "Hol laksz?"
+        },
+        {
+          "en": "How are you?",
+          "hu": "Hogy vagy?"
+        },
+        {
+          "en": "Who is that?",
+          "hu": "Ki az?"
+        }
+      ]
+    },
+    {
+      "id": "act_53",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_57",
+      "id": "act_54",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
-    },
-    {
-      "id": "act_58",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "where",
-            "how",
-            "who"
-          ],
-          "odd": "please"
-        }
-      ]
     }
   ],
   "completionRule": {

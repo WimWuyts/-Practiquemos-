@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_341",
+      "id": "act_333",
       "type": "intro",
       "items": [
         "lex_size",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_342",
+      "id": "act_334",
       "type": "listen-choose",
       "items": [
         "lex_size",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_343",
+      "id": "act_335",
       "type": "match",
       "items": [
         "lex_size",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_344",
+      "id": "act_336",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_345",
+      "id": "act_337",
       "type": "typed",
       "items": [
         "lex_size",
         "lex_borrow",
         "lex_cup",
-        "lex_pot"
+        "lex_pot",
+        "lex_pan"
       ]
     },
     {
-      "id": "act_346",
+      "id": "act_338",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is a size.",
+          "hu": "(méret)"
+        },
+        {
+          "en": "I borrow every day.",
+          "hu": "(kölcsönkérni)"
+        },
+        {
+          "en": "This is a cup.",
+          "hu": "(csésze / bögre)"
+        }
+      ]
+    },
+    {
+      "id": "act_339",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_347",
+      "id": "act_340",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
-    },
-    {
-      "id": "act_348",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "size",
-            "borrow",
-            "basket"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

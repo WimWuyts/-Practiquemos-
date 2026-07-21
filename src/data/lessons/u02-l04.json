@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_109",
+      "id": "act_104",
       "type": "intro",
       "items": [
         "lex_this",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_110",
+      "id": "act_105",
       "type": "listen-choose",
       "items": [
         "lex_this",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_111",
+      "id": "act_106",
       "type": "match",
       "items": [
         "lex_this",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_112",
+      "id": "act_107",
       "type": "gapfill",
       "items": [
         {
@@ -114,33 +114,38 @@
       ]
     },
     {
-      "id": "act_113",
+      "id": "act_108",
       "type": "typed",
       "items": [
         "lex_this",
         "lex_that",
         "lex_these",
-        "lex_those"
+        "lex_those",
+        "lex_his"
       ]
     },
     {
-      "id": "act_114",
-      "type": "pron-record",
-      "focusId": "snd_s_endings"
-    },
-    {
-      "id": "act_115",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_109",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "this",
-            "that",
-            "these"
-          ],
-          "odd": "I"
+          "en": "This is my sister.",
+          "hu": "Ez a nővérem."
+        },
+        {
+          "en": "That is a lovely photo.",
+          "hu": "Az egy szép fénykép."
+        },
+        {
+          "en": "These are my books.",
+          "hu": "Ezek az én könyveim."
         }
       ]
+    },
+    {
+      "id": "act_110",
+      "type": "pron-record",
+      "focusId": "snd_s_endings"
     }
   ],
   "completionRule": {

@@ -27,7 +27,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_167",
+      "id": "act_162",
       "type": "intro",
       "items": [
         "lex_small",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "id": "act_168",
+      "id": "act_163",
       "type": "listen-choose",
       "items": [
         "lex_small",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_169",
+      "id": "act_164",
       "type": "match",
       "items": [
         "lex_small",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "act_170",
+      "id": "act_165",
       "type": "gapfill",
       "items": [
         {
@@ -106,38 +106,43 @@
       ]
     },
     {
-      "id": "act_171",
+      "id": "act_166",
       "type": "typed",
       "items": [
         "lex_small",
         "lex_long",
         "lex_new",
-        "lex_bad"
+        "lex_bad",
+        "lex_friendly"
       ]
     },
     {
-      "id": "act_172",
+      "id": "act_167",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very small.",
+          "hu": "(kicsi)"
+        },
+        {
+          "en": "It is very long.",
+          "hu": "(hosszú)"
+        },
+        {
+          "en": "It is very new.",
+          "hu": "(új)"
+        }
+      ]
+    },
+    {
+      "id": "act_168",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_173",
+      "id": "act_169",
       "type": "minimal-pair",
       "focusId": "snd_wv"
-    },
-    {
-      "id": "act_174",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "small",
-            "long",
-            "new"
-          ],
-          "odd": "my"
-        }
-      ]
     }
   ],
   "completionRule": {

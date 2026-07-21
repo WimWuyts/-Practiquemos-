@@ -37,7 +37,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_17",
+      "id": "act_16",
       "type": "intro",
       "items": [
         "lex_please",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_18",
+      "id": "act_17",
       "type": "listen-choose",
       "items": [
         "lex_please",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_19",
+      "id": "act_18",
       "type": "match",
       "items": [
         "lex_please",
@@ -75,6 +75,11 @@
       ]
     },
     {
+      "id": "act_19",
+      "type": "grammar",
+      "grammarId": "gr_pronouns"
+    },
+    {
       "id": "act_20",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
@@ -82,11 +87,6 @@
     },
     {
       "id": "act_21",
-      "type": "grammar",
-      "grammarId": "gr_pronouns"
-    },
-    {
-      "id": "act_22",
       "type": "gapfill",
       "items": [
         {
@@ -132,19 +132,34 @@
       ]
     },
     {
+      "id": "act_22",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What is your name?",
+          "hu": "Hogy hívnak?"
+        },
+        {
+          "en": "I'm from Hungary.",
+          "hu": "Magyarországról jöttem."
+        }
+      ]
+    },
+    {
       "id": "act_23",
-      "type": "phrase-match",
+      "type": "typed",
       "items": [
-        "chunk_ask_name",
-        "chunk_intro_from",
-        "chunk_ask_from",
-        "chunk_intro_nice"
+        "lex_please",
+        "lex_thank_you",
+        "lex_thanks",
+        "lex_yes",
+        "lex_no"
       ]
     },
     {
       "id": "act_24",
-      "type": "reorder",
-      "sentences": [
+      "type": "say-it",
+      "phrases": [
         {
           "en": "What is your name?",
           "hu": "Hogy hívnak?"
@@ -156,42 +171,22 @@
         {
           "en": "Where are you from?",
           "hu": "Honnan jössz?"
+        },
+        {
+          "en": "Nice to meet you.",
+          "hu": "Örülök, hogy megismerhetlek."
         }
       ]
     },
     {
       "id": "act_25",
-      "type": "typed",
-      "items": [
-        "lex_please",
-        "lex_thank_you",
-        "lex_thanks",
-        "lex_yes"
-      ]
-    },
-    {
-      "id": "act_26",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_27",
+      "id": "act_26",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
-    },
-    {
-      "id": "act_28",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "please",
-            "thank you",
-            "thanks"
-          ],
-          "odd": "where"
-        }
-      ]
     }
   ],
   "completionRule": {

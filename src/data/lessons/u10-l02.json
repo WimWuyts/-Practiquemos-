@@ -35,7 +35,7 @@
   "conversationId": "dlg_hotel",
   "activities": [
     {
-      "id": "act_721",
+      "id": "act_702",
       "type": "intro",
       "items": [
         "lex_problem",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_722",
+      "id": "act_703",
       "type": "listen-choose",
       "items": [
         "lex_problem",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_723",
+      "id": "act_704",
       "type": "match",
       "items": [
         "lex_problem",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_724",
+      "id": "act_705",
       "type": "gapfill",
       "items": [
         {
@@ -119,22 +119,41 @@
       ]
     },
     {
-      "id": "act_725",
-      "type": "phrase-match",
-      "items": [
-        "chunk_serv_howmuch",
-        "chunk_serv_excuse",
-        "chunk_sm_haveniceday",
-        "chunk_sv_tablefor"
-      ]
-    },
-    {
-      "id": "act_726",
+      "id": "act_706",
       "type": "reorder",
       "sentences": [
         {
           "en": "How much is it?",
           "hu": "Mennyibe kerül?"
+        },
+        {
+          "en": "Have a nice day!",
+          "hu": "Szép napot!"
+        }
+      ]
+    },
+    {
+      "id": "act_707",
+      "type": "typed",
+      "items": [
+        "lex_problem",
+        "lex_excuse_me",
+        "lex_doctor",
+        "lex_nurse",
+        "lex_hospital"
+      ]
+    },
+    {
+      "id": "act_708",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "How much is it?",
+          "hu": "Mennyibe kerül?"
+        },
+        {
+          "en": "Excuse me.",
+          "hu": "Elnézést."
         },
         {
           "en": "Have a nice day!",
@@ -147,22 +166,12 @@
       ]
     },
     {
-      "id": "act_727",
-      "type": "typed",
-      "items": [
-        "lex_problem",
-        "lex_excuse_me",
-        "lex_doctor",
-        "lex_nurse"
-      ]
-    },
-    {
-      "id": "act_728",
+      "id": "act_709",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_729",
+      "id": "act_710",
       "type": "conversation",
       "dialogueId": "dlg_hotel"
     }

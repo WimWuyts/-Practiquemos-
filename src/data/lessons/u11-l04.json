@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_781",
+      "id": "act_758",
       "type": "intro",
       "items": [
         "lex_pen",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_782",
+      "id": "act_759",
       "type": "listen-choose",
       "items": [
         "lex_pen",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_783",
+      "id": "act_760",
       "type": "match",
       "items": [
         "lex_pen",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_784",
+      "id": "act_761",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_785",
-      "type": "phrase-match",
-      "items": [
-        "chunk_rp_isthisright",
-        "chunk_ap_soznumber",
-        "chunk_te_repeatafter",
-        "chunk_te_writedown"
+      "id": "act_762",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Is this right?",
+          "hu": "Ez így jó?"
+        },
+        {
+          "en": "Sorry, that's my mistake.",
+          "hu": "Bocsánat, ez az én hibám."
+        }
       ]
     },
     {
-      "id": "act_786",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_763",
+      "type": "typed",
+      "items": [
+        "lex_pen",
+        "lex_pencil",
+        "lex_paper",
+        "lex_page",
+        "lex_classroom"
+      ]
+    },
+    {
+      "id": "act_764",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Is this right?",
           "hu": "Ez így jó?"
@@ -143,37 +158,17 @@
         {
           "en": "Repeat after me, please.",
           "hu": "Ismételd utánam, kérlek."
+        },
+        {
+          "en": "Please write it in your notebook.",
+          "hu": "Írd le a füzetedbe, kérlek."
         }
       ]
     },
     {
-      "id": "act_787",
-      "type": "typed",
-      "items": [
-        "lex_pen",
-        "lex_pencil",
-        "lex_paper",
-        "lex_page"
-      ]
-    },
-    {
-      "id": "act_788",
+      "id": "act_765",
       "type": "pron-record",
       "focusId": "str_question"
-    },
-    {
-      "id": "act_789",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "pen",
-            "pencil",
-            "paper"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

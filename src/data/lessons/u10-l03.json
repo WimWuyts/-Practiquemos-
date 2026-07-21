@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_730",
+      "id": "act_711",
       "type": "intro",
       "items": [
         "lex_pain",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_731",
+      "id": "act_712",
       "type": "listen-choose",
       "items": [
         "lex_pain",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_732",
+      "id": "act_713",
       "type": "match",
       "items": [
         "lex_pain",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_733",
+      "id": "act_714",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_734",
-      "type": "phrase-match",
-      "items": [
-        "chunk_sv_recommend",
-        "chunk_sv_water",
-        "chunk_sv_checkin",
-        "chunk_sv_roomproblem"
+      "id": "act_715",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What do you recommend?",
+          "hu": "Mit ajánl?"
+        },
+        {
+          "en": "A glass of water, please.",
+          "hu": "Egy pohár vizet kérek."
+        }
       ]
     },
     {
-      "id": "act_735",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_716",
+      "type": "typed",
+      "items": [
+        "lex_pain",
+        "lex_better",
+        "lex_rest",
+        "lex_hurt",
+        "lex_pharmacy"
+      ]
+    },
+    {
+      "id": "act_717",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "What do you recommend?",
           "hu": "Mit ajánl?"
@@ -143,37 +158,17 @@
         {
           "en": "I'd like to check in, please.",
           "hu": "Szeretnék bejelentkezni."
+        },
+        {
+          "en": "Excuse me, there's a problem with my room.",
+          "hu": "Elnézést, gond van a szobámmal."
         }
       ]
     },
     {
-      "id": "act_736",
-      "type": "typed",
-      "items": [
-        "lex_pain",
-        "lex_better",
-        "lex_rest",
-        "lex_hurt"
-      ]
-    },
-    {
-      "id": "act_737",
+      "id": "act_718",
       "type": "pron-record",
       "focusId": "str_sentence"
-    },
-    {
-      "id": "act_738",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "pain",
-            "better",
-            "rest"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

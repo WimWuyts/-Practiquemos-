@@ -54,7 +54,7 @@ export const DIALOGUES = [
         { en: "Hello Marta! Kira told me a lot about you. How are you?", hu: "Szia Marta! Kira sokat mesélt rólad. Hogy vagy?" },
       ]),
       n1b: choose("endika", "No problem. Let's try again — how are you?", "Semmi baj. Próbáljuk újra — hogy vagy?", [
-        c("I'm fine, thank you. And you?", "Jól vagyok, köszönöm. És te?", true, "n2", "There it is. Well done.", "Ez az. Ügyes vagy."),
+        c("I'm fine, thank you. And you?", "Jól vagyok, köszönöm. És te?", true, "n2", "There it is. Exactly.", "Ez az. Pontosan."),
         c("I'm tired, but okay.", "Fáradt vagyok, de jól.", true, "n2", "Also a great, honest answer.", "Szintén nagyszerű, őszinte válasz."),
       ]),
       n2: choose("endika", "I'm very well, thanks. Where are you from, Marta?", "Nagyon jól, köszönöm. Honnan jössz, Marta?", [
@@ -257,7 +257,7 @@ export const DIALOGUES = [
         c("Sorry, I don't understand.", "Elnézést, nem értem.", true, "n2b", "Great repair phrase — never be afraid to use it.", "Remek javító mondat — sose félj használni."),
       ]),
       n2b: choose("agent", "(slowly) Your passport, please.", "(lassan) Az útlevelét, kérem.", [
-        c("Ah, yes. Here it is.", "Ó, igen. Tessék.", true, "n3", "Well done.", "Ügyes."),
+        c("Ah, yes. Here it is.", "Ó, igen. Tessék.", true, "n3", "Exactly.", "Pontosan."),
       ]),
       n3: type("agent", "Thank you. Here is your ticket. Your gate is B12.", "Köszönöm. Itt a jegye. A kapuja B12.",
         ["where", "gate", "thank", "thanks"], ["where", "gate", "thank"],
@@ -325,7 +325,7 @@ export const DIALOGUES = [
         c("Sorry, could you speak more slowly?", "Elnézést, tudna lassabban beszélni?", true, "n1b", "A perfect polite request.", "Tökéletes udvarias kérés."),
       ]),
       n1b: choose("receptionist", "(slowly) Do... you... have... a... reservation?", "(lassan) Van... foglalása?", [
-        c("Yes, I have a reservation.", "Igen, van foglalásom.", true, "n2", "Well done.", "Ügyes."),
+        c("Yes, I have a reservation.", "Igen, van foglalásom.", true, "n2", "Exactly.", "Pontosan."),
       ]),
       n2: build("receptionist", "Wonderful. How many nights?", "Csodás. Hány éjszakára?",
         ["Two", "nights", "please"], "Two nights please", "n3",
@@ -567,6 +567,82 @@ export const DIALOGUES = [
         c("Yes, I'm very happy. The food is delicious!", "Igen, nagyon boldog vagyok. Az étel finom!", true, "n4", "Me too!", "Én is!"),
       ]),
       n4: end("akos", "Let's sit by the fire together. It's a beautiful night.", "Üljünk a tűz mellé együtt. Gyönyörű este van."),
+    },
+  },
+
+  // ---------- Online student: connection delay ----------
+  {
+    id: "dlg_student_delay", characterId: "student",
+    scene: { en: "Online lesson: the connection is slow", hu: "Online óra: lassú a kapcsolat" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("student", "(The picture freezes and the sound cuts out.)", "(A kép megáll, a hang elakad.)", [
+        c("Please wait a moment. The connection is slow.", "Kérlek, várj egy pillanatot. Lassú a kapcsolat.", true, "n2", "Clear and calm — well handled.", "Világos és nyugodt — jól kezelted."),
+        c("Can you hear me now?", "Most hallasz engem?", true, "n2", "Good — checking the sound.", "Jó — ellenőrzöd a hangot."),
+      ]),
+      n2: choose("student", "Sorry teacher, my internet is bad today.", "Bocsánat tanárnő, ma rossz az internetem.", [
+        c("No problem. Let's try again in a moment.", "Semmi baj. Próbáljuk újra egy perc múlva.", true, "n3", "Kind and patient.", "Kedves és türelmes."),
+      ]),
+      n3: type("student", "Okay, it works now! What do we do today?", "Oké, most működik! Mit csinálunk ma?", [
+        "read", "story", "words", "start", "lesson", "book", "today",
+      ], ["read", "story", "word", "start", "lesson", "book", "learn"],
+        "Today we read a short story.", "n4", { hints: ["Today we ..."], fallback: "n3b" }),
+      n3b: choose("student", "Choose what to say:", "Válaszd ki, mit mondasz:", [
+        c("Let's start today's lesson.", "Kezdjük a mai órát.", true, "n4", "Perfect.", "Tökéletes."),
+      ]),
+      n4: end("student", "Great! I'm ready now. Thank you, teacher!", "Remek! Most kész vagyok. Köszönöm, tanárnő!"),
+    },
+  },
+
+  // ---------- Online student: a whole short lesson ----------
+  {
+    id: "dlg_student_lesson", characterId: "student",
+    scene: { en: "Online lesson: start to finish", hu: "Online óra: elejétől a végéig" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("student", "Hello teacher! I'm ready for my Hungarian lesson.", "Szia tanárnő! Kész vagyok a magyarórára.", [
+        c("Hello! Let's start today's lesson.", "Szia! Kezdjük a mai órát.", true, "n2", "Warm and clear.", "Meleg és világos."),
+      ]),
+      n2: choose("student", "What should I do first?", "Mit csináljak először?", [
+        c("Open your book, please.", "Nyisd ki a könyvet, kérlek.", true, "n3", "Good instruction.", "Jó utasítás."),
+        c("Repeat after me, please.", "Ismételd utánam, kérlek.", true, "n3", "Also perfect.", "Szintén tökéletes."),
+      ]),
+      n3: type("student", "Like this? Szia, jó napot!", "Így? Szia, jó napot!", [
+        "yes", "good", "very good", "excellent", "well done", "correct", "right",
+      ], ["yes", "good", "excellent", "well", "correct", "right", "great"],
+        "Yes, very good!", "n4", { hints: ["Praise the child: Yes, very good!"], fallback: "n3b" }),
+      n3b: choose("student", "Praise your student:", "Dicsérd a diákodat:", [
+        c("Excellent! Well done!", "Kiváló! Ügyes vagy!", true, "n4", "Lovely, warm praise for a child.", "Kedves, meleg dicséret egy gyereknek."),
+      ]),
+      n4: choose("student", "Thank you teacher! Is the lesson finished?", "Köszönöm tanárnő! Vége az órának?", [
+        c("Yes, that's all for today. See you next week!", "Igen, ez minden mára. Jövő héten találkozunk!", true, "n5", "A warm goodbye.", "Meleg búcsú."),
+      ]),
+      n5: end("student", "Goodbye teacher! Thank you!", "Viszlát tanárnő! Köszönöm!"),
+    },
+  },
+
+  // ---------- Endre helps with the laptop ----------
+  {
+    id: "dlg_endre_tech", characterId: "endre",
+    scene: { en: "Endre helps with a laptop problem", hu: "Endre segít a laptop-gonddal" },
+    supportLevels: ["choose", "build", "type-speak"], startNode: "n1", memorySchema: {},
+    nodes: {
+      n1: choose("endre", "Marta, you said the camera doesn't work. Show me.", "Marta, azt mondtad, nem működik a kamera. Mutasd meg.", [
+        c("Yes. I can't turn my camera on.", "Igen. Nem tudom bekapcsolni a kamerát.", true, "n2", "Clear problem — well described.", "Világos probléma — jól leírtad."),
+        c("The camera is a problem.", "A kamera egy probléma.", true, "n2", "Good. A full sentence is even clearer.", "Jó. Teljes mondattal még érthetőbb."),
+      ]),
+      n2: choose("endre", "Okay. Click here, on the little camera picture.", "Rendben. Kattints ide, a kis kamera-ikonra.", [
+        c("Like this?", "Így?", true, "n3", "Yes, exactly.", "Igen, pontosan."),
+        c("I don't understand. Can you show me?", "Nem értem. Meg tudod mutatni?", true, "n3", "Great repair phrase.", "Remek javító mondat."),
+      ]),
+      n3: type("endre", "There! Now the camera works. Can you see the picture?", "Tessék! Most működik a kamera. Látod a képet?", [
+        "yes", "works", "thank", "see", "picture", "now",
+      ], ["yes", "work", "thank", "see", "picture", "now"],
+        "Yes, it works now. Thank you!", "n4", { hints: ["Yes, it works now. Thank you!"], fallback: "n3b" }),
+      n3b: choose("endre", "Choose an answer:", "Válassz választ:", [
+        c("Yes, it works now. Thank you, Endre!", "Igen, most működik. Köszönöm, Endre!", true, "n4", "Lovely.", "Kedves."),
+      ]),
+      n4: end("endre", "You're welcome. Call me any time you need help.", "Szívesen. Hívj bármikor, ha segítség kell."),
     },
   },
 ];

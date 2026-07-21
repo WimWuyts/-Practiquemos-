@@ -66,9 +66,17 @@ const WORD_ICON = {
   glass: "cup", bottle: "droplet", plate: "bowl", cup: "cup",
 };
 const iconFor = (head, theme) => WORD_ICON[head.toLowerCase()] || THEME_ICON[theme] || "dot";
-// A "specific" icon uniquely depicts the word (from WORD_ICON) — only these are used
-// in picture-based exercises, so the picture is never ambiguous.
-const iconIsSpecific = (head) => !!WORD_ICON[head.toLowerCase()];
+// Only words whose icon *clearly depicts that exact word* may be used as a picture-choice
+// TARGET. Words that merely borrow a near icon (rabbit->cat, cow->dog, tea->cup, hotel->bed…)
+// keep the icon for decoration but are NOT "specific", so the picture is never misleading.
+const ICON_EXACT = new Set([
+  "coffee", "water", "apple", "bread", "fish", "cake", "egg", "cheese", "car", "bus", "train",
+  "plane", "book", "phone", "camera", "computer", "microphone", "passport", "suitcase", "ticket",
+  "key", "house", "home", "family", "music", "film", "dog", "cat", "bird", "tree", "flower",
+  "moon", "rain", "snow", "sun", "star", "chair", "window", "door", "clock", "bag", "hand", "eye",
+  "shirt", "hat", "shoes", "boat", "umbrella", "pen", "ball", "flag", "cup",
+]);
+const iconIsSpecific = (head) => ICON_EXACT.has(head.toLowerCase());
 
 // ---------- Example generator: curated natural sentences + grammar-safe fallback ----------
 const UNCOUNTABLE = new Set(["food", "water", "coffee", "tea", "milk", "bread", "cheese", "meat", "fish", "fruit",
@@ -347,51 +355,48 @@ function activitiesFor(lesson) {
 
   if (lesson.id === "u00-l01") { acts.push(A("diagnostic", {})); return acts; }
 
+  // ---- PART 1: meet the material (receptive → recognition) ----
   // 1. See & hear meaning
   if (newLex.length) acts.push(A("intro", { items: newLex.slice(0, 8).map((l) => l.id) }));
-  // 2. Listen and choose
+  // 2. Listen and choose (quick recognition)
   if (newLex.length >= 2) acts.push(A("listen-choose", { items: newLex.slice(0, 6).map((l) => l.id) }));
-  // 3. Icon → word (visual recognition) — only words with a specific, unambiguous icon
+  // 3. Icon → word — only words with a specific, unambiguous icon
   const iconable = newLex.filter((l) => l.iconSpecific);
-  if (iconable.length >= 3) acts.push(A("icon-choice", { items: iconable.slice(0, 5).map((l) => l.id) }));
+  if (iconable.length >= 4) acts.push(A("icon-choice", { items: iconable.slice(0, 5).map((l) => l.id) }));
   // 4. Word-to-meaning match
   if (newLex.length >= 3) acts.push(A("match", { items: newLex.slice(0, 6).map((l) => l.id) }));
-  // 5. Spelling-family builder
+  // 5. Grammar card(s)
+  for (const g of lesson.grammar) acts.push(A("grammar", { grammarId: g }));
+  // 6. Spelling-family builder (sound & spelling)
   const famWord = newLex.find((l) => l.spellingFamily);
   if (famWord) acts.push(A("spelling-build", { family: famWord.spellingFamily, word: famWord.headword }));
-  // 6. Grammar card(s)
-  for (const g of lesson.grammar) acts.push(A("grammar", { grammarId: g }));
-  // 7. Gap-fill (apply a new word in a sentence)
+
+  // ---- PART 2: produce it (write & SPEAK — the second half is production) ----
+  // 7. Gap-fill (apply a word in a real sentence)
   const gaps = newLex.map(gapfillFrom).filter(Boolean).slice(0, 4);
   if (gaps.length >= 2) acts.push(A("gapfill", { items: gaps }));
-  // 8. Chunk / phrase-to-situation
-  if (newChunks.length) acts.push(A("phrase-match", { items: newChunks.slice(0, 6).map((c) => c.id) }));
-  // 9. Reorder a useful sentence (from chunks, 3–7 words)
-  const reord = newChunks.map((c) => ({ en: c.en, hu: c.hu })).filter((s) => { const n = s.en.replace(/[.?!]$/, "").split(" ").length; return n >= 3 && n <= 7; }).slice(0, 3);
+  // 8. Reorder a useful sentence (from chunks) — build language
+  const reord = newChunks.map((c) => ({ en: c.en, hu: c.hu })).filter((s) => { const n = s.en.replace(/[.?!]$/, "").split(" ").length; return n >= 3 && n <= 7; }).slice(0, 2);
   if (reord.length) acts.push(A("reorder", { sentences: reord }));
-  // 10. Missing word / typed
-  if (newLex.length) acts.push(A("typed", { items: newLex.slice(0, 4).map((l) => l.id) }));
-  // 11. Pronunciation: sounds (record) + minimal-pair discrimination where available
+  // 9. Typed production (Hungarian prompt → type the English) — 5 items
+  if (newLex.length) acts.push(A("typed", { items: newLex.slice(0, 5).map((l) => l.id) }));
+  // 10. SAY IT — speak real phrases aloud (chunks first; else the words' example sentences)
+  let sayPhrases = newChunks.slice(0, 4).map((c) => ({ en: c.en, hu: c.hu }));
+  if (!sayPhrases.length) sayPhrases = newLex.slice(0, 3).map((l) => ({ en: l.examples[0].en, hu: l.examples[0].hu }));
+  if (sayPhrases.length) acts.push(A("say-it", { phrases: sayPhrases }));
+  // 11. Pronunciation: sounds (record) + one minimal-pair discrimination
   for (const p of lesson.pronunciation) {
     acts.push(A("pron-record", { focusId: p }));
     const f = pronunciation.soundFocus.find((x) => x.id === p);
     if (f && f.minimalPairs && f.minimalPairs.length) acts.push(A("minimal-pair", { focusId: p }));
   }
-  // 12. Odd-one-out (theme reinforcement)
-  if (newLex.length >= 3) {
-    const theme = newLex[0].themes[0];
-    const sameTheme = newLex.filter((l) => l.themes[0] === theme).slice(0, 3).map((l) => l.headword);
-    const other = lexicon.find((l) => l.status === "productive" && l.themes[0] !== theme && l.partOfSpeech === newLex[0].partOfSpeech);
-    if (sameTheme.length === 3 && other) acts.push(A("odd-one-out", { groups: [{ words: sameTheme, odd: other.headword }] }));
-  }
-  // 13a. Listening comprehension (short passage + question, with replay)
-  const listens = LISTENINGS.filter((l) => l[0] === lesson.id);
-  for (const [, passage, question, options, answerIndex] of listens) {
+  // 12. Listening comprehension (short passage + question, with replay)
+  LISTENINGS.filter((l) => l[0] === lesson.id).forEach(([, passage, question, options, answerIndex]) => {
     acts.push(A("listen-comprehension", { passage, question, options, answer: options[answerIndex] }));
-  }
-  // 13. Grow-your-answer (speaking expansion)
+  });
+  // 13. Grow-your-answer, then say the whole answer aloud
   if (EXPAND[lesson.id]) acts.push(A("expand", EXPAND[lesson.id]));
-  // 14. Conversation
+  // 14. Conversation — spoken role-play (records on every turn)
   if (lesson.dialogue) acts.push(A("conversation", { dialogueId: lesson.dialogue }));
   // 15. Gentle review round
   const reviewItems = lexicon.filter((l) => l.status === "productive" && (l.reviewLessons || []).includes(lesson.id));
@@ -436,7 +441,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.5.0", schemaVersion: 1,
+  id: "marta_english", version: "1.6.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

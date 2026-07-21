@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_693",
+      "id": "act_675",
       "type": "intro",
       "items": [
         "lex_south",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_694",
+      "id": "act_676",
       "type": "listen-choose",
       "items": [
         "lex_south",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_695",
+      "id": "act_677",
       "type": "match",
       "items": [
         "lex_south",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_696",
+      "id": "act_678",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_697",
+      "id": "act_679",
       "type": "typed",
       "items": [
         "lex_south",
         "lex_east",
         "lex_west",
-        "lex_pull"
+        "lex_pull",
+        "lex_push"
       ]
     },
     {
-      "id": "act_698",
+      "id": "act_680",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is a south.",
+          "hu": "(dél)"
+        },
+        {
+          "en": "This is an east.",
+          "hu": "(kelet)"
+        },
+        {
+          "en": "This is a west.",
+          "hu": "(nyugat)"
+        }
+      ]
+    },
+    {
+      "id": "act_681",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_699",
+      "id": "act_682",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_700",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "south",
-            "east",
-            "west"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

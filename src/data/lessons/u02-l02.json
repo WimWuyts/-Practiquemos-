@@ -37,7 +37,7 @@
   "conversationId": "dlg_marlene_first",
   "activities": [
     {
-      "id": "act_88",
+      "id": "act_85",
       "type": "intro",
       "items": [
         "lex_daughter",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_89",
+      "id": "act_86",
       "type": "listen-choose",
       "items": [
         "lex_daughter",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_90",
+      "id": "act_87",
       "type": "match",
       "items": [
         "lex_daughter",
@@ -75,12 +75,12 @@
       ]
     },
     {
-      "id": "act_91",
+      "id": "act_88",
       "type": "grammar",
       "grammarId": "gr_have"
     },
     {
-      "id": "act_92",
+      "id": "act_89",
       "type": "gapfill",
       "items": [
         {
@@ -126,19 +126,38 @@
       ]
     },
     {
-      "id": "act_93",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fam_howmany",
-        "chunk_fam_married",
-        "chunk_nm_whatsage",
-        "chunk_id_thisismy"
+      "id": "act_90",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Are you married?",
+          "hu": "Házas vagy?"
+        },
+        {
+          "en": "How old are you?",
+          "hu": "Hány éves vagy?"
+        }
       ]
     },
     {
-      "id": "act_94",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_91",
+      "type": "typed",
+      "items": [
+        "lex_daughter",
+        "lex_son",
+        "lex_husband",
+        "lex_wife",
+        "lex_partner"
+      ]
+    },
+    {
+      "id": "act_92",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "How many brothers and sisters do you have?",
+          "hu": "Hány testvéred van?"
+        },
         {
           "en": "Are you married?",
           "hu": "Házas vagy?"
@@ -154,36 +173,12 @@
       ]
     },
     {
-      "id": "act_95",
-      "type": "typed",
-      "items": [
-        "lex_daughter",
-        "lex_son",
-        "lex_husband",
-        "lex_wife"
-      ]
-    },
-    {
-      "id": "act_96",
+      "id": "act_93",
       "type": "pron-record",
       "focusId": "snd_s_endings"
     },
     {
-      "id": "act_97",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "daughter",
-            "son",
-            "husband"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_98",
+      "id": "act_94",
       "type": "conversation",
       "dialogueId": "dlg_marlene_first"
     }

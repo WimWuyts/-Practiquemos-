@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_59",
+      "id": "act_55",
       "type": "intro",
       "items": [
         "lex_an",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_60",
+      "id": "act_56",
       "type": "listen-choose",
       "items": [
         "lex_an",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_61",
+      "id": "act_57",
       "type": "match",
       "items": [
         "lex_an",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_62",
+      "id": "act_58",
       "type": "spelling-build",
       "family": "sf_ee",
       "word": "three"
     },
     {
-      "id": "act_63",
+      "id": "act_59",
       "type": "gapfill",
       "items": [
         {
@@ -120,22 +120,41 @@
       ]
     },
     {
-      "id": "act_64",
+      "id": "act_60",
       "type": "typed",
       "items": [
         "lex_an",
         "lex_the",
         "lex_one",
-        "lex_two"
+        "lex_two",
+        "lex_three"
       ]
     },
     {
-      "id": "act_65",
+      "id": "act_61",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is an apple.",
+          "hu": "Ez egy alma."
+        },
+        {
+          "en": "The coffee is hot.",
+          "hu": "A kávé forró."
+        },
+        {
+          "en": "I have one sister.",
+          "hu": "Egy nővérem van."
+        }
+      ]
+    },
+    {
+      "id": "act_62",
       "type": "pron-record",
       "focusId": "snd_long_vowels"
     },
     {
-      "id": "act_66",
+      "id": "act_63",
       "type": "minimal-pair",
       "focusId": "snd_long_vowels"
     }

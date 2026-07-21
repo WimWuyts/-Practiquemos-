@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_583",
+      "id": "act_565",
       "type": "intro",
       "items": [
         "lex_jump",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_584",
+      "id": "act_566",
       "type": "listen-choose",
       "items": [
         "lex_jump",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_585",
+      "id": "act_567",
       "type": "match",
       "items": [
         "lex_jump",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_586",
+      "id": "act_568",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_587",
+      "id": "act_569",
       "type": "typed",
       "items": [
         "lex_jump",
         "lex_draw",
         "lex_paint",
-        "lex_win"
+        "lex_win",
+        "lex_wonderful"
       ]
     },
     {
-      "id": "act_588",
+      "id": "act_570",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I jump every day.",
+          "hu": "(ugrani)"
+        },
+        {
+          "en": "I draw every day.",
+          "hu": "(rajzolni)"
+        },
+        {
+          "en": "I paint every day.",
+          "hu": "(festeni)"
+        }
+      ]
+    },
+    {
+      "id": "act_571",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_589",
+      "id": "act_572",
       "type": "minimal-pair",
       "focusId": "snd_th"
-    },
-    {
-      "id": "act_590",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "jump",
-            "draw",
-            "paint"
-          ],
-          "odd": "be"
-        }
-      ]
     }
   ],
   "completionRule": {

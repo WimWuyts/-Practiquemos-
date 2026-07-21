@@ -34,33 +34,28 @@ window.M = window.M || {};
       el("div", { class: "ring", style: "--p:" + pct, role: "img", "aria-label": M.i18n.t("home.progress") + " " + pct + "%" }, [el("b", { text: pct + "%" })]),
     ]));
 
-    // recommended
+    // ONE clear next step: optional warm-up review, then the recommended lesson
+    var due = M.review.dueItems(6);
     var lesson = M.get.lesson(rec), unit = lesson ? M.get.unit(lesson.unitId) : null;
-    mount.appendChild(el("div", { class: "recommend" }, [
-      el("div", { class: "k", text: M.i18n.t("home.recommended") }),
-      el("h2", { text: lesson ? lesson.title.en : "" }),
-      el("p", { class: "muted", text: (unit ? unit.title.en + " · " : "") + (lesson ? lesson.canDo.en : "") }),
-      el("div", { class: "btn-row" }, [
-        el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + rec); } }, [el("span", { html: dom.icon("book") }), " " + M.i18n.t("home.start")]),
-        (last && last !== rec) ? el("button", { class: "btn secondary", onclick: function () { M.router.go("lesson/" + last); } }, [M.i18n.t("home.continue")]) : null,
-      ]),
-    ]));
-
-    // theme tiles — units as a calm grid
-    mount.appendChild(el("h2", { style: "margin:1.4rem 0 .6rem;font-size:1.15rem", text: M.i18n.label("nav.lessons") }));
-    var grid = el("div", { class: "tilegrid" });
-    M.data.course.units.forEach(function (u) {
-      if (u.id === "u00") return;
-      var vis = unitVis(u.id);
-      var doneCount = u.lessons.filter(function (l) { return M.store.isLessonDone(l); }).length;
-      var up = Math.round((doneCount / Math.max(1, u.lessons.length)) * 100);
-      grid.appendChild(el("button", { class: "themetile", onclick: function () { M.router.go("lesson/" + u.lessons[0]); } }, [
-        el("span", { class: "iconwell", style: "--tint:" + vis[1] + ";--tintink:" + vis[2], html: dom.icon(vis[0]), "aria-hidden": "true" }),
-        el("span", { class: "txt" }, [el("b", { text: u.title.en }), el("span", { text: M.i18n.helpAvailable() ? u.title.hu : u.canDo.en })]),
-        el("span", { class: "ring sm", style: "--p:" + up + ";--accent:" + vis[2], "aria-label": up + "%" }, [el("b", { text: up + "%" })]),
+    var recCard = el("div", { class: "recommend" }, [
+      el("div", { class: "k", text: M.i18n.t("home.today") }),
+    ]);
+    if (due.length) {
+      recCard.appendChild(el("div", { class: "btn-row", style: "margin:.2rem 0 .6rem" }, [
+        el("button", { class: "btn secondary", onclick: function () { M.router.go("review"); } }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("home.warmup").replace("{n}", due.length)]),
       ]));
-    });
-    mount.appendChild(grid);
+    }
+    recCard.appendChild(el("h2", { style: "margin:.2rem 0", text: lesson ? lesson.title.en : "" }));
+    recCard.appendChild(el("p", { class: "muted", text: (unit ? unit.title.en + " · " : "") + (lesson ? lesson.canDo.en : "") }));
+    recCard.appendChild(el("div", { class: "btn-row" }, [
+      el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + rec); } }, [el("span", { html: dom.icon("book") }), " " + M.i18n.t("home.start")]),
+    ]));
+    mount.appendChild(recCard);
+
+    // compact link to browse all lessons (the full grid lives in the Lessons tab)
+    mount.appendChild(el("div", { class: "btn-row" }, [
+      el("button", { class: "btn ghost wide", onclick: function () { M.router.go("lessons"); } }, [el("span", { html: dom.icon("list") }), " " + M.i18n.t("home.browse")]),
+    ]));
 
     // conversations + monthly
     mount.appendChild(el("div", { class: "card", style: "margin-top:1.2rem" }, [
@@ -126,7 +121,7 @@ window.M = window.M || {};
       var header = el("button", { "aria-expanded": String(open) }, [
         el("span", { html: dom.icon("book") }),
         el("span", { style: "flex:1" }, [unit.title.en, M.i18n.helpAvailable() ? el("span", { class: "muted", text: " · " + unit.title.hu }) : null]),
-        el("span", { class: "pill", text: (ui) + "" }),
+        (function () { var dn = unit.lessons.filter(function (l) { return M.store.isLessonDone(l); }).length; return el("span", { class: "pill", text: dn + "/" + unit.lessons.length }); })(),
       ]);
       header.addEventListener("click", function () {
         var hidden = lessonsWrap.classList.toggle("hidden");
@@ -176,9 +171,14 @@ window.M = window.M || {};
       stage.appendChild(el("p", { text: M.i18n.t("lesson.complete.msg") }));
       if (M.i18n.helpAvailable()) stage.appendChild(el("p", { class: "muted", text: M.i18n.hu("lesson.complete.msg") }));
       var next = pickRecommended();
+      // deep-link to practise what was just learned, or talk to the family
+      stage.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn secondary", onclick: function () { M.router.go("drill/" + lesson.unitId); } }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("lesson.next.practise")]),
+        lesson.conversationId ? el("button", { class: "btn secondary", onclick: function () { M.router.go("talk/" + lesson.conversationId); } }, [el("span", { html: dom.icon("chat") }), " " + M.i18n.t("lesson.next.talk")]) : null,
+      ]));
       stage.appendChild(el("div", { class: "btn-row" }, [
         el("button", { class: "btn", onclick: function () { M.router.go("lesson/" + next); } }, [M.i18n.t("home.continue")]),
-        el("button", { class: "btn secondary", onclick: function () { M.router.go("home"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.home")]),
+        el("button", { class: "btn ghost", onclick: function () { M.router.go("home"); } }, [el("span", { html: dom.icon("home") }), " " + M.i18n.t("nav.home")]),
       ]));
     }
     run();
@@ -206,9 +206,9 @@ window.M = window.M || {};
     // Open conversation area (gently gated)
     var s = M.store.settings();
     mount.appendChild(el("div", { class: "card" }, [
-      el("h2", { text: "Open conversations" }),
+      el("h2", { text: M.i18n.t("conv.open.title") }),
       el("p", { class: "muted", text: M.i18n.t("conv.locked.note") + (M.i18n.helpAvailable() ? " · " + M.i18n.hu("conv.locked.note") : "") }),
-      s.allowOpenConv ? el("p", {}, [M.i18n.t("settings.open_conv") + " ✓"]) : el("p", { class: "muted", text: M.i18n.t("settings.open_conv") + " — " + M.i18n.t("nav.settings") }),
+      s.allowOpenConv ? el("p", {}, [M.i18n.t("settings.open_conv") + " ✓"]) : el("div", { class: "btn-row" }, [el("button", { class: "btn ghost small", onclick: function () { M.router.go("settings"); } }, [el("span", { html: dom.icon("gear") }), " " + M.i18n.t("nav.settings")])]),
     ]));
   }
   function talk(mount, dialogueId) {
@@ -503,7 +503,7 @@ window.M = window.M || {};
   function diagnostic(mount) {
     var stage = el("div", { class: "card stage" });
     mount.appendChild(stage);
-    M.diagnostic.render(stage, function () { M.router.go("home"); });
+    M.diagnostic.render(stage, function () { M.router.go("lesson/" + pickRecommended()); });
   }
 
   M.ui = {

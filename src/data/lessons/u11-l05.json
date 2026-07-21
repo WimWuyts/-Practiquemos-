@@ -29,7 +29,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_790",
+      "id": "act_766",
       "type": "intro",
       "items": [
         "lex_let",
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "act_791",
+      "id": "act_767",
       "type": "listen-choose",
       "items": [
         "lex_let",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "act_792",
+      "id": "act_768",
       "type": "gapfill",
       "items": [
         {
@@ -71,19 +71,31 @@
       ]
     },
     {
-      "id": "act_793",
-      "type": "phrase-match",
-      "items": [
-        "chunk_te_understand",
-        "chunk_te_seeyounext",
-        "chunk_te_greatjob",
-        "chunk_te_onemore"
+      "id": "act_769",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Do you understand?",
+          "hu": "Érted?"
+        },
+        {
+          "en": "See you next week. Bye!",
+          "hu": "Jövő héten találkozunk. Szia!"
+        }
       ]
     },
     {
-      "id": "act_794",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_770",
+      "type": "typed",
+      "items": [
+        "lex_let",
+        "lex_fix"
+      ]
+    },
+    {
+      "id": "act_771",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Do you understand?",
           "hu": "Érted?"
@@ -95,19 +107,15 @@
         {
           "en": "Great job today!",
           "hu": "Nagyszerű munka ma!"
+        },
+        {
+          "en": "One more time, please.",
+          "hu": "Még egyszer, kérlek."
         }
       ]
     },
     {
-      "id": "act_795",
-      "type": "typed",
-      "items": [
-        "lex_let",
-        "lex_fix"
-      ]
-    },
-    {
-      "id": "act_796",
+      "id": "act_772",
       "type": "pron-record",
       "focusId": "str_chunking"
     }

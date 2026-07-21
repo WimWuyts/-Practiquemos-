@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_591",
+      "id": "act_573",
       "type": "intro",
       "items": [
         "lex_best",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_592",
+      "id": "act_574",
       "type": "listen-choose",
       "items": [
         "lex_best",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_593",
+      "id": "act_575",
       "type": "match",
       "items": [
         "lex_best",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_594",
+      "id": "act_576",
       "type": "gapfill",
       "items": [
         {
@@ -114,33 +114,38 @@
       ]
     },
     {
-      "id": "act_595",
+      "id": "act_577",
       "type": "typed",
       "items": [
         "lex_best",
         "lex_perfect",
         "lex_terrible",
-        "lex_quite"
+        "lex_quite",
+        "lex_hate"
       ]
     },
     {
-      "id": "act_596",
-      "type": "pron-record",
-      "focusId": "snd_r"
-    },
-    {
-      "id": "act_597",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_578",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "best",
-            "perfect",
-            "terrible"
-          ],
-          "odd": "my"
+          "en": "It is very best.",
+          "hu": "(legjobb)"
+        },
+        {
+          "en": "It is very perfect.",
+          "hu": "(tökéletes)"
+        },
+        {
+          "en": "It is very terrible.",
+          "hu": "(szörnyű)"
         }
       ]
+    },
+    {
+      "id": "act_579",
+      "type": "pron-record",
+      "focusId": "snd_r"
     }
   ],
   "completionRule": {

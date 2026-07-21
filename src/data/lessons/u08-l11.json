@@ -23,21 +23,31 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_605",
+      "id": "act_588",
       "type": "intro",
       "items": [
         "lex_modern"
       ]
     },
     {
-      "id": "act_606",
+      "id": "act_589",
       "type": "typed",
       "items": [
         "lex_modern"
       ]
     },
     {
-      "id": "act_607",
+      "id": "act_590",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very modern.",
+          "hu": "(modern)"
+        }
+      ]
+    },
+    {
+      "id": "act_591",
       "type": "pron-record",
       "focusId": "snd_r"
     }

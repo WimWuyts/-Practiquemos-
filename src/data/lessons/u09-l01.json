@@ -225,7 +225,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_608",
+      "id": "act_592",
       "type": "intro",
       "items": [
         "lex_street",
@@ -239,7 +239,7 @@
       ]
     },
     {
-      "id": "act_609",
+      "id": "act_593",
       "type": "listen-choose",
       "items": [
         "lex_street",
@@ -251,18 +251,17 @@
       ]
     },
     {
-      "id": "act_610",
+      "id": "act_594",
       "type": "icon-choice",
       "items": [
         "lex_bus",
         "lex_train",
         "lex_car",
-        "lex_taxi",
         "lex_ticket"
       ]
     },
     {
-      "id": "act_611",
+      "id": "act_595",
       "type": "match",
       "items": [
         "lex_street",
@@ -274,18 +273,18 @@
       ]
     },
     {
-      "id": "act_612",
+      "id": "act_596",
+      "type": "grammar",
+      "grammarId": "gr_imperatives"
+    },
+    {
+      "id": "act_597",
       "type": "spelling-build",
       "family": "sf_tion",
       "word": "station"
     },
     {
-      "id": "act_613",
-      "type": "grammar",
-      "grammarId": "gr_imperatives"
-    },
-    {
-      "id": "act_614",
+      "id": "act_598",
       "type": "gapfill",
       "items": [
         {
@@ -331,19 +330,38 @@
       ]
     },
     {
-      "id": "act_615",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ask_followup_where",
-        "chunk_town_where",
-        "chunk_town_howget",
-        "chunk_trans_which"
+      "id": "act_599",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where is the station?",
+          "hu": "Hol van az állomás?"
+        },
+        {
+          "en": "How do I get to the centre?",
+          "hu": "Hogy jutok el a központba?"
+        }
       ]
     },
     {
-      "id": "act_616",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_600",
+      "type": "typed",
+      "items": [
+        "lex_street",
+        "lex_station",
+        "lex_bus",
+        "lex_train",
+        "lex_car"
+      ]
+    },
+    {
+      "id": "act_601",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Where exactly?",
+          "hu": "Pontosan hol?"
+        },
         {
           "en": "Where is the station?",
           "hu": "Hol van az állomás?"
@@ -359,27 +377,17 @@
       ]
     },
     {
-      "id": "act_617",
-      "type": "typed",
-      "items": [
-        "lex_street",
-        "lex_station",
-        "lex_bus",
-        "lex_train"
-      ]
-    },
-    {
-      "id": "act_618",
+      "id": "act_602",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_619",
+      "id": "act_603",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_620",
+      "id": "act_604",
       "type": "review",
       "items": [
         "lex_time",

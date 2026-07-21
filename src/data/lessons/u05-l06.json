@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_310",
+      "id": "act_301",
       "type": "intro",
       "items": [
         "lex_orange",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_311",
+      "id": "act_302",
       "type": "listen-choose",
       "items": [
         "lex_orange",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_312",
+      "id": "act_303",
       "type": "match",
       "items": [
         "lex_orange",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_313",
+      "id": "act_304",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_314",
+      "id": "act_305",
       "type": "typed",
       "items": [
         "lex_orange",
         "lex_banana",
         "lex_sandwich",
-        "lex_juice"
+        "lex_juice",
+        "lex_wine"
       ]
     },
     {
-      "id": "act_315",
+      "id": "act_306",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is an orange.",
+          "hu": "(narancs)"
+        },
+        {
+          "en": "This is a banana.",
+          "hu": "(banán)"
+        },
+        {
+          "en": "This is a sandwich.",
+          "hu": "(szendvics)"
+        }
+      ]
+    },
+    {
+      "id": "act_307",
       "type": "pron-record",
       "focusId": "snd_shchj"
     },
     {
-      "id": "act_316",
+      "id": "act_308",
       "type": "minimal-pair",
       "focusId": "snd_shchj"
-    },
-    {
-      "id": "act_317",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "orange",
-            "banana",
-            "sandwich"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

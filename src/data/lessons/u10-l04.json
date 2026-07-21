@@ -42,7 +42,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_739",
+      "id": "act_719",
       "type": "intro",
       "items": [
         "lex_choose",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_740",
+      "id": "act_720",
       "type": "listen-choose",
       "items": [
         "lex_choose",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "id": "act_741",
+      "id": "act_721",
       "type": "match",
       "items": [
         "lex_choose",
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "id": "act_742",
+      "id": "act_722",
       "type": "gapfill",
       "items": [
         {
@@ -118,24 +118,40 @@
       ]
     },
     {
-      "id": "act_743",
-      "type": "phrase-match",
-      "items": [
-        "chunk_sv_whatstime_bf",
-        "chunk_pm_doyoumind",
-        "chunk_of_canihelp",
-        "chunk_th_forhelp",
-        "chunk_he_notwell",
-        "chunk_he_headache"
-      ]
-    },
-    {
-      "id": "act_744",
+      "id": "act_723",
       "type": "reorder",
       "sentences": [
         {
           "en": "What time is breakfast?",
           "hu": "Hánykor van a reggeli?"
+        },
+        {
+          "en": "Can I help you?",
+          "hu": "Segíthetek?"
+        }
+      ]
+    },
+    {
+      "id": "act_724",
+      "type": "typed",
+      "items": [
+        "lex_choose",
+        "lex_closed",
+        "lex_break",
+        "lex_comfortable"
+      ]
+    },
+    {
+      "id": "act_725",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "What time is breakfast?",
+          "hu": "Hánykor van a reggeli?"
+        },
+        {
+          "en": "Do you mind if I open the window?",
+          "hu": "Nem baj, ha kinyitom az ablakot?"
         },
         {
           "en": "Can I help you?",
@@ -148,17 +164,7 @@
       ]
     },
     {
-      "id": "act_745",
-      "type": "typed",
-      "items": [
-        "lex_choose",
-        "lex_closed",
-        "lex_break",
-        "lex_comfortable"
-      ]
-    },
-    {
-      "id": "act_746",
+      "id": "act_726",
       "type": "pron-record",
       "focusId": "str_word"
     }

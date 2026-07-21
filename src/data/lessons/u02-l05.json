@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_116",
+      "id": "act_111",
       "type": "intro",
       "items": [
         "lex_old",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_117",
+      "id": "act_112",
       "type": "listen-choose",
       "items": [
         "lex_old",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_118",
+      "id": "act_113",
       "type": "match",
       "items": [
         "lex_old",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_119",
+      "id": "act_114",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_120",
+      "id": "act_115",
       "type": "typed",
       "items": [
         "lex_old",
         "lex_young",
         "lex_married",
-        "lex_baby"
+        "lex_baby",
+        "lex_cousin"
       ]
     },
     {
-      "id": "act_121",
+      "id": "act_116",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very old.",
+          "hu": "(öreg / idős)"
+        },
+        {
+          "en": "It is very young.",
+          "hu": "(fiatal)"
+        },
+        {
+          "en": "It is very married.",
+          "hu": "(házas)"
+        }
+      ]
+    },
+    {
+      "id": "act_117",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_122",
+      "id": "act_118",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_123",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "old",
-            "young",
-            "married"
-          ],
-          "odd": "my"
-        }
-      ]
     }
   ],
   "completionRule": {

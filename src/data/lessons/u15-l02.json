@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_899",
+      "id": "act_865",
       "type": "intro",
       "items": [
         "lex_safe",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_900",
+      "id": "act_866",
       "type": "listen-choose",
       "items": [
         "lex_safe",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_901",
+      "id": "act_867",
       "type": "match",
       "items": [
         "lex_safe",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_902",
+      "id": "act_868",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_903",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fly_blanket",
-        "chunk_fly_toilet",
-        "chunk_fly_land",
-        "chunk_fe_tired"
+      "id": "act_869",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Could I have a blanket, please?",
+          "hu": "Kaphatnék egy takarót, kérem?"
+        },
+        {
+          "en": "Where is the toilet?",
+          "hu": "Hol van a mosdó?"
+        }
       ]
     },
     {
-      "id": "act_904",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_870",
+      "type": "typed",
+      "items": [
+        "lex_safe",
+        "lex_okay",
+        "lex_fly",
+        "lex_feel",
+        "lex_sad"
+      ]
+    },
+    {
+      "id": "act_871",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Could I have a blanket, please?",
           "hu": "Kaphatnék egy takarót, kérem?"
@@ -143,40 +158,20 @@
         {
           "en": "When will we land?",
           "hu": "Mikor szállunk le?"
+        },
+        {
+          "en": "I'm a little tired today.",
+          "hu": "Ma kicsit fáradt vagyok."
         }
       ]
     },
     {
-      "id": "act_905",
-      "type": "typed",
-      "items": [
-        "lex_safe",
-        "lex_okay",
-        "lex_fly",
-        "lex_feel"
-      ]
-    },
-    {
-      "id": "act_906",
+      "id": "act_872",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_907",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "safe",
-            "okay",
-            "feel"
-          ],
-          "odd": "my"
-        }
-      ]
-    },
-    {
-      "id": "act_908",
+      "id": "act_873",
       "type": "listen-comprehension",
       "passage": "Ladies and gentlemen, we will land in about twenty minutes. Please fasten your seatbelt. Thank you.",
       "question": {

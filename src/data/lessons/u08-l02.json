@@ -37,7 +37,7 @@
   "conversationId": "dlg_emma_books",
   "activities": [
     {
-      "id": "act_528",
+      "id": "act_512",
       "type": "intro",
       "items": [
         "lex_play",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "id": "act_529",
+      "id": "act_513",
       "type": "listen-choose",
       "items": [
         "lex_play",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "id": "act_530",
+      "id": "act_514",
       "type": "match",
       "items": [
         "lex_play",
@@ -75,12 +75,12 @@
       ]
     },
     {
-      "id": "act_531",
+      "id": "act_515",
       "type": "grammar",
       "grammarId": "gr_comparatives"
     },
     {
-      "id": "act_532",
+      "id": "act_516",
       "type": "gapfill",
       "items": [
         {
@@ -126,19 +126,34 @@
       ]
     },
     {
-      "id": "act_533",
-      "type": "phrase-match",
-      "items": [
-        "chunk_op_agree",
-        "chunk_op_notsure",
-        "chunk_op_ilike2",
-        "chunk_op_favourite"
+      "id": "act_517",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Yes, me too.",
+          "hu": "Igen, én is."
+        },
+        {
+          "en": "I'm not sure.",
+          "hu": "Nem vagyok biztos benne."
+        }
       ]
     },
     {
-      "id": "act_534",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_518",
+      "type": "typed",
+      "items": [
+        "lex_play",
+        "lex_love",
+        "lex_enjoy",
+        "lex_favourite",
+        "lex_interesting"
+      ]
+    },
+    {
+      "id": "act_519",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Yes, me too.",
           "hu": "Igen, én is."
@@ -150,31 +165,25 @@
         {
           "en": "I really enjoy it.",
           "hu": "Nagyon élvezem."
+        },
+        {
+          "en": "My favourite hobby is cooking.",
+          "hu": "A kedvenc hobbim a főzés."
         }
       ]
     },
     {
-      "id": "act_535",
-      "type": "typed",
-      "items": [
-        "lex_play",
-        "lex_love",
-        "lex_enjoy",
-        "lex_favourite"
-      ]
-    },
-    {
-      "id": "act_536",
+      "id": "act_520",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_537",
+      "id": "act_521",
       "type": "minimal-pair",
       "focusId": "snd_th"
     },
     {
-      "id": "act_538",
+      "id": "act_522",
       "type": "conversation",
       "dialogueId": "dlg_emma_books"
     }

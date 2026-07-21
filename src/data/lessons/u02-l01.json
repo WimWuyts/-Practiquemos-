@@ -95,7 +95,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_74",
+      "id": "act_72",
       "type": "intro",
       "items": [
         "lex_family",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "act_75",
+      "id": "act_73",
       "type": "listen-choose",
       "items": [
         "lex_family",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "id": "act_76",
+      "id": "act_74",
       "type": "match",
       "items": [
         "lex_family",
@@ -133,22 +133,22 @@
       ]
     },
     {
-      "id": "act_77",
+      "id": "act_75",
       "type": "grammar",
       "grammarId": "gr_possadj"
     },
     {
-      "id": "act_78",
+      "id": "act_76",
       "type": "grammar",
       "grammarId": "gr_poss_s"
     },
     {
-      "id": "act_79",
+      "id": "act_77",
       "type": "grammar",
       "grammarId": "gr_plural"
     },
     {
-      "id": "act_80",
+      "id": "act_78",
       "type": "gapfill",
       "items": [
         {
@@ -194,19 +194,34 @@
       ]
     },
     {
-      "id": "act_81",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ask_family",
-        "chunk_sm_howsfamily",
-        "chunk_id_thisis",
-        "chunk_fam_livesin"
+      "id": "act_79",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Do you have brothers or sisters?",
+          "hu": "Van testvéred?"
+        },
+        {
+          "en": "How is your family?",
+          "hu": "Hogy van a családod?"
+        }
       ]
     },
     {
-      "id": "act_82",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_80",
+      "type": "typed",
+      "items": [
+        "lex_family",
+        "lex_mother",
+        "lex_father",
+        "lex_mum",
+        "lex_dad"
+      ]
+    },
+    {
+      "id": "act_81",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Do you have brothers or sisters?",
           "hu": "Van testvéred?"
@@ -218,45 +233,25 @@
         {
           "en": "This is my sister, Margó.",
           "hu": "Ez a nővérem, Margó."
+        },
+        {
+          "en": "My niece lives in Denmark.",
+          "hu": "Az unokahúgom Dániában él."
         }
       ]
     },
     {
-      "id": "act_83",
-      "type": "typed",
-      "items": [
-        "lex_family",
-        "lex_mother",
-        "lex_father",
-        "lex_mum"
-      ]
-    },
-    {
-      "id": "act_84",
+      "id": "act_82",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_85",
+      "id": "act_83",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_86",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "family",
-            "mother",
-            "father"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_87",
+      "id": "act_84",
       "type": "review",
       "items": [
         "lex_hello",

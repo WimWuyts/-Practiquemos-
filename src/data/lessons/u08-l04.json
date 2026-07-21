@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_548",
+      "id": "act_532",
       "type": "intro",
       "items": [
         "lex_cat",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_549",
+      "id": "act_533",
       "type": "listen-choose",
       "items": [
         "lex_cat",
@@ -61,16 +61,7 @@
       ]
     },
     {
-      "id": "act_550",
-      "type": "icon-choice",
-      "items": [
-        "lex_cat",
-        "lex_bird",
-        "lex_cow"
-      ]
-    },
-    {
-      "id": "act_551",
+      "id": "act_534",
       "type": "match",
       "items": [
         "lex_cat",
@@ -82,7 +73,7 @@
       ]
     },
     {
-      "id": "act_552",
+      "id": "act_535",
       "type": "gapfill",
       "items": [
         {
@@ -128,22 +119,41 @@
       ]
     },
     {
-      "id": "act_553",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ag_inmyopinion",
-        "chunk_ag_metoo",
-        "chunk_ag_reallythink",
-        "chunk_rp_almostget"
-      ]
-    },
-    {
-      "id": "act_554",
+      "id": "act_536",
       "type": "reorder",
       "sentences": [
         {
           "en": "In my opinion, it's very good.",
           "hu": "Szerintem nagyon jó."
+        },
+        {
+          "en": "What do you think?",
+          "hu": "Te mit gondolsz?"
+        }
+      ]
+    },
+    {
+      "id": "act_537",
+      "type": "typed",
+      "items": [
+        "lex_cat",
+        "lex_bird",
+        "lex_cow",
+        "lex_run",
+        "lex_listen"
+      ]
+    },
+    {
+      "id": "act_538",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "In my opinion, it's very good.",
+          "hu": "Szerintem nagyon jó."
+        },
+        {
+          "en": "Me too!",
+          "hu": "Én is!"
         },
         {
           "en": "What do you think?",
@@ -156,38 +166,14 @@
       ]
     },
     {
-      "id": "act_555",
-      "type": "typed",
-      "items": [
-        "lex_cat",
-        "lex_bird",
-        "lex_cow",
-        "lex_run"
-      ]
-    },
-    {
-      "id": "act_556",
+      "id": "act_539",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_557",
+      "id": "act_540",
       "type": "minimal-pair",
       "focusId": "snd_th"
-    },
-    {
-      "id": "act_558",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "cat",
-            "bird",
-            "cow"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

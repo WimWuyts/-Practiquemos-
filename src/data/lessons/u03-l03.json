@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_153",
+      "id": "act_146",
       "type": "intro",
       "items": [
         "lex_come",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_154",
+      "id": "act_147",
       "type": "listen-choose",
       "items": [
         "lex_come",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_155",
+      "id": "act_148",
       "type": "match",
       "items": [
         "lex_come",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_156",
+      "id": "act_149",
       "type": "gapfill",
       "items": [
         {
@@ -114,22 +114,41 @@
       ]
     },
     {
-      "id": "act_157",
+      "id": "act_150",
       "type": "typed",
       "items": [
         "lex_come",
         "lex_tall",
         "lex_short",
-        "lex_kind"
+        "lex_kind",
+        "lex_funny"
       ]
     },
     {
-      "id": "act_158",
+      "id": "act_151",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I come from Hungary.",
+          "hu": "Magyarországról jövök."
+        },
+        {
+          "en": "It is very tall.",
+          "hu": "(magas)"
+        },
+        {
+          "en": "It is very short.",
+          "hu": "(alacsony / rövid)"
+        }
+      ]
+    },
+    {
+      "id": "act_152",
       "type": "pron-record",
       "focusId": "snd_wv"
     },
     {
-      "id": "act_159",
+      "id": "act_153",
       "type": "minimal-pair",
       "focusId": "snd_wv"
     }

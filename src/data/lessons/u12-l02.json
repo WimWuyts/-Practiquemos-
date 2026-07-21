@@ -39,7 +39,7 @@
   "conversationId": "dlg_endika_followup",
   "activities": [
     {
-      "id": "act_808",
+      "id": "act_783",
       "type": "intro",
       "items": [
         "lex_try",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "act_809",
+      "id": "act_784",
       "type": "listen-choose",
       "items": [
         "lex_try",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "id": "act_810",
+      "id": "act_785",
       "type": "match",
       "items": [
         "lex_try",
@@ -76,12 +76,12 @@
       ]
     },
     {
-      "id": "act_811",
+      "id": "act_786",
       "type": "grammar",
       "grammarId": "gr_pastsimple"
     },
     {
-      "id": "act_812",
+      "id": "act_787",
       "type": "gapfill",
       "items": [
         {
@@ -127,21 +127,34 @@
       ]
     },
     {
-      "id": "act_813",
-      "type": "phrase-match",
-      "items": [
-        "chunk_pa_howwas",
-        "chunk_pa_lastnight",
-        "chunk_pa_itwasgreat",
-        "chunk_pa_didyou",
-        "chunk_pa_wentto2",
-        "chunk_pa_bornin"
+      "id": "act_788",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "How was your weekend?",
+          "hu": "Milyen volt a hétvégéd?"
+        },
+        {
+          "en": "Last night I watched a film.",
+          "hu": "Tegnap este filmet néztem."
+        }
       ]
     },
     {
-      "id": "act_814",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_789",
+      "type": "typed",
+      "items": [
+        "lex_try",
+        "lex_end",
+        "lex_spend",
+        "lex_last",
+        "lex_almost"
+      ]
+    },
+    {
+      "id": "act_790",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "How was your weekend?",
           "hu": "Milyen volt a hétvégéd?"
@@ -153,40 +166,20 @@
         {
           "en": "It was really lovely.",
           "hu": "Nagyon kedves volt."
+        },
+        {
+          "en": "Did you have a good weekend?",
+          "hu": "Jó hétvégéd volt?"
         }
       ]
     },
     {
-      "id": "act_815",
-      "type": "typed",
-      "items": [
-        "lex_try",
-        "lex_end",
-        "lex_spend",
-        "lex_last"
-      ]
-    },
-    {
-      "id": "act_816",
+      "id": "act_791",
       "type": "pron-record",
       "focusId": "snd_ed_endings"
     },
     {
-      "id": "act_817",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "try",
-            "end",
-            "almost"
-          ],
-          "odd": "be"
-        }
-      ]
-    },
-    {
-      "id": "act_818",
+      "id": "act_792",
       "type": "listen-comprehension",
       "passage": "Hi Marta! At the weekend I visited my sister. We cooked lunch and talked for hours. It was lovely.",
       "question": {
@@ -201,7 +194,7 @@
       "answer": "Visited her sister"
     },
     {
-      "id": "act_819",
+      "id": "act_793",
       "type": "expand",
       "question": {
         "en": "What did you do at the weekend?",
@@ -223,7 +216,7 @@
       ]
     },
     {
-      "id": "act_820",
+      "id": "act_794",
       "type": "conversation",
       "dialogueId": "dlg_endika_followup"
     }

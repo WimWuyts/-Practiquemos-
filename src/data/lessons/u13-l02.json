@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_834",
+      "id": "act_806",
       "type": "intro",
       "items": [
         "lex_shirt",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_835",
+      "id": "act_807",
       "type": "listen-choose",
       "items": [
         "lex_shirt",
@@ -61,18 +61,7 @@
       ]
     },
     {
-      "id": "act_836",
-      "type": "icon-choice",
-      "items": [
-        "lex_shirt",
-        "lex_dress",
-        "lex_shoes",
-        "lex_coat",
-        "lex_hat"
-      ]
-    },
-    {
-      "id": "act_837",
+      "id": "act_808",
       "type": "match",
       "items": [
         "lex_shirt",
@@ -84,7 +73,7 @@
       ]
     },
     {
-      "id": "act_838",
+      "id": "act_809",
       "type": "gapfill",
       "items": [
         {
@@ -130,19 +119,34 @@
       ]
     },
     {
-      "id": "act_839",
-      "type": "phrase-match",
-      "items": [
-        "chunk_fu_wouldliketo",
-        "chunk_fu_needto2",
-        "chunk_fu_lookingforward",
-        "chunk_fe_excited"
+      "id": "act_810",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I'd like to visit Denmark one day.",
+          "hu": "Egy nap szeretnék Dániába menni."
+        },
+        {
+          "en": "I need to book a ticket.",
+          "hu": "Jegyet kell foglalnom."
+        }
       ]
     },
     {
-      "id": "act_840",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_811",
+      "type": "typed",
+      "items": [
+        "lex_shirt",
+        "lex_trousers",
+        "lex_dress",
+        "lex_shoes",
+        "lex_coat"
+      ]
+    },
+    {
+      "id": "act_812",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I'd like to visit Denmark one day.",
           "hu": "Egy nap szeretnék Dániába menni."
@@ -154,42 +158,22 @@
         {
           "en": "I'm looking forward to it.",
           "hu": "Nagyon várom."
+        },
+        {
+          "en": "I'm really excited!",
+          "hu": "Nagyon izgatott vagyok!"
         }
       ]
     },
     {
-      "id": "act_841",
-      "type": "typed",
-      "items": [
-        "lex_shirt",
-        "lex_trousers",
-        "lex_dress",
-        "lex_shoes"
-      ]
-    },
-    {
-      "id": "act_842",
+      "id": "act_813",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_843",
+      "id": "act_814",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_844",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "shirt",
-            "trousers",
-            "dress"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

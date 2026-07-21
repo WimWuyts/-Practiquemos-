@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_451",
+      "id": "act_441",
       "type": "intro",
       "items": [
         "lex_dark",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_452",
+      "id": "act_442",
       "type": "listen-choose",
       "items": [
         "lex_dark",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_453",
+      "id": "act_443",
       "type": "match",
       "items": [
         "lex_dark",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_454",
+      "id": "act_444",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "light"
     },
     {
-      "id": "act_455",
+      "id": "act_445",
       "type": "gapfill",
       "items": [
         {
@@ -120,33 +120,38 @@
       ]
     },
     {
-      "id": "act_456",
+      "id": "act_446",
       "type": "typed",
       "items": [
         "lex_dark",
         "lex_light",
         "lex_maybe",
-        "lex_at"
+        "lex_at",
+        "lex_sure"
       ]
     },
     {
-      "id": "act_457",
-      "type": "pron-record",
-      "focusId": "str_question"
-    },
-    {
-      "id": "act_458",
-      "type": "odd-one-out",
-      "groups": [
+      "id": "act_447",
+      "type": "say-it",
+      "phrases": [
         {
-          "words": [
-            "dark",
-            "light",
-            "idea"
-          ],
-          "odd": "my"
+          "en": "It is very dark.",
+          "hu": "(sötét)"
+        },
+        {
+          "en": "It is very light.",
+          "hu": "(világos / könnyű)"
+        },
+        {
+          "en": "Maybe we can meet on Sunday.",
+          "hu": "Talán találkozhatunk vasárnap."
         }
       ]
+    },
+    {
+      "id": "act_448",
+      "type": "pron-record",
+      "focusId": "str_question"
     }
   ],
   "completionRule": {

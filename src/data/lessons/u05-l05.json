@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_302",
+      "id": "act_293",
       "type": "intro",
       "items": [
         "lex_tomato",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_303",
+      "id": "act_294",
       "type": "listen-choose",
       "items": [
         "lex_tomato",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_304",
+      "id": "act_295",
       "type": "match",
       "items": [
         "lex_tomato",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_305",
+      "id": "act_296",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_306",
+      "id": "act_297",
       "type": "typed",
       "items": [
         "lex_tomato",
         "lex_onion",
         "lex_chicken",
-        "lex_salad"
+        "lex_salad",
+        "lex_sugar"
       ]
     },
     {
-      "id": "act_307",
+      "id": "act_298",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "This is a tomato.",
+          "hu": "(paradicsom)"
+        },
+        {
+          "en": "This is an onion.",
+          "hu": "(hagyma)"
+        },
+        {
+          "en": "This is a chicken.",
+          "hu": "(csirke)"
+        }
+      ]
+    },
+    {
+      "id": "act_299",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_308",
+      "id": "act_300",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
-    },
-    {
-      "id": "act_309",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "tomato",
-            "onion",
-            "chicken"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

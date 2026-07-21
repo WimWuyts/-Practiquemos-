@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_333",
+      "id": "act_325",
       "type": "intro",
       "items": [
         "lex_glass",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_334",
+      "id": "act_326",
       "type": "listen-choose",
       "items": [
         "lex_glass",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_335",
+      "id": "act_327",
       "type": "match",
       "items": [
         "lex_glass",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_336",
+      "id": "act_328",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_337",
+      "id": "act_329",
       "type": "typed",
       "items": [
         "lex_glass",
         "lex_plate",
         "lex_knife",
-        "lex_spoon"
+        "lex_spoon",
+        "lex_fork"
       ]
     },
     {
-      "id": "act_338",
+      "id": "act_330",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "The glass are here.",
+          "hu": "(pohár)"
+        },
+        {
+          "en": "This is a plate.",
+          "hu": "(tányér)"
+        },
+        {
+          "en": "This is a knife.",
+          "hu": "(kés)"
+        }
+      ]
+    },
+    {
+      "id": "act_331",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_339",
+      "id": "act_332",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
-    },
-    {
-      "id": "act_340",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "glass",
-            "plate",
-            "knife"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

@@ -76,8 +76,7 @@ window.M = window.M || {};
     function round() {
       dom.clear(mount);
       var target = items[idx];
-      var pool = [target].concat(dom.shuffle(M.data.lexicon.filter(function (l) { return l.id !== target.id && l.partOfSpeech === target.partOfSpeech; })).slice(0, 3));
-      pool = dom.shuffle(pool);
+      var pool = dom.shuffle([target].concat(M.get.distractorWords(target, 3)));
       mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.listenchoose.prompt") }));
       mount.appendChild(speakBtn(target.tts));
       var opts = el("div", { class: "options" });
@@ -89,7 +88,7 @@ window.M = window.M || {};
           b.appendChild(el("span", { class: "mark", html: dom.icon(ok ? "check" : "again") }));
           M.store.touchItem(target.id, "listening", ok);
           Array.prototype.forEach.call(opts.children, function (c) { c.disabled = true; });
-          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : M.i18n.t("fb.listen"));
+          feedback(mount, ok, ok ? M.i18n.t("fb.correct") : (M.i18n.t("fb.listen") + " — " + target.headword));
           if (ok) correctCount++;
           mount.appendChild(el("div", { class: "btn-row" }, [
             el("button", { class: "btn", onclick: function () { idx++; if (idx < items.length) round(); else done(true); } },
@@ -402,7 +401,7 @@ window.M = window.M || {};
         el("div", { class: "wordicon", "aria-hidden": "true", html: dom.icon(target.icon || "dot") }),
         M.i18n.helpAvailable() ? el("div", { class: "hu", text: target.hu }) : null,
       ]));
-      var pool = dom.shuffle([target].concat(dom.shuffle(M.data.lexicon.filter(function (l) { return l.id !== target.id && l.partOfSpeech === target.partOfSpeech; })).slice(0, 3)));
+      var pool = dom.shuffle([target].concat(M.get.distractorWords(target, 3, { iconSpecific: true })));
       var opts = el("div", { class: "options" });
       pool.forEach(function (o) {
         var b = el("button", { class: "option" }, [el("span", { text: o.headword })]);
@@ -545,10 +544,16 @@ window.M = window.M || {};
       dom.clear(out); dom.clear(controls);
       out.appendChild(el("div", { style: "font-size:1.15rem;font-weight:600", text: steps[i].en }));
       if (M.i18n.helpAvailable() && steps[i].hu) out.appendChild(el("div", { class: "muted", text: steps[i].hu }));
-      out.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn secondary", onclick: function () { M.audio.speak(steps[i].en); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")])]));
       out.appendChild(el("p", { class: "muted", text: (i + 1) + " / " + steps.length }));
-      if (i < steps.length - 1) controls.appendChild(el("button", { class: "btn", onclick: function () { i++; draw(); } }, [M.i18n.t("act.expand.more")]));
-      else controls.appendChild(el("button", { class: "btn", onclick: function () { done(true); } }, [M.i18n.t("btn.continue")]));
+      if (i < steps.length - 1) {
+        out.appendChild(el("div", { class: "btn-row" }, [el("button", { class: "btn secondary", onclick: function () { M.audio.speak(steps[i].en); } }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("btn.listen")])]));
+        controls.appendChild(el("button", { class: "btn", onclick: function () { i++; draw(); } }, [M.i18n.t("act.expand.more")]));
+      } else {
+        // final, longest answer: say it aloud
+        out.appendChild(el("p", { class: "prompt", style: "margin:.6rem 0 .2rem", text: M.i18n.t("act.sayit.prompt") }));
+        out.appendChild(M.speakRecord(steps[i].en));
+        controls.appendChild(el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); done(true); } }, [M.i18n.t("btn.continue")]));
+      }
     }
     draw();
   };
@@ -621,6 +626,70 @@ window.M = window.M || {};
   function nextBtn(done) {
     return el("div", { class: "btn-row" }, [el("button", { class: "btn", onclick: function () { done(true); } }, [M.i18n.t("btn.continue")])]);
   }
+
+  // Reusable speaking widget: hear the model, record yourself, hear me (compare), optional check.
+  // Used by the say-it drill, answer-expansion, and every conversation turn. Never blocks.
+  M.speakRecord = function (text, opts) {
+    opts = opts || {}; ready();
+    var wrap = el("div", {});
+    wrap.appendChild(el("div", { class: "btn-row" }, [
+      el("button", { class: "btn secondary", onclick: function () { M.audio.speak(text); }, "aria-label": "Hear it: " + text }, [el("span", { html: dom.icon("speaker") }), " " + M.i18n.t("say.hear")]),
+      el("button", { class: "btn ghost", onclick: function () { M.audio.speak(text, { slow: true }); } }, [el("span", { html: dom.icon("slow") }), " " + M.i18n.t("btn.listen.slow")]),
+    ]));
+    var recState = el("div", { class: "recstate", "aria-live": "polite" });
+    var audio = el("audio", { controls: "controls", class: "hidden", "aria-label": M.i18n.t("say.hearme") });
+    var recBtn = el("button", { class: "btn" }, [el("span", { html: dom.icon("mic") }), " " + M.i18n.t("say.record")]);
+    var recording = false;
+    recBtn.addEventListener("click", function () {
+      if (!M.audio.canRecord()) { dom.toast(M.i18n.t("cap.mic.no")); return; }
+      if (!recording) {
+        M.audio.startRecording(function (st, url) {
+          if (st === "recording") { recording = true; recBtn.innerHTML = dom.icon("stop") + " " + M.i18n.t("btn.stop"); recState.innerHTML = '<span class="rec-dot on"></span>' + M.i18n.t("a11y.recording"); }
+          else if (st === "ready") { recording = false; recBtn.innerHTML = dom.icon("mic") + " " + M.i18n.t("say.again"); recState.textContent = ""; audio.src = url; audio.classList.remove("hidden"); if (opts.onRecorded) opts.onRecorded(url); }
+          else if (st === "error") { recording = false; dom.toast(M.i18n.t("cap.mic.no")); }
+        });
+      } else { M.audio.stopRecording(); }
+    });
+    wrap.appendChild(el("div", { class: "btn-row" }, [recBtn]));
+    wrap.appendChild(recState);
+    wrap.appendChild(audio);
+    if (M.caps.recognition && opts.check !== false) {
+      wrap.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn ghost small", onclick: function () {
+          dom.toast("…");
+          M.audio.recognise(text, function (r) {
+            if (!r.available || r.error) { dom.toast(M.i18n.t("cap.rec.experimental")); return; }
+            var okk = r.said && M.match.close(r.said, [text]);
+            dom.toast(okk ? M.i18n.t("fb.correct") : M.i18n.t("cap.rec.experimental"));
+          });
+        } }, ["🎤? " + M.i18n.t("btn.check")]),
+      ]));
+    }
+    return wrap;
+  };
+
+  // Speaking drill: say full phrases aloud (family lines, travel phrases, useful chunks).
+  R["say-it"] = function (mount, act, done) {
+    var phrases = (act.phrases || []).filter(Boolean);
+    if (!phrases.length) return done(true);
+    var idx = 0;
+    function round() {
+      dom.clear(mount);
+      var p = phrases[idx];
+      mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.sayit.prompt") }));
+      var card = el("div", { class: "card" }, [
+        el("div", { style: "font-size:1.35rem;font-weight:700", text: p.en }),
+        M.i18n.helpAvailable() && p.hu ? el("div", { class: "hu", text: p.hu }) : null,
+      ]);
+      card.appendChild(M.speakRecord(p.en));
+      mount.appendChild(card);
+      M.store.touchItem((M.data._lexByWord[p.en] || {}).id || ("_say_" + idx), "spoken", true);
+      mount.appendChild(el("div", { class: "btn-row" }, [
+        el("button", { class: "btn", onclick: function () { M.audio.clearRecording(); idx++; if (idx < phrases.length) round(); else done(true); } }, [idx < phrases.length - 1 ? M.i18n.t("btn.next") : M.i18n.t("btn.continue")]),
+      ]));
+    }
+    round();
+  };
 
   M.exercise = {
     render: function (mount, act, done) {

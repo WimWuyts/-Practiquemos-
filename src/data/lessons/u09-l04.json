@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_641",
+      "id": "act_624",
       "type": "intro",
       "items": [
         "lex_school",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_642",
+      "id": "act_625",
       "type": "listen-choose",
       "items": [
         "lex_school",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_643",
+      "id": "act_626",
       "type": "match",
       "items": [
         "lex_school",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": "act_644",
+      "id": "act_627",
       "type": "gapfill",
       "items": [
         {
@@ -119,19 +119,34 @@
       ]
     },
     {
-      "id": "act_645",
-      "type": "phrase-match",
-      "items": [
-        "chunk_tw_excusewhere",
-        "chunk_tw_straighton",
-        "chunk_tw_howfar",
-        "chunk_tw_overthere"
+      "id": "act_628",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Excuse me, where is the station?",
+          "hu": "Elnézést, hol van az állomás?"
+        },
+        {
+          "en": "Go straight on and turn left.",
+          "hu": "Menj egyenesen, majd fordulj balra."
+        }
       ]
     },
     {
-      "id": "act_646",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_629",
+      "type": "typed",
+      "items": [
+        "lex_school",
+        "lex_market",
+        "lex_supermarket",
+        "lex_cinema",
+        "lex_museum"
+      ]
+    },
+    {
+      "id": "act_630",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Excuse me, where is the station?",
           "hu": "Elnézést, hol van az állomás?"
@@ -143,42 +158,22 @@
         {
           "en": "How long does it take?",
           "hu": "Mennyi ideig tart?"
+        },
+        {
+          "en": "It's over there, on the right.",
+          "hu": "Ott van, jobbra."
         }
       ]
     },
     {
-      "id": "act_647",
-      "type": "typed",
-      "items": [
-        "lex_school",
-        "lex_market",
-        "lex_supermarket",
-        "lex_cinema"
-      ]
-    },
-    {
-      "id": "act_648",
+      "id": "act_631",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_649",
+      "id": "act_632",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_650",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "school",
-            "market",
-            "supermarket"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

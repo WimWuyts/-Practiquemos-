@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_621",
+      "id": "act_605",
       "type": "intro",
       "items": [
         "lex_left",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_622",
+      "id": "act_606",
       "type": "listen-choose",
       "items": [
         "lex_left",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_623",
+      "id": "act_607",
       "type": "match",
       "items": [
         "lex_left",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_624",
+      "id": "act_608",
       "type": "spelling-build",
       "family": "sf_igh",
       "word": "right"
     },
     {
-      "id": "act_625",
+      "id": "act_609",
       "type": "gapfill",
       "items": [
         {
@@ -125,19 +125,34 @@
       ]
     },
     {
-      "id": "act_626",
-      "type": "phrase-match",
-      "items": [
-        "chunk_tw_wheretoilet",
-        "chunk_tw_isitfar",
-        "chunk_tw_lost",
-        "chunk_tr_whichbus"
+      "id": "act_610",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Where is the toilet, please?",
+          "hu": "Hol van a mosdó, kérem?"
+        },
+        {
+          "en": "Is it far from here?",
+          "hu": "Messze van innen?"
+        }
       ]
     },
     {
-      "id": "act_627",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_611",
+      "type": "typed",
+      "items": [
+        "lex_left",
+        "lex_right",
+        "lex_straight",
+        "lex_near",
+        "lex_far"
+      ]
+    },
+    {
+      "id": "act_612",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Where is the toilet, please?",
           "hu": "Hol van a mosdó, kérem?"
@@ -149,42 +164,22 @@
         {
           "en": "I think I'm lost.",
           "hu": "Azt hiszem, eltévedtem."
+        },
+        {
+          "en": "Which bus goes to the centre?",
+          "hu": "Melyik busz megy a központba?"
         }
       ]
     },
     {
-      "id": "act_628",
-      "type": "typed",
-      "items": [
-        "lex_left",
-        "lex_right",
-        "lex_straight",
-        "lex_near"
-      ]
-    },
-    {
-      "id": "act_629",
+      "id": "act_613",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_630",
+      "id": "act_614",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
-    },
-    {
-      "id": "act_631",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "left",
-            "right",
-            "straight"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

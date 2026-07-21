@@ -29,7 +29,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_67",
+      "id": "act_64",
       "type": "intro",
       "items": [
         "lex_seven",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "id": "act_68",
+      "id": "act_65",
       "type": "listen-choose",
       "items": [
         "lex_seven",
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "id": "act_69",
+      "id": "act_66",
       "type": "match",
       "items": [
         "lex_seven",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": "act_70",
+      "id": "act_67",
       "type": "gapfill",
       "items": [
         {
@@ -112,22 +112,41 @@
       ]
     },
     {
-      "id": "act_71",
+      "id": "act_68",
       "type": "typed",
       "items": [
         "lex_seven",
         "lex_eight",
         "lex_nine",
-        "lex_ten"
+        "lex_ten",
+        "lex_thank"
       ]
     },
     {
-      "id": "act_72",
+      "id": "act_69",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I have seven friends.",
+          "hu": "(hét (szám))"
+        },
+        {
+          "en": "I have eight friends.",
+          "hu": "(nyolc)"
+        },
+        {
+          "en": "I have nine friends.",
+          "hu": "(kilenc)"
+        }
+      ]
+    },
+    {
+      "id": "act_70",
       "type": "pron-record",
       "focusId": "snd_short_vowels"
     },
     {
-      "id": "act_73",
+      "id": "act_71",
       "type": "minimal-pair",
       "focusId": "snd_short_vowels"
     }

@@ -991,7 +991,7 @@
     "pronunciationGroup": "identity",
     "spellingFamily": null,
     "icon": "flag",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "country",
       "countries"
@@ -4520,7 +4520,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "fork",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "kitchen",
       "kitchens"
@@ -4558,7 +4558,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "leaf",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "garden",
       "gardens"
@@ -5151,7 +5151,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": "sf_ea",
     "icon": "cup",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "tea"
     ],
@@ -5188,7 +5188,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "cup",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "milk"
     ],
@@ -5375,7 +5375,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "bowl",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "soup"
     ],
@@ -5412,7 +5412,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": "sf_ea",
     "icon": "bowl",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "meat"
     ],
@@ -5486,7 +5486,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "leaf",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "vegetable",
       "vegetables"
@@ -5524,7 +5524,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "apple",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "fruit"
     ],
@@ -5942,7 +5942,7 @@
     "pronunciationGroup": "shopping",
     "spellingFamily": null,
     "icon": "cart",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "price",
       "prices"
@@ -5980,7 +5980,7 @@
     "pronunciationGroup": "shopping",
     "spellingFamily": null,
     "icon": "cart",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "money"
     ],
@@ -6762,7 +6762,7 @@
     "pronunciationGroup": "time",
     "spellingFamily": null,
     "icon": "calendar",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "weekend"
     ],
@@ -7893,7 +7893,7 @@
     "pronunciationGroup": "hobbies",
     "spellingFamily": null,
     "icon": "ball",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "sport",
       "sports"
@@ -8313,7 +8313,7 @@
     "pronunciationGroup": "hobbies",
     "spellingFamily": null,
     "icon": "star",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "horse",
       "horses"
@@ -8580,7 +8580,7 @@
     "pronunciationGroup": "transport",
     "spellingFamily": null,
     "icon": "car",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "taxi"
     ],
@@ -8991,7 +8991,7 @@
     "pronunciationGroup": "services",
     "spellingFamily": null,
     "icon": "fork",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "restaurant",
       "restaurants"
@@ -9029,7 +9029,7 @@
     "pronunciationGroup": "hotel",
     "spellingFamily": null,
     "icon": "bed",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "hotel",
       "hotels"
@@ -9067,7 +9067,7 @@
     "pronunciationGroup": "services",
     "spellingFamily": null,
     "icon": "book",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "menu",
       "menus"
@@ -9105,7 +9105,7 @@
     "pronunciationGroup": "services",
     "spellingFamily": null,
     "icon": "list",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "table",
       "tables"
@@ -9485,7 +9485,7 @@
     "pronunciationGroup": "technology",
     "spellingFamily": null,
     "icon": "laptop",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "screen",
       "screens"
@@ -10206,7 +10206,7 @@
     "pronunciationGroup": "travel",
     "spellingFamily": null,
     "icon": "suitcase",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "luggage"
     ],
@@ -10396,7 +10396,7 @@
     "pronunciationGroup": "airport",
     "spellingFamily": "sf_ar_or",
     "icon": "plane",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "airport",
       "airports"
@@ -10433,7 +10433,7 @@
     "pronunciationGroup": "airport",
     "spellingFamily": "sf_igh",
     "icon": "plane",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "flight",
       "flights"
@@ -10470,7 +10470,7 @@
     "pronunciationGroup": "airport",
     "spellingFamily": null,
     "icon": "door",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "gate",
       "gates"
@@ -10906,7 +10906,7 @@
     "pronunciationGroup": "flying",
     "spellingFamily": null,
     "icon": "bed",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "blanket",
       "blankets"
@@ -10943,7 +10943,7 @@
     "pronunciationGroup": "flying",
     "spellingFamily": null,
     "icon": "door",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "toilet"
     ],
@@ -13827,7 +13827,7 @@
     "pronunciationGroup": "body",
     "spellingFamily": null,
     "icon": "shoes",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "foot",
       "feet"
@@ -14391,7 +14391,7 @@
     "pronunciationGroup": "clothes",
     "spellingFamily": null,
     "icon": "shirt",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "dress",
       "dresses"
@@ -14466,7 +14466,7 @@
     "pronunciationGroup": "clothes",
     "spellingFamily": null,
     "icon": "shirt",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "coat",
       "coats"
@@ -14542,7 +14542,7 @@
     "pronunciationGroup": "clothes",
     "spellingFamily": null,
     "icon": "shirt",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "jacket",
       "jackets"
@@ -14961,7 +14961,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "laptop",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "television",
       "televisions"
@@ -14999,7 +14999,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "bed",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "fridge",
       "fridges"
@@ -15037,7 +15037,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "sun",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "lamp",
       "lamps"
@@ -17335,7 +17335,7 @@
     "pronunciationGroup": "hobbies",
     "spellingFamily": null,
     "icon": "dog",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "cow",
       "cows"
@@ -22128,7 +22128,7 @@
     "pronunciationGroup": "teaching",
     "spellingFamily": null,
     "icon": "pen",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "pencil",
       "pencils"
@@ -22904,7 +22904,7 @@
     "pronunciationGroup": "hobbies",
     "spellingFamily": "sf_magic_e_a",
     "icon": "ball",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "game",
       "games"
@@ -23277,7 +23277,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "list",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "box",
       "boxes"
@@ -23315,7 +23315,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "droplet",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "bottle",
       "bottles"
@@ -23353,7 +23353,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "cup",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "glass",
       "glasses"
@@ -23391,7 +23391,7 @@
     "pronunciationGroup": "food",
     "spellingFamily": null,
     "icon": "bowl",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "plate",
       "plates"
@@ -25647,7 +25647,7 @@
     "pronunciationGroup": "weather",
     "spellingFamily": null,
     "icon": "leaf",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "grass"
     ],
@@ -25684,7 +25684,7 @@
     "pronunciationGroup": "weather",
     "spellingFamily": null,
     "icon": "leaf",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "field",
       "fields"
@@ -27146,7 +27146,7 @@
     "pronunciationGroup": "home",
     "spellingFamily": null,
     "icon": "window",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "mirror",
       "mirrors"
@@ -27298,7 +27298,7 @@
     "pronunciationGroup": "transport",
     "spellingFamily": null,
     "icon": "bus",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "bicycle",
       "bicycles"
@@ -27485,7 +27485,7 @@
     "pronunciationGroup": "hobbies",
     "spellingFamily": null,
     "icon": "bird",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "duck",
       "ducks"
@@ -27523,7 +27523,7 @@
     "pronunciationGroup": "hobbies",
     "spellingFamily": null,
     "icon": "cat",
-    "iconSpecific": true,
+    "iconSpecific": false,
     "acceptedForms": [
       "rabbit",
       "rabbits"

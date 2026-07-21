@@ -218,7 +218,7 @@
   "conversationId": "dlg_kira_phone",
   "activities": [
     {
-      "id": "act_472",
+      "id": "act_462",
       "type": "intro",
       "items": [
         "lex_call",
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "id": "act_473",
+      "id": "act_463",
       "type": "listen-choose",
       "items": [
         "lex_call",
@@ -244,7 +244,7 @@
       ]
     },
     {
-      "id": "act_474",
+      "id": "act_464",
       "type": "match",
       "items": [
         "lex_call",
@@ -256,18 +256,18 @@
       ]
     },
     {
-      "id": "act_475",
+      "id": "act_465",
+      "type": "grammar",
+      "grammarId": "gr_object_pronouns"
+    },
+    {
+      "id": "act_466",
       "type": "spelling-build",
       "family": "sf_ph",
       "word": "phone"
     },
     {
-      "id": "act_476",
-      "type": "grammar",
-      "grammarId": "gr_object_pronouns"
-    },
-    {
-      "id": "act_477",
+      "id": "act_467",
       "type": "gapfill",
       "items": [
         {
@@ -313,19 +313,34 @@
       ]
     },
     {
-      "id": "act_478",
-      "type": "phrase-match",
-      "items": [
-        "chunk_repair_notunderstand",
-        "chunk_repair_repeat",
-        "chunk_repair_slower",
-        "chunk_repair_wait"
+      "id": "act_468",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I don't understand.",
+          "hu": "Nem értem."
+        },
+        {
+          "en": "Could you repeat that, please?",
+          "hu": "Meg tudná ismételni, kérem?"
+        }
       ]
     },
     {
-      "id": "act_479",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_469",
+      "type": "typed",
+      "items": [
+        "lex_call",
+        "lex_phone",
+        "lex_hear",
+        "lex_see",
+        "lex_repeat"
+      ]
+    },
+    {
+      "id": "act_470",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I don't understand.",
           "hu": "Nem értem."
@@ -337,45 +352,25 @@
         {
           "en": "Could you speak more slowly, please?",
           "hu": "Tudna lassabban beszélni, kérem?"
+        },
+        {
+          "en": "Please wait a moment.",
+          "hu": "Kérem, várjon egy pillanatot."
         }
       ]
     },
     {
-      "id": "act_480",
-      "type": "typed",
-      "items": [
-        "lex_call",
-        "lex_phone",
-        "lex_hear",
-        "lex_see"
-      ]
-    },
-    {
-      "id": "act_481",
+      "id": "act_471",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_482",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "call",
-            "phone",
-            "hear"
-          ],
-          "odd": "be"
-        }
-      ]
-    },
-    {
-      "id": "act_483",
+      "id": "act_472",
       "type": "conversation",
       "dialogueId": "dlg_kira_phone"
     },
     {
-      "id": "act_484",
+      "id": "act_473",
       "type": "review",
       "items": [
         "lex_day",

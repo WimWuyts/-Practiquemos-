@@ -157,7 +157,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_255",
+      "id": "act_250",
       "type": "intro",
       "items": [
         "lex_food",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "id": "act_256",
+      "id": "act_251",
       "type": "listen-choose",
       "items": [
         "lex_food",
@@ -183,18 +183,18 @@
       ]
     },
     {
-      "id": "act_257",
+      "id": "act_252",
       "type": "icon-choice",
       "items": [
         "lex_water",
         "lex_coffee",
-        "lex_tea",
-        "lex_milk",
-        "lex_bread"
+        "lex_bread",
+        "lex_cheese",
+        "lex_egg"
       ]
     },
     {
-      "id": "act_258",
+      "id": "act_253",
       "type": "match",
       "items": [
         "lex_food",
@@ -206,18 +206,18 @@
       ]
     },
     {
-      "id": "act_259",
+      "id": "act_254",
+      "type": "grammar",
+      "grammarId": "gr_someany"
+    },
+    {
+      "id": "act_255",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "food"
     },
     {
-      "id": "act_260",
-      "type": "grammar",
-      "grammarId": "gr_someany"
-    },
-    {
-      "id": "act_261",
+      "id": "act_256",
       "type": "gapfill",
       "items": [
         {
@@ -263,19 +263,34 @@
       ]
     },
     {
-      "id": "act_262",
-      "type": "phrase-match",
-      "items": [
-        "chunk_op_like",
-        "chunk_op_dontlike",
-        "chunk_op_wouldlike",
-        "chunk_fd_hungry"
+      "id": "act_257",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "I like it.",
+          "hu": "Szeretem."
+        },
+        {
+          "en": "I don't like it.",
+          "hu": "Nem szeretem."
+        }
       ]
     },
     {
-      "id": "act_263",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_258",
+      "type": "typed",
+      "items": [
+        "lex_food",
+        "lex_water",
+        "lex_coffee",
+        "lex_tea",
+        "lex_milk"
+      ]
+    },
+    {
+      "id": "act_259",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "I like it.",
           "hu": "Szeretem."
@@ -287,45 +302,25 @@
         {
           "en": "I'd like a coffee, please.",
           "hu": "Kérnék egy kávét."
+        },
+        {
+          "en": "I'm a little hungry.",
+          "hu": "Kicsit éhes vagyok."
         }
       ]
     },
     {
-      "id": "act_264",
-      "type": "typed",
-      "items": [
-        "lex_food",
-        "lex_water",
-        "lex_coffee",
-        "lex_tea"
-      ]
-    },
-    {
-      "id": "act_265",
+      "id": "act_260",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_266",
+      "id": "act_261",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_267",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "food",
-            "water",
-            "coffee"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_268",
+      "id": "act_262",
       "type": "review",
       "items": [
         "lex_family",

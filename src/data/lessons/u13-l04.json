@@ -26,7 +26,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_854",
+      "id": "act_823",
       "type": "intro",
       "items": [
         "lex_decide",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "id": "act_855",
+      "id": "act_824",
       "type": "listen-choose",
       "items": [
         "lex_decide",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "act_856",
+      "id": "act_825",
       "type": "match",
       "items": [
         "lex_decide",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_857",
+      "id": "act_826",
       "type": "gapfill",
       "items": [
         {
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "id": "act_858",
+      "id": "act_827",
       "type": "typed",
       "items": [
         "lex_decide",
@@ -112,12 +112,30 @@
       ]
     },
     {
-      "id": "act_859",
+      "id": "act_828",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I decide every day.",
+          "hu": "(eldönteni)"
+        },
+        {
+          "en": "I keep every day.",
+          "hu": "(megtartani)"
+        },
+        {
+          "en": "It is very heavy.",
+          "hu": "(nehéz (súly))"
+        }
+      ]
+    },
+    {
+      "id": "act_829",
       "type": "pron-record",
       "focusId": "snd_final_cons"
     },
     {
-      "id": "act_860",
+      "id": "act_830",
       "type": "minimal-pair",
       "focusId": "snd_final_cons"
     }

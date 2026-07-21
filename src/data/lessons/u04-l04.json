@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_207",
+      "id": "act_201",
       "type": "intro",
       "items": [
         "lex_every_day",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_208",
+      "id": "act_202",
       "type": "listen-choose",
       "items": [
         "lex_every_day",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_209",
+      "id": "act_203",
       "type": "match",
       "items": [
         "lex_every_day",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_210",
+      "id": "act_204",
       "type": "gapfill",
       "items": [
         {
@@ -114,17 +114,36 @@
       ]
     },
     {
-      "id": "act_211",
+      "id": "act_205",
       "type": "typed",
       "items": [
         "lex_every_day",
         "lex_there_is",
         "lex_there_are",
-        "lex_in"
+        "lex_in",
+        "lex_on"
       ]
     },
     {
-      "id": "act_212",
+      "id": "act_206",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "Every day.",
+          "hu": "(minden nap)"
+        },
+        {
+          "en": "There is.",
+          "hu": "(van (ott))"
+        },
+        {
+          "en": "There are.",
+          "hu": "(vannak (ott))"
+        }
+      ]
+    },
+    {
+      "id": "act_207",
       "type": "pron-record",
       "focusId": "snd_ng"
     }

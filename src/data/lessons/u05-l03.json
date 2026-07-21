@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_282",
+      "id": "act_274",
       "type": "intro",
       "items": [
         "lex_lunch",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": "act_283",
+      "id": "act_275",
       "type": "listen-choose",
       "items": [
         "lex_lunch",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "act_284",
+      "id": "act_276",
       "type": "match",
       "items": [
         "lex_lunch",
@@ -73,13 +73,13 @@
       ]
     },
     {
-      "id": "act_285",
+      "id": "act_277",
       "type": "spelling-build",
       "family": "sf_magic_e_a",
       "word": "make"
     },
     {
-      "id": "act_286",
+      "id": "act_278",
       "type": "gapfill",
       "items": [
         {
@@ -125,19 +125,34 @@
       ]
     },
     {
-      "id": "act_287",
-      "type": "phrase-match",
-      "items": [
-        "chunk_of_hereyouare",
-        "chunk_nm_howmuchtotal",
-        "chunk_nm_itcosts",
-        "chunk_fd_allergic"
+      "id": "act_279",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "Here you are.",
+          "hu": "Tessék."
+        },
+        {
+          "en": "How much is that altogether?",
+          "hu": "Mennyi ez összesen?"
+        }
       ]
     },
     {
-      "id": "act_288",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_280",
+      "type": "typed",
+      "items": [
+        "lex_lunch",
+        "lex_dinner",
+        "lex_cook",
+        "lex_make",
+        "lex_buy"
+      ]
+    },
+    {
+      "id": "act_281",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "Here you are.",
           "hu": "Tessék."
@@ -149,42 +164,22 @@
         {
           "en": "It costs ten euros.",
           "hu": "Tíz euróba kerül."
+        },
+        {
+          "en": "I don't eat meat.",
+          "hu": "Nem eszem húst."
         }
       ]
     },
     {
-      "id": "act_289",
-      "type": "typed",
-      "items": [
-        "lex_lunch",
-        "lex_dinner",
-        "lex_cook",
-        "lex_make"
-      ]
-    },
-    {
-      "id": "act_290",
+      "id": "act_282",
       "type": "pron-record",
       "focusId": "snd_ee_i"
     },
     {
-      "id": "act_291",
+      "id": "act_283",
       "type": "minimal-pair",
       "focusId": "snd_ee_i"
-    },
-    {
-      "id": "act_292",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "lunch",
-            "dinner",
-            "cook"
-          ],
-          "odd": "name"
-        }
-      ]
     }
   ],
   "completionRule": {

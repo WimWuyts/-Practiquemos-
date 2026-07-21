@@ -35,7 +35,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_876",
+      "id": "act_844",
       "type": "intro",
       "items": [
         "lex_desk",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "act_877",
+      "id": "act_845",
       "type": "listen-choose",
       "items": [
         "lex_desk",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": "act_878",
+      "id": "act_846",
       "type": "match",
       "items": [
         "lex_desk",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "id": "act_879",
+      "id": "act_847",
       "type": "gapfill",
       "items": [
         {
@@ -111,24 +111,40 @@
       ]
     },
     {
-      "id": "act_880",
-      "type": "phrase-match",
-      "items": [
-        "chunk_ai_myflight",
-        "chunk_ai_dontunderstand2",
-        "chunk_ai_luggage",
-        "chunk_ai_delayed",
-        "chunk_ai_whichgate",
-        "chunk_ai_help_bags"
-      ]
-    },
-    {
-      "id": "act_881",
+      "id": "act_848",
       "type": "reorder",
       "sentences": [
         {
           "en": "My flight is at ten o'clock.",
           "hu": "A járatom tízkor indul."
+        },
+        {
+          "en": "I have one suitcase and a bag.",
+          "hu": "Egy bőröndöm és egy táskám van."
+        }
+      ]
+    },
+    {
+      "id": "act_849",
+      "type": "typed",
+      "items": [
+        "lex_desk",
+        "lex_miss",
+        "lex_lose",
+        "lex_airport_bus"
+      ]
+    },
+    {
+      "id": "act_850",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "My flight is at ten o'clock.",
+          "hu": "A járatom tízkor indul."
+        },
+        {
+          "en": "Sorry, I didn't understand. Could you help me?",
+          "hu": "Elnézést, nem értettem. Tudna segíteni?"
         },
         {
           "en": "I have one suitcase and a bag.",
@@ -141,22 +157,12 @@
       ]
     },
     {
-      "id": "act_882",
-      "type": "typed",
-      "items": [
-        "lex_desk",
-        "lex_miss",
-        "lex_lose",
-        "lex_airport_bus"
-      ]
-    },
-    {
-      "id": "act_883",
+      "id": "act_851",
       "type": "pron-record",
       "focusId": "str_word"
     },
     {
-      "id": "act_884",
+      "id": "act_852",
       "type": "listen-comprehension",
       "passage": "This is a final call for passenger Marta. Please go to gate twelve. The gate is closing soon.",
       "question": {

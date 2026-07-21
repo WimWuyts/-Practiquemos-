@@ -39,7 +39,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_369",
+      "id": "act_360",
       "type": "intro",
       "items": [
         "lex_year",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": "act_370",
+      "id": "act_361",
       "type": "listen-choose",
       "items": [
         "lex_year",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "id": "act_371",
+      "id": "act_362",
       "type": "match",
       "items": [
         "lex_year",
@@ -77,22 +77,22 @@
       ]
     },
     {
-      "id": "act_372",
+      "id": "act_363",
       "type": "grammar",
       "grammarId": "gr_can"
     },
     {
-      "id": "act_373",
+      "id": "act_364",
       "type": "grammar",
       "grammarId": "gr_goingto"
     },
     {
-      "id": "act_374",
+      "id": "act_365",
       "type": "grammar",
       "grammarId": "gr_presentcont"
     },
     {
-      "id": "act_375",
+      "id": "act_366",
       "type": "gapfill",
       "items": [
         {
@@ -138,19 +138,34 @@
       ]
     },
     {
-      "id": "act_376",
-      "type": "phrase-match",
-      "items": [
-        "chunk_tm_whattime",
-        "chunk_tm_freeon",
-        "chunk_we_nice",
-        "chunk_we_cold"
+      "id": "act_367",
+      "type": "reorder",
+      "sentences": [
+        {
+          "en": "What time is it?",
+          "hu": "Mennyi az idő?"
+        },
+        {
+          "en": "I'm free on Saturday afternoon.",
+          "hu": "Szombat délután ráérek."
+        }
       ]
     },
     {
-      "id": "act_377",
-      "type": "reorder",
-      "sentences": [
+      "id": "act_368",
+      "type": "typed",
+      "items": [
+        "lex_year",
+        "lex_monday",
+        "lex_tuesday",
+        "lex_wednesday",
+        "lex_thursday"
+      ]
+    },
+    {
+      "id": "act_369",
+      "type": "say-it",
+      "phrases": [
         {
           "en": "What time is it?",
           "hu": "Mennyi az idő?"
@@ -162,40 +177,20 @@
         {
           "en": "The weather is lovely today.",
           "hu": "Ma csodás az idő."
+        },
+        {
+          "en": "It's very cold today.",
+          "hu": "Ma nagyon hideg van."
         }
       ]
     },
     {
-      "id": "act_378",
-      "type": "typed",
-      "items": [
-        "lex_year",
-        "lex_monday",
-        "lex_tuesday",
-        "lex_wednesday"
-      ]
-    },
-    {
-      "id": "act_379",
+      "id": "act_370",
       "type": "pron-record",
       "focusId": "str_question"
     },
     {
-      "id": "act_380",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "year",
-            "Monday",
-            "Tuesday"
-          ],
-          "odd": "name"
-        }
-      ]
-    },
-    {
-      "id": "act_381",
+      "id": "act_371",
       "type": "listen-comprehension",
       "passage": "Hi auntie, it's Kira. The weather here in Denmark is cold and rainy today. Let's talk on Sunday. Bye!",
       "question": {

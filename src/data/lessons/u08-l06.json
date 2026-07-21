@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_568",
+      "id": "act_549",
       "type": "intro",
       "items": [
         "lex_brown",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_569",
+      "id": "act_550",
       "type": "listen-choose",
       "items": [
         "lex_brown",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_570",
+      "id": "act_551",
       "type": "match",
       "items": [
         "lex_brown",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "act_571",
+      "id": "act_552",
       "type": "gapfill",
       "items": [
         {
@@ -114,38 +114,43 @@
       ]
     },
     {
-      "id": "act_572",
+      "id": "act_553",
       "type": "typed",
       "items": [
         "lex_brown",
         "lex_grey",
         "lex_pink",
-        "lex_too"
+        "lex_too",
+        "lex_also"
       ]
     },
     {
-      "id": "act_573",
+      "id": "act_554",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very brown.",
+          "hu": "(barna)"
+        },
+        {
+          "en": "It is very grey.",
+          "hu": "(szürke)"
+        },
+        {
+          "en": "It is very pink.",
+          "hu": "(rózsaszín)"
+        }
+      ]
+    },
+    {
+      "id": "act_555",
       "type": "pron-record",
       "focusId": "snd_th"
     },
     {
-      "id": "act_574",
+      "id": "act_556",
       "type": "minimal-pair",
       "focusId": "snd_th"
-    },
-    {
-      "id": "act_575",
-      "type": "odd-one-out",
-      "groups": [
-        {
-          "words": [
-            "brown",
-            "grey",
-            "pink"
-          ],
-          "odd": "my"
-        }
-      ]
     }
   ],
   "completionRule": {

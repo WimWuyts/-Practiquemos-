@@ -25,6 +25,12 @@ ui_string,home.progress,interface,Your progress,A haladásod,yes
 ui_string,home.conversations,interface,Talk to your family,Beszélj a családoddal,yes
 ui_string,home.monthly,interface,Monthly lessons,Havi leckék,yes
 ui_string,home.monthly.note,interface,New monthly lessons can be added here later.,Ide később új havi leckék kerülhetnek.,yes
+ui_string,home.today,interface,Your next step,A következő lépésed,yes
+ui_string,home.warmup,interface,Warm up: {n} words,Bemelegítés: {n} szó,yes
+ui_string,home.browse,interface,Browse all lessons,Összes lecke,yes
+ui_string,lesson.next.practise,interface,Practise these words,Gyakorold ezeket a szavakat,yes
+ui_string,lesson.next.talk,interface,Try a conversation,Próbálj egy beszélgetést,yes
+ui_string,conv.open.title,interface,Open conversations,Szabad beszélgetések,yes
 ui_string,btn.next,interface,Next,Tovább,yes
 ui_string,btn.check,interface,Check,Ellenőrzés,yes
 ui_string,btn.continue,interface,Continue,Folytatás,yes
@@ -46,7 +52,7 @@ ui_string,lesson.review,interface,Review,Ismétlés,yes
 ui_string,lesson.grammar,interface,Grammar,Nyelvtan,yes
 ui_string,lesson.pron,interface,Sounds,Hangok,yes
 ui_string,lesson.complete,interface,Lesson complete,Lecke kész,yes
-ui_string,lesson.complete.msg,interface,"Well done, Marta. You practised English today.","Ügyes vagy, Marta! Ma szépen gyakoroltad az angolt.",yes
+ui_string,lesson.complete.msg,interface,"Well done, Marta. You practised English today.","Szép munka, Marta. Ma jól gyakoroltál.",yes
 ui_string,act.intro.prompt,interface,"Look, listen and learn these words.","Nézd, hallgasd és tanuld meg ezeket a szavakat.",yes
 ui_string,act.listenchoose.prompt,interface,Listen and choose the word you hear.,"Hallgasd meg, és válaszd ki a hallott szót.",yes
 ui_string,act.match.prompt,interface,Match the English word to its meaning.,Párosítsd az angol szót a jelentésével.,yes
@@ -66,6 +72,12 @@ ui_string,act.odd.prompt,interface,Which word is different? Choose the one that 
 ui_string,act.listencomp.prompt,interface,"Listen to the message, then answer.","Hallgasd meg az üzenetet, majd válaszolj.",yes
 ui_string,act.listencomp.again,interface,Play again,Játszd le újra,yes
 ui_string,act.grammar.check,interface,Quick check,Gyors ellenőrzés,yes
+ui_string,act.sayit.prompt,interface,Now say it out loud. Record yourself and listen back.,"Most mondd ki hangosan. Vedd fel magad, és hallgasd vissza.",yes
+ui_string,say.title,interface,Say it,Mondd ki,yes
+ui_string,say.hear,interface,Hear it,Hallgasd meg,yes
+ui_string,say.hearme,interface,Hear me,Hallgasd vissza magad,yes
+ui_string,say.record,interface,Record me,Vegyél fel,yes
+ui_string,say.again,interface,Say it again,Mondd újra,yes
 ui_string,practice.review,interface,Review words due today,Mai ismétlendő szavak,yes
 ui_string,practice.vocab,interface,Practice vocabulary,Szókincs gyakorlása,yes
 ui_string,practice.grammar,interface,Practice grammar,Nyelvtan gyakorlása,yes
@@ -76,7 +88,7 @@ ui_string,practice.choosepoint,interface,Choose a grammar point,Válassz nyelvta
 ui_string,practice.immersion,interface,Picture & sound mode,Kép és hang mód,yes
 ui_string,practice.immersion.note,interface,See the picture and hear the word. Hungarian is hidden — turn it on any time.,Nézd a képet és hallgasd a szót. A magyar rejtve van — bármikor bekapcsolhatod.,yes
 ui_string,practice.start,interface,Practise,Gyakorlás,yes
-ui_string,practice.done,interface,Nice practice! Well done.,Szép gyakorlás! Ügyes voltál.,yes
+ui_string,practice.done,interface,Nice practice! Well done.,Szép gyakorlás! Jól ment.,yes
 ui_string,practice.nowords,interface,Come back after a lesson or two.,Gyere vissza egy-két lecke után.,yes
 ui_string,practice.sounds.step1,interface,The sounds,A hangok,yes
 ui_string,practice.sounds.step2,interface,Spelling & sound,Írás és kiejtés,yes
@@ -92,7 +104,7 @@ ui_string,conv.start,interface,Start conversation,Beszélgetés indítása,yes
 ui_string,conv.again,interface,Talk again,Beszéljünk újra,yes
 ui_string,conv.finished,interface,Conversation finished. Lovely work!,Vége a beszélgetésnek. Szép munka!,yes
 ui_string,conv.locked.note,interface,Open conversations are best after a few weeks of guided practice.,A szabad beszélgetések néhány hét gyakorlás után a legjobbak.,yes
-ui_string,fb.correct,interface,Well done!,Ügyes vagy!,yes
+ui_string,fb.correct,interface,Well done!,Pontosan!,yes
 ui_string,fb.good,interface,Good.,Jó.,yes
 ui_string,fb.almost,interface,Almost. Try once more.,Majdnem. Próbáld még egyszer.,yes
 ui_string,fb.alsoright,interface,Good. This answer is also possible.,Jó. Ez a válasz is helyes.,yes

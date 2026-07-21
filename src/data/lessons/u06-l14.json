@@ -24,7 +24,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_467",
+      "id": "act_456",
       "type": "intro",
       "items": [
         "lex_bright",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "id": "act_468",
+      "id": "act_457",
       "type": "listen-choose",
       "items": [
         "lex_bright",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "id": "act_469",
+      "id": "act_458",
       "type": "gapfill",
       "items": [
         {
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "id": "act_470",
+      "id": "act_459",
       "type": "typed",
       "items": [
         "lex_bright",
@@ -74,7 +74,21 @@
       ]
     },
     {
-      "id": "act_471",
+      "id": "act_460",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "It is very bright.",
+          "hu": "(világos / ragyogó)"
+        },
+        {
+          "en": "It is very deep.",
+          "hu": "(mély)"
+        }
+      ]
+    },
+    {
+      "id": "act_461",
       "type": "pron-record",
       "focusId": "str_question"
     }

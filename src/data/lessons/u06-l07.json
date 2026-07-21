@@ -30,7 +30,7 @@
   "conversationId": null,
   "activities": [
     {
-      "id": "act_416",
+      "id": "act_405",
       "type": "intro",
       "items": [
         "lex_thousand",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "act_417",
+      "id": "act_406",
       "type": "listen-choose",
       "items": [
         "lex_thousand",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "act_418",
+      "id": "act_407",
       "type": "match",
       "items": [
         "lex_thousand",
@@ -68,13 +68,13 @@
       ]
     },
     {
-      "id": "act_419",
+      "id": "act_408",
       "type": "spelling-build",
       "family": "sf_oo",
       "word": "soon"
     },
     {
-      "id": "act_420",
+      "id": "act_409",
       "type": "gapfill",
       "items": [
         {
@@ -120,17 +120,36 @@
       ]
     },
     {
-      "id": "act_421",
+      "id": "act_410",
       "type": "typed",
       "items": [
         "lex_thousand",
         "lex_number",
         "lex_o_clock",
-        "lex_half"
+        "lex_half",
+        "lex_quarter"
       ]
     },
     {
-      "id": "act_422",
+      "id": "act_411",
+      "type": "say-it",
+      "phrases": [
+        {
+          "en": "I have thousand friends.",
+          "hu": "(ezer)"
+        },
+        {
+          "en": "This is a number.",
+          "hu": "(szám)"
+        },
+        {
+          "en": "I speak o'clock.",
+          "hu": "(óra (pontos idő))"
+        }
+      ]
+    },
+    {
+      "id": "act_412",
       "type": "pron-record",
       "focusId": "str_word"
     }
