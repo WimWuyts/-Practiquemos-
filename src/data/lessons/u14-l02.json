@@ -69,34 +69,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "The ___ is over there.",
           "answer": "desk",
           "options": [
             "desk",
             "airport",
             "flight"
           ],
-          "hu": "(pult)"
+          "hu": "A pult ott van."
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ the bus.",
           "answer": "miss",
           "options": [
             "miss",
             "travel",
             "need"
           ],
-          "hu": "(lekésni / hiányozni)"
+          "hu": "Lekéssük a buszt."
         },
         {
-          "text": "I ___ every day.",
+          "text": "Don't ___ your passport.",
           "answer": "lose",
           "options": [
             "lose",
             "travel",
             "need"
           ],
-          "hu": "(elveszíteni)"
+          "hu": "Ne veszítsd el az útleveled."
         }
       ]
     },
@@ -106,7 +106,7 @@
       "items": [
         {
           "id": "lex_desk",
-          "text": "This is a ___.",
+          "text": "The ___ is over there.",
           "answer": "desk",
           "accepted": [
             "desk",
@@ -120,11 +120,11 @@
             "flight",
             "gate"
           ],
-          "hu": "(pult)"
+          "hu": "A pult ott van."
         },
         {
           "id": "lex_miss",
-          "text": "I ___ every day.",
+          "text": "We ___ the bus.",
           "answer": "miss",
           "accepted": [
             "miss",
@@ -139,11 +139,11 @@
             "need",
             "bring"
           ],
-          "hu": "(lekésni / hiányozni)"
+          "hu": "Lekéssük a buszt."
         },
         {
           "id": "lex_lose",
-          "text": "I ___ every day.",
+          "text": "Don't ___ your passport.",
           "answer": "lose",
           "accepted": [
             "lose",
@@ -158,7 +158,7 @@
             "need",
             "bring"
           ],
-          "hu": "(elveszíteni)"
+          "hu": "Ne veszítsd el az útleveled."
         },
         {
           "id": "lex_airport_bus",

@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "The ___ are here.",
+          "text": "I drink a ___ of milk.",
           "answer": "glass",
           "options": [
             "glass",
             "food",
             "water"
           ],
-          "hu": "(pohár)"
+          "hu": "Iszom egy pohár tejet."
         },
         {
-          "text": "This is a ___.",
+          "text": "Your ___ is on the table.",
           "answer": "plate",
           "options": [
             "plate",
             "food",
             "water"
           ],
-          "hu": "(tányér)"
+          "hu": "A tányérod az asztalon van."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ is very sharp.",
           "answer": "knife",
           "options": [
             "knife",
             "food",
             "water"
           ],
-          "hu": "(kés)"
+          "hu": "A kés nagyon éles."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_glass",
-          "text": "The ___ are here.",
+          "text": "I drink a ___ of milk.",
           "answer": "glass",
           "accepted": [
             "glass",
@@ -123,11 +123,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(pohár)"
+          "hu": "Iszom egy pohár tejet."
         },
         {
           "id": "lex_plate",
-          "text": "This is a ___.",
+          "text": "Your ___ is on the table.",
           "answer": "plate",
           "accepted": [
             "plate",
@@ -141,11 +141,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(tányér)"
+          "hu": "A tányérod az asztalon van."
         },
         {
           "id": "lex_knife",
-          "text": "This is a ___.",
+          "text": "The ___ is very sharp.",
           "answer": "knife",
           "accepted": [
             "knife",
@@ -159,11 +159,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(kés)"
+          "hu": "A kés nagyon éles."
         },
         {
           "id": "lex_spoon",
-          "text": "This is a ___.",
+          "text": "I eat soup with a ___.",
           "answer": "spoon",
           "accepted": [
             "spoon",
@@ -177,7 +177,7 @@
             "water",
             "coffee"
           ],
-          "hu": "(kanál)"
+          "hu": "Kanállal eszem a levest."
         }
       ]
     },
@@ -197,16 +197,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "The glass are here.",
-          "hu": "(pohár)"
+          "en": "I drink a glass of milk.",
+          "hu": "Iszom egy pohár tejet."
         },
         {
-          "en": "This is a plate.",
-          "hu": "(tányér)"
+          "en": "Your plate is on the table.",
+          "hu": "A tányérod az asztalon van."
         },
         {
-          "en": "This is a knife.",
-          "hu": "(kés)"
+          "en": "The knife is very sharp.",
+          "hu": "A kés nagyon éles."
         }
       ]
     },

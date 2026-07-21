@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "I ___ my students a book.",
           "answer": "show",
           "options": [
             "show",
             "work",
             "get up"
           ],
-          "hu": "(megmutatni)"
+          "hu": "Mutatok a diákjaimnak egy könyvet."
         },
         {
-          "text": "I ___ every day.",
+          "text": "David can ___ a car.",
           "answer": "drive",
           "options": [
             "drive",
             "change",
             "catch"
           ],
-          "hu": "(vezetni (autót))"
+          "hu": "David tud autót vezetni."
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ trains in Prague.",
           "answer": "change",
           "options": [
             "change",
             "drive",
             "catch"
           ],
-          "hu": "(változtatni / átszállni)"
+          "hu": "Prágában átszállunk."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_show",
-          "text": "I ___ every day.",
+          "text": "I ___ my students a book.",
           "answer": "show",
           "accepted": [
             "show",
@@ -124,11 +124,11 @@
             "get up",
             "wake up"
           ],
-          "hu": "(megmutatni)"
+          "hu": "Mutatok a diákjaimnak egy könyvet."
         },
         {
           "id": "lex_drive",
-          "text": "I ___ every day.",
+          "text": "David can ___ a car.",
           "answer": "drive",
           "accepted": [
             "drive",
@@ -143,11 +143,11 @@
             "catch",
             "be"
           ],
-          "hu": "(vezetni (autót))"
+          "hu": "David tud autót vezetni."
         },
         {
           "id": "lex_change",
-          "text": "I ___ every day.",
+          "text": "We ___ trains in Prague.",
           "answer": "change",
           "accepted": [
             "change",
@@ -162,11 +162,11 @@
             "catch",
             "be"
           ],
-          "hu": "(változtatni / átszállni)"
+          "hu": "Prágában átszállunk."
         },
         {
           "id": "lex_fast",
-          "text": "It is very ___.",
+          "text": "The train is very ___.",
           "answer": "fast",
           "accepted": [
             "fast",
@@ -179,7 +179,7 @@
             "my",
             "your"
           ],
-          "hu": "(gyors)"
+          "hu": "A vonat nagyon gyors."
         }
       ]
     },
@@ -199,16 +199,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I show every day.",
-          "hu": "(megmutatni)"
+          "en": "I show my students a book.",
+          "hu": "Mutatok a diákjaimnak egy könyvet."
         },
         {
-          "en": "I drive every day.",
-          "hu": "(vezetni (autót))"
+          "en": "David can drive a car.",
+          "hu": "David tud autót vezetni."
         },
         {
-          "en": "I change every day.",
-          "hu": "(változtatni / átszállni)"
+          "en": "We change trains in Prague.",
+          "hu": "Prágában átszállunk."
         }
       ]
     },

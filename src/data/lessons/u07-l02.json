@@ -77,24 +77,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "Please ___ a moment.",
           "answer": "wait",
           "options": [
             "wait",
             "repeat",
             "understand"
           ],
-          "hu": "(várni)"
+          "hu": "Kérlek, várj egy pillanatot."
         },
         {
-          "text": "This is a ___.",
+          "text": "Just a ___, please.",
           "answer": "moment",
           "options": [
             "moment",
             "thing",
             "part"
           ],
-          "hu": "(pillanat)"
+          "hu": "Csak egy pillanat, kérlek."
         },
         {
           "text": "Can you hear ___?",
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_wait",
-          "text": "I ___ every day.",
+          "text": "Please ___ a moment.",
           "answer": "wait",
           "accepted": [
             "wait",
@@ -129,11 +129,11 @@
             "understand",
             "know"
           ],
-          "hu": "(várni)"
+          "hu": "Kérlek, várj egy pillanatot."
         },
         {
           "id": "lex_moment",
-          "text": "This is a ___.",
+          "text": "Just a ___, please.",
           "answer": "moment",
           "accepted": [
             "moment",
@@ -146,7 +146,7 @@
             "part",
             "end"
           ],
-          "hu": "(pillanat)"
+          "hu": "Csak egy pillanat, kérlek."
         },
         {
           "id": "lex_him",

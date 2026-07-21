@@ -75,14 +75,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I like ___.",
+          "text": "Kira lives in ___.",
           "answer": "Denmark",
           "options": [
             "Denmark",
             "Hungary",
             "England"
           ],
-          "hu": "(Dánia)"
+          "hu": "Kira Dániában él."
         },
         {
           "text": "Kira speaks ___.",
@@ -95,14 +95,14 @@
           "hu": "Kira beszél dánul."
         },
         {
-          "text": "I like ___.",
+          "text": "Rita works in ___.",
           "answer": "Belgium",
           "options": [
             "Belgium",
             "Hungary",
             "England"
           ],
-          "hu": "(Belgium)"
+          "hu": "Rita Belgiumban dolgozik."
         }
       ]
     },
@@ -112,7 +112,7 @@
       "items": [
         {
           "id": "lex_denmark",
-          "text": "I like ___.",
+          "text": "Kira lives in ___.",
           "answer": "Denmark",
           "accepted": [
             "Denmark",
@@ -125,7 +125,7 @@
             "England",
             "Spain"
           ],
-          "hu": "(Dánia)"
+          "hu": "Kira Dániában él."
         },
         {
           "id": "lex_danish",
@@ -146,7 +146,7 @@
         },
         {
           "id": "lex_belgium",
-          "text": "I like ___.",
+          "text": "Rita works in ___.",
           "answer": "Belgium",
           "accepted": [
             "Belgium",
@@ -159,11 +159,11 @@
             "England",
             "Spain"
           ],
-          "hu": "(Belgium)"
+          "hu": "Rita Belgiumban dolgozik."
         },
         {
           "id": "lex_switzerland",
-          "text": "I like ___.",
+          "text": "___ is very beautiful.",
           "answer": "Switzerland",
           "accepted": [
             "Switzerland",
@@ -176,7 +176,7 @@
             "England",
             "Spain"
           ],
-          "hu": "(Svájc)"
+          "hu": "Svájc nagyon szép."
         }
       ]
     },

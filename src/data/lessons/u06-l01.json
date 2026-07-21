@@ -266,24 +266,24 @@
           "hu": "Mennyi az idő?"
         },
         {
-          "text": "This is an ___.",
+          "text": "I teach for one ___.",
           "answer": "hour",
           "options": [
             "hour",
             "time",
             "minute"
           ],
-          "hu": "(óra (időtartam))"
+          "hu": "Egy órát tanítok."
         },
         {
-          "text": "This is a ___.",
+          "text": "Please wait a ___.",
           "answer": "minute",
           "options": [
             "minute",
             "time",
             "hour"
           ],
-          "hu": "(perc)"
+          "hu": "Kérlek, várj egy percet."
         }
       ]
     },
@@ -310,7 +310,7 @@
         },
         {
           "id": "lex_hour",
-          "text": "This is an ___.",
+          "text": "I teach for one ___.",
           "answer": "hour",
           "accepted": [
             "hour",
@@ -324,11 +324,11 @@
             "minute",
             "today"
           ],
-          "hu": "(óra (időtartam))"
+          "hu": "Egy órát tanítok."
         },
         {
           "id": "lex_minute",
-          "text": "This is a ___.",
+          "text": "Please wait a ___.",
           "answer": "minute",
           "accepted": [
             "minute",
@@ -342,7 +342,7 @@
             "hour",
             "today"
           ],
-          "hu": "(perc)"
+          "hu": "Kérlek, várj egy percet."
         },
         {
           "id": "lex_today",

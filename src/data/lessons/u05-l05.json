@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I put a ___ in the salad.",
           "answer": "tomato",
           "options": [
             "tomato",
             "food",
             "water"
           ],
-          "hu": "(paradicsom)"
+          "hu": "Teszek egy paradicsomot a salátába."
         },
         {
-          "text": "This is an ___.",
+          "text": "I cut an ___ for dinner.",
           "answer": "onion",
           "options": [
             "onion",
             "food",
             "water"
           ],
-          "hu": "(hagyma)"
+          "hu": "Felvágok egy hagymát vacsorára."
         },
         {
-          "text": "This is a ___.",
+          "text": "We eat ___ at the restaurant.",
           "answer": "chicken",
           "options": [
             "chicken",
             "food",
             "water"
           ],
-          "hu": "(csirke)"
+          "hu": "Csirkét eszünk az étteremben."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_tomato",
-          "text": "This is a ___.",
+          "text": "I put a ___ in the salad.",
           "answer": "tomato",
           "accepted": [
             "tomato",
@@ -123,11 +123,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(paradicsom)"
+          "hu": "Teszek egy paradicsomot a salátába."
         },
         {
           "id": "lex_onion",
-          "text": "This is an ___.",
+          "text": "I cut an ___ for dinner.",
           "answer": "onion",
           "accepted": [
             "onion",
@@ -141,11 +141,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(hagyma)"
+          "hu": "Felvágok egy hagymát vacsorára."
         },
         {
           "id": "lex_chicken",
-          "text": "This is a ___.",
+          "text": "We eat ___ at the restaurant.",
           "answer": "chicken",
           "accepted": [
             "chicken",
@@ -158,11 +158,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(csirke)"
+          "hu": "Csirkét eszünk az étteremben."
         },
         {
           "id": "lex_salad",
-          "text": "This is a ___.",
+          "text": "The ___ is very fresh today.",
           "answer": "salad",
           "accepted": [
             "salad",
@@ -176,7 +176,7 @@
             "water",
             "coffee"
           ],
-          "hu": "(saláta)"
+          "hu": "A saláta ma nagyon friss."
         }
       ]
     },
@@ -196,16 +196,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a tomato.",
-          "hu": "(paradicsom)"
+          "en": "I put a tomato in the salad.",
+          "hu": "Teszek egy paradicsomot a salátába."
         },
         {
-          "en": "This is an onion.",
-          "hu": "(hagyma)"
+          "en": "I cut an onion for dinner.",
+          "hu": "Felvágok egy hagymát vacsorára."
         },
         {
-          "en": "This is a chicken.",
-          "hu": "(csirke)"
+          "en": "We eat chicken at the restaurant.",
+          "hu": "Csirkét eszünk az étteremben."
         }
       ]
     },

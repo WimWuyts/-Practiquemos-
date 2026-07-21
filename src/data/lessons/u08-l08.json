@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "The dog can ___ high.",
           "answer": "jump",
           "options": [
             "jump",
             "read",
             "swim"
           ],
-          "hu": "(ugrani)"
+          "hu": "A kutya magasra tud ugrani."
         },
         {
-          "text": "I ___ every day.",
+          "text": "Panna likes to ___ horses.",
           "answer": "draw",
           "options": [
             "draw",
             "read",
             "swim"
           ],
-          "hu": "(rajzolni)"
+          "hu": "Panna szeret lovakat rajzolni."
         },
         {
-          "text": "I ___ every day.",
+          "text": "Emma wants to ___ flowers.",
           "answer": "paint",
           "options": [
             "paint",
             "read",
             "swim"
           ],
-          "hu": "(festeni)"
+          "hu": "Emma virágokat akar festeni."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_jump",
-          "text": "I ___ every day.",
+          "text": "The dog can ___ high.",
           "answer": "jump",
           "accepted": [
             "jump",
@@ -124,11 +124,11 @@
             "swim",
             "dance"
           ],
-          "hu": "(ugrani)"
+          "hu": "A kutya magasra tud ugrani."
         },
         {
           "id": "lex_draw",
-          "text": "I ___ every day.",
+          "text": "Panna likes to ___ horses.",
           "answer": "draw",
           "accepted": [
             "draw",
@@ -143,11 +143,11 @@
             "swim",
             "dance"
           ],
-          "hu": "(rajzolni)"
+          "hu": "Panna szeret lovakat rajzolni."
         },
         {
           "id": "lex_paint",
-          "text": "I ___ every day.",
+          "text": "Emma wants to ___ flowers.",
           "answer": "paint",
           "accepted": [
             "paint",
@@ -162,11 +162,11 @@
             "swim",
             "dance"
           ],
-          "hu": "(festeni)"
+          "hu": "Emma virágokat akar festeni."
         },
         {
           "id": "lex_win",
-          "text": "I ___ every day.",
+          "text": "I hope you ___ today.",
           "answer": "win",
           "accepted": [
             "win",
@@ -181,7 +181,7 @@
             "swim",
             "dance"
           ],
-          "hu": "(nyerni)"
+          "hu": "Remélem, ma nyersz."
         }
       ]
     },
@@ -201,16 +201,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I jump every day.",
-          "hu": "(ugrani)"
+          "en": "The dog can jump high.",
+          "hu": "A kutya magasra tud ugrani."
         },
         {
-          "en": "I draw every day.",
-          "hu": "(rajzolni)"
+          "en": "Panna likes to draw horses.",
+          "hu": "Panna szeret lovakat rajzolni."
         },
         {
-          "en": "I paint every day.",
-          "hu": "(festeni)"
+          "en": "Emma wants to paint flowers.",
+          "hu": "Emma virágokat akar festeni."
         }
       ]
     },

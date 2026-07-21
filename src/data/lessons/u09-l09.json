@@ -92,14 +92,14 @@
           "hu": "Ott van a sarok mögött."
         },
         {
-          "text": "This is a ___.",
+          "text": "My seat is at the ___.",
           "answer": "front",
           "options": [
             "front",
             "street",
             "left"
           ],
-          "hu": "(eleje / elöl)"
+          "hu": "A helyem elöl van."
         }
       ]
     },
@@ -143,7 +143,7 @@
         },
         {
           "id": "lex_front",
-          "text": "This is a ___.",
+          "text": "My seat is at the ___.",
           "answer": "front",
           "accepted": [
             "front",
@@ -156,11 +156,11 @@
             "left",
             "right"
           ],
-          "hu": "(eleje / elöl)"
+          "hu": "A helyem elöl van."
         },
         {
           "id": "lex_back",
-          "text": "This is a ___.",
+          "text": "My seat is at the ___.",
           "answer": "back",
           "accepted": [
             "back",
@@ -173,7 +173,7 @@
             "left",
             "right"
           ],
-          "hu": "(hátulja / hát)"
+          "hu": "A helyem hátul van."
         }
       ]
     },
@@ -201,8 +201,8 @@
           "hu": "Ott van a sarok mögött."
         },
         {
-          "en": "This is a front.",
-          "hu": "(eleje / elöl)"
+          "en": "My seat is at the front.",
+          "hu": "A helyem elöl van."
         }
       ]
     },

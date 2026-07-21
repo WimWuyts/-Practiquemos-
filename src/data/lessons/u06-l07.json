@@ -78,24 +78,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I have ___ friends.",
+          "text": "I have a ___ photos.",
           "answer": "thousand",
           "options": [
             "thousand",
             "one",
             "two"
           ],
-          "hu": "(ezer)"
+          "hu": "Ezer fényképem van."
         },
         {
-          "text": "This is a ___.",
+          "text": "What is your phone ___?",
           "answer": "number",
           "options": [
             "number",
             "name",
             "country"
           ],
-          "hu": "(szám)"
+          "hu": "Mi a telefonszámod?"
         },
         {
           "text": "I speak ___.",
@@ -115,7 +115,7 @@
       "items": [
         {
           "id": "lex_thousand",
-          "text": "I have ___ friends.",
+          "text": "I have a ___ photos.",
           "answer": "thousand",
           "accepted": [
             "thousand",
@@ -128,11 +128,11 @@
             "two",
             "three"
           ],
-          "hu": "(ezer)"
+          "hu": "Ezer fényképem van."
         },
         {
           "id": "lex_number",
-          "text": "This is a ___.",
+          "text": "What is your phone ___?",
           "answer": "number",
           "accepted": [
             "number",
@@ -146,7 +146,7 @@
             "country",
             "city"
           ],
-          "hu": "(szám)"
+          "hu": "Mi a telefonszámod?"
         },
         {
           "id": "lex_o_clock",
@@ -167,7 +167,7 @@
         },
         {
           "id": "lex_half",
-          "text": "This is a ___.",
+          "text": "I drink ___ a cup.",
           "answer": "half",
           "accepted": [
             "half",
@@ -180,7 +180,7 @@
             "hour",
             "minute"
           ],
-          "hu": "(fél)"
+          "hu": "Megiszom egy fél csészével."
         }
       ]
     },
@@ -200,12 +200,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I have thousand friends.",
-          "hu": "(ezer)"
+          "en": "I have a thousand photos.",
+          "hu": "Ezer fényképem van."
         },
         {
-          "en": "This is a number.",
-          "hu": "(szám)"
+          "en": "What is your phone number?",
+          "hu": "Mi a telefonszámod?"
         },
         {
           "en": "I speak o'clock.",

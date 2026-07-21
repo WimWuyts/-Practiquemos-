@@ -64,24 +64,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "We take a ___ on Balaton.",
           "answer": "boat",
           "options": [
             "boat",
             "station",
             "bus"
           ],
-          "hu": "(csónak / hajó)"
+          "hu": "Hajózunk a Balatonon."
         },
         {
-          "text": "This is a ___.",
+          "text": "Panna has a new ___.",
           "answer": "bicycle",
           "options": [
             "bicycle",
             "station",
             "bus"
           ],
-          "hu": "(kerékpár)"
+          "hu": "Pannának új biciklije van."
         },
         {
           "text": "___.",
@@ -101,7 +101,7 @@
       "items": [
         {
           "id": "lex_boat",
-          "text": "This is a ___.",
+          "text": "We take a ___ on Balaton.",
           "answer": "boat",
           "accepted": [
             "boat",
@@ -115,11 +115,11 @@
             "bus",
             "train"
           ],
-          "hu": "(csónak / hajó)"
+          "hu": "Hajózunk a Balatonon."
         },
         {
           "id": "lex_bicycle",
-          "text": "This is a ___.",
+          "text": "Panna has a new ___.",
           "answer": "bicycle",
           "accepted": [
             "bicycle",
@@ -133,7 +133,7 @@
             "bus",
             "train"
           ],
-          "hu": "(kerékpár)"
+          "hu": "Pannának új biciklije van."
         },
         {
           "id": "lex_corner_shop",
@@ -154,7 +154,7 @@
         },
         {
           "id": "lex_bench",
-          "text": "This is a ___.",
+          "text": "We sit on the ___.",
           "answer": "bench",
           "accepted": [
             "bench",
@@ -168,7 +168,7 @@
             "left",
             "right"
           ],
-          "hu": "(pad)"
+          "hu": "A padon ülünk."
         }
       ]
     },
@@ -188,12 +188,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a boat.",
-          "hu": "(csónak / hajó)"
+          "en": "We take a boat on Balaton.",
+          "hu": "Hajózunk a Balatonon."
         },
         {
-          "en": "This is a bicycle.",
-          "hu": "(kerékpár)"
+          "en": "Panna has a new bicycle.",
+          "hu": "Pannának új biciklije van."
         },
         {
           "en": "Corner shop.",

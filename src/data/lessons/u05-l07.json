@@ -72,24 +72,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "Aunt Eva's dinner is ___.",
           "answer": "delicious",
           "options": [
             "delicious",
             "hungry",
             "thirsty"
           ],
-          "hu": "(finom)"
+          "hu": "Éva néni vacsorája finom."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ the soup slowly.",
           "answer": "taste",
           "options": [
             "taste",
             "eat",
             "drink"
           ],
-          "hu": "(íz / ízlelni)"
+          "hu": "Lassan megkóstolom a levest."
         },
         {
           "text": "Please ___ me the menu.",
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_delicious",
-          "text": "It is very ___.",
+          "text": "Aunt Eva's dinner is ___.",
           "answer": "delicious",
           "accepted": [
             "delicious",
@@ -122,11 +122,11 @@
             "thirsty",
             "full"
           ],
-          "hu": "(finom)"
+          "hu": "Éva néni vacsorája finom."
         },
         {
           "id": "lex_taste",
-          "text": "I ___ every day.",
+          "text": "I ___ the soup slowly.",
           "answer": "taste",
           "accepted": [
             "taste",
@@ -141,7 +141,7 @@
             "drink",
             "cook"
           ],
-          "hu": "(íz / ízlelni)"
+          "hu": "Lassan megkóstolom a levest."
         },
         {
           "id": "lex_give",
@@ -164,7 +164,7 @@
         },
         {
           "id": "lex_pay",
-          "text": "I ___ every day.",
+          "text": "I ___ for the coffee now.",
           "answer": "pay",
           "accepted": [
             "pay",
@@ -179,7 +179,7 @@
             "sell",
             "cost"
           ],
-          "hu": "(fizetni)"
+          "hu": "Most fizetek a kávéért."
         }
       ]
     },
@@ -199,12 +199,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very delicious.",
-          "hu": "(finom)"
+          "en": "Aunt Eva's dinner is delicious.",
+          "hu": "Éva néni vacsorája finom."
         },
         {
-          "en": "I taste every day.",
-          "hu": "(íz / ízlelni)"
+          "en": "I taste the soup slowly.",
+          "hu": "Lassan megkóstolom a levest."
         },
         {
           "en": "Please give me the menu.",

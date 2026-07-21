@@ -116,34 +116,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "Please ___ the camera.",
           "answer": "turn off",
           "options": [
             "turn off",
             "turn on",
             "click"
           ],
-          "hu": "(kikapcsolni)"
+          "hu": "Kérlek, kapcsold ki a kamerát."
         },
         {
-          "text": "I ___ every day.",
+          "text": "___ on the blue button.",
           "answer": "click",
           "options": [
             "click",
             "turn on",
             "turn off"
           ],
-          "hu": "(kattintani)"
+          "hu": "Kattints a kék gombra."
         },
         {
-          "text": "It is very ___.",
+          "text": "I am ___ for class.",
           "answer": "ready",
           "options": [
             "ready",
             "excellent",
             "my"
           ],
-          "hu": "(kész)"
+          "hu": "Készen állok az órára."
         }
       ]
     },
@@ -153,7 +153,7 @@
       "items": [
         {
           "id": "lex_turn_off",
-          "text": "I ___ every day.",
+          "text": "Please ___ the camera.",
           "answer": "turn off",
           "accepted": [
             "turn off",
@@ -168,30 +168,30 @@
             "click",
             "use"
           ],
-          "hu": "(kikapcsolni)"
+          "hu": "Kérlek, kapcsold ki a kamerát."
         },
         {
           "id": "lex_click",
-          "text": "I ___ every day.",
-          "answer": "click",
+          "text": "___ on the blue button.",
+          "answer": "Click",
           "accepted": [
             "click",
             "click",
             "clicks",
             "clicked",
-            "click"
+            "Click"
           ],
           "options": [
-            "click",
+            "Click",
             "turn on",
             "turn off",
             "use"
           ],
-          "hu": "(kattintani)"
+          "hu": "Kattints a kék gombra."
         },
         {
           "id": "lex_ready",
-          "text": "It is very ___.",
+          "text": "I am ___ for class.",
           "answer": "ready",
           "accepted": [
             "ready",
@@ -204,7 +204,7 @@
             "my",
             "your"
           ],
-          "hu": "(kész)"
+          "hu": "Készen állok az órára."
         },
         {
           "id": "lex_excellent",

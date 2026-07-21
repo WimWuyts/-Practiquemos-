@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "David wears a blue ___.",
           "answer": "shirt",
           "options": [
             "shirt",
             "clothes",
             "trousers"
           ],
-          "hu": "(ing)"
+          "hu": "David kék inget visel."
         },
         {
-          "text": "The ___ are here.",
+          "text": "My ___ are too long.",
           "answer": "trousers",
           "options": [
             "trousers",
             "clothes",
             "shirt"
           ],
-          "hu": "(nadrág)"
+          "hu": "A nadrágom túl hosszú."
         },
         {
-          "text": "The ___ are here.",
+          "text": "Kira wears a pretty ___.",
           "answer": "dress",
           "options": [
             "dress",
             "clothes",
             "shirt"
           ],
-          "hu": "(ruha (női))"
+          "hu": "Kira egy szép ruhát visel."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_shirt",
-          "text": "This is a ___.",
+          "text": "David wears a blue ___.",
           "answer": "shirt",
           "accepted": [
             "shirt",
@@ -128,11 +128,11 @@
             "trousers",
             "dress"
           ],
-          "hu": "(ing)"
+          "hu": "David kék inget visel."
         },
         {
           "id": "lex_trousers",
-          "text": "The ___ are here.",
+          "text": "My ___ are too long.",
           "answer": "trousers",
           "accepted": [
             "trousers",
@@ -145,11 +145,11 @@
             "shirt",
             "dress"
           ],
-          "hu": "(nadrág)"
+          "hu": "A nadrágom túl hosszú."
         },
         {
           "id": "lex_dress",
-          "text": "The ___ are here.",
+          "text": "Kira wears a pretty ___.",
           "answer": "dress",
           "accepted": [
             "dress",
@@ -163,11 +163,11 @@
             "shirt",
             "trousers"
           ],
-          "hu": "(ruha (női))"
+          "hu": "Kira egy szép ruhát visel."
         },
         {
           "id": "lex_shoes",
-          "text": "The ___ are here.",
+          "text": "My new ___ are black.",
           "answer": "shoes",
           "accepted": [
             "shoes",
@@ -180,7 +180,7 @@
             "shirt",
             "trousers"
           ],
-          "hu": "(cipő)"
+          "hu": "Az új cipőm fekete."
         }
       ]
     },

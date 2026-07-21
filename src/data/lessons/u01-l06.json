@@ -166,7 +166,7 @@
         },
         {
           "id": "lex_four",
-          "text": "I have ___ friends.",
+          "text": "I have ___ online students.",
           "answer": "four",
           "accepted": [
             "four",
@@ -179,7 +179,7 @@
             "two",
             "three"
           ],
-          "hu": "(négy)"
+          "hu": "Négy online diákom van."
         }
       ]
     },

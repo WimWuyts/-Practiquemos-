@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "My ___ sleeps on the sofa.",
           "answer": "cat",
           "options": [
             "cat",
             "hobby",
             "music"
           ],
-          "hu": "(macska)"
+          "hu": "A macskám a kanapén alszik."
         },
         {
-          "text": "This is a ___.",
+          "text": "A small ___ sings outside.",
           "answer": "bird",
           "options": [
             "bird",
             "hobby",
             "music"
           ],
-          "hu": "(madár)"
+          "hu": "Egy kis madár énekel kint."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ eats green grass.",
           "answer": "cow",
           "options": [
             "cow",
             "hobby",
             "music"
           ],
-          "hu": "(tehén)"
+          "hu": "A tehén zöld füvet eszik."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_cat",
-          "text": "This is a ___.",
+          "text": "My ___ sleeps on the sofa.",
           "answer": "cat",
           "accepted": [
             "cat",
@@ -128,11 +128,11 @@
             "music",
             "book"
           ],
-          "hu": "(macska)"
+          "hu": "A macskám a kanapén alszik."
         },
         {
           "id": "lex_bird",
-          "text": "This is a ___.",
+          "text": "A small ___ sings outside.",
           "answer": "bird",
           "accepted": [
             "bird",
@@ -146,11 +146,11 @@
             "music",
             "book"
           ],
-          "hu": "(madár)"
+          "hu": "Egy kis madár énekel kint."
         },
         {
           "id": "lex_cow",
-          "text": "This is a ___.",
+          "text": "The ___ eats green grass.",
           "answer": "cow",
           "accepted": [
             "cow",
@@ -164,11 +164,11 @@
             "music",
             "book"
           ],
-          "hu": "(tehén)"
+          "hu": "A tehén zöld füvet eszik."
         },
         {
           "id": "lex_run",
-          "text": "I ___ every day.",
+          "text": "Emma and Panna ___ fast.",
           "answer": "run",
           "accepted": [
             "run",
@@ -183,7 +183,7 @@
             "swim",
             "dance"
           ],
-          "hu": "(futni)"
+          "hu": "Emma és Panna gyorsan futnak."
         }
       ]
     },

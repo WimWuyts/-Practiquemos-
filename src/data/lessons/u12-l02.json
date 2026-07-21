@@ -102,14 +102,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "Please ___ the new word.",
           "answer": "try",
           "options": [
             "try",
             "repeat",
             "understand"
           ],
-          "hu": "(megpróbálni)"
+          "hu": "Próbáld ki az új szót."
         },
         {
           "text": "The station is at the ___ of the street.",
@@ -122,14 +122,14 @@
           "hu": "Az állomás az utca végén van."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ a little money today.",
           "answer": "spend",
           "options": [
             "spend",
             "buy",
             "pay"
           ],
-          "hu": "(költeni / tölteni)"
+          "hu": "Kevés pénzt költök ma."
         }
       ]
     },
@@ -139,7 +139,7 @@
       "items": [
         {
           "id": "lex_try",
-          "text": "I ___ every day.",
+          "text": "Please ___ the new word.",
           "answer": "try",
           "accepted": [
             "try",
@@ -154,7 +154,7 @@
             "understand",
             "wait"
           ],
-          "hu": "(megpróbálni)"
+          "hu": "Próbáld ki az új szót."
         },
         {
           "id": "lex_end",
@@ -176,7 +176,7 @@
         },
         {
           "id": "lex_spend",
-          "text": "I ___ every day.",
+          "text": "I ___ a little money today.",
           "answer": "spend",
           "accepted": [
             "spend",
@@ -191,7 +191,7 @@
             "pay",
             "sell"
           ],
-          "hu": "(költeni / tölteni)"
+          "hu": "Kevés pénzt költök ma."
         },
         {
           "id": "lex_last",

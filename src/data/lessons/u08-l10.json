@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "The flowers are very ___.",
           "answer": "pretty",
           "options": [
             "pretty",
             "favourite",
             "interesting"
           ],
-          "hu": "(csinos / szép)"
+          "hu": "A virágok nagyon szépek."
         },
         {
-          "text": "I ___ every day.",
+          "text": "Panna can ___ her horse.",
           "answer": "ride",
           "options": [
             "ride",
             "read",
             "swim"
           ],
-          "hu": "(lovagolni / biciklizni)"
+          "hu": "Panna tudja lovagolni a lovát."
         },
         {
-          "text": "I ___ every day.",
+          "text": "The children ___ the hill.",
           "answer": "climb",
           "options": [
             "climb",
             "read",
             "swim"
           ],
-          "hu": "(mászni)"
+          "hu": "A gyerekek felmásznak a dombra."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_pretty",
-          "text": "It is very ___.",
+          "text": "The flowers are very ___.",
           "answer": "pretty",
           "accepted": [
             "pretty",
@@ -122,11 +122,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(csinos / szép)"
+          "hu": "A virágok nagyon szépek."
         },
         {
           "id": "lex_ride",
-          "text": "I ___ every day.",
+          "text": "Panna can ___ her horse.",
           "answer": "ride",
           "accepted": [
             "ride",
@@ -141,11 +141,11 @@
             "swim",
             "dance"
           ],
-          "hu": "(lovagolni / biciklizni)"
+          "hu": "Panna tudja lovagolni a lovát."
         },
         {
           "id": "lex_climb",
-          "text": "I ___ every day.",
+          "text": "The children ___ the hill.",
           "answer": "climb",
           "accepted": [
             "climb",
@@ -160,11 +160,11 @@
             "swim",
             "dance"
           ],
-          "hu": "(mászni)"
+          "hu": "A gyerekek felmásznak a dombra."
         },
         {
           "id": "lex_build",
-          "text": "I ___ every day.",
+          "text": "David and Marlene ___ a house.",
           "answer": "build",
           "accepted": [
             "build",
@@ -179,7 +179,7 @@
             "swim",
             "dance"
           ],
-          "hu": "(építeni)"
+          "hu": "David és Marlene házat építenek."
         }
       ]
     },
@@ -199,16 +199,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very pretty.",
-          "hu": "(csinos / szép)"
+          "en": "The flowers are very pretty.",
+          "hu": "A virágok nagyon szépek."
         },
         {
-          "en": "I ride every day.",
-          "hu": "(lovagolni / biciklizni)"
+          "en": "Panna can ride her horse.",
+          "hu": "Panna tudja lovagolni a lovát."
         },
         {
-          "en": "I climb every day.",
-          "hu": "(mászni)"
+          "en": "The children climb the hill.",
+          "hu": "A gyerekek felmásznak a dombra."
         }
       ]
     },

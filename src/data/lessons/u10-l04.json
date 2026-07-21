@@ -76,34 +76,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "I ___ a nice dessert.",
           "answer": "choose",
           "options": [
             "choose",
             "order",
             "help"
           ],
-          "hu": "(választani)"
+          "hu": "Választok egy finom desszertet."
         },
         {
-          "text": "It is very ___.",
+          "text": "The shop is ___ today.",
           "answer": "closed",
           "options": [
             "closed",
             "vegetarian",
             "my"
           ],
-          "hu": "(zárva)"
+          "hu": "A bolt ma zárva van."
         },
         {
-          "text": "I ___ every day.",
+          "text": "Please don't ___ the mirror.",
           "answer": "break",
           "options": [
             "break",
             "knock",
             "be"
           ],
-          "hu": "(eltörni)"
+          "hu": "Kérlek, ne törd el a tükröt."
         }
       ]
     },
@@ -113,7 +113,7 @@
       "items": [
         {
           "id": "lex_choose",
-          "text": "I ___ every day.",
+          "text": "I ___ a nice dessert.",
           "answer": "choose",
           "accepted": [
             "choose",
@@ -128,11 +128,11 @@
             "help",
             "fill"
           ],
-          "hu": "(választani)"
+          "hu": "Választok egy finom desszertet."
         },
         {
           "id": "lex_closed",
-          "text": "It is very ___.",
+          "text": "The shop is ___ today.",
           "answer": "closed",
           "accepted": [
             "closed",
@@ -145,11 +145,11 @@
             "my",
             "your"
           ],
-          "hu": "(zárva)"
+          "hu": "A bolt ma zárva van."
         },
         {
           "id": "lex_break",
-          "text": "I ___ every day.",
+          "text": "Please don't ___ the mirror.",
           "answer": "break",
           "accepted": [
             "break",
@@ -164,11 +164,11 @@
             "be",
             "have"
           ],
-          "hu": "(eltörni)"
+          "hu": "Kérlek, ne törd el a tükröt."
         },
         {
           "id": "lex_comfortable",
-          "text": "It is very ___.",
+          "text": "The chair is ___.",
           "answer": "comfortable",
           "accepted": [
             "comfortable",
@@ -181,7 +181,7 @@
             "afraid",
             "nervous"
           ],
-          "hu": "(kényelmes)"
+          "hu": "A szék kényelmes."
         }
       ]
     },

@@ -1,7 +1,7 @@
 # English with Marta · Angol Martával
 
 **Internal project name:** *Mirella tante*
-**Version:** 1.9.0
+**Version:** 1.9.1
 
 A personal, calm, **Duolingo-style English course built for one learner — Marta**, a Hungarian woman in her seventies. The course is organised around her real family, her online Hungarian teaching, and travel — so every lesson feels like *"learning English to connect with the people I love."*
 

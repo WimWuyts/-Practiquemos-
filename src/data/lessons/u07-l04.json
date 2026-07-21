@@ -78,14 +78,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I write a ___ to Kira.",
           "answer": "letter",
           "options": [
             "letter",
             "phone",
             "news"
           ],
-          "hu": "(levél / betű)"
+          "hu": "Írok egy levelet Kirának."
         },
         {
           "text": "I like ___.",
@@ -115,7 +115,7 @@
       "items": [
         {
           "id": "lex_letter",
-          "text": "This is a ___.",
+          "text": "I write a ___ to Kira.",
           "answer": "letter",
           "accepted": [
             "letter",
@@ -129,7 +129,7 @@
             "news",
             "message"
           ],
-          "hu": "(levél / betű)"
+          "hu": "Írok egy levelet Kirának."
         },
         {
           "id": "lex_news",
@@ -169,7 +169,7 @@
         },
         {
           "id": "lex_ring",
-          "text": "I ___ every day.",
+          "text": "I ___ Rita every evening.",
           "answer": "ring",
           "accepted": [
             "ring",
@@ -184,7 +184,7 @@
             "hear",
             "see"
           ],
-          "hu": "(csengetni / felhívni)"
+          "hu": "Minden este felhívom Ritát."
         }
       ]
     },

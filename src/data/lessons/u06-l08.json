@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "___ — a useful word.",
+          "text": "I have coffee ___ my lesson.",
           "answer": "before",
           "options": [
             "before",
             "after",
             "at"
           ],
-          "hu": "(előtt)"
+          "hu": "Az órám előtt kávézom."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "I rest ___ my lesson.",
           "answer": "after",
           "options": [
             "after",
             "before",
             "at"
           ],
-          "hu": "(után)"
+          "hu": "Az órám után pihenek."
         },
         {
-          "text": "This is a ___.",
+          "text": "What is the ___ today?",
           "answer": "date",
           "options": [
             "date",
             "time",
             "hour"
           ],
-          "hu": "(dátum)"
+          "hu": "Milyen dátum van ma?"
         }
       ]
     },
@@ -109,41 +109,41 @@
       "items": [
         {
           "id": "lex_before",
-          "text": "___ — a useful word.",
-          "answer": "Before",
+          "text": "I have coffee ___ my lesson.",
+          "answer": "before",
           "accepted": [
             "before",
             "before",
-            "Before"
+            "before"
           ],
           "options": [
-            "Before",
+            "before",
             "after",
             "at",
             "from"
           ],
-          "hu": "(előtt)"
+          "hu": "Az órám előtt kávézom."
         },
         {
           "id": "lex_after",
-          "text": "___ — a useful word.",
-          "answer": "After",
+          "text": "I rest ___ my lesson.",
+          "answer": "after",
           "accepted": [
             "after",
             "after",
-            "After"
+            "after"
           ],
           "options": [
-            "After",
+            "after",
             "before",
             "at",
             "from"
           ],
-          "hu": "(után)"
+          "hu": "Az órám után pihenek."
         },
         {
           "id": "lex_date",
-          "text": "This is a ___.",
+          "text": "What is the ___ today?",
           "answer": "date",
           "accepted": [
             "date",
@@ -157,11 +157,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(dátum)"
+          "hu": "Milyen dátum van ma?"
         },
         {
           "id": "lex_january",
-          "text": "I like ___.",
+          "text": "It is cold in ___.",
           "answer": "January",
           "accepted": [
             "January",
@@ -174,7 +174,7 @@
             "hour",
             "minute"
           ],
-          "hu": "(január)"
+          "hu": "Januárban hideg van."
         }
       ]
     },
@@ -194,16 +194,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "Before — a useful word.",
-          "hu": "(előtt)"
+          "en": "I have coffee before my lesson.",
+          "hu": "Az órám előtt kávézom."
         },
         {
-          "en": "After — a useful word.",
-          "hu": "(után)"
+          "en": "I rest after my lesson.",
+          "hu": "Az órám után pihenek."
         },
         {
-          "en": "This is a date.",
-          "hu": "(dátum)"
+          "en": "What is the date today?",
+          "hu": "Milyen dátum van ma?"
         }
       ]
     },

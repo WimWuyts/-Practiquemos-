@@ -323,7 +323,7 @@
         },
         {
           "id": "lex_table",
-          "text": "This is a ___.",
+          "text": "We sit at the ___.",
           "answer": "table",
           "accepted": [
             "table",
@@ -337,7 +337,7 @@
             "menu",
             "bill"
           ],
-          "hu": "(asztal)"
+          "hu": "Az asztalnál ülünk."
         }
       ]
     },

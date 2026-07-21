@@ -60,34 +60,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "I can't ___ yet.",
           "answer": "decide",
           "options": [
             "decide",
             "meet",
             "can"
           ],
-          "hu": "(eldönteni)"
+          "hu": "Még nem tudok dönteni."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ my books here.",
           "answer": "keep",
           "options": [
             "keep",
             "work",
             "get up"
           ],
-          "hu": "(megtartani)"
+          "hu": "Itt tartom a könyveimet."
         },
         {
-          "text": "It is very ___.",
+          "text": "The bag is too ___.",
           "answer": "heavy",
           "options": [
             "heavy",
             "local",
             "my"
           ],
-          "hu": "(nehéz (súly))"
+          "hu": "A táska túl nehéz."
         }
       ]
     },
@@ -97,7 +97,7 @@
       "items": [
         {
           "id": "lex_decide",
-          "text": "I ___ every day.",
+          "text": "I can't ___ yet.",
           "answer": "decide",
           "accepted": [
             "decide",
@@ -112,11 +112,11 @@
             "can",
             "be"
           ],
-          "hu": "(eldönteni)"
+          "hu": "Még nem tudok dönteni."
         },
         {
           "id": "lex_keep",
-          "text": "I ___ every day.",
+          "text": "I ___ my books here.",
           "answer": "keep",
           "accepted": [
             "keep",
@@ -131,11 +131,11 @@
             "get up",
             "wake up"
           ],
-          "hu": "(megtartani)"
+          "hu": "Itt tartom a könyveimet."
         },
         {
           "id": "lex_heavy",
-          "text": "It is very ___.",
+          "text": "The bag is too ___.",
           "answer": "heavy",
           "accepted": [
             "heavy",
@@ -148,11 +148,11 @@
             "my",
             "your"
           ],
-          "hu": "(nehéz (súly))"
+          "hu": "A táska túl nehéz."
         },
         {
           "id": "lex_return",
-          "text": "I ___ every day.",
+          "text": "We ___ home tomorrow.",
           "answer": "return",
           "accepted": [
             "return",
@@ -167,7 +167,7 @@
             "need",
             "bring"
           ],
-          "hu": "(visszatérni / visszaadni)"
+          "hu": "Holnap hazatérünk."
         }
       ]
     },
@@ -186,16 +186,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I decide every day.",
-          "hu": "(eldönteni)"
+          "en": "I can't decide yet.",
+          "hu": "Még nem tudok dönteni."
         },
         {
-          "en": "I keep every day.",
-          "hu": "(megtartani)"
+          "en": "I keep my books here.",
+          "hu": "Itt tartom a könyveimet."
         },
         {
-          "en": "It is very heavy.",
-          "hu": "(nehéz (súly))"
+          "en": "The bag is too heavy.",
+          "hu": "A táska túl nehéz."
         }
       ]
     },

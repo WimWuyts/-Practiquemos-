@@ -97,14 +97,14 @@
           "hu": "Ma szép idő van."
         },
         {
-          "text": "It is very ___.",
+          "text": "Today is warm and ___.",
           "answer": "sunny",
           "options": [
             "sunny",
             "rainy",
             "cold"
           ],
-          "hu": "(napos)"
+          "hu": "Ma meleg és napos van."
         }
       ]
     },
@@ -148,7 +148,7 @@
         },
         {
           "id": "lex_sunny",
-          "text": "It is very ___.",
+          "text": "Today is warm and ___.",
           "answer": "sunny",
           "accepted": [
             "sunny",
@@ -161,11 +161,11 @@
             "cold",
             "hot"
           ],
-          "hu": "(napos)"
+          "hu": "Ma meleg és napos van."
         },
         {
           "id": "lex_rainy",
-          "text": "It is very ___.",
+          "text": "It is a ___ day.",
           "answer": "rainy",
           "accepted": [
             "rainy",
@@ -178,7 +178,7 @@
             "cold",
             "hot"
           ],
-          "hu": "(esős)"
+          "hu": "Esős nap van."
         }
       ]
     },

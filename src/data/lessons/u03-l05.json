@@ -64,34 +64,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "My garden is very ___.",
           "answer": "small",
           "options": [
             "small",
             "favourite",
             "interesting"
           ],
-          "hu": "(kicsi)"
+          "hu": "A kertem nagyon kicsi."
         },
         {
-          "text": "It is very ___.",
+          "text": "The flight is very ___.",
           "answer": "long",
           "options": [
             "long",
             "favourite",
             "interesting"
           ],
-          "hu": "(hosszú)"
+          "hu": "A repülőút nagyon hosszú."
         },
         {
-          "text": "It is very ___.",
+          "text": "I have a ___ student.",
           "answer": "new",
           "options": [
             "new",
             "favourite",
             "interesting"
           ],
-          "hu": "(új)"
+          "hu": "Van egy új tanítványom."
         }
       ]
     },
@@ -101,7 +101,7 @@
       "items": [
         {
           "id": "lex_small",
-          "text": "It is very ___.",
+          "text": "My garden is very ___.",
           "answer": "small",
           "accepted": [
             "small",
@@ -114,11 +114,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(kicsi)"
+          "hu": "A kertem nagyon kicsi."
         },
         {
           "id": "lex_long",
-          "text": "It is very ___.",
+          "text": "The flight is very ___.",
           "answer": "long",
           "accepted": [
             "long",
@@ -131,11 +131,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(hosszú)"
+          "hu": "A repülőút nagyon hosszú."
         },
         {
           "id": "lex_new",
-          "text": "It is very ___.",
+          "text": "I have a ___ student.",
           "answer": "new",
           "accepted": [
             "new",
@@ -148,11 +148,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(új)"
+          "hu": "Van egy új tanítványom."
         },
         {
           "id": "lex_bad",
-          "text": "It is very ___.",
+          "text": "The weather is ___ today.",
           "answer": "bad",
           "accepted": [
             "bad",
@@ -165,7 +165,7 @@
             "interesting",
             "boring"
           ],
-          "hu": "(rossz)"
+          "hu": "Ma rossz az idő."
         }
       ]
     },
@@ -185,16 +185,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very small.",
-          "hu": "(kicsi)"
+          "en": "My garden is very small.",
+          "hu": "A kertem nagyon kicsi."
         },
         {
-          "en": "It is very long.",
-          "hu": "(hosszú)"
+          "en": "The flight is very long.",
+          "hu": "A repülőút nagyon hosszú."
         },
         {
-          "en": "It is very new.",
-          "hu": "(új)"
+          "en": "I have a new student.",
+          "hu": "Van egy új tanítványom."
         }
       ]
     },

@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "This ___ is very pretty.",
           "answer": "flower",
           "options": [
             "flower",
             "weather",
             "tree"
           ],
-          "hu": "(virág)"
+          "hu": "Ez a virág nagyon szép."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ is blue and cold.",
           "answer": "sea",
           "options": [
             "sea",
             "weather",
             "tree"
           ],
-          "hu": "(tenger)"
+          "hu": "A tenger kék és hideg."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ is near Prague.",
           "answer": "river",
           "options": [
             "river",
             "weather",
             "tree"
           ],
-          "hu": "(folyó)"
+          "hu": "A folyó Prága közelében van."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_flower",
-          "text": "This is a ___.",
+          "text": "This ___ is very pretty.",
           "answer": "flower",
           "accepted": [
             "flower",
@@ -123,11 +123,11 @@
             "tree",
             "sea"
           ],
-          "hu": "(virág)"
+          "hu": "Ez a virág nagyon szép."
         },
         {
           "id": "lex_sea",
-          "text": "This is a ___.",
+          "text": "The ___ is blue and cold.",
           "answer": "sea",
           "accepted": [
             "sea",
@@ -141,11 +141,11 @@
             "tree",
             "flower"
           ],
-          "hu": "(tenger)"
+          "hu": "A tenger kék és hideg."
         },
         {
           "id": "lex_river",
-          "text": "This is a ___.",
+          "text": "The ___ is near Prague.",
           "answer": "river",
           "accepted": [
             "river",
@@ -159,11 +159,11 @@
             "tree",
             "flower"
           ],
-          "hu": "(folyó)"
+          "hu": "A folyó Prága közelében van."
         },
         {
           "id": "lex_lake",
-          "text": "This is a ___.",
+          "text": "We swim in the ___.",
           "answer": "lake",
           "accepted": [
             "lake",
@@ -177,7 +177,7 @@
             "tree",
             "flower"
           ],
-          "hu": "(tó)"
+          "hu": "Úszunk a tóban."
         }
       ]
     },
@@ -197,16 +197,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a flower.",
-          "hu": "(virág)"
+          "en": "This flower is very pretty.",
+          "hu": "Ez a virág nagyon szép."
         },
         {
-          "en": "This is a sea.",
-          "hu": "(tenger)"
+          "en": "The sea is blue and cold.",
+          "hu": "A tenger kék és hideg."
         },
         {
-          "en": "This is a river.",
-          "hu": "(folyó)"
+          "en": "The river is near Prague.",
+          "hu": "A folyó Prága közelében van."
         }
       ]
     },

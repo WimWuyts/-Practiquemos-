@@ -72,24 +72,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is an ___.",
+          "text": "I take my ___ today.",
           "answer": "umbrella",
           "options": [
             "umbrella",
             "weather",
             "tree"
           ],
-          "hu": "(esernyő)"
+          "hu": "Ma viszem az esernyőmet."
         },
         {
-          "text": "It is very ___.",
+          "text": "The evening is nice and ___.",
           "answer": "cool",
           "options": [
             "cool",
             "sunny",
             "rainy"
           ],
-          "hu": "(hűvös / menő)"
+          "hu": "Az este kellemes és hűvös."
         },
         {
           "text": "He is ___.",
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_umbrella",
-          "text": "This is an ___.",
+          "text": "I take my ___ today.",
           "answer": "umbrella",
           "accepted": [
             "umbrella",
@@ -123,11 +123,11 @@
             "tree",
             "flower"
           ],
-          "hu": "(esernyő)"
+          "hu": "Ma viszem az esernyőmet."
         },
         {
           "id": "lex_cool",
-          "text": "It is very ___.",
+          "text": "The evening is nice and ___.",
           "answer": "cool",
           "accepted": [
             "cool",
@@ -140,7 +140,7 @@
             "rainy",
             "cold"
           ],
-          "hu": "(hűvös / menő)"
+          "hu": "Az este kellemes és hűvös."
         },
         {
           "id": "lex_next",
@@ -161,7 +161,7 @@
         },
         {
           "id": "lex_moon",
-          "text": "This is a ___.",
+          "text": "The ___ is bright tonight.",
           "answer": "moon",
           "accepted": [
             "moon",
@@ -174,7 +174,7 @@
             "tree",
             "flower"
           ],
-          "hu": "(hold)"
+          "hu": "A hold fényes ma este."
         }
       ]
     },
@@ -194,12 +194,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is an umbrella.",
-          "hu": "(esernyő)"
+          "en": "I take my umbrella today.",
+          "hu": "Ma viszem az esernyőmet."
         },
         {
-          "en": "It is very cool.",
-          "hu": "(hűvös / menő)"
+          "en": "The evening is nice and cool.",
+          "hu": "Az este kellemes és hűvös."
         },
         {
           "en": "He is next.",

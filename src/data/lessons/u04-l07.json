@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "The cat sleeps on the ___.",
           "answer": "sofa",
           "options": [
             "sofa",
             "home",
             "house"
           ],
-          "hu": "(kanapé)"
+          "hu": "A macska a kanapén alszik."
         },
         {
-          "text": "This is a ___.",
+          "text": "The photo is on the ___.",
           "answer": "wall",
           "options": [
             "wall",
             "home",
             "house"
           ],
-          "hu": "(fal)"
+          "hu": "A fénykép a falon van."
         },
         {
-          "text": "This is a ___.",
+          "text": "The dog sleeps on the ___.",
           "answer": "floor",
           "options": [
             "floor",
             "home",
             "house"
           ],
-          "hu": "(padló / emelet)"
+          "hu": "A kutya a padlón alszik."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_sofa",
-          "text": "This is a ___.",
+          "text": "The cat sleeps on the ___.",
           "answer": "sofa",
           "accepted": [
             "sofa",
@@ -123,11 +123,11 @@
             "house",
             "room"
           ],
-          "hu": "(kanapé)"
+          "hu": "A macska a kanapén alszik."
         },
         {
           "id": "lex_wall",
-          "text": "This is a ___.",
+          "text": "The photo is on the ___.",
           "answer": "wall",
           "accepted": [
             "wall",
@@ -141,11 +141,11 @@
             "house",
             "room"
           ],
-          "hu": "(fal)"
+          "hu": "A fénykép a falon van."
         },
         {
           "id": "lex_floor",
-          "text": "This is a ___.",
+          "text": "The dog sleeps on the ___.",
           "answer": "floor",
           "accepted": [
             "floor",
@@ -159,11 +159,11 @@
             "house",
             "room"
           ],
-          "hu": "(padló / emelet)"
+          "hu": "A kutya a padlón alszik."
         },
         {
           "id": "lex_bathroom",
-          "text": "This is a ___.",
+          "text": "The towel is in the ___.",
           "answer": "bathroom",
           "accepted": [
             "bathroom",
@@ -177,7 +177,7 @@
             "house",
             "room"
           ],
-          "hu": "(fürdőszoba)"
+          "hu": "A törölköző a fürdőszobában van."
         }
       ]
     },
@@ -197,16 +197,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a sofa.",
-          "hu": "(kanapé)"
+          "en": "The cat sleeps on the sofa.",
+          "hu": "A macska a kanapén alszik."
         },
         {
-          "en": "This is a wall.",
-          "hu": "(fal)"
+          "en": "The photo is on the wall.",
+          "hu": "A fénykép a falon van."
         },
         {
-          "en": "This is a floor.",
-          "hu": "(padló / emelet)"
+          "en": "The dog sleeps on the floor.",
+          "hu": "A kutya a padlón alszik."
         }
       ]
     },

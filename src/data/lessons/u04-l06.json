@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is an ___.",
+          "text": "I hold the bag in my ___.",
           "answer": "arm",
           "options": [
             "arm",
             "body",
             "head"
           ],
-          "hu": "(kar)"
+          "hu": "A karomban tartom a táskát."
         },
         {
-          "text": "This is a ___.",
+          "text": "My ___ is tired after the walk.",
           "answer": "leg",
           "options": [
             "leg",
             "body",
             "head"
           ],
-          "hu": "(láb (comb))"
+          "hu": "A séta után fáradt a lábam."
         },
         {
-          "text": "This is a ___.",
+          "text": "My ___ is cold in winter.",
           "answer": "foot",
           "options": [
             "foot",
             "body",
             "head"
           ],
-          "hu": "(lábfej)"
+          "hu": "Télen hideg a lábfejem."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_arm",
-          "text": "This is an ___.",
+          "text": "I hold the bag in my ___.",
           "answer": "arm",
           "accepted": [
             "arm",
@@ -123,11 +123,11 @@
             "head",
             "face"
           ],
-          "hu": "(kar)"
+          "hu": "A karomban tartom a táskát."
         },
         {
           "id": "lex_leg",
-          "text": "This is a ___.",
+          "text": "My ___ is tired after the walk.",
           "answer": "leg",
           "accepted": [
             "leg",
@@ -141,11 +141,11 @@
             "head",
             "face"
           ],
-          "hu": "(láb (comb))"
+          "hu": "A séta után fáradt a lábam."
         },
         {
           "id": "lex_foot",
-          "text": "This is a ___.",
+          "text": "My ___ is cold in winter.",
           "answer": "foot",
           "accepted": [
             "foot",
@@ -159,25 +159,25 @@
             "head",
             "face"
           ],
-          "hu": "(lábfej)"
+          "hu": "Télen hideg a lábfejem."
         },
         {
           "id": "lex_tooth",
-          "text": "This is a ___.",
-          "answer": "tooth",
+          "text": "I clean my ___ every morning.",
+          "answer": "teeth",
           "accepted": [
             "tooth",
             "tooth",
             "teeth",
-            "tooth"
+            "teeth"
           ],
           "options": [
-            "tooth",
+            "teeth",
             "body",
             "head",
             "face"
           ],
-          "hu": "(fog)"
+          "hu": "Minden reggel fogat mosok."
         }
       ]
     },
@@ -197,16 +197,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is an arm.",
-          "hu": "(kar)"
+          "en": "I hold the bag in my arm.",
+          "hu": "A karomban tartom a táskát."
         },
         {
-          "en": "This is a leg.",
-          "hu": "(láb (comb))"
+          "en": "My leg is tired after the walk.",
+          "hu": "A séta után fáradt a lábam."
         },
         {
-          "en": "This is a foot.",
-          "hu": "(lábfej)"
+          "en": "My foot is cold in winter.",
+          "hu": "Télen hideg a lábfejem."
         }
       ]
     },

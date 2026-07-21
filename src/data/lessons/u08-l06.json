@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "The leaves are ___ now.",
           "answer": "brown",
           "options": [
             "brown",
             "red",
             "blue"
           ],
-          "hu": "(barna)"
+          "hu": "A levelek most barnák."
         },
         {
-          "text": "It is very ___.",
+          "text": "The sky is ___ today.",
           "answer": "grey",
           "options": [
             "grey",
             "red",
             "blue"
           ],
-          "hu": "(szürke)"
+          "hu": "Ma szürke az ég."
         },
         {
-          "text": "It is very ___.",
+          "text": "The roses are ___.",
           "answer": "pink",
           "options": [
             "pink",
             "red",
             "blue"
           ],
-          "hu": "(rózsaszín)"
+          "hu": "A rózsák rózsaszínűek."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_brown",
-          "text": "It is very ___.",
+          "text": "The leaves are ___ now.",
           "answer": "brown",
           "accepted": [
             "brown",
@@ -122,11 +122,11 @@
             "blue",
             "green"
           ],
-          "hu": "(barna)"
+          "hu": "A levelek most barnák."
         },
         {
           "id": "lex_grey",
-          "text": "It is very ___.",
+          "text": "The sky is ___ today.",
           "answer": "grey",
           "accepted": [
             "grey",
@@ -139,11 +139,11 @@
             "blue",
             "green"
           ],
-          "hu": "(szürke)"
+          "hu": "Ma szürke az ég."
         },
         {
           "id": "lex_pink",
-          "text": "It is very ___.",
+          "text": "The roses are ___.",
           "answer": "pink",
           "accepted": [
             "pink",
@@ -156,7 +156,7 @@
             "blue",
             "green"
           ],
-          "hu": "(rózsaszín)"
+          "hu": "A rózsák rózsaszínűek."
         },
         {
           "id": "lex_too",
@@ -193,16 +193,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very brown.",
-          "hu": "(barna)"
+          "en": "The leaves are brown now.",
+          "hu": "A levelek most barnák."
         },
         {
-          "en": "It is very grey.",
-          "hu": "(szürke)"
+          "en": "The sky is grey today.",
+          "hu": "Ma szürke az ég."
         },
         {
-          "en": "It is very pink.",
-          "hu": "(rózsaszín)"
+          "en": "The roses are pink.",
+          "hu": "A rózsák rózsaszínűek."
         }
       ]
     },

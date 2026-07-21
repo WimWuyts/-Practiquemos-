@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I write with a ___.",
           "answer": "pen",
           "options": [
             "pen",
             "lesson",
             "student"
           ],
-          "hu": "(toll)"
+          "hu": "Tollal írok."
         },
         {
-          "text": "This is a ___.",
+          "text": "The boy has a ___.",
           "answer": "pencil",
           "options": [
             "pencil",
             "lesson",
             "student"
           ],
-          "hu": "(ceruza)"
+          "hu": "A fiúnak van egy ceruzája."
         },
         {
-          "text": "This is a ___.",
+          "text": "I need some ___.",
           "answer": "paper",
           "options": [
             "paper",
             "lesson",
             "student"
           ],
-          "hu": "(papír)"
+          "hu": "Szükségem van egy kis papírra."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_pen",
-          "text": "This is a ___.",
+          "text": "I write with a ___.",
           "answer": "pen",
           "accepted": [
             "pen",
@@ -128,11 +128,11 @@
             "student",
             "word"
           ],
-          "hu": "(toll)"
+          "hu": "Tollal írok."
         },
         {
           "id": "lex_pencil",
-          "text": "This is a ___.",
+          "text": "The boy has a ___.",
           "answer": "pencil",
           "accepted": [
             "pencil",
@@ -146,11 +146,11 @@
             "student",
             "word"
           ],
-          "hu": "(ceruza)"
+          "hu": "A fiúnak van egy ceruzája."
         },
         {
           "id": "lex_paper",
-          "text": "This is a ___.",
+          "text": "I need some ___.",
           "answer": "paper",
           "accepted": [
             "paper",
@@ -163,11 +163,11 @@
             "student",
             "word"
           ],
-          "hu": "(papír)"
+          "hu": "Szükségem van egy kis papírra."
         },
         {
           "id": "lex_page",
-          "text": "This is a ___.",
+          "text": "Open the next ___, please.",
           "answer": "page",
           "accepted": [
             "page",
@@ -181,7 +181,7 @@
             "student",
             "word"
           ],
-          "hu": "(oldal)"
+          "hu": "Nyisd ki a következő oldalt, kérlek."
         }
       ]
     },

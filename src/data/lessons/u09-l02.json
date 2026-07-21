@@ -103,14 +103,14 @@
           "hu": "A templomnál fordulj jobbra."
         },
         {
-          "text": "I speak ___.",
+          "text": "The road is very ___.",
           "answer": "straight",
           "options": [
             "straight",
             "first",
             "then"
           ],
-          "hu": "(egyenesen)"
+          "hu": "Az út nagyon egyenes."
         }
       ]
     },
@@ -154,7 +154,7 @@
         },
         {
           "id": "lex_straight",
-          "text": "I speak ___.",
+          "text": "The road is very ___.",
           "answer": "straight",
           "accepted": [
             "straight",
@@ -167,11 +167,11 @@
             "then",
             "here"
           ],
-          "hu": "(egyenesen)"
+          "hu": "Az út nagyon egyenes."
         },
         {
           "id": "lex_near",
-          "text": "It is very ___.",
+          "text": "The bank is very ___.",
           "answer": "near",
           "accepted": [
             "near",
@@ -184,7 +184,7 @@
             "high",
             "low"
           ],
-          "hu": "(közel)"
+          "hu": "A bank nagyon közel van."
         }
       ]
     },

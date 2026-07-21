@@ -321,7 +321,7 @@
         },
         {
           "id": "lex_film",
-          "text": "This is a ___.",
+          "text": "We watched a good ___.",
           "answer": "film",
           "accepted": [
             "film",
@@ -335,7 +335,7 @@
             "music",
             "book"
           ],
-          "hu": "(film)"
+          "hu": "Néztünk egy jó filmet."
         }
       ]
     },

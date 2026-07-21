@@ -283,14 +283,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "It is a sunny ___.",
           "answer": "day",
           "options": [
             "day",
             "morning",
             "afternoon"
           ],
-          "hu": "(nap)"
+          "hu": "Napos nap van."
         },
         {
           "text": "I drink coffee in the ___.",
@@ -320,7 +320,7 @@
       "items": [
         {
           "id": "lex_day",
-          "text": "This is a ___.",
+          "text": "It is a sunny ___.",
           "answer": "day",
           "accepted": [
             "day",
@@ -334,7 +334,7 @@
             "afternoon",
             "evening"
           ],
-          "hu": "(nap)"
+          "hu": "Napos nap van."
         },
         {
           "id": "lex_morning",

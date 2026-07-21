@@ -74,34 +74,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I have ___ friends.",
+          "text": "Emma is ___ next year.",
           "answer": "eighteen",
           "options": [
             "eighteen",
             "one",
             "two"
           ],
-          "hu": "(tizennyolc)"
+          "hu": "Emma jövőre tizennyolc éves."
         },
         {
-          "text": "I have ___ friends.",
+          "text": "He is ___ years old.",
           "answer": "nineteen",
           "options": [
             "nineteen",
             "one",
             "two"
           ],
-          "hu": "(tizenkilenc)"
+          "hu": "Ő tizenkilenc éves."
         },
         {
-          "text": "I have ___ friends.",
+          "text": "I have ___ photos.",
           "answer": "forty",
           "options": [
             "forty",
             "one",
             "two"
           ],
-          "hu": "(negyven)"
+          "hu": "Negyven fényképem van."
         }
       ]
     },
@@ -111,7 +111,7 @@
       "items": [
         {
           "id": "lex_eighteen",
-          "text": "I have ___ friends.",
+          "text": "Emma is ___ next year.",
           "answer": "eighteen",
           "accepted": [
             "eighteen",
@@ -124,11 +124,11 @@
             "two",
             "three"
           ],
-          "hu": "(tizennyolc)"
+          "hu": "Emma jövőre tizennyolc éves."
         },
         {
           "id": "lex_nineteen",
-          "text": "I have ___ friends.",
+          "text": "He is ___ years old.",
           "answer": "nineteen",
           "accepted": [
             "nineteen",
@@ -141,11 +141,11 @@
             "two",
             "three"
           ],
-          "hu": "(tizenkilenc)"
+          "hu": "Ő tizenkilenc éves."
         },
         {
           "id": "lex_forty",
-          "text": "I have ___ friends.",
+          "text": "I have ___ photos.",
           "answer": "forty",
           "accepted": [
             "forty",
@@ -158,11 +158,11 @@
             "two",
             "three"
           ],
-          "hu": "(negyven)"
+          "hu": "Negyven fényképem van."
         },
         {
           "id": "lex_fifty",
-          "text": "I have ___ friends.",
+          "text": "The book has ___ pages.",
           "answer": "fifty",
           "accepted": [
             "fifty",
@@ -175,7 +175,7 @@
             "two",
             "three"
           ],
-          "hu": "(ötven)"
+          "hu": "A könyvnek ötven oldala van."
         }
       ]
     },

@@ -74,34 +74,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "I ___ the heavy bag.",
           "answer": "carry",
           "options": [
             "carry",
             "travel",
             "need"
           ],
-          "hu": "(cipelni / vinni)"
+          "hu": "Viszem a nehéz táskát."
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ in Denmark.",
           "answer": "stay",
           "options": [
             "stay",
             "travel",
             "need"
           ],
-          "hu": "(maradni)"
+          "hu": "Dániában maradunk."
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ at six.",
           "answer": "leave",
           "options": [
             "leave",
             "travel",
             "need"
           ],
-          "hu": "(elmenni / elhagyni)"
+          "hu": "Hatkor indulunk."
         }
       ]
     },
@@ -111,7 +111,7 @@
       "items": [
         {
           "id": "lex_carry",
-          "text": "I ___ every day.",
+          "text": "I ___ the heavy bag.",
           "answer": "carry",
           "accepted": [
             "carry",
@@ -126,11 +126,11 @@
             "need",
             "bring"
           ],
-          "hu": "(cipelni / vinni)"
+          "hu": "Viszem a nehéz táskát."
         },
         {
           "id": "lex_stay",
-          "text": "I ___ every day.",
+          "text": "We ___ in Denmark.",
           "answer": "stay",
           "accepted": [
             "stay",
@@ -145,11 +145,11 @@
             "need",
             "bring"
           ],
-          "hu": "(maradni)"
+          "hu": "Dániában maradunk."
         },
         {
           "id": "lex_leave",
-          "text": "I ___ every day.",
+          "text": "We ___ at six.",
           "answer": "leave",
           "accepted": [
             "leave",
@@ -164,11 +164,11 @@
             "need",
             "bring"
           ],
-          "hu": "(elmenni / elhagyni)"
+          "hu": "Hatkor indulunk."
         },
         {
           "id": "lex_arrive",
-          "text": "I ___ every day.",
+          "text": "We ___ in Prague tonight.",
           "answer": "arrive",
           "accepted": [
             "arrive",
@@ -183,7 +183,7 @@
             "need",
             "bring"
           ],
-          "hu": "(megérkezni)"
+          "hu": "Ma este megérkezünk Prágába."
         }
       ]
     },

@@ -16,6 +16,7 @@ import { GRAMMAR_PRACTICE } from "./grammar-practice-source.mjs";
 import { SPELLING_FAMILIES, SOUND_FOCUS, PATH } from "./pronunciation-source.mjs";
 import { DIALOGUES } from "./dialogues-source.mjs";
 import { EXAMPLES } from "./examples-source.mjs";
+import { EXAMPLES_EXTRA } from "./examples-extra.mjs";
 import { LISTENINGS } from "./listening-source.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -131,8 +132,9 @@ function safeTemplate(w, pos, theme) {
   if (pos === "preposition" || pos === "determiner" || pos === "pronoun" || pos === "article") return `${w[0].toUpperCase()}${w.slice(1)} — a useful word.`;
   return `${w[0].toUpperCase()}${w.slice(1)}.`;
 }
+const EX_ALL = { ...EXAMPLES, ...EXAMPLES_EXTRA }; // curated-extra wins on key conflicts
 function exampleFor(head, hu, pos, theme) {
-  const cur = EXAMPLES[head.toLowerCase()];
+  const cur = EX_ALL[head.toLowerCase()];
   if (cur) return { en: cur[0], hu: cur[1], needsReview: true };
   return { en: safeTemplate(head, pos, theme), hu: `(${hu})`, needsReview: true };
 }
@@ -528,7 +530,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.9.0", schemaVersion: 1,
+  id: "marta_english", version: "1.9.1", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

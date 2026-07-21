@@ -78,34 +78,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "My ___ is tired tonight.",
           "answer": "head",
           "options": [
             "head",
             "body",
             "face"
           ],
-          "hu": "(fej)"
+          "hu": "Ma este fáradt a fejem."
         },
         {
-          "text": "This is a ___.",
+          "text": "I wash my ___ in the morning.",
           "answer": "face",
           "options": [
             "face",
             "body",
             "head"
           ],
-          "hu": "(arc)"
+          "hu": "Reggel megmosom az arcom."
         },
         {
-          "text": "This is an ___.",
+          "text": "My ___ is a little tired.",
           "answer": "eye",
           "options": [
             "eye",
             "body",
             "head"
           ],
-          "hu": "(szem)"
+          "hu": "Kicsit fáradt a szemem."
         }
       ]
     },
@@ -115,7 +115,7 @@
       "items": [
         {
           "id": "lex_head",
-          "text": "This is a ___.",
+          "text": "My ___ is tired tonight.",
           "answer": "head",
           "accepted": [
             "head",
@@ -129,11 +129,11 @@
             "face",
             "eye"
           ],
-          "hu": "(fej)"
+          "hu": "Ma este fáradt a fejem."
         },
         {
           "id": "lex_face",
-          "text": "This is a ___.",
+          "text": "I wash my ___ in the morning.",
           "answer": "face",
           "accepted": [
             "face",
@@ -147,11 +147,11 @@
             "head",
             "eye"
           ],
-          "hu": "(arc)"
+          "hu": "Reggel megmosom az arcom."
         },
         {
           "id": "lex_eye",
-          "text": "This is an ___.",
+          "text": "My ___ is a little tired.",
           "answer": "eye",
           "accepted": [
             "eye",
@@ -165,11 +165,11 @@
             "head",
             "face"
           ],
-          "hu": "(szem)"
+          "hu": "Kicsit fáradt a szemem."
         },
         {
           "id": "lex_ear",
-          "text": "This is an ___.",
+          "text": "I have a warm hat on my ___.",
           "answer": "ear",
           "accepted": [
             "ear",
@@ -183,7 +183,7 @@
             "head",
             "face"
           ],
-          "hu": "(fül)"
+          "hu": "Meleg sapka van a fülemen."
         }
       ]
     },
@@ -203,16 +203,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a head.",
-          "hu": "(fej)"
+          "en": "My head is tired tonight.",
+          "hu": "Ma este fáradt a fejem."
         },
         {
-          "en": "This is a face.",
-          "hu": "(arc)"
+          "en": "I wash my face in the morning.",
+          "hu": "Reggel megmosom az arcom."
         },
         {
-          "en": "This is an eye.",
-          "hu": "(szem)"
+          "en": "My eye is a little tired.",
+          "hu": "Kicsit fáradt a szemem."
         }
       ]
     },

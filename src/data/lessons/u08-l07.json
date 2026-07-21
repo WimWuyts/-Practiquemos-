@@ -98,14 +98,14 @@
           "hu": "Ez a kedvenc részem."
         },
         {
-          "text": "This is a ___.",
+          "text": "Emma reads a good ___.",
           "answer": "story",
           "options": [
             "story",
             "hobby",
             "music"
           ],
-          "hu": "(történet)"
+          "hu": "Emma egy jó történetet olvas."
         }
       ]
     },
@@ -150,7 +150,7 @@
         },
         {
           "id": "lex_story",
-          "text": "This is a ___.",
+          "text": "Emma reads a good ___.",
           "answer": "story",
           "accepted": [
             "story",
@@ -164,11 +164,11 @@
             "music",
             "book"
           ],
-          "hu": "(történet)"
+          "hu": "Emma egy jó történetet olvas."
         },
         {
           "id": "lex_song",
-          "text": "This is a ___.",
+          "text": "We sing an old ___.",
           "answer": "song",
           "accepted": [
             "song",
@@ -182,7 +182,7 @@
             "music",
             "book"
           ],
-          "hu": "(dal)"
+          "hu": "Éneklünk egy régi dalt."
         }
       ]
     },
@@ -210,8 +210,8 @@
           "hu": "Ez a kedvenc részem."
         },
         {
-          "en": "This is a story.",
-          "hu": "(történet)"
+          "en": "Emma reads a good story.",
+          "hu": "Emma egy jó történetet olvas."
         }
       ]
     },

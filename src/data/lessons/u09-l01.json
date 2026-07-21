@@ -330,14 +330,14 @@
           "hu": "Egy csendes utcában lakom."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ is very near.",
           "answer": "station",
           "options": [
             "station",
             "bus",
             "train"
           ],
-          "hu": "(állomás / megálló)"
+          "hu": "Az állomás nagyon közel van."
         },
         {
           "text": "Which ___ goes to the centre?",
@@ -375,7 +375,7 @@
         },
         {
           "id": "lex_station",
-          "text": "This is a ___.",
+          "text": "The ___ is very near.",
           "answer": "station",
           "accepted": [
             "station",
@@ -389,7 +389,7 @@
             "train",
             "car"
           ],
-          "hu": "(állomás / megálló)"
+          "hu": "Az állomás nagyon közel van."
         },
         {
           "id": "lex_bus",

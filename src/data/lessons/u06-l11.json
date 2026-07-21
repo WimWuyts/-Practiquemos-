@@ -160,7 +160,7 @@
         },
         {
           "id": "lex_cloud",
-          "text": "This is a ___.",
+          "text": "A white ___ is above us.",
           "answer": "cloud",
           "accepted": [
             "cloud",
@@ -174,7 +174,7 @@
             "tree",
             "flower"
           ],
-          "hu": "(felhő)"
+          "hu": "Egy fehér felhő van felettünk."
         }
       ]
     },

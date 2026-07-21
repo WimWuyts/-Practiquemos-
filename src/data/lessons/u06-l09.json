@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I like ___.",
+          "text": "The days are long in ___.",
           "answer": "June",
           "options": [
             "June",
             "time",
             "hour"
           ],
-          "hu": "(június)"
+          "hu": "A napok hosszúak júniusban."
         },
         {
-          "text": "I like ___.",
+          "text": "I visit Kira in ___.",
           "answer": "July",
           "options": [
             "July",
             "time",
             "hour"
           ],
-          "hu": "(július)"
+          "hu": "Júliusban meglátogatom Kirát."
         },
         {
-          "text": "I like ___.",
+          "text": "It is very warm in ___.",
           "answer": "August",
           "options": [
             "August",
             "time",
             "hour"
           ],
-          "hu": "(augusztus)"
+          "hu": "Augusztusban nagyon meleg van."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_june",
-          "text": "I like ___.",
+          "text": "The days are long in ___.",
           "answer": "June",
           "accepted": [
             "June",
@@ -122,11 +122,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(június)"
+          "hu": "A napok hosszúak júniusban."
         },
         {
           "id": "lex_july",
-          "text": "I like ___.",
+          "text": "I visit Kira in ___.",
           "answer": "July",
           "accepted": [
             "July",
@@ -139,11 +139,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(július)"
+          "hu": "Júliusban meglátogatom Kirát."
         },
         {
           "id": "lex_august",
-          "text": "I like ___.",
+          "text": "It is very warm in ___.",
           "answer": "August",
           "accepted": [
             "August",
@@ -156,11 +156,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(augusztus)"
+          "hu": "Augusztusban nagyon meleg van."
         },
         {
           "id": "lex_september",
-          "text": "I like ___.",
+          "text": "My students come back in ___.",
           "answer": "September",
           "accepted": [
             "September",
@@ -173,7 +173,7 @@
             "hour",
             "minute"
           ],
-          "hu": "(szeptember)"
+          "hu": "A diákjaim szeptemberben visszajönnek."
         }
       ]
     },
@@ -193,16 +193,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I like June.",
-          "hu": "(június)"
+          "en": "The days are long in June.",
+          "hu": "A napok hosszúak júniusban."
         },
         {
-          "en": "I like July.",
-          "hu": "(július)"
+          "en": "I visit Kira in July.",
+          "hu": "Júliusban meglátogatom Kirát."
         },
         {
-          "en": "I like August.",
-          "hu": "(augusztus)"
+          "en": "It is very warm in August.",
+          "hu": "Augusztusban nagyon meleg van."
         }
       ]
     },

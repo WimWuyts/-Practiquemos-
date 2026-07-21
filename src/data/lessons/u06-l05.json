@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I have ___ friends.",
+          "text": "The lesson lasts ___ minutes.",
           "answer": "thirty",
           "options": [
             "thirty",
             "one",
             "two"
           ],
-          "hu": "(harminc)"
+          "hu": "Az óra harminc percig tart."
         },
         {
-          "text": "I have ___ friends.",
+          "text": "I know a ___ words.",
           "answer": "hundred",
           "options": [
             "hundred",
             "one",
             "two"
           ],
-          "hu": "(száz)"
+          "hu": "Száz szót tudok."
         },
         {
-          "text": "I have ___ friends.",
+          "text": "The number starts with ___.",
           "answer": "zero",
           "options": [
             "zero",
             "one",
             "two"
           ],
-          "hu": "(nulla)"
+          "hu": "A szám nullával kezdődik."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_thirty",
-          "text": "I have ___ friends.",
+          "text": "The lesson lasts ___ minutes.",
           "answer": "thirty",
           "accepted": [
             "thirty",
@@ -127,11 +127,11 @@
             "two",
             "three"
           ],
-          "hu": "(harminc)"
+          "hu": "Az óra harminc percig tart."
         },
         {
           "id": "lex_hundred",
-          "text": "I have ___ friends.",
+          "text": "I know a ___ words.",
           "answer": "hundred",
           "accepted": [
             "hundred",
@@ -144,11 +144,11 @@
             "two",
             "three"
           ],
-          "hu": "(száz)"
+          "hu": "Száz szót tudok."
         },
         {
           "id": "lex_zero",
-          "text": "I have ___ friends.",
+          "text": "The number starts with ___.",
           "answer": "zero",
           "accepted": [
             "zero",
@@ -161,11 +161,11 @@
             "two",
             "three"
           ],
-          "hu": "(nulla)"
+          "hu": "A szám nullával kezdődik."
         },
         {
           "id": "lex_thirteen",
-          "text": "I have ___ friends.",
+          "text": "Emma is ___ years old.",
           "answer": "thirteen",
           "accepted": [
             "thirteen",
@@ -178,7 +178,7 @@
             "two",
             "three"
           ],
-          "hu": "(tizenhárom)"
+          "hu": "Emma tizenhárom éves."
         }
       ]
     },

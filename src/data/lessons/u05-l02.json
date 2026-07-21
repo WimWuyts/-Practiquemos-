@@ -124,14 +124,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I eat an ___ every day.",
+          "text": "The ___ is fresh and sweet.",
           "answer": "apple",
           "options": [
             "apple",
             "food",
             "water"
           ],
-          "hu": "Minden nap eszem egy almát."
+          "hu": "Az alma friss és édes."
         },
         {
           "text": "I'd like the ___, please.",
@@ -161,7 +161,7 @@
       "items": [
         {
           "id": "lex_apple",
-          "text": "I eat an ___ every day.",
+          "text": "The ___ is fresh and sweet.",
           "answer": "apple",
           "accepted": [
             "apple",
@@ -175,7 +175,7 @@
             "water",
             "coffee"
           ],
-          "hu": "Minden nap eszem egy almát."
+          "hu": "Az alma friss és édes."
         },
         {
           "id": "lex_soup",

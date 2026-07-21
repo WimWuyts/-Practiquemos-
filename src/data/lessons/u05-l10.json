@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "What ___ do you want?",
           "answer": "size",
           "options": [
             "size",
             "shop",
             "price"
           ],
-          "hu": "(méret)"
+          "hu": "Milyen méretet szeretne?"
         },
         {
-          "text": "I ___ every day.",
+          "text": "Can I ___ your pen?",
           "answer": "borrow",
           "options": [
             "borrow",
             "buy",
             "pay"
           ],
-          "hu": "(kölcsönkérni)"
+          "hu": "Kölcsönkérhetem a tolladat?"
         },
         {
-          "text": "This is a ___.",
+          "text": "I drink a ___ of tea.",
           "answer": "cup",
           "options": [
             "cup",
             "food",
             "water"
           ],
-          "hu": "(csésze / bögre)"
+          "hu": "Iszom egy csésze teát."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_size",
-          "text": "This is a ___.",
+          "text": "What ___ do you want?",
           "answer": "size",
           "accepted": [
             "size",
@@ -123,11 +123,11 @@
             "price",
             "money"
           ],
-          "hu": "(méret)"
+          "hu": "Milyen méretet szeretne?"
         },
         {
           "id": "lex_borrow",
-          "text": "I ___ every day.",
+          "text": "Can I ___ your pen?",
           "answer": "borrow",
           "accepted": [
             "borrow",
@@ -142,11 +142,11 @@
             "pay",
             "sell"
           ],
-          "hu": "(kölcsönkérni)"
+          "hu": "Kölcsönkérhetem a tolladat?"
         },
         {
           "id": "lex_cup",
-          "text": "This is a ___.",
+          "text": "I drink a ___ of tea.",
           "answer": "cup",
           "accepted": [
             "cup",
@@ -160,11 +160,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(csésze / bögre)"
+          "hu": "Iszom egy csésze teát."
         },
         {
           "id": "lex_pot",
-          "text": "This is a ___.",
+          "text": "The soup is in the ___.",
           "answer": "pot",
           "accepted": [
             "pot",
@@ -178,7 +178,7 @@
             "water",
             "coffee"
           ],
-          "hu": "(fazék)"
+          "hu": "A leves a fazékban van."
         }
       ]
     },
@@ -198,16 +198,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a size.",
-          "hu": "(méret)"
+          "en": "What size do you want?",
+          "hu": "Milyen méretet szeretne?"
         },
         {
-          "en": "I borrow every day.",
-          "hu": "(kölcsönkérni)"
+          "en": "Can I borrow your pen?",
+          "hu": "Kölcsönkérhetem a tolladat?"
         },
         {
-          "en": "This is a cup.",
-          "hu": "(csésze / bögre)"
+          "en": "I drink a cup of tea.",
+          "hu": "Iszom egy csésze teát."
         }
       ]
     },

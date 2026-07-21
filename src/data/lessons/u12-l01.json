@@ -245,34 +245,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "We often use \"___\" in English.",
+          "text": "Yesterday I ___ at home.",
           "answer": "was",
           "options": [
             "was",
             "went",
             "saw"
           ],
-          "hu": "(voltam / volt)"
+          "hu": "Tegnap otthon voltam."
         },
         {
-          "text": "We often use \"___\" in English.",
+          "text": "Yesterday I ___ to Prague.",
           "answer": "went",
           "options": [
             "went",
             "was",
             "saw"
           ],
-          "hu": "(ment (megy múlt))"
+          "hu": "Tegnap Prágába mentem."
         },
         {
-          "text": "We often use \"___\" in English.",
+          "text": "Yesterday I ___ Kira.",
           "answer": "saw",
           "options": [
             "saw",
             "was",
             "went"
           ],
-          "hu": "(látott (lát múlt))"
+          "hu": "Tegnap láttam Kirát."
         }
       ]
     },
@@ -282,7 +282,7 @@
       "items": [
         {
           "id": "lex_was",
-          "text": "We often use \"___\" in English.",
+          "text": "Yesterday I ___ at home.",
           "answer": "was",
           "accepted": [
             "was",
@@ -296,11 +296,11 @@
             "saw",
             "visit"
           ],
-          "hu": "(voltam / volt)"
+          "hu": "Tegnap otthon voltam."
         },
         {
           "id": "lex_went",
-          "text": "We often use \"___\" in English.",
+          "text": "Yesterday I ___ to Prague.",
           "answer": "went",
           "accepted": [
             "went",
@@ -313,11 +313,11 @@
             "saw",
             "visit"
           ],
-          "hu": "(ment (megy múlt))"
+          "hu": "Tegnap Prágába mentem."
         },
         {
           "id": "lex_saw",
-          "text": "We often use \"___\" in English.",
+          "text": "Yesterday I ___ Kira.",
           "answer": "saw",
           "accepted": [
             "saw",
@@ -330,7 +330,7 @@
             "went",
             "visit"
           ],
-          "hu": "(látott (lát múlt))"
+          "hu": "Tegnap láttam Kirát."
         },
         {
           "id": "lex_visit",

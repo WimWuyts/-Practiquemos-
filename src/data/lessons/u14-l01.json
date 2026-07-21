@@ -277,7 +277,7 @@
         },
         {
           "id": "lex_check_in",
-          "text": "This is a ___.",
+          "text": "We go to the ___.",
           "answer": "check-in",
           "accepted": [
             "check-in",
@@ -290,7 +290,7 @@
             "flight",
             "gate"
           ],
-          "hu": "(check-in / becsekkolás)"
+          "hu": "A check-inhez megyünk."
         }
       ]
     },

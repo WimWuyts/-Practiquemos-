@@ -51,24 +51,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "I ___ my keys sometimes.",
           "answer": "drop",
           "options": [
             "drop",
             "work",
             "get up"
           ],
-          "hu": "(leejteni)"
+          "hu": "Néha leejtem a kulcsomat."
         },
         {
-          "text": "It is very ___.",
+          "text": "I feel ___ tonight.",
           "answer": "sleepy",
           "options": [
             "sleepy",
             "happy",
             "afraid"
           ],
-          "hu": "(álmos)"
+          "hu": "Ma este álmos vagyok."
         }
       ]
     },
@@ -78,7 +78,7 @@
       "items": [
         {
           "id": "lex_drop",
-          "text": "I ___ every day.",
+          "text": "I ___ my keys sometimes.",
           "answer": "drop",
           "accepted": [
             "drop",
@@ -93,11 +93,11 @@
             "get up",
             "wake up"
           ],
-          "hu": "(leejteni)"
+          "hu": "Néha leejtem a kulcsomat."
         },
         {
           "id": "lex_sleepy",
-          "text": "It is very ___.",
+          "text": "I feel ___ tonight.",
           "answer": "sleepy",
           "accepted": [
             "sleepy",
@@ -110,7 +110,7 @@
             "afraid",
             "nervous"
           ],
-          "hu": "(álmos)"
+          "hu": "Ma este álmos vagyok."
         }
       ]
     },

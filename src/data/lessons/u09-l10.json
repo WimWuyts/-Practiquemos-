@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "Spain is in the ___.",
           "answer": "south",
           "options": [
             "south",
             "street",
             "left"
           ],
-          "hu": "(dél)"
+          "hu": "Spanyolország délen van."
         },
         {
-          "text": "This is an ___.",
+          "text": "The sun rises in the ___.",
           "answer": "east",
           "options": [
             "east",
             "street",
             "left"
           ],
-          "hu": "(kelet)"
+          "hu": "A nap keleten kel fel."
         },
         {
-          "text": "This is a ___.",
+          "text": "Belgium is in the ___.",
           "answer": "west",
           "options": [
             "west",
             "street",
             "left"
           ],
-          "hu": "(nyugat)"
+          "hu": "Belgium nyugaton van."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_south",
-          "text": "This is a ___.",
+          "text": "Spain is in the ___.",
           "answer": "south",
           "accepted": [
             "south",
@@ -122,11 +122,11 @@
             "left",
             "right"
           ],
-          "hu": "(dél)"
+          "hu": "Spanyolország délen van."
         },
         {
           "id": "lex_east",
-          "text": "This is an ___.",
+          "text": "The sun rises in the ___.",
           "answer": "east",
           "accepted": [
             "east",
@@ -139,11 +139,11 @@
             "left",
             "right"
           ],
-          "hu": "(kelet)"
+          "hu": "A nap keleten kel fel."
         },
         {
           "id": "lex_west",
-          "text": "This is a ___.",
+          "text": "Belgium is in the ___.",
           "answer": "west",
           "accepted": [
             "west",
@@ -156,11 +156,11 @@
             "left",
             "right"
           ],
-          "hu": "(nyugat)"
+          "hu": "Belgium nyugaton van."
         },
         {
           "id": "lex_pull",
-          "text": "I ___ every day.",
+          "text": "I ___ the door open.",
           "answer": "pull",
           "accepted": [
             "pull",
@@ -175,7 +175,7 @@
             "get up",
             "wake up"
           ],
-          "hu": "(húzni)"
+          "hu": "Kihúzom az ajtót."
         }
       ]
     },
@@ -195,16 +195,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a south.",
-          "hu": "(dél)"
+          "en": "Spain is in the south.",
+          "hu": "Spanyolország délen van."
         },
         {
-          "en": "This is an east.",
-          "hu": "(kelet)"
+          "en": "The sun rises in the east.",
+          "hu": "A nap keleten kel fel."
         },
         {
-          "en": "This is a west.",
-          "hu": "(nyugat)"
+          "en": "Belgium is in the west.",
+          "hu": "Belgium nyugaton van."
         }
       ]
     },

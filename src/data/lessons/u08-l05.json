@@ -75,34 +75,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "Family is very ___.",
           "answer": "important",
           "options": [
             "important",
             "favourite",
             "interesting"
           ],
-          "hu": "(fontos)"
+          "hu": "A család nagyon fontos."
         },
         {
-          "text": "It is very ___.",
+          "text": "Prague is very ___.",
           "answer": "different",
           "options": [
             "different",
             "favourite",
             "interesting"
           ],
-          "hu": "(különböző / más)"
+          "hu": "Prága nagyon más."
         },
         {
-          "text": "It is very ___.",
+          "text": "We have the ___ idea.",
           "answer": "same",
           "options": [
             "same",
             "favourite",
             "interesting"
           ],
-          "hu": "(ugyanaz)"
+          "hu": "Ugyanaz az ötletünk."
         }
       ]
     },
@@ -112,7 +112,7 @@
       "items": [
         {
           "id": "lex_important",
-          "text": "It is very ___.",
+          "text": "Family is very ___.",
           "answer": "important",
           "accepted": [
             "important",
@@ -125,11 +125,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(fontos)"
+          "hu": "A család nagyon fontos."
         },
         {
           "id": "lex_different",
-          "text": "It is very ___.",
+          "text": "Prague is very ___.",
           "answer": "different",
           "accepted": [
             "different",
@@ -142,11 +142,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(különböző / más)"
+          "hu": "Prága nagyon más."
         },
         {
           "id": "lex_same",
-          "text": "It is very ___.",
+          "text": "We have the ___ idea.",
           "answer": "same",
           "accepted": [
             "same",
@@ -159,11 +159,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(ugyanaz)"
+          "hu": "Ugyanaz az ötletünk."
         },
         {
           "id": "lex_lovely",
-          "text": "It is very ___.",
+          "text": "The garden looks ___.",
           "answer": "lovely",
           "accepted": [
             "lovely",
@@ -176,7 +176,7 @@
             "interesting",
             "boring"
           ],
-          "hu": "(kedves / bájos)"
+          "hu": "A kert gyönyörűen néz ki."
         }
       ]
     },

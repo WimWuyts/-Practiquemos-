@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is an ___.",
+          "text": "I want an ___, please.",
           "answer": "orange",
           "options": [
             "orange",
             "food",
             "water"
           ],
-          "hu": "(narancs)"
+          "hu": "Kérek egy narancsot."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ is yellow and sweet.",
           "answer": "banana",
           "options": [
             "banana",
             "food",
             "water"
           ],
-          "hu": "(banán)"
+          "hu": "A banán sárga és édes."
         },
         {
-          "text": "This is a ___.",
+          "text": "I make a ___ for Ákos.",
           "answer": "sandwich",
           "options": [
             "sandwich",
             "food",
             "water"
           ],
-          "hu": "(szendvics)"
+          "hu": "Csinálok egy szendvicset Ákosnak."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_orange",
-          "text": "This is an ___.",
+          "text": "I want an ___, please.",
           "answer": "orange",
           "accepted": [
             "orange",
@@ -123,11 +123,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(narancs)"
+          "hu": "Kérek egy narancsot."
         },
         {
           "id": "lex_banana",
-          "text": "This is a ___.",
+          "text": "The ___ is yellow and sweet.",
           "answer": "banana",
           "accepted": [
             "banana",
@@ -141,11 +141,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(banán)"
+          "hu": "A banán sárga és édes."
         },
         {
           "id": "lex_sandwich",
-          "text": "This is a ___.",
+          "text": "I make a ___ for Ákos.",
           "answer": "sandwich",
           "accepted": [
             "sandwich",
@@ -159,7 +159,7 @@
             "water",
             "coffee"
           ],
-          "hu": "(szendvics)"
+          "hu": "Csinálok egy szendvicset Ákosnak."
         },
         {
           "id": "lex_juice",
@@ -196,16 +196,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is an orange.",
-          "hu": "(narancs)"
+          "en": "I want an orange, please.",
+          "hu": "Kérek egy narancsot."
         },
         {
-          "en": "This is a banana.",
-          "hu": "(banán)"
+          "en": "The banana is yellow and sweet.",
+          "hu": "A banán sárga és édes."
         },
         {
-          "en": "This is a sandwich.",
-          "hu": "(szendvics)"
+          "en": "I make a sandwich for Ákos.",
+          "hu": "Csinálok egy szendvicset Ákosnak."
         }
       ]
     },

@@ -70,34 +70,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "We ___ a lot together.",
           "answer": "laugh",
           "options": [
             "laugh",
             "feel",
             "smile"
           ],
-          "hu": "(nevetni)"
+          "hu": "Sokat nevetünk együtt."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ Rita to dinner.",
           "answer": "invite",
           "options": [
             "invite",
             "have",
             "celebrate"
           ],
-          "hu": "(meghívni)"
+          "hu": "Meghívom Ritát vacsorára."
         },
         {
-          "text": "It is very ___.",
+          "text": "I am very ___.",
           "answer": "lucky",
           "options": [
             "lucky",
             "happy",
             "afraid"
           ],
-          "hu": "(szerencsés)"
+          "hu": "Nagyon szerencsés vagyok."
         }
       ]
     },
@@ -107,7 +107,7 @@
       "items": [
         {
           "id": "lex_laugh",
-          "text": "I ___ every day.",
+          "text": "We ___ a lot together.",
           "answer": "laugh",
           "accepted": [
             "laugh",
@@ -122,11 +122,11 @@
             "smile",
             "worry"
           ],
-          "hu": "(nevetni)"
+          "hu": "Sokat nevetünk együtt."
         },
         {
           "id": "lex_invite",
-          "text": "I ___ every day.",
+          "text": "I ___ Rita to dinner.",
           "answer": "invite",
           "accepted": [
             "invite",
@@ -141,11 +141,11 @@
             "celebrate",
             "be"
           ],
-          "hu": "(meghívni)"
+          "hu": "Meghívom Ritát vacsorára."
         },
         {
           "id": "lex_lucky",
-          "text": "It is very ___.",
+          "text": "I am very ___.",
           "answer": "lucky",
           "accepted": [
             "lucky",
@@ -158,7 +158,7 @@
             "afraid",
             "nervous"
           ],
-          "hu": "(szerencsés)"
+          "hu": "Nagyon szerencsés vagyok."
         }
       ]
     },

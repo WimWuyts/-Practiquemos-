@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "Flying is very ___.",
           "answer": "safe",
           "options": [
             "safe",
             "happy",
             "afraid"
           ],
-          "hu": "(biztonságos)"
+          "hu": "A repülés nagyon biztonságos."
         },
         {
-          "text": "It is very ___.",
+          "text": "Are you ___?",
           "answer": "okay",
           "options": [
             "okay",
             "happy",
             "afraid"
           ],
-          "hu": "(rendben / oké)"
+          "hu": "Jól vagy?"
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ to Denmark tomorrow.",
           "answer": "fly",
           "options": [
             "fly",
             "land",
             "fasten"
           ],
-          "hu": "(repülni)"
+          "hu": "Holnap Dániába repülünk."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_safe",
-          "text": "It is very ___.",
+          "text": "Flying is very ___.",
           "answer": "safe",
           "accepted": [
             "safe",
@@ -127,11 +127,11 @@
             "afraid",
             "nervous"
           ],
-          "hu": "(biztonságos)"
+          "hu": "A repülés nagyon biztonságos."
         },
         {
           "id": "lex_okay",
-          "text": "It is very ___.",
+          "text": "Are you ___?",
           "answer": "okay",
           "accepted": [
             "okay",
@@ -144,11 +144,11 @@
             "afraid",
             "nervous"
           ],
-          "hu": "(rendben / oké)"
+          "hu": "Jól vagy?"
         },
         {
           "id": "lex_fly",
-          "text": "I ___ every day.",
+          "text": "We ___ to Denmark tomorrow.",
           "answer": "fly",
           "accepted": [
             "fly",
@@ -163,11 +163,11 @@
             "fasten",
             "be"
           ],
-          "hu": "(repülni)"
+          "hu": "Holnap Dániába repülünk."
         },
         {
           "id": "lex_feel",
-          "text": "I ___ every day.",
+          "text": "I ___ very happy today.",
           "answer": "feel",
           "accepted": [
             "feel",
@@ -182,7 +182,7 @@
             "laugh",
             "worry"
           ],
-          "hu": "(érezni)"
+          "hu": "Ma nagyon boldognak érzem magam."
         }
       ]
     },

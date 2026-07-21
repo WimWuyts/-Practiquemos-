@@ -64,34 +64,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I put a ___ in my tea.",
           "answer": "lemon",
           "options": [
             "lemon",
             "food",
             "water"
           ],
-          "hu": "(citrom)"
+          "hu": "Teszek egy citromot a teámba."
         },
         {
-          "text": "This is a ___.",
+          "text": "I eat a ___ with coffee.",
           "answer": "biscuit",
           "options": [
             "biscuit",
             "food",
             "water"
           ],
-          "hu": "(keksz)"
+          "hu": "Kekszet eszem a kávéhoz."
         },
         {
-          "text": "This is a ___.",
+          "text": "I like ___ in my tea.",
           "answer": "honey",
           "options": [
             "honey",
             "food",
             "water"
           ],
-          "hu": "(méz)"
+          "hu": "Szeretem a mézet a teámban."
         }
       ]
     },
@@ -101,7 +101,7 @@
       "items": [
         {
           "id": "lex_lemon",
-          "text": "This is a ___.",
+          "text": "I put a ___ in my tea.",
           "answer": "lemon",
           "accepted": [
             "lemon",
@@ -115,11 +115,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(citrom)"
+          "hu": "Teszek egy citromot a teámba."
         },
         {
           "id": "lex_biscuit",
-          "text": "This is a ___.",
+          "text": "I eat a ___ with coffee.",
           "answer": "biscuit",
           "accepted": [
             "biscuit",
@@ -133,11 +133,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(keksz)"
+          "hu": "Kekszet eszem a kávéhoz."
         },
         {
           "id": "lex_honey",
-          "text": "This is a ___.",
+          "text": "I like ___ in my tea.",
           "answer": "honey",
           "accepted": [
             "honey",
@@ -150,11 +150,11 @@
             "water",
             "coffee"
           ],
-          "hu": "(méz)"
+          "hu": "Szeretem a mézet a teámban."
         },
         {
           "id": "lex_sweet",
-          "text": "It is very ___.",
+          "text": "This cake is too ___.",
           "answer": "sweet",
           "accepted": [
             "sweet",
@@ -167,7 +167,7 @@
             "thirsty",
             "delicious"
           ],
-          "hu": "(édes)"
+          "hu": "Ez a sütemény túl édes."
         }
       ]
     },
@@ -187,16 +187,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a lemon.",
-          "hu": "(citrom)"
+          "en": "I put a lemon in my tea.",
+          "hu": "Teszek egy citromot a teámba."
         },
         {
-          "en": "This is a biscuit.",
-          "hu": "(keksz)"
+          "en": "I eat a biscuit with coffee.",
+          "hu": "Kekszet eszem a kávéhoz."
         },
         {
-          "en": "This is a honey.",
-          "hu": "(méz)"
+          "en": "I like honey in my tea.",
+          "hu": "Szeretem a mézet a teámban."
         }
       ]
     },

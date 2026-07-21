@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "My ___ is in Budapest.",
           "answer": "flat",
           "options": [
             "flat",
             "home",
             "house"
           ],
-          "hu": "(lakás)"
+          "hu": "A lakásom Budapesten van."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ milk in my coffee.",
           "answer": "put",
           "options": [
             "put",
             "work",
             "get up"
           ],
-          "hu": "(tenni)"
+          "hu": "Tejet teszek a kávémba."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ a letter today.",
           "answer": "get",
           "options": [
             "get",
             "work",
             "get up"
           ],
-          "hu": "(kapni / szerezni)"
+          "hu": "Ma kapok egy levelet."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_flat",
-          "text": "This is a ___.",
+          "text": "My ___ is in Budapest.",
           "answer": "flat",
           "accepted": [
             "flat",
@@ -123,11 +123,11 @@
             "house",
             "room"
           ],
-          "hu": "(lakás)"
+          "hu": "A lakásom Budapesten van."
         },
         {
           "id": "lex_put",
-          "text": "I ___ every day.",
+          "text": "I ___ milk in my coffee.",
           "answer": "put",
           "accepted": [
             "put",
@@ -141,11 +141,11 @@
             "get up",
             "wake up"
           ],
-          "hu": "(tenni)"
+          "hu": "Tejet teszek a kávémba."
         },
         {
           "id": "lex_get",
-          "text": "I ___ every day.",
+          "text": "I ___ a letter today.",
           "answer": "get",
           "accepted": [
             "get",
@@ -160,11 +160,11 @@
             "get up",
             "wake up"
           ],
-          "hu": "(kapni / szerezni)"
+          "hu": "Ma kapok egy levelet."
         },
         {
           "id": "lex_wash",
-          "text": "I ___ every day.",
+          "text": "I ___ the cups after coffee.",
           "answer": "wash",
           "accepted": [
             "wash",
@@ -179,7 +179,7 @@
             "get up",
             "wake up"
           ],
-          "hu": "(mosni / mosakodni)"
+          "hu": "Kávé után elmosom a csészéket."
         }
       ]
     },
@@ -199,16 +199,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "This is a flat.",
-          "hu": "(lakás)"
+          "en": "My flat is in Budapest.",
+          "hu": "A lakásom Budapesten van."
         },
         {
-          "en": "I put every day.",
-          "hu": "(tenni)"
+          "en": "I put milk in my coffee.",
+          "hu": "Tejet teszek a kávémba."
         },
         {
-          "en": "I get every day.",
-          "hu": "(kapni / szerezni)"
+          "en": "I get a letter today.",
+          "hu": "Ma kapok egy levelet."
         }
       ]
     },

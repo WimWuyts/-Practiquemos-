@@ -74,14 +74,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "The ___ is on the apple.",
           "answer": "price",
           "options": [
             "price",
             "shop",
             "money"
           ],
-          "hu": "(ár)"
+          "hu": "Az ár az almán van."
         },
         {
           "text": "I like ___.",
@@ -111,7 +111,7 @@
       "items": [
         {
           "id": "lex_price",
-          "text": "This is a ___.",
+          "text": "The ___ is on the apple.",
           "answer": "price",
           "accepted": [
             "price",
@@ -125,7 +125,7 @@
             "money",
             "euro"
           ],
-          "hu": "(ár)"
+          "hu": "Az ár az almán van."
         },
         {
           "id": "lex_money",

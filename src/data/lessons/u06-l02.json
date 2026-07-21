@@ -196,34 +196,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I visit Kira this ___.",
           "answer": "year",
           "options": [
             "year",
             "time",
             "hour"
           ],
-          "hu": "(év)"
+          "hu": "Idén meglátogatom Kirát."
         },
         {
-          "text": "I like ___.",
+          "text": "I teach on ___ morning.",
           "answer": "Monday",
           "options": [
             "Monday",
             "time",
             "hour"
           ],
-          "hu": "(hétfő)"
+          "hu": "Hétfő reggel tanítok."
         },
         {
-          "text": "I like ___.",
+          "text": "I have a lesson on ___.",
           "answer": "Tuesday",
           "options": [
             "Tuesday",
             "time",
             "hour"
           ],
-          "hu": "(kedd)"
+          "hu": "Kedden van egy órám."
         }
       ]
     },
@@ -233,7 +233,7 @@
       "items": [
         {
           "id": "lex_year",
-          "text": "This is a ___.",
+          "text": "I visit Kira this ___.",
           "answer": "year",
           "accepted": [
             "year",
@@ -247,11 +247,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(év)"
+          "hu": "Idén meglátogatom Kirát."
         },
         {
           "id": "lex_monday",
-          "text": "I like ___.",
+          "text": "I teach on ___ morning.",
           "answer": "Monday",
           "accepted": [
             "Monday",
@@ -264,11 +264,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(hétfő)"
+          "hu": "Hétfő reggel tanítok."
         },
         {
           "id": "lex_tuesday",
-          "text": "I like ___.",
+          "text": "I have a lesson on ___.",
           "answer": "Tuesday",
           "accepted": [
             "Tuesday",
@@ -281,11 +281,11 @@
             "hour",
             "minute"
           ],
-          "hu": "(kedd)"
+          "hu": "Kedden van egy órám."
         },
         {
           "id": "lex_wednesday",
-          "text": "I like ___.",
+          "text": "I meet Rita on ___.",
           "answer": "Wednesday",
           "accepted": [
             "Wednesday",
@@ -298,7 +298,7 @@
             "hour",
             "minute"
           ],
-          "hu": "(szerda)"
+          "hu": "Szerdán találkozom Ritával."
         }
       ]
     },

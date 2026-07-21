@@ -2,6 +2,10 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [1.9.1] — 2026-07 — Example sentences curated to Marta's life
+
+Follow-up to v1.9: the ~432 remaining grammar-safe-but-bland template sentences ("This is a table.", "It is very good.") were **curated to Marta's world** by a 6-writer pass (place & travel, food & shopping, opinions & feelings, hobbies & weather, routine & time, numbers & her life). Now **464 more words carry a real, life-anchored A1 sentence** — "We sit at the table.", "I visit Kira in July.", "Endika is an engineer.", "I hate flying.", "Endre can fix my laptop." Template fallbacks dropped from ~432 to effectively zero (the validator ratchet is now 12), with **0 broken-grammar examples** and **0 distractor collisions**. These sentences also feed the typed word-fill exercises, so the writing practice is now about her life throughout. (Hungarian flagged for a native-speaker review pass.)
+
 ## [1.9.0] — 2026-07 — Final inspection: 12-specialist audit acted on
 
 A 12-specialist inspection (pedagogy, English & Hungarian correctness, UX, visual, accessibility, audio, robustness, offline/perf, relevance, productive-skills, data/QA — see `docs/REVIEW_FINDINGS_AND_ACTIONS.md`) found what could still be better. Every actionable finding was fixed.

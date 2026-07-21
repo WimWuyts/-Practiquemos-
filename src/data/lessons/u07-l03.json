@@ -77,14 +77,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "___ me about Prague.",
           "answer": "tell",
           "options": [
             "tell",
             "repeat",
             "understand"
           ],
-          "hu": "(mondani (vkinek))"
+          "hu": "Mesélj Prágáról."
         },
         {
           "text": "How do you ___ this in English?",
@@ -97,14 +97,14 @@
           "hu": "Hogy mondják ezt angolul?"
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ a letter to Margó.",
           "answer": "send",
           "options": [
             "send",
             "call",
             "hear"
           ],
-          "hu": "(küldeni)"
+          "hu": "Küldök egy levelet Margónak."
         }
       ]
     },
@@ -114,22 +114,22 @@
       "items": [
         {
           "id": "lex_tell",
-          "text": "I ___ every day.",
-          "answer": "tell",
+          "text": "___ me about Prague.",
+          "answer": "Tell",
           "accepted": [
             "tell",
             "tell",
             "tells",
             "told",
-            "tell"
+            "Tell"
           ],
           "options": [
-            "tell",
+            "Tell",
             "repeat",
             "understand",
             "wait"
           ],
-          "hu": "(mondani (vkinek))"
+          "hu": "Mesélj Prágáról."
         },
         {
           "id": "lex_say",
@@ -152,7 +152,7 @@
         },
         {
           "id": "lex_send",
-          "text": "I ___ every day.",
+          "text": "I ___ a letter to Margó.",
           "answer": "send",
           "accepted": [
             "send",
@@ -167,11 +167,11 @@
             "hear",
             "see"
           ],
-          "hu": "(küldeni)"
+          "hu": "Küldök egy levelet Margónak."
         },
         {
           "id": "lex_wrong",
-          "text": "It is very ___.",
+          "text": "This answer is ___.",
           "answer": "wrong",
           "accepted": [
             "wrong",
@@ -184,7 +184,7 @@
             "other",
             "my"
           ],
-          "hu": "(rossz / helytelen)"
+          "hu": "Ez a válasz rossz."
         }
       ]
     },

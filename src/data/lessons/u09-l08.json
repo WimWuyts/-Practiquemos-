@@ -92,14 +92,14 @@
           "hu": "A bolt a másik oldalon van."
         },
         {
-          "text": "This is an ___.",
+          "text": "David works in an ___.",
           "answer": "office",
           "options": [
             "office",
             "street",
             "left"
           ],
-          "hu": "(iroda)"
+          "hu": "David egy irodában dolgozik."
         }
       ]
     },
@@ -145,7 +145,7 @@
         },
         {
           "id": "lex_office",
-          "text": "This is an ___.",
+          "text": "David works in an ___.",
           "answer": "office",
           "accepted": [
             "office",
@@ -159,11 +159,11 @@
             "left",
             "right"
           ],
-          "hu": "(iroda)"
+          "hu": "David egy irodában dolgozik."
         },
         {
           "id": "lex_building",
-          "text": "This is a ___.",
+          "text": "That ___ is very old.",
           "answer": "building",
           "accepted": [
             "building",
@@ -177,7 +177,7 @@
             "left",
             "right"
           ],
-          "hu": "(épület)"
+          "hu": "Az az épület nagyon régi."
         }
       ]
     },
@@ -205,8 +205,8 @@
           "hu": "A bolt a másik oldalon van."
         },
         {
-          "en": "This is an office.",
-          "hu": "(iroda)"
+          "en": "David works in an office.",
+          "hu": "David egy irodában dolgozik."
         }
       ]
     },

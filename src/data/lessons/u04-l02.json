@@ -138,14 +138,14 @@
           "hu": "Reggel kávét iszom."
         },
         {
-          "text": "I ___ every day.",
+          "text": "I ___ for eight hours.",
           "answer": "sleep",
           "options": [
             "sleep",
             "work",
             "get up"
           ],
-          "hu": "(aludni)"
+          "hu": "Nyolc órát alszom."
         },
         {
           "text": "I ___ to the market on Monday.",
@@ -184,7 +184,7 @@
         },
         {
           "id": "lex_sleep",
-          "text": "I ___ every day.",
+          "text": "I ___ for eight hours.",
           "answer": "sleep",
           "accepted": [
             "sleep",
@@ -199,7 +199,7 @@
             "get up",
             "wake up"
           ],
-          "hu": "(aludni)"
+          "hu": "Nyolc órát alszom."
         },
         {
           "id": "lex_go",

@@ -72,14 +72,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "The dog is very ___.",
           "answer": "dirty",
           "options": [
             "dirty",
             "my",
             "your"
           ],
-          "hu": "(piszkos)"
+          "hu": "A kutya nagyon piszkos."
         },
         {
           "text": "Let's go ___ for a walk.",
@@ -92,14 +92,14 @@
           "hu": "Menjünk ki sétálni."
         },
         {
-          "text": "___ — a useful word.",
+          "text": "I call Kira ___ weekend.",
           "answer": "every",
           "options": [
             "every",
             "some",
             "any"
           ],
-          "hu": "(minden)"
+          "hu": "Minden hétvégén hívom Kirát."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_dirty",
-          "text": "It is very ___.",
+          "text": "The dog is very ___.",
           "answer": "dirty",
           "accepted": [
             "dirty",
@@ -122,7 +122,7 @@
             "your",
             "retired"
           ],
-          "hu": "(piszkos)"
+          "hu": "A kutya nagyon piszkos."
         },
         {
           "id": "lex_out",
@@ -143,24 +143,24 @@
         },
         {
           "id": "lex_every",
-          "text": "___ — a useful word.",
-          "answer": "Every",
+          "text": "I call Kira ___ weekend.",
+          "answer": "every",
           "accepted": [
             "every",
             "every",
-            "Every"
+            "every"
           ],
           "options": [
-            "Every",
+            "every",
             "some",
             "any",
             "much"
           ],
-          "hu": "(minden)"
+          "hu": "Minden hétvégén hívom Kirát."
         },
         {
           "id": "lex_move",
-          "text": "I ___ every day.",
+          "text": "I ___ the chair now.",
           "answer": "move",
           "accepted": [
             "move",
@@ -175,7 +175,7 @@
             "get up",
             "wake up"
           ],
-          "hu": "(mozogni / költözni)"
+          "hu": "Most odébb teszem a széket."
         }
       ]
     },
@@ -195,16 +195,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very dirty.",
-          "hu": "(piszkos)"
+          "en": "The dog is very dirty.",
+          "hu": "A kutya nagyon piszkos."
         },
         {
           "en": "Let's go out for a walk.",
           "hu": "Menjünk ki sétálni."
         },
         {
-          "en": "Every — a useful word.",
-          "hu": "(minden)"
+          "en": "I call Kira every weekend.",
+          "hu": "Minden hétvégén hívom Kirát."
         }
       ]
     },

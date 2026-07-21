@@ -70,34 +70,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I have ___ friends.",
+          "text": "I teach ___ children today.",
           "answer": "seven",
           "options": [
             "seven",
             "one",
             "two"
           ],
-          "hu": "(hét (szám))"
+          "hu": "Ma hét gyereket tanítok."
         },
         {
-          "text": "I have ___ friends.",
+          "text": "We start at ___ o'clock.",
           "answer": "eight",
           "options": [
             "eight",
             "one",
             "two"
           ],
-          "hu": "(nyolc)"
+          "hu": "Nyolc órakor kezdünk."
         },
         {
-          "text": "I have ___ friends.",
+          "text": "The class finishes at ___.",
           "answer": "nine",
           "options": [
             "nine",
             "one",
             "two"
           ],
-          "hu": "(kilenc)"
+          "hu": "Az óra kilenckor ér véget."
         }
       ]
     },
@@ -107,7 +107,7 @@
       "items": [
         {
           "id": "lex_seven",
-          "text": "I have ___ friends.",
+          "text": "I teach ___ children today.",
           "answer": "seven",
           "accepted": [
             "seven",
@@ -120,11 +120,11 @@
             "two",
             "three"
           ],
-          "hu": "(hét (szám))"
+          "hu": "Ma hét gyereket tanítok."
         },
         {
           "id": "lex_eight",
-          "text": "I have ___ friends.",
+          "text": "We start at ___ o'clock.",
           "answer": "eight",
           "accepted": [
             "eight",
@@ -137,11 +137,11 @@
             "two",
             "three"
           ],
-          "hu": "(nyolc)"
+          "hu": "Nyolc órakor kezdünk."
         },
         {
           "id": "lex_nine",
-          "text": "I have ___ friends.",
+          "text": "The class finishes at ___.",
           "answer": "nine",
           "accepted": [
             "nine",
@@ -154,11 +154,11 @@
             "two",
             "three"
           ],
-          "hu": "(kilenc)"
+          "hu": "Az óra kilenckor ér véget."
         },
         {
           "id": "lex_ten",
-          "text": "I have ___ friends.",
+          "text": "The lesson starts at ___.",
           "answer": "ten",
           "accepted": [
             "ten",
@@ -171,7 +171,7 @@
             "two",
             "three"
           ],
-          "hu": "(tíz)"
+          "hu": "Az óra tízkor kezdődik."
         }
       ]
     },
@@ -191,16 +191,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I have seven friends.",
-          "hu": "(hét (szám))"
+          "en": "I teach seven children today.",
+          "hu": "Ma hét gyereket tanítok."
         },
         {
-          "en": "I have eight friends.",
-          "hu": "(nyolc)"
+          "en": "We start at eight o'clock.",
+          "hu": "Nyolc órakor kezdünk."
         },
         {
-          "en": "I have nine friends.",
-          "hu": "(kilenc)"
+          "en": "The class finishes at nine.",
+          "hu": "Az óra kilenckor ér véget."
         }
       ]
     },

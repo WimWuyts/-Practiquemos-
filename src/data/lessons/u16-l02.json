@@ -165,7 +165,7 @@
         },
         {
           "id": "lex_group",
-          "text": "This is a ___.",
+          "text": "I teach a small ___.",
           "answer": "group",
           "accepted": [
             "group",
@@ -179,7 +179,7 @@
             "thing",
             "part"
           ],
-          "hu": "(csoport)"
+          "hu": "Kis csoportot tanítok."
         }
       ]
     },

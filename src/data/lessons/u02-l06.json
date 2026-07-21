@@ -74,24 +74,24 @@
           "hu": "A nő a nővérem."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ reads very well.",
           "answer": "girl",
           "options": [
             "girl",
             "family",
             "mother"
           ],
-          "hu": "(lány)"
+          "hu": "A kislány nagyon jól olvas."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ asks a question.",
           "answer": "boy",
           "options": [
             "boy",
             "family",
             "mother"
           ],
-          "hu": "(fiú)"
+          "hu": "A fiú feltesz egy kérdést."
         }
       ]
     },
@@ -119,7 +119,7 @@
         },
         {
           "id": "lex_girl",
-          "text": "This is a ___.",
+          "text": "The ___ reads very well.",
           "answer": "girl",
           "accepted": [
             "girl",
@@ -133,11 +133,11 @@
             "mother",
             "father"
           ],
-          "hu": "(lány)"
+          "hu": "A kislány nagyon jól olvas."
         },
         {
           "id": "lex_boy",
-          "text": "This is a ___.",
+          "text": "The ___ asks a question.",
           "answer": "boy",
           "accepted": [
             "boy",
@@ -151,11 +151,11 @@
             "mother",
             "father"
           ],
-          "hu": "(fiú)"
+          "hu": "A fiú feltesz egy kérdést."
         },
         {
           "id": "lex_person",
-          "text": "This is a ___.",
+          "text": "She is a kind ___.",
           "answer": "person",
           "accepted": [
             "person",
@@ -169,7 +169,7 @@
             "mother",
             "father"
           ],
-          "hu": "(személy)"
+          "hu": "Ő egy kedves ember."
         }
       ]
     },
@@ -193,12 +193,12 @@
           "hu": "A nő a nővérem."
         },
         {
-          "en": "This is a girl.",
-          "hu": "(lány)"
+          "en": "The girl reads very well.",
+          "hu": "A kislány nagyon jól olvas."
         },
         {
-          "en": "This is a boy.",
-          "hu": "(fiú)"
+          "en": "The boy asks a question.",
+          "hu": "A fiú feltesz egy kérdést."
         }
       ]
     },

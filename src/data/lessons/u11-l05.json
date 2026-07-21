@@ -49,24 +49,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "___ me help you.",
           "answer": "let",
           "options": [
             "let",
             "repeat",
             "understand"
           ],
-          "hu": "(hagyni / engedni)"
+          "hu": "Hadd segítsek."
         },
         {
-          "text": "I ___ every day.",
+          "text": "Endre can ___ my laptop.",
           "answer": "fix",
           "options": [
             "fix",
             "turn on",
             "turn off"
           ],
-          "hu": "(megjavítani)"
+          "hu": "Endre meg tudja javítani a laptopomat."
         }
       ]
     },
@@ -76,25 +76,25 @@
       "items": [
         {
           "id": "lex_let",
-          "text": "I ___ every day.",
-          "answer": "let",
+          "text": "___ me help you.",
+          "answer": "Let",
           "accepted": [
             "let",
             "let",
             "lets",
-            "let"
+            "Let"
           ],
           "options": [
-            "let",
+            "Let",
             "repeat",
             "understand",
             "wait"
           ],
-          "hu": "(hagyni / engedni)"
+          "hu": "Hadd segítsek."
         },
         {
           "id": "lex_fix",
-          "text": "I ___ every day.",
+          "text": "Endre can ___ my laptop.",
           "answer": "fix",
           "accepted": [
             "fix",
@@ -109,7 +109,7 @@
             "turn off",
             "click"
           ],
-          "hu": "(megjavítani)"
+          "hu": "Endre meg tudja javítani a laptopomat."
         }
       ]
     },

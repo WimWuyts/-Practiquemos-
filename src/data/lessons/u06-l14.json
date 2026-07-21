@@ -44,24 +44,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "The sun is very ___.",
           "answer": "bright",
           "options": [
             "bright",
             "sunny",
             "rainy"
           ],
-          "hu": "(világos / ragyogó)"
+          "hu": "A nap nagyon fényes."
         },
         {
-          "text": "It is very ___.",
+          "text": "The lake is very ___.",
           "answer": "deep",
           "options": [
             "deep",
             "sunny",
             "rainy"
           ],
-          "hu": "(mély)"
+          "hu": "A tó nagyon mély."
         }
       ]
     },
@@ -71,7 +71,7 @@
       "items": [
         {
           "id": "lex_bright",
-          "text": "It is very ___.",
+          "text": "The sun is very ___.",
           "answer": "bright",
           "accepted": [
             "bright",
@@ -84,11 +84,11 @@
             "rainy",
             "cold"
           ],
-          "hu": "(világos / ragyogó)"
+          "hu": "A nap nagyon fényes."
         },
         {
           "id": "lex_deep",
-          "text": "It is very ___.",
+          "text": "The lake is very ___.",
           "answer": "deep",
           "accepted": [
             "deep",
@@ -101,7 +101,7 @@
             "rainy",
             "cold"
           ],
-          "hu": "(mély)"
+          "hu": "A tó nagyon mély."
         }
       ]
     },
@@ -118,12 +118,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very bright.",
-          "hu": "(világos / ragyogó)"
+          "en": "The sun is very bright.",
+          "hu": "A nap nagyon fényes."
         },
         {
-          "en": "It is very deep.",
-          "hu": "(mély)"
+          "en": "The lake is very deep.",
+          "hu": "A tó nagyon mély."
         }
       ]
     },

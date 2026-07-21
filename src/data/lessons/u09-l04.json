@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I worked at a ___.",
           "answer": "school",
           "options": [
             "school",
             "street",
             "left"
           ],
-          "hu": "(iskola)"
+          "hu": "Egy iskolában dolgoztam."
         },
         {
-          "text": "This is a ___.",
+          "text": "I buy fruit at the ___.",
           "answer": "market",
           "options": [
             "market",
             "street",
             "left"
           ],
-          "hu": "(piac)"
+          "hu": "A piacon veszek gyümölcsöt."
         },
         {
-          "text": "This is a ___.",
+          "text": "The ___ is very near.",
           "answer": "supermarket",
           "options": [
             "supermarket",
             "street",
             "left"
           ],
-          "hu": "(szupermarket)"
+          "hu": "A szupermarket nagyon közel van."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_school",
-          "text": "This is a ___.",
+          "text": "I worked at a ___.",
           "answer": "school",
           "accepted": [
             "school",
@@ -128,11 +128,11 @@
             "left",
             "right"
           ],
-          "hu": "(iskola)"
+          "hu": "Egy iskolában dolgoztam."
         },
         {
           "id": "lex_market",
-          "text": "This is a ___.",
+          "text": "I buy fruit at the ___.",
           "answer": "market",
           "accepted": [
             "market",
@@ -146,11 +146,11 @@
             "left",
             "right"
           ],
-          "hu": "(piac)"
+          "hu": "A piacon veszek gyümölcsöt."
         },
         {
           "id": "lex_supermarket",
-          "text": "This is a ___.",
+          "text": "The ___ is very near.",
           "answer": "supermarket",
           "accepted": [
             "supermarket",
@@ -164,11 +164,11 @@
             "left",
             "right"
           ],
-          "hu": "(szupermarket)"
+          "hu": "A szupermarket nagyon közel van."
         },
         {
           "id": "lex_cinema",
-          "text": "This is a ___.",
+          "text": "We go to the ___.",
           "answer": "cinema",
           "accepted": [
             "cinema",
@@ -182,7 +182,7 @@
             "left",
             "right"
           ],
-          "hu": "(mozi)"
+          "hu": "Moziba megyünk."
         }
       ]
     },

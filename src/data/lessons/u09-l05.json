@@ -83,34 +83,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "We live in the ___.",
           "answer": "centre",
           "options": [
             "centre",
             "street",
             "left"
           ],
-          "hu": "(központ)"
+          "hu": "A központban lakunk."
         },
         {
-          "text": "This is a ___.",
+          "text": "This is a nice ___.",
           "answer": "place",
           "options": [
             "place",
             "street",
             "left"
           ],
-          "hu": "(hely)"
+          "hu": "Ez egy szép hely."
         },
         {
-          "text": "This is a ___.",
+          "text": "The shop is on the ___.",
           "answer": "corner",
           "options": [
             "corner",
             "street",
             "left"
           ],
-          "hu": "(sarok)"
+          "hu": "A bolt a sarkon van."
         }
       ]
     },
@@ -120,7 +120,7 @@
       "items": [
         {
           "id": "lex_centre",
-          "text": "This is a ___.",
+          "text": "We live in the ___.",
           "answer": "centre",
           "accepted": [
             "centre",
@@ -134,11 +134,11 @@
             "left",
             "right"
           ],
-          "hu": "(központ)"
+          "hu": "A központban lakunk."
         },
         {
           "id": "lex_place",
-          "text": "This is a ___.",
+          "text": "This is a nice ___.",
           "answer": "place",
           "accepted": [
             "place",
@@ -152,11 +152,11 @@
             "left",
             "right"
           ],
-          "hu": "(hely)"
+          "hu": "Ez egy szép hely."
         },
         {
           "id": "lex_corner",
-          "text": "This is a ___.",
+          "text": "The shop is on the ___.",
           "answer": "corner",
           "accepted": [
             "corner",
@@ -170,11 +170,11 @@
             "left",
             "right"
           ],
-          "hu": "(sarok)"
+          "hu": "A bolt a sarkon van."
         },
         {
           "id": "lex_open",
-          "text": "I ___ every day.",
+          "text": "I ___ the window now.",
           "answer": "open",
           "accepted": [
             "open",
@@ -189,7 +189,7 @@
             "get up",
             "wake up"
           ],
-          "hu": "(kinyitni)"
+          "hu": "Most kinyitom az ablakot."
         }
       ]
     },

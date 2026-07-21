@@ -44,24 +44,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I speak ___.",
+          "text": "The children are playing ___.",
           "answer": "outside",
           "options": [
             "outside",
             "inside",
             "upstairs"
           ],
-          "hu": "(kint)"
+          "hu": "A gyerekek kint játszanak."
         },
         {
-          "text": "I speak ___.",
+          "text": "It is warm ___ today.",
           "answer": "inside",
           "options": [
             "inside",
             "outside",
             "upstairs"
           ],
-          "hu": "(bent)"
+          "hu": "Ma bent meleg van."
         }
       ]
     },
@@ -71,7 +71,7 @@
       "items": [
         {
           "id": "lex_outside",
-          "text": "I speak ___.",
+          "text": "The children are playing ___.",
           "answer": "outside",
           "accepted": [
             "outside",
@@ -84,11 +84,11 @@
             "upstairs",
             "downstairs"
           ],
-          "hu": "(kint)"
+          "hu": "A gyerekek kint játszanak."
         },
         {
           "id": "lex_inside",
-          "text": "I speak ___.",
+          "text": "It is warm ___ today.",
           "answer": "inside",
           "accepted": [
             "inside",
@@ -101,7 +101,7 @@
             "upstairs",
             "downstairs"
           ],
-          "hu": "(bent)"
+          "hu": "Ma bent meleg van."
         }
       ]
     },
@@ -118,12 +118,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "I speak outside.",
-          "hu": "(kint)"
+          "en": "The children are playing outside.",
+          "hu": "A gyerekek kint játszanak."
         },
         {
-          "en": "I speak inside.",
-          "hu": "(bent)"
+          "en": "It is warm inside today.",
+          "hu": "Ma bent meleg van."
         }
       ]
     },

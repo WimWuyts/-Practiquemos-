@@ -77,14 +77,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "There is a small ___.",
           "answer": "problem",
           "options": [
             "problem",
             "restaurant",
             "menu"
           ],
-          "hu": "(probléma / gond)"
+          "hu": "Van egy kis probléma."
         },
         {
           "text": "___.",
@@ -97,14 +97,14 @@
           "hu": "(elnézést)"
         },
         {
-          "text": "This is a ___.",
+          "text": "I see the ___ tomorrow.",
           "answer": "doctor",
           "options": [
             "doctor",
             "nurse",
             "hospital"
           ],
-          "hu": "(orvos)"
+          "hu": "Holnap megyek az orvoshoz."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_problem",
-          "text": "This is a ___.",
+          "text": "There is a small ___.",
           "answer": "problem",
           "accepted": [
             "problem",
@@ -128,7 +128,7 @@
             "menu",
             "table"
           ],
-          "hu": "(probléma / gond)"
+          "hu": "Van egy kis probléma."
         },
         {
           "id": "lex_excuse_me",
@@ -149,7 +149,7 @@
         },
         {
           "id": "lex_doctor",
-          "text": "This is a ___.",
+          "text": "I see the ___ tomorrow.",
           "answer": "doctor",
           "accepted": [
             "doctor",
@@ -163,11 +163,11 @@
             "hospital",
             "medicine"
           ],
-          "hu": "(orvos)"
+          "hu": "Holnap megyek az orvoshoz."
         },
         {
           "id": "lex_nurse",
-          "text": "This is a ___.",
+          "text": "The ___ is very kind.",
           "answer": "nurse",
           "accepted": [
             "nurse",
@@ -181,7 +181,7 @@
             "hospital",
             "medicine"
           ],
-          "hu": "(nővér (ápoló))"
+          "hu": "A nővér nagyon kedves."
         }
       ]
     },

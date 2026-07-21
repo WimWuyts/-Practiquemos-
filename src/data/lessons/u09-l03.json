@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is the ___ one.",
+          "text": "This is the ___ lesson.",
           "answer": "second",
           "options": [
             "second",
             "third",
             "my"
           ],
-          "hu": "(második)"
+          "hu": "Ez a második óra."
         },
         {
-          "text": "It is the ___ one.",
+          "text": "It is my ___ visit.",
           "answer": "third",
           "options": [
             "third",
             "second",
             "my"
           ],
-          "hu": "(harmadik)"
+          "hu": "Ez a harmadik látogatásom."
         },
         {
-          "text": "This is a ___.",
+          "text": "Our ___ is very quiet.",
           "answer": "town",
           "options": [
             "town",
             "street",
             "left"
           ],
-          "hu": "(kisváros)"
+          "hu": "A városunk nagyon csendes."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_second",
-          "text": "It is the ___ one.",
+          "text": "This is the ___ lesson.",
           "answer": "second",
           "accepted": [
             "second",
@@ -127,11 +127,11 @@
             "my",
             "your"
           ],
-          "hu": "(második)"
+          "hu": "Ez a második óra."
         },
         {
           "id": "lex_third",
-          "text": "It is the ___ one.",
+          "text": "It is my ___ visit.",
           "answer": "third",
           "accepted": [
             "third",
@@ -144,11 +144,11 @@
             "my",
             "your"
           ],
-          "hu": "(harmadik)"
+          "hu": "Ez a harmadik látogatásom."
         },
         {
           "id": "lex_town",
-          "text": "This is a ___.",
+          "text": "Our ___ is very quiet.",
           "answer": "town",
           "accepted": [
             "town",
@@ -162,11 +162,11 @@
             "left",
             "right"
           ],
-          "hu": "(kisváros)"
+          "hu": "A városunk nagyon csendes."
         },
         {
           "id": "lex_village",
-          "text": "This is a ___.",
+          "text": "Agárd is a small ___.",
           "answer": "village",
           "accepted": [
             "village",
@@ -180,7 +180,7 @@
             "left",
             "right"
           ],
-          "hu": "(falu)"
+          "hu": "Agárd egy kis falu."
         }
       ]
     },

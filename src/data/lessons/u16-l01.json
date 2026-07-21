@@ -212,7 +212,7 @@
         },
         {
           "id": "lex_together",
-          "text": "I speak ___.",
+          "text": "We learn English ___.",
           "answer": "together",
           "accepted": [
             "together",
@@ -225,7 +225,7 @@
             "yes",
             "no"
           ],
-          "hu": "(együtt)"
+          "hu": "Együtt tanulunk angolul."
         }
       ]
     },

@@ -78,24 +78,24 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "The room is very ___.",
           "answer": "dark",
           "options": [
             "dark",
             "favourite",
             "interesting"
           ],
-          "hu": "(sötét)"
+          "hu": "A szoba nagyon sötét."
         },
         {
-          "text": "It is very ___.",
+          "text": "The kitchen is nice and ___.",
           "answer": "light",
           "options": [
             "light",
             "favourite",
             "interesting"
           ],
-          "hu": "(világos / könnyű)"
+          "hu": "A konyha szép világos."
         },
         {
           "text": "___ we can meet on Sunday.",
@@ -115,7 +115,7 @@
       "items": [
         {
           "id": "lex_dark",
-          "text": "It is very ___.",
+          "text": "The room is very ___.",
           "answer": "dark",
           "accepted": [
             "dark",
@@ -128,11 +128,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(sötét)"
+          "hu": "A szoba nagyon sötét."
         },
         {
           "id": "lex_light",
-          "text": "It is very ___.",
+          "text": "The kitchen is nice and ___.",
           "answer": "light",
           "accepted": [
             "light",
@@ -145,7 +145,7 @@
             "interesting",
             "boring"
           ],
-          "hu": "(világos / könnyű)"
+          "hu": "A konyha szép világos."
         },
         {
           "id": "lex_maybe",
@@ -166,7 +166,7 @@
         },
         {
           "id": "lex_sure",
-          "text": "I speak ___.",
+          "text": "I am not ___.",
           "answer": "sure",
           "accepted": [
             "sure",
@@ -179,7 +179,7 @@
             "how",
             "very"
           ],
-          "hu": "(persze)"
+          "hu": "Nem vagyok biztos benne."
         }
       ]
     },
@@ -199,12 +199,12 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very dark.",
-          "hu": "(sötét)"
+          "en": "The room is very dark.",
+          "hu": "A szoba nagyon sötét."
         },
         {
-          "en": "It is very light.",
-          "hu": "(világos / könnyű)"
+          "en": "The kitchen is nice and light.",
+          "hu": "A konyha szép világos."
         },
         {
           "en": "Maybe we can meet on Sunday.",

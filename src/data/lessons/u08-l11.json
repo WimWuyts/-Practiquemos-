@@ -35,7 +35,7 @@
       "items": [
         {
           "id": "lex_modern",
-          "text": "It is very ___.",
+          "text": "The kitchen is very ___.",
           "answer": "modern",
           "accepted": [
             "modern",
@@ -48,7 +48,7 @@
             "interesting",
             "boring"
           ],
-          "hu": "(modern)"
+          "hu": "A konyha nagyon modern."
         }
       ]
     },
@@ -64,8 +64,8 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very modern.",
-          "hu": "(modern)"
+          "en": "The kitchen is very modern.",
+          "hu": "A konyha nagyon modern."
         }
       ]
     },

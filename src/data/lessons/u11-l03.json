@@ -93,24 +93,24 @@
           "hu": "Magyart tanítok online."
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ at nine o'clock.",
           "answer": "begin",
           "options": [
             "begin",
             "start",
             "write"
           ],
-          "hu": "(elkezdeni)"
+          "hu": "Kilenc órakor kezdünk."
         },
         {
-          "text": "I ___ every day.",
+          "text": "We ___ the lesson early.",
           "answer": "finish",
           "options": [
             "finish",
             "start",
             "write"
           ],
-          "hu": "(befejezni)"
+          "hu": "Korán befejezzük az órát."
         }
       ]
     },
@@ -139,7 +139,7 @@
         },
         {
           "id": "lex_begin",
-          "text": "I ___ every day.",
+          "text": "We ___ at nine o'clock.",
           "answer": "begin",
           "accepted": [
             "begin",
@@ -154,11 +154,11 @@
             "write",
             "learn"
           ],
-          "hu": "(elkezdeni)"
+          "hu": "Kilenc órakor kezdünk."
         },
         {
           "id": "lex_finish",
-          "text": "I ___ every day.",
+          "text": "We ___ the lesson early.",
           "answer": "finish",
           "accepted": [
             "finish",
@@ -173,11 +173,11 @@
             "write",
             "learn"
           ],
-          "hu": "(befejezni)"
+          "hu": "Korán befejezzük az órát."
         },
         {
           "id": "lex_email",
-          "text": "This is an ___.",
+          "text": "I send David an ___.",
           "answer": "email",
           "accepted": [
             "email",
@@ -191,7 +191,7 @@
             "microphone",
             "screen"
           ],
-          "hu": "(e-mail)"
+          "hu": "Küldök Davidnek egy e-mailt."
         }
       ]
     },

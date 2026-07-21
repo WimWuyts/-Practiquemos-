@@ -116,14 +116,14 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "I ___ every day.",
+          "text": "Panna and Emma ___ outside.",
           "answer": "play",
           "options": [
             "play",
             "read",
             "swim"
           ],
-          "hu": "(játszani)"
+          "hu": "Panna és Emma kint játszanak."
         },
         {
           "text": "I ___ my family.",
@@ -153,7 +153,7 @@
       "items": [
         {
           "id": "lex_play",
-          "text": "I ___ every day.",
+          "text": "Panna and Emma ___ outside.",
           "answer": "play",
           "accepted": [
             "play",
@@ -168,7 +168,7 @@
             "swim",
             "dance"
           ],
-          "hu": "(játszani)"
+          "hu": "Panna és Emma kint játszanak."
         },
         {
           "id": "lex_love",

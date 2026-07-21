@@ -216,7 +216,7 @@
         },
         {
           "id": "lex_wife",
-          "text": "This is a ___.",
+          "text": "Marlene is David's ___.",
           "answer": "wife",
           "accepted": [
             "wife",
@@ -230,7 +230,7 @@
             "mother",
             "father"
           ],
-          "hu": "(feleség)"
+          "hu": "Marlene David felesége."
         }
       ]
     },

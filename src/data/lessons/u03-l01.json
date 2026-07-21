@@ -174,14 +174,14 @@
           "hu": "Magyar vagyok."
         },
         {
-          "text": "I like ___.",
+          "text": "We fly to ___ tomorrow.",
           "answer": "England",
           "options": [
             "England",
             "Hungary",
             "Spain"
           ],
-          "hu": "(Anglia)"
+          "hu": "Holnap Angliába repülünk."
         }
       ]
     },
@@ -225,7 +225,7 @@
         },
         {
           "id": "lex_england",
-          "text": "I like ___.",
+          "text": "We fly to ___ tomorrow.",
           "answer": "England",
           "accepted": [
             "England",
@@ -238,7 +238,7 @@
             "Spain",
             "Germany"
           ],
-          "hu": "(Anglia)"
+          "hu": "Holnap Angliába repülünk."
         },
         {
           "id": "lex_english",

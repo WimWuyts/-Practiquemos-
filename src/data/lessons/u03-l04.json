@@ -82,24 +82,24 @@
           "hu": "Késő van, úgyhogy hazamegyek."
         },
         {
-          "text": "It is ___ nice.",
+          "text": "I am ___ happy.",
           "answer": "very",
           "options": [
             "very",
             "where",
             "how"
           ],
-          "hu": "Nagyon szép."
+          "hu": "Nagyon boldog vagyok."
         },
         {
-          "text": "This is a ___.",
+          "text": "Teaching is a lovely ___.",
           "answer": "job",
           "options": [
             "job",
             "name",
             "country"
           ],
-          "hu": "(állás / munka)"
+          "hu": "A tanítás gyönyörű munka."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_very",
-          "text": "It is ___ nice.",
+          "text": "I am ___ happy.",
           "answer": "very",
           "accepted": [
             "very",
@@ -122,11 +122,11 @@
             "how",
             "slowly"
           ],
-          "hu": "Nagyon szép."
+          "hu": "Nagyon boldog vagyok."
         },
         {
           "id": "lex_job",
-          "text": "This is a ___.",
+          "text": "Teaching is a lovely ___.",
           "answer": "job",
           "accepted": [
             "job",
@@ -140,11 +140,11 @@
             "country",
             "city"
           ],
-          "hu": "(állás / munka)"
+          "hu": "A tanítás gyönyörű munka."
         },
         {
           "id": "lex_driver",
-          "text": "This is a ___.",
+          "text": "David is a bus ___.",
           "answer": "driver",
           "accepted": [
             "driver",
@@ -158,11 +158,11 @@
             "country",
             "city"
           ],
-          "hu": "(sofőr)"
+          "hu": "David buszsofőr."
         },
         {
           "id": "lex_engineer",
-          "text": "This is an ___.",
+          "text": "Endika is an ___.",
           "answer": "engineer",
           "accepted": [
             "engineer",
@@ -176,7 +176,7 @@
             "country",
             "city"
           ],
-          "hu": "(mérnök)"
+          "hu": "Endika mérnök."
         }
       ]
     },
@@ -200,12 +200,12 @@
           "hu": "Késő van, úgyhogy hazamegyek."
         },
         {
-          "en": "It is very nice.",
-          "hu": "Nagyon szép."
+          "en": "I am very happy.",
+          "hu": "Nagyon boldog vagyok."
         },
         {
-          "en": "This is a job.",
-          "hu": "(állás / munka)"
+          "en": "Teaching is a lovely job.",
+          "hu": "A tanítás gyönyörű munka."
         }
       ]
     },

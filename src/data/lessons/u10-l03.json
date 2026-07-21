@@ -77,34 +77,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "This is a ___.",
+          "text": "I have a ___ in my back.",
           "answer": "pain",
           "options": [
             "pain",
             "doctor",
             "nurse"
           ],
-          "hu": "(fájdalom)"
+          "hu": "Fáj a hátam."
         },
         {
-          "text": "It is very ___.",
+          "text": "I feel ___ today.",
           "answer": "better",
           "options": [
             "better",
             "ill",
             "sick"
           ],
-          "hu": "(jobban / jobb)"
+          "hu": "Ma jobban vagyok."
         },
         {
-          "text": "This is a ___.",
+          "text": "I need a little ___.",
           "answer": "rest",
           "options": [
             "rest",
             "doctor",
             "nurse"
           ],
-          "hu": "(pihenés / pihenni)"
+          "hu": "Szükségem van egy kis pihenésre."
         }
       ]
     },
@@ -114,7 +114,7 @@
       "items": [
         {
           "id": "lex_pain",
-          "text": "This is a ___.",
+          "text": "I have a ___ in my back.",
           "answer": "pain",
           "accepted": [
             "pain",
@@ -127,11 +127,11 @@
             "nurse",
             "hospital"
           ],
-          "hu": "(fájdalom)"
+          "hu": "Fáj a hátam."
         },
         {
           "id": "lex_better",
-          "text": "It is very ___.",
+          "text": "I feel ___ today.",
           "answer": "better",
           "accepted": [
             "better",
@@ -144,11 +144,11 @@
             "sick",
             "my"
           ],
-          "hu": "(jobban / jobb)"
+          "hu": "Ma jobban vagyok."
         },
         {
           "id": "lex_rest",
-          "text": "This is a ___.",
+          "text": "I need a little ___.",
           "answer": "rest",
           "accepted": [
             "rest",
@@ -163,11 +163,11 @@
             "nurse",
             "hospital"
           ],
-          "hu": "(pihenés / pihenni)"
+          "hu": "Szükségem van egy kis pihenésre."
         },
         {
           "id": "lex_hurt",
-          "text": "I ___ every day.",
+          "text": "My feet ___ after walking.",
           "answer": "hurt",
           "accepted": [
             "hurt",
@@ -181,7 +181,7 @@
             "have",
             "speak"
           ],
-          "hu": "(fájni)"
+          "hu": "Fáj a lábam a séta után."
         }
       ]
     },

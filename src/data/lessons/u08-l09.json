@@ -72,34 +72,34 @@
       "type": "gapfill",
       "items": [
         {
-          "text": "It is very ___.",
+          "text": "This is the ___ day.",
           "answer": "best",
           "options": [
             "best",
             "favourite",
             "interesting"
           ],
-          "hu": "(legjobb)"
+          "hu": "Ez a legjobb nap."
         },
         {
-          "text": "It is very ___.",
+          "text": "The weather is ___ today.",
           "answer": "perfect",
           "options": [
             "perfect",
             "favourite",
             "interesting"
           ],
-          "hu": "(tökéletes)"
+          "hu": "Ma tökéletes az idő."
         },
         {
-          "text": "It is very ___.",
+          "text": "The film was ___.",
           "answer": "terrible",
           "options": [
             "terrible",
             "favourite",
             "interesting"
           ],
-          "hu": "(szörnyű)"
+          "hu": "A film szörnyű volt."
         }
       ]
     },
@@ -109,7 +109,7 @@
       "items": [
         {
           "id": "lex_best",
-          "text": "It is very ___.",
+          "text": "This is the ___ day.",
           "answer": "best",
           "accepted": [
             "best",
@@ -122,11 +122,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(legjobb)"
+          "hu": "Ez a legjobb nap."
         },
         {
           "id": "lex_perfect",
-          "text": "It is very ___.",
+          "text": "The weather is ___ today.",
           "answer": "perfect",
           "accepted": [
             "perfect",
@@ -139,11 +139,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(tökéletes)"
+          "hu": "Ma tökéletes az idő."
         },
         {
           "id": "lex_terrible",
-          "text": "It is very ___.",
+          "text": "The film was ___.",
           "answer": "terrible",
           "accepted": [
             "terrible",
@@ -156,11 +156,11 @@
             "interesting",
             "boring"
           ],
-          "hu": "(szörnyű)"
+          "hu": "A film szörnyű volt."
         },
         {
           "id": "lex_quite",
-          "text": "I speak ___.",
+          "text": "The book is ___ good.",
           "answer": "quite",
           "accepted": [
             "quite",
@@ -173,7 +173,7 @@
             "please",
             "yes"
           ],
-          "hu": "(elég(gé))"
+          "hu": "A könyv elég jó."
         }
       ]
     },
@@ -193,16 +193,16 @@
       "type": "say-it",
       "phrases": [
         {
-          "en": "It is very best.",
-          "hu": "(legjobb)"
+          "en": "This is the best day.",
+          "hu": "Ez a legjobb nap."
         },
         {
-          "en": "It is very perfect.",
-          "hu": "(tökéletes)"
+          "en": "The weather is perfect today.",
+          "hu": "Ma tökéletes az idő."
         },
         {
-          "en": "It is very terrible.",
-          "hu": "(szörnyű)"
+          "en": "The film was terrible.",
+          "hu": "A film szörnyű volt."
         }
       ]
     },

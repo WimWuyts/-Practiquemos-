@@ -93,24 +93,24 @@
           "hu": "Szerintem gyönyörű."
         },
         {
-          "text": "It is very ___.",
+          "text": "The apple is ___.",
           "answer": "red",
           "options": [
             "red",
             "blue",
             "green"
           ],
-          "hu": "(piros)"
+          "hu": "Az alma piros."
         },
         {
-          "text": "It is very ___.",
+          "text": "The sky is ___ today.",
           "answer": "blue",
           "options": [
             "blue",
             "red",
             "green"
           ],
-          "hu": "(kék)"
+          "hu": "Ma kék az ég."
         }
       ]
     },
@@ -139,7 +139,7 @@
         },
         {
           "id": "lex_red",
-          "text": "It is very ___.",
+          "text": "The apple is ___.",
           "answer": "red",
           "accepted": [
             "red",
@@ -152,11 +152,11 @@
             "green",
             "white"
           ],
-          "hu": "(piros)"
+          "hu": "Az alma piros."
         },
         {
           "id": "lex_blue",
-          "text": "It is very ___.",
+          "text": "The sky is ___ today.",
           "answer": "blue",
           "accepted": [
             "blue",
@@ -169,11 +169,11 @@
             "green",
             "white"
           ],
-          "hu": "(kék)"
+          "hu": "Ma kék az ég."
         },
         {
           "id": "lex_green",
-          "text": "It is very ___.",
+          "text": "The grass is ___.",
           "answer": "green",
           "accepted": [
             "green",
@@ -186,7 +186,7 @@
             "blue",
             "white"
           ],
-          "hu": "(zöld)"
+          "hu": "A fű zöld."
         }
       ]
     },

@@ -4,7 +4,7 @@ window.M = window.M || {};
   var NS = "martaEnglish";
   var KEYS = { settings: NS + ".appSettings", progress: NS + ".progress", review: NS + ".reviewQueue", monthly: NS + ".monthlyContent" };
   var SCHEMA = 1;
-  var APP_VERSION = "1.9.0";
+  var APP_VERSION = "1.9.1";
 
   var storageOK = true;
   function raw(k) { try { return localStorage.getItem(k); } catch (e) { storageOK = false; return null; } }

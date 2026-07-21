@@ -165,8 +165,9 @@ OK(`Pronunciation coverage: ${(pron.soundFocus || []).length} sounds + ${(pron.s
 const TEMPLATE_RE = /every day\.$|use "|useful word|is here\.$|^This is an? |^It is very |^It is the \w+ one\.$|^I speak \w+\.$|^I have \w+ friends\.$/;
 const tmplWords = prod.filter((l) => TEMPLATE_RE.test((l.examples[0] || {}).en || ""));
 const tmpl = tmplWords.length;
-// ratchet: templates are all grammatical now, but the count may only SHRINK from here
-const TEMPLATE_CEILING = 432;
+// ratchet: after the v1.9.1 curation almost every productive word has a life-anchored
+// example; the few remaining matches are curated sentences that merely trip the regex.
+const TEMPLATE_CEILING = 12;
 if (tmpl > TEMPLATE_CEILING) E(`Template examples ${tmpl} exceed ceiling ${TEMPLATE_CEILING} — curate before raising the ceiling`);
 OK(`Curated examples used; ${tmpl} productive words on grammar-safe templates (ceiling ${TEMPLATE_CEILING})`);
 
