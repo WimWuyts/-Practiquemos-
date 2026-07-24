@@ -1,105 +1,167 @@
-/* Base design system — warm, adult, calm. Designed for a 70+ learner. */
+/* Base design system v2 — "Warm Editorial Storybook". A hand-bound book made for one reader.
+   System fonts + inline SVG only (offline). Warm rag paper, pine teal actions, honey warmth,
+   moss "yes", no red/timer/heart. AA >=4.5:1 text, >=48px targets, reduced-motion double-gated. */
 :root{
-  /* Warm, layered "paper" ground — deep teal accent + honey warm secondary */
-  --bg:#edefe8;            /* warmer, slightly darker so white cards lift */
-  --surface:#ffffff;
-  --surface-2:#e7ebe2;
-  --surface-sunk:#e1e5db;
-  --warm-soft:#f7ecd8;     /* honey tint for alternating sections/scenes */
-  --warm-line:#ecdcc0;
-  --ink:#231f1a;           /* warm deep ink */
-  --ink-soft:#5c554c;
-  --accent:#14746f;        /* deep calm teal */
+  /* ============ GROUNDS & SURFACES ============ */
+  --bg:#ece7db;                 /* warm greige canvas                       */
+  --bg-sunk:#e3ddce;            /* recessed ground                          */
+  --surface:#faf6ec;            /* warm rag paper (was clinical #ffffff)    */
+  --surface-2:#f3ecdd;          /* quiet alternate surface                  */
+  --surface-raised:#fffdf6;     /* the card face that lifts                 */
+  --surface-sunk:#e3ddce;       /* wells / tracks                           */
+
+  /* ============ INK ============ */
+  --ink:#2a2420;                /* body ink — 16:1 on --surface             */
+  --ink-soft:#5c5147;           /* HU help / meta / sub — ~6.8:1            */
+
+  /* ============ ACCENT — pine teal (every action) ============ */
+  --accent:#0f6b60;             /* 6.4:1 white text                         */
+  --accent-700:#0a544b;         /* 8.8:1 white text — PRIMARY button        */
+  --accent-500:#0f6b60;
+  --accent-300:#6fb3a9;         /* DECOR / hover-hint ONLY — never text, never focus */
   --accent-ink:#ffffff;
-  --accent-soft:#e6f2f0;   /* teal tint for chips/icon wells */
-  --accent-2:#a85436;      /* darkened clay → AA on white */
-  --warm:#c8842b;          /* honey/amber secondary accent */
-  --blush:#e7b6a0;         /* decorative only */
-  --line:#e2ddd3;          /* warm hairline */
-  --good:#14746f;
-  --good-bg:#e7f1f0;
-  --gentle:#9a6a2b;
-  --gentle-bg:#f6eede;
-  --focus:#14746f;
-  --r-sm:12px; --r-md:16px; --r-lg:20px; --radius:18px;
-  --space:1.2rem;
-  --elev-1:0 1px 2px rgba(30,50,45,.05), 0 2px 8px -4px rgba(20,60,58,.12);
-  --elev-2:0 4px 10px -4px rgba(20,60,58,.14), 0 14px 30px -16px rgba(20,60,58,.30);
-  --hairline:inset 0 1px 0 rgba(255,255,255,.65);
-  --shadow:var(--elev-2);
-  --shadow-soft:var(--elev-1);
-  --tap:48px;
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --font: ui-sans-serif, system-ui, "Segoe UI", "Helvetica Neue", "Avenir Next", Roboto, Arial, sans-serif;
-  --font-display: "Iowan Old Style", "Palatino Linotype", "Palatino", "Book Antiqua", Georgia, ui-serif, serif;
-  --fs:20px;
+  --accent-soft:#dfeeeb;        /* teal tint — icon wells, step badges      */
+  --accent-2:var(--accent-700); /* legacy clay retired → teal (compat alias) */
+
+  /* ============ WARM — honey (story warmth, gentle "not quite", grammar) ============ */
+  --warm:#b46a1c;               /* 3.9:1 — RULES / BORDERS / FILLS ONLY (>=3:1) */
+  --warm-700:#945311;           /* 5.5:1 — WARM TEXT (links, eyebrows, labels) */
+  --warm-tint:#f6e6cf;          /* honey wash — recommend card, wrong tint, glow */
+  --warm-soft:var(--warm-tint); /* legacy alias                             */
+
+  /* ============ STATES ============ */
+  --good:#3f7d3a;               /* moss — correct rule/glyph                */
+  --good-bg:#e4eddb;            /* moss tint                                */
+  --gentle:var(--warm);         /* "wrong, gentle" == honey                 */
+  --gentle-bg:var(--warm-tint);
+
+  /* ============ STRUCTURE / LINES ============ */
+  --line:#d8cdb8;               /* warm hairline                            */
+  --line-strong:#c4b697;        /* plate edge / strong border (>=3:1 vs surface) */
+  --warm-line:var(--line-strong);
+  --focus:#0f6b60;              /* AA focus ring — 5.9:1 vs surface         */
+  --blush:#e7b6a0;              /* decorative only                          */
+
+  /* ============ RADII ============ */
+  --r-sm:8px; --r:14px; --r-md:16px; --r-lg:22px; --r-pill:999px;
+  --radius:var(--r-lg);         /* legacy alias                             */
+
+  /* ============ SPACING (calm editorial rhythm) ============ */
+  --sp-1:.4rem; --sp-2:.7rem; --sp-3:1rem; --sp-4:1.4rem; --sp-5:2rem; --sp-6:3rem;
+  --space:var(--sp-4);          /* legacy alias                             */
+  --gutter:clamp(16px,5vw,40px);
+  --measure:38rem;              /* ~60-68 char reading column               */
+
+  /* ============ ELEVATION (warm, low-spread, never grey) ============ */
+  --e1:0 1px 2px rgba(60,42,20,.08);
+  --e2:0 4px 14px rgba(60,42,20,.10);
+  --e3:0 12px 30px rgba(60,42,20,.13);
+  --elev-1:var(--e1); --elev-2:var(--e2);            /* legacy aliases      */
+  --shadow:var(--e2); --shadow-soft:var(--e1);       /* legacy aliases      */
+  --hairline:inset 0 1px 0 rgba(255,255,255,.72);    /* boutique top-light  */
+
+  /* ============ TAP TARGET ============ */
+  --tap:56px;                   /* floor+ ; hard minimum is 48px            */
+
+  /* ============ TYPE — stacks (system only) ============ */
+  --font-display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,ui-serif,serif;
+  --font:"Seravek","Gill Sans Nova","Gill Sans",Avenir,"Avenir Next",-apple-system,"Segoe UI",Roboto,system-ui,sans-serif;
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+
+  /* ============ TYPE — one-multiplier size modes ============ */
+  --type-scale:1;                       /* the single knob                  */
+  --fs:calc(20px * var(--type-scale));  /* 1rem = 20 / 23 / 26 px           */
+
+  /* ============ TYPE — modular scale (ratio 1.25, floored >=16px) ============ */
+  --step--2:0.80rem;   /* caption / HU help    16 / 18.4 / 20.8 px          */
+  --step--1:0.90rem;   /* small                18 / 20.7 / 23.4 px          */
+  --step-0 :1.00rem;   /* body                 20 / 23 / 26 px              */
+  --step-1 :1.25rem;   /* h3 / word term       25 / 28.8 / 32.5 px          */
+  --step-2 :1.55rem;   /* h2                   31 / 35.7 / 40.3 px          */
+  --step-3 :1.95rem;   /* h1                   39 / 44.9 / 50.7 px          */
+  --step-4 :2.50rem;   /* hero greeting        50 / 57.5 / 65 px            */
+
+  /* ============ TYPE — line-height / weight / tracking ============ */
+  --lh-tight:1.14; --lh-head:1.20; --lh-body:1.60; --lh-ui:1.45;
+  --wt-body:400; --wt-med:500; --wt-semi:600; --wt-bold:700;
+  --tr-display:-0.01em; --tr-body:0; --tr-caps:0.06em;
+
+  /* ============ MOTION — easings ============ */
+  --ease-page:cubic-bezier(.22,.61,.36,1);   /* the "settle" — enters, rings, spine  */
+  --ease-in-out:cubic-bezier(.45,0,.25,1);   /* symmetric — fills, toggles, hovers    */
+  --ease-spring:cubic-bezier(.34,1.4,.5,1);  /* one gentle overshoot — check-pop      */
+  --spring:var(--ease-spring);               /* alias                                 */
+  --ease:var(--ease-page);                   /* legacy alias                          */
+
+  /* ============ MOTION — durations ============ */
+  --dur-1:140ms;   /* micro: press, hover lift, switch knob, caption        */
+  --dur-2:220ms;   /* standard: cross-fade, bubble-in, feedback, check-pop  */
+  --dur-3:360ms;   /* expressive: page-lift, progress spine + ring          */
+  --stagger:60ms;  /* between successive chat bubbles / spine nodes         */
 }
+body[data-textsize="large"] { --type-scale:1.15; }   /* → 23px */
+body[data-textsize="xlarge"]{ --type-scale:1.30; }   /* → 26px */
+
 *{box-sizing:border-box}
 html{font-size:var(--fs)}
 body{
-  margin:0;color:var(--ink);font-family:var(--font);
-  line-height:1.6;font-size:1rem;-webkit-text-size-adjust:100%;
+  margin:0; color:var(--ink); font-family:var(--font);
+  font-size:1rem; line-height:var(--lh-body); -webkit-text-size-adjust:100%;
   /* layered warm ground so the surface reads as a calm place, not blank paper */
   background:
-    radial-gradient(1100px 560px at 100% -8%, rgba(200,132,43,.07), transparent 60%),
-    radial-gradient(900px 520px at -10% 108%, rgba(20,116,111,.06), transparent 60%),
+    radial-gradient(1100px 560px at 100% -8%, rgba(180,106,28,.06), transparent 60%),
+    radial-gradient(900px 520px at -10% 108%, rgba(15,107,96,.05), transparent 60%),
     var(--bg);
   background-attachment:fixed;
 }
-body[data-textsize="large"]{--fs:23px}
-body[data-textsize="xlarge"]{--fs:26px}
-body[data-motion="reduce"] *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
-h1,h2,h3{line-height:1.22;color:var(--ink);margin:0 0 .5rem}
-h1{font-size:1.9rem;font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;text-wrap:balance}
-h2{font-size:1.45rem}h3{font-size:1.18rem}
 
-/* ---- motion system (all auto-gated by the reduce rules above) ---- */
+/* ---- headings: editorial serif, balanced, tight ---- */
+h1,h2,h3,.u-hero,.wordcard .en,.scene .label{
+  font-family:var(--font-display); letter-spacing:var(--tr-display); color:var(--ink);
+  text-wrap:balance; text-rendering:optimizeLegibility;
+}
+.u-hero{font-size:var(--step-4); font-weight:var(--wt-bold); line-height:var(--lh-tight); margin:0}
+h1{font-size:var(--step-3); font-weight:var(--wt-bold); line-height:var(--lh-tight); margin:0 0 .5rem}
+h2{font-size:var(--step-2); font-weight:var(--wt-bold); line-height:var(--lh-head); margin:0 0 .5rem}
+h3{font-size:var(--step-1); font-weight:var(--wt-semi); line-height:var(--lh-head); margin:0 0 .4rem}
+
+p{margin:0 0 .9rem; max-width:var(--measure)}        /* editorial measure */
+strong,b{font-weight:var(--wt-semi)}                 /* 600, softer emphasis */
+a,.u-link{color:var(--warm-700); text-underline-offset:2px; text-decoration-thickness:from-font}
+
+/* ---- type utilities ---- */
+.u-small,.wordcard .hu{font-size:var(--step--1); line-height:var(--lh-ui); font-weight:var(--wt-med)}
+.u-caption,.u-meta,.muted{font-size:var(--step--2); line-height:var(--lh-ui); color:var(--ink-soft)}
+.u-eyebrow{font-size:var(--step--2); font-weight:var(--wt-semi); text-transform:uppercase;
+  letter-spacing:var(--tr-caps); color:var(--ink-soft)}
+
+/* ---- structure ---- */
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:6px}
+#main:focus,#main:focus-visible{outline:none}     /* programmatic focus target only */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.hidden{display:none !important}
+.container{max-width:920px;margin:0 auto;padding:clamp(20px,5vw,56px) var(--gutter) 5rem}
+.measure{max-width:var(--measure);margin-inline:auto}
+
+/* @property is required for the animated ring */
 @property --p{syntax:'<number>';inherits:true;initial-value:0}
-@keyframes stageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes fbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes bubbleIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
-@keyframes nudge{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-@keyframes popCheck{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
-@keyframes typingDot{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+/* ---- motion keyframes (all gated by the reduced-motion rules in components.css) ---- */
+@keyframes stageIn  {from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none}}
+@keyframes pageLift {from{opacity:0;transform:translateY(6px) scale(.985)} to{opacity:1;transform:none}}
+@keyframes fbIn     {from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none}}
+@keyframes bubbleIn {from{opacity:0;transform:translateY(8px) scale(.98)} to{opacity:1;transform:none}}
+@keyframes checkPop {0%{opacity:0;transform:scale(.5)} 60%{opacity:1} 100%{opacity:1;transform:scale(1)}}
+@keyframes settlePop{0%{transform:none} 55%{transform:scale(1.02)} 100%{transform:none}}
+@keyframes nudgeOnce{0%,100%{transform:translateX(0)} 30%{transform:translateX(-4px)} 60%{transform:translateX(4px)}}
+@keyframes typingDot{0%,60%,100%{opacity:.25;transform:translateY(0)} 30%{opacity:1;transform:translateY(-3px)}}
+@keyframes nodeFill {from{opacity:0;transform:scale(.4)} to{opacity:1;transform:scale(1)}}
+@keyframes pulse    {50%{opacity:.4}}
+@keyframes fadeOnly {from{opacity:0} to{opacity:1}}   /* reduced-motion fallback */
+
+/* screen / route enter — router swaps #main; these children cross-fade + rise as a screen */
 body:not([data-motion="reduce"]) .stage,
 body:not([data-motion="reduce"]) .card,
-body:not([data-motion="reduce"]) .wordcard,
-body:not([data-motion="reduce"]) .chat{animation:stageIn .28s var(--ease) both}
-p{margin:0 0 .8rem}
-a{color:var(--accent)}
-:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
-/* the main region is a programmatic focus target for screen-reader/keyboard reset on
-   navigation — keep the focus for a11y, but don't paint a full-width box around it */
-#main:focus,#main:focus-visible{outline:none}
-button{font-family:inherit}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-.container{max-width:920px;margin:0 auto;padding:1rem 1.1rem 4rem}
-.hidden{display:none !important}
-
-/* Buttons — always large, always labelled */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  min-height:var(--tap);padding:.7rem 1.3rem;border-radius:12px;
-  border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);
-  font-size:1.02rem;font-weight:600;cursor:pointer;text-decoration:none;
-}
-.btn{transition:transform .08s var(--ease), filter .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease}
-.btn:hover{filter:brightness(1.04)}
-.btn:not(.ghost):not(.secondary){box-shadow:var(--elev-1)}
-.btn:active{transform:translateY(1px)}
-.btn.secondary{background:var(--surface);color:var(--accent);}
-.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
-.btn.wide{width:100%}
-.btn.small{min-height:44px;padding:.5rem .95rem;font-size:.92rem}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn-row{display:flex;flex-wrap:wrap;gap:.7rem;margin:1rem 0}
-
-/* Cards */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:var(--elev-1),var(--hairline);padding:1.4rem;margin:0 0 1.1rem}
-.card.raised{box-shadow:var(--elev-2),var(--hairline)}
-.card.warm{background:linear-gradient(180deg,#fffdf9,var(--warm-soft));border-color:var(--warm-line)}
-.card h2{margin-top:0}
-.muted{color:var(--ink-soft)}
-.pill{display:inline-block;padding:.2rem .7rem;border-radius:999px;background:var(--surface-2);
-  font-size:.82rem;color:var(--ink-soft);border:1px solid var(--line)}
+body:not([data-motion="reduce"]) .chat{animation:stageIn var(--dur-2) var(--ease-page) both}
+body:not([data-motion="reduce"]) .wordcard{animation:pageLift var(--dur-3) var(--ease-page) both}

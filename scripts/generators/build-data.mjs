@@ -530,7 +530,7 @@ for (const lo of lessonObjs) write(join(DATA, "lessons", lo.id + ".json"), lo);
 
 // ---------- Course ----------
 const course = {
-  id: "marta_english", version: "1.9.1", schemaVersion: 1,
+  id: "marta_english", version: "2.0.0", schemaVersion: 1,
   title: { en: "English with Marta", hu: "Angol Martával" },
   units: UNITS.map((u) => ({
     ...u, recommended: true,

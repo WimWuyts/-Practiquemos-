@@ -2,6 +2,29 @@
 
 All notable changes to *English with Marta* (Mirella tante).
 
+## [2.0.0] — 2026-07 — "Warm Editorial Storybook" — a full look-and-feel makeover
+
+The finished course kept every word, lesson, exercise and learning rule — and was given a complete visual redesign so it feels less like an app and **more like a hand-bound book made for one reader.** A team of specialists (typography, colour & accessibility, illustration, motion, components) produced a single locked design system (`docs/DESIGN_SYSTEM_v2.md`), which was then implemented file-by-file and verified with an adversarial visual-QA pass.
+
+### The look
+- **Warm rag paper, never clinical white.** A calm greige canvas with soft honey/teal ground-light; cards are warm paper that lifts on a low, warm shadow (no grey boxes).
+- **Editorial type.** A Palatino-family serif carries every heading and word-term; a humanist sans carries reading, at a generous 1.6 line-height. One size knob (`--type-scale`) drives 20 / 23 / 26 px so every word scales for seventy-year-old eyes — no more per-breakpoint font fights.
+- **A calm, meaningful palette.** **Pine teal** carries every action, **honey** carries warmth and the gentle "not quite," **moss** means "yes." There is **no red alarm, no timer, no heart, no streak** anywhere.
+
+### The people and places
+- **Hand-drawn, single-ink-line illustration.** Marta and her family are soft-square "tipped-in plate" portraits (Kira's red scarf, David's camera, Esztella's book) instead of clip-art.
+- **Wide 16:6 scene bands** turn each lesson into a *place* — the kitchen table, the family table, the video call — with the title on a solid caption plate so it always reads (no fragile scrim over the art).
+- **The airport gate** that answers her fear of flying: Marta and Kira stand small at the window, a plane rising toward a honey sun.
+
+### How it moves (and how it stops)
+- **Paper that settles, never bounces.** Pages lift, a right answer gives one quiet spring on the ✓, a wrong answer gives one gentle nudge (no red, no loop). Chat bubbles rise with a soft stagger.
+- **Reduced motion is double-gated** — the in-app toggle *or* the OS preference kills all animation, and every state (marks, badges, the progress ring, the switch, the spine) still snaps to its final, readable value.
+
+### Legible three ways at once
+Every meaning-bearing state is redundant beyond colour **and** beyond motion — **position + glyph + tint**: correct/wrong carry a left-rule *and* a glyph; the completion ring keeps its serif tabular % count; the on/off switch keeps its text label *and* a ✓ glyph. So nothing depends on colour, motion, or sharp eyes. AA ≥ 4.5:1 text, ≥ 48px targets, and every warm-as-text colour retuned to pass contrast.
+
+Content, curriculum, and the learning engine are unchanged from 1.9.1 — this release is purely the makeover. All 22 smoke checks and content validation still pass.
+
 ## [1.9.1] — 2026-07 — Example sentences curated to Marta's life
 
 Follow-up to v1.9: the ~432 remaining grammar-safe-but-bland template sentences ("This is a table.", "It is very good.") were **curated to Marta's world** by a 6-writer pass (place & travel, food & shopping, opinions & feelings, hobbies & weather, routine & time, numbers & her life). Now **464 more words carry a real, life-anchored A1 sentence** — "We sit at the table.", "I visit Kira in July.", "Endika is an engineer.", "I hate flying.", "Endre can fix my laptop." Template fallbacks dropped from ~432 to effectively zero (the validator ratchet is now 12), with **0 broken-grammar examples** and **0 distractor collisions**. These sentences also feed the typed word-fill exercises, so the writing practice is now about her life throughout. (Hungarian flagged for a native-speaker review pass.)

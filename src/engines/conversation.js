@@ -71,7 +71,7 @@ window.M = window.M || {};
       function emit(node) {
         var bb = bubble("them", who(node.speaker), node.text.en, node.speaker);
         M.audio.speak(node.tts || node.text.en);
-        if (M.i18n.helpAvailable() && node.text.hu) bb.appendChild(el("div", { class: "muted", style: "margin-top:.3rem;font-size:.9rem", text: node.text.hu }));
+        if (M.i18n.helpAvailable() && node.text.hu) bb.appendChild(el("div", { class: "hu", text: node.text.hu }));
       }
       function proceed(node) {
         var r = node.response || { mode: "end" };

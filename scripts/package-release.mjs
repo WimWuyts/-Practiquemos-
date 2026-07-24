@@ -2,13 +2,15 @@
 //  - MARTA_ENGLISH_APP_LEARNER_v1.0.zip  (single HTML + short start guide)
 //  - MARTA_ENGLISH_APP_SOURCE_v1.0.zip   (reproducible modular source)
 import { execFileSync } from "node:child_process";
-import { mkdirSync, copyFileSync, writeFileSync, rmSync, existsSync } from "node:fs";
+import { mkdirSync, copyFileSync, writeFileSync, rmSync, existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const REL = join(ROOT, "releases");
-const VER = "v1.9";
+// keep the release filename in lockstep with package.json (e.g. "v2.0")
+const PKG = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"));
+const VER = "v" + PKG.version.split(".").slice(0, 2).join(".");
 mkdirSync(REL, { recursive: true });
 
 function zipDir(srcDir, outZip) {

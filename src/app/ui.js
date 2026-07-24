@@ -44,6 +44,12 @@ window.M = window.M || {};
 
   function avatar(cls) { return el("span", { class: "avatar " + (cls || ""), html: M.data.avatarSvg, role: "img", "aria-label": "Marta" }); }
 
+  // decorative hand-drawn sprig beside the home hero avatar (aria-hidden, currentColor via CSS .sprig)
+  var SPRIG_SVG = '<svg viewBox="0 0 40 40" fill="none" aria-hidden="true" style="width:34px;height:34px;color:var(--accent-300)">' +
+    '<path d="M20 34 C20 22 20 14 20 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>' +
+    '<path d="M20 16 C15 14 12 15 11 11 C16 10 19 12 20 16 Z" fill="currentColor" opacity=".8"/>' +
+    '<path d="M20 22 C25 20 28 21 29 17 C24 16 21 18 20 22 Z" fill="currentColor" opacity=".8"/></svg>';
+
   // unit visual identity: icon + colour tint per unit
   var UNIT_VIS = {
     u00: ["star", "#eef1ee", "#5b615a"], u01: ["hand", "#eaf4f3", "#14746f"], u02: ["family", "#f3ecf0", "#9a5a86"],
@@ -51,7 +57,7 @@ window.M = window.M || {};
     u06: ["calendar", "#eef1f6", "#5a6aa0"], u07: ["phone", "#eaf4f3", "#14746f"], u08: ["star", "#f3eef6", "#7a5a9a"],
     u09: ["map", "#eef4ec", "#4f8a4a"], u10: ["bell", "#f4eee6", "#a5772e"], u11: ["laptop", "#e9f2f2", "#2f8a86"],
     u12: ["clockback", "#f0eeea", "#8a6a4a"], u13: ["suitcase", "#eef1f6", "#5a6aa0"], u14: ["plane", "#e9f0f4", "#2f6f9a"],
-    u15: ["plane", "#eef4f3", "#14746f"], u16: ["heart", "#f5ecef", "#b06a80"],
+    u15: ["plane", "#eef4f3", "#14746f"], u16: ["family", "#f5ecef", "#b06a80"],
   };
   function unitVis(id) { return UNIT_VIS[id] || ["book", "var(--accent-soft)", "var(--accent)"]; }
 
@@ -62,13 +68,14 @@ window.M = window.M || {};
     var rec = pickRecommended();
     var pct = M.store.overall();
 
-    // hero
+    // hero — reading order is greeting → avatar → ring; CSS `order` keeps the avatar visually right
     mount.appendChild(el("div", { class: "hero" }, [
-      avatar(""),
-      el("div", { style: "flex:1" }, [
+      el("div", {}, [
         el("h1", { text: M.i18n.t("home.welcome") }),
         el("p", { class: "sub", text: M.i18n.t("app.subtitle") }),
       ]),
+      el("span", { class: "sprig", "aria-hidden": "true", html: SPRIG_SVG }),
+      avatar(""),
       el("div", { class: "ring", style: "--p:" + pct, role: "img", "aria-label": M.i18n.t("home.progress") + " " + pct + "%" }, [el("b", { text: pct + "%" })]),
     ]));
 
@@ -214,7 +221,7 @@ window.M = window.M || {};
       dom.clear(stage);
       fadeStage();
       setBar();
-      stage.appendChild(el("div", { class: "done-badge", "aria-hidden": "true", html: dom.icon("check") }));
+      stage.appendChild(el("div", { class: "done-badge", "aria-hidden": "true" }, [el("span", { class: "glyph", html: dom.icon("check") })]));
       stage.appendChild(el("div", { class: "avatar-row", style: "justify-content:center" }, [avatar("small"), el("h2", { style: "margin:0", text: M.i18n.t("lesson.complete") })]));
       stage.appendChild(el("p", { style: "text-align:center", text: M.i18n.t("lesson.complete.msg") }));
       if (M.i18n.helpAvailable()) stage.appendChild(el("p", { class: "muted", text: M.i18n.hu("lesson.complete.msg") }));
@@ -283,7 +290,7 @@ window.M = window.M || {};
       bar.firstChild.style.width = Math.round((idx / Math.max(acts.length, 1)) * 100) + "%";
       dom.clear(stage); fadeStage();
       if (idx >= acts.length) {
-        stage.appendChild(el("div", { class: "done-badge", "aria-hidden": "true", html: dom.icon("check") }));
+        stage.appendChild(el("div", { class: "done-badge", "aria-hidden": "true" }, [el("span", { class: "glyph", html: dom.icon("check") })]));
         stage.appendChild(el("div", { class: "avatar-row", style: "justify-content:center" }, [avatar("small"), el("h2", { style: "margin:0", text: M.i18n.t("practice.done") })]));
         var row = el("div", { class: "btn-row", style: "justify-content:center" }, []);
         if (opts.replay) row.appendChild(el("button", { class: "btn secondary", onclick: opts.replay }, [el("span", { html: dom.icon("again") }), " " + M.i18n.t("practice.more")]));
@@ -571,7 +578,7 @@ window.M = window.M || {};
     function lbl() { return val ? M.i18n.t("settings.on") : M.i18n.t("settings.off"); }
     var text = el("span", { class: "switch-lbl", text: lbl() });
     var b = el("button", { class: "switch" + (val ? " on" : ""), type: "button", role: "switch", "aria-checked": String(!!val) }, [
-      el("span", { class: "switch-track", "aria-hidden": "true" }, [el("span", { class: "switch-thumb" })]),
+      el("span", { class: "switch-track", "aria-hidden": "true" }, [el("span", { class: "switch-thumb" }, [el("span", { class: "switch-check", "aria-hidden": "true", html: dom.icon("check") })])]),
       text,
     ]);
     b.addEventListener("click", function () {

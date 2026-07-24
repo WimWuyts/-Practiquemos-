@@ -1,45 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Marta, a warm woman in her seventies">
-  <defs>
-    <clipPath id="mCircle"><circle cx="60" cy="60" r="58"/></clipPath>
-  </defs>
-  <g clip-path="url(#mCircle)">
-    <rect width="120" height="120" fill="#eaddc7"/>
-    <!-- shoulders / cardigan -->
-    <path d="M18 120 C22 92 40 82 60 82 C80 82 98 92 102 120 Z" fill="#7d9b86"/>
-    <path d="M52 84 h16 v10 a8 8 0 0 1 -16 0 Z" fill="#f0cdb4"/>
-    <!-- neck -->
-    <rect x="53" y="74" width="14" height="14" rx="6" fill="#f0cdb4"/>
-    <!-- hair back -->
-    <path d="M28 58 C26 34 42 20 60 20 C78 20 94 34 92 58 C92 66 88 70 86 72 C88 54 80 40 60 40 C40 40 32 54 34 72 C32 70 28 66 28 58 Z" fill="#c9c2b6"/>
-    <!-- face -->
-    <ellipse cx="60" cy="56" rx="25" ry="28" fill="#f3d3ba"/>
-    <!-- cheeks -->
-    <circle cx="46" cy="63" r="5" fill="#eab89b" opacity="0.6"/>
-    <circle cx="74" cy="63" r="5" fill="#eab89b" opacity="0.6"/>
-    <!-- hair front (short, light brown-grey) -->
-    <path d="M35 52 C34 34 46 26 60 26 C74 26 86 34 85 52 C80 44 72 40 60 40 C48 40 40 44 35 52 Z" fill="#b8ae9d"/>
-    <path d="M35 52 C40 46 46 44 50 45 C46 49 44 53 44 58 C40 57 37 55 35 52 Z" fill="#a89e8c"/>
-    <path d="M85 52 C80 46 74 44 70 45 C74 49 76 53 76 58 C80 57 83 55 85 52 Z" fill="#a89e8c"/>
-    <!-- glasses (subtle, adult) -->
-    <g fill="none" stroke="#6b6357" stroke-width="1.6">
-      <circle cx="49" cy="55" r="8"/><circle cx="71" cy="55" r="8"/>
-      <path d="M57 55 h6"/><path d="M41 54 l-5 -2"/><path d="M79 54 l5 -2"/>
-    </g>
-    <!-- eyes (blue) -->
-    <ellipse cx="49" cy="55" rx="3" ry="3.4" fill="#fff"/>
-    <ellipse cx="71" cy="55" rx="3" ry="3.4" fill="#fff"/>
-    <circle cx="49.4" cy="55.4" r="2.1" fill="#3f7bb0"/>
-    <circle cx="71.4" cy="55.4" r="2.1" fill="#3f7bb0"/>
-    <circle cx="49.4" cy="55.4" r="0.9" fill="#20303a"/>
-    <circle cx="71.4" cy="55.4" r="0.9" fill="#20303a"/>
-    <!-- brows -->
-    <path d="M43 47 q6 -3 12 0" stroke="#9a917f" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-    <path d="M65 47 q6 -3 12 0" stroke="#9a917f" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-    <!-- nose -->
-    <path d="M60 57 q-2 6 -3 8 q3 2 6 0" stroke="#d9a789" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <!-- warm smile -->
-    <path d="M50 71 q10 9 20 0" stroke="#b5654a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-    <path d="M53 72 q7 4 14 0" fill="#fff" opacity="0.35"/>
+  <rect x="0" y="0" width="120" height="120" fill="#e6ede4"/>
+  <ellipse cx="60" cy="8" rx="76" ry="48" fill="#f6e6cf" opacity=".5"/>
+  <path d="M14 120 C18 92 38 82 60 82 C82 82 102 92 106 120 Z" fill="#7d9b86" stroke="var(--ink,#2a2420)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M52 84 L60 96 L68 84" fill="none" stroke="var(--ink,#2a2420)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M53 74 h14 v10 a7 7 0 0 1 -14 0 Z" fill="#f0cdb4" stroke="var(--ink,#2a2420)" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M30 58 C28 34 43 20 60 20 C77 20 92 34 90 58 C90 66 87 72 84 74 C86 56 79 42 60 42 C41 42 34 56 36 74 C33 72 30 66 30 58 Z" fill="#c4bdb0" stroke="var(--ink,#2a2420)" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="60" cy="56" rx="24" ry="27" fill="#f3d3ba" stroke="var(--ink,#2a2420)" stroke-width="2"/>
+  <circle cx="46" cy="63" r="4.5" fill="#eab89b" opacity=".55"/>
+  <circle cx="74" cy="63" r="4.5" fill="#eab89b" opacity=".55"/>
+  <path d="M36 52 C35 34 47 26 60 26 C73 26 85 34 84 52 C79 44 71 41 60 41 C49 41 41 44 36 52 Z" fill="#bcb4a4" stroke="var(--ink,#2a2420)" stroke-width="2" stroke-linejoin="round"/>
+  <g fill="none" stroke="var(--ink,#2a2420)" stroke-width="1.8">
+    <circle cx="49" cy="55" r="8"/><circle cx="71" cy="55" r="8"/>
+    <path d="M57 55 h6" stroke-linecap="round"/><path d="M41 53 l-6 -2" stroke-linecap="round"/><path d="M79 53 l6 -2" stroke-linecap="round"/>
   </g>
-  <circle cx="60" cy="60" r="58" fill="none" stroke="#d9cfbe" stroke-width="3"/>
+  <circle cx="49" cy="55" r="2.4" fill="#3f7bb0"/><circle cx="71" cy="55" r="2.4" fill="#3f7bb0"/>
+  <circle cx="49" cy="55" r="1" fill="#2a2420"/><circle cx="71" cy="55" r="1" fill="#2a2420"/>
+  <path d="M43 46 q6 -3 12 0" fill="none" stroke="#9a917f" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M65 46 q6 -3 12 0" fill="none" stroke="#9a917f" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M60 57 q-2 6 -3 8 q3 2 6 0" fill="none" stroke="#d9a789" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M50 70 q10 8 20 0" fill="none" stroke="#b5654a" stroke-width="2.2" stroke-linecap="round"/>
 </svg>
