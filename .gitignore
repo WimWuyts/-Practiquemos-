@@ -2,3 +2,5 @@ node_modules/
 *.log
 releases/_learner/
 releases/_source/
+# transient Playwright render/screenshot helpers (repo-root scratch scripts)
+/_*.mjs
