@@ -297,7 +297,7 @@ body:not([data-motion="reduce"]) .wordcard{animation:pageLift var(--dur-3) var(-
   padding:.85rem 1rem;margin:.4rem 0;cursor:pointer;font-size:1rem;color:var(--ink);box-shadow:var(--hairline);
   transition:background var(--dur-1) var(--ease-in-out),border-color var(--dur-1) var(--ease-in-out),
              transform var(--dur-1) var(--ease-in-out)}
-.lessonbtn:hover{background:var(--surface-2);border-color:var(--accent-300)}   /* not good-bg — keeps .done at 4.63:1 */
+.lessonbtn:hover{background:var(--surface-raised);border-color:var(--accent-300);box-shadow:var(--e1),var(--hairline)}   /* lifts toward the light; keeps .done text >=4.8:1 (surface-2 drops it to 4.24:1) */
 .lessonbtn:active{transform:translateY(1px)}
 .lessonbtn .done{color:var(--good);font-weight:var(--wt-bold)}
 .badge-status{font-size:var(--step--2);padding:.2rem .6rem;border-radius:var(--r-pill);border:1px solid var(--line);
@@ -633,7 +633,6 @@ window.M.icons = {
   snow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9M9 5l3 2 3-2M9 19l3-2 3 2"/></svg>',
   chair: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 3v9M17 3v9M6 12h12M7 12l-1 8M17 12l1 8M6 16h12"/></svg>',
   window: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg>',
-  hand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V6a1.5 1.5 0 0 1 3 0v6c0 4-2 7-6 7s-6-3-6-6l-1-3a1.5 1.5 0 0 1 2.6-1.4L7 11"/></svg>',
   eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
   shirt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L4 6l2 4 2-1v9h8v-9l2 1 2-4-5-3-3 2z"/></svg>',
   hat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M8 12L10 4h4l2 8M4 16c2-2 5-2 8-2s6 0 8 2c-2 2-5 2-8 2s-6 0-8-2z"/></svg>',
@@ -1564,6 +1563,8 @@ window.M = window.M || {};
     var items = act.items.map(M.get.lex).filter(Boolean).slice(0, 6);
     dom.clear(mount);
     mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.match.prompt") }));
+    var live = el("div", { class: "sr-only", role: "status", "aria-live": "polite" });
+    mount.appendChild(live);
     var selectedEn = null, matched = 0;
     var left = el("div", { class: "options" }), right = el("div", { class: "options" });
     var grid = el("div", { style: "display:grid;grid-template-columns:1fr 1fr;gap:1rem" }, [left, right]);
@@ -1591,7 +1592,12 @@ window.M = window.M || {};
           selectedEn = null;
           if (matched === items.length) { feedback(mount, true, M.i18n.t("fb.correct")); advance(mount, true, function () { done(true); }); }
         } else {
-          h.classList.add("wrong"); setTimeout(function () { h.classList.remove("wrong"); }, 600);
+          // wrong match: never colour-alone — carry the gentle "not quite" glyph + announce for screen readers
+          h.classList.add("wrong");
+          var mk = el("span", { class: "mark", html: dom.icon("again") });
+          h.appendChild(mk);
+          live.textContent = M.i18n.t("a11y.incorrect");
+          setTimeout(function () { h.classList.remove("wrong"); if (mk.parentNode) mk.parentNode.removeChild(mk); }, 600);
         }
       });
       huBtns[lx.id] = h; right.appendChild(h);

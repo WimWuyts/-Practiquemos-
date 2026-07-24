@@ -121,6 +121,8 @@ window.M = window.M || {};
     var items = act.items.map(M.get.lex).filter(Boolean).slice(0, 6);
     dom.clear(mount);
     mount.appendChild(el("p", { class: "prompt", text: M.i18n.t("act.match.prompt") }));
+    var live = el("div", { class: "sr-only", role: "status", "aria-live": "polite" });
+    mount.appendChild(live);
     var selectedEn = null, matched = 0;
     var left = el("div", { class: "options" }), right = el("div", { class: "options" });
     var grid = el("div", { style: "display:grid;grid-template-columns:1fr 1fr;gap:1rem" }, [left, right]);
@@ -148,7 +150,12 @@ window.M = window.M || {};
           selectedEn = null;
           if (matched === items.length) { feedback(mount, true, M.i18n.t("fb.correct")); advance(mount, true, function () { done(true); }); }
         } else {
-          h.classList.add("wrong"); setTimeout(function () { h.classList.remove("wrong"); }, 600);
+          // wrong match: never colour-alone — carry the gentle "not quite" glyph + announce for screen readers
+          h.classList.add("wrong");
+          var mk = el("span", { class: "mark", html: dom.icon("again") });
+          h.appendChild(mk);
+          live.textContent = M.i18n.t("a11y.incorrect");
+          setTimeout(function () { h.classList.remove("wrong"); if (mk.parentNode) mk.parentNode.removeChild(mk); }, 600);
         }
       });
       huBtns[lx.id] = h; right.appendChild(h);

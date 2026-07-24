@@ -120,7 +120,7 @@
   padding:.85rem 1rem;margin:.4rem 0;cursor:pointer;font-size:1rem;color:var(--ink);box-shadow:var(--hairline);
   transition:background var(--dur-1) var(--ease-in-out),border-color var(--dur-1) var(--ease-in-out),
              transform var(--dur-1) var(--ease-in-out)}
-.lessonbtn:hover{background:var(--surface-2);border-color:var(--accent-300)}   /* not good-bg — keeps .done at 4.63:1 */
+.lessonbtn:hover{background:var(--surface-raised);border-color:var(--accent-300);box-shadow:var(--e1),var(--hairline)}   /* lifts toward the light; keeps .done text >=4.8:1 (surface-2 drops it to 4.24:1) */
 .lessonbtn:active{transform:translateY(1px)}
 .lessonbtn .done{color:var(--good);font-weight:var(--wt-bold)}
 .badge-status{font-size:var(--step--2);padding:.2rem .6rem;border-radius:var(--r-pill);border:1px solid var(--line);
