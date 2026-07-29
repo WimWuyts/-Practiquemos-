@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mi Retrato Picasso — Español</title>
+<style>
+  :root{
+    --bg:#0c0a12; --panel:#171320; --panel2:#211a2e; --border:#3a2f4e;
+    --ink:#f3ecff; --muted:#c3b4d8; --dim:#8a7aa4;
+    --hot:#ff7a3c; --star:#ffd76a; --cyan:#5fd0ff; --violet:#a97bff; --green:#57e08a; --pink:#ff6ab0; --red:#ff6a5a;
+    --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:
+      radial-gradient(1100px 640px at 82% -10%, rgba(169,123,255,.2), transparent 60%),
+      radial-gradient(900px 640px at 8% 110%, rgba(255,122,60,.16), transparent 60%),
+      var(--bg);
+    color:var(--ink); font-family:var(--sans); line-height:1.55; -webkit-font-smoothing:antialiased}
+  button{font-family:inherit}
+
+  header{position:sticky; top:0; z-index:40; background:linear-gradient(180deg,rgba(12,10,18,.96),rgba(12,10,18,.75)); backdrop-filter:blur(10px); border-bottom:1px solid var(--border)}
+  .bar{max-width:1180px; margin:0 auto; padding:11px 18px; display:flex; align-items:center; gap:13px; flex-wrap:wrap}
+  .schoollogo{width:34px; height:34px; display:block; flex-shrink:0}
+  .sjb{font-family:var(--mono); font-size:14px; color:#fff; background:linear-gradient(135deg,var(--violet),var(--hot)); padding:4px 8px; border-radius:6px; letter-spacing:1px; font-weight:800}
+  .brand h1{margin:0; font-size:18px; letter-spacing:.3px}
+  .brand .sub{font-size:10.5px; text-transform:uppercase; letter-spacing:2.5px; color:var(--muted); font-weight:700}
+  .spacer{flex:1}
+  .privchip{font-size:11px; font-weight:700; color:var(--green); border:1px solid rgba(87,224,138,.4); background:rgba(87,224,138,.1); padding:5px 11px; border-radius:20px; display:flex; gap:6px; align-items:center}
+
+  .wrap{max-width:1180px; margin:0 auto; padding:20px 18px 60px; display:grid; grid-template-columns:minmax(0,460px) 1fr; gap:24px; align-items:start}
+  @media(max-width:860px){ .wrap{grid-template-columns:1fr} }
+  h2.sec{font-size:11px; text-transform:uppercase; letter-spacing:3px; color:var(--muted); margin:0 0 12px; font-weight:800}
+  .hide{display:none !important}
+
+  /* ===== portrait side ===== */
+  .stageCard{border:1px solid var(--border); border-radius:18px; background:var(--panel); overflow:hidden; box-shadow:0 12px 44px rgba(0,0,0,.5); position:sticky; top:78px}
+  .canvasHost{position:relative; background:repeating-conic-gradient(#14101d 0% 25%, #191325 0% 50%) 50%/26px 26px; display:flex; justify-content:center; align-items:center; padding:18px}
+  #view{width:100%; max-width:440px; height:auto; border-radius:10px; display:block; box-shadow:0 8px 30px rgba(0,0,0,.55)}
+  .emptyState{position:absolute; inset:18px; border:2px dashed var(--border); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; color:var(--muted); padding:22px}
+  .emptyState .big{font-size:46px}
+  .emptyState .t{font-weight:800; color:var(--ink); font-size:16px}
+  .emptyState .d{font-size:12.5px; max-width:300px}
+
+  .anchorLayer{position:absolute; inset:0; pointer-events:none}
+  .anchor{position:absolute; width:26px; height:26px; margin:-13px 0 0 -13px; border-radius:50%; border:2px solid #fff; background:rgba(169,123,255,.55); cursor:grab; pointer-events:auto; display:flex; align-items:center; justify-content:center; font-size:12px; box-shadow:0 2px 10px rgba(0,0,0,.5); touch-action:none}
+  .anchor.mo{background:rgba(255,106,176,.6)}
+  .anchor .lbl{position:absolute; top:28px; font-size:10px; font-weight:800; color:#fff; white-space:nowrap; background:rgba(0,0,0,.55); padding:1px 6px; border-radius:8px}
+
+  .stageBody{padding:15px 17px 18px}
+  .progWrap{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+  .progText{font-family:var(--mono); font-weight:800; font-size:15px; white-space:nowrap}
+  .progText .pc{color:var(--violet)}
+  .progBar{flex:1; height:12px; border-radius:8px; background:var(--panel2); border:1px solid var(--border); overflow:hidden}
+  .progFill{height:100%; width:0; border-radius:8px; background:linear-gradient(90deg,var(--hot),var(--star),var(--violet)); transition:width .5s cubic-bezier(.2,.7,.3,1)}
+  .stageBtns{display:flex; gap:9px; flex-wrap:wrap}
+  .filelbl{border:none; background:linear-gradient(135deg,var(--violet),var(--cyan)); color:#fff; font-weight:800; font-size:13px; padding:10px 15px; border-radius:10px; cursor:pointer; display:inline-flex; align-items:center; gap:7px}
+  .btn{border:1px solid var(--border); background:var(--panel2); color:var(--ink); padding:9px 13px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer}
+  .btn:hover{border-color:var(--cyan)}
+  .btn.primary{background:linear-gradient(135deg,var(--green),var(--cyan)); border:none; color:#04240f}
+  .btn.ghost{background:transparent}
+  .hintline{font-size:12px; color:var(--dim); margin-top:10px; line-height:1.5}
+
+  /* ===== quiz side ===== */
+  .qcard{border:1px solid var(--border); border-radius:18px; background:var(--panel); overflow:hidden}
+  .qtop{padding:16px 18px; background:linear-gradient(180deg,var(--panel2),var(--panel)); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+  .qtop .qt{font-weight:800; font-size:17px}
+  .qtop .qcount{margin-left:auto; font-family:var(--mono); font-weight:800; color:var(--star)}
+  .qbody{padding:18px 20px 22px; min-height:220px}
+  .qnum{font-family:var(--mono); font-size:12px; color:var(--dim); letter-spacing:1px; text-transform:uppercase}
+  .qq{font-size:20px; font-weight:800; margin:6px 0 16px; line-height:1.3}
+  .opts{display:flex; flex-direction:column; gap:10px}
+  .opt{border:1px solid var(--border); background:var(--panel2); color:var(--ink); text-align:left; font-size:15px; padding:13px 15px; border-radius:11px; cursor:pointer; transition:.12s; display:flex; align-items:center; gap:11px}
+  .opt:hover:not(:disabled){border-color:var(--cyan); transform:translateY(-1px)}
+  .opt .k{font-family:var(--mono); font-weight:800; color:var(--dim); border:1px solid var(--border); border-radius:6px; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0}
+  .opt.good{border-color:var(--green); background:rgba(87,224,138,.18)} .opt.good .k{color:var(--green); border-color:var(--green)}
+  .opt.bad{border-color:var(--red); background:rgba(255,106,90,.15); opacity:.7} .opt.bad .k{color:var(--red); border-color:var(--red)}
+  .opt:disabled{cursor:default}
+  .qfeed{margin-top:14px; font-size:14px; font-weight:700; min-height:22px}
+  .qfeed.ok{color:var(--green)} .qfeed.no{color:var(--red)}
+  .qnav{display:flex; align-items:center; gap:10px; margin-top:18px}
+  .startPane{padding:26px 22px; text-align:center}
+  .startPane .em{font-size:40px}
+  .startPane h3{margin:8px 0 6px; font-size:20px}
+  .startPane p{color:var(--muted); font-size:14px; max-width:440px; margin:6px auto 0}
+  .steps{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:16px 0 4px}
+  .step{border:1px solid var(--border); background:var(--panel2); border-radius:12px; padding:10px 14px; font-size:12.5px; color:var(--muted); max-width:150px}
+  .step b{color:var(--ink); display:block; font-size:13px; margin-bottom:2px}
+
+  .done{padding:26px 22px; text-align:center}
+  .done .em{font-size:48px}
+  .done h3{margin:8px 0 4px; font-size:24px; background:linear-gradient(135deg,var(--star),var(--pink),var(--violet)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+  .done p{color:var(--muted); font-size:14px}
+
+  footer{max-width:1180px; margin:0 auto; padding:0 18px 40px; color:var(--dim); font-size:12px; text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <svg class="schoollogo" viewBox="0 0 100 100" aria-label="School logo">
+      <polygon points="12,20 50,46 30,50" fill="#d2d2d2"/><polygon points="30,50 50,46 74,54 52,93" fill="#9a9a9a"/>
+      <polygon points="30,50 52,93 9,71" fill="#58585a"/><polygon points="12,20 82,18 50,46" fill="#e8632a"/>
+      <polygon points="50,46 82,18 68,42" fill="#de4a1e"/><polygon points="82,18 93,54 55,47" fill="#f4a986"/>
+    </svg>
+    <span class="sjb">SJB</span>
+    <div class="brand"><h1>Mi Retrato Picasso</h1><div class="sub">Español · responde y transforma</div></div>
+    <div class="spacer"></div>
+    <div class="privchip">🔒 Tu foto no sale de este aparato</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- ============ PORTRAIT ============ -->
+  <section>
+    <h2 class="sec">Tu retrato</h2>
+    <div class="stageCard">
+      <div class="canvasHost" id="canvasHost">
+        <canvas id="view" width="440" height="540"></canvas>
+        <div class="emptyState" id="emptyState">
+          <div class="big">🖼️</div>
+          <div class="t">Carga tu foto de Smartschool</div>
+          <div class="d">Haz una captura de pantalla de tu foto y cárgala aquí. Se queda solo en tu navegador.</div>
+        </div>
+        <div class="anchorLayer hide" id="anchorLayer">
+          <div class="anchor le" id="a-le" data-key="le">👁<span class="lbl">ojo izq.</span></div>
+          <div class="anchor re" id="a-re" data-key="re">👁<span class="lbl">ojo der.</span></div>
+          <div class="anchor mo" id="a-mo" data-key="mo">👄<span class="lbl">boca</span></div>
+        </div>
+      </div>
+      <div class="stageBody">
+        <div class="progWrap">
+          <div class="progText"><span class="pc" id="progPct">0%</span> Picasso</div>
+          <div class="progBar"><div class="progFill" id="progFill"></div></div>
+          <div class="progText" id="progCount">0/0</div>
+        </div>
+        <div class="stageBtns" id="stageBtns">
+          <label class="filelbl">📁 Cargar foto<input type="file" accept="image/*" id="fileIn" hidden></label>
+          <button class="btn ghost hide" id="anchorDoneBtn" onclick="finishAnchors()">✓ Listo, marcar cara</button>
+          <button class="btn ghost hide" id="resetBtn" onclick="resetAll()">↺ Empezar de nuevo</button>
+        </div>
+        <div class="hintline" id="stageHint">Consejo: usa una foto donde se vea bien tu cara, de frente.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section>
+    <h2 class="sec">Las preguntas</h2>
+    <div class="qcard">
+      <div class="qtop"><span class="qt">🎨 Preguntas de español</span><span class="qcount" id="qCount"></span></div>
+      <!-- start -->
+      <div class="startPane" id="startPane">
+        <div class="em">👩‍🎨</div>
+        <h3>Convierte tu foto en un Picasso</h3>
+        <p>Por cada respuesta correcta, tu retrato se vuelve un poco más cubista. ¡Con todas las respuestas correctas, el cuadro estará completo!</p>
+        <div class="steps">
+          <div class="step"><b>1 · Carga</b>tu foto de Smartschool</div>
+          <div class="step"><b>2 · Marca</b>los ojos y la boca</div>
+          <div class="step"><b>3 · Responde</b>y transforma el retrato</div>
+        </div>
+        <p style="font-size:12px;color:var(--dim);margin-top:14px">🔒 Todo pasa en tu navegador. La foto no se guarda ni se envía a ningún sitio.</p>
+      </div>
+      <!-- quiz -->
+      <div class="qbody hide" id="qbody"></div>
+      <!-- done -->
+      <div class="done hide" id="donePane">
+        <div class="em">🖼️✨</div>
+        <h3>¡Retrato completo!</h3>
+        <p id="doneMsg">Has transformado tu foto en un retrato cubista. ¡Bien hecho!</p>
+        <div style="margin-top:16px"><button class="btn primary" onclick="resetAll()">↺ Otra vez</button></div>
+        <p style="font-size:12px;color:var(--dim);margin-top:14px">Recuerda: nada se ha guardado. Al recargar la página, la foto desaparece.</p>
+      </div>
+    </div>
+    <div class="hintline" style="margin-top:12px; padding:0 2px">
+      <b style="color:var(--cyan)">Docente:</b> abre este bestand en een teksteditor en pas de lijst <code style="color:var(--star)">QUESTIONS</code> bovenaan het script aan met je eigen 10 Spaanse vragen (het aantal vragen bepaalt het aantal stappen). De foto blijft altijd lokaal.
+    </div>
+  </section>
+</div>
+
+<footer id="foot"></footer>
+
+<script>
+/* =======================================================================
+   ✏️  DOCENTE — EDIT YOUR SPANISH QUESTIONS HERE  (replace these 10)
+   - "q"       : the question
+   - "options" : the possible answers
+   - "answer"  : index of the correct option (0 = first, 1 = second, ...)
+   The number of questions = number of Picasso steps.
+   ======================================================================= */
+const QUESTIONS = [
+  { q:"¿Cómo se dice “good morning”?", options:["Buenas noches","Buenos días","Hasta luego","De nada"], answer:1 },
+  { q:"Yo ___ estudiante de español.", options:["soy","estoy","es","eres"], answer:0 },
+  { q:"Elige el artículo correcto: ___ casa.", options:["el","los","la","un"], answer:2 },
+  { q:"¿Cuál es el color “red”?", options:["verde","azul","amarillo","rojo"], answer:3 },
+  { q:"Nosotros ___ en Bélgica. (vivir)", options:["vivo","vives","vivimos","viven"], answer:2 },
+  { q:"¿Qué hora es? Son las ___ (2:00).", options:["dos","doce","diez","doce y media"], answer:0 },
+  { q:"El plural de “el lápiz” es…", options:["los lápizes","los lápices","las lápiz","los lápis"], answer:1 },
+  { q:"“I like football” = Me ___ el fútbol.", options:["gusto","gustas","gusta","gustan"], answer:2 },
+  { q:"¿Cómo estás? — ___, gracias.", options:["Bien","Bueno","Buena","Bienes"], answer:0 },
+  { q:"Ella ___ del colegio ahora. (venir)", options:["vengo","viene","venís","vienen"], answer:1 },
+];
+/* ===================================================================== */
+
+/* ---------- state ---------- */
+const CW=440, CH=540;
+let baseCanvas=null, viewCanvas, viewCtx;
+let anchors={le:[0.37,0.44], re:[0.63,0.44], mo:[0.50,0.70]};
+let phase='empty';           // empty | anchors | quiz | done
+let qIndex=0, correct=0;
+const TOTAL=QUESTIONS.length;
+
+window.addEventListener('DOMContentLoaded', init);
+function init(){
+  viewCanvas=document.getElementById('view'); viewCtx=viewCanvas.getContext('2d');
+  document.getElementById('fileIn').addEventListener('change', onFile);
+  document.getElementById('qCount').textContent='0 / '+TOTAL;
+  document.getElementById('progCount').textContent='0/'+TOTAL;
+  setupAnchorDragging();
+  document.getElementById('foot').innerHTML='Mi Retrato Picasso · español · construido para SJB · 🔒 tu foto nunca sale de este navegador.';
+}
+
+/* ---------- image loading (LOCAL ONLY, never uploaded) ---------- */
+function onFile(e){ const f=e.target.files&&e.target.files[0]; if(!f) return; const url=URL.createObjectURL(f); ingest(url, true); }
+function ingest(url, revoke){
+  const img=new Image();
+  img.onload=()=>{ if(revoke) URL.revokeObjectURL(url); onImageLoaded(img); };
+  img.onerror=()=>{ alert('No se pudo cargar la imagen.'); };
+  img.src=url;
+}
+window.__ingest = (url)=> ingest(url, false);   // test hook
+function onImageLoaded(img){
+  baseCanvas=document.createElement('canvas'); baseCanvas.width=CW; baseCanvas.height=CH;
+  const b=baseCanvas.getContext('2d');
+  const s=Math.max(CW/img.width, CH/img.height); const w=img.width*s, h=img.height*s;
+  b.drawImage(img,(CW-w)/2,(CH-h)/2,w,h);
+  document.getElementById('emptyState').classList.add('hide');
+  renderPortrait(0);
+  // go to anchor phase
+  phase='anchors';
+  document.getElementById('anchorLayer').classList.remove('hide');
+  positionAnchorDots();
+  document.getElementById('anchorDoneBtn').classList.remove('hide');
+  document.getElementById('resetBtn').classList.remove('hide');
+  document.getElementById('stageHint').innerHTML='Arrastra los tres puntos sobre <b>tus dos ojos</b> y <b>tu boca</b>. Luego pulsa “Listo”.';
+}
+
+/* ---------- anchors ---------- */
+function positionAnchorDots(){
+  const host=document.getElementById('canvasHost'); const cv=viewCanvas.getBoundingClientRect(); const hr=host.getBoundingClientRect();
+  const ox=cv.left-hr.left, oy=cv.top-hr.top;
+  ['le','re','mo'].forEach(k=>{ const el=document.getElementById('a-'+k); el.style.left=(ox+anchors[k][0]*cv.width)+'px'; el.style.top=(oy+anchors[k][1]*cv.height)+'px'; });
+}
+window.addEventListener('resize', ()=>{ if(phase==='anchors') positionAnchorDots(); });
+function setupAnchorDragging(){
+  let drag=null;
+  function down(e){ drag=e.currentTarget.dataset.key; e.currentTarget.style.cursor='grabbing'; e.preventDefault(); }
+  function move(e){ if(!drag) return; const cv=viewCanvas.getBoundingClientRect(); const p=(e.touches?e.touches[0]:e);
+    let nx=(p.clientX-cv.left)/cv.width, ny=(p.clientY-cv.top)/cv.height;
+    nx=Math.max(0,Math.min(1,nx)); ny=Math.max(0,Math.min(1,ny)); anchors[drag]=[nx,ny]; positionAnchorDots(); }
+  function up(){ drag=null; }
+  ['le','re','mo'].forEach(k=>{ const el=document.getElementById('a-'+k); el.addEventListener('mousedown',down); el.addEventListener('touchstart',down,{passive:false}); });
+  window.addEventListener('mousemove',move); window.addEventListener('touchmove',move,{passive:false});
+  window.addEventListener('mouseup',up); window.addEventListener('touchend',up);
+}
+function finishAnchors(){
+  phase='quiz'; qIndex=0; correct=0;
+  document.getElementById('anchorLayer').classList.add('hide');
+  document.getElementById('anchorDoneBtn').classList.add('hide');
+  document.getElementById('startPane').classList.add('hide');
+  document.getElementById('donePane').classList.add('hide');
+  document.getElementById('qbody').classList.remove('hide');
+  document.getElementById('stageHint').innerHTML='¡A jugar! Cada respuesta correcta transforma un poco tu retrato.';
+  renderQuestion();
+}
+window.__finishAnchors = finishAnchors; // test hook
+
+/* ---------- quiz ---------- */
+function renderQuestion(){
+  const q=QUESTIONS[qIndex]; const letters=['A','B','C','D','E','F'];
+  document.getElementById('qCount').textContent=correct+' / '+TOTAL;
+  document.getElementById('qbody').innerHTML =
+    `<div class="qnum">Pregunta ${qIndex+1} de ${TOTAL}</div>
+     <div class="qq">${q.q}</div>
+     <div class="opts" id="opts">${q.options.map((o,j)=>
+        `<button class="opt" id="opt-${j}" onclick="answer(${j})"><span class="k">${letters[j]}</span><span>${o}</span></button>`).join('')}</div>
+     <div class="qfeed" id="qfeed"></div>
+     <div class="qnav" id="qnav"></div>`;
+}
+function answer(j){
+  const q=QUESTIONS[qIndex]; const feed=document.getElementById('qfeed');
+  const btn=document.getElementById('opt-'+j);
+  if(btn.disabled) return;
+  if(j===q.answer){
+    btn.classList.add('good');
+    document.querySelectorAll('#opts .opt').forEach(b=>b.disabled=true);
+    feed.className='qfeed ok'; feed.textContent='¡Correcto! 🎉';
+    correct++;
+    updateProgress(true);
+    const nav=document.getElementById('qnav');
+    if(correct>=TOTAL){
+      nav.innerHTML='<button class="btn primary" onclick="finishGame()">Ver mi retrato ✨</button>';
+    } else {
+      nav.innerHTML='<button class="btn primary" onclick="nextQuestion()">Siguiente →</button>';
+    }
+  } else {
+    btn.classList.add('bad'); btn.disabled=true;
+    feed.className='qfeed no'; feed.textContent='Casi… prueba otra vez.';
+  }
+}
+function nextQuestion(){ qIndex=(qIndex+1)%TOTAL; // move forward through the list
+  // skip already-solved? we advance linearly; if we wrapped, find next unsolved is unnecessary since each correct advances count.
+  renderQuestion();
+}
+function updateProgress(animate){
+  const t=correct/TOTAL;
+  document.getElementById('progFill').style.width=(t*100)+'%';
+  document.getElementById('progPct').textContent=Math.round(t*100)+'%';
+  document.getElementById('progCount').textContent=correct+'/'+TOTAL;
+  document.getElementById('qCount').textContent=correct+' / '+TOTAL;
+  renderPortrait(t);
+}
+function finishGame(){
+  phase='done';
+  document.getElementById('qbody').classList.add('hide');
+  document.getElementById('donePane').classList.remove('hide');
+  document.getElementById('stageHint').innerHTML='🎨 ¡Tu retrato Picasso está completo!';
+  renderPortrait(1);
+}
+window.__answerCorrect = ()=>{ answer(QUESTIONS[qIndex].answer); };  // test hook
+
+function resetAll(){
+  baseCanvas=null; phase='empty'; qIndex=0; correct=0;
+  viewCtx.clearRect(0,0,CW,CH);
+  document.getElementById('emptyState').classList.remove('hide');
+  document.getElementById('anchorLayer').classList.add('hide');
+  document.getElementById('anchorDoneBtn').classList.add('hide');
+  document.getElementById('resetBtn').classList.add('hide');
+  document.getElementById('qbody').classList.add('hide');
+  document.getElementById('donePane').classList.add('hide');
+  document.getElementById('startPane').classList.remove('hide');
+  document.getElementById('progFill').style.width='0%';
+  document.getElementById('progPct').textContent='0%';
+  document.getElementById('progCount').textContent='0/'+TOTAL;
+  document.getElementById('qCount').textContent='0 / '+TOTAL;
+  document.getElementById('fileIn').value='';
+  document.getElementById('stageHint').innerHTML='Consejo: usa una foto donde se vea bien tu cara, de frente.';
+}
+
+/* =======================================================================
+   PICASSO / CUBIST RENDER PIPELINE  —  renderPortrait(t), t in [0,1]
+   All effects ramp with t. Everything is drawn on canvas, fully offline.
+   ======================================================================= */
+const PAL=[[38,30,26],[92,58,40],[168,80,48],[214,150,74],[236,214,168],[70,120,112],[52,84,120]];
+function palColor(l){ const x=l*(PAL.length-1); const i=Math.min(PAL.length-2,Math.floor(x)), f=x-i; const a=PAL[i],b=PAL[i+1];
+  return [a[0]+(b[0]-a[0])*f, a[1]+(b[1]-a[1])*f, a[2]+(b[2]-a[2])*f]; }
+function rnd(seed){ const s=Math.sin(seed*127.1+311.7)*43758.5453; return s-Math.floor(s); }
+function newCanvas(){ const c=document.createElement('canvas'); c.width=CW; c.height=CH; return c; }
+function copyOf(cv){ const c=newCanvas(); c.getContext('2d').drawImage(cv,0,0); return c; }
+
+function renderPortrait(t){
+  if(!baseCanvas){ return; }
+  const work=newCanvas(); const w=work.getContext('2d');
+  w.drawImage(baseCanvas,0,0);
+  applyPalette(w,t);
+  if(t>0.02) applyFragments(w,t);
+  if(t>0.30) applySplit(w,t);
+  if(t>0.12) applyEdges(w,t);
+  if(t>0.40) applyExtraEye(w,t);
+  if(t>0.48) applyLinework(w,t);
+  if(t>0.88) applyFrame(w,t);
+  viewCtx.clearRect(0,0,CW,CH);
+  viewCtx.drawImage(work,0,0);
+}
+window.__setProgress = renderPortrait; // test hook
+
+function applyPalette(ctx,t){
+  const id=ctx.getImageData(0,0,CW,CH), d=id.data;
+  const q=Math.max(3, Math.round(3+(1-t)*18));           // posterize levels
+  for(let i=0;i<d.length;i+=4){
+    const r=d[i],g=d[i+1],b=d[i+2];
+    const l=(0.299*r+0.587*g+0.114*b)/255;
+    const pc=palColor(l);
+    let nr=r+(pc[0]-r)*t*0.9, ng=g+(pc[1]-g)*t*0.9, nb=b+(pc[2]-b)*t*0.9;
+    // posterize (stronger as t rises)
+    const pm=t; const step=255/q;
+    nr = nr*(1-pm) + Math.round(nr/step)*step*pm;
+    ng = ng*(1-pm) + Math.round(ng/step)*step*pm;
+    nb = nb*(1-pm) + Math.round(nb/step)*step*pm;
+    d[i]=nr; d[i+1]=ng; d[i+2]=nb;
+  }
+  ctx.putImageData(id,0,0);
+}
+
+function applyFragments(ctx,t){
+  const src=copyOf(ctx.canvas); const sctx=src.getContext('2d');
+  const sd=sctx.getImageData(0,0,CW,CH).data;
+  function sample(x,y){ x=Math.max(0,Math.min(CW-1,x|0)); y=Math.max(0,Math.min(CH-1,y|0)); const i=(y*CW+x)*4; return `rgb(${sd[i]},${sd[i+1]},${sd[i+2]})`; }
+  const cols=8, rows=10; const dispMax=t*16;
+  const frag=newCanvas(); const f=frag.getContext('2d');
+  // build jittered lattice
+  const pts=[];
+  for(let y=0;y<=rows;y++){ pts[y]=[]; for(let x=0;x<=cols;x++){
+    const jx=(rnd(x*7+y*13)-0.5), jy=(rnd(x*17+y*3)-0.5);
+    const edge=(x===0||y===0||x===cols||y===rows);
+    const px=x/cols*CW + (edge?0:jx*CW/cols*0.6) + Math.cos(x*1.3+y)*dispMax*(edge?0:1);
+    const py=y/rows*CH + (edge?0:jy*CH/rows*0.6) + Math.sin(y*1.7+x)*dispMax*(edge?0:1);
+    pts[y][x]=[px,py];
+  }}
+  function tri(a,b,c){ const cx=(a[0]+b[0]+c[0])/3, cy=(a[1]+b[1]+c[1])/3;
+    f.beginPath(); f.moveTo(a[0],a[1]); f.lineTo(b[0],b[1]); f.lineTo(c[0],c[1]); f.closePath();
+    f.fillStyle=sample(cx,cy); f.fill();
+    f.lineWidth=0.6+t*0.9; f.strokeStyle='rgba(20,14,10,'+(0.10+t*0.35)+')'; f.stroke(); }
+  for(let y=0;y<rows;y++) for(let x=0;x<cols;x++){
+    const a=pts[y][x], b=pts[y][x+1], c=pts[y+1][x+1], dd=pts[y+1][x];
+    tri(a,b,c); tri(a,c,dd);
+  }
+  ctx.save(); ctx.globalAlpha=Math.min(0.92, t*1.15); ctx.drawImage(frag,0,0); ctx.restore();
+}
+
+function applySplit(ctx,t){
+  const amt=Math.min(1,(t-0.30)/0.5);
+  const nose=(anchors.le[0]+anchors.re[0])/2*CW;
+  const top=Math.max(0,(anchors.le[1]-0.22)*CH), bot=Math.min(CH,(anchors.mo[1]+0.16)*CH);
+  const h=bot-top; if(h<=0) return;
+  const snap=copyOf(ctx.canvas); const shift=amt*11;
+  ctx.save();
+  ctx.clearRect(0,top,CW,h);
+  // left half shifted down+right, right half shifted up+left -> two viewpoints
+  ctx.drawImage(snap, 0,top, nose,h,  0+shift, top+shift, nose,h);
+  ctx.drawImage(snap, nose,top, CW-nose,h,  nose-shift, top-shift, CW-nose,h);
+  // seam line
+  ctx.globalAlpha=amt*0.5; ctx.strokeStyle='#1a120b'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(nose,top); ctx.lineTo(nose,bot); ctx.stroke();
+  ctx.restore();
+}
+
+function applyExtraEye(ctx,t){
+  const amt=Math.min(1,(t-0.40)/0.3);
+  const snap=copyOf(ctx.canvas);
+  const eye = anchors.re;               // copy the right eye
+  const r=CW*0.12;
+  const ex=eye[0]*CW, ey=eye[1]*CH;
+  // paste a duplicate up-and-left, rotated
+  const dx=anchors.le[0]*CW - CW*0.03, dy=(anchors.le[1]-0.16)*CH;
+  ctx.save();
+  ctx.globalAlpha=amt;
+  ctx.translate(dx,dy); ctx.rotate(-0.28);
+  ctx.drawImage(snap, ex-r, ey-r*0.8, r*2, r*1.6,  -r, -r*0.8, r*2, r*1.6);
+  ctx.lineWidth=3.2; ctx.strokeStyle='#160f09';
+  ctx.beginPath(); ctx.ellipse(0,0,r*0.95,r*0.66,0,0,Math.PI*2); ctx.stroke();
+  // pupil
+  ctx.fillStyle='#160f09'; ctx.beginPath(); ctx.arc(0,0,r*0.16,0,Math.PI*2); ctx.fill();
+  ctx.restore();
+}
+
+function applyEdges(ctx,t){
+  const id=ctx.getImageData(0,0,CW,CH), d=id.data;
+  const gray=new Float32Array(CW*CH);
+  for(let i=0,p=0;i<d.length;i+=4,p++) gray[p]=0.299*d[i]+0.587*d[i+1]+0.114*d[i+2];
+  const out=ctx.createImageData(CW,CH), od=out.data;
+  const th=40; const a=Math.min(0.85,0.25+t*0.7);
+  for(let y=1;y<CH-1;y++) for(let x=1;x<CW-1;x++){
+    const p=y*CW+x;
+    const gx=-gray[p-1-CW]-2*gray[p-1]-gray[p-1+CW]+gray[p+1-CW]+2*gray[p+1]+gray[p+1+CW];
+    const gy=-gray[p-CW-1]-2*gray[p-CW]-gray[p-CW+1]+gray[p+CW-1]+2*gray[p+CW]+gray[p+CW+1];
+    const m=Math.sqrt(gx*gx+gy*gy);
+    if(m>th){ const o=p*4; od[o]=20; od[o+1]=14; od[o+2]=10; od[o+3]=Math.min(255, (m-th)*1.4)*a; }
+  }
+  const ec=newCanvas(); ec.getContext('2d').putImageData(out,0,0);
+  ctx.drawImage(ec,0,0);
+}
+
+function applyLinework(ctx,t){
+  const amt=Math.min(1,(t-0.48)/0.35);
+  const le=[anchors.le[0]*CW,anchors.le[1]*CH], re=[anchors.re[0]*CW,anchors.re[1]*CH], mo=[anchors.mo[0]*CW,anchors.mo[1]*CH];
+  const mid=[(le[0]+re[0])/2,(le[1]+re[1])/2];
+  ctx.save();
+  ctx.globalAlpha=amt; ctx.strokeStyle='#150e08'; ctx.lineJoin='round'; ctx.lineCap='round';
+  const lw=CW*0.012;
+  // angular nose (a "7" shape from brow to mouth)
+  ctx.lineWidth=lw*1.4;
+  ctx.beginPath(); ctx.moveTo(mid[0]+CW*0.02, mid[1]-CH*0.02);
+  ctx.lineTo(mid[0]-CW*0.06, mo[1]-CH*0.03);
+  ctx.lineTo(mid[0]+CW*0.05, mo[1]-CH*0.02); ctx.stroke();
+  // eyebrows
+  ctx.lineWidth=lw*1.1;
+  ctx.beginPath(); ctx.moveTo(le[0]-CW*0.07, le[1]-CH*0.06); ctx.lineTo(le[0]+CW*0.05, le[1]-CH*0.085); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(re[0]-CW*0.05, re[1]-CH*0.09); ctx.lineTo(re[0]+CW*0.07, re[1]-CH*0.055); ctx.stroke();
+  // eye outlines (almond)
+  [le,re].forEach(e=>{ ctx.lineWidth=lw; ctx.beginPath(); ctx.ellipse(e[0],e[1],CW*0.07,CH*0.035,0,0,Math.PI*2); ctx.stroke();
+    ctx.fillStyle='#150e08'; ctx.beginPath(); ctx.arc(e[0],e[1],CW*0.02,0,Math.PI*2); ctx.fill(); });
+  // mouth as a bold geometric shape
+  ctx.lineWidth=lw*1.2;
+  ctx.beginPath(); ctx.moveTo(mo[0]-CW*0.09,mo[1]); ctx.quadraticCurveTo(mo[0],mo[1]+CH*0.045, mo[0]+CW*0.09,mo[1]);
+  ctx.quadraticCurveTo(mo[0],mo[1]-CH*0.01, mo[0]-CW*0.09,mo[1]); ctx.stroke();
+  // face contour arcs (two viewpoints)
+  ctx.globalAlpha=amt*0.8; ctx.lineWidth=lw*1.1;
+  ctx.beginPath(); ctx.ellipse(CW*0.5, CH*0.5, CW*0.34, CH*0.40, 0, Math.PI*0.15, Math.PI*1.05); ctx.stroke();
+  ctx.restore();
+}
+
+function applyFrame(ctx,t){
+  const amt=Math.min(1,(t-0.88)/0.12);
+  ctx.save(); ctx.globalAlpha=amt;
+  ctx.lineWidth=CW*0.03; ctx.strokeStyle='#1a120b'; ctx.strokeRect(ctx.lineWidth/2,ctx.lineWidth/2,CW-ctx.lineWidth,CH-ctx.lineWidth);
+  // little signature flourish
+  ctx.globalAlpha=amt*0.9; ctx.lineWidth=2.4; ctx.strokeStyle='#ecd6a8';
+  const sx=CW*0.72, sy=CH*0.94;
+  ctx.beginPath(); ctx.moveTo(sx,sy); ctx.bezierCurveTo(sx+10,sy-14,sx+22,sy+8,sx+34,sy-6); ctx.bezierCurveTo(sx+40,sy-12,sx+48,sy+2,sx+58,sy-4); ctx.stroke();
+  ctx.restore();
+}
+</script>
+</body>
+</html>
