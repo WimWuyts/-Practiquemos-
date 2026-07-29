@@ -139,6 +139,7 @@
         <div class="stageBtns" id="stageBtns">
           <label class="filelbl">📁 Cargar foto<input type="file" accept="image/*" id="fileIn" hidden></label>
           <button class="btn ghost hide" id="anchorDoneBtn" onclick="finishAnchors()">✓ Listo, marcar cara</button>
+          <button class="btn ghost hide" id="rerollBtn" onclick="rerollStyle()">🎲 Otra versión</button>
           <button class="btn ghost hide" id="resetBtn" onclick="resetAll()">↺ Empezar de nuevo</button>
         </div>
         <div class="hintline" id="stageHint">Consejo: usa una foto donde se vea bien tu cara, de frente.</div>
@@ -209,6 +210,7 @@ const QUESTIONS = [
 const CW=440, CH=540;
 let baseCanvas=null, viewCanvas, viewCtx;
 let anchors={le:[0.37,0.44], re:[0.63,0.44], mo:[0.50,0.70]};
+let styleSeed=0, photoPalette=null, curT=0;  // styleSeed = per-photo cubist arrangement; photoPalette = colours sampled from the photo
 let phase='empty';           // empty | anchors | quiz | done
 let qIndex=0, correct=0;
 const TOTAL=QUESTIONS.length;
@@ -237,6 +239,8 @@ function onImageLoaded(img){
   const b=baseCanvas.getContext('2d');
   const s=Math.max(CW/img.width, CH/img.height); const w=img.width*s, h=img.height*s;
   b.drawImage(img,(CW-w)/2,(CH-h)/2,w,h);
+  styleSeed=Math.random()*997+1;         // fresh cubist arrangement per photo (stable during the quiz)
+  computePhotoPalette();                  // sample this student's own colours
   document.getElementById('emptyState').classList.add('hide');
   renderPortrait(0);
   // go to anchor phase
@@ -245,6 +249,7 @@ function onImageLoaded(img){
   positionAnchorDots();
   document.getElementById('anchorDoneBtn').classList.remove('hide');
   document.getElementById('resetBtn').classList.remove('hide');
+  document.getElementById('rerollBtn').classList.remove('hide');
   document.getElementById('stageHint').innerHTML='Arrastra los tres puntos sobre <b>tus dos ojos</b> y <b>tu boca</b>. Luego pulsa “Listo”.';
 }
 
@@ -332,12 +337,14 @@ function finishGame(){
 }
 window.__answerCorrect = ()=>{ answer(QUESTIONS[qIndex].answer); };  // test hook
 
+function rerollStyle(){ if(!baseCanvas) return; styleSeed=Math.random()*997+1; renderPortrait(curT); }
 function resetAll(){
-  baseCanvas=null; phase='empty'; qIndex=0; correct=0;
+  baseCanvas=null; phase='empty'; qIndex=0; correct=0; photoPalette=null; styleSeed=0;
   viewCtx.clearRect(0,0,CW,CH);
   document.getElementById('emptyState').classList.remove('hide');
   document.getElementById('anchorLayer').classList.add('hide');
   document.getElementById('anchorDoneBtn').classList.add('hide');
+  document.getElementById('rerollBtn').classList.add('hide');
   document.getElementById('resetBtn').classList.add('hide');
   document.getElementById('qbody').classList.add('hide');
   document.getElementById('donePane').classList.add('hide');
@@ -355,7 +362,26 @@ function resetAll(){
    All effects ramp with t. Everything is drawn on canvas, fully offline.
    ======================================================================= */
 const PAL=[[38,30,26],[92,58,40],[168,80,48],[214,150,74],[236,214,168],[70,120,112],[52,84,120]];
-function palColor(l){ const x=l*(PAL.length-1); const i=Math.min(PAL.length-2,Math.floor(x)), f=x-i; const a=PAL[i],b=PAL[i+1];
+function clamp255(v){ return v<0?0:v>255?255:v; }
+function satBoost(c,f){ const m=(c[0]+c[1]+c[2])/3; return [clamp255(m+(c[0]-m)*f), clamp255(m+(c[1]-m)*f), clamp255(m+(c[2]-m)*f)]; }
+// Build a palette from the STUDENT'S OWN photo: average colour per luminance band → keeps real skin/hair/background tones (recognizable) and is unique per photo.
+function computePhotoPalette(){
+  if(!baseCanvas){ photoPalette=null; return; }
+  const d=baseCanvas.getContext('2d').getImageData(0,0,CW,CH).data;
+  const bins=6, sum=Array.from({length:bins},()=>[0,0,0,0]);
+  for(let i=0;i<d.length;i+=4){
+    const l=(0.299*d[i]+0.587*d[i+1]+0.114*d[i+2])/255;
+    const bi=Math.min(bins-1,Math.max(0,Math.floor(l*bins)));
+    sum[bi][0]+=d[i]; sum[bi][1]+=d[i+1]; sum[bi][2]+=d[i+2]; sum[bi][3]++;
+  }
+  const pal=[]; let last=[36,28,24];
+  for(let bi=0;bi<bins;bi++){
+    if(sum[bi][3]>0) last=[sum[bi][0]/sum[bi][3], sum[bi][1]/sum[bi][3], sum[bi][2]/sum[bi][3]];
+    pal.push(satBoost(last,1.28));   // slight painterly punch, real colours kept
+  }
+  photoPalette=pal;
+}
+function palColor(l){ const P=photoPalette||PAL; const x=l*(P.length-1); const i=Math.min(P.length-2,Math.floor(x)), f=x-i; const a=P[i],b=P[i+1];
   return [a[0]+(b[0]-a[0])*f, a[1]+(b[1]-a[1])*f, a[2]+(b[2]-a[2])*f]; }
 function rnd(seed){ const s=Math.sin(seed*127.1+311.7)*43758.5453; return s-Math.floor(s); }
 function newCanvas(){ const c=document.createElement('canvas'); c.width=CW; c.height=CH; return c; }
@@ -363,6 +389,7 @@ function copyOf(cv){ const c=newCanvas(); c.getContext('2d').drawImage(cv,0,0); 
 
 function renderPortrait(t){
   if(!baseCanvas){ return; }
+  curT=t;
   const work=newCanvas(); const w=work.getContext('2d');
   w.drawImage(baseCanvas,0,0);
   applyPalette(w,t);
@@ -379,14 +406,15 @@ window.__setProgress = renderPortrait; // test hook
 
 function applyPalette(ctx,t){
   const id=ctx.getImageData(0,0,CW,CH), d=id.data;
-  const q=Math.max(3, Math.round(3+(1-t)*18));           // posterize levels
+  const q=Math.max(4, Math.round(4+(1-t)*20));           // posterize levels (flat planes)
+  const blend=t*0.55;                                     // gentle: photo palette ≈ real colours, so face stays recognizable
+  const pm=t*0.82;                                        // posterize strength
+  const step=255/q;
   for(let i=0;i<d.length;i+=4){
     const r=d[i],g=d[i+1],b=d[i+2];
     const l=(0.299*r+0.587*g+0.114*b)/255;
     const pc=palColor(l);
-    let nr=r+(pc[0]-r)*t*0.9, ng=g+(pc[1]-g)*t*0.9, nb=b+(pc[2]-b)*t*0.9;
-    // posterize (stronger as t rises)
-    const pm=t; const step=255/q;
+    let nr=r+(pc[0]-r)*blend, ng=g+(pc[1]-g)*blend, nb=b+(pc[2]-b)*blend;
     nr = nr*(1-pm) + Math.round(nr/step)*step*pm;
     ng = ng*(1-pm) + Math.round(ng/step)*step*pm;
     nb = nb*(1-pm) + Math.round(nb/step)*step*pm;
@@ -399,15 +427,16 @@ function applyFragments(ctx,t){
   const src=copyOf(ctx.canvas); const sctx=src.getContext('2d');
   const sd=sctx.getImageData(0,0,CW,CH).data;
   function sample(x,y){ x=Math.max(0,Math.min(CW-1,x|0)); y=Math.max(0,Math.min(CH-1,y|0)); const i=(y*CW+x)*4; return `rgb(${sd[i]},${sd[i+1]},${sd[i+2]})`; }
-  const cols=8, rows=10; const dispMax=t*16;
+  const cols=8, rows=10; const dispMax=t*13;             // slightly gentler so features don't wander too far
+  const ph=styleSeed*0.7;                                 // per-photo phase → different cubist arrangement each photo
   const frag=newCanvas(); const f=frag.getContext('2d');
   // build jittered lattice
   const pts=[];
   for(let y=0;y<=rows;y++){ pts[y]=[]; for(let x=0;x<=cols;x++){
-    const jx=(rnd(x*7+y*13)-0.5), jy=(rnd(x*17+y*3)-0.5);
+    const jx=(rnd(x*7+y*13+styleSeed)-0.5), jy=(rnd(x*17+y*3+styleSeed*1.7)-0.5);
     const edge=(x===0||y===0||x===cols||y===rows);
-    const px=x/cols*CW + (edge?0:jx*CW/cols*0.6) + Math.cos(x*1.3+y)*dispMax*(edge?0:1);
-    const py=y/rows*CH + (edge?0:jy*CH/rows*0.6) + Math.sin(y*1.7+x)*dispMax*(edge?0:1);
+    const px=x/cols*CW + (edge?0:jx*CW/cols*0.6) + Math.cos(x*1.3+y+ph)*dispMax*(edge?0:1);
+    const py=y/rows*CH + (edge?0:jy*CH/rows*0.6) + Math.sin(y*1.7+x+ph)*dispMax*(edge?0:1);
     pts[y][x]=[px,py];
   }}
   function tri(a,b,c){ const cx=(a[0]+b[0]+c[0])/3, cy=(a[1]+b[1]+c[1])/3;
@@ -418,7 +447,7 @@ function applyFragments(ctx,t){
     const a=pts[y][x], b=pts[y][x+1], c=pts[y+1][x+1], dd=pts[y+1][x];
     tri(a,b,c); tri(a,c,dd);
   }
-  ctx.save(); ctx.globalAlpha=Math.min(0.92, t*1.15); ctx.drawImage(frag,0,0); ctx.restore();
+  ctx.save(); ctx.globalAlpha=Math.min(0.86, t*1.05); ctx.drawImage(frag,0,0); ctx.restore();
 }
 
 function applySplit(ctx,t){
