@@ -207,6 +207,44 @@
   .marsCol li{margin-bottom:7px; line-height:1.45}
   .marsCol li b{color:var(--star)}
 
+  /* ===== LISTENING view ===== */
+  .lsIntro{color:var(--muted); font-size:14px; margin-bottom:14px}
+  .audioCard{display:flex; gap:16px; border:1px solid var(--border); border-radius:14px; background:linear-gradient(180deg,var(--panel2),var(--panel)); padding:16px; align-items:flex-start}
+  .audioIcon{font-size:38px; line-height:1}
+  .audioMain{flex:1; min-width:0}
+  .audioTitle{font-weight:800; font-size:16px}
+  .audioSub{color:var(--muted); font-size:12.5px; margin-top:3px}
+  .audioSub b{color:var(--cyan)}
+  .audioBtns{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; align-items:center}
+  .filelbl{border:none; background:linear-gradient(135deg,var(--violet),var(--cyan)); color:#fff; font-weight:800; font-size:13px; padding:9px 14px; border-radius:9px; cursor:pointer; display:inline-flex; align-items:center; gap:7px}
+  .lsBlock{border:1px solid var(--border); background:var(--panel); border-radius:14px; padding:15px 17px; margin-top:14px}
+  .lsBlock h3{margin:0 0 3px; font-size:15px}
+  .lsBlock .lsHint{color:var(--dim); font-size:12px; margin-bottom:10px}
+  .speakQ{font-size:13.5px; color:var(--muted); margin:7px 0; padding-left:22px; position:relative; line-height:1.5}
+  .speakQ:before{content:'💬'; position:absolute; left:0}
+  .tfrow{display:flex; gap:8px; align-items:center; flex-wrap:wrap; padding:8px 0; border-bottom:1px solid var(--border)}
+  .tfrow:last-child{border-bottom:none}
+  .tfrow .st{flex:1; min-width:190px; font-size:13.5px; color:var(--muted)}
+  .tfbtn{border:1px solid var(--border); background:var(--panel2); color:var(--ink); font-weight:800; font-size:12.5px; padding:6px 13px; border-radius:8px; cursor:pointer}
+  .tfbtn.picked{border-color:var(--cyan); background:rgba(95,208,255,.16)}
+  .tfbtn.good{border-color:var(--green); background:rgba(87,224,138,.22)}
+  .tfbtn.bad{border-color:var(--hot); background:rgba(255,122,60,.2)}
+  .numrow{display:flex; gap:10px; align-items:center; padding:7px 0; font-size:13.5px; color:var(--muted); flex-wrap:wrap}
+  .numrow .nlabel{flex:1; min-width:200px}
+  .numrow input{width:120px; background:var(--panel2); border:1px solid var(--border); border-radius:8px; color:var(--ink); padding:7px 10px; font-family:var(--mono); font-size:14px}
+  .numrow input.good{border-color:var(--green); background:rgba(87,224,138,.12)}
+  .numrow input.bad{border-color:var(--hot); background:rgba(255,122,60,.1)}
+  .numans{font-family:var(--mono); color:var(--green); font-size:12.5px; display:none}
+  .numans.show{display:inline}
+  .qopt.picked{border-color:var(--cyan); background:rgba(95,208,255,.14)}
+  .lsScore{margin-left:auto; font-family:var(--mono); color:var(--cyan); font-weight:800; font-size:15px}
+  .keyBox{display:none; margin-top:14px; border:1px dashed var(--violet); border-radius:12px; padding:14px 16px; background:rgba(169,123,255,.08)}
+  .keyBox.show{display:block}
+  .keyBox h4{margin:10px 0 4px; font-size:13px; color:var(--violet)}
+  .keyBox h4:first-child{margin-top:0}
+  .keyBox .tr{font-size:12.5px; color:var(--muted); line-height:1.7; white-space:pre-line}
+  .keyBox .kk{color:var(--star); font-family:var(--mono)}
+
   /* quiz */
   .q{border:1px solid var(--border); background:var(--panel2); border-radius:11px; padding:13px 15px; margin-bottom:11px}
   .q .qq{font-weight:700; font-size:14.5px; margin-bottom:9px}
@@ -270,6 +308,7 @@
       <button class="tab active" data-view="cal" onclick="setView('cal')">📅 Cosmic Calendar</button>
       <button class="tab" data-view="planets" onclick="setView('planets')">🪐 Solar System</button>
       <button class="tab" data-view="scale" onclick="setView('scale')">🔭 Scale of the Universe</button>
+      <button class="tab" data-view="listen" onclick="setView('listen')">🎧 Listening</button>
     </div>
     <button class="iconbtn" id="soundBtn" onclick="toggleSound()" title="Sound on/off">🔊</button>
     <button class="iconbtn" onclick="openModal('help')" title="How it works">❓</button>
@@ -366,6 +405,31 @@
     <div class="ssScaleNote" id="ssScaleNote"></div>
     <div class="pchips" id="pChips"></div>
     <div class="planetSheet" id="planetSheet"></div>
+  </section>
+
+  <!-- =================== LISTENING VIEW =================== -->
+  <section id="listenView" class="hide">
+    <h2 class="sec">Listening · the scale of space — light-years &amp; parsecs</h2>
+    <div class="lsIntro">Listen to the audio about how we measure distances in space, then answer the questions. Press <b>✅ Check my answers</b> to see how you did, or open the <b>🔑 answer key</b> with the full transcript.</div>
+    <div class="audioCard">
+      <div class="audioIcon">🎧</div>
+      <div class="audioMain">
+        <div class="audioTitle">“How big is space? — AU, light-years &amp; parsecs”</div>
+        <div class="audioSub" id="audioSub">No audio loaded yet. <b>Load the audio you made in NotebookLM</b> (or preview the text with a computer voice).</div>
+        <audio id="listenAudio" controls class="hide" style="width:100%;margin-top:12px"></audio>
+        <div class="audioBtns">
+          <label class="filelbl">📁 Load audio file<input type="file" accept="audio/*" onchange="loadAudio(event)" hidden></label>
+          <button class="btn" id="ttsBtn" onclick="toggleTTS()">🗣 Preview with computer voice</button>
+        </div>
+      </div>
+    </div>
+    <div id="listenBody"></div>
+    <div class="controls" style="margin-top:16px">
+      <button class="btn primary" onclick="checkListening()">✅ Check my answers</button>
+      <button class="btn" onclick="toggleKey()">🔑 Answer key + transcript</button>
+      <span class="lsScore" id="lsScore"></span>
+    </div>
+    <div class="keyBox" id="keyBox"></div>
   </section>
 </div>
 
@@ -979,12 +1043,110 @@ function marsBlock(){ return `<div class="marsBox">
     </ul></div>
   </div></div>`; }
 
+/* ===================== LISTENING ===================== */
+const LISTEN_TRANSCRIPT=`Space is so big that our everyday units, like kilometres, quickly become useless. So astronomers use three special "rulers": the astronomical unit, the light-year, and the parsec.
+
+The astronomical unit, written AU, is the distance between the Earth and the Sun: about 150 million kilometres. Earth is 1 AU from the Sun, Mars about 1.5, Jupiter about 5, Neptune about 30 and Pluto about 39. Sunlight takes 8 minutes to travel that 1 AU to the Earth.
+
+Light is the fastest thing in the universe: about 300,000 kilometres every second. A light-year is the distance light travels in one year — about 9.46 trillion kilometres. It is a distance, not a time. The nearest star, Proxima Centauri, is 4.24 light-years away, so its light left it more than four years ago. Looking into space means looking back in time.
+
+Professional astronomers mostly use the parsec: about 3.26 light-years. A kiloparsec is a thousand parsecs, a megaparsec a million. Our galaxy, the Milky Way, is about 100,000 light-years wide. And the observable universe is about 93 billion light-years across.`;
+
+const LS_WARM=[
+  'How do you think scientists measure the distance to a star? Why can’t they just use kilometres?',
+  'Guess: how long does light from the Sun take to reach the Earth?'
+];
+const LS_TF=[
+  ['A light-year measures time, not distance.', false, 'A light-year is a distance — how far light travels in a year.'],
+  ['Light travels about 300,000 km per second.', true, 'Correct — nothing is faster.'],
+  ['Sunlight takes about 8 minutes to reach the Earth.', true, 'Yes — that is the light from 1 AU away.'],
+  ['Proxima Centauri is the farthest star from the Sun.', false, 'It is the nearest star, 4.24 light-years away.'],
+  ['One parsec is smaller than one light-year.', false, 'A parsec is bigger — about 3.26 light-years.'],
+];
+const LS_NUM=[
+  ['1 AU (Earth–Sun) ≈ ___ million km', '150'],
+  ['Light travels about ___ km every second', '300000'],
+  ['Proxima Centauri is ___ light-years away', '4.24'],
+  ['1 parsec ≈ ___ light-years', '3.26'],
+  ['The Milky Way is about ___ light-years across', '100000'],
+  ['The observable universe is about ___ billion light-years across', '93'],
+];
+const LS_MC=[
+  {q:'A light-year is a unit of…', o:['time','distance','brightness','speed'], a:1},
+  {q:'Which ruler do professional astronomers use most for big distances?', o:['the kilometre','the astronomical unit','the parsec','the mile'], a:2},
+  {q:'A kiloparsec is…', o:['1,000 parsecs','100 parsecs','1 million parsecs','3.26 light-years'], a:0},
+  {q:'“Looking far into space means looking back in ____.”', o:['space','time','light','distance'], a:1},
+];
+const LS_AFTER=[
+  ['In your own words, explain why a light-year is a distance and not a time.', 'A light-year is how far light travels in one year (about 9.46 trillion km), so it measures distance, not how long something takes.'],
+  ['Why do we see stars “as they were in the past” and not as they are now?', 'Because their light takes years to reach us, so we see the light that left them long ago.'],
+  ['Put these in order from smallest to largest distance: parsec · light-year · astronomical unit · kiloparsec.', 'AU < light-year < parsec < kiloparsec'],
+  ['Does thinking about these huge distances make you feel small, curious, or something else? (3–4 sentences)', 'Open answer — accept any well-argued personal response in clear English.'],
+];
+let listenState={tf:{},mc:{}};
+function renderListening(){
+  const warm=LS_WARM.map(q=>`<div class="speakQ">${q}</div>`).join('');
+  const tf=LS_TF.map((r,i)=>`<div class="tfrow tfrow-${i}"><span class="st">${i+1}. ${r[0]}</span>
+     <button class="tfbtn" id="tf-${i}-1" onclick="pickTF(${i},true,this)">TRUE</button>
+     <button class="tfbtn" id="tf-${i}-0" onclick="pickTF(${i},false,this)">FALSE</button></div>`).join('');
+  const num=LS_NUM.map((r,i)=>`<div class="numrow"><span class="nlabel">${i+1}. ${r[0].replace('___','<b style="color:var(--ink)">______</b>')}</span>
+     <input id="num-${i}" inputmode="decimal" placeholder="?" autocomplete="off"><span class="numans" id="numans-${i}">= ${(+r[1]).toLocaleString('en')}</span></div>`).join('');
+  const mc=LS_MC.map((q,i)=>`<div class="q"><div class="qq">${i+1}. ${q.q}</div><div class="opts" id="lsmc-${i}">${q.o.map((o,j)=>`<button class="qopt" onclick="pickMC(${i},${j},this)">${o}</button>`).join('')}</div></div>`).join('');
+  const after=LS_AFTER.map((q,i)=>`<div class="speakQ">${i+1}. ${q[0]}</div>`).join('');
+  document.getElementById('listenBody').innerHTML=
+    `<div class="lsBlock"><h3>A · Before you listen</h3><div class="lsHint">Talk with a partner.</div>${warm}</div>
+     <div class="lsBlock"><h3>B · True or False</h3><div class="lsHint">Choose TRUE or FALSE while you listen.</div>${tf}</div>
+     <div class="lsBlock"><h3>C · Fill in the number</h3><div class="lsHint">Write the missing numbers you hear.</div>${num}</div>
+     <div class="lsBlock"><h3>D · Multiple choice</h3><div class="lsHint">Pick the best answer.</div>${mc}</div>
+     <div class="lsBlock"><h3>E · After you listen</h3><div class="lsHint">Answer in English — full sentences.</div>${after}</div>`;
+}
+function pickTF(i,val,btn){ listenState.tf[i]=val; document.getElementById('tf-'+i+'-1').classList.remove('picked','good','bad'); document.getElementById('tf-'+i+'-0').classList.remove('picked','good','bad'); btn.classList.add('picked'); }
+function pickMC(i,j,btn){ listenState.mc[i]=j; const wrap=document.getElementById('lsmc-'+i); wrap.querySelectorAll('.qopt').forEach(b=>b.classList.remove('picked','good','bad')); btn.classList.add('picked'); }
+function numOK(val,ans){ if(val==null||val==='')return false; const n=parseFloat(String(val).replace(/[,\s]/g,'')); const a=parseFloat(String(ans).replace(/[,\s]/g,'')); if(isNaN(n))return false; return Math.abs(n-a)<=Math.max(0.01,a*0.005); }
+function checkListening(){
+  let score=0, total=LS_TF.length+LS_NUM.length+LS_MC.length;
+  LS_TF.forEach((r,i)=>{ const sel=listenState.tf[i]; const bT=document.getElementById('tf-'+i+'-1'), bF=document.getElementById('tf-'+i+'-0');
+    bT.classList.remove('good','bad'); bF.classList.remove('good','bad');
+    const correctBtn=r[1]?bT:bF; correctBtn.classList.add('good');
+    if(sel!==undefined && sel!==r[1]){ (sel?bT:bF).classList.add('bad'); }
+    if(sel===r[1]) score++; });
+  LS_NUM.forEach((r,i)=>{ const inp=document.getElementById('num-'+i); const ok=numOK(inp.value,r[1]); inp.classList.remove('good','bad'); inp.classList.add(ok?'good':'bad'); if(ok)score++; });
+  LS_MC.forEach((q,i)=>{ const wrap=document.getElementById('lsmc-'+i); const opts=wrap.querySelectorAll('.qopt'); opts.forEach(o=>o.classList.remove('good','bad')); opts[q.a].classList.add('good'); const sel=listenState.mc[i]; if(sel!==undefined && sel!==q.a) opts[sel].classList.add('bad'); if(sel===q.a) score++; });
+  document.getElementById('lsScore').textContent=score+' / '+total;
+  SFX.play(score>=total*0.7?'good':'ding');
+}
+function toggleKey(){
+  const box=document.getElementById('keyBox'); const on=!box.classList.contains('show'); box.classList.toggle('show',on);
+  document.querySelectorAll('.numans').forEach(e=>e.classList.toggle('show',on));
+  if(on && !box.dataset.built){
+    box.dataset.built='1';
+    const tf=LS_TF.map((r,i)=>`${i+1}. <span class="kk">${r[1]?'TRUE':'FALSE'}</span> — ${r[2]}`).join('<br>');
+    const num=LS_NUM.map((r,i)=>`${i+1}. <span class="kk">${(+r[1]).toLocaleString('en')}</span>`).join('<br>');
+    const mc=LS_MC.map((q,i)=>`${i+1}. <span class="kk">${q.o[q.a]}</span>`).join('<br>');
+    const after=LS_AFTER.map((q,i)=>`${i+1}. <b>${q[0]}</b><br>&nbsp;&nbsp;→ ${q[1]}`).join('<br>');
+    box.innerHTML=`<h4>B · True / False</h4><div class="tr">${tf}</div>
+      <h4>C · Numbers</h4><div class="tr">${num}</div>
+      <h4>D · Multiple choice</h4><div class="tr">${mc}</div>
+      <h4>E · Model answers</h4><div class="tr">${after}</div>
+      <h4>📄 Transcript</h4><div class="tr">${LISTEN_TRANSCRIPT}</div>`;
+  }
+}
+function loadAudio(ev){ const f=ev.target.files&&ev.target.files[0]; if(!f)return; const a=document.getElementById('listenAudio'); a.src=URL.createObjectURL(f); a.classList.remove('hide'); document.getElementById('audioSub').innerHTML='Loaded: <b>'+f.name+'</b> — press play ▶'; stopTTS(); }
+let ttsOn=false;
+function toggleTTS(){ if(ttsOn){ stopTTS(); return; } if(!('speechSynthesis' in window)){ alert('Your browser cannot read text aloud. Please load the audio file instead.'); return; }
+  const u=new SpeechSynthesisUtterance(LISTEN_TRANSCRIPT.replace(/\s+/g,' ')); u.lang='en-GB'; u.rate=0.9; u.pitch=1;
+  u.onend=()=>{ ttsOn=false; document.getElementById('ttsBtn').textContent='🗣 Preview with computer voice'; };
+  window.speechSynthesis.cancel(); window.speechSynthesis.speak(u); ttsOn=true; document.getElementById('ttsBtn').textContent='⏹ Stop voice'; }
+function stopTTS(){ if('speechSynthesis' in window) window.speechSynthesis.cancel(); ttsOn=false; const b=document.getElementById('ttsBtn'); if(b)b.textContent='🗣 Preview with computer voice'; }
+
 /* ===================== VIEWS / MODALS ===================== */
 function setView(v){
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===v));
   document.getElementById('calView').classList.toggle('hide',v!=='cal');
   document.getElementById('scaleView').classList.toggle('hide',v!=='scale');
   document.getElementById('planetsView').classList.toggle('hide',v!=='planets');
+  document.getElementById('listenView').classList.toggle('hide',v!=='listen');
+  if(v!=='listen') stopTTS();
   if(v==='scale'){ renderScaleObj(); }
   if(v==='planets'){ buildTrack(); const t=document.querySelector('.ssPlanet[data-key="'+selKey+'"]'); if(t) t.scrollIntoView({inline:'center',block:'nearest'}); }
 }
@@ -1067,6 +1229,7 @@ renderClock(); renderGrid(); renderVocab(); renderHelp(); renderDoelen();
 document.getElementById('scaleHost').innerHTML=scaleSceneSVG();
 renderScaleObj();
 buildPlanets();
+renderListening();
 starfieldBG();
 showScene('bigbang'); updateReadout();
 document.getElementById('foot').innerHTML='The Cosmic Calendar · concept by Carl Sagan · data from Wikipedia · built for CHRONICLE SJB. <b>1 second = 437.5 years.</b>';
