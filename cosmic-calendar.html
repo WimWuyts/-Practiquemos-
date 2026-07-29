@@ -145,6 +145,68 @@
   .scaleslider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--cyan)}
   .zoomtag{position:absolute; top:14px; left:50%; transform:translateX(-50%); font-family:var(--mono); font-size:12px; color:var(--muted); background:rgba(0,0,0,.4); padding:5px 12px; border-radius:20px; border:1px solid var(--border)}
 
+  /* ===== SOLAR SYSTEM view ===== */
+  .ssControls{display:flex; align-items:center; gap:12px; margin-bottom:11px; flex-wrap:wrap}
+  .sshint{color:var(--muted); font-size:12.5px}
+  .ssTrackWrap{position:relative; overflow-x:auto; overflow-y:hidden; border:1px solid var(--border); border-radius:14px; background:radial-gradient(150% 200% at 0% 50%, rgba(255,180,60,.16), #0a0f1f 55%); scrollbar-width:thin}
+  .ssTrackWrap::-webkit-scrollbar{height:10px} .ssTrackWrap::-webkit-scrollbar-thumb{background:#33406a; border-radius:8px}
+  .ssTrack{position:relative; height:230px; min-width:100%}
+  .ssLine{position:absolute; left:0; right:0; height:2px; background:linear-gradient(90deg,#ffd76a,rgba(95,208,255,.5),rgba(169,123,255,.4)); transform:translateY(-50%)}
+  .ssGrid{position:absolute; width:1px; background:repeating-linear-gradient(#33406a 0 4px, transparent 4px 10px)}
+  .ssGridLbl{position:absolute; top:6px; transform:translateX(-50%); font-family:var(--mono); font-size:10px; color:var(--dim)}
+  .ssStem{position:absolute; width:2px; background:linear-gradient(#33406a,rgba(51,64,106,.2)); transform:translateX(-50%)}
+  .ssSun{position:absolute; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; gap:1px; z-index:3}
+  .ssSun span{font-size:11px; font-weight:800; color:#ffd76a}
+  .ssSun svg{width:60px; height:60px; filter:drop-shadow(0 0 18px rgba(255,180,60,.7))}
+  .ssPlanet{position:absolute; transform:translate(-50%,-50%); background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; z-index:2; padding:0}
+  .ssPlanet .ssArt svg{width:52px; height:44px; display:block; transition:.15s}
+  .ssPlanet:hover .ssArt svg{transform:scale(1.16)}
+  .ssPlanet.sel .ssArt svg{transform:scale(1.24); filter:drop-shadow(0 0 9px #fff)}
+  .ssName{font-size:10.5px; color:var(--muted); white-space:nowrap; margin-top:2px; font-weight:700; text-align:center; line-height:1.25}
+  .ssName b{color:var(--star); font-family:var(--mono); margin-left:3px; font-weight:700}
+  .ssScaleNote{font-size:12.5px; color:var(--muted); margin:12px 2px 0; line-height:1.5}
+  .ssScaleNote b{color:var(--ink)}
+  .pchips{display:flex; gap:8px; flex-wrap:wrap; margin:16px 0 4px}
+  .pchip{display:flex; align-items:center; gap:6px; border:1px solid var(--border); background:var(--panel); border-radius:22px; padding:4px 13px 4px 5px; cursor:pointer; color:var(--muted); font-weight:700; font-size:13px}
+  .pchip svg{width:28px; height:24px}
+  .pchip:hover{border-color:var(--cyan); color:var(--ink)}
+  .pchip.sel{border-color:var(--violet); background:linear-gradient(135deg,rgba(169,123,255,.3),rgba(95,208,255,.18)); color:#fff}
+  .planetSheet{margin-top:14px; border:1px solid var(--border); border-radius:16px; background:var(--panel); overflow:hidden}
+  .psTop{display:flex; gap:20px; align-items:center; padding:18px; background:linear-gradient(180deg,var(--panel2),var(--panel)); flex-wrap:wrap}
+  .psArt svg{width:140px; height:120px; filter:drop-shadow(0 8px 26px rgba(0,0,0,.55))}
+  .psHead{flex:1; min-width:200px}
+  .psHead h3{margin:0; font-size:26px; display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .psHead .nl{font-size:14px; color:var(--star); font-style:italic; font-weight:600}
+  .psHead .psSub{color:var(--muted); font-size:13px; margin-top:4px}
+  .psDwarf{font-size:10.5px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; color:#ffd76a; border:1px solid rgba(255,215,106,.5); background:rgba(255,215,106,.1); border-radius:20px; padding:3px 9px}
+  .psStats{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; padding:14px 18px 4px}
+  .pstat{background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:9px 12px}
+  .pstat .k{font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--dim)}
+  .pstat .v{font-size:15px; font-weight:800; font-family:var(--mono); color:var(--ink); margin-top:2px}
+  .pstat .s{font-size:11px; color:var(--muted); margin-top:1px}
+  .psBody{padding:6px 18px 4px; color:var(--muted); font-size:14px}
+  /* life meter */
+  .lifeWrap{margin:12px 18px 18px; padding:13px 15px; border:1px solid var(--border); border-radius:12px; background:var(--panel2)}
+  .lifeTop{display:flex; justify-content:space-between; align-items:center; gap:10px; font-weight:800; font-size:13.5px; margin-bottom:8px; flex-wrap:wrap}
+  .lifeTop .lifeScore{font-family:var(--mono)}
+  .lifeBar{position:relative; height:16px; border-radius:9px; background:linear-gradient(90deg,#ff4d4d,#ff9a3c,#ffe14d,#7be07b); overflow:hidden}
+  .lifeBar .mask{position:absolute; top:0; right:0; bottom:0; background:rgba(10,14,25,.8)}
+  .lifeMarker{position:absolute; top:-3px; width:3px; height:22px; background:#fff; border-radius:2px; box-shadow:0 0 7px #fff}
+  .lifeScale{display:flex; justify-content:space-between; font-size:10.5px; color:var(--dim); margin-top:4px}
+  .lifeVerdict{margin-top:9px; font-size:13px; color:var(--muted); line-height:1.5}
+  /* mars mission */
+  .marsBox{margin:0 18px 18px; border:1px solid #8a4028; border-radius:14px; background:linear-gradient(180deg,rgba(150,60,30,.22),var(--panel)); overflow:hidden}
+  .marsBox .mbh{padding:12px 16px; font-weight:800; font-size:15px; color:#ff9a6a; border-bottom:1px solid #8a4028; display:flex; align-items:center; gap:8px}
+  .marsCols{display:grid; grid-template-columns:1fr 1fr}
+  @media(max-width:700px){ .marsCols{grid-template-columns:1fr} }
+  .marsCol{padding:13px 16px}
+  .marsCol.left{border-right:1px solid var(--border)}
+  @media(max-width:700px){ .marsCol.left{border-right:none; border-bottom:1px solid var(--border)} }
+  .marsCol h4{margin:0 0 8px; font-size:13.5px; color:var(--ink)}
+  .marsCol ul{margin:0; padding-left:18px; color:var(--muted); font-size:12.8px}
+  .marsCol li{margin-bottom:7px; line-height:1.45}
+  .marsCol li b{color:var(--star)}
+
   /* quiz */
   .q{border:1px solid var(--border); background:var(--panel2); border-radius:11px; padding:13px 15px; margin-bottom:11px}
   .q .qq{font-weight:700; font-size:14.5px; margin-bottom:9px}
@@ -206,6 +268,7 @@
     <div class="spacer"></div>
     <div class="tabs" id="tabs">
       <button class="tab active" data-view="cal" onclick="setView('cal')">📅 Cosmic Calendar</button>
+      <button class="tab" data-view="planets" onclick="setView('planets')">🪐 Solar System</button>
       <button class="tab" data-view="scale" onclick="setView('scale')">🔭 Scale of the Universe</button>
     </div>
     <button class="iconbtn" id="soundBtn" onclick="toggleSound()" title="Sound on/off">🔊</button>
@@ -287,6 +350,22 @@
       <b>parsec</b> ≈ 3.26 light-years ·
       light is the fastest thing there is (300,000 km every second).
     </div>
+  </section>
+
+  <!-- =================== SOLAR SYSTEM VIEW =================== -->
+  <section id="planetsView" class="hide">
+    <h2 class="sec">Our Solar System · 8 planets + Pluto · distances to scale</h2>
+    <div class="ssControls">
+      <div class="modeswitch">
+        <button id="pReal" class="on" onclick="setPlanetMode('real')">📏 Real distances</button>
+        <button id="pEven" onclick="setPlanetMode('even')">↔ Even spacing</button>
+      </div>
+      <span class="sshint">👉 Scroll the strip sideways. Tap a planet — or a chip below — for its fact sheet.</span>
+    </div>
+    <div class="ssTrackWrap" id="ssTrackWrap"><div class="ssTrack" id="ssTrack"></div></div>
+    <div class="ssScaleNote" id="ssScaleNote"></div>
+    <div class="pchips" id="pChips"></div>
+    <div class="planetSheet" id="planetSheet"></div>
   </section>
 </div>
 
@@ -771,12 +850,143 @@ function toggleScalePlay(){ if(scalePlaying){ scalePlaying=false; clearInterval(
   if(scaleIdx>=SCALE.length-1) setScale(0);
   scaleTimer=setInterval(()=>{ if(scaleIdx>=SCALE.length-1){ scalePlaying=false; clearInterval(scaleTimer); document.getElementById('scalePlay').textContent='▶ Zoom out'; return;} setScale(scaleIdx+1); }, 2600); }
 
+/* ===================== SOLAR SYSTEM VIEW ===================== */
+const AU_MKM=149.6;           // 1 AU in million km
+const LT_PER_AU=8.317;        // light-travel minutes per AU
+const PLANETS=[
+  {key:'mercury',name:'Mercury',nl:'Mercurius',au:0.39,dia:4879,grav:0.38,day:'59 Earth-days',year:'88 Earth-days',moons:'0',tempC:'−180 to +430 °C',life:3,
+   fact:'The smallest planet and the closest to the Sun. It whips around the Sun in only 88 days, yet spins so slowly that a single Mercury day lasts almost two of its years. With almost no atmosphere, its sunny side roasts while its night side freezes.',
+   lifeWhy:'There is no air to breathe or to trap heat, and temperatures swing from +430 °C to −180 °C. Liquid water — which every living thing needs — simply cannot exist here.'},
+  {key:'venus',name:'Venus',nl:'Venus',au:0.72,dia:12104,grav:0.90,day:'243 Earth-days',year:'225 Earth-days',moons:'0',tempC:'≈ +465 °C',life:6,
+   fact:'Earth\'s "evil twin": almost the same size as Earth, but wrapped in a thick blanket of carbon-dioxide clouds full of sulfuric acid. Those clouds trap heat so well (a runaway greenhouse effect) that Venus is the hottest planet of all — even hotter than Mercury, though it sits farther from the Sun.',
+   lifeWhy:'The surface is hot enough to melt lead, the pressure would crush you flat, and it rains acid. A few scientists wonder about microbes high in the cooler clouds, but the surface itself is utterly deadly.'},
+  {key:'earth',name:'Earth',nl:'de Aarde',au:1.00,dia:12742,grav:1.00,day:'24 hours',year:'365 days',moons:'1',tempC:'≈ +15 °C',life:100,
+   fact:'The only world we know of with liquid water on its surface, oxygen in the air and a protective magnetic field. Everything and everyone you have ever known lives right here.',
+   lifeWhy:'Earth sits at just the right distance from the Sun — the "Goldilocks zone", not too hot and not too cold. Liquid oceans, a breathable atmosphere and a magnetic shield against radiation make it the one place in the universe where we know life exists.'},
+  {key:'mars',name:'Mars',nl:'Mars',au:1.52,dia:6779,grav:0.38,day:'24.6 hours',year:'687 Earth-days',moons:'2',tempC:'≈ −63 °C',life:28,
+   fact:'The "Red Planet" — its rusty colour comes from iron-oxide dust. Mars has the tallest volcano in the Solar System (Olympus Mons, three times higher than Mount Everest), icy poles, and dried-up riverbeds showing that water once flowed there billions of years ago. A Mars day is almost the same length as ours.',
+   lifeWhy:'This is the most promising place beyond Earth to search for (past) life. Mars once had rivers and lakes and still hides ice. But today it is freezing, its air is thin, and there is no shield against radiation — so any life would be tiny microbes hiding underground.'},
+  {key:'jupiter',name:'Jupiter',nl:'Jupiter',au:5.20,dia:139820,grav:2.53,day:'9.9 hours',year:'11.9 Earth-years',moons:'95+',tempC:'≈ −145 °C',life:4,
+   fact:'The king of the planets — so huge that every other planet could fit inside it. Jupiter is a giant ball of gas with no solid ground. Its Great Red Spot is a storm wider than the whole Earth that has been spinning for centuries.',
+   lifeWhy:'A gas giant with nowhere to stand, crushing pressure and violent storms — life on Jupiter itself is almost impossible. But its icy moon Europa may hide a liquid-water ocean beneath its crust, and that is very exciting.'},
+  {key:'saturn',name:'Saturn',nl:'Saturnus',au:9.58,dia:116460,grav:1.07,day:'10.7 hours',year:'29.4 Earth-years',moons:'140+',tempC:'≈ −178 °C',life:4,
+   fact:'Famous for its dazzling rings, made of billions of chunks of ice and rock. Saturn is so light for its size that it would actually float in a giant bathtub of water. Its moon Titan even has rivers and lakes — of liquid methane.',
+   lifeWhy:'Another gas giant with no solid surface and bitter cold — not a home for life. Yet its moons steal the show: Enceladus fires jets of water from a hidden ocean, and Titan has a thick atmosphere. Both are thrilling places to hunt for life.'},
+  {key:'uranus',name:'Uranus',nl:'Uranus',au:19.2,dia:50724,grav:0.90,day:'17.2 hours',year:'84 Earth-years',moons:'28',tempC:'≈ −224 °C',life:2,
+   fact:'An ice giant that spins on its side, as if it were rolling around the Sun — probably knocked over by a giant collision long ago. Its pale blue-green colour comes from methane gas. One pole gets 42 years of sunlight, then 42 years of darkness.',
+   lifeWhy:'Incredibly cold (about −224 °C, the chilliest planet), no solid surface, and made mostly of icy gases. As far as we know, nothing could survive here.'},
+  {key:'neptune',name:'Neptune',nl:'Neptunus',au:30.1,dia:49244,grav:1.14,day:'16.1 hours',year:'165 Earth-years',moons:'16',tempC:'≈ −214 °C',life:2,
+   fact:'The farthest true planet from the Sun: a deep-blue ice giant with the fastest winds in the Solar System — over 2,000 km/h. It is so distant that it takes 165 Earth-years to circle the Sun once, and sunlight there is 900× dimmer than on Earth.',
+   lifeWhy:'Freezing, dark and made of icy gases with no surface to land on. With almost no warmth or light reaching it, Neptune is far too hostile for life.'},
+  {key:'pluto',name:'Pluto',nl:'Pluto',au:39.5,dia:2377,grav:0.06,day:'6.4 Earth-days',year:'248 Earth-years',moons:'5',tempC:'≈ −229 °C',life:2,
+   fact:'The most famous "dwarf planet". Pluto is smaller than our Moon and so far away that the Sun looks like just a bright star in its sky. It has a huge heart-shaped plain of frozen nitrogen, and its biggest moon, Charon, is so large that the two almost orbit each other like a double world.',
+   lifeWhy:'At around −229 °C, Pluto is one of the coldest places we know — water is frozen as hard as rock. Some scientists suspect a slushy ocean deep inside, but the surface is far too cold and dark for life.'},
+];
+
+function sunArt(){return `<svg viewBox="0 0 100 100"><defs><radialGradient id="sunG" cx="50%" cy="50%" r="55%"><stop offset="0" stop-color="#fff6d0"/><stop offset="45%" stop-color="#ffd24d"/><stop offset="82%" stop-color="#ff9a1a"/><stop offset="100%" stop-color="#ff6a1a" stop-opacity=".15"/></radialGradient></defs><circle cx="50" cy="50" r="44" fill="url(#sunG)" opacity=".4"/><circle cx="50" cy="50" r="30" fill="url(#sunG)"/></svg>`;}
+
+function planetArt(k){
+  switch(k){
+    case 'mercury': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgMer" cx="40%" cy="34%" r="72%"><stop offset="0" stop-color="#d8d2c6"/><stop offset="55%" stop-color="#928d82"/><stop offset="100%" stop-color="#403c36"/></radialGradient></defs><circle cx="60" cy="50" r="38" fill="url(#pgMer)"/><g fill="#6b665c" opacity=".55"><circle cx="47" cy="40" r="6"/><circle cx="73" cy="59" r="8"/><circle cx="64" cy="33" r="3.5"/><circle cx="52" cy="63" r="5"/><circle cx="79" cy="42" r="3"/></g><g fill="#4d483f" opacity=".5"><circle cx="73" cy="59" r="4"/><circle cx="47" cy="40" r="3"/></g></svg>`;
+    case 'venus': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgVen" cx="40%" cy="34%" r="72%"><stop offset="0" stop-color="#f7e7b6"/><stop offset="50%" stop-color="#e6bd6e"/><stop offset="100%" stop-color="#6f4f22"/></radialGradient><clipPath id="clpVen"><circle cx="60" cy="50" r="38"/></clipPath></defs><circle cx="60" cy="50" r="38" fill="url(#pgVen)"/><g clip-path="url(#clpVen)" fill="none" stroke="#fff3d6" stroke-width="4" opacity=".28" stroke-linecap="round"><path d="M26 40 q30 -9 66 -2"/><path d="M22 52 q36 10 74 1"/><path d="M30 64 q28 7 56 -3"/></g></svg>`;
+    case 'earth': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgEar" cx="38%" cy="34%" r="76%"><stop offset="0" stop-color="#a9dbff"/><stop offset="45%" stop-color="#2f7fd0"/><stop offset="100%" stop-color="#0b2748"/></radialGradient><clipPath id="clpEar"><circle cx="60" cy="50" r="38"/></clipPath></defs><circle cx="60" cy="50" r="38" fill="url(#pgEar)"/><g clip-path="url(#clpEar)"><g fill="#3f9a52"><path d="M40 32 q22 -10 40 4 q10 20 -14 30 q-30 6 -40 -12 q-4 -14 14 -22z"/><path d="M74 58 q18 -4 26 14 q-4 20 -30 16 q-14 -12 4 -30z"/><path d="M34 66 q16 -2 20 12 q-8 12 -24 6 q-6 -12 4 -18z"/></g><g fill="#eef6ff" opacity=".55"><path d="M28 44 q18 -6 30 2 q-6 10 -26 8z"/><path d="M66 34 q16 -4 24 4 q-8 8 -26 4z"/></g></g><circle cx="60" cy="50" r="38" fill="none" stroke="#bfe6ff" stroke-width="4" opacity=".4"/></svg>`;
+    case 'mars': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgMar" cx="40%" cy="34%" r="74%"><stop offset="0" stop-color="#ff9e63"/><stop offset="48%" stop-color="#d3542a"/><stop offset="100%" stop-color="#6a2410"/></radialGradient><clipPath id="clpMar"><circle cx="60" cy="50" r="38"/></clipPath></defs><circle cx="60" cy="50" r="38" fill="url(#pgMar)"/><g clip-path="url(#clpMar)"><g fill="#a83c1e" opacity=".5"><path d="M40 40 q16 -6 26 4 q4 14 -16 18 q-18 0 -18 -12z"/><path d="M70 60 q14 -2 16 12 q-8 10 -22 4 q-4 -12 6 -16z"/></g><ellipse cx="60" cy="16" rx="15" ry="7" fill="#eef6ff" opacity=".9"/><ellipse cx="60" cy="86" rx="11" ry="6" fill="#eef6ff" opacity=".8"/></g></svg>`;
+    case 'jupiter': return `<svg viewBox="0 0 120 100"><defs><clipPath id="clpJup"><circle cx="60" cy="50" r="38"/></clipPath></defs><g clip-path="url(#clpJup)"><rect x="22" y="12" width="76" height="76" fill="#e6c9a0"/><rect x="22" y="18" width="76" height="8" fill="#c99a63"/><rect x="22" y="30" width="76" height="7" fill="#b5793f"/><rect x="22" y="41" width="76" height="9" fill="#d8b184"/><rect x="22" y="53" width="76" height="7" fill="#a5673a"/><rect x="22" y="63" width="76" height="8" fill="#cf9a63"/><rect x="22" y="74" width="76" height="7" fill="#b5793f"/><ellipse cx="74" cy="61" rx="10" ry="5.5" fill="#b5502f"/><ellipse cx="74" cy="61" rx="5" ry="2.6" fill="#8f3a22"/></g><circle cx="60" cy="50" r="38" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1"/></svg>`;
+    case 'saturn': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgSat" cx="40%" cy="34%" r="72%"><stop offset="0" stop-color="#f6e6bd"/><stop offset="55%" stop-color="#d8b57a"/><stop offset="100%" stop-color="#6f5a30"/></radialGradient></defs><ellipse cx="60" cy="52" rx="58" ry="17" fill="none" stroke="#c8a869" stroke-width="7" opacity=".9"/><ellipse cx="60" cy="52" rx="46" ry="13" fill="none" stroke="#e6cf9a" stroke-width="3" opacity=".7"/><circle cx="60" cy="47" r="31" fill="url(#pgSat)"/><path d="M6 55 A58 17 0 0 0 114 55" fill="none" stroke="#c8a869" stroke-width="7" opacity=".95"/><path d="M18 53 A46 13 0 0 0 102 53" fill="none" stroke="#e6cf9a" stroke-width="3" opacity=".8"/></svg>`;
+    case 'uranus': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgUra" cx="42%" cy="36%" r="74%"><stop offset="0" stop-color="#dff7f4"/><stop offset="55%" stop-color="#8fd6d8"/><stop offset="100%" stop-color="#3a7a86"/></radialGradient></defs><ellipse cx="60" cy="50" rx="14" ry="44" fill="none" stroke="#bfe6e6" stroke-width="2.5" opacity=".55"/><ellipse cx="60" cy="50" rx="20" ry="44" fill="none" stroke="#9fd0d0" stroke-width="1.5" opacity=".35"/><circle cx="60" cy="50" r="34" fill="url(#pgUra)"/></svg>`;
+    case 'neptune': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgNep" cx="40%" cy="34%" r="74%"><stop offset="0" stop-color="#6a9bff"/><stop offset="50%" stop-color="#2f5adf"/><stop offset="100%" stop-color="#101f6a"/></radialGradient><clipPath id="clpNep"><circle cx="60" cy="50" r="36"/></clipPath></defs><circle cx="60" cy="50" r="36" fill="url(#pgNep)"/><g clip-path="url(#clpNep)"><ellipse cx="60" cy="36" rx="40" ry="5" fill="#8fb4ff" opacity=".3"/><ellipse cx="60" cy="66" rx="40" ry="4" fill="#1a2f8a" opacity=".4"/><ellipse cx="50" cy="58" rx="9" ry="6" fill="#152a70" opacity=".75"/></g></svg>`;
+    case 'pluto': return `<svg viewBox="0 0 120 100"><defs><radialGradient id="pgPlu" cx="40%" cy="36%" r="74%"><stop offset="0" stop-color="#dccfb8"/><stop offset="55%" stop-color="#a89479"/><stop offset="100%" stop-color="#4f4436"/></radialGradient><clipPath id="clpPlu"><circle cx="60" cy="50" r="34"/></clipPath></defs><circle cx="60" cy="50" r="34" fill="url(#pgPlu)"/><g clip-path="url(#clpPlu)"><path d="M64 74 q-16 -13 -16 -27 q0 -9 9 -9 q7 0 7 9 q0 -9 7 -9 q9 0 9 9 q0 14 -16 27z" fill="#ede2c8" opacity=".85"/><circle cx="44" cy="40" r="6" fill="#6b5e49" opacity=".5"/></g></svg>`;
+  }
+  return '';
+}
+
+let planetMode='real', selKey='earth';
+function buildPlanets(){ renderChips(); buildTrack(); renderSheet(); }
+function renderChips(){
+  document.getElementById('pChips').innerHTML=PLANETS.map(p=>
+    `<button class="pchip ${p.key===selKey?'sel':''}" onclick="selectPlanet('${p.key}')">${planetArt(p.key)}<span>${p.name}</span></button>`).join('');
+}
+function buildTrack(){
+  const wrap=document.getElementById('ssTrack'); const cy=118, SUNX=62, pxAU=118;
+  let width, xf;
+  if(planetMode==='real'){ width=SUNX+PLANETS[8].au*pxAU+80; xf=p=>SUNX+p.au*pxAU; }
+  else { const cw=document.getElementById('ssTrackWrap').clientWidth||960; width=Math.max(cw-2,900); const step=(width-SUNX-46)/PLANETS.length; xf=(p,i)=>SUNX+(i+1)*step; }
+  let g=`<div class="ssLine" style="top:${cy}px"></div>`;
+  if(planetMode==='real'){ for(let a=5;a<=40;a+=5){ const x=SUNX+a*pxAU; g+=`<div class="ssGrid" style="left:${x}px;top:24px;height:${230-58}px"></div><div class="ssGridLbl" style="left:${x}px">${a} AU</div>`; } }
+  g+=`<div class="ssSun" style="left:${SUNX}px;top:${cy}px">${sunArt()}<span>Sun</span></div>`;
+  PLANETS.forEach((p,i)=>{ const x=xf(p,i); const up=(i%2===0); const py=up?cy-64:cy+64;
+    g+=`<div class="ssStem" style="left:${x}px;top:${up?py:cy}px;height:64px"></div>`;
+    g+=`<button class="ssPlanet ${p.key===selKey?'sel':''}" data-key="${p.key}" style="left:${x}px;top:${py}px" onclick="selectPlanet('${p.key}')"><span class="ssArt">${planetArt(p.key)}</span><span class="ssName">${p.name}${planetMode==='real'?`<br><b>${p.au} AU</b>`:''}</span></button>`;
+  });
+  wrap.style.width=width+'px'; wrap.innerHTML=g;
+  document.getElementById('ssScaleNote').innerHTML = planetMode==='real'
+    ? `📏 <b>Distances are to scale.</b> If Earth sits one step from the Sun, Neptune is <b>30 steps</b> and Pluto <b>~40 steps</b> away — yet the four rocky inner planets are all squeezed into that very first step. The whole strip spans about <b>5.9 billion km</b>. <span style="color:var(--dim)">(Planet sizes are <em>not</em> to scale — at this distance scale the real planets would be invisible specks.)</span>`
+    : `↔ Planets are spaced <b>evenly</b> here so you can compare them side by side. Switch to <b>📏 Real distances</b> to feel the true, staggering gaps between them.`;
+}
+function setPlanetMode(m){ planetMode=m; document.getElementById('pReal').classList.toggle('on',m==='real'); document.getElementById('pEven').classList.toggle('on',m==='even'); buildTrack(); document.getElementById('ssTrackWrap').scrollLeft=0; }
+function selectPlanet(k){ selKey=k; SFX.play('warp'); renderChips(); document.querySelectorAll('.ssPlanet').forEach(el=>el.classList.toggle('sel',el.dataset.key===k)); renderSheet();
+  const t=document.querySelector('.ssPlanet[data-key="'+k+'"]'); if(t&&!document.getElementById('planetsView').classList.contains('hide')) t.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}); }
+function gravFeel(g){ const w=Math.round(50*g); return 'a 50 kg pupil → '+w+' kg'; }
+function lifeLabel(s){ if(s>=80)return['✅ Home of life','#7be07b']; if(s>=20)return['🟡 Maybe — best bet beyond Earth','#ffe14d']; if(s>=8)return['🟠 Almost certainly not','#ff9a3c']; return['🔴 No — hostile to life','#ff5d5d']; }
+function renderSheet(){
+  const p=PLANETS.find(x=>x.key===selKey);
+  const mkm=p.au*AU_MKM; const kmStr=mkm>=1000?(mkm/1000).toFixed(2)+' billion km':mkm.toFixed(mkm<100?1:0)+' million km';
+  const lt=p.au*LT_PER_AU; const ltStr= lt<60? lt.toFixed(1)+' min' : (lt/60).toFixed(1)+' hours';
+  const [lab,col]=lifeLabel(p.life);
+  const stats=[
+    ['Distance from Sun', p.au+' AU', kmStr],
+    ['Sunlight takes', ltStr, 'to arrive'],
+    ['Diameter', p.dia.toLocaleString('en')+' km', (p.dia/12742).toFixed(2)+'× Earth'],
+    ['Gravity', p.grav+'× Earth', gravFeel(p.grav)],
+    ['One day (spin)', p.day, ''],
+    ['One year (orbit)', p.year, ''],
+    ['Moons', p.moons, ''],
+    ['Avg temperature', p.tempC, ''],
+  ];
+  const dwarf = p.key==='pluto' ? `<span class="psDwarf">counted here as planet #9 · officially a “dwarf planet” since 2006</span>` : '';
+  let html=`<div class="psTop">
+      <div class="psArt">${planetArt(p.key)}</div>
+      <div class="psHead"><h3>${p.name} <span class="nl">— ${p.nl}</span></h3>
+        <div class="psSub">Planet ${PLANETS.indexOf(p)+1} of 9 from the Sun</div>${dwarf}</div>
+    </div>
+    <div class="psStats">${stats.map(s=>`<div class="pstat"><div class="k">${s[0]}</div><div class="v">${s[1]}</div>${s[2]?`<div class="s">${s[2]}</div>`:''}</div>`).join('')}</div>
+    <div class="psBody">${p.fact}</div>
+    <div class="lifeWrap">
+      <div class="lifeTop"><span>🧬 Could life exist here?</span><span class="lifeScore" style="color:${col}">${lab}</span></div>
+      <div class="lifeBar"><div class="mask" style="width:${100-p.life}%"></div><div class="lifeMarker" style="left:${p.life}%"></div></div>
+      <div class="lifeScale"><span>no chance for life</span><span>perfect for life</span></div>
+      <div class="lifeVerdict">${p.lifeWhy}</div>
+    </div>`;
+  if(p.key==='mars') html+=marsBlock();
+  document.getElementById('planetSheet').innerHTML=html;
+}
+function marsBlock(){ return `<div class="marsBox">
+  <div class="mbh">🚀 Getting to Mars — and why it is so hard to come home</div>
+  <div class="marsCols">
+    <div class="marsCol left"><h4>🛫 How would we travel there?</h4><ul>
+      <li>Mars is on average <b>225 million km</b> away — but the gap changes enormously (from about 55 to 400 million km) as both planets orbit the Sun.</li>
+      <li>A spaceship does not fly in a straight line. It follows a curved path called a <b>Hohmann transfer orbit</b>: you speed up near Earth and then coast in a big arc that meets Mars on the far side of the Sun.</li>
+      <li>The journey takes about <b>7 to 9 months</b> one way.</li>
+      <li>You can only leave during a <b>launch window</b> that opens just once every <b>~26 months</b>, when Earth and Mars line up.</li>
+      <li>You need a giant rocket (like <b>SpaceX Starship</b> or NASA's SLS), shielding against <b>space radiation</b>, and years of food, water and air.</li>
+    </ul></div>
+    <div class="marsCol"><h4>🛬 Why is coming back so difficult?</h4><ul>
+      <li>On the <b>Moon</b>, astronauts returned easily: it is only 3 days away and has almost no gravity, so a small rocket could lift off.</li>
+      <li><b>Mars has real gravity</b> (38% of Earth's), so you need a whole powerful rocket <em>and its fuel</em> just to leave the surface.</li>
+      <li>Carrying all that return fuel from Earth would be far too heavy. The plan is to <b>make fuel on Mars</b>: machines turn Mars's CO₂ air and underground ice into methane and oxygen — this is called <b>ISRU</b>, or "living off the land".</li>
+      <li>After lift-off you must <b>wait about 15 months</b> on Mars for the two planets to line up again for the trip home.</li>
+      <li>All together, one return mission would last roughly <b>2.5 to 3 years</b>.</li>
+    </ul></div>
+  </div></div>`; }
+
 /* ===================== VIEWS / MODALS ===================== */
 function setView(v){
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===v));
   document.getElementById('calView').classList.toggle('hide',v!=='cal');
   document.getElementById('scaleView').classList.toggle('hide',v!=='scale');
-  if(v==='scale'){ if(!document.getElementById('sc-obj')){} renderScaleObj(); }
+  document.getElementById('planetsView').classList.toggle('hide',v!=='planets');
+  if(v==='scale'){ renderScaleObj(); }
+  if(v==='planets'){ buildTrack(); const t=document.querySelector('.ssPlanet[data-key="'+selKey+'"]'); if(t) t.scrollIntoView({inline:'center',block:'nearest'}); }
 }
 function openModal(id){ if(id==='quiz')buildQuiz(); document.getElementById('m-'+id).classList.add('open'); }
 function closeModal(id){ document.getElementById('m-'+id).classList.remove('open'); }
@@ -856,6 +1066,7 @@ seedScene();
 renderClock(); renderGrid(); renderVocab(); renderHelp(); renderDoelen();
 document.getElementById('scaleHost').innerHTML=scaleSceneSVG();
 renderScaleObj();
+buildPlanets();
 starfieldBG();
 showScene('bigbang'); updateReadout();
 document.getElementById('foot').innerHTML='The Cosmic Calendar · concept by Carl Sagan · data from Wikipedia · built for CHRONICLE SJB. <b>1 second = 437.5 years.</b>';
