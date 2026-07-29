@@ -414,12 +414,12 @@
     <div class="audioCard">
       <div class="audioIcon">🎧</div>
       <div class="audioMain">
-        <div class="audioTitle">“How big is space? — AU, light-years &amp; parsecs”</div>
-        <div class="audioSub" id="audioSub">No audio loaded yet. <b>Load the audio you made in NotebookLM</b> (or preview the text with a computer voice).</div>
-        <audio id="listenAudio" controls class="hide" style="width:100%;margin-top:12px"></audio>
+        <div class="audioTitle">“Three rulers to measure the universe”</div>
+        <div class="audioSub" id="audioSub">🎙️ Press play ▶ and listen. <span style="color:var(--dim)">Audio made with Google NotebookLM · about the scale of space.</span></div>
+        <audio id="listenAudio" controls preload="metadata" src="three-rulers-listening.mp3" style="width:100%;margin-top:12px"></audio>
         <div class="audioBtns">
-          <label class="filelbl">📁 Load audio file<input type="file" accept="audio/*" onchange="loadAudio(event)" hidden></label>
-          <button class="btn" id="ttsBtn" onclick="toggleTTS()">🗣 Preview with computer voice</button>
+          <label class="filelbl">📁 Load a different file<input type="file" accept="audio/*" onchange="loadAudio(event)" hidden></label>
+          <button class="btn" id="ttsBtn" onclick="toggleTTS()">🗣 Read the text aloud</button>
         </div>
       </div>
     </div>
@@ -1083,6 +1083,18 @@ const LS_AFTER=[
   ['Put these in order from smallest to largest distance: parsec · light-year · astronomical unit · kiloparsec.', 'AU < light-year < parsec < kiloparsec'],
   ['Does thinking about these huge distances make you feel small, curious, or something else? (3–4 sentences)', 'Open answer — accept any well-argued personal response in clear English.'],
 ];
+const LS_VOCAB=[
+  ['astronomical unit (AU)','astronomische eenheid','the Earth–Sun distance, ≈ 150 million km'],
+  ['the speed of light','de lichtsnelheid','≈ 300,000 km per second — the fastest thing there is'],
+  ['light-year','lichtjaar','the distance light travels in one year (≈ 9.46 trillion km)'],
+  ['parsec','parsec','a distance used by astronomers ≈ 3.26 light-years'],
+  ['kiloparsec / megaparsec','kiloparsec / megaparsec','1,000 / 1,000,000 parsecs'],
+  ['distance','afstand','how far apart two things are'],
+  ['to travel','afleggen / reizen','to move from one place to another'],
+  ['trillion','biljoen (10¹²)','a million million'],
+  ['the observable universe','het waarneembaar heelal','everything we can possibly see'],
+  ['to look back in time','terugkijken in de tijd','seeing old light means seeing the past'],
+];
 let listenState={tf:{},mc:{}};
 function renderListening(){
   const warm=LS_WARM.map(q=>`<div class="speakQ">${q}</div>`).join('');
@@ -1093,12 +1105,14 @@ function renderListening(){
      <input id="num-${i}" inputmode="decimal" placeholder="?" autocomplete="off"><span class="numans" id="numans-${i}">= ${(+r[1]).toLocaleString('en')}</span></div>`).join('');
   const mc=LS_MC.map((q,i)=>`<div class="q"><div class="qq">${i+1}. ${q.q}</div><div class="opts" id="lsmc-${i}">${q.o.map((o,j)=>`<button class="qopt" onclick="pickMC(${i},${j},this)">${o}</button>`).join('')}</div></div>`).join('');
   const after=LS_AFTER.map((q,i)=>`<div class="speakQ">${i+1}. ${q[0]}</div>`).join('');
+  const vocab=LS_VOCAB.map(v=>`<div class="vitem"><span class="en">${v[0]}</span> <span class="nl">— ${v[1]}</span><div class="df">${v[2]}</div></div>`).join('');
   document.getElementById('listenBody').innerHTML=
     `<div class="lsBlock"><h3>A · Before you listen</h3><div class="lsHint">Talk with a partner.</div>${warm}</div>
      <div class="lsBlock"><h3>B · True or False</h3><div class="lsHint">Choose TRUE or FALSE while you listen.</div>${tf}</div>
      <div class="lsBlock"><h3>C · Fill in the number</h3><div class="lsHint">Write the missing numbers you hear.</div>${num}</div>
      <div class="lsBlock"><h3>D · Multiple choice</h3><div class="lsHint">Pick the best answer.</div>${mc}</div>
-     <div class="lsBlock"><h3>E · After you listen</h3><div class="lsHint">Answer in English — full sentences.</div>${after}</div>`;
+     <div class="lsBlock"><h3>E · After you listen</h3><div class="lsHint">Answer in English — full sentences.</div>${after}</div>
+     <div class="lsBlock"><h3>F · Words to know — English ↔ Nederlands</h3><div class="lsHint">The key vocabulary from the audio.</div><div class="vgrid">${vocab}</div></div>`;
 }
 function pickTF(i,val,btn){ listenState.tf[i]=val; document.getElementById('tf-'+i+'-1').classList.remove('picked','good','bad'); document.getElementById('tf-'+i+'-0').classList.remove('picked','good','bad'); btn.classList.add('picked'); }
 function pickMC(i,j,btn){ listenState.mc[i]=j; const wrap=document.getElementById('lsmc-'+i); wrap.querySelectorAll('.qopt').forEach(b=>b.classList.remove('picked','good','bad')); btn.classList.add('picked'); }
