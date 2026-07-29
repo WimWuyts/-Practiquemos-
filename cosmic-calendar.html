@@ -419,7 +419,6 @@
         <audio id="listenAudio" controls preload="metadata" src="three-rulers-listening.mp3" style="width:100%;margin-top:12px"></audio>
         <div class="audioBtns">
           <label class="filelbl">📁 Load a different file<input type="file" accept="audio/*" onchange="loadAudio(event)" hidden></label>
-          <button class="btn" id="ttsBtn" onclick="toggleTTS()">🗣 Read the text aloud</button>
         </div>
       </div>
     </div>
@@ -1145,13 +1144,7 @@ function toggleKey(){
       <h4>📄 Transcript</h4><div class="tr">${LISTEN_TRANSCRIPT}</div>`;
   }
 }
-function loadAudio(ev){ const f=ev.target.files&&ev.target.files[0]; if(!f)return; const a=document.getElementById('listenAudio'); a.src=URL.createObjectURL(f); a.classList.remove('hide'); document.getElementById('audioSub').innerHTML='Loaded: <b>'+f.name+'</b> — press play ▶'; stopTTS(); }
-let ttsOn=false;
-function toggleTTS(){ if(ttsOn){ stopTTS(); return; } if(!('speechSynthesis' in window)){ alert('Your browser cannot read text aloud. Please load the audio file instead.'); return; }
-  const u=new SpeechSynthesisUtterance(LISTEN_TRANSCRIPT.replace(/\s+/g,' ')); u.lang='en-GB'; u.rate=0.9; u.pitch=1;
-  u.onend=()=>{ ttsOn=false; document.getElementById('ttsBtn').textContent='🗣 Preview with computer voice'; };
-  window.speechSynthesis.cancel(); window.speechSynthesis.speak(u); ttsOn=true; document.getElementById('ttsBtn').textContent='⏹ Stop voice'; }
-function stopTTS(){ if('speechSynthesis' in window) window.speechSynthesis.cancel(); ttsOn=false; const b=document.getElementById('ttsBtn'); if(b)b.textContent='🗣 Preview with computer voice'; }
+function loadAudio(ev){ const f=ev.target.files&&ev.target.files[0]; if(!f)return; const a=document.getElementById('listenAudio'); a.src=URL.createObjectURL(f); a.classList.remove('hide'); document.getElementById('audioSub').innerHTML='Loaded: <b>'+f.name+'</b> — press play ▶'; }
 
 /* ===================== VIEWS / MODALS ===================== */
 function setView(v){
@@ -1160,7 +1153,7 @@ function setView(v){
   document.getElementById('scaleView').classList.toggle('hide',v!=='scale');
   document.getElementById('planetsView').classList.toggle('hide',v!=='planets');
   document.getElementById('listenView').classList.toggle('hide',v!=='listen');
-  if(v!=='listen') stopTTS();
+  if(v!=='listen'){ const a=document.getElementById('listenAudio'); if(a) a.pause(); }
   if(v==='scale'){ renderScaleObj(); }
   if(v==='planets'){ buildTrack(); const t=document.querySelector('.ssPlanet[data-key="'+selKey+'"]'); if(t) t.scrollIntoView({inline:'center',block:'nearest'}); }
 }
