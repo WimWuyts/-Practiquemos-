@@ -218,6 +218,7 @@
   .exTop{padding:12px 16px; background:var(--panel2); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; flex-wrap:wrap}
   .exTop .cnt{font-family:var(--mono); font-weight:800; color:var(--cyan)}
   .exTop .flt{font-size:12px; color:var(--muted)}
+  #hintBtn.on{background:var(--present-soft); border-color:var(--present); color:var(--present)}
   .streak{margin-left:auto; display:flex; align-items:center; gap:12px; font-size:12px; font-weight:800}
   .streak .sv{color:var(--star)} .streak .sv b{font-size:15px}
   .streak .sc{color:var(--green)} .streak .sc b{font-size:15px}
@@ -248,6 +249,11 @@
   .ybtn:hover{border-color:var(--cyan); transform:translateY(-1px)}
   .ybtn.yes{border-color:rgba(31,157,87,.5)} .ybtn.yes:hover{background:rgba(31,157,87,.12)}
   .ybtn.no{border-color:rgba(217,74,58,.45)} .ybtn.no:hover{background:rgba(217,74,58,.10)}
+
+  /* ===== accessibility: respect reduced-motion ===== */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
+  }
 
   /* ===== print / hand-out (worksheet) ===== */
   @media print{
@@ -420,11 +426,12 @@
         <div class="exTop">
           <span class="cnt" id="exCnt"></span>
           <button class="btn" onclick="shuffleEx()" style="padding:5px 10px;font-size:12px">🔀 Husselen</button>
+          <button class="btn" id="hintBtn" onclick="toggleHints()" style="padding:5px 10px;font-size:12px" title="Markeer signaalwoorden in de vraag (toets H)">💡 Signaalhints: uit</button>
           <span class="flt" id="exFlt"></span>
           <div class="streak"><span class="sv" id="svStreak">🔥 <b>0</b></span><span class="sr" id="svRecord">🏆 <b>0</b></span><span class="sc" id="scScore">✔ <b>0</b>/<span id="scTotal">0</span></span></div>
         </div>
         <div class="exBody" id="exBody"></div>
-        <div class="khint" id="khint"><span>Sneltoetsen:</span> <span><span class="kbd">J</span> ja</span> <span><span class="kbd">N</span> nee</span> <span><span class="kbd">A</span>/<span class="kbd">P</span> actief/passief</span> <span><span class="kbd">Enter</span> volgende</span> <span><span class="kbd">S</span> overslaan</span></div>
+        <div class="khint" id="khint"><span>Sneltoetsen:</span> <span><span class="kbd">J</span> ja</span> <span><span class="kbd">N</span> nee</span> <span><span class="kbd">A</span>/<span class="kbd">P</span> actief/passief</span> <span><span class="kbd">Enter</span> volgende</span> <span><span class="kbd">S</span> overslaan</span> <span><span class="kbd">H</span> hints</span></div>
       </div>
       <div class="treeRef" id="treeRef"></div>
     </div>
@@ -757,7 +764,7 @@ function qpathHTML(){
 
 /* practice bank + scoring */
 let pool=[], exIdx=0, exState='q';
-let streak=0, correct=0, attempts=0, best=0;
+let streak=0, correct=0, attempts=0, best=0, showHints=false;
 /* tiny safe localStorage wrapper (file:// / privacy modes can throw) */
 function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
 function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
@@ -775,7 +782,8 @@ function renderEx(){
   const p=pool[exIdx];
   document.getElementById('exCnt').textContent=`Voorbeeld ${exIdx+1} / ${pool.length}`;
   if(exState==='q' && !walk) newWalk();
-  const sent=esc(p.sentence).replace('___',`<span class="blank"></span>`);
+  const sentBase = showHints ? highlightSignals(p.sentence, (byId[p.tenseId]||{}).signal_words||[]) : esc(p.sentence);
+  const sent=sentBase.replace('___',`<span class="blank"></span>`);
   let body=`<div class="sentence">${sent}</div>`;
   body+=qpathHTML();
   if(exState==='done'){ body+=resultHTML(p); }
@@ -825,6 +833,12 @@ function updateScore(pop, newRecord){
 function restartWalk(){ newWalk(); exState='q'; renderEx(); }
 function skipEx(){ exState='q'; walk=null; nextEx(); }
 function afterDone(){ exState='q'; walk=null; nextEx(); }
+function setHintBtn(){
+  const b=document.getElementById('hintBtn'); if(!b) return;
+  b.classList.toggle('on', showHints);
+  b.textContent = '💡 Signaalhints: '+(showHints?'aan':'uit');
+}
+function toggleHints(){ showHints=!showHints; lsSet('et_hints', showHints?'1':'0'); setHintBtn(); if(view==='boom') renderEx(); }
 function verbMorphHTML(p){
   const letters=Array.from(p.answer).map((ch,i)=>`<span style="animation-delay:${(i*0.045).toFixed(2)}s">${esc(ch)}</span>`).join('');
   return `<div class="vmorph"><span class="vlab">de vorm</span><span class="vfrom">${esc(p.verb)}</span><span class="varrow">➜</span><span class="vto">${letters}</span></div>`;
@@ -1020,13 +1034,18 @@ function toggleTheme(){
   const nxt=cur==='dark'?'light':'dark';
   applyTheme(nxt); lsSet('et_theme', nxt);
 }
-function initTheme(){ applyTheme(lsGet('et_theme')==='dark'?'dark':'light'); }
+function initTheme(){
+  const saved=lsGet('et_theme');
+  const os=(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  applyTheme(saved==='dark'?'dark': saved==='light'?'light': os);
+}
 
 /* ================= KEYBOARD (decision tree) ================= */
 function onKey(e){
   if(view!=='boom' || e.metaKey || e.ctrlKey || e.altKey) return;
   const tag=(e.target&&e.target.tagName)||''; if(tag==='INPUT'||tag==='TEXTAREA') return;
   const k=e.key.toLowerCase();
+  if(k==='h'){ e.preventDefault(); toggleHints(); return; }
   if(exState==='done'){
     if(k==='enter'||k===' '||k==='arrowright'){ e.preventDefault(); afterDone(); }
     else if(k==='s'){ e.preventDefault(); skipEx(); }
@@ -1047,9 +1066,11 @@ document.addEventListener('keydown', onKey);
 /* ================= INIT ================= */
 initTheme();
 best=parseInt(lsGet('et_best')||'0',10)||0;
+showHints = lsGet('et_hints')==='1';
 renderTreeRef();
 renderAll();
 const svRec=document.querySelector('#svRecord b'); if(svRec) svRec.textContent=best;
+setHintBtn();
 setView('uitleg');
 document.getElementById('foot').innerHTML='English Tenses — The Ultimate Overview · SJB · aanpak geïnspireerd op Murphy, eigen uitleg &amp; voorbeelden · 12 tijden × actief/passief + will/going to.';
 </script>
