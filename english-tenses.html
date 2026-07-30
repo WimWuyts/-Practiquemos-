@@ -253,7 +253,7 @@
   @media print{
     :root{--shadow:none}
     header{position:static; border:none}
-    .bar, .tabs, .gradeSwitch, .iconBtn, .headerTools, canvas, .qindex, #v-mindmap, #v-boom, .voiceMini, .moreBtn, .khint, .swapIcon{display:none !important}
+    .bar, .tabs, .gradeSwitch, .iconBtn, .headerTools, canvas, .qindex, #v-mindmap, #v-boom, #v-vergelijk, .voiceMini, .moreBtn, .khint, .swapIcon, .sayBtn{display:none !important}
     body{background:#fff !important; color:#000}
     .lead{display:none}
     .tcard{break-inside:avoid; box-shadow:none !important; border:1px solid #bbb; margin-bottom:10px}
@@ -295,6 +295,39 @@
   .khint{font-size:11.5px; color:var(--dim); margin-top:10px; display:flex; gap:12px; flex-wrap:wrap; align-items:center}
   .kbd{font-family:var(--mono); font-size:11px; border:1px solid var(--border); background:var(--panel2); border-radius:5px; padding:1px 6px; color:var(--muted); box-shadow:0 1px 0 var(--border)}
   .streak .sr{color:var(--star)} .streak .sr b{font-size:15px}
+  /* pronunciation button */
+  .sayBtn{border:1px solid var(--border); background:var(--panel); color:var(--present); min-width:26px; height:26px; border-radius:50%; cursor:pointer; font-size:13px; line-height:1; padding:0; vertical-align:middle; transition:.15s}
+  .sayBtn:hover{border-color:var(--present); transform:scale(1.08)}
+  .sayBtn.speaking{background:var(--present); color:#fff; border-color:var(--present)}
+  /* error-specific feedback in the tree result */
+  .why{margin-top:9px; border-left:3px solid var(--red); background:rgba(217,74,58,.07); border-radius:0 8px 8px 0; padding:9px 13px}
+  :root[data-theme="dark"] .why{background:rgba(255,106,90,.10)}
+  .why .wh{font-size:10.5px; text-transform:uppercase; letter-spacing:1.2px; font-weight:800; color:var(--red); margin-bottom:5px}
+  .why ul{margin:0; padding-left:18px} .why li{margin:3px 0; font-size:13.5px; color:var(--ink)}
+  .why b{color:var(--ink)}
+  /* ===== VIEW 4 · VERGELIJK ===== */
+  .cmpCard{border:1px solid var(--border); border-radius:18px; background:var(--panel); margin-bottom:18px; overflow:hidden; box-shadow:var(--shadow)}
+  .cmpHead{padding:14px 18px; border-bottom:1px solid var(--border); background:linear-gradient(var(--panel2),var(--panel))}
+  .cmpHead h3{margin:0; font-size:18px}
+  .cmpHead .cq{font-size:12.5px; color:var(--muted); margin-top:3px; font-style:italic}
+  .cmpCols{display:grid; grid-template-columns:1fr 44px 1fr; align-items:stretch}
+  @media(max-width:760px){ .cmpCols{grid-template-columns:1fr} }
+  .cmpCol{padding:16px 18px}
+  .cmpCol.time-past{--accent:var(--past)} .cmpCol.time-present{--accent:var(--present)} .cmpCol.time-future{--accent:var(--future)}
+  .cmpCol .cname{font-size:15px; font-weight:800; color:var(--accent); display:flex; align-items:center; gap:8px; margin-bottom:4px}
+  .cmpCol .cbadge{font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; border:1px solid var(--accent); color:var(--accent); border-radius:20px; padding:1px 8px}
+  .cmpCol .ctl{margin:6px 0}
+  .cmpCol .crecipe{display:flex; gap:5px; flex-wrap:wrap; margin:8px 0}
+  .cmpCol .cex{font-size:14.5px; color:var(--ink); line-height:1.4; margin-top:6px}
+  .cmpCol .cexnl{font-size:12px; color:var(--muted); font-style:italic; margin-top:3px}
+  .cmpVs{display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--dim); font-size:13px; background:var(--panel2); border-left:1px solid var(--border); border-right:1px solid var(--border)}
+  @media(max-width:760px){ .cmpVs{padding:6px; border:none; border-top:1px solid var(--border); border-bottom:1px solid var(--border)} }
+  .cmpNote{padding:13px 18px; border-top:1px solid var(--border); font-size:13.5px; line-height:1.5; background:var(--panel2)}
+  .cmpNote .rule{font-weight:800; color:var(--ink); display:block; margin-bottom:3px}
+  .cmpTable{width:100%; border-collapse:collapse; margin-top:10px; font-size:12.5px}
+  .cmpTable th,.cmpTable td{border:1px solid var(--border); padding:6px 10px; text-align:left; vertical-align:top}
+  .cmpTable th{background:var(--panel); font-weight:800; color:var(--muted)}
+  .cmpTable td:first-child{color:var(--dim); font-weight:700; white-space:nowrap}
   .result .nl{color:var(--muted); font-style:italic; font-size:13px; margin-top:6px}
   .verdict{font-weight:800; margin-top:12px; font-size:14px}
   .verdict.ok{color:var(--green)} .verdict.no{color:var(--star)}
@@ -345,6 +378,7 @@
       <button class="tab active" data-v="uitleg" onclick="setView('uitleg')">📖 Uitleg &amp; voorbeelden</button>
       <button class="tab" data-v="mindmap" onclick="setView('mindmap')">🧠 Mindmap</button>
       <button class="tab" data-v="boom" onclick="setView('boom')">🌳 Beslissingsboom · 100 voorbeelden</button>
+      <button class="tab" data-v="vergelijk" onclick="setView('vergelijk')">⚖️ Vergelijk tijden</button>
     </div>
   </div>
 </header>
@@ -395,6 +429,11 @@
       <div class="treeRef" id="treeRef"></div>
     </div>
   </section>
+
+  <section id="v-vergelijk" class="hide">
+    <h2 class="sec">Vergelijk verwarrende tijden · wanneer gebruik je welke?</h2>
+    <div id="cmpBody"></div>
+  </section>
 </div>
 
 <footer id="foot"></footer>
@@ -422,6 +461,31 @@ function tenseAt(time,aspect){ return TENSES.find(t=>t.time===time && t.aspect==
 function sortedTenses(){ return TENSES.slice().sort((a,b)=> TIME_ORDER.indexOf(a.time)-TIME_ORDER.indexOf(b.time) || ASPECT_ORDER.indexOf(a.aspect)-ASPECT_ORDER.indexOf(b.aspect)); }
 function inGrade(t){ return t.graad<=grade; }
 function esc(s){ return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escAttr(s){ return esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+/* ================= PRONUNCIATION (Web Speech) ================= */
+const CAN_SPEAK = ('speechSynthesis' in window);
+let enVoice=null;
+function pickVoice(){
+  if(!CAN_SPEAK) return;
+  const vs=speechSynthesis.getVoices();
+  enVoice = vs.find(v=>/en[-_]GB/i.test(v.lang)) || vs.find(v=>/^en/i.test(v.lang)) || null;
+}
+if(CAN_SPEAK){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }
+function speakEl(btn){
+  if(!CAN_SPEAK) return;
+  const text=btn.dataset.say||''; if(!text) return;
+  speechSynthesis.cancel();
+  document.querySelectorAll('.sayBtn.speaking').forEach(b=>b.classList.remove('speaking'));
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-GB'; if(enVoice) u.voice=enVoice; u.rate=0.92;
+  btn.classList.add('speaking');
+  u.onend=()=>btn.classList.remove('speaking');
+  u.onerror=()=>btn.classList.remove('speaking');
+  speechSynthesis.speak(u);
+}
+/* 🔊 button for an English sentence (no-op markup when speech unavailable) */
+function sayBtn(text){ return CAN_SPEAK ? `<button class="sayBtn" data-say="${escAttr(text)}" onclick="speakEl(this)" title="Uitspraak beluisteren" aria-label="Uitspraak">🔊</button>` : ''; }
 
 /* ================= THE ANIMATED TIMELINE ================= */
 /* time = WHERE on the line (colour) · aspect = the SHAPE of the action */
@@ -479,6 +543,8 @@ function setView(v){ view=v; document.querySelectorAll('.tab').forEach(t=>t.clas
   document.getElementById('v-uitleg').classList.toggle('hide',v!=='uitleg');
   document.getElementById('v-mindmap').classList.toggle('hide',v!=='mindmap');
   document.getElementById('v-boom').classList.toggle('hide',v!=='boom');
+  document.getElementById('v-vergelijk').classList.toggle('hide',v!=='vergelijk');
+  if('speechSynthesis' in window) speechSynthesis.cancel();
   updateLead(); }
 function setVoice(vo){ voice=vo; document.querySelectorAll('#voiceSwitch button').forEach(b=>b.classList.toggle('on',b.dataset.voice===vo)); renderMindmap(); }
 function updateLead(){
@@ -486,14 +552,15 @@ function updateLead(){
   const g= grade===2 ? 'Tweede graad — de kerntijden.' : 'Derde graad — <b>alle 12 tijden</b>, met de nieuwe gemarkeerd.';
   const per={uitleg:'Elke tijd als <b>tijdlijn</b>: de kleur = wanneer, de vorm = het aspect. Wissel actief/passief en klap open voor meer.',
     mindmap:'De 12 tijden als raster: <b>tijd = kleur</b>, <b>aspect = vorm op de tijdlijn</b>.',
-    boom:'Laat de ja/nee-vragen je stap voor stap naar de juiste tijd leiden — met streak &amp; score.'};
+    boom:'Laat de ja/nee-vragen je stap voor stap naar de juiste tijd leiden — met streak &amp; score.',
+    vergelijk:'De tijden die het vaakst door elkaar lopen, <b>naast elkaar</b>: tijdlijn, vorm, voorbeeld en de regel wanneer je welke kiest.'};
   document.getElementById('lead').innerHTML=`${g} <b>${n}</b> tijden actief. ${per[view]}`;
 }
-function renderAll(){ renderKey(); renderUitleg(); renderMindmap(); renderTreeRef(); buildPractice(); updateLead(); }
+function renderAll(){ renderKey(); renderUitleg(); renderMindmap(); renderTreeRef(); buildPractice(); renderVergelijk(); updateLead(); }
 
 /* ================= READING KEY ================= */
 function renderKey(){
-  const colors=TIME_ORDER.map(t=>`<div class="keyRow"><span class="swatch" style="background:${COL[t]}"></span> <b>${TIME_LABEL[t].toLowerCase().replace(/^./,c=>c.toUpperCase())}</b></div>`).join('');
+  const colors=TIME_ORDER.map(t=>`<div class="keyRow"><span class="swatch" style="background:var(--${t})"></span> <b>${TIME_LABEL[t].toLowerCase().replace(/^./,c=>c.toUpperCase())}</b></div>`).join('');
   const shapes=ASPECT_ORDER.map(a=>`<div class="keyRow"><span class="miniTl">${timelineSVG('present',a)}</span> <b>${ASPECT_NL[a]}</b> — ${ASPECT_CAP[a]}</div>`).join('');
   document.getElementById('readKey').innerHTML=
    `<div class="keyTitle">Zo lees je de tijdlijnen</div>
@@ -545,7 +612,7 @@ function heroRightHTML(t){
     <div class="recipe">${formSlots(form)}</div>
     ${cardMorphHTML(t,vo)}
     <div class="morph ${vo==='active'?'act':'pas'}">
-      <div class="mlabel">${vo==='active'?'Actief voorbeeld':'Passief voorbeeld'} <span class="swapIcon">⇄</span></div>
+      <div class="mlabel">${vo==='active'?'Actief voorbeeld':'Passief voorbeeld'} <span class="swapIcon">⇄</span> ${sayBtn(sent)}</div>
       <div class="msent"><span class="morphSent">${highlightSignals(sent, t.signal_words)}</span></div>
       <div class="mnl">${esc(snl)}</div>
     </div>`;
@@ -762,25 +829,42 @@ function verbMorphHTML(p){
   const letters=Array.from(p.answer).map((ch,i)=>`<span style="animation-delay:${(i*0.045).toFixed(2)}s">${esc(ch)}</span>`).join('');
   return `<div class="vmorph"><span class="vlab">de vorm</span><span class="vfrom">${esc(p.verb)}</span><span class="varrow">➜</span><span class="vto">${letters}</span></div>`;
 }
+/* which decision(s) diverged from the correct answer? */
+function diagnose(p){
+  const right=byId[p.tenseId];
+  const timeNL={past:'verleden', present:'heden', future:'toekomst'};
+  const out=[];
+  if(walk.time!==right.time)
+    out.push(`<b>Tijd</b>: je koos <b>${esc(timeNL[walk.time]||walk.time)}</b>, maar deze zin speelt in het <b>${esc(timeNL[right.time])}</b>.`);
+  if(walk.aspect!==right.aspect)
+    out.push(`<b>Aspect</b>: je koos <b>${esc(walk.aspect)}</b>, maar het juiste aspect is <b>${esc(right.aspect)}</b>.`);
+  if(walk.voice!==p.voice)
+    out.push(`<b>Vorm</b>: je koos <b>${walk.voice==='active'?'actief':'passief'}</b>, maar het is <b>${p.voice==='active'?'actief':'passief'}</b>.`);
+  return out;
+}
 function resultHTML(p){
   const landId=leafTense(walk.time,walk.aspect);
   const land=byId[landId];
   const ok = landId===p.tenseId && walk.voice===p.voice;
   const reVerb=new RegExp('\\s*\\(\\s*'+p.verb.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\$&')+'\\s*\\)');
-  const filled=esc(p.sentence.replace(reVerb,'')).replace('___',`<b>${esc(p.answer)}</b>`);
-  const willGoing = (landId==='future-simple') ? `<div class="nl" style="color:var(--dim)">Tip: <b>will</b> = spontaan besluit/voorspelling/belofte · <b>going to</b> = plan of voorspelling met bewijs.</div>` : '';
   const right=byId[p.tenseId];
+  const bare=p.sentence.replace(reVerb,'');
+  const filled=highlightSignals(bare, right.signal_words).replace('___',`<b>${esc(p.answer)}</b>`);
+  const plainFull=bare.replace('___', p.answer);
+  const willGoing = (landId==='future-simple') ? `<div class="nl" style="color:var(--dim)">Tip: <b>will</b> = spontaan besluit/voorspelling/belofte · <b>going to</b> = plan of voorspelling met bewijs.</div>` : '';
+  const why = ok ? '' : `<div class="why"><div class="wh">Waar liep het mis?</div><ul>${diagnose(p).map(m=>`<li>${m}</li>`).join('')}</ul></div>`;
   return `<div class="result">
     <div class="lands">Volgens jouw antwoorden kom je uit bij:</div>
     <div class="tn" style="color:${COL[land?land.time:'present']}">${esc(land?land.name:'?')} · ${walk.voice==='active'?'actief':'passief'}</div>
     <div class="resTl">${land?timelineSVG(land.time,land.aspect):''}</div>
     <div class="crumbs" style="margin-top:8px">${walk.crumbs.map(c=>`<span class="crumb">${esc(c[0])}: <b>${esc(c[1])}</b></span>`).join('')}</div>
-    <div class="full">${filled}</div>
+    <div class="full">${filled} ${sayBtn(plainFull)}</div>
     ${verbMorphHTML(p)}
     <div class="nl">${esc(p.nl||'')}</div>
     <div class="ans">✔ juiste vorm: ${esc(p.answer)} — <b style="color:var(--ink)">${esc(right.name)}</b> (${p.voice==='active'?'actief':'passief'})</div>
     ${willGoing}
-    <div class="verdict ${ok?'ok':'no'}">${ok?'✓ Perfect — je boom-antwoord klopt met de juiste tijd!':'↳ Je koos een ander pad. De juiste tijd hierboven — vergelijk met de signaalwoorden en probeer te zien waar je afsloeg.'}</div>
+    <div class="verdict ${ok?'ok':'no'}">${ok?'✓ Perfect — je boom-antwoord klopt met de juiste tijd!':'↳ Bijna! Je pad sloeg ergens af — hieronder zie je precies waar.'}</div>
+    ${why}
   </div>`;
 }
 
@@ -797,6 +881,73 @@ function renderTreeRef(){
     </div>
     <div class="tnode"><div class="qq">6. Actief of passief?</div><div class="br">onderwerp doet → <b>actief</b> · onderwerp ondergaat → <b>passief</b> (be + voltooid deelwoord)</div></div>
     <div style="font-size:11.5px;color:var(--dim);margin-top:10px">Tijd (3) × aspect (4) = 12 tijden, elk in actief én passief = 24 vormen.</div>`;
+}
+
+/* ================= VIEW 4 · VERGELIJK ================= */
+const COMPARE=[
+  { title:'Present Perfect vs Past Simple', cq:'Telt het NU nog, of is het een afgesloten moment?',
+    left:{tenseId:'present-perfect', short:'Present Perfect', ex:'I have lost my keys.', exnl:'Ik ben mijn sleutels kwijt (nu nog).'},
+    right:{tenseId:'past-simple', short:'Past Simple', ex:'I lost my keys yesterday.', exnl:'Ik verloor gisteren mijn sleutels.'},
+    note:{rule:'Past simple = een afgesloten moment mét tijdstip. Present perfect = verleden dat NU nog telt, zonder concreet tijdstip.',
+      body:'Zodra je zegt wanneer iets gebeurde (yesterday, in 2010, two years ago), gebruik je past simple.'},
+    table:[['Tijdstip','niet genoemd — het moment telt niet','genoemd: yesterday, in 2010, ago'],
+           ['Signaalwoorden','already, yet, just, ever, never, since, for','yesterday, last week, ago, in 2010'],
+           ['Kernvraag','Is het resultaat nu nog belangrijk?','Wanneer precies gebeurde het?']] },
+  { title:'Present Simple vs Present Continuous', cq:'Een gewoonte/feit, of NÚ bezig?',
+    left:{tenseId:'present-simple', short:'Present Simple', ex:'She works in Ghent.', exnl:'Ze werkt in Gent (vast, altijd).'},
+    right:{tenseId:'present-continuous', short:'Present Continuous', ex:'She is working from home today.', exnl:'Ze werkt vandaag thuis (tijdelijk, nu).'},
+    note:{rule:'Present simple = gewoonte, feit of routine. Present continuous = bezig op dit moment of tijdelijk.',
+      body:'Let op: state verbs (know, love, want, believe) staan bijna altijd in de simple, ook al gaat het over nu.'},
+    table:[['Betekenis','gewoonte / feit / altijd waar','bezig nu / tijdelijk'],
+           ['Signaalwoorden','always, usually, every day, on Mondays','now, right now, at the moment, today'],
+           ['Kernvraag','Gebeurt dit meestal / in het algemeen?','Ben je er nu mee bezig?']] },
+  { title:'Past Simple vs Past Continuous', cq:'Gebeurde iets op één moment, of was iets BÉZIG?',
+    left:{tenseId:'past-simple', short:'Past Simple', ex:'The lights went out at 8 p.m.', exnl:'De lichten gingen om 8u uit (één moment).'},
+    right:{tenseId:'past-continuous', short:'Past Continuous', ex:'I was watching TV at 8 p.m.', exnl:'Ik was om 8u tv aan het kijken (bezig).'},
+    note:{rule:'Past simple = een korte, afgeronde gebeurtenis. Past continuous = de achtergrond, iets dat al bezig was.',
+      body:'Vaak samen: While I was cooking (achtergrond), the phone rang (onderbreking).'},
+    table:[['Rol in het verhaal','gebeurtenis / onderbreking','achtergrond / al bezig'],
+           ['Signaalwoorden','when, suddenly, then, yesterday','while, as, at 8 o’clock, all evening'],
+           ['Kernvraag','Gebeurde het en was het meteen klaar?','Was het aan de gang op dat moment?']] },
+  { title:'will vs going to', cq:'Een spontaan besluit/voorspelling, of een plan/bewijs?',
+    left:{tenseId:'future-simple', short:'will', label:'will + base verb', form:'will + base verb',
+      ex:'I’ll get it!', exnl:'Ik neem wel op! (spontaan besluit — de telefoon rinkelt).'},
+    right:{tenseId:'future-simple', short:'going to', label:'be going to + base verb', form:'am/is/are + going to + base verb',
+      ex:'Look at those clouds — it’s going to rain.', exnl:'Kijk naar die wolken — het gaat regenen (voorspelling met bewijs).'},
+    note:{rule:'will = beslissing op het moment zelf, voorspelling of belofte. going to = een plan dat je al had, of voorspelling met bewijs dat je nu ziet.',
+      body:'Beide zijn future, maar de keuze zit in de reden: spontaan (will) of vooraf/bewijs (going to).'},
+    table:[['Gebruik','spontaan besluit, belofte, aanbod','plan of intentie, voorspelling met bewijs'],
+           ['Signaal','I think, probably, maybe, I promise','al gepland, look!, zichtbaar bewijs'],
+           ['Voorbeeld','I’ll help you. (nu beslist)','I’m going to visit Rome next month. (gepland)']] }
+];
+function cmpColHTML(side){
+  const t=byId[side.tenseId]; if(!t) return '';
+  const name=side.label||t.name;
+  const form=side.form||t.form.active;
+  return `<div class="cmpCol time-${t.time}">
+    <div class="cname">${esc(name)} <span class="cbadge">${esc(t.time)} · ${esc(t.aspect)}</span></div>
+    <div class="ctl">${timelineSVG(t.time,t.aspect)}</div>
+    <div class="crecipe">${formSlots(form)}</div>
+    <div class="cex">${esc(side.ex)} ${sayBtn(side.ex)}</div>
+    <div class="cexnl">${esc(side.exnl)}</div>
+  </div>`;
+}
+function renderVergelijk(){
+  const el=document.getElementById('cmpBody'); if(!el) return;
+  const items=COMPARE.filter(c=> byId[c.left.tenseId] && byId[c.right.tenseId] && byId[c.left.tenseId].graad<=grade && byId[c.right.tenseId].graad<=grade);
+  el.innerHTML = items.map(c=>`
+    <div class="cmpCard">
+      <div class="cmpHead"><h3>${esc(c.title)}</h3><div class="cq">${esc(c.cq)}</div></div>
+      <div class="cmpCols">
+        ${cmpColHTML(c.left)}
+        <div class="cmpVs">vs</div>
+        ${cmpColHTML(c.right)}
+      </div>
+      <div class="cmpNote"><span class="rule">${esc(c.note.rule)}</span>${esc(c.note.body||'')}
+        <table class="cmpTable"><tr><th></th><th>${esc(c.left.short)}</th><th>${esc(c.right.short)}</th></tr>
+        ${c.table.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('')}</table>
+      </div>
+    </div>`).join('');
 }
 
 /* ================= CONFETTI ================= */
