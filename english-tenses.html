@@ -411,9 +411,9 @@
     </div>
     <div class="mmwrap"><div class="mmgrid" id="mmgrid"></div></div>
     <div class="mmlegend">
-      <span><b style="color:var(--past)">▮</b> verleden</span>
-      <span><b style="color:var(--present)">▮</b> heden</span>
-      <span><b style="color:var(--future)">▮</b> toekomst</span>
+      <span><b style="color:var(--past)">▮</b> past</span>
+      <span><b style="color:var(--present)">▮</b> present</span>
+      <span><b style="color:var(--future)">▮</b> future</span>
       <span>↔ zelfde tijd, ander aspect &nbsp; ↕ zelfde aspect, andere tijd</span>
     </div>
     <div class="mmpanel" id="mmpanel"><span style="color:var(--dim)">Klik hierboven op een tijd…</span></div>
@@ -455,7 +455,7 @@ const byId={}; TENSES.forEach(t=>byId[t.id]=t);
 const TIME_ORDER=['present','past','future'];
 const ASPECT_ORDER=['simple','continuous','perfect','perfect continuous'];
 const TIME_NL={present:'Present · tegenwoordig', past:'Past · verleden', future:'Future · toekomst'};
-const TIME_LABEL={present:'HEDEN', past:'VERLEDEN', future:'TOEKOMST'};
+const TIME_LABEL={present:'PRESENT', past:'PAST', future:'FUTURE'};
 const ASPECT_NL={simple:'Simple', continuous:'Continuous', perfect:'Perfect', 'perfect continuous':'Perfect Continuous'};
 const COL={past:'#cf7526', present:'#0e8db3', future:'#7a4fd0'};
 const ASPECT_CAP={
@@ -525,9 +525,9 @@ function timelineSVG(time, aspect){
     <line class="tl-axis" x1="12" y1="${y}" x2="288" y2="${y}"/>
     <polygon points="288,${y} 281,${y-4} 281,${y+4}" fill="var(--border)"/>
     <line class="tl-now-line" x1="150" y1="16" x2="150" y2="52"/>
-    <text class="tl-now-label" x="150" y="12" text-anchor="middle">NU</text>
-    <text class="tl-tick" x="14" y="60" text-anchor="start">verleden</text>
-    <text class="tl-tick" x="286" y="60" text-anchor="end">toekomst</text>
+    <text class="tl-now-label" x="150" y="12" text-anchor="middle">NOW</text>
+    <text class="tl-tick" x="14" y="60" text-anchor="start">past</text>
+    <text class="tl-tick" x="286" y="60" text-anchor="end">future</text>
     ${g}
   </svg>`;
 }
@@ -573,7 +573,7 @@ function renderKey(){
    `<div class="keyTitle">Zo lees je de tijdlijnen</div>
     <div class="keyGrid">
       <div class="keyCol"><h4>Kleur = wanneer (tijd)</h4>${colors}
-        <div class="keyRow" style="margin-top:8px;color:var(--dim)"><span style="color:var(--star);font-weight:800">┊ NU</span> = het heden-streepje op elke tijdlijn</div></div>
+        <div class="keyRow" style="margin-top:8px;color:var(--dim)"><span style="color:var(--star);font-weight:800">┊ NOW</span> = het 'nu'-streepje op elke tijdlijn</div></div>
       <div class="keyCol"><h4>Vorm = hoe (aspect)</h4>${shapes}</div>
     </div>`;
 }
