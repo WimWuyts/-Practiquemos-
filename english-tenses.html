@@ -25,8 +25,15 @@
       radial-gradient(900px 640px at 6% 110%, rgba(14,141,179,.08), transparent 60%),
       var(--bg);
     color:var(--ink); font-family:var(--sans); line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden}
-  button{font-family:inherit}
+  button{font-family:inherit; touch-action:manipulation; -webkit-tap-highlight-color:transparent}
+  button:active{transform:scale(.97)}
   a{color:var(--cyan)}
+
+  /* ===== smoothness: transitions between steps / views ===== */
+  @keyframes stepIn{from{opacity:0; transform:translateY(7px)} to{opacity:1; transform:none}}
+  @keyframes viewIn{from{opacity:0; transform:translateY(9px)} to{opacity:1; transform:none}}
+  @keyframes popCheck{0%{transform:scale(.4); opacity:.3} 60%{transform:scale(1.18)} 100%{transform:scale(1); opacity:1}}
+  .viewAnim{animation:viewIn .3s ease both}
 
   /* ===== dark theme (toggle) ===== */
   :root[data-theme="dark"]{
@@ -224,8 +231,10 @@
   .streak .sc{color:var(--green)} .streak .sc b{font-size:15px}
   .streak .pop{animation:scorePop .5s ease}
   @keyframes scorePop{0%{transform:scale(1)} 40%{transform:scale(1.5)} 100%{transform:scale(1)}}
-  .exBody{padding:18px}
-  .sentence{font-size:19px; font-weight:700; line-height:1.45; background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:15px 16px}
+  .exBody{padding:18px; min-height:430px}
+  .sentence{font-size:19px; font-weight:700; line-height:1.45; background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:15px 16px; scroll-margin-top:150px}
+  .sentence.anim{animation:stepIn .3s ease both}
+  .qbox{animation:stepIn .24s ease both}
   .sentence .blank{color:var(--star); border-bottom:2px dashed var(--star); padding:0 22px; margin:0 2px}
   .sentence .vb{color:var(--dim); font-family:var(--mono); font-size:14px}
 
@@ -237,6 +246,7 @@
   .qnode.cur .qcirc{border-color:var(--cyan); color:var(--cyan); box-shadow:0 0 0 4px rgba(14,141,179,.16); animation:curPulse 1.4s ease-in-out infinite}
   .qnode .qlab{font-size:9px; color:var(--dim); font-weight:700; text-transform:uppercase; letter-spacing:.5px}
   .qnode.done .qlab{color:var(--muted)} .qnode.cur .qlab{color:var(--cyan)}
+  .qnode.pop .qcirc{animation:popCheck .4s cubic-bezier(.2,1.3,.4,1) both}
   .qseg{width:26px; height:3px; background:var(--border); border-radius:2px; margin:0 2px; align-self:flex-start; margin-top:14px; transition:.3s}
   .qseg.fill{background:var(--green)}
   @keyframes curPulse{0%,100%{box-shadow:0 0 0 4px rgba(14,141,179,.16)} 50%{box-shadow:0 0 0 7px rgba(14,141,179,.05)}}
@@ -249,6 +259,8 @@
   .ybtn:hover{border-color:var(--cyan); transform:translateY(-1px)}
   .ybtn.yes{border-color:rgba(31,157,87,.5)} .ybtn.yes:hover{background:rgba(31,157,87,.12)}
   .ybtn.no{border-color:rgba(217,74,58,.45)} .ybtn.no:hover{background:rgba(217,74,58,.10)}
+  .ybtn:active{transform:scale(.98)}
+  @media(max-width:620px){ .ybtn{min-height:52px; font-size:15px} .btn{min-height:40px} }
 
   /* ===== accessibility: respect reduced-motion ===== */
   @media (prefers-reduced-motion: reduce){
@@ -343,7 +355,9 @@
   .btn.primary{background:linear-gradient(135deg,var(--violet),var(--cyan)); border:none; color:#fff}
   .treeRef{border:1px solid var(--border); border-radius:16px; background:var(--panel); padding:16px 18px}
   .treeRef h3{margin:0 0 10px; font-size:15px}
-  .tnode{border:1px solid var(--border); border-radius:10px; padding:9px 12px; margin:6px 0; font-size:12.5px; background:var(--panel2)}
+  .tnode{border:1px solid var(--border); border-radius:10px; padding:9px 12px; margin:6px 0; font-size:12.5px; background:var(--panel2); transition:border-color .25s, background .25s, box-shadow .25s}
+  .tnode.lit{border-color:var(--present); background:var(--present-soft); box-shadow:0 0 0 1px var(--present)}
+  .tnode.lit .qq{color:var(--present)}
   .tnode .qq{font-weight:800; color:var(--ink)}
   .tnode .br{color:var(--muted); margin-top:4px} .tnode .br b{color:var(--cyan)}
   .tindent{margin-left:16px; border-left:2px solid var(--border); padding-left:12px}
@@ -478,7 +492,10 @@ function pickVoice(){
   const vs=speechSynthesis.getVoices();
   enVoice = vs.find(v=>/en[-_]GB/i.test(v.lang)) || vs.find(v=>/^en/i.test(v.lang)) || null;
 }
-if(CAN_SPEAK){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }
+if(CAN_SPEAK){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice;
+  /* warm up the voice list on first interaction so the first 🔊 is instant */
+  document.addEventListener('pointerdown', ()=>{ try{ speechSynthesis.getVoices(); }catch(e){} }, {once:true});
+}
 function speakEl(btn){
   if(!CAN_SPEAK) return;
   const text=btn.dataset.say||''; if(!text) return;
@@ -552,6 +569,9 @@ function setView(v){ view=v; document.querySelectorAll('.tab').forEach(t=>t.clas
   document.getElementById('v-boom').classList.toggle('hide',v!=='boom');
   document.getElementById('v-vergelijk').classList.toggle('hide',v!=='vergelijk');
   if('speechSynthesis' in window) speechSynthesis.cancel();
+  const secId={uitleg:'v-uitleg',mindmap:'v-mindmap',boom:'v-boom',vergelijk:'v-vergelijk'}[v];
+  const sec=document.getElementById(secId);
+  if(sec){ sec.classList.remove('viewAnim'); void sec.offsetWidth; sec.classList.add('viewAnim'); }
   updateLead(); }
 function setVoice(vo){ voice=vo; document.querySelectorAll('#voiceSwitch button').forEach(b=>b.classList.toggle('on',b.dataset.voice===vo)); renderMindmap(); }
 function updateLead(){
@@ -751,14 +771,19 @@ function qpathHTML(){
   let phase='time';
   if(walk){ if(walk.stage==='voice') phase='voice'; else if(walk.stage==='dur'||walk.stage==='perf'||walk.stage==='prog') phase='aspect'; }
   if(voiceDone) phase='done';
-  const node=(n,lab,done,cur)=>`<div class="qnode ${done?'done':''} ${cur?'cur':''}"><div class="qcirc">${done?'✓':n}</div><div class="qlab">${lab}</div></div>`;
+  if(walk) walk._seen = walk._seen || {};
+  const node=(n,lab,done,cur,key)=>{
+    let pop='';
+    if(done && walk && !walk._seen[key]){ walk._seen[key]=true; pop=' pop'; }
+    return `<div class="qnode ${done?'done':''} ${cur?'cur':''}${pop}"><div class="qcirc">${done?'✓':n}</div><div class="qlab">${lab}</div></div>`;
+  };
   const seg=(f)=>`<div class="qseg ${f?'fill':''}"></div>`;
   return `<div class="qpath">
-    ${node(1,'Tijd',timeDone,phase==='time')}
+    ${node(1,'Tijd',timeDone,phase==='time','t')}
     ${seg(timeDone)}
-    ${node(2,'Aspect',aspDone,phase==='aspect')}
+    ${node(2,'Aspect',aspDone,phase==='aspect','a')}
     ${seg(aspDone)}
-    ${node(3,'Vorm',voiceDone,phase==='voice')}
+    ${node(3,'Vorm',voiceDone,phase==='voice','v')}
   </div>`;
 }
 
@@ -771,20 +796,22 @@ function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 function buildPractice(){
   pool=PRACTICE.filter(p=> byId[p.tenseId] && byId[p.tenseId].graad<=grade);
   shuffleArr(pool);
-  exIdx=0; renderEx();
+  exIdx=0; freshEx=true; renderEx();
   document.getElementById('exFlt').textContent = grade===2?'enkel 2de-graadstijden':'alle tijden';
 }
 function shuffleArr(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } }
-function shuffleEx(){ shuffleArr(pool); exIdx=0; walk=null; exState='q'; renderEx(); }
-function nextEx(){ exIdx=(exIdx+1)%pool.length; renderEx(); }
+let freshEx=true;   /* animate the sentence only when a NEW exercise loads */
+function shuffleEx(){ shuffleArr(pool); exIdx=0; walk=null; exState='q'; freshEx=true; renderEx(); }
+function nextEx(){ exIdx=(exIdx+1)%pool.length; freshEx=true; renderEx(); }
 function renderEx(){
   if(!pool.length){ document.getElementById('exBody').innerHTML='<p style="color:var(--muted)">Geen voorbeelden.</p>'; return; }
   const p=pool[exIdx];
+  const fr=freshEx; freshEx=false;
   document.getElementById('exCnt').textContent=`Voorbeeld ${exIdx+1} / ${pool.length}`;
   if(exState==='q' && !walk) newWalk();
   const sentBase = showHints ? highlightSignals(p.sentence, (byId[p.tenseId]||{}).signal_words||[]) : esc(p.sentence);
   const sent=sentBase.replace('___',`<span class="blank"></span>`);
-  let body=`<div class="sentence">${sent}</div>`;
+  let body=`<div class="sentence${fr?' anim':''}">${sent}</div>`;
   body+=qpathHTML();
   if(exState==='done'){ body+=resultHTML(p); }
   else {
@@ -808,6 +835,23 @@ function renderEx(){
   else body+=`<button class="btn" onclick="restartWalk()">↺ Opnieuw beginnen</button>`;
   body+=`<button class="btn" onclick="skipEx()">Overslaan</button></div>`;
   document.getElementById('exBody').innerHTML=body;
+  updateTreeHighlight();
+  if(fr && view==='boom'){
+    const s=document.querySelector('#exBody .sentence');
+    if(s) requestAnimationFrame(()=>s.scrollIntoView({behavior:'smooth', block:'nearest'}));
+  }
+}
+/* light up the branch of the static tree that matches the current walk */
+function updateTreeHighlight(){
+  const lit=new Set();
+  if(walk){
+    if(walk.time){ lit.add(1); if(walk.time!=='future') lit.add(2); }
+    if(walk.aspect){ lit.add(3); if(walk.aspect!=='perfect continuous'){ lit.add(4); if(walk.aspect==='continuous'||walk.aspect==='simple') lit.add(5); } }
+    if(walk.voice) lit.add(6);
+  }
+  document.querySelectorAll('#treeRef .tnode').forEach(n=>{
+    n.classList.toggle('lit', lit.has(+n.dataset.node));
+  });
 }
 function crumbsHTML(){ if(!walk||!walk.crumbs.length) return ''; return `<div class="crumbs">${walk.crumbs.map(c=>`<span class="crumb">${esc(c[0])}: <b>${esc(c[1])}</b></span>`).join('')}</div>`; }
 function finishWalk(){
@@ -886,14 +930,14 @@ function resultHTML(p){
 function renderTreeRef(){
   document.getElementById('treeRef').innerHTML=
    `<h3>🌳 De beslissingsboom</h3>
-    <div class="tnode"><div class="qq">1. Toekomst?</div><div class="br">Ja → <b>future</b> · Nee → vraag 2</div></div>
-    <div class="tnode"><div class="qq">2. Afgelopen verleden?</div><div class="br">Ja → <b>past</b> · Nee → <b>present</b></div></div>
+    <div class="tnode" data-node="1"><div class="qq">1. Toekomst?</div><div class="br">Ja → <b>future</b> · Nee → vraag 2</div></div>
+    <div class="tnode" data-node="2"><div class="qq">2. Afgelopen verleden?</div><div class="br">Ja → <b>past</b> · Nee → <b>present</b></div></div>
     <div class="tindent">
-      <div class="tnode"><div class="qq">3. Nadruk op DUUR (for/since, hoe lang)?</div><div class="br">Ja → <b>perfect continuous</b></div></div>
-      <div class="tnode"><div class="qq">4. VOLTOOID + verbonden met ander moment?</div><div class="br">Ja → <b>perfect</b></div></div>
-      <div class="tnode"><div class="qq">5. BEZIG / tijdelijk op dat moment?</div><div class="br">Ja → <b>continuous</b> · Nee → <b>simple</b></div></div>
+      <div class="tnode" data-node="3"><div class="qq">3. Nadruk op DUUR (for/since, hoe lang)?</div><div class="br">Ja → <b>perfect continuous</b></div></div>
+      <div class="tnode" data-node="4"><div class="qq">4. VOLTOOID + verbonden met ander moment?</div><div class="br">Ja → <b>perfect</b></div></div>
+      <div class="tnode" data-node="5"><div class="qq">5. BEZIG / tijdelijk op dat moment?</div><div class="br">Ja → <b>continuous</b> · Nee → <b>simple</b></div></div>
     </div>
-    <div class="tnode"><div class="qq">6. Actief of passief?</div><div class="br">onderwerp doet → <b>actief</b> · onderwerp ondergaat → <b>passief</b> (be + voltooid deelwoord)</div></div>
+    <div class="tnode" data-node="6"><div class="qq">6. Actief of passief?</div><div class="br">onderwerp doet → <b>actief</b> · onderwerp ondergaat → <b>passief</b> (be + voltooid deelwoord)</div></div>
     <div style="font-size:11.5px;color:var(--dim);margin-top:10px">Tijd (3) × aspect (4) = 12 tijden, elk in actief én passief = 24 vormen.</div>`;
 }
 
