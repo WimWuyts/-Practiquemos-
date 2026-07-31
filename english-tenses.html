@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>English Tenses — The Ultimate Overview</title>
+<style>
+  :root{
+    /* ===== light "paper" theme ===== */
+    --bg:#f5f3fb; --panel:#ffffff; --panel2:#f3f0fa; --border:#e4dff0;
+    --ink:#211d33; --muted:#5c5570; --dim:#8b84a0;
+    /* ===== TIME = COLOUR (the visual language) ===== */
+    --past:#cf7526;    --past-soft:rgba(207,117,38,.12);
+    --present:#0e8db3; --present-soft:rgba(14,141,179,.12);
+    --future:#7a4fd0;  --future-soft:rgba(122,79,208,.12);
+    --hot:#e8632a; --star:#d38a12; --cyan:#0e8db3; --violet:#7a4fd0; --green:#1f9d57; --pink:#d6459a; --red:#d94a3a; --blue:#2f6fd0;
+    --g2:#0e8db3; --g3:#c07d10;
+    --shadow:0 8px 22px rgba(60,40,100,.10);
+    --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:
+      radial-gradient(1100px 640px at 84% -10%, rgba(122,79,208,.10), transparent 60%),
+      radial-gradient(900px 640px at 6% 110%, rgba(14,141,179,.08), transparent 60%),
+      var(--bg);
+    color:var(--ink); font-family:var(--sans); line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  button{font-family:inherit; touch-action:manipulation; -webkit-tap-highlight-color:transparent}
+  button:active{transform:scale(.97)}
+  a{color:var(--cyan)}
+
+  /* ===== smoothness: transitions between steps / views ===== */
+  @keyframes stepIn{from{opacity:0; transform:translateY(7px)} to{opacity:1; transform:none}}
+  @keyframes viewIn{from{opacity:0; transform:translateY(9px)} to{opacity:1; transform:none}}
+  @keyframes popCheck{0%{transform:scale(.4); opacity:.3} 60%{transform:scale(1.18)} 100%{transform:scale(1); opacity:1}}
+  .viewAnim{animation:viewIn .3s ease both}
+
+  /* ===== dark theme (toggle) ===== */
+  :root[data-theme="dark"]{
+    --bg:#0b0e1a; --panel:#141021; --panel2:#1d1830; --border:#2f2748;
+    --ink:#f1ecff; --muted:#bdb0d8; --dim:#8579a4;
+    --past:#ff9e57;    --past-soft:rgba(255,158,87,.14);
+    --present:#5fd0ff; --present-soft:rgba(95,208,255,.14);
+    --future:#b98cff;  --future-soft:rgba(185,140,255,.14);
+    --hot:#ff7a3c; --star:#ffd76a; --cyan:#5fd0ff; --violet:#a97bff; --green:#57e08a; --pink:#ff6ab0; --red:#ff6a5a; --blue:#6a9bff;
+    --g2:#5fd0ff; --g3:#ffb14a;
+    --shadow:0 10px 26px rgba(0,0,0,.5);
+  }
+  :root[data-theme="dark"] body{background:
+      radial-gradient(1100px 640px at 84% -10%, rgba(169,123,255,.18), transparent 60%),
+      radial-gradient(900px 640px at 6% 110%, rgba(95,208,255,.13), transparent 60%),
+      var(--bg)}
+  :root[data-theme="dark"] header{background:linear-gradient(180deg,rgba(11,14,26,.97),rgba(11,14,26,.8))}
+  :root[data-theme="dark"] .tab.active{background:linear-gradient(135deg,rgba(169,123,255,.35),rgba(95,208,255,.22)); color:#fff}
+  /* icon buttons in header (theme + print) */
+  .iconBtn{border:1px solid var(--border); background:var(--panel); color:var(--muted); font-size:16px; width:38px; height:38px; border-radius:10px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:.15s}
+  .iconBtn:hover{border-color:var(--cyan); color:var(--ink); transform:translateY(-1px)}
+
+  header{position:sticky; top:0; z-index:40; background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.82)); backdrop-filter:blur(10px); border-bottom:1px solid var(--border)}
+  .bar{max-width:1240px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:13px; flex-wrap:wrap}
+  .schoollogo{width:34px; height:34px}
+  .sjb{font-family:var(--mono); font-size:14px; color:#fff; background:linear-gradient(135deg,var(--violet),var(--cyan)); padding:4px 8px; border-radius:6px; letter-spacing:1px; font-weight:800}
+  .brand h1{margin:0; font-size:17px; letter-spacing:.3px}
+  .brand .sub{font-size:10px; text-transform:uppercase; letter-spacing:2.5px; color:var(--muted); font-weight:700}
+  .spacer{flex:1}
+  .gradeSwitch{display:flex; gap:4px; background:var(--panel); border:1px solid var(--border); border-radius:11px; padding:4px}
+  .gradeSwitch button{border:none; background:transparent; color:var(--muted); font-weight:800; font-size:12.5px; padding:8px 13px; border-radius:8px; cursor:pointer; display:flex; gap:6px; align-items:center; transition:.15s}
+  .gradeSwitch button.on[data-g="2"]{background:linear-gradient(135deg,#1e6a86,#2f8fb0); color:#fff}
+  .gradeSwitch button.on[data-g="3"]{background:linear-gradient(135deg,#9a5a10,#d99a3a); color:#fff}
+  .tabs{display:flex; gap:6px; flex-wrap:wrap}
+  .tab{border:1px solid var(--border); background:var(--panel); color:var(--muted); font-size:13px; font-weight:700; padding:8px 13px; border-radius:9px; cursor:pointer; transition:.15s}
+  .tab:hover{border-color:var(--cyan); color:var(--ink)}
+  .tab.active{background:linear-gradient(135deg,rgba(122,79,208,.16),rgba(14,141,179,.12)); border-color:var(--violet); color:#4a2f8f}
+
+  .wrap{max-width:1240px; margin:0 auto; padding:18px 18px 70px}
+  .hide{display:none !important}
+  .lead{color:var(--muted); font-size:13.5px; margin:2px 0 16px}
+  .lead b{color:var(--ink)}
+  h2.sec{font-size:11px; text-transform:uppercase; letter-spacing:3px; color:var(--muted); margin:0 0 12px; font-weight:800}
+  .badge{font-size:10px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; padding:3px 8px; border-radius:20px}
+  .b-g2{color:var(--g2); border:1px solid rgba(95,208,255,.5); background:rgba(95,208,255,.1)}
+  .b-g3{color:var(--g3); border:1px solid rgba(255,177,74,.5); background:rgba(255,177,74,.1)}
+  .b-new{color:#fff; background:linear-gradient(135deg,var(--hot),var(--star)); border:none}
+
+  /* ===== reading key (how the visual language works) ===== */
+  .key{border:1px solid var(--border); border-radius:16px; background:linear-gradient(180deg,var(--panel2),var(--panel)); padding:14px 16px; margin-bottom:18px}
+  .keyTitle{font-size:11px; text-transform:uppercase; letter-spacing:2.5px; color:var(--muted); font-weight:800; margin-bottom:12px}
+  .keyGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  @media(max-width:760px){ .keyGrid{grid-template-columns:1fr} }
+  .keyCol h4{margin:0 0 8px; font-size:12.5px; color:var(--ink); font-weight:800}
+  .keyRow{display:flex; align-items:center; gap:9px; margin-bottom:7px; font-size:12.5px; color:var(--muted)}
+  .keyRow b{color:var(--ink)}
+  .swatch{width:26px; height:14px; border-radius:5px; flex:none}
+  .miniTl{width:74px; height:24px; flex:none}
+
+  /* ===== the animated TIMELINE (core component) ===== */
+  .tl{display:block; width:100%; height:auto; overflow:visible}
+  .tl-axis{stroke:var(--border); stroke-width:2}
+  .tl-tick{fill:var(--dim); font-size:9px; font-family:var(--sans); font-weight:700; letter-spacing:.5px; text-transform:uppercase}
+  .tl-now-line{stroke:var(--star); stroke-width:1.6; stroke-dasharray:3 3; opacity:.85; animation:nowGlow 2.4s ease-in-out infinite}
+  .tl-now-label{fill:var(--star); font-size:9px; font-weight:800; font-family:var(--sans); letter-spacing:1px}
+  .tl-dot{animation:tlPulse 1.9s ease-in-out infinite; transform-box:fill-box; transform-origin:center}
+  .tl-refdot{stroke:#fff; stroke-width:1.4}
+  .tl-wave{fill:none; stroke-width:3.4; stroke-linecap:round; stroke-dasharray:7 6; animation:tlFlow 1.1s linear infinite}
+  .tl-arrow-shaft{stroke-width:3.2; stroke-linecap:round; stroke-dasharray:60; stroke-dashoffset:60; animation:tlDraw 2.6s ease-in-out infinite}
+  .tl-arrow-head{animation:tlHead 2.6s ease-in-out infinite; opacity:0}
+  .tl-bar{transform-box:fill-box; transform-origin:left center; animation:tlGrow 2.6s ease-in-out infinite}
+  .tl-repeat{animation:tlBlink 1.9s ease-in-out infinite}
+  @keyframes tlPulse{0%,100%{transform:scale(1);opacity:.9} 50%{transform:scale(1.18);opacity:1}}
+  @keyframes tlFlow{to{stroke-dashoffset:-26}}
+  @keyframes tlDraw{0%,8%{stroke-dashoffset:60} 55%,100%{stroke-dashoffset:0}}
+  @keyframes tlHead{0%,45%{opacity:0} 60%,100%{opacity:1}}
+  @keyframes tlGrow{0%,8%{transform:scaleX(.05)} 60%,100%{transform:scaleX(1)}}
+  @keyframes tlBlink{0%,100%{opacity:.35} 50%{opacity:1}}
+  @keyframes nowGlow{0%,100%{opacity:.5} 50%{opacity:1}}
+
+  /* ===== quick index ===== */
+  .qindex{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:16px}
+  .qindex a{display:flex; align-items:center; gap:7px; font-size:12px; font-weight:700; text-decoration:none; color:var(--muted); border:1px solid var(--border); background:var(--panel); border-radius:10px; padding:5px 9px 5px 5px; transition:.15s}
+  .qindex a:hover{border-color:var(--cyan); color:var(--ink); transform:translateY(-1px)}
+  .qindex a .qdot{width:9px; height:9px; border-radius:50%}
+  .qindex a .qtl{width:52px; height:20px}
+
+  /* ===== tense card ===== */
+  .tcard{border:1px solid var(--border); border-radius:18px; background:var(--panel); margin-bottom:16px; overflow:hidden; scroll-margin-top:130px; position:relative; box-shadow:var(--shadow)}
+  .tcard::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--accent,var(--present))}
+  .tcard.time-past{--accent:var(--past)} .tcard.time-present{--accent:var(--present)} .tcard.time-future{--accent:var(--future)}
+  .tcard .th{padding:14px 18px 14px 22px; background:linear-gradient(180deg,var(--panel2),var(--panel)); display:flex; align-items:center; gap:12px; flex-wrap:wrap; border-bottom:1px solid var(--border)}
+  .tcard .th .tn{font-size:20px; font-weight:800; letter-spacing:.2px}
+  .tcard .th .tnl{font-size:12.5px; color:var(--star); font-style:italic}
+  .tcard .th .tmeta{margin-left:auto; display:flex; gap:6px; align-items:center; flex-wrap:wrap}
+  .b-time{border:1px solid var(--accent); color:var(--accent); background:transparent}
+  .tbody{padding:16px 18px 16px 22px}
+
+  /* hero timeline block */
+  .hero{display:grid; grid-template-columns:minmax(280px,1.35fr) 1fr; gap:16px; align-items:center; margin-bottom:16px}
+  @media(max-width:720px){ .hero{grid-template-columns:1fr} }
+  .heroTl{border:1px solid var(--border); border-radius:14px; background:var(--panel2); padding:12px 14px 8px}
+  .heroTl .cap{font-size:11px; color:var(--dim); margin-top:2px; text-align:center; font-style:italic}
+  .heroRight{display:flex; flex-direction:column; gap:10px}
+
+  /* form recipe = visual slots */
+  .voiceMini{display:inline-flex; gap:3px; background:var(--panel); border:1px solid var(--border); border-radius:9px; padding:3px}
+  .voiceMini button{border:none; background:transparent; color:var(--muted); font-weight:800; font-size:11px; padding:5px 11px; border-radius:6px; cursor:pointer; transition:.15s}
+  .voiceMini button.on{color:#fff}
+  .voiceMini button.on[data-v="active"]{background:linear-gradient(135deg,#1f7a4d,#31b06f)}
+  .voiceMini button.on[data-v="passive"]{background:linear-gradient(135deg,#2a5aa8,#4d84e0)}
+  .recipe{display:flex; align-items:center; gap:6px; flex-wrap:wrap}
+  .slot{font-family:var(--mono); font-size:12px; font-weight:700; padding:7px 11px; border-radius:9px; border:1px solid var(--border); background:var(--panel); color:var(--ink); animation:popIn .35s ease both}
+  .slot.s-be{color:var(--star); border-color:rgba(211,138,18,.4); background:rgba(211,138,18,.09)}
+  .slot.s-verb{color:var(--green); border-color:rgba(31,157,87,.4); background:rgba(31,157,87,.09)}
+  .plus{color:var(--dim); font-weight:800; font-size:13px}
+  @keyframes popIn{from{opacity:0; transform:translateY(6px) scale(.9)} to{opacity:1; transform:none}}
+
+  /* morphing example */
+  .morph{border:1px solid var(--border); border-radius:12px; background:var(--panel2); padding:12px 14px; position:relative; overflow:hidden}
+  .morph .mlabel{font-size:10px; text-transform:uppercase; letter-spacing:1.5px; font-weight:800; margin-bottom:5px; display:flex; align-items:center; gap:8px}
+  .morph.act .mlabel{color:var(--green)} .morph.pas .mlabel{color:var(--blue)}
+  .morph .msent{font-size:15px; line-height:1.45; color:var(--ink); min-height:1.4em}
+  .morph .mnl{font-size:12px; color:var(--muted); font-style:italic; margin-top:5px}
+  /* +/-/? forms panel */
+  .forms{border:1px solid var(--border); border-radius:12px; background:var(--panel2); padding:11px 13px; display:flex; flex-direction:column; gap:9px}
+  .forms .fhdr{font-size:10px; text-transform:uppercase; letter-spacing:1px; font-weight:800; color:var(--dim)}
+  .forms .fhdr b{color:var(--muted)}
+  .frow{display:grid; grid-template-columns:24px 1fr; gap:10px; align-items:start}
+  .ftag{width:24px; height:24px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; line-height:1}
+  .ftag.plus{background:var(--present-soft); color:var(--present)}
+  .ftag.min{background:rgba(217,74,58,.14); color:var(--red)}
+  .ftag.q{background:rgba(211,138,18,.16); color:var(--star)}
+  .fbody{min-width:0}
+  .fchips{display:flex; gap:5px; flex-wrap:wrap; align-items:center}
+  .fpat{font-family:var(--mono); font-size:12px; color:var(--ink); word-break:break-word}
+  .fex{font-size:12.5px; color:var(--muted); font-style:italic; margin-top:4px}
+  .pnote{font-size:12px; color:var(--muted); border-top:1px dashed var(--border); padding-top:8px}
+  .pnote .pnlab{font-size:9.5px; text-transform:uppercase; letter-spacing:1px; font-weight:800; color:var(--present); margin-right:6px}
+  .fnone{font-size:12.5px; font-style:italic; color:var(--dim)}
+  .morphSent{display:inline; transition:opacity .28s ease, transform .28s ease}
+  .morphSent.out{opacity:0; transform:translateY(-6px)}
+  .morphBtn{border:1px solid var(--border); background:var(--panel); color:var(--ink); font-size:11.5px; font-weight:800; padding:5px 10px; border-radius:8px; cursor:pointer; margin-left:auto; transition:.15s}
+  .morphBtn:hover{border-color:var(--cyan)}
+  .swapIcon{display:inline-block; transition:transform .4s ease}
+  .morph.flip .swapIcon{transform:rotate(180deg)}
+
+  /* collapse (progressive disclosure) */
+  .moreBtn{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--border); background:var(--panel2); color:var(--muted); font-size:12.5px; font-weight:800; padding:8px 13px; border-radius:10px; cursor:pointer; margin-top:4px; transition:.15s}
+  .moreBtn:hover{border-color:var(--cyan); color:var(--ink)}
+  .moreBtn .chev{transition:transform .3s ease}
+  .moreBtn.open .chev{transform:rotate(180deg)}
+  .more{display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease; margin-top:0}
+  .more.open{grid-template-rows:1fr; margin-top:14px}
+  .more>.moreInner{overflow:hidden; min-height:0}
+
+  .subh{font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-weight:800; margin:16px 0 7px; display:flex; align-items:center; gap:8px}
+  .subh::before{content:""; width:4px; height:14px; border-radius:2px; background:var(--accent,var(--present))}
+  ul.use{margin:0; padding-left:18px; color:var(--muted); font-size:13.5px} ul.use li{margin-bottom:4px}
+  .chips{display:flex; gap:6px; flex-wrap:wrap}
+  .chip{font-family:var(--mono); font-size:11.5px; color:var(--cyan); border:1px solid var(--border); background:var(--panel2); border-radius:16px; padding:4px 10px; animation:popIn .4s ease both}
+  table.ex{width:100%; border-collapse:collapse; font-size:13px; margin-top:4px}
+  table.ex th{text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); padding:6px 8px; border-bottom:1px solid var(--border)}
+  table.ex td{padding:7px 8px; border-bottom:1px solid var(--border); vertical-align:top}
+  table.ex .en{color:var(--ink)} table.ex .nl{color:var(--muted); font-style:italic; font-size:12px}
+  table.ex .vh{color:var(--green); font-weight:700} table.ex .vhp{color:var(--blue); font-weight:700}
+  .mist{margin:0; padding-left:18px; color:var(--muted); font-size:13px} .mist li{margin-bottom:4px}
+  .relnote{font-size:12.5px; color:var(--dim); font-style:italic; margin-top:6px}
+
+  /* ===== mindmap ===== */
+  .mmwrap{overflow-x:auto}
+  .mmtoolbar{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:14px}
+  .voiceSwitch{display:flex; gap:4px; background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:4px}
+  .voiceSwitch button{border:none; background:transparent; color:var(--muted); font-weight:700; font-size:12px; padding:7px 12px; border-radius:7px; cursor:pointer; transition:.15s}
+  .voiceSwitch button.on{background:linear-gradient(135deg,var(--violet),var(--cyan)); color:#fff}
+  .mmgrid{display:grid; grid-template-columns:96px repeat(4,minmax(158px,1fr)); gap:10px; min-width:880px}
+  .mmhead{font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); font-weight:800; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:6px; padding:6px}
+  .mmhead .aspGlyph{width:60px; height:22px}
+  .mmrow-label{font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center; writing-mode:vertical-rl; transform:rotate(180deg); border:1px solid var(--border); border-radius:12px; letter-spacing:1px}
+  .mmrow-label.time-past{color:var(--past); background:var(--past-soft)}
+  .mmrow-label.time-present{color:var(--present); background:var(--present-soft)}
+  .mmrow-label.time-future{color:var(--future); background:var(--future-soft)}
+  .mmcell{border:1px solid var(--border); border-radius:14px; background:var(--panel); padding:11px 11px 8px; cursor:pointer; transition:.16s; position:relative; min-height:118px; display:flex; flex-direction:column; gap:5px; overflow:hidden}
+  .mmcell::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accent)}
+  .mmcell.time-past{--accent:var(--past)} .mmcell.time-present{--accent:var(--present)} .mmcell.time-future{--accent:var(--future)}
+  .mmcell:hover{border-color:var(--accent); transform:translateY(-3px); box-shadow:var(--shadow)}
+  .mmcell.locked{opacity:.45; filter:grayscale(.5); cursor:not-allowed}
+  .mmcell.locked:hover{transform:none; box-shadow:none; border-color:var(--border)}
+  .mmcell.sel{box-shadow:0 0 0 2px var(--accent), var(--shadow)}
+  .mmcell.fam{box-shadow:0 0 0 1px var(--cyan)}
+  .mmcell .cn{font-weight:800; font-size:13px; line-height:1.15; padding-left:6px}
+  .mmcell .cf{font-family:var(--mono); font-size:10px; color:var(--muted); padding-left:6px}
+  .mmcell .cTl{height:34px; margin-top:auto}
+  .mmcell .cb{position:absolute; top:8px; right:8px; font-size:9px; font-weight:800; padding:2px 6px; border-radius:10px}
+  .mmlegend{display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:12px; color:var(--muted)}
+  .mmlegend b{color:var(--ink)}
+  .mmpanel{margin-top:16px; border:1px solid var(--border); border-radius:16px; background:var(--panel); padding:16px 18px; min-height:80px}
+  .mmpanel h3{margin:0 0 4px; font-size:18px} .mmpanel .pnl{color:var(--star); font-style:italic; font-size:13px}
+  .mmpanel .rel{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px} .mmpanel .rel li{margin-bottom:5px}
+
+  /* ===== decision tree ===== */
+  .boomGrid{display:grid; grid-template-columns:1.15fr .85fr; gap:18px; align-items:start}
+  @media(max-width:900px){ .boomGrid{grid-template-columns:1fr} }
+  .exCard{border:1px solid var(--border); border-radius:18px; background:var(--panel); overflow:hidden; position:relative}
+  .exTop{padding:12px 16px; background:var(--panel2); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .exTop .cnt{font-family:var(--mono); font-weight:800; color:var(--cyan)}
+  .exTop .flt{font-size:12px; color:var(--muted)}
+  #hintBtn.on{background:var(--present-soft); border-color:var(--present); color:var(--present)}
+  .streak{margin-left:auto; display:flex; align-items:center; gap:12px; font-size:12px; font-weight:800}
+  .streak .sv{color:var(--star)} .streak .sv b{font-size:15px}
+  .streak .sc{color:var(--green)} .streak .sc b{font-size:15px}
+  .streak .pop{animation:scorePop .5s ease}
+  @keyframes scorePop{0%{transform:scale(1)} 40%{transform:scale(1.5)} 100%{transform:scale(1)}}
+  .exBody{padding:18px; min-height:430px}
+  .sentence{font-size:19px; font-weight:700; line-height:1.45; background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:15px 16px; scroll-margin-top:150px}
+  .sentence.anim{animation:stepIn .3s ease both}
+  .qbox{animation:stepIn .24s ease both}
+  .sentence .blank{color:var(--star); border-bottom:2px dashed var(--star); padding:0 22px; margin:0 2px}
+  .sentence .vb{color:var(--dim); font-family:var(--mono); font-size:14px}
+
+  /* animated question path */
+  .qpath{display:flex; align-items:center; gap:0; margin:16px 0 4px; flex-wrap:wrap}
+  .qnode{position:relative; display:flex; flex-direction:column; align-items:center; gap:5px}
+  .qnode .qcirc{width:30px; height:30px; border-radius:50%; border:2px solid var(--border); background:var(--panel2); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:var(--dim); transition:.3s}
+  .qnode.done .qcirc{border-color:var(--green); color:var(--green); background:rgba(87,224,138,.12)}
+  .qnode.cur .qcirc{border-color:var(--cyan); color:var(--cyan); box-shadow:0 0 0 4px rgba(14,141,179,.16); animation:curPulse 1.4s ease-in-out infinite}
+  .qnode .qlab{font-size:9px; color:var(--dim); font-weight:700; text-transform:uppercase; letter-spacing:.5px}
+  .qnode.done .qlab{color:var(--muted)} .qnode.cur .qlab{color:var(--cyan)}
+  .qnode.pop .qcirc{animation:popCheck .4s cubic-bezier(.2,1.3,.4,1) both}
+  .qseg{width:26px; height:3px; background:var(--border); border-radius:2px; margin:0 2px; align-self:flex-start; margin-top:14px; transition:.3s}
+  .qseg.fill{background:var(--green)}
+  @keyframes curPulse{0%,100%{box-shadow:0 0 0 4px rgba(14,141,179,.16)} 50%{box-shadow:0 0 0 7px rgba(14,141,179,.05)}}
+
+  .qbox{margin-top:14px}
+  .qtext{font-size:16px; font-weight:800; margin-bottom:4px}
+  .qhint{font-size:12px; color:var(--dim); margin-bottom:12px}
+  .qbtns{display:flex; gap:10px; flex-wrap:wrap}
+  .ybtn{border:1px solid var(--border); background:var(--panel2); color:var(--ink); font-weight:800; font-size:14px; padding:11px 18px; border-radius:10px; cursor:pointer; flex:1; min-width:120px; transition:.15s}
+  .ybtn:hover{border-color:var(--cyan); transform:translateY(-1px)}
+  .ybtn.yes{border-color:rgba(31,157,87,.5)} .ybtn.yes:hover{background:rgba(31,157,87,.12)}
+  .ybtn.no{border-color:rgba(217,74,58,.45)} .ybtn.no:hover{background:rgba(217,74,58,.10)}
+  .ybtn:active{transform:scale(.98)}
+  @media(max-width:620px){ .ybtn{min-height:52px; font-size:15px} .btn{min-height:40px} }
+
+  /* ===== accessibility: respect reduced-motion ===== */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
+  }
+
+  /* ===== print / hand-out (worksheet) ===== */
+  @media print{
+    :root{--shadow:none}
+    header{position:static; border:none}
+    .bar, .tabs, .gradeSwitch, .iconBtn, .headerTools, canvas, .qindex, #v-mindmap, #v-boom, #v-vergelijk, .voiceMini, .moreBtn, .khint, .swapIcon, .sayBtn{display:none !important}
+    body{background:#fff !important; color:#000}
+    .lead{display:none}
+    .tcard{break-inside:avoid; box-shadow:none !important; border:1px solid #bbb; margin-bottom:10px}
+    .more{display:block !important; grid-template-rows:1fr !important; margin-top:12px}
+    .more>.moreInner{overflow:visible !important}
+    .chip{animation:none}
+    a[href]:after{content:""}
+  }
+  .crumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:14px}
+  .crumb{font-size:11px; color:var(--muted); background:var(--panel2); border:1px solid var(--border); border-radius:14px; padding:3px 9px; animation:popIn .3s ease both}
+  .crumb b{color:var(--ink)}
+  .result{margin-top:16px; border:1px solid var(--border); border-radius:14px; padding:16px; background:linear-gradient(180deg,var(--panel2),var(--panel)); animation:resultIn .4s ease both}
+  @keyframes resultIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+  .result .lands{font-size:13px; color:var(--muted)}
+  .result .tn{font-size:22px; font-weight:800; margin:4px 0}
+  .result .resTl{border:1px solid var(--border); border-radius:10px; background:var(--panel); padding:8px 10px; margin:10px 0}
+  .result .ans{font-family:var(--mono); font-size:18px; color:var(--star); margin-top:8px}
+  .result .full{font-size:16px; margin-top:10px; background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:11px 13px}
+  .result .full b{color:var(--green)}
+  /* verb morph: base verb -> conjugated form, letter by letter */
+  .vmorph{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:12px; background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:11px 14px; font-family:var(--mono)}
+  .vmorph .vlab{font-family:var(--sans); font-size:10.5px; text-transform:uppercase; letter-spacing:1.5px; font-weight:800; color:var(--dim)}
+  .vmorph .vfrom{font-size:16px; color:var(--dim); text-decoration:line-through; text-decoration-color:var(--red)}
+  .vmorph .varrow{color:var(--green); font-weight:800; animation:arrowNudge 1.1s ease-in-out infinite}
+  .vmorph .vto{font-size:18px; font-weight:800; color:var(--green)}
+  .vmorph .vto span{display:inline-block; white-space:pre; animation:letterIn .34s cubic-bezier(.2,1.4,.4,1) both}
+  @keyframes letterIn{from{opacity:0; transform:translateY(-8px) scale(.6)} to{opacity:1; transform:none}}
+  @keyframes arrowNudge{0%,100%{transform:translateX(0)} 50%{transform:translateX(4px)}}
+  /* card variant of the verb-morph: accent-coloured (not green, to avoid a 'correct' read) */
+  .vmorph.oncard{margin-top:2px; padding:9px 13px; background:var(--panel2)}
+  .vmorph.oncard .vlab{color:var(--dim)}
+  .vmorph.oncard .vto{color:var(--accent,var(--present))}
+  .vmorph.oncard .varrow{color:var(--accent,var(--present)); animation:none}
+  .vmorph.oncard.pasm .vfrom{text-decoration-color:var(--blue)}
+  .vmorph .vnone{font-size:13px; font-style:italic; color:var(--dim); font-family:var(--sans)}
+  /* signal-word highlight inside example sentences */
+  .sig{border-bottom:2px dotted var(--dim); font-weight:600; cursor:help}
+  /* keyboard shortcuts hint + keycaps */
+  .khint{font-size:11.5px; color:var(--dim); margin-top:10px; display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .kbd{font-family:var(--mono); font-size:11px; border:1px solid var(--border); background:var(--panel2); border-radius:5px; padding:1px 6px; color:var(--muted); box-shadow:0 1px 0 var(--border)}
+  .streak .sr{color:var(--star)} .streak .sr b{font-size:15px}
+  /* pronunciation button */
+  .sayBtn{border:1px solid var(--border); background:var(--panel); color:var(--present); min-width:26px; height:26px; border-radius:50%; cursor:pointer; font-size:13px; line-height:1; padding:0; vertical-align:middle; transition:.15s}
+  .sayBtn:hover{border-color:var(--present); transform:scale(1.08)}
+  .sayBtn.speaking{background:var(--present); color:#fff; border-color:var(--present)}
+  /* error-specific feedback in the tree result */
+  .why{margin-top:9px; border-left:3px solid var(--red); background:rgba(217,74,58,.07); border-radius:0 8px 8px 0; padding:9px 13px}
+  :root[data-theme="dark"] .why{background:rgba(255,106,90,.10)}
+  .why .wh{font-size:10.5px; text-transform:uppercase; letter-spacing:1.2px; font-weight:800; color:var(--red); margin-bottom:5px}
+  .why ul{margin:0; padding-left:18px} .why li{margin:3px 0; font-size:13.5px; color:var(--ink)}
+  .why b{color:var(--ink)}
+  /* ===== VIEW 4 · VERGELIJK ===== */
+  .cmpCard{border:1px solid var(--border); border-radius:18px; background:var(--panel); margin-bottom:18px; overflow:hidden; box-shadow:var(--shadow)}
+  .cmpHead{padding:14px 18px; border-bottom:1px solid var(--border); background:linear-gradient(var(--panel2),var(--panel))}
+  .cmpHead h3{margin:0; font-size:18px}
+  .cmpHead .cq{font-size:12.5px; color:var(--muted); margin-top:3px; font-style:italic}
+  .cmpCols{display:grid; grid-template-columns:1fr 44px 1fr; align-items:stretch}
+  @media(max-width:760px){ .cmpCols{grid-template-columns:1fr} }
+  .cmpCol{padding:16px 18px}
+  .cmpCol.time-past{--accent:var(--past)} .cmpCol.time-present{--accent:var(--present)} .cmpCol.time-future{--accent:var(--future)}
+  .cmpCol .cname{font-size:15px; font-weight:800; color:var(--accent); display:flex; align-items:center; gap:8px; margin-bottom:4px}
+  .cmpCol .cbadge{font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; border:1px solid var(--accent); color:var(--accent); border-radius:20px; padding:1px 8px}
+  .cmpCol .ctl{margin:6px 0}
+  .cmpCol .crecipe{display:flex; gap:5px; flex-wrap:wrap; margin:8px 0}
+  .cmpCol .cex{font-size:14.5px; color:var(--ink); line-height:1.4; margin-top:6px}
+  .cmpCol .cexnl{font-size:12px; color:var(--muted); font-style:italic; margin-top:3px}
+  .cmpVs{display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--dim); font-size:13px; background:var(--panel2); border-left:1px solid var(--border); border-right:1px solid var(--border)}
+  @media(max-width:760px){ .cmpVs{padding:6px; border:none; border-top:1px solid var(--border); border-bottom:1px solid var(--border)} }
+  .cmpNote{padding:13px 18px; border-top:1px solid var(--border); font-size:13.5px; line-height:1.5; background:var(--panel2)}
+  .cmpNote .rule{font-weight:800; color:var(--ink); display:block; margin-bottom:3px}
+  .cmpTable{width:100%; border-collapse:collapse; margin-top:10px; font-size:12.5px}
+  .cmpTable th,.cmpTable td{border:1px solid var(--border); padding:6px 10px; text-align:left; vertical-align:top}
+  .cmpTable th{background:var(--panel); font-weight:800; color:var(--muted)}
+  .cmpTable td:first-child{color:var(--dim); font-weight:700; white-space:nowrap}
+  .result .nl{color:var(--muted); font-style:italic; font-size:13px; margin-top:6px}
+  .verdict{font-weight:800; margin-top:12px; font-size:14px}
+  .verdict.ok{color:var(--green)} .verdict.no{color:var(--star)}
+  .exNav{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
+  .btn{border:1px solid var(--border); background:var(--panel2); color:var(--ink); padding:10px 15px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer; transition:.15s}
+  .btn:hover{border-color:var(--cyan)}
+  .btn.primary{background:linear-gradient(135deg,var(--violet),var(--cyan)); border:none; color:#fff}
+  .treeRef{border:1px solid var(--border); border-radius:16px; background:var(--panel); padding:16px 18px}
+  .treeRef h3{margin:0 0 10px; font-size:15px}
+  .tnode{border:1px solid var(--border); border-radius:10px; padding:9px 12px; margin:6px 0; font-size:12.5px; background:var(--panel2); transition:border-color .25s, background .25s, box-shadow .25s}
+  .tnode.lit{border-color:var(--present); background:var(--present-soft); box-shadow:0 0 0 1px var(--present)}
+  .tnode.lit .qq{color:var(--present)}
+  .tnode .qq{font-weight:800; color:var(--ink)}
+  .tnode .br{color:var(--muted); margin-top:4px} .tnode .br b{color:var(--cyan)}
+  .tindent{margin-left:16px; border-left:2px solid var(--border); padding-left:12px}
+
+  /* confetti overlay */
+  #confetti{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:60}
+
+  footer{max-width:1240px; margin:0 auto; padding:0 18px 44px; color:var(--dim); font-size:12px; text-align:center}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001s !important; animation-iteration-count:1 !important; transition-duration:.001s !important}
+    .tl-arrow-shaft{stroke-dashoffset:0} .tl-arrow-head{opacity:1} .tl-bar{transform:scaleX(1)}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <svg class="schoollogo" viewBox="0 0 100 100" aria-label="School logo">
+      <polygon points="12,20 50,46 30,50" fill="#d2d2d2"/><polygon points="30,50 50,46 74,54 52,93" fill="#9a9a9a"/>
+      <polygon points="30,50 52,93 9,71" fill="#58585a"/><polygon points="12,20 82,18 50,46" fill="#e8632a"/>
+      <polygon points="50,46 82,18 68,42" fill="#de4a1e"/><polygon points="82,18 93,54 55,47" fill="#f4a986"/>
+    </svg>
+    <span class="sjb">SJB</span>
+    <div class="brand"><h1>English Tenses — The Ultimate Overview</h1><div class="sub">12 tijden · actief &amp; passief · will &amp; going to</div></div>
+    <div class="spacer"></div>
+    <div class="gradeSwitch" id="gradeSwitch">
+      <button data-g="2" class="on" onclick="setGrade(2)">Tweede graad</button>
+      <button data-g="3" onclick="setGrade(3)">Derde graad</button>
+    </div>
+    <div class="headerTools" style="display:flex; gap:6px">
+      <button class="iconBtn" id="printBtn" onclick="window.print()" title="Afdrukken / bewaar als PDF (werkblad)" aria-label="Afdrukken">🖨️</button>
+      <button class="iconBtn" id="themeBtn" onclick="toggleTheme()" title="Licht / donker thema" aria-label="Thema wisselen">🌙</button>
+    </div>
+  </div>
+  <div class="bar" style="padding-top:0">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-v="uitleg" onclick="setView('uitleg')">📖 Uitleg &amp; voorbeelden</button>
+      <button class="tab" data-v="mindmap" onclick="setView('mindmap')">🧠 Mindmap</button>
+      <button class="tab" data-v="boom" onclick="setView('boom')">🌳 Beslissingsboom · 100 voorbeelden</button>
+      <button class="tab" data-v="vergelijk" onclick="setView('vergelijk')">⚖️ Vergelijk tijden</button>
+    </div>
+  </div>
+</header>
+
+<canvas id="confetti"></canvas>
+
+<div class="wrap">
+  <div class="lead" id="lead"></div>
+
+  <section id="v-uitleg">
+    <div class="key" id="readKey"></div>
+    <div class="qindex" id="qindex"></div>
+    <div id="uitlegBody"></div>
+  </section>
+
+  <section id="v-mindmap" class="hide">
+    <h2 class="sec">De tijden in kaart · tijd (kleur) × aspect (vorm op de tijdlijn)</h2>
+    <div class="mmtoolbar">
+      <div class="voiceSwitch" id="voiceSwitch">
+        <button class="on" data-voice="active" onclick="setVoice('active')">Actief</button>
+        <button data-voice="passive" onclick="setVoice('passive')">Passief</button>
+      </div>
+      <span style="font-size:12.5px;color:var(--muted)">Klik een tijd om de familie &amp; verbanden te tonen.</span>
+    </div>
+    <div class="mmwrap"><div class="mmgrid" id="mmgrid"></div></div>
+    <div class="mmlegend">
+      <span><b style="color:var(--past)">▮</b> past</span>
+      <span><b style="color:var(--present)">▮</b> present</span>
+      <span><b style="color:var(--future)">▮</b> future</span>
+      <span>↔ zelfde tijd, ander aspect &nbsp; ↕ zelfde aspect, andere tijd</span>
+    </div>
+    <div class="mmpanel" id="mmpanel"><span style="color:var(--dim)">Klik hierboven op een tijd…</span></div>
+  </section>
+
+  <section id="v-boom" class="hide">
+    <h2 class="sec">Welke tijd? · laat de ja/nee-vragen je naar het antwoord leiden</h2>
+    <div class="boomGrid">
+      <div class="exCard">
+        <div class="exTop">
+          <span class="cnt" id="exCnt"></span>
+          <button class="btn" onclick="shuffleEx()" style="padding:5px 10px;font-size:12px">🔀 Husselen</button>
+          <button class="btn" id="hintBtn" onclick="toggleHints()" style="padding:5px 10px;font-size:12px" title="Markeer signaalwoorden in de vraag (toets H)">💡 Signaalhints: uit</button>
+          <span class="flt" id="exFlt"></span>
+          <div class="streak"><span class="sv" id="svStreak">🔥 <b>0</b></span><span class="sr" id="svRecord">🏆 <b>0</b></span><span class="sc" id="scScore">✔ <b>0</b>/<span id="scTotal">0</span></span></div>
+        </div>
+        <div class="exBody" id="exBody"></div>
+        <div class="khint" id="khint"><span>Sneltoetsen:</span> <span><span class="kbd">J</span> ja</span> <span><span class="kbd">N</span> nee</span> <span><span class="kbd">A</span>/<span class="kbd">P</span> actief/passief</span> <span><span class="kbd">Enter</span> volgende</span> <span><span class="kbd">S</span> overslaan</span> <span><span class="kbd">H</span> hints</span></div>
+      </div>
+      <div class="treeRef" id="treeRef"></div>
+    </div>
+  </section>
+
+  <section id="v-vergelijk" class="hide">
+    <h2 class="sec">Vergelijk verwarrende tijden · wanneer gebruik je welke?</h2>
+    <div id="cmpBody"></div>
+  </section>
+</div>
+
+<footer id="foot"></footer>
+
+<script>
+const TENSES = [{"id":"present-simple","name":"Present Simple","time":"present","aspect":"simple","graad":2,"decision":{"path":["Is the time frame NOW / present? YES","Is the action happening right now, in progress at this moment? NO","Is it a habit, a fact, a routine, or something always true? YES","So we use the Present Simple","Then decide: is the subject the doer (active) or the receiver (passive)?"],"key":"A habit, routine or general truth in the present -> Present Simple (I work / it is made)"},"nl_name":"Onvoltooid tegenwoordige tijd (O.T.T.) - simple present","form":{"active":"Subject + base verb (add -s/-es in the 3rd person singular: he/she/it works). Negative: subject + do/does + not + base verb (She does not work). Question: Do/Does + subject + base verb? (Do you work?).","passive":"Subject + am/is/are + past participle (The letter is written). Negative: subject + am/is/are + not + past participle (The letters are not sent). Question: Am/Is/Are + subject + past participle? (Is the room cleaned every day?)."},"use":["For habits and routines that we do regularly (every day, often, always).","For facts and things that are always or generally true.","For timetables, schedules and programmes (the bus leaves at 8).","With state verbs like know, love, want, have (feelings and situations).","To describe how things work or how something is made (often in the passive)."],"signal_words":["always","usually","often","sometimes","never","every day","every week","on Mondays","normally","generally","as a rule","twice a week"],"examples":[{"active":"The factory makes a thousand cars every day.","active_nl":"De fabriek maakt elke dag duizend auto's.","passive":"A thousand cars are made every day.","passive_nl":"Er worden elke dag duizend auto's gemaakt."},{"active":"Our teacher checks the homework every Monday.","active_nl":"Onze leraar controleert elke maandag het huiswerk.","passive":"The homework is checked every Monday.","passive_nl":"Het huiswerk wordt elke maandag gecontroleerd."},{"active":"People speak English all over the world.","active_nl":"Mensen spreken Engels over de hele wereld.","passive":"English is spoken all over the world.","passive_nl":"Engels wordt over de hele wereld gesproken."},{"active":"The referee starts every match with a whistle.","active_nl":"De scheidsrechter start elke wedstrijd met een fluit.","passive":"Every match is started with a whistle.","passive_nl":"Elke wedstrijd wordt met een fluit gestart."},{"active":"Farmers grow oranges in Spain.","active_nl":"Boeren telen sinaasappels in Spanje.","passive":"Oranges are grown in Spain.","passive_nl":"Sinaasappels worden in Spanje geteeld."}],"mistakes":["Forgetting the -s in the third person singular: 'He play football' instead of 'He plays football'.","Using the wrong helper in questions and negatives: 'Does he plays?' instead of 'Does he play?' (the -s moves to 'does').","Building the passive with the wrong 'be' form: 'The cars is made' instead of 'The cars are made'.","Using the present simple for something happening right now: 'Look, it rains!' instead of the present continuous 'Look, it is raining!'."],"relations":{"contrast":["Present simple = habit or fact (I ride my bike to school); present continuous = happening now (I am riding my bike right now).","Present simple passive = a general/repeated action (Bread is baked here every morning); present continuous passive = happening at this moment (Bread is being baked right now).","Present simple talks about always/usually; the past simple (I worked) talks about a finished time in the past."],"note":"The present simple is the basic 'zero point' of the tense system: the present, non-progressive form for habits and general truths, with the passive built from am/is/are + past participle."},"practice":[{"sentence":"My little brother ___ (brush) his teeth every evening.","verb":"brush","answer":"brushes","voice":"active","nl":"Mijn broertje poetst elke avond zijn tanden."},{"sentence":"In our school, the doors ___ (lock) every night by the caretaker.","verb":"lock","answer":"are locked","voice":"passive","nl":"In onze school worden de deuren elke nacht door de conciërge gesloten."},{"sentence":"Water ___ (boil) at 100 degrees.","verb":"boil","answer":"boils","voice":"active","nl":"Water kookt bij 100 graden."},{"sentence":"This bread ___ (bake) fresh every morning.","verb":"bake","answer":"is baked","voice":"passive","nl":"Dit brood wordt elke ochtend vers gebakken."},{"sentence":"We usually ___ (play) football on Wednesdays.","verb":"play","answer":"play","voice":"active","nl":"We spelen meestal op woensdag voetbal."},{"sentence":"French ___ (speak) in many African countries.","verb":"speak","answer":"is spoken","voice":"passive","nl":"Frans wordt in veel Afrikaanse landen gesproken."},{"sentence":"The train to Brussels ___ (leave) at half past eight every day.","verb":"leave","answer":"leaves","voice":"active","nl":"De trein naar Brussel vertrekt elke dag om half negen."},{"sentence":"These toys ___ (make) in China.","verb":"make","answer":"are made","voice":"passive","nl":"Dit speelgoed wordt in China gemaakt."},{"sentence":"My grandmother always ___ (watch) the news at seven o'clock.","verb":"watch","answer":"watches","voice":"active","nl":"Mijn oma kijkt altijd om zeven uur naar het nieuws."},{"sentence":"The classroom ___ (clean) every day after school.","verb":"clean","answer":"is cleaned","voice":"passive","nl":"Het klaslokaal wordt elke dag na school schoongemaakt."}],"morph":{"base":"make","active":"makes","passive":"is made"},"personNote":"he/she/it krijgt +s (works) · I/you/we/they → work","forms":{"active":{"aff":["I/you/we/they work · he/she/it works","She works in Ghent."],"neg":["do/does + not + base verb","She doesn't work on Sundays."],"q":["Do/Does + subject + base verb?","Do you work here?"]},"passive":{"aff":["am/is/are + past participle","The car is made here."],"neg":["am/is/are + not + past participle","These cars aren't made here."],"q":["Am/Is/Are + subject + past participle?","Is the car made here?"]}}},{"id":"present-continuous","name":"Present Continuous","time":"present","aspect":"continuous","graad":2,"decision":{"key":"Now, in progress, happening around this moment: subject + am/is/are + verb-ing","path":["Time frame = present (now / around now)? YES","Is the action in progress at this moment (not a general fact/habit)? YES -> continuous, not present simple","Is it a completed action linked to now? NO -> not present perfect","Active (doer + am/is/are + -ing) or passive (thing + am/is/are + being + past participle)? -> choose voice"]},"examples":[{"active":"The teacher is explaining the new grammar rule.","active_nl":"De leraar legt de nieuwe grammaticaregel uit.","passive":"The new grammar rule is being explained by the teacher.","passive_nl":"De nieuwe grammaticaregel wordt door de leraar uitgelegd."},{"active":"The players are warming up the team on the field.","active_nl":"De spelers warmen het team op op het veld.","passive":"The team is being warmed up on the field.","passive_nl":"Het team wordt op het veld opgewarmd."},{"active":"Scientists are testing a new vaccine right now.","active_nl":"Wetenschappers testen op dit moment een nieuw vaccin.","passive":"A new vaccine is being tested right now.","passive_nl":"Een nieuw vaccin wordt op dit moment getest."},{"active":"The workers are repairing the airport road this week.","active_nl":"De arbeiders herstellen deze week de weg naar de luchthaven.","passive":"The airport road is being repaired this week.","passive_nl":"De weg naar de luchthaven wordt deze week hersteld."},{"active":"The app is downloading the new update at the moment.","active_nl":"De app downloadt op dit moment de nieuwe update.","passive":"The new update is being downloaded at the moment.","passive_nl":"De nieuwe update wordt op dit moment gedownload."}],"form":{"active":"subject + am/is/are + verb-ing (I am playing, she is playing, they are playing). Negative: subject + am/is/are + not + verb-ing (she is not playing / isn't playing). Question: am/is/are + subject + verb-ing (Are you playing?).","passive":"subject + am/is/are + being + past participle (The room is being cleaned). Negative: subject + am/is/are + not + being + past participle (The room isn't being cleaned). Question: am/is/are + subject + being + past participle (Is the room being cleaned?).","passive_note":"The passive with 'being' is correct but sounds heavy, so we mainly use it when the action itself matters more than who does it."},"mistakes":["Using present simple for an action happening now: 'Look! It rains' instead of the correct 'Look! It is raining.'","Forgetting the form of 'to be': 'She reading a book' instead of 'She is reading a book.'","Using the continuous with state verbs like know, want, like, believe: 'I am knowing the answer' instead of 'I know the answer.'","Building the passive without 'being': 'The car is repaired now' (= finished) instead of 'The car is being repaired now' (= in progress)."],"nl_name":"Tegenwoordige tijd - duurvorm (present continuous / onvoltooid tegenwoordige tijd met -ing)","practice":[{"sentence":"Be quiet! The baby ___ (sleep).","verb":"sleep","answer":"is sleeping","voice":"active","nl":"Wees stil! De baby slaapt."},{"sentence":"Right now, the streets ___ (clean) by the city workers.","verb":"clean","answer":"are being cleaned","voice":"passive","nl":"Op dit moment worden de straten door de stadsarbeiders schoongemaakt."},{"sentence":"Look at the sky! It ___ (rain) again.","verb":"rain","answer":"is raining","voice":"active","nl":"Kijk naar de lucht! Het regent weer."},{"sentence":"At the moment, a new bridge ___ (build) near our school.","verb":"build","answer":"is being built","voice":"passive","nl":"Op dit moment wordt er een nieuwe brug bij onze school gebouwd."},{"sentence":"Listen! The neighbours ___ (play) loud music.","verb":"play","answer":"are playing","voice":"active","nl":"Luister! De buren spelen luide muziek."},{"sentence":"Right now, the results ___ (check) by the teacher.","verb":"check","answer":"are being checked","voice":"passive","nl":"Op dit moment worden de resultaten door de leraar gecontroleerd."},{"sentence":"I can't talk now because I ___ (drive) to the airport.","verb":"drive","answer":"am driving","voice":"active","nl":"Ik kan nu niet praten omdat ik naar de luchthaven rijd."},{"sentence":"Look! Your photos ___ (upload) to the cloud at the moment.","verb":"upload","answer":"are being uploaded","voice":"passive","nl":"Kijk! Je foto's worden op dit moment naar de cloud geüpload."},{"sentence":"The kids ___ (do) their homework in the kitchen right now.","verb":"do","answer":"are doing","voice":"active","nl":"De kinderen maken op dit moment hun huiswerk in de keuken."},{"sentence":"Be careful! The floor ___ (paint) at the moment.","verb":"paint","answer":"is being painted","voice":"passive","nl":"Wees voorzichtig! De vloer wordt op dit moment geschilderd."}],"relations":{"contrast":["Present simple = facts and habits (I play football on Saturdays); present continuous = happening now (I am playing football right now).","Present continuous = action in progress now; present perfect = action already finished but linked to now (I have played).","Use present simple, not continuous, with state verbs: know, like, want, believe.","Present continuous can also describe a fixed future plan (I am meeting Sara tomorrow)."],"note":"It is the 'in progress right now' form of the present, sitting next to the present simple (facts/habits) in the present time frame."},"signal_words":["now","right now","at the moment","at present","currently","Look!","Listen!","today","this week","these days","still","for now"],"use":["To talk about an action that is happening right now, at this moment of speaking.","For a temporary action going on around now, even if not exactly at this second (this week, these days).","For a changing or developing situation (The weather is getting warmer).","For a fixed plan or arrangement in the near future (We are leaving tomorrow)."],"morph":{"base":"make","active":"is making","passive":"is being made"},"personNote":"am (I) · is (he/she/it) · are (you/we/they)","forms":{"active":{"aff":["am/is/are + verb-ing","She is working right now."],"neg":["am/is/are + not + verb-ing","She isn't working today."],"q":["Am/Is/Are + subject + verb-ing?","Are you working now?"]},"passive":{"aff":["am/is/are + being + past participle","The car is being made."],"neg":["am/is/are + not + being + past participle","The car isn't being made."],"q":["Am/Is/Are + subject + being + past participle?","Is the car being made?"]}}},{"id":"present-perfect","name":"Present Perfect Simple","time":"present","aspect":"perfect","graad":2,"decision":{"path":["Is the time frame NOW / present (not purely past, not future)? YES - it links the past to now.","Is the action still in progress at this moment? NO - if it were, use present continuous.","Is the action completed but connected to the present (result, experience, unfinished time period)? YES.","Do we stress the length/duration of an ongoing action with a doing-verb? NO - if we did, use present perfect continuous.","Who does or gets the action? Active = subject does it; Passive = subject gets it (be + past participle)."],"key":"A finished action with a link to now (result, experience, or 'so far'); often has just / already / yet / ever / never."},"nl_name":"Voltooid tegenwoordige tijd (present perfect simple)","form":{"active":"subject + have/has + past participle (past participle = regular verb + -ed, or 3rd column for irregular verbs). Question: have/has + subject + past participle? (Have you finished?). Negative: subject + have/has + not (haven't/hasn't) + past participle.","passive":"subject + have/has + been + past participle. Question: Have/Has + subject + been + past participle? (Has the room been cleaned?). Negative: subject + have/has + not + been + past participle."},"use":["To talk about a finished action when the exact time is not important, but the result matters now (I have lost my keys - so I can't get in).","For life experiences up to now, often with ever/never (Have you ever been to London?).","For actions in a time period that is not finished yet (today, this week, this year).","For very recent actions, often with just (The train has just left).","With already, yet and still to say if something is done or not done."],"signal_words":["just","already","yet","ever","never","so far","until now","up to now","recently","lately","this week","this year"],"examples":[{"active":"I have finished my homework.","active_nl":"Ik heb mijn huiswerk afgemaakt.","passive":"The homework has been finished.","passive_nl":"Het huiswerk is afgemaakt."},{"active":"Our team has won three matches this season.","active_nl":"Ons team heeft dit seizoen drie wedstrijden gewonnen.","passive":"Three matches have been won this season.","passive_nl":"Er zijn dit seizoen drie wedstrijden gewonnen."},{"active":"Scientists have discovered a new planet.","active_nl":"Wetenschappers hebben een nieuwe planeet ontdekt.","passive":"A new planet has been discovered.","passive_nl":"Er is een nieuwe planeet ontdekt."},{"active":"Someone has stolen my bike!","active_nl":"Iemand heeft mijn fiets gestolen!","passive":"My bike has been stolen!","passive_nl":"Mijn fiets is gestolen!"},{"active":"They have updated the school app.","active_nl":"Ze hebben de school-app geüpdatet.","passive":"The school app has been updated.","passive_nl":"De school-app is geüpdatet."}],"mistakes":["Using a past time word with the present perfect: NOT 'I have seen him yesterday' but 'I saw him yesterday' (with a finished past time, use the past simple).","Confusing 'have' and 'has': he/she/it always take 'has' (She has gone, not 'She have gone').","Forgetting 'been' in the passive: NOT 'The room has cleaned' but 'The room has been cleaned'.","Translating the Dutch 'hebben/zijn' choice wrongly: English always uses 'have/has' as the helper, also for movement verbs (I have gone, not 'I am gone')."],"relations":{"contrast":["Present perfect vs past simple: present perfect has a link to NOW and no exact past time (I have lost my pen); past simple is a finished moment in the past (I lost my pen yesterday).","Present perfect simple vs present perfect continuous: the simple stresses the result or 'how many' (I have read three books); the continuous stresses the ongoing activity or 'how long' (I have been reading all day).","Active vs passive: in the active the subject does the action (They have painted the wall); in the passive the subject gets the action (The wall has been painted)."],"note":"It is the bridge tense: it stands between the past and the present, describing a past action that still matters at the moment of speaking."},"practice":[{"sentence":"I ___ (lose) my phone, so I can't call you.","verb":"lose","answer":"have lost","voice":"active","nl":"Ik ben mijn telefoon kwijt (verloren), dus ik kan je niet bellen."},{"sentence":"The classroom ___ (clean) already.","verb":"clean","answer":"has been cleaned","voice":"passive","nl":"Het klaslokaal is al schoongemaakt."},{"sentence":"___ you ever ___ (visit) Spain?","verb":"visit","answer":"Have ... visited","voice":"active","nl":"Heb je ooit Spanje bezocht?"},{"sentence":"Our teacher ___ (give) us a lot of homework this week.","verb":"give","answer":"has given","voice":"active","nl":"Onze leraar heeft ons deze week veel huiswerk gegeven."},{"sentence":"The new bridge ___ (build) recently.","verb":"build","answer":"has been built","voice":"passive","nl":"De nieuwe brug is onlangs gebouwd."},{"sentence":"She ___ (not finish) her project yet.","verb":"finish","answer":"has not finished","voice":"active","nl":"Ze heeft haar project nog niet afgemaakt."},{"sentence":"Three emails ___ (send) so far today.","verb":"send","answer":"have been sent","voice":"passive","nl":"Er zijn vandaag tot nu toe drie e-mails verstuurd."},{"sentence":"We ___ (just / arrive) at the station.","verb":"arrive","answer":"have just arrived","voice":"active","nl":"We zijn net op het station aangekomen."},{"sentence":"The winners ___ (announce) already.","verb":"announce","answer":"have been announced","voice":"passive","nl":"De winnaars zijn al bekendgemaakt."},{"sentence":"My brother ___ (never / eat) sushi.","verb":"eat","answer":"has never eaten","voice":"active","nl":"Mijn broer heeft nog nooit sushi gegeten."}],"morph":{"base":"make","active":"has made","passive":"has been made"},"personNote":"has (he/she/it) · have (I/you/we/they)","forms":{"active":{"aff":["have/has + past participle","She has finished it."],"neg":["have/has + not + past participle","She hasn't finished yet."],"q":["Have/Has + subject + past participle?","Have you finished?"]},"passive":{"aff":["have/has + been + past participle","The car has been made."],"neg":["have/has + not + been + past participle","It hasn't been made yet."],"q":["Have/Has + subject + been + past participle?","Has it been made?"]}}},{"id":"present-perfect-continuous","name":"Present Perfect Continuous","time":"present","aspect":"perfect continuous","graad":3,"decision":{"key":"Action started in the past, still going on now (or just stopped) + duration is the point: 'for/since + how long'","path":["Time frame = now / up to now, with a link to the past? YES -> present perfect family","Is the focus on the ongoing activity and its DURATION, not on a finished result/number? YES -> continuous, not simple","Does the action run from a past moment up to now (for/since) or explain a present result you can still see? YES -> Present Perfect Continuous","Is the subject doing the action (active) or receiving it (passive)? -> choose active or passive form"]},"examples":[{"active":"I have been studying English for six years.","active_nl":"Ik studeer al zes jaar Engels.","passive":"English has been studied here for six years.","passive_nl":"Engels wordt hier al zes jaar gestudeerd (bestudeerd)."},{"active":"The team has been training since January.","active_nl":"Het team traint al sinds januari.","passive":"New tactics have been being trained since January.","passive_nl":"Er worden al sinds januari nieuwe tactieken getraind."},{"active":"Scientists have been testing the new vaccine for months.","active_nl":"Wetenschappers testen het nieuwe vaccin al maanden.","passive":"The new vaccine has been being tested for months.","passive_nl":"Het nieuwe vaccin wordt al maanden getest."},{"active":"My little brother has been playing video games all afternoon.","active_nl":"Mijn kleine broertje speelt al de hele namiddag videospelletjes.","passive":"Video games have been being played all afternoon.","passive_nl":"Er worden al de hele namiddag videospelletjes gespeeld."},{"active":"They have been building the new metro station since 2023.","active_nl":"Ze bouwen het nieuwe metrostation al sinds 2023.","passive":"The new metro station has been being built since 2023.","passive_nl":"Het nieuwe metrostation wordt al sinds 2023 gebouwd."}],"form":{"active":"subject + have/has been + verb-ing (present participle). Use 'has' for he/she/it, 'have' for I/you/we/they. Negative: subject + have/has + not + been + verb-ing (haven't/hasn't been working). Question: Have/Has + subject + been + verb-ing? (Have you been waiting long?)","passive":"subject + have/has been being + past participle (e.g. 'The house has been being painted for a week.'). Negative: has/have not been being + past participle. Question: Have/Has + subject + been being + past participle?","passive_note":"This passive is technically correct but sounds heavy and is very rare in real English because of the double 'been being'. In practice speakers avoid it and use the present perfect simple passive ('The house has been painted') or an active sentence instead."},"mistakes":["Using the present simple or present continuous for something that started in the past and is still going on: 'I learn English for six years' or 'I am learning English for six years' instead of 'I have been learning English for six years'. Dutch 'al zes jaar' must become present perfect continuous.","Using this tense with stative (non-action) verbs like know, be, have, believe, like. Say 'I have known her since 2019', NOT 'I have been knowing her'.","Mixing up 'for' and 'since': use 'for' + a period of time (for two hours) and 'since' + a starting point (since Monday).","Forgetting 'been': writing 'I have working' or 'She has studying' instead of 'I have been working' / 'She has been studying'."],"nl_name":"Present perfect continuous (voltooid tegenwoordige duurtijd)","practice":[{"sentence":"We ___ (wait) for the bus for twenty minutes now.","verb":"wait","answer":"have been waiting","voice":"active","nl":"We staan nu al twintig minuten op de bus te wachten."},{"sentence":"She ___ (revise) for her exams since early this morning.","verb":"revise","answer":"has been revising","voice":"active","nl":"Ze is al sinds vanmorgen vroeg aan het studeren voor haar examens."},{"sentence":"The road ___ (repair) for three weeks, so there is a lot of traffic.","verb":"repair","answer":"has been being repaired","voice":"passive","nl":"De weg wordt al drie weken hersteld, dus er is veel verkeer."},{"sentence":"How long ___ you ___ (play) the guitar?","verb":"play","answer":"have ... been playing","voice":"active","nl":"Hoe lang speel je al gitaar?"},{"sentence":"My eyes hurt because I ___ (look) at a screen all day.","verb":"look","answer":"have been looking","voice":"active","nl":"Mijn ogen doen pijn omdat ik de hele dag naar een scherm heb zitten kijken."},{"sentence":"The results ___ (analyse) by the lab since Monday.","verb":"analyse","answer":"have been being analysed","voice":"passive","nl":"De resultaten worden al sinds maandag door het labo geanalyseerd."},{"sentence":"It ___ (rain) since we left home this morning.","verb":"rain","answer":"has been raining","voice":"active","nl":"Het regent al sinds we vanmorgen van huis vertrokken."},{"sentence":"They ___ (build) the new sports hall for over a year.","verb":"build","answer":"have been building","voice":"active","nl":"Ze bouwen al meer dan een jaar aan de nieuwe sporthal."},{"sentence":"The garden ___ (water) all afternoon, so the ground is soaked.","verb":"water","answer":"has been being watered","voice":"passive","nl":"De tuin wordt al de hele namiddag begoten, dus de grond is doorweekt."},{"sentence":"I ___ (feel) tired lately because I have been working too hard.","verb":"feel","answer":"have been feeling","voice":"active","nl":"Ik voel me de laatste tijd moe omdat ik te hard heb gewerkt."}],"relations":{"contrast":["Present continuous ('I am studying now') = happening at this exact moment; present perfect continuous ('I have been studying since 8') = started in the past and still going, with duration.","Present perfect simple ('I have read three books') = focus on the completed result or number; present perfect continuous ('I have been reading all day') = focus on the ongoing activity and how long.","Present simple ('I play tennis') = a habit or general fact; present perfect continuous ('I have been playing tennis for two hours') = one activity in progress over a period up to now.","Past simple ('I studied for two years') = the period is finished and in the past; present perfect continuous ('I have been studying for two years') = the period reaches up to now."],"note":"It sits in the 'perfect' column (link to now) and the 'continuous/progressive' row (action in progress). It is the present-time member of the perfect continuous family, alongside past and future perfect continuous."},"signal_words":["for","since","how long","all day","all morning","all week","lately","recently","these days","the whole time","for hours","since this morning"],"use":["To talk about an action that started in the past and is still going on now (I have been living here since 2020).","To emphasise the DURATION of an activity: how long it has been happening (She has been waiting for two hours).","To explain a present situation or result you can still notice, caused by a recent ongoing activity (You look tired. Have you been running?).","For a repeated or continuous activity over a recent period, up to and including now (He has been practising every day this week)."],"morph":{"base":"make","active":"has been making","passive":null},"personNote":"has been (he/she/it) · have been (I/you/we/they)","forms":{"active":{"aff":["have/has + been + verb-ing","She has been working all day."],"neg":["have/has + not + been + verb-ing","She hasn't been working long."],"q":["Have/Has + subject + been + verb-ing?","Have you been waiting long?"]},"passive":null}},{"id":"past-simple","name":"Past Simple","time":"past","aspect":"simple","graad":2,"nl_name":"Onvoltooid verleden tijd (O.V.T. / simple past)","form":{"active":"subject + past form of the verb (regular: verb + -ed; irregular: 2nd column, e.g. go->went). Same form for all persons. Questions: did + subject + base verb (Did you win?). Negatives: subject + did not / didn't + base verb (She didn't call). After 'did' always use the base verb, NOT the past form.","passive":"subject + was / were + past participle (3rd column). Use 'was' for I/he/she/it and singular, 'were' for you/we/they and plural. Questions: Was/Were + subject + past participle (Was the door locked?). Negatives: subject + was/were + not + past participle (The letter wasn't sent). The doer can be added with 'by ...'."},"use":["To talk about a finished action at a finished time in the past (yesterday, last year).","For a series of completed actions, one after another, in a story.","For past habits or repeated actions that are now over.","For situations or states that lasted a while in the past but are finished now.","In the passive: when the past action matters more than who did it."],"signal_words":["yesterday","last night / last week / last year","two days ago","in 2015","when I was young","then / after that","this morning (once the morning is over)","the other day","at that time","once"],"examples":[{"active":"Alexander Fleming discovered penicillin in 1928.","active_nl":"Alexander Fleming ontdekte penicilline in 1928.","passive":"Penicillin was discovered in 1928.","passive_nl":"Penicilline werd in 1928 ontdekt."},{"active":"Our teacher gave us the exam results yesterday.","active_nl":"Onze leerkracht gaf ons gisteren de examenresultaten.","passive":"The exam results were given to us yesterday.","passive_nl":"De examenresultaten werden ons gisteren gegeven."},{"active":"The referee stopped the match after ten minutes.","active_nl":"De scheidsrechter stopte de wedstrijd na tien minuten.","passive":"The match was stopped after ten minutes.","passive_nl":"De wedstrijd werd na tien minuten stopgezet."},{"active":"Hackers attacked the school website last week.","active_nl":"Hackers vielen vorige week de schoolwebsite aan.","passive":"The school website was attacked last week.","passive_nl":"De schoolwebsite werd vorige week aangevallen."},{"active":"They built this bridge in 1905.","active_nl":"Ze bouwden deze brug in 1905.","passive":"This bridge was built in 1905.","passive_nl":"Deze brug werd in 1905 gebouwd."}],"mistakes":["Using the past form after 'did': 'Did you went?' or 'She didn't came' instead of 'Did you go?' / 'She didn't come'.","Forgetting irregular verbs and adding -ed: 'goed', 'buyed', 'teached' instead of 'went', 'bought', 'taught'.","Mixing up 'was' and 'were' in the passive: 'The keys was found' instead of 'The keys were found'.","Choosing the present perfect where a finished past time word (yesterday, in 2010) really needs Past Simple: 'I have seen it yesterday' instead of 'I saw it yesterday'."],"decision":{"path":["Is the time frame the past? YES","Is the action in progress / ongoing at that past moment? NO (else Past Continuous)","Does it link the past to now, or come before another past action? NO (else Present Perfect / Past Perfect)","Is it a finished action at a finished past time? YES -> Past Simple","Choose voice: doer known and important -> active; focus on the receiver -> passive (was/were + past participle)"],"key":"A finished action at a finished past time (yesterday, last week, in 2019, ago)"},"relations":{"contrast":["Past Simple = finished action at a finished time (I cooked dinner yesterday). Past Continuous = action in progress in the past (I was cooking when you called).","Past Simple has a clear past time marker; Present Perfect has none and links to now (I saw it yesterday vs I have seen it).","Past Simple = the action itself; Past Perfect = an earlier action before another past action (After she had left, we ate)."],"note":"Past Simple is the basic 'story' tense of the past: the backbone for telling what happened, while the continuous and perfect tenses add extra detail around it."},"practice":[{"sentence":"We ___ (visit) the science museum last Friday.","verb":"visit","answer":"visited","voice":"active","nl":"We bezochten vorige vrijdag het wetenschapsmuseum."},{"sentence":"The trophy ___ (win) by our team in 2021.","verb":"win","answer":"was won","voice":"passive","nl":"De trofee werd in 2021 door ons team gewonnen."},{"sentence":"My brother ___ (buy) a new phone two weeks ago.","verb":"buy","answer":"bought","voice":"active","nl":"Mijn broer kocht twee weken geleden een nieuwe telefoon."},{"sentence":"The classrooms ___ (clean) yesterday evening.","verb":"clean","answer":"were cleaned","voice":"passive","nl":"De klaslokalen werden gisteravond schoongemaakt."},{"sentence":"She ___ (not / eat) breakfast this morning because she was late.","verb":"eat","answer":"did not eat","voice":"active","nl":"Ze at vanmorgen geen ontbijt omdat ze te laat was."},{"sentence":"The email ___ (send) to all parents last week.","verb":"send","answer":"was sent","voice":"passive","nl":"De e-mail werd vorige week naar alle ouders gestuurd."},{"sentence":"___ you ___ (see) the match on TV last night?","verb":"see","answer":"Did / see","voice":"active","nl":"Zag je de wedstrijd gisteravond op tv?"},{"sentence":"America ___ (discover) by Europeans in 1492.","verb":"discover","answer":"was discovered","voice":"passive","nl":"Amerika werd in 1492 door Europeanen ontdekt."},{"sentence":"The children ___ (play) in the park all afternoon.","verb":"play","answer":"played","voice":"active","nl":"De kinderen speelden de hele namiddag in het park."},{"sentence":"The old factory ___ (build) more than a hundred years ago.","verb":"build","answer":"was built","voice":"passive","nl":"De oude fabriek werd meer dan honderd jaar geleden gebouwd."}],"morph":{"base":"make","active":"made","passive":"was made"},"personNote":"zelfde vorm voor alle personen (V2)","forms":{"active":{"aff":["past form — same for all persons","She worked late. (go → went)"],"neg":["did + not + base verb","She didn't work late."],"q":["Did + subject + base verb?","Did you work late?"]},"passive":{"aff":["was/were + past participle","The car was made in 1990."],"neg":["was/were + not + past participle","The cars weren't made here."],"q":["Was/Were + subject + past participle?","Was it made here?"]}}},{"id":"past-continuous","name":"Past Continuous","time":"past","aspect":"continuous","graad":2,"nl_name":"De onvoltooid verleden tijd - duurvorm (Past Continuous)","form":{"active":"subject + was/were + verb+ing. Example: I was reading, they were playing. Negative: subject + was/were + not (wasn't/weren't) + verb+ing. Question: was/were + subject + verb+ing? (Was he sleeping?)","passive":"subject + was/were + being + past participle. Example: The house was being painted. Negative: subject + was/were + not + being + past participle (The car wasn't being repaired). Question: was/were + subject + being + past participle? (Was the room being cleaned?)","passive_note":"The past continuous passive is correct but not very common in everyday speech because it sounds long. Use it only when the action-in-progress really matters and the doer is unknown or unimportant."},"use":["An action that was in progress (busy happening) at a specific moment in the past: At 8 o'clock I was having breakfast.","A longer background action that was interrupted by a shorter action in the past simple: I was walking home when it started to rain.","Two or more longer actions happening at the same time in the past: While she was studying, her brother was watching TV.","To set the scene or background at the start of a story: The sun was shining and the birds were singing.","A repeated or annoying habit in the past, often with 'always': He was always losing his keys."],"signal_words":["while","when","as","at that moment","at 7 o'clock (yesterday)","all day yesterday","the whole evening","at the time","just then","always (for annoying habits)","still","meanwhile"],"examples":[{"active":"At nine o'clock the students were writing a test.","active_nl":"Om negen uur waren de leerlingen een toets aan het maken.","passive":"At nine o'clock a test was being written by the students.","passive_nl":"Om negen uur werd er een toets gemaakt door de leerlingen."},{"active":"While the coach was shouting, the team was scoring a goal.","active_nl":"Terwijl de coach aan het roepen was, scoorde het team een doelpunt.","passive":"While the coach was shouting, a goal was being scored by the team.","passive_nl":"Terwijl de coach aan het roepen was, werd er een doelpunt gescoord door het team."},{"active":"The scientists were testing the new robot all afternoon.","active_nl":"De wetenschappers waren de hele namiddag de nieuwe robot aan het testen.","passive":"The new robot was being tested by the scientists all afternoon.","passive_nl":"De nieuwe robot werd de hele namiddag door de wetenschappers getest."},{"active":"When I arrived, workers were repairing the airport road.","active_nl":"Toen ik aankwam, waren arbeiders de luchthavenweg aan het herstellen.","passive":"When I arrived, the airport road was being repaired.","passive_nl":"Toen ik aankwam, werd de luchthavenweg hersteld."},{"active":"My little sister was charging the phone when the power went off.","active_nl":"Mijn kleine zus was de telefoon aan het opladen toen de stroom uitviel.","passive":"The phone was being charged when the power went off.","passive_nl":"De telefoon werd opgeladen toen de stroom uitviel."}],"mistakes":["Forgetting the -ing form: writing 'I was play football' instead of 'I was playing football'.","Mixing up was and were: 'They was watching' is wrong; it must be 'They were watching' (was = I/he/she/it, were = you/we/they).","Using the past continuous with state verbs that describe feelings or thoughts, e.g. 'I was knowing the answer' instead of 'I knew the answer'.","Forgetting 'being' in the passive: writing 'The house was painted at 3 o'clock' (past simple passive) when you mean the action was in progress: 'The house was being painted at 3 o'clock.'"],"decision":{"path":["Is the time frame in the PAST? YES","Was the action IN PROGRESS (busy happening) at a moment in the past, not finished? YES","Is it a background action interrupted by, or happening at the same time as, another past action? YES","Does the subject DO the action (active) or RECEIVE it (passive)? active -> was/were + -ing; passive -> was/were + being + past participle"],"key":"Past + action busy happening at a past moment / interrupted by another action -> was/were + -ing"},"relations":{"contrast":["Past simple = a finished action or the short interrupting action (I cooked dinner); past continuous = the longer action in progress around it (I was cooking when he called).","Present continuous = in progress NOW (am/is/are + -ing); past continuous = in progress THEN (was/were + -ing).","Past perfect = an action finished BEFORE another past moment; past continuous = an action still busy AT that past moment."],"note":"It is the 'in-progress' tense of the past: it sets the scene and gives the background, while the past simple gives the main, completed events."},"practice":[{"sentence":"At 6 p.m. yesterday we ___ (have) dinner.","verb":"have","answer":"were having","voice":"active","nl":"Om 18 uur gisteren waren we aan het eten."},{"sentence":"While the teacher ___ (explain) the lesson, two boys were whispering.","verb":"explain","answer":"was explaining","voice":"active","nl":"Terwijl de leraar de les uitlegde, waren twee jongens aan het fluisteren."},{"sentence":"When the fire alarm rang, the exam ___ (write) in the big hall.","verb":"write","answer":"was being written","voice":"passive","nl":"Toen het brandalarm afging, werd het examen in de grote zaal gemaakt."},{"sentence":"The whole afternoon the new bikes ___ (test) on the track.","verb":"test","answer":"were being tested","voice":"passive","nl":"De hele namiddag werden de nieuwe fietsen op de piste getest."},{"sentence":"I ___ (walk) to school when it suddenly started to snow.","verb":"walk","answer":"was walking","voice":"active","nl":"Ik was naar school aan het wandelen toen het plots begon te sneeuwen."},{"sentence":"At that moment the tickets ___ (sell) very fast online.","verb":"sell","answer":"were being sold","voice":"passive","nl":"Op dat moment werden de tickets heel snel online verkocht."},{"sentence":"While my parents were sleeping, my brother ___ (play) video games.","verb":"play","answer":"was playing","voice":"active","nl":"Terwijl mijn ouders sliepen, was mijn broer videospelletjes aan het spelen."},{"sentence":"When we visited the museum, the old painting ___ (clean) by an expert.","verb":"clean","answer":"was being cleaned","voice":"passive","nl":"Toen we het museum bezochten, werd het oude schilderij door een expert gereinigd."},{"sentence":"The sun ___ (shine) and the birds were singing when we left.","verb":"shine","answer":"was shining","voice":"active","nl":"De zon scheen en de vogels zongen toen we vertrokken."},{"sentence":"All morning the streets ___ (decorate) for the parade.","verb":"decorate","answer":"were being decorated","voice":"passive","nl":"De hele ochtend werden de straten voor de optocht versierd."}],"morph":{"base":"make","active":"was making","passive":"was being made"},"personNote":"was (I/he/she/it) · were (you/we/they)","forms":{"active":{"aff":["was/were + verb-ing","She was working at 8 p.m."],"neg":["was/were + not + verb-ing","She wasn't working then."],"q":["Was/Were + subject + verb-ing?","Were you working then?"]},"passive":{"aff":["was/were + being + past participle","The car was being made."],"neg":["was/were + not + being + past participle","It wasn't being made."],"q":["Was/Were + subject + being + past participle?","Was it being made?"]}}},{"id":"past-perfect","name":"Past Perfect Simple","time":"past","aspect":"perfect","graad":2,"nl_name":"De voltooid verleden tijd (past perfect / plusquamperfectum)","form":{"active":"subject + had + past participle (voltooid deelwoord). E.g. \"She had left.\" Negative: subject + had not (hadn't) + past participle (\"They hadn't finished\"). Question: Had + subject + past participle? (\"Had you eaten?\"). The same form 'had' is used for every subject (I/you/he/she/it/we/they).","passive":"subject + had + been + past participle. E.g. \"The car had been washed.\" Negative: subject + had not (hadn't) + been + past participle (\"The room hadn't been cleaned\"). Question: Had + subject + been + past participle? (\"Had the tickets been sold?\"). The doer can be added with 'by ...' if needed."},"use":["To show that one action happened BEFORE another action or moment in the past (the 'earlier past').","To look back from a point in the past to something that was already finished by then.","Often used with 'when', 'after', 'before' and 'because' to make the time order clear.","To explain the reason for a past situation: something had already happened, so the result was true.","In reported speech, as the past form of the present perfect or past simple."],"signal_words":["already","just","yet","before","after","when","by the time","by then","until then","never (before)","as soon as","once"],"examples":[{"active":"When we arrived, the film had already started.","active_nl":"Toen we aankwamen, was de film al begonnen.","passive":"When we arrived, the film had already been started.","passive_nl":"Toen we aankwamen, was de film al gestart."},{"active":"The team celebrated because they had won the match.","active_nl":"Het team vierde feest omdat ze de wedstrijd hadden gewonnen.","passive":"The team celebrated because the match had been won.","passive_nl":"Het team vierde feest omdat de wedstrijd gewonnen was."},{"active":"By the time the teacher came in, the students had finished the test.","active_nl":"Tegen de tijd dat de leraar binnenkwam, hadden de leerlingen de toets afgemaakt.","passive":"By the time the teacher came in, the test had been finished.","passive_nl":"Tegen de tijd dat de leraar binnenkwam, was de toets afgemaakt."},{"active":"She couldn't send the email because she had deleted the file.","active_nl":"Ze kon de e-mail niet versturen omdat ze het bestand had verwijderd.","passive":"The email couldn't be sent because the file had been deleted.","passive_nl":"De e-mail kon niet verstuurd worden omdat het bestand verwijderd was."},{"active":"Before the scientists published the results, they had tested the idea many times.","active_nl":"Voordat de wetenschappers de resultaten publiceerden, hadden ze het idee vaak getest.","passive":"Before the results were published, the idea had been tested many times.","passive_nl":"Voordat de resultaten gepubliceerd werden, was het idee vaak getest."}],"mistakes":["Using past simple instead of past perfect for the earlier action: 'When I arrived, the train left' should be 'the train had left' (it left first).","Forgetting 'been' in the passive: writing 'The room had cleaned' instead of 'The room had been cleaned'.","Wrong past participle, especially with irregular verbs: 'had wrote' or 'had went' instead of 'had written' / 'had gone'.","Overusing the past perfect when the order is already clear or when only one past action is meant; a simple past is often enough."],"decision":{"path":["Is the time frame the PAST? YES","Is the action still in progress / are we stressing duration at that past moment? NO","Did it happen BEFORE another past action or moment (an earlier past, often completed)? YES","So it is a past perfect. Is the subject the doer (active) or does the subject receive the action (passive)? -> choose had + past participle (active) or had + been + past participle (passive)"],"key":"A past action already finished BEFORE another past moment: had + past participle (the 'past before the past')."},"relations":{"contrast":["Past simple = one finished past action; past perfect = the action that happened EARLIER, before that one.","Present perfect (has/have + p.p.) links the past to NOW; past perfect (had + p.p.) links an earlier past to a LATER past.","Past perfect continuous stresses how long something had been going on; past perfect simple stresses that it was finished/the result."],"note":"It is the 'past of the past': the perfect (looking-back) aspect placed one step earlier than the past simple on the timeline."},"practice":[{"sentence":"When the bus finally came, we ___ (wait) for an hour already.","verb":"wait","answer":"had waited","voice":"active","nl":"Toen de bus eindelijk kwam, hadden we al een uur gewacht."},{"sentence":"The stadium was empty because the game ___ (cancel) earlier that day.","verb":"cancel","answer":"had been cancelled","voice":"passive","nl":"Het stadion was leeg omdat de wedstrijd die dag eerder was afgelast."},{"sentence":"By the time I got home, my parents ___ (eat) dinner without me.","verb":"eat","answer":"had eaten","voice":"active","nl":"Tegen de tijd dat ik thuiskwam, hadden mijn ouders zonder mij gegeten."},{"sentence":"The message could not be read because it ___ (delete) before noon.","verb":"delete","answer":"had been deleted","voice":"passive","nl":"Het bericht kon niet gelezen worden omdat het voor de middag was verwijderd."},{"sentence":"She passed the exam easily because she ___ (study) hard all week.","verb":"study","answer":"had studied","voice":"active","nl":"Ze slaagde makkelijk voor het examen omdat ze de hele week hard had gestudeerd."},{"sentence":"When the guests arrived, the table ___ (already/set) by the children.","verb":"set","answer":"had already been set","voice":"passive","nl":"Toen de gasten aankwamen, was de tafel al door de kinderen gedekt."},{"sentence":"After the plane ___ (take off), the pilot spoke to the passengers.","verb":"take off","answer":"had taken off","voice":"active","nl":"Nadat het vliegtuig was opgestegen, sprak de piloot tot de passagiers."},{"sentence":"The old bridge was closed because it ___ (damage) in the storm the night before.","verb":"damage","answer":"had been damaged","voice":"passive","nl":"De oude brug was gesloten omdat hij de nacht ervoor in de storm beschadigd was."},{"sentence":"I didn't recognise her because she ___ (change) so much.","verb":"change","answer":"had changed","voice":"active","nl":"Ik herkende haar niet omdat ze zo veel veranderd was."},{"sentence":"Before the new phones went on sale, thousands of them ___ (already/order) online.","verb":"order","answer":"had already been ordered","voice":"passive","nl":"Voordat de nieuwe telefoons in de verkoop gingen, waren er al duizenden online besteld."}],"morph":{"base":"make","active":"had made","passive":"had been made"},"personNote":"had voor alle personen","forms":{"active":{"aff":["had + past participle — all persons","She had left before nine."],"neg":["had + not + past participle","She hadn't left yet."],"q":["Had + subject + past participle?","Had you left?"]},"passive":{"aff":["had + been + past participle","The car had been made."],"neg":["had + not + been + past participle","It hadn't been made."],"q":["Had + subject + been + past participle?","Had it been made?"]}}},{"id":"past-perfect-continuous","name":"Past Perfect Continuous","time":"past","aspect":"perfect continuous","graad":3,"decision":{"path":["Is the action in the PAST (before now)? YES","Does it happen BEFORE another moment/action in the past? YES","Was the action in progress / ongoing, not one finished single point? YES","Do we emphasise HOW LONG it lasted (duration up to that past moment)? YES","Active (subject does it) or passive (subject undergoes it)? -> check the subject"],"key":"A past action that was already going on and lasted up to a later past moment: had been + verb-ing (duration before the past)."},"examples":[{"active":"The class had been rehearsing the play for weeks before the big show.","active_nl":"De klas had het toneelstuk al weken gerepeteerd voordat de grote voorstelling begon.","passive":"The play had been being rehearsed for weeks before the big show.","passive_nl":"Het toneelstuk werd al weken gerepeteerd voordat de grote voorstelling begon."},{"active":"Researchers had been testing the vaccine for months before it was approved.","active_nl":"Onderzoekers testten het vaccin al maanden voordat het werd goedgekeurd.","passive":"The vaccine had been being tested for months before it was approved.","passive_nl":"Het vaccin werd al maanden getest voordat het werd goedgekeurd."},{"active":"Engineers had been developing the app for a year before the launch.","active_nl":"Ingenieurs ontwikkelden de app al een jaar voordat hij gelanceerd werd.","passive":"The app had been being developed for a year before the launch.","passive_nl":"De app werd al een jaar ontwikkeld voordat hij gelanceerd werd."},{"active":"The workers had been building the bridge for two years before it finally opened.","active_nl":"De arbeiders bouwden al twee jaar aan de brug voordat ze eindelijk openging.","passive":"The bridge had been being built for two years before it finally opened.","passive_nl":"Aan de brug werd al twee jaar gebouwd voordat ze eindelijk openging."},{"active":"The coach had been training the young team for years before they won the cup.","active_nl":"De coach trainde het jonge team al jaren voordat ze de beker wonnen.","passive":"The young team had been being trained for years before they won the cup.","passive_nl":"Het jonge team werd al jaren getraind voordat ze de beker wonnen."}],"form":{"active":"subject + had been + verb-ing (e.g. She had been waiting). Negative: subject + had not / hadn't been + verb-ing (She hadn't been waiting). Question: Had + subject + been + verb-ing? (Had she been waiting?). The form 'had been' is the same for every subject (I/you/he/we/they).","passive":"subject + had been being + past participle (e.g. The house had been being built for a year). Negative: had not / hadn't been being + past participle. Question: Had + subject + been being + past participle?","passive_note":"This passive is grammatically correct but very heavy and rare. Native speakers almost always avoid it and use the past perfect simple passive ('The house had been built for...') or an active sentence instead. Recognise it, but you will seldom need to produce it."},"mistakes":["Forgetting 'been': writing 'I had waiting for an hour' instead of 'I had been waiting for an hour'. You always need had + been + -ing.","Using the past perfect simple when duration is the point: 'She had worked all night, so she was tired' misses the ongoing effort of 'She had been working all night.'","Confusing 'had been' (past) with 'have been' (present perfect continuous). Because Dutch has no -ing duration form, learners often pick the wrong helper. 'Had been' links to a PAST moment, 'have been' links to now.","Using it with stative verbs: 'I had been knowing him for years' is wrong. Use the past perfect simple: 'I had known him for years.'"],"nl_name":"Voltooid verleden tijd — duurvorm (past perfect continuous)","practice":[{"sentence":"The children ___ (play) outside for hours before it suddenly started to rain.","verb":"play","answer":"had been playing","voice":"active","nl":"De kinderen speelden al uren buiten voordat het plots begon te regenen."},{"sentence":"The road ___ (repair) for weeks before it finally reopened to traffic.","verb":"repair","answer":"had been being repaired","voice":"passive","nl":"De weg werd al weken hersteld voordat hij eindelijk weer openging voor het verkeer."},{"sentence":"She was exhausted because she ___ (study) all night for the exam.","verb":"study","answer":"had been studying","voice":"active","nl":"Ze was uitgeput omdat ze de hele nacht voor het examen had gestudeerd."},{"sentence":"By the time the report came out, the data ___ (collect) for six months.","verb":"collect","answer":"had been being collected","voice":"passive","nl":"Tegen de tijd dat het rapport verscheen, werden de gegevens al zes maanden verzameld."},{"sentence":"We ___ (wait) for the train for twenty minutes when it was finally cancelled.","verb":"wait","answer":"had been waiting","voice":"active","nl":"We stonden al twintig minuten op de trein te wachten toen die uiteindelijk werd afgeschaft."},{"sentence":"The new song ___ (record) for weeks before the band released it.","verb":"record","answer":"had been being recorded","voice":"passive","nl":"Het nieuwe nummer werd al weken opgenomen voordat de band het uitbracht."},{"sentence":"His eyes hurt because he ___ (stare) at the screen for far too long.","verb":"stare","answer":"had been staring","voice":"active","nl":"Zijn ogen deden pijn omdat hij veel te lang naar het scherm had zitten staren."},{"sentence":"The stadium ___ (build) for three years before the first match was played there.","verb":"build","answer":"had been being built","voice":"passive","nl":"Aan het stadion werd al drie jaar gebouwd voordat de eerste wedstrijd er werd gespeeld."}],"relations":{"contrast":["Past continuous (was/were + -ing) = in progress AT a past moment; past perfect continuous = already in progress and lasting UP TO that past moment.","Past perfect simple (had + done) = a completed action or its result before a past moment; past perfect continuous stresses the ongoing activity and its DURATION.","Present perfect continuous (have been + -ing) links the duration to NOW; past perfect continuous links it to a moment in the PAST."],"note":"It is the 'past before the past' in duration form: one step further back in time than the past continuous, focusing on how long something had been going on."},"signal_words":["before","for (two hours / weeks / years)","since","by the time","when","all day / all night / all morning","until","up to that point / moment","for a long time","already"],"use":["To say that an action was already going on and lasted up to a moment or another action in the past: 'They had been driving for hours before they stopped.'","To emphasise the DURATION of a past activity (how long it had been happening) with 'for' or 'since'.","To explain the CAUSE or result of a past situation: 'The ground was wet because it had been raining.'","To show an activity in progress that stopped just before or during another past event: 'We had been playing when the storm broke.'"],"morph":{"base":"make","active":"had been making","passive":null},"personNote":"had been voor alle personen","forms":{"active":{"aff":["had + been + verb-ing — all persons","She had been working for hours."],"neg":["had + not + been + verb-ing","She hadn't been working long."],"q":["Had + subject + been + verb-ing?","Had you been waiting long?"]},"passive":null}},{"id":"future-simple","name":"Future Simple (will)","time":"future","aspect":"simple","graad":2,"decision":{"path":["Is the action in the FUTURE? YES","Is it happening right now / around now? NO -> not a continuous tense","Is it a fixed timetable or a plan already arranged? NO -> not present simple/continuous for future","Is it a prediction, spontaneous decision, promise or offer? YES","Active (subject does it) or passive (subject receives it)? -> choose will + infinitive OR will be + past participle"],"key":"'will' + base verb for a spontaneous decision, promise, offer or a prediction without present evidence"},"nl_name":"De onvoltooid tegenwoordige toekomende tijd (OTT toekomst met 'will'); daarnaast de 'going to'-toekomst","form":{"active":"Subject + will + base verb (infinitive without 'to'). E.g. 'She will call you.' Short form: 'll (She'll call). Negative: subject + will not / won't + base verb ('He won't come'). Question: Will + subject + base verb? ('Will you help me?'). GOING TO active: subject + am/is/are + going to + base verb ('I am going to study tonight'); negative with not ('She isn't going to come'); question by moving am/is/are to the front ('Are you going to travel?').","passive":"Subject + will + be + past participle (V3). E.g. 'The room will be cleaned.' Negative: subject + won't + be + V3 ('The match won't be cancelled'). Question: Will + subject + be + V3? ('Will the tickets be sent by email?'). GOING TO passive: subject + am/is/are + going to + be + past participle ('The bridge is going to be repaired')."},"use":["Making a prediction about the future, often with I think / probably / maybe (no present proof needed): 'It will rain tomorrow.'","A spontaneous decision made at the moment of speaking: 'I'm tired - I'll go to bed.'","Promises, offers and requests: 'I will help you' / 'Will you close the window?'","Facts or things we are sure about in the future: 'You will be 15 next year.'","GOING TO: plans and intentions decided BEFORE speaking: 'We are going to visit Rome this summer.'","GOING TO: a prediction based on present evidence you can see now: 'Look at those clouds - it is going to rain.'"],"signal_words":["tomorrow","next week / next year / next month","soon","later","tonight","in the future","in 2030","I think / I'm sure / probably / maybe","one day","in an hour","someday","look! / watch out! (often -> going to)"],"examples":[{"active":"The teacher will explain the new lesson tomorrow.","active_nl":"De leraar zal de nieuwe les morgen uitleggen.","passive":"The new lesson will be explained tomorrow.","passive_nl":"De nieuwe les zal morgen uitgelegd worden."},{"active":"Engineers will build a new stadium next year.","active_nl":"Ingenieurs zullen volgend jaar een nieuw stadion bouwen.","passive":"A new stadium will be built next year.","passive_nl":"Er zal volgend jaar een nieuw stadion gebouwd worden."},{"active":"Scientists will test the new vaccine soon.","active_nl":"Wetenschappers zullen het nieuwe vaccin binnenkort testen.","passive":"The new vaccine will be tested soon.","passive_nl":"Het nieuwe vaccin zal binnenkort getest worden."},{"active":"The airline will cancel the flight because of the storm.","active_nl":"De luchtvaartmaatschappij zal de vlucht annuleren door de storm.","passive":"The flight will be cancelled because of the storm.","passive_nl":"De vlucht zal geannuleerd worden door de storm."},{"active":"They will send you the results by email.","active_nl":"Ze zullen je de resultaten via e-mail sturen.","passive":"The results will be sent to you by email.","passive_nl":"De resultaten zullen je via e-mail toegestuurd worden."}],"mistakes":["Adding 'to' after will: writing 'I will to go' instead of 'I will go' (Dutch learners overuse 'to').","Using present simple for a spontaneous decision: 'I go with you' instead of 'I'll go with you'.","Mixing up will and going to: using 'will' for a fixed plan already made ('I will visit my aunt' when it is arranged) instead of 'I'm going to visit my aunt'.","Forgetting 'be' in the passive: 'The room will cleaned' instead of 'The room will be cleaned'."],"relations":{"contrast":["Future Simple (will) vs GOING TO: 'will' = spontaneous decision, offer, promise, prediction with no proof; 'going to' = plan decided before + prediction based on what you see now.","vs Present Continuous for future: 'I'm meeting Tom at 6' = a fixed arrangement (agreed, in the diary), not a new decision like 'I'll meet Tom'.","vs Present Simple for future: 'The train leaves at 8' = a timetable/schedule, not a prediction or decision.","vs Future Continuous: 'will be doing' stresses an action in progress at a future moment, not a single fact."],"note":"It is the basic way to talk about the future in English; 'going to' sits right next to it for plans and evidence-based predictions, while present tenses cover timetables and fixed arrangements."},"practice":[{"sentence":"I think it ___ (snow) tomorrow morning.","verb":"snow","answer":"will snow","voice":"active","nl":"Ik denk dat het morgenochtend zal sneeuwen."},{"sentence":"Don't worry, I ___ (help) you with your homework tonight.","verb":"help","answer":"will help","voice":"active","nl":"Geen zorgen, ik zal je vanavond helpen met je huiswerk."},{"sentence":"The new sports hall ___ (open) next September.","verb":"open","answer":"will be opened","voice":"passive","nl":"De nieuwe sporthal zal volgend september geopend worden."},{"sentence":"In the future, more cars ___ (drive) by computers.","verb":"drive","answer":"will be driven","voice":"passive","nl":"In de toekomst zullen meer auto's door computers bestuurd worden."},{"sentence":"Watch out! You ___ (drop) that glass!","verb":"drop","answer":"are going to drop","voice":"active","nl":"Kijk uit! Je gaat dat glas laten vallen!"},{"sentence":"We ___ (visit) our grandparents in Spain this summer; we already booked the tickets.","verb":"visit","answer":"are going to visit","voice":"active","nl":"We gaan deze zomer onze grootouders in Spanje bezoeken; we hebben de tickets al geboekt."},{"sentence":"The old bridge ___ (repair) next year.","verb":"repair","answer":"is going to be repaired","voice":"passive","nl":"De oude brug gaat volgend jaar hersteld worden."},{"sentence":"The phone is ringing - I ___ (answer) it!","verb":"answer","answer":"will answer","voice":"active","nl":"De telefoon gaat - ik zal opnemen!"},{"sentence":"The winners ___ (announce) at the end of the show.","verb":"announce","answer":"will be announced","voice":"passive","nl":"De winnaars zullen aan het einde van de show bekendgemaakt worden."},{"sentence":"Look at the dark sky! There ___ (be) a storm soon.","verb":"be","answer":"is going to be","voice":"active","nl":"Kijk naar de donkere lucht! Er komt binnenkort een storm."}],"morph":{"base":"make","active":"will make","passive":"will be made"},"personNote":"will voor alle personen ('ll)","forms":{"active":{"aff":["will + base verb — all persons","She will work tomorrow. (She'll work)"],"neg":["will + not (won't) + base verb","She won't work tomorrow."],"q":["Will + subject + base verb?","Will you work tomorrow?"]},"passive":{"aff":["will + be + past participle","The car will be made here."],"neg":["won't + be + past participle","It won't be made here."],"q":["Will + subject + be + past participle?","Will it be made here?"]}}},{"id":"future-continuous","name":"Future Continuous","time":"future","aspect":"continuous","graad":3,"decision":{"path":["Is the time frame the FUTURE? YES","Do you focus on an action IN PROGRESS at a specific moment in the future (not just a finished fact)? YES","So you picture the action already happening, stretching around that future point? YES","Is the subject doing the action (active) or receiving it (passive)? -> choose active or passive form"],"key":"An action that WILL BE HAPPENING / going on at a definite moment in the future (this time tomorrow, at 8 tonight)."},"nl_name":"Future continuous / toekomende tijd duurvorm (will + be + -ing)","form":{"active":"subject + will + be + present participle (-ing). Negative: subject + won't + be + -ing. Question: will + subject + be + -ing?","passive":"subject + will + be + being + past participle. Negative: subject + won't + be + being + past participle. Question: will + subject + be + being + past participle?","passive_note":"Correct but heavy and rare; English usually prefers the future simple passive (will be cleaned) or an active future continuous instead."},"use":["To talk about an action that will be in progress at a definite moment in the future: This time tomorrow I will be flying to Spain.","To picture something already going on, as background, when another event happens: When you arrive, we will be having dinner.","For actions we expect to happen as part of the normal course of events, often as a polite or neutral prediction: Don't worry, the shop will be opening again next week.","To ask politely about someone's plans without pressure: Will you be using the car tonight?","To stress the ongoing, temporary nature of a future situation over a period of time: Next month the team will be training every evening."],"signal_words":["this time tomorrow","this time next week/year","at 8 o'clock tonight","when you arrive / when you get there","while","all day tomorrow","in an hour","soon","later","by this evening (in progress sense)","during the meeting","next week"],"examples":[{"active":"This time tomorrow, our class will be taking the science exam.","active_nl":"Morgen om deze tijd zal onze klas het wetenschapsexamen aan het afleggen zijn.","passive":"This time tomorrow, the science exam will be being taken by our class.","passive_nl":"Morgen om deze tijd zal het wetenschapsexamen door onze klas afgelegd worden."},{"active":"At 8 o'clock tonight, the players will be warming up on the field.","active_nl":"Vanavond om 8 uur zullen de spelers zich op het veld aan het opwarmen zijn.","passive":"At 8 o'clock tonight, the field will be being prepared for the match.","passive_nl":"Vanavond om 8 uur zal het veld voor de wedstrijd klaargemaakt worden."},{"active":"When you land in Rome, the guide will be waiting at the airport.","active_nl":"Wanneer je in Rome landt, zal de gids op de luchthaven aan het wachten zijn.","passive":"When you land in Rome, your luggage will be being checked at security.","passive_nl":"Wanneer je in Rome landt, zal je bagage bij de veiligheidscontrole gecontroleerd worden."},{"active":"All day tomorrow, the engineers will be testing the new app.","active_nl":"Morgen de hele dag zullen de ingenieurs de nieuwe app aan het testen zijn.","passive":"All day tomorrow, the new app will be being tested by the engineers.","passive_nl":"Morgen de hele dag zal de nieuwe app door de ingenieurs getest worden."},{"active":"During the concert, the band will be playing our favourite song.","active_nl":"Tijdens het concert zal de band ons favoriete nummer aan het spelen zijn.","passive":"During the concert, our favourite song will be being played by the band.","passive_nl":"Tijdens het concert zal ons favoriete nummer door de band gespeeld worden."}],"mistakes":["Forgetting the 'be' and just using will + -ing: writing 'I will studying' instead of 'I will be studying'.","Confusing it with the future simple: using 'will study' (a single fact) when the sentence needs an action in progress at a future moment ('will be studying').","Overusing the heavy passive 'will be being cleaned' where natural English prefers the simpler 'will be cleaned' (future simple passive).","Adding a wrong ending or double auxiliary from Dutch interference, e.g. 'will be go' or 'I will be will study'; only ONE 'will' plus 'be' plus the -ing form is correct."],"relations":{"contrast":["Future simple (will do): a single finished action or fact -> 'I will call you.' Future continuous (will be doing): the action is IN PROGRESS at a future moment -> 'At six I will be calling you.'","Present continuous for future (I am flying tomorrow): a fixed arrangement/plan. Future continuous: the action GOING ON at a point in time, not the plan itself.","Future perfect (will have done): the action is FINISHED before a future moment. Future continuous: the action is still HAPPENING at that moment.","Going to (I am going to study): intention or evidence-based prediction. Future continuous: ongoing action at a set future time."],"note":"It is the 'in-progress' member of the future family: same future time frame as future simple, going to and future perfect, but it adds the continuous (duration/ongoing) aspect, like present continuous does in the present."},"practice":[{"sentence":"This time next week, we ___ (lie) on a beach in Greece.","verb":"lie","answer":"will be lying","voice":"active","nl":"Volgende week om deze tijd zullen we op een strand in Griekenland aan het liggen zijn."},{"sentence":"At 9 p.m. tonight, the new bridge ___ (light) up for the festival.","verb":"light","answer":"will be being lit","voice":"passive","nl":"Vanavond om 21 uur zal de nieuwe brug voor het festival verlicht worden."},{"sentence":"When the teacher walks in, the pupils ___ (finish) their group work.","verb":"finish","answer":"will be finishing","voice":"active","nl":"Wanneer de leerkracht binnenkomt, zullen de leerlingen hun groepswerk aan het afronden zijn."},{"sentence":"All morning tomorrow, the science lab ___ (use) by the exam group.","verb":"use","answer":"will be being used","voice":"passive","nl":"Morgen de hele ochtend zal het wetenschapslokaal door de examengroep gebruikt worden."},{"sentence":"Don't phone at seven, because I ___ (train) at the gym then.","verb":"train","answer":"will be training","voice":"active","nl":"Bel niet om zeven uur, want dan zal ik in de sportzaal aan het trainen zijn."},{"sentence":"This time tomorrow, thousands of fans ___ (cheer) in the stadium.","verb":"cheer","answer":"will be cheering","voice":"active","nl":"Morgen om deze tijd zullen duizenden fans in het stadion aan het juichen zijn."},{"sentence":"During the meeting, the results ___ (present) by our project leader.","verb":"present","answer":"will be being presented","voice":"passive","nl":"Tijdens de vergadering zullen de resultaten door onze projectleider voorgesteld worden."},{"sentence":"While you are sleeping tonight, the robots ___ (clean) the whole factory.","verb":"clean","answer":"will be cleaning","voice":"active","nl":"Terwijl jij vannacht slaapt, zullen de robots de hele fabriek aan het schoonmaken zijn."},{"sentence":"At midnight, the software ___ (update) automatically on every computer.","verb":"update","answer":"will be being updated","voice":"passive","nl":"Om middernacht zal de software automatisch op elke computer bijgewerkt worden."},{"sentence":"This time next year, my brother ___ (study) medicine in Leuven.","verb":"study","answer":"will be studying","voice":"active","nl":"Volgend jaar om deze tijd zal mijn broer in Leuven geneeskunde aan het studeren zijn."}],"morph":{"base":"make","active":"will be making","passive":null},"personNote":"will be voor alle personen","forms":{"active":{"aff":["will + be + verb-ing","She will be working at 9."],"neg":["won't + be + verb-ing","She won't be working then."],"q":["Will + subject + be + verb-ing?","Will you be working then?"]},"passive":null}},{"id":"future-perfect","name":"Future Perfect Simple","time":"future","aspect":"perfect","graad":3,"decision":{"key":"Completed BEFORE a future moment/deadline (\"by ...\"), result seen from the future looking back","path":["Is the time frame the FUTURE? YES","Is the action still in progress at that future point, or already finished? -> FINISHED before that point, so it is PERFECT (not future continuous)","Is it completed and linked to a later future moment or deadline (\"by then / by 2030\")? YES -> Future Perfect","Is the duration/on-going process emphasised (for + time, still going)? NO -> Simple, not Future Perfect Continuous","Who does the action - is the subject the doer (active) or the receiver (passive)? -> choose active or passive form"]},"nl_name":"De voltooid toekomende tijd (Future Perfect Simple)","form":{"active":"subject + will + have + past participle (voltooid deelwoord). E.g. \"She will have finished\". Question: swap subject and will -> \"Will she have finished?\". Negative: put not after will (won't) -> \"She will not / won't have finished\".","passive":"subject + will + have + been + past participle. E.g. \"It will have been finished\". Question: \"Will it have been finished?\". Negative: \"It will not / won't have been finished\". The doer, if mentioned, follows with by + agent.","passive_note":"The passive is natural for results and deadlines (\"the work will have been done\"), but sounds heavy in everyday speech; use it mainly in formal, technical or written contexts."},"use":["To say an action will be COMPLETED before a certain moment or deadline in the future (\"by then\", \"by 2030\").","To look BACK from a future point at something already done at that time.","To order two future events: the future perfect action happens FIRST, before another future moment or action.","To make a confident guess that something has probably already happened by now (\"They will have landed by now\")."],"signal_words":["by","by then","by the time","by next week / month / year","by 2030","before","in two weeks' time","by the end of","already (with a future point)","by tomorrow","by the time you arrive","by Friday"],"examples":[{"active":"By June the students will have finished all their exams.","active_nl":"Tegen juni zullen de leerlingen al hun examens afgelegd hebben.","passive":"By June all the exams will have been finished by the students.","passive_nl":"Tegen juni zullen alle examens afgelegd zijn door de leerlingen."},{"active":"By the time we arrive, the coach will have parked the bus.","active_nl":"Tegen dat wij aankomen, zal de coach de bus geparkeerd hebben.","passive":"By the time we arrive, the bus will have been parked.","passive_nl":"Tegen dat wij aankomen, zal de bus geparkeerd zijn."},{"active":"By 2035 scientists will have discovered a cure for many diseases.","active_nl":"Tegen 2035 zullen wetenschappers een geneesmiddel voor veel ziektes ontdekt hebben.","passive":"By 2035 a cure for many diseases will have been discovered.","passive_nl":"Tegen 2035 zal er een geneesmiddel voor veel ziektes ontdekt zijn."},{"active":"Before the holidays start, the builders will have repaired the bridge.","active_nl":"Voordat de vakantie begint, zullen de bouwvakkers de brug hersteld hebben.","passive":"Before the holidays start, the bridge will have been repaired.","passive_nl":"Voordat de vakantie begint, zal de brug hersteld zijn."},{"active":"By next week the app team will have released the new update.","active_nl":"Tegen volgende week zal het app-team de nieuwe update uitgebracht hebben.","passive":"By next week the new update will have been released.","passive_nl":"Tegen volgende week zal de nieuwe update uitgebracht zijn."}],"mistakes":["Forgetting HAVE and using only will + past participle: \"By June she will finished\" instead of \"will have finished\".","Using a present or past instead of the past participle after have: \"will have go\" or \"will have went\" instead of \"will have gone\".","Confusing it with the future simple after \"by\": saying \"By 2030 we will build the house\" when the deadline meaning needs \"will have built\".","In the passive, dropping BEEN: \"will have finished\" (active) where a passive \"will have been finished\" is needed."],"relations":{"contrast":["Future simple (will do): a plain future action or decision, no deadline; Future perfect (will have done): finished BEFORE a future point.","Future continuous (will be doing): in progress AT a future moment; Future perfect: already COMPLETED before that moment.","Present perfect (have done): finished before NOW; Future perfect: finished before a FUTURE point.","Future perfect continuous (will have been doing): emphasises how LONG up to that point; the simple just states it is done."],"note":"It is the 'completed-before-a-future-deadline' tense: it sits in the future column, perfect (completed) aspect, and mirrors the present perfect but seen from a point later than now."},"practice":[{"sentence":"By the end of this year, our class ___ (read) six novels.","verb":"read","answer":"will have read","voice":"active","nl":"Tegen het einde van dit jaar zal onze klas zes romans gelezen hebben."},{"sentence":"By next month, the new sports hall ___ (build).","verb":"build","answer":"will have been built","voice":"passive","nl":"Tegen volgende maand zal de nieuwe sporthal gebouwd zijn."},{"sentence":"By the time the train leaves, we ___ (find) our seats.","verb":"find","answer":"will have found","voice":"active","nl":"Tegen dat de trein vertrekt, zullen wij onze plaatsen gevonden hebben."},{"sentence":"Before the concert starts, all the tickets ___ (sell).","verb":"sell","answer":"will have been sold","voice":"passive","nl":"Voordat het concert begint, zullen alle tickets verkocht zijn."},{"sentence":"By 2040, engineers ___ (design) much faster computers.","verb":"design","answer":"will have designed","voice":"active","nl":"Tegen 2040 zullen ingenieurs veel snellere computers ontworpen hebben."},{"sentence":"By tomorrow morning, the report ___ (send) to every teacher.","verb":"send","answer":"will have been sent","voice":"passive","nl":"Tegen morgenochtend zal het rapport naar elke leerkracht gestuurd zijn."},{"sentence":"By the time you wake up, the plane ___ (land) in Rome.","verb":"land","answer":"will have landed","voice":"active","nl":"Tegen dat jij wakker wordt, zal het vliegtuig in Rome geland zijn."},{"sentence":"By next week, the broken laptops ___ (repair) by the technician.","verb":"repair","answer":"will have been repaired","voice":"passive","nl":"Tegen volgende week zullen de kapotte laptops door de technicus hersteld zijn."},{"sentence":"By Friday, the coach ___ (choose) the final team.","verb":"choose","answer":"will have chosen","voice":"active","nl":"Tegen vrijdag zal de coach het definitieve team gekozen hebben."},{"sentence":"By the end of the trip, the photos ___ (upload) to the website.","verb":"upload","answer":"will have been uploaded","voice":"passive","nl":"Tegen het einde van de reis zullen de foto's naar de website geüpload zijn."}],"morph":{"base":"make","active":"will have made","passive":"will have been made"},"personNote":"will have voor alle personen","forms":{"active":{"aff":["will + have + past participle","She will have finished by six."],"neg":["won't + have + past participle","She won't have finished by six."],"q":["Will + subject + have + past participle?","Will you have finished by six?"]},"passive":{"aff":["will + have + been + past participle","It will have been made by then."],"neg":["won't + have + been + past participle","It won't have been made by then."],"q":["Will + subject + have + been + past participle?","Will it have been made by then?"]}}},{"id":"future-perfect-continuous","name":"Future Perfect Continuous","time":"future","aspect":"perfect continuous","graad":3,"decision":{"path":["Time frame = future? YES -> we look forward from now.","Perfect aspect: looking BACK from a future point at something ongoing up to then? YES.","Is DURATION / the ongoing process emphasised (how long it has been going on)? YES -> continuous, not Future Perfect Simple.","Active (subject does the action)? YES -> Future Perfect Continuous active (will have been + -ing).","Passive needed (subject undergoes)? almost never used -> avoid; rephrase."],"key":"By/at a future point + 'for/since' duration of an ongoing action: will have been + -ing."},"nl_name":"Toekomende tijd voltooid duurvorm (future perfect continuous / voltooid tegenwoordig toekomende tijd met duuraspect)","form":{"active":"subject + will have been + present participle (-ing). Example: 'By June, I will have been studying English for six years.' Question: swap subject and will -> 'Will you have been studying...?' Negative: will not / won't -> 'She won't have been working here for long.'","passive":"subject + will have been being + past participle. Example (very rare): 'The tunnel will have been being dug for two years by then.' Question: 'Will it have been being dug...?' Negative: 'It won't have been being dug...'","passive_note":"This passive is extremely rare, clumsy and almost always avoided. In real English people use the active ('workers will have been digging the tunnel...') or the Future Perfect Simple passive ('the tunnel will have been dug...'). Learn it only to recognise it, never to produce it."},"use":["To look back from a point in the FUTURE at an action that will still be in progress up to that moment.","To stress HOW LONG something will have been going on by a future time (duration with 'for' or 'since').","To explain a likely future result by pointing to a continuing activity ('He'll be tired because he will have been driving all day').","For ongoing situations that continue right up to a future deadline or event."],"signal_words":["by (then / next year / 2030)","by the time ...","for + duration (for ten years, for three hours)","since + starting point","when ... (a future moment)","in ... years' time","by the end of ...","next month / next week (as an end point)","all day / all morning (up to a future point)"],"examples":[{"active":"By next summer, Lars will have been learning the guitar for five years.","active_nl":"Tegen volgende zomer zal Lars al vijf jaar gitaar aan het leren zijn.","passive":"By next summer, the guitar will have been being taught to Lars for five years.","passive_nl":"Tegen volgende zomer zal de gitaar al vijf jaar aan Lars onderwezen worden. (zeer ongewoon)"},{"active":"When the match ends, the goalkeeper will have been standing in the rain for ninety minutes.","active_nl":"Wanneer de match eindigt, zal de doelman al negentig minuten in de regen gestaan hebben.","passive":"When the match ends, the goal will have been being defended for ninety minutes.","passive_nl":"Wanneer de match eindigt, zal het doel al negentig minuten verdedigd zijn geworden. (zeer ongewoon)"},{"active":"By 2035, scientists will have been testing the new vaccine for a decade.","active_nl":"Tegen 2035 zullen wetenschappers het nieuwe vaccin al tien jaar aan het testen zijn.","passive":"By 2035, the new vaccine will have been being tested for a decade.","passive_nl":"Tegen 2035 zal het nieuwe vaccin al tien jaar getest worden. (zeer ongewoon)"},{"active":"By the time we land in Tokyo, we will have been flying for eleven hours.","active_nl":"Tegen dat we in Tokio landen, zullen we al elf uur aan het vliegen zijn.","passive":"By the time we land, the plane will have been being flown for eleven hours.","passive_nl":"Tegen dat we landen, zal het vliegtuig al elf uur bestuurd worden. (zeer ongewoon)"},{"active":"Next month the app will have been running on our phones for a full year.","active_nl":"Volgende maand zal de app al een heel jaar op onze telefoons draaien.","passive":"Next month the app will have been being updated for a full year.","passive_nl":"Volgende maand zal de app al een heel jaar bijgewerkt worden. (zeer ongewoon)"}],"mistakes":["Forgetting 'been': writing 'will have working' instead of 'will have been working'.","Confusing it with the Future Perfect Simple: using 'will have worked for hours' when the focus is on the ongoing duration, which needs 'will have been working'.","Using a continuous form with state verbs (know, be, believe, own): say 'will have known him for years', not 'will have been knowing'.","Trying to build the passive ('will have been being cleaned'): almost never correct in real use; switch to the active or the Future Perfect Simple passive."],"relations":{"contrast":["Future Perfect Simple ('will have finished'): looks at a COMPLETED result by a future point; the continuous version stresses the ongoing PROCESS and its duration.","Future Continuous ('will be working'): an action in progress AT a future moment, without the 'looking back over a period' idea and usually without 'for/since'.","Present Perfect Continuous ('has been working'): same duration idea, but measured up to NOW instead of up to a FUTURE point."],"note":"It is the 'future + perfect + continuous' corner of the system: it stands at a future viewpoint and looks back over an activity that is still running, emphasising how long."},"practice":[{"sentence":"By next year, Sofie ___ (work) at the hospital for a decade.","verb":"work","answer":"will have been working","voice":"active","nl":"Tegen volgend jaar zal Sofie al tien jaar in het ziekenhuis werken."},{"sentence":"When the concert starts, the fans ___ (wait) outside for six hours.","verb":"wait","answer":"will have been waiting","voice":"active","nl":"Wanneer het concert begint, zullen de fans al zes uur buiten staan wachten."},{"sentence":"By the time you arrive, it ___ (rain) for three days straight.","verb":"rain","answer":"will have been raining","voice":"active","nl":"Tegen dat je aankomt, zal het al drie dagen aan een stuk geregend hebben."},{"sentence":"In June, our team ___ (train) for the marathon for eight months.","verb":"train","answer":"will have been training","voice":"active","nl":"In juni zal ons team al acht maanden voor de marathon trainen."},{"sentence":"By midnight, the robots ___ (assemble) cars for a full shift.","verb":"assemble","answer":"will have been assembling","voice":"active","nl":"Tegen middernacht zullen de robots al een volledige shift auto's in elkaar zetten."},{"sentence":"By 2040, the satellite ___ (orbit) the Earth for twenty years.","verb":"orbit","answer":"will have been orbiting","voice":"active","nl":"Tegen 2040 zal de satelliet al twintig jaar rond de aarde draaien."},{"sentence":"When she graduates, Emma ___ (study) at that school for six years.","verb":"study","answer":"will have been studying","voice":"active","nl":"Wanneer ze afstudeert, zal Emma al zes jaar op die school studeren."},{"sentence":"By the end of the tour, the band ___ (perform) every night for a month.","verb":"perform","answer":"will have been performing","voice":"active","nl":"Tegen het einde van de tournee zal de band al een maand elke avond optreden."},{"sentence":"By the time the results come in, the sample ___ (analyse) for hours. (receptive passive)","verb":"analyse","answer":"will have been being analysed","voice":"passive","nl":"Tegen dat de resultaten binnenkomen, zal het staal al uren geanalyseerd worden. (zeer ongewoon)"},{"sentence":"By next week, the old bridge ___ (repair) for two months. (receptive passive)","verb":"repair","answer":"will have been being repaired","voice":"passive","nl":"Tegen volgende week zal de oude brug al twee maanden hersteld worden. (zeer ongewoon)"}],"morph":{"base":"make","active":"will have been making","passive":null},"personNote":"will have been voor alle personen","forms":{"active":{"aff":["will + have + been + verb-ing","By June she will have been working here for a year."],"neg":["won't + have + been + verb-ing","She won't have been working here long."],"q":["Will + subject + have + been + verb-ing?","Will you have been working here for a year?"]},"passive":null}}];
+const PRACTICE = [{"sentence":"My little brother ___ (brush) his teeth every evening.","verb":"brush","answer":"brushes","voice":"active","nl":"Mijn broertje poetst elke avond zijn tanden.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"In our school, the doors ___ (lock) every night by the caretaker.","verb":"lock","answer":"are locked","voice":"passive","nl":"In onze school worden de deuren elke nacht door de conciërge gesloten.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"Water ___ (boil) at 100 degrees.","verb":"boil","answer":"boils","voice":"active","nl":"Water kookt bij 100 graden.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"This bread ___ (bake) fresh every morning.","verb":"bake","answer":"is baked","voice":"passive","nl":"Dit brood wordt elke ochtend vers gebakken.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"We usually ___ (play) football on Wednesdays.","verb":"play","answer":"play","voice":"active","nl":"We spelen meestal op woensdag voetbal.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"French ___ (speak) in many African countries.","verb":"speak","answer":"is spoken","voice":"passive","nl":"Frans wordt in veel Afrikaanse landen gesproken.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"The train to Brussels ___ (leave) at half past eight every day.","verb":"leave","answer":"leaves","voice":"active","nl":"De trein naar Brussel vertrekt elke dag om half negen.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"These toys ___ (make) in China.","verb":"make","answer":"are made","voice":"passive","nl":"Dit speelgoed wordt in China gemaakt.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"Be quiet! The baby ___ (sleep).","verb":"sleep","answer":"is sleeping","voice":"active","nl":"Wees stil! De baby slaapt.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"Right now, the streets ___ (clean) by the city workers.","verb":"clean","answer":"are being cleaned","voice":"passive","nl":"Op dit moment worden de straten door de stadsarbeiders schoongemaakt.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"Look at the sky! It ___ (rain) again.","verb":"rain","answer":"is raining","voice":"active","nl":"Kijk naar de lucht! Het regent weer.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"At the moment, a new bridge ___ (build) near our school.","verb":"build","answer":"is being built","voice":"passive","nl":"Op dit moment wordt er een nieuwe brug bij onze school gebouwd.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"Listen! The neighbours ___ (play) loud music.","verb":"play","answer":"are playing","voice":"active","nl":"Luister! De buren spelen luide muziek.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"Right now, the results ___ (check) by the teacher.","verb":"check","answer":"are being checked","voice":"passive","nl":"Op dit moment worden de resultaten door de leraar gecontroleerd.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"I can't talk now because I ___ (drive) to the airport.","verb":"drive","answer":"am driving","voice":"active","nl":"Ik kan nu niet praten omdat ik naar de luchthaven rijd.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"Look! Your photos ___ (upload) to the cloud at the moment.","verb":"upload","answer":"are being uploaded","voice":"passive","nl":"Kijk! Je foto's worden op dit moment naar de cloud geüpload.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"I ___ (lose) my phone, so I can't call you.","verb":"lose","answer":"have lost","voice":"active","nl":"Ik ben mijn telefoon kwijt (verloren), dus ik kan je niet bellen.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"The classroom ___ (clean) already.","verb":"clean","answer":"has been cleaned","voice":"passive","nl":"Het klaslokaal is al schoongemaakt.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"___ you ever ___ (visit) Spain?","verb":"visit","answer":"Have ... visited","voice":"active","nl":"Heb je ooit Spanje bezocht?","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"The new bridge ___ (build) recently.","verb":"build","answer":"has been built","voice":"passive","nl":"De nieuwe brug is onlangs gebouwd.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"Our teacher ___ (give) us a lot of homework this week.","verb":"give","answer":"has given","voice":"active","nl":"Onze leraar heeft ons deze week veel huiswerk gegeven.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"Three emails ___ (send) so far today.","verb":"send","answer":"have been sent","voice":"passive","nl":"Er zijn vandaag tot nu toe drie e-mails verstuurd.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"She ___ (not finish) her project yet.","verb":"finish","answer":"has not finished","voice":"active","nl":"Ze heeft haar project nog niet afgemaakt.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"The winners ___ (announce) already.","verb":"announce","answer":"have been announced","voice":"passive","nl":"De winnaars zijn al bekendgemaakt.","tenseId":"present-perfect","tenseName":"Present Perfect Simple","graad":2},{"sentence":"We ___ (wait) for the bus for twenty minutes now.","verb":"wait","answer":"have been waiting","voice":"active","nl":"We staan nu al twintig minuten op de bus te wachten.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"The road ___ (repair) for three weeks, so there is a lot of traffic.","verb":"repair","answer":"has been being repaired","voice":"passive","nl":"De weg wordt al drie weken hersteld, dus er is veel verkeer.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"She ___ (revise) for her exams since early this morning.","verb":"revise","answer":"has been revising","voice":"active","nl":"Ze is al sinds vanmorgen vroeg aan het studeren voor haar examens.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"The results ___ (analyse) by the lab since Monday.","verb":"analyse","answer":"have been being analysed","voice":"passive","nl":"De resultaten worden al sinds maandag door het labo geanalyseerd.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"How long ___ you ___ (play) the guitar?","verb":"play","answer":"have ... been playing","voice":"active","nl":"Hoe lang speel je al gitaar?","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"The garden ___ (water) all afternoon, so the ground is soaked.","verb":"water","answer":"has been being watered","voice":"passive","nl":"De tuin wordt al de hele namiddag begoten, dus de grond is doorweekt.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"My eyes hurt because I ___ (look) at a screen all day.","verb":"look","answer":"have been looking","voice":"active","nl":"Mijn ogen doen pijn omdat ik de hele dag naar een scherm heb zitten kijken.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"It ___ (rain) since we left home this morning.","verb":"rain","answer":"has been raining","voice":"active","nl":"Het regent al sinds we vanmorgen van huis vertrokken.","tenseId":"present-perfect-continuous","tenseName":"Present Perfect Continuous","graad":3},{"sentence":"We ___ (visit) the science museum last Friday.","verb":"visit","answer":"visited","voice":"active","nl":"We bezochten vorige vrijdag het wetenschapsmuseum.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"The trophy ___ (win) by our team in 2021.","verb":"win","answer":"was won","voice":"passive","nl":"De trofee werd in 2021 door ons team gewonnen.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"My brother ___ (buy) a new phone two weeks ago.","verb":"buy","answer":"bought","voice":"active","nl":"Mijn broer kocht twee weken geleden een nieuwe telefoon.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"The classrooms ___ (clean) yesterday evening.","verb":"clean","answer":"were cleaned","voice":"passive","nl":"De klaslokalen werden gisteravond schoongemaakt.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"She ___ (not / eat) breakfast this morning because she was late.","verb":"eat","answer":"did not eat","voice":"active","nl":"Ze at vanmorgen geen ontbijt omdat ze te laat was.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"The email ___ (send) to all parents last week.","verb":"send","answer":"was sent","voice":"passive","nl":"De e-mail werd vorige week naar alle ouders gestuurd.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"___ you ___ (see) the match on TV last night?","verb":"see","answer":"Did / see","voice":"active","nl":"Zag je de wedstrijd gisteravond op tv?","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"America ___ (discover) by Europeans in 1492.","verb":"discover","answer":"was discovered","voice":"passive","nl":"Amerika werd in 1492 door Europeanen ontdekt.","tenseId":"past-simple","tenseName":"Past Simple","graad":2},{"sentence":"At 6 p.m. yesterday we ___ (have) dinner.","verb":"have","answer":"were having","voice":"active","nl":"Om 18 uur gisteren waren we aan het eten.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"When the fire alarm rang, the exam ___ (write) in the big hall.","verb":"write","answer":"was being written","voice":"passive","nl":"Toen het brandalarm afging, werd het examen in de grote zaal gemaakt.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"While the teacher ___ (explain) the lesson, two boys were whispering.","verb":"explain","answer":"was explaining","voice":"active","nl":"Terwijl de leraar de les uitlegde, waren twee jongens aan het fluisteren.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"The whole afternoon the new bikes ___ (test) on the track.","verb":"test","answer":"were being tested","voice":"passive","nl":"De hele namiddag werden de nieuwe fietsen op de piste getest.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"I ___ (walk) to school when it suddenly started to snow.","verb":"walk","answer":"was walking","voice":"active","nl":"Ik was naar school aan het wandelen toen het plots begon te sneeuwen.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"At that moment the tickets ___ (sell) very fast online.","verb":"sell","answer":"were being sold","voice":"passive","nl":"Op dat moment werden de tickets heel snel online verkocht.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"While my parents were sleeping, my brother ___ (play) video games.","verb":"play","answer":"was playing","voice":"active","nl":"Terwijl mijn ouders sliepen, was mijn broer videospelletjes aan het spelen.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"When we visited the museum, the old painting ___ (clean) by an expert.","verb":"clean","answer":"was being cleaned","voice":"passive","nl":"Toen we het museum bezochten, werd het oude schilderij door een expert gereinigd.","tenseId":"past-continuous","tenseName":"Past Continuous","graad":2},{"sentence":"When the bus finally came, we ___ (wait) for an hour already.","verb":"wait","answer":"had waited","voice":"active","nl":"Toen de bus eindelijk kwam, hadden we al een uur gewacht.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"The stadium was empty because the game ___ (cancel) earlier that day.","verb":"cancel","answer":"had been cancelled","voice":"passive","nl":"Het stadion was leeg omdat de wedstrijd die dag eerder was afgelast.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"By the time I got home, my parents ___ (eat) dinner without me.","verb":"eat","answer":"had eaten","voice":"active","nl":"Tegen de tijd dat ik thuiskwam, hadden mijn ouders zonder mij gegeten.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"The message could not be read because it ___ (delete) before noon.","verb":"delete","answer":"had been deleted","voice":"passive","nl":"Het bericht kon niet gelezen worden omdat het voor de middag was verwijderd.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"She passed the exam easily because she ___ (study) hard all week.","verb":"study","answer":"had studied","voice":"active","nl":"Ze slaagde makkelijk voor het examen omdat ze de hele week hard had gestudeerd.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"When the guests arrived, the table ___ (already/set) by the children.","verb":"set","answer":"had already been set","voice":"passive","nl":"Toen de gasten aankwamen, was de tafel al door de kinderen gedekt.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"After the plane ___ (take off), the pilot spoke to the passengers.","verb":"take off","answer":"had taken off","voice":"active","nl":"Nadat het vliegtuig was opgestegen, sprak de piloot tot de passagiers.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"The old bridge was closed because it ___ (damage) in the storm the night before.","verb":"damage","answer":"had been damaged","voice":"passive","nl":"De oude brug was gesloten omdat hij de nacht ervoor in de storm beschadigd was.","tenseId":"past-perfect","tenseName":"Past Perfect Simple","graad":2},{"sentence":"The children ___ (play) outside for hours before it suddenly started to rain.","verb":"play","answer":"had been playing","voice":"active","nl":"De kinderen speelden al uren buiten voordat het plots begon te regenen.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"The road ___ (repair) for weeks before it finally reopened to traffic.","verb":"repair","answer":"had been being repaired","voice":"passive","nl":"De weg werd al weken hersteld voordat hij eindelijk weer openging voor het verkeer.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"She was exhausted because she ___ (study) all night for the exam.","verb":"study","answer":"had been studying","voice":"active","nl":"Ze was uitgeput omdat ze de hele nacht voor het examen had gestudeerd.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"By the time the report came out, the data ___ (collect) for six months.","verb":"collect","answer":"had been being collected","voice":"passive","nl":"Tegen de tijd dat het rapport verscheen, werden de gegevens al zes maanden verzameld.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"We ___ (wait) for the train for twenty minutes when it was finally cancelled.","verb":"wait","answer":"had been waiting","voice":"active","nl":"We stonden al twintig minuten op de trein te wachten toen die uiteindelijk werd afgeschaft.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"The new song ___ (record) for weeks before the band released it.","verb":"record","answer":"had been being recorded","voice":"passive","nl":"Het nieuwe nummer werd al weken opgenomen voordat de band het uitbracht.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"His eyes hurt because he ___ (stare) at the screen for far too long.","verb":"stare","answer":"had been staring","voice":"active","nl":"Zijn ogen deden pijn omdat hij veel te lang naar het scherm had zitten staren.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"The stadium ___ (build) for three years before the first match was played there.","verb":"build","answer":"had been being built","voice":"passive","nl":"Aan het stadion werd al drie jaar gebouwd voordat de eerste wedstrijd er werd gespeeld.","tenseId":"past-perfect-continuous","tenseName":"Past Perfect Continuous","graad":3},{"sentence":"I think it ___ (snow) tomorrow morning.","verb":"snow","answer":"will snow","voice":"active","nl":"Ik denk dat het morgenochtend zal sneeuwen.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"The new sports hall ___ (open) next September.","verb":"open","answer":"will be opened","voice":"passive","nl":"De nieuwe sporthal zal volgend september geopend worden.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"Don't worry, I ___ (help) you with your homework tonight.","verb":"help","answer":"will help","voice":"active","nl":"Geen zorgen, ik zal je vanavond helpen met je huiswerk.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"In the future, more cars ___ (drive) by computers.","verb":"drive","answer":"will be driven","voice":"passive","nl":"In de toekomst zullen meer auto's door computers bestuurd worden.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"Watch out! You ___ (drop) that glass!","verb":"drop","answer":"are going to drop","voice":"active","nl":"Kijk uit! Je gaat dat glas laten vallen!","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"The old bridge ___ (repair) next year.","verb":"repair","answer":"is going to be repaired","voice":"passive","nl":"De oude brug gaat volgend jaar hersteld worden.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"We ___ (visit) our grandparents in Spain this summer; we already booked the tickets.","verb":"visit","answer":"are going to visit","voice":"active","nl":"We gaan deze zomer onze grootouders in Spanje bezoeken; we hebben de tickets al geboekt.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"The winners ___ (announce) at the end of the show.","verb":"announce","answer":"will be announced","voice":"passive","nl":"De winnaars zullen aan het einde van de show bekendgemaakt worden.","tenseId":"future-simple","tenseName":"Future Simple (will)","graad":2},{"sentence":"This time next week, we ___ (lie) on a beach in Greece.","verb":"lie","answer":"will be lying","voice":"active","nl":"Volgende week om deze tijd zullen we op een strand in Griekenland aan het liggen zijn.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"At 9 p.m. tonight, the new bridge ___ (light) up for the festival.","verb":"light","answer":"will be being lit","voice":"passive","nl":"Vanavond om 21 uur zal de nieuwe brug voor het festival verlicht worden.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"When the teacher walks in, the pupils ___ (finish) their group work.","verb":"finish","answer":"will be finishing","voice":"active","nl":"Wanneer de leerkracht binnenkomt, zullen de leerlingen hun groepswerk aan het afronden zijn.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"All morning tomorrow, the science lab ___ (use) by the exam group.","verb":"use","answer":"will be being used","voice":"passive","nl":"Morgen de hele ochtend zal het wetenschapslokaal door de examengroep gebruikt worden.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"Don't phone at seven, because I ___ (train) at the gym then.","verb":"train","answer":"will be training","voice":"active","nl":"Bel niet om zeven uur, want dan zal ik in de sportzaal aan het trainen zijn.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"During the meeting, the results ___ (present) by our project leader.","verb":"present","answer":"will be being presented","voice":"passive","nl":"Tijdens de vergadering zullen de resultaten door onze projectleider voorgesteld worden.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"This time tomorrow, thousands of fans ___ (cheer) in the stadium.","verb":"cheer","answer":"will be cheering","voice":"active","nl":"Morgen om deze tijd zullen duizenden fans in het stadion aan het juichen zijn.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"At midnight, the software ___ (update) automatically on every computer.","verb":"update","answer":"will be being updated","voice":"passive","nl":"Om middernacht zal de software automatisch op elke computer bijgewerkt worden.","tenseId":"future-continuous","tenseName":"Future Continuous","graad":3},{"sentence":"By the end of this year, our class ___ (read) six novels.","verb":"read","answer":"will have read","voice":"active","nl":"Tegen het einde van dit jaar zal onze klas zes romans gelezen hebben.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By next month, the new sports hall ___ (build).","verb":"build","answer":"will have been built","voice":"passive","nl":"Tegen volgende maand zal de nieuwe sporthal gebouwd zijn.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By the time the train leaves, we ___ (find) our seats.","verb":"find","answer":"will have found","voice":"active","nl":"Tegen dat de trein vertrekt, zullen wij onze plaatsen gevonden hebben.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"Before the concert starts, all the tickets ___ (sell).","verb":"sell","answer":"will have been sold","voice":"passive","nl":"Voordat het concert begint, zullen alle tickets verkocht zijn.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By 2040, engineers ___ (design) much faster computers.","verb":"design","answer":"will have designed","voice":"active","nl":"Tegen 2040 zullen ingenieurs veel snellere computers ontworpen hebben.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By tomorrow morning, the report ___ (send) to every teacher.","verb":"send","answer":"will have been sent","voice":"passive","nl":"Tegen morgenochtend zal het rapport naar elke leerkracht gestuurd zijn.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By the time you wake up, the plane ___ (land) in Rome.","verb":"land","answer":"will have landed","voice":"active","nl":"Tegen dat jij wakker wordt, zal het vliegtuig in Rome geland zijn.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By next week, the broken laptops ___ (repair) by the technician.","verb":"repair","answer":"will have been repaired","voice":"passive","nl":"Tegen volgende week zullen de kapotte laptops door de technicus hersteld zijn.","tenseId":"future-perfect","tenseName":"Future Perfect Simple","graad":3},{"sentence":"By next year, Sofie ___ (work) at the hospital for a decade.","verb":"work","answer":"will have been working","voice":"active","nl":"Tegen volgend jaar zal Sofie al tien jaar in het ziekenhuis werken.","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"By the time the results come in, the sample ___ (analyse) for hours. (receptive passive)","verb":"analyse","answer":"will have been being analysed","voice":"passive","nl":"Tegen dat de resultaten binnenkomen, zal het staal al uren geanalyseerd worden. (zeer ongewoon)","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"When the concert starts, the fans ___ (wait) outside for six hours.","verb":"wait","answer":"will have been waiting","voice":"active","nl":"Wanneer het concert begint, zullen de fans al zes uur buiten staan wachten.","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"By next week, the old bridge ___ (repair) for two months. (receptive passive)","verb":"repair","answer":"will have been being repaired","voice":"passive","nl":"Tegen volgende week zal de oude brug al twee maanden hersteld worden. (zeer ongewoon)","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"By the time you arrive, it ___ (rain) for three days straight.","verb":"rain","answer":"will have been raining","voice":"active","nl":"Tegen dat je aankomt, zal het al drie dagen aan een stuk geregend hebben.","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"In June, our team ___ (train) for the marathon for eight months.","verb":"train","answer":"will have been training","voice":"active","nl":"In juni zal ons team al acht maanden voor de marathon trainen.","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"By midnight, the robots ___ (assemble) cars for a full shift.","verb":"assemble","answer":"will have been assembling","voice":"active","nl":"Tegen middernacht zullen de robots al een volledige shift auto's in elkaar zetten.","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"By 2040, the satellite ___ (orbit) the Earth for twenty years.","verb":"orbit","answer":"will have been orbiting","voice":"active","nl":"Tegen 2040 zal de satelliet al twintig jaar rond de aarde draaien.","tenseId":"future-perfect-continuous","tenseName":"Future Perfect Continuous","graad":3},{"sentence":"My grandmother always ___ (watch) the news at seven o'clock.","verb":"watch","answer":"watches","voice":"active","nl":"Mijn oma kijkt altijd om zeven uur naar het nieuws.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"The classroom ___ (clean) every day after school.","verb":"clean","answer":"is cleaned","voice":"passive","nl":"Het klaslokaal wordt elke dag na school schoongemaakt.","tenseId":"present-simple","tenseName":"Present Simple","graad":2},{"sentence":"The kids ___ (do) their homework in the kitchen right now.","verb":"do","answer":"are doing","voice":"active","nl":"De kinderen maken op dit moment hun huiswerk in de keuken.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2},{"sentence":"Be careful! The floor ___ (paint) at the moment.","verb":"paint","answer":"is being painted","voice":"passive","nl":"Wees voorzichtig! De vloer wordt op dit moment geschilderd.","tenseId":"present-continuous","tenseName":"Present Continuous","graad":2}];
+
+/* ================= STATE & HELPERS ================= */
+let grade=2, view='uitleg', voice='active';
+const byId={}; TENSES.forEach(t=>byId[t.id]=t);
+const TIME_ORDER=['present','past','future'];
+const ASPECT_ORDER=['simple','continuous','perfect','perfect continuous'];
+const TIME_NL={present:'Present · tegenwoordig', past:'Past · verleden', future:'Future · toekomst'};
+const TIME_LABEL={present:'PRESENT', past:'PAST', future:'FUTURE'};
+const ASPECT_NL={simple:'Simple', continuous:'Continuous', perfect:'Perfect', 'perfect continuous':'Perfect Continuous'};
+const COL={past:'#cf7526', present:'#0e8db3', future:'#7a4fd0'};
+const ASPECT_CAP={
+  simple:'één punt / een gewoonte',
+  continuous:'bezig — in volle gang',
+  perfect:'afgerond, verbonden met een moment',
+  'perfect continuous':'duur die tot een moment loopt'
+};
+function tenseAt(time,aspect){ return TENSES.find(t=>t.time===time && t.aspect===aspect); }
+function sortedTenses(){ return TENSES.slice().sort((a,b)=> TIME_ORDER.indexOf(a.time)-TIME_ORDER.indexOf(b.time) || ASPECT_ORDER.indexOf(a.aspect)-ASPECT_ORDER.indexOf(b.aspect)); }
+function inGrade(t){ return t.graad<=grade; }
+function esc(s){ return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escAttr(s){ return esc(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+/* ================= PRONUNCIATION (Web Speech) ================= */
+const CAN_SPEAK = ('speechSynthesis' in window);
+let enVoice=null;
+function pickVoice(){
+  if(!CAN_SPEAK) return;
+  const vs=speechSynthesis.getVoices();
+  enVoice = vs.find(v=>/en[-_]GB/i.test(v.lang)) || vs.find(v=>/^en/i.test(v.lang)) || null;
+}
+if(CAN_SPEAK){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice;
+  /* warm up the voice list on first interaction so the first 🔊 is instant */
+  document.addEventListener('pointerdown', ()=>{ try{ speechSynthesis.getVoices(); }catch(e){} }, {once:true});
+}
+function speakEl(btn){
+  if(!CAN_SPEAK) return;
+  const text=btn.dataset.say||''; if(!text) return;
+  speechSynthesis.cancel();
+  document.querySelectorAll('.sayBtn.speaking').forEach(b=>b.classList.remove('speaking'));
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-GB'; if(enVoice) u.voice=enVoice; u.rate=0.92;
+  btn.classList.add('speaking');
+  u.onend=()=>btn.classList.remove('speaking');
+  u.onerror=()=>btn.classList.remove('speaking');
+  speechSynthesis.speak(u);
+}
+/* 🔊 button for an English sentence (no-op markup when speech unavailable) */
+function sayBtn(text){ return CAN_SPEAK ? `<button class="sayBtn" data-say="${escAttr(text)}" onclick="speakEl(this)" title="Uitspraak beluisteren" aria-label="Uitspraak">🔊</button>` : ''; }
+
+/* ================= THE ANIMATED TIMELINE ================= */
+/* time = WHERE on the line (colour) · aspect = the SHAPE of the action */
+function timelineSVG(time, aspect){
+  const col='var(--'+time+')';  /* CSS var so a theme switch recolours live */
+  const R = time==='past'?90 : time==='future'?210 : 150;
+  const y=40;
+  let g='';
+  if(aspect==='simple'){
+    if(time==='present'){ // habit = repeated points
+      g=[R-22,R,R+22].map((x,i)=>`<circle class="tl-dot" style="animation-delay:${i*0.25}s" cx="${x}" cy="${y}" r="6" fill="${col}"/>`).join('');
+    } else {
+      g=`<circle class="tl-dot" cx="${R}" cy="${y}" r="8" fill="${col}"/>`;
+    }
+  } else if(aspect==='continuous'){
+    const x0=R-32;
+    g=`<path class="tl-wave" d="M${x0} ${y} q 8 -13 16 0 t 16 0 t 16 0 t 16 0" stroke="${col}"/>`;
+  } else if(aspect==='perfect'){
+    const a=R-54;
+    g=`<circle class="tl-dot" cx="${a}" cy="${y}" r="5.5" fill="${col}"/>
+       <line class="tl-arrow-shaft" x1="${a+6}" y1="${y}" x2="${R-13}" y2="${y}" stroke="${col}"/>
+       <polygon class="tl-arrow-head" points="${R-13},${y-5} ${R-13},${y+5} ${R-2},${y}" fill="${col}"/>
+       <circle class="tl-refdot" cx="${R}" cy="${y}" r="6.5" fill="var(--panel)" stroke="${col}"/>`;
+  } else { /* perfect continuous */
+    const x0=R-56;
+    g=`<rect class="tl-bar" x="${x0}" y="${y-6}" width="${R-x0}" height="12" rx="6" fill="${col}" opacity=".85"/>
+       <circle class="tl-refdot" cx="${R}" cy="${y}" r="6.5" fill="var(--panel)" stroke="${col}"/>`;
+  }
+  return `<svg class="tl" viewBox="0 0 300 62" preserveAspectRatio="xMidYMid meet" role="img" aria-label="tijdlijn ${time} ${aspect}">
+    <line class="tl-axis" x1="12" y1="${y}" x2="288" y2="${y}"/>
+    <polygon points="288,${y} 281,${y-4} 281,${y+4}" fill="var(--border)"/>
+    <line class="tl-now-line" x1="150" y1="16" x2="150" y2="52"/>
+    <text class="tl-now-label" x="150" y="12" text-anchor="middle">NOW</text>
+    <text class="tl-tick" x="14" y="60" text-anchor="start">past</text>
+    <text class="tl-tick" x="286" y="60" text-anchor="end">future</text>
+    ${g}
+  </svg>`;
+}
+
+/* form string -> visual slot chips */
+function formSlots(str){
+  const head=str.split('(')[0].split('. ')[0];
+  const parts=head.split(' + ').map(x=>x.trim()).filter(Boolean);
+  return parts.map(p=>{
+    let cls='';
+    if(/participle|verb|past form/i.test(p)) cls='s-verb';
+    else if(/^(am\/is\/are|was\/were|was ?\/ ?were|be|been|being|have\/has|have\/has been|has|have|had|will|had been|will have been|have\/has been being|had been being|will have been being)$/i.test(p)) cls='s-be';
+    return `<span class="slot ${cls}">${esc(p)}</span>`;
+  }).join('<span class="plus">+</span>');
+}
+
+/* ================= TOP CONTROLS ================= */
+function setGrade(g){ grade=g; document.querySelectorAll('#gradeSwitch button').forEach(b=>b.classList.toggle('on',+b.dataset.g===g)); renderAll(); }
+function setView(v){ view=v; document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));
+  document.getElementById('v-uitleg').classList.toggle('hide',v!=='uitleg');
+  document.getElementById('v-mindmap').classList.toggle('hide',v!=='mindmap');
+  document.getElementById('v-boom').classList.toggle('hide',v!=='boom');
+  document.getElementById('v-vergelijk').classList.toggle('hide',v!=='vergelijk');
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  const secId={uitleg:'v-uitleg',mindmap:'v-mindmap',boom:'v-boom',vergelijk:'v-vergelijk'}[v];
+  const sec=document.getElementById(secId);
+  if(sec){ sec.classList.remove('viewAnim'); void sec.offsetWidth; sec.classList.add('viewAnim'); }
+  updateLead(); }
+function setVoice(vo){ voice=vo; document.querySelectorAll('#voiceSwitch button').forEach(b=>b.classList.toggle('on',b.dataset.voice===vo)); renderMindmap(); }
+function updateLead(){
+  const n=TENSES.filter(inGrade).length;
+  const g= grade===2 ? 'Tweede graad — de kerntijden.' : 'Derde graad — <b>alle 12 tijden</b>, met de nieuwe gemarkeerd.';
+  const per={uitleg:'Elke tijd als <b>tijdlijn</b>: de kleur = wanneer, de vorm = het aspect. Wissel actief/passief en klap open voor meer.',
+    mindmap:'De 12 tijden als raster: <b>tijd = kleur</b>, <b>aspect = vorm op de tijdlijn</b>.',
+    boom:'Laat de ja/nee-vragen je stap voor stap naar de juiste tijd leiden — met streak &amp; score.',
+    vergelijk:'De tijden die het vaakst door elkaar lopen, <b>naast elkaar</b>: tijdlijn, vorm, voorbeeld en de regel wanneer je welke kiest.'};
+  document.getElementById('lead').innerHTML=`${g} <b>${n}</b> tijden actief. ${per[view]}`;
+}
+function renderAll(){ renderKey(); renderUitleg(); renderMindmap(); renderTreeRef(); buildPractice(); renderVergelijk(); updateLead(); }
+
+/* ================= READING KEY ================= */
+function renderKey(){
+  const colors=TIME_ORDER.map(t=>`<div class="keyRow"><span class="swatch" style="background:var(--${t})"></span> <b>${TIME_LABEL[t].toLowerCase().replace(/^./,c=>c.toUpperCase())}</b></div>`).join('');
+  const shapes=ASPECT_ORDER.map(a=>`<div class="keyRow"><span class="miniTl">${timelineSVG('present',a)}</span> <b>${ASPECT_NL[a]}</b> — ${ASPECT_CAP[a]}</div>`).join('');
+  document.getElementById('readKey').innerHTML=
+   `<div class="keyTitle">Zo lees je de tijdlijnen</div>
+    <div class="keyGrid">
+      <div class="keyCol"><h4>Kleur = wanneer (tijd)</h4>${colors}
+        <div class="keyRow" style="margin-top:8px;color:var(--dim)"><span style="color:var(--star);font-weight:800">┊ NOW</span> = het 'nu'-streepje op elke tijdlijn</div></div>
+      <div class="keyCol"><h4>Vorm = hoe (aspect)</h4>${shapes}</div>
+    </div>`;
+}
+
+/* ================= VIEW 1 · UITLEG (cards) ================= */
+const cardVoice={};
+function renderUitleg(){
+  const list=sortedTenses().filter(inGrade);
+  document.getElementById('qindex').innerHTML=list.map(t=>
+    `<a href="#t-${t.id}"><span class="qtl">${timelineSVG(t.time,t.aspect)}</span>${esc(t.name)}</a>`).join('');
+  document.getElementById('uitlegBody').innerHTML=list.map(cardHTML).join('');
+}
+/* wrap this tense's signal words where they appear in an example sentence */
+function highlightSignals(sent, words){
+  let s=esc(sent);
+  if(!words||!words.length) return s;
+  const uniq=[...new Set(words)].sort((a,b)=>b.length-a.length);
+  for(const w of uniq){
+    const rx=new RegExp('\\b('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')\\b','gi');
+    s=s.replace(rx,'<span class="sig" title="signaalwoord — dit wijst naar deze tijd">$1</span>');
+  }
+  return s;
+}
+/* base verb -> conjugated form, letter by letter (accent-coloured on cards) */
+/* accurate +/-/? forms panel (affirmative shown as the coloured recipe) */
+function formsHTML(t, vo){
+  const f = t.forms ? t.forms[vo] : null;
+  if(vo==='passive' && !f){
+    return `<div class="forms"><div class="fhdr">Vormen</div><div class="fnone">De passieve vorm bestaat in theorie, maar wordt in de praktijk zo goed als nooit gebruikt.</div></div>`;
+  }
+  if(!f) return '';
+  const structure = vo==='active'? t.form.active : t.form.passive;
+  const affRow=`<div class="frow"><span class="ftag plus">+</span><div class="fbody"><div class="fchips">${formSlots(structure)}</div><div class="fex">${esc(f.aff[1])} ${sayBtn(f.aff[1])}</div></div></div>`;
+  const row=(tag,cls,pair)=>`<div class="frow"><span class="ftag ${cls}">${tag}</span><div class="fbody"><div class="fpat">${esc(pair[0])}</div><div class="fex">${esc(pair[1])} ${sayBtn(pair[1])}</div></div></div>`;
+  const note = (vo==='active' && t.personNote) ? `<div class="pnote"><span class="pnlab">vervoeging</span> ${esc(t.personNote)}</div>` : '';
+  return `<div class="forms">
+    <div class="fhdr"><b>+</b> bevestigend · <b>−</b> ontkennend · <b>?</b> vraag</div>
+    ${affRow}
+    ${row('−','min',f.neg)}
+    ${row('?','q',f.q)}
+    ${note}
+  </div>`;
+}
+function heroRightHTML(t){
+  const vo=cardVoice[t.id]||'active';
+  const form= vo==='active'? t.form.active : t.form.passive;
+  const ex=t.examples[0];
+  const sent= vo==='active'? ex.active : ex.passive;
+  const snl = vo==='active'? ex.active_nl : ex.passive_nl;
+  return `<div class="voiceMini">
+      <button data-v="active" class="${vo==='active'?'on':''}" onclick="setCardVoice('${t.id}','active')">Actief</button>
+      <button data-v="passive" class="${vo==='passive'?'on':''}" onclick="setCardVoice('${t.id}','passive')">Passief</button>
+    </div>
+    ${formsHTML(t,vo)}
+    <div class="morph ${vo==='active'?'act':'pas'}">
+      <div class="mlabel">${vo==='active'?'Voorbeeld in context':'Passief in context'} <span class="swapIcon">⇄</span> ${sayBtn(sent)}</div>
+      <div class="msent"><span class="morphSent">${highlightSignals(sent, t.signal_words)}</span></div>
+      <div class="mnl">${esc(snl)}</div>
+    </div>`;
+}
+function setCardVoice(id,vo){
+  const prev=cardVoice[id]||'active';
+  cardVoice[id]=vo;
+  const card=document.getElementById('t-'+id); if(!card) return;
+  const right=card.querySelector('.heroRight');
+  if(prev!==vo){
+    const s=right.querySelector('.morphSent');
+    if(s){ s.classList.add('out'); }
+    setTimeout(()=>{ right.innerHTML=heroRightHTML(byId[id]); },170);
+  } else { right.innerHTML=heroRightHTML(byId[id]); }
+}
+function toggleMore(id){
+  const card=document.getElementById('t-'+id); if(!card) return;
+  card.querySelector('.more').classList.toggle('open');
+  card.querySelector('.moreBtn').classList.toggle('open');
+  const b=card.querySelector('.moreBtn .mtxt');
+  const open=card.querySelector('.more').classList.contains('open');
+  if(b) b.textContent= open?'Minder tonen':'Meer: gebruik · signaalwoorden · 5 voorbeelden · fouten';
+}
+function cardHTML(t){
+  const isNew = t.graad===3;
+  const gradeBadge = t.graad===2?'<span class="badge b-g2">2de graad</span>':'<span class="badge b-g3">3de graad</span>';
+  const newBadge = isNew?'<span class="badge b-new">nieuw</span>':'';
+  const ex = t.examples.map(e=>`<tr><td class="en"><span class="vh">A</span> ${esc(e.active)}<div class="nl">${esc(e.active_nl)}</div></td>
+     <td class="en"><span class="vhp">P</span> ${esc(e.passive)}<div class="nl">${esc(e.passive_nl)}</div></td></tr>`).join('');
+  return `<div class="tcard time-${t.time}" id="t-${t.id}">
+    <div class="th">
+      <div><div class="tn">${esc(t.name)}</div><div class="tnl">${esc(t.nl_name)}</div></div>
+      <div class="tmeta">${newBadge}${gradeBadge}
+        <span class="badge b-time">${esc(t.time)} · ${esc(t.aspect)}</span></div>
+    </div>
+    <div class="tbody">
+      <div class="hero">
+        <div class="heroTl">${timelineSVG(t.time,t.aspect)}<div class="cap">${ASPECT_CAP[t.aspect]}</div></div>
+        <div class="heroRight">${heroRightHTML(t)}</div>
+      </div>
+      <button class="moreBtn" onclick="toggleMore('${t.id}')"><span class="chev">▾</span> <span class="mtxt">Meer: gebruik · signaalwoorden · 5 voorbeelden · fouten</span></button>
+      <div class="more"><div class="moreInner">
+        <div class="subh">Wanneer gebruik je deze tijd?</div>
+        <ul class="use">${t.use.map(u=>`<li>${esc(u)}</li>`).join('')}</ul>
+        <div class="subh">Signaalwoorden</div>
+        <div class="chips">${t.signal_words.map((s,i)=>`<span class="chip" style="animation-delay:${i*0.03}s">${esc(s)}</span>`).join('')}</div>
+        <div class="subh">Voorbeelden — actief &amp; passief</div>
+        <table class="ex"><tr><th>Active</th><th>Passive</th></tr>${ex}</table>
+        <div class="subh">Veelgemaakte fouten</div>
+        <ul class="mist">${t.mistakes.map(m=>`<li>${esc(m)}</li>`).join('')}</ul>
+        <div class="subh">Verband met andere tijden</div>
+        <ul class="mist">${t.relations.contrast.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>
+        <div class="relnote">${esc(t.relations.note)}</div>
+      </div></div>
+    </div>
+  </div>`;
+}
+
+/* ================= VIEW 2 · MINDMAP ================= */
+let mmSel=null;
+function renderMindmap(){
+  const g=document.getElementById('mmgrid');
+  let html=`<div class="mmhead"></div>`+ASPECT_ORDER.map(a=>`<div class="mmhead"><span class="aspGlyph">${timelineSVG('present',a)}</span>${ASPECT_NL[a]}</div>`).join('');
+  for(const time of TIME_ORDER){
+    html+=`<div class="mmrow-label time-${time}">${TIME_LABEL[time]}</div>`;
+    for(const aspect of ASPECT_ORDER){
+      const t=tenseAt(time,aspect); if(!t){ html+=`<div class="mmcell locked"></div>`; continue; }
+      const locked = !inGrade(t);
+      const badge = t.graad===2?`<span class="cb b-g2">2de</span>`:`<span class="cb b-g3">3de</span>`;
+      html+=`<div class="mmcell time-${time} ${locked?'locked':''}" data-id="${t.id}" ${locked?'':`onclick="selMM('${t.id}')"`}>
+        ${badge}<div class="cn">${esc(t.name)}</div><div class="cf">${esc(t.time)} · ${esc(t.aspect)}</div>
+        <div class="cTl">${timelineSVG(time,aspect)}</div></div>`;
+    }
+  }
+  g.innerHTML=html;
+  if(mmSel && inGrade(byId[mmSel])) applyMMSel(); else { mmSel=null; document.getElementById('mmpanel').innerHTML='<span style="color:var(--dim)">Klik hierboven op een tijd…</span>'; }
+}
+function selMM(id){ mmSel=id; applyMMSel(); }
+function applyMMSel(){
+  const t=byId[mmSel];
+  document.querySelectorAll('.mmcell').forEach(c=>{ c.classList.remove('sel','fam');
+    const o=byId[c.dataset.id]; if(!o) return;
+    if(o.id===t.id) c.classList.add('sel');
+    else if(o.time===t.time || o.aspect===t.aspect) c.classList.add('fam');
+  });
+  const vo = voice==='active'?t.form.active:t.form.passive;
+  document.getElementById('mmpanel').innerHTML=
+    `<h3>${esc(t.name)} <span class="pnl">— ${esc(t.nl_name)}</span></h3>
+     <div style="max-width:380px;margin:8px 0">${timelineSVG(t.time,t.aspect)}</div>
+     <div class="recipe" style="margin:6px 0 4px">${formSlots(vo)}</div>
+     <div style="font-size:12.5px;color:var(--muted);margin-top:10px">${esc(t.relations.note)}</div>
+     <ul class="rel">${t.relations.contrast.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>
+     <div style="margin-top:10px"><button class="btn" onclick="gotoUitleg('${t.id}')">Volledige uitleg →</button></div>`;
+}
+function gotoUitleg(id){ if(byId[id].graad>grade) setGrade(3); setView('uitleg'); const el=document.getElementById('t-'+id); if(el) el.scrollIntoView({behavior:'smooth'}); }
+
+/* ================= VIEW 3 · DECISION TREE ================= */
+function leafTense(time,aspect){ const t=tenseAt(time,aspect); return t?t.id:null; }
+let walk=null;
+function newWalk(){ walk={ stage:'time1', time:null, aspect:null, voice:null, crumbs:[] }; }
+const QS={
+  time1:{q:'Wijst de zin naar de TOEKOMST?', hint:'signalen: will, going to, tomorrow, next week, by 2030, soon…',
+    yes:w=>{w.time='future'; w.crumbs.push(['Tijd','toekomst']); w.stage='dur';},
+    no:w=>{ w.stage='time2'; }},
+  time2:{q:'Gaat het over een AFGELOPEN moment in het verleden?', hint:'signalen: yesterday, last week, in 2010, two years ago, when I was young…',
+    yes:w=>{w.time='past'; w.crumbs.push(['Tijd','verleden']); w.stage='dur';},
+    no:w=>{w.time='present'; w.crumbs.push(['Tijd','heden']); w.stage='dur';}},
+  dur:{q:'Ligt de nadruk op de DUUR — hóé lang iets (al) bezig is/was?', hint:'signalen: for two hours, since Monday, how long, all day (en het duurt voort)',
+    yes:w=>{w.aspect='perfect continuous'; w.crumbs.push(['Aspect','duur → perfect continuous']); w.stage='voice';},
+    no:w=>{ w.stage='perf'; }},
+  perf:{q:'Is de handeling VOLTOOID én verbonden met een ander moment?', hint:'een gevolg nu, of vóór een ander punt · already, just, yet, ever, by then, before',
+    yes:w=>{w.aspect='perfect'; w.crumbs.push(['Aspect','voltooid → perfect']); w.stage='voice';},
+    no:w=>{ w.stage='prog'; }},
+  prog:{q:'Is de handeling BEZIG / tijdelijk op dat moment?', hint:'“aan het …-en” · now, at the moment, while, at 8 o’clock (op dat ogenblik bezig)',
+    yes:w=>{w.aspect='continuous'; w.crumbs.push(['Aspect','bezig → continuous']); w.stage='voice';},
+    no:w=>{w.aspect='simple'; w.crumbs.push(['Aspect','gewoon → simple']); w.stage='voice';}},
+};
+function answer(val){
+  const step=QS[walk.stage];
+  if(walk.stage==='voice'){ walk.voice=val; walk.crumbs.push(['Vorm', val==='active'?'actief':'passief']); finishWalk(); return; }
+  (val==='yes'?step.yes:step.no)(walk);
+  renderEx();
+}
+function answerVoice(v){ walk.voice=v; walk.crumbs.push(['Vorm', v==='active'?'actief':'passief']); finishWalk(); }
+
+/* path phases */
+function qpathHTML(){
+  const timeDone=!!(walk&&walk.time), aspDone=!!(walk&&walk.aspect), voiceDone=(exState==='done');
+  let phase='time';
+  if(walk){ if(walk.stage==='voice') phase='voice'; else if(walk.stage==='dur'||walk.stage==='perf'||walk.stage==='prog') phase='aspect'; }
+  if(voiceDone) phase='done';
+  if(walk) walk._seen = walk._seen || {};
+  const node=(n,lab,done,cur,key)=>{
+    let pop='';
+    if(done && walk && !walk._seen[key]){ walk._seen[key]=true; pop=' pop'; }
+    return `<div class="qnode ${done?'done':''} ${cur?'cur':''}${pop}"><div class="qcirc">${done?'✓':n}</div><div class="qlab">${lab}</div></div>`;
+  };
+  const seg=(f)=>`<div class="qseg ${f?'fill':''}"></div>`;
+  return `<div class="qpath">
+    ${node(1,'Tijd',timeDone,phase==='time','t')}
+    ${seg(timeDone)}
+    ${node(2,'Aspect',aspDone,phase==='aspect','a')}
+    ${seg(aspDone)}
+    ${node(3,'Vorm',voiceDone,phase==='voice','v')}
+  </div>`;
+}
+
+/* practice bank + scoring */
+let pool=[], exIdx=0, exState='q';
+let streak=0, correct=0, attempts=0, best=0, showHints=false;
+/* tiny safe localStorage wrapper (file:// / privacy modes can throw) */
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function buildPractice(){
+  pool=PRACTICE.filter(p=> byId[p.tenseId] && byId[p.tenseId].graad<=grade);
+  shuffleArr(pool);
+  exIdx=0; freshEx=true; renderEx();
+  document.getElementById('exFlt').textContent = grade===2?'enkel 2de-graadstijden':'alle tijden';
+}
+function shuffleArr(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } }
+let freshEx=true;   /* animate the sentence only when a NEW exercise loads */
+function shuffleEx(){ shuffleArr(pool); exIdx=0; walk=null; exState='q'; freshEx=true; renderEx(); }
+function nextEx(){ exIdx=(exIdx+1)%pool.length; freshEx=true; renderEx(); }
+function renderEx(){
+  if(!pool.length){ document.getElementById('exBody').innerHTML='<p style="color:var(--muted)">Geen voorbeelden.</p>'; return; }
+  const p=pool[exIdx];
+  const fr=freshEx; freshEx=false;
+  document.getElementById('exCnt').textContent=`Voorbeeld ${exIdx+1} / ${pool.length}`;
+  if(exState==='q' && !walk) newWalk();
+  const sentBase = showHints ? highlightSignals(p.sentence, (byId[p.tenseId]||{}).signal_words||[]) : esc(p.sentence);
+  const sent=sentBase.replace('___',`<span class="blank"></span>`);
+  let body=`<div class="sentence${fr?' anim':''}">${sent}</div>`;
+  body+=qpathHTML();
+  if(exState==='done'){ body+=resultHTML(p); }
+  else {
+    const step=QS[walk.stage];
+    body+=`<div class="qbox">`;
+    if(walk.stage==='voice'){
+      body+=`<div class="qtext">Is het ONDERWERP de doener of ondergaat het de handeling?</div>
+        <div class="qhint">actief = het onderwerp doet · passief = er wordt iets mét het onderwerp gedaan (be + voltooid deelwoord)</div>
+        <div class="qbtns"><button class="ybtn yes" onclick="answerVoice('active')">Actief</button>
+        <button class="ybtn no" onclick="answerVoice('passive')">Passief</button></div>`;
+    } else {
+      body+=`<div class="qtext">${esc(step.q)}</div><div class="qhint">${esc(step.hint)}</div>
+        <div class="qbtns"><button class="ybtn yes" onclick="answer('yes')">Ja</button>
+        <button class="ybtn no" onclick="answer('no')">Nee</button></div>`;
+    }
+    body+=crumbsHTML();
+    body+=`</div>`;
+  }
+  body+=`<div class="exNav">`;
+  if(exState==='done') body+=`<button class="btn primary" onclick="afterDone()">Volgende voorbeeld →</button>`;
+  else body+=`<button class="btn" onclick="restartWalk()">↺ Opnieuw beginnen</button>`;
+  body+=`<button class="btn" onclick="skipEx()">Overslaan</button></div>`;
+  document.getElementById('exBody').innerHTML=body;
+  updateTreeHighlight();
+  if(fr && view==='boom'){
+    const s=document.querySelector('#exBody .sentence');
+    if(s) requestAnimationFrame(()=>s.scrollIntoView({behavior:'smooth', block:'nearest'}));
+  }
+}
+/* light up the branch of the static tree that matches the current walk */
+function updateTreeHighlight(){
+  const lit=new Set();
+  if(walk){
+    if(walk.time){ lit.add(1); if(walk.time!=='future') lit.add(2); }
+    if(walk.aspect){ lit.add(3); if(walk.aspect!=='perfect continuous'){ lit.add(4); if(walk.aspect==='continuous'||walk.aspect==='simple') lit.add(5); } }
+    if(walk.voice) lit.add(6);
+  }
+  document.querySelectorAll('#treeRef .tnode').forEach(n=>{
+    n.classList.toggle('lit', lit.has(+n.dataset.node));
+  });
+}
+function crumbsHTML(){ if(!walk||!walk.crumbs.length) return ''; return `<div class="crumbs">${walk.crumbs.map(c=>`<span class="crumb">${esc(c[0])}: <b>${esc(c[1])}</b></span>`).join('')}</div>`; }
+function finishWalk(){
+  exState='done';
+  const p=pool[exIdx];
+  const landId=leafTense(walk.time,walk.aspect);
+  const ok = landId===p.tenseId && walk.voice===p.voice;
+  attempts++;
+  let newRecord=false;
+  if(ok){ correct++; streak++; confettiBurst(); if(streak>best){ best=streak; newRecord=true; lsSet('et_best', String(best)); } } else { streak=0; }
+  updateScore(true, newRecord);
+  renderEx();
+}
+function updateScore(pop, newRecord){
+  document.querySelector('#svStreak b').textContent=streak;
+  document.querySelector('#svRecord b').textContent=best;
+  document.querySelector('#scScore b').textContent=correct;
+  document.getElementById('scTotal').textContent=attempts;
+  if(pop){ const el=document.getElementById('scScore'); el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop');
+    if(streak>0){ const sv=document.getElementById('svStreak'); sv.classList.remove('pop'); void sv.offsetWidth; sv.classList.add('pop'); }
+    if(newRecord){ const sr=document.getElementById('svRecord'); sr.classList.remove('pop'); void sr.offsetWidth; sr.classList.add('pop'); } }
+}
+function restartWalk(){ newWalk(); exState='q'; renderEx(); }
+function skipEx(){ exState='q'; walk=null; nextEx(); }
+function afterDone(){ exState='q'; walk=null; nextEx(); }
+function setHintBtn(){
+  const b=document.getElementById('hintBtn'); if(!b) return;
+  b.classList.toggle('on', showHints);
+  b.textContent = '💡 Signaalhints: '+(showHints?'aan':'uit');
+}
+function toggleHints(){ showHints=!showHints; lsSet('et_hints', showHints?'1':'0'); setHintBtn(); if(view==='boom') renderEx(); }
+function verbMorphHTML(p){
+  const letters=Array.from(p.answer).map((ch,i)=>`<span style="animation-delay:${(i*0.045).toFixed(2)}s">${esc(ch)}</span>`).join('');
+  return `<div class="vmorph"><span class="vlab">de vorm</span><span class="vfrom">${esc(p.verb)}</span><span class="varrow">➜</span><span class="vto">${letters}</span></div>`;
+}
+/* which decision(s) diverged from the correct answer? */
+function diagnose(p){
+  const right=byId[p.tenseId];
+  const timeNL={past:'verleden', present:'heden', future:'toekomst'};
+  const out=[];
+  if(walk.time!==right.time)
+    out.push(`<b>Tijd</b>: je koos <b>${esc(timeNL[walk.time]||walk.time)}</b>, maar deze zin speelt in het <b>${esc(timeNL[right.time])}</b>.`);
+  if(walk.aspect!==right.aspect)
+    out.push(`<b>Aspect</b>: je koos <b>${esc(walk.aspect)}</b>, maar het juiste aspect is <b>${esc(right.aspect)}</b>.`);
+  if(walk.voice!==p.voice)
+    out.push(`<b>Vorm</b>: je koos <b>${walk.voice==='active'?'actief':'passief'}</b>, maar het is <b>${p.voice==='active'?'actief':'passief'}</b>.`);
+  return out;
+}
+function resultHTML(p){
+  const landId=leafTense(walk.time,walk.aspect);
+  const land=byId[landId];
+  const ok = landId===p.tenseId && walk.voice===p.voice;
+  const reVerb=new RegExp('\\s*\\(\\s*'+p.verb.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\$&')+'\\s*\\)');
+  const right=byId[p.tenseId];
+  const bare=p.sentence.replace(reVerb,'');
+  const filled=highlightSignals(bare, right.signal_words).replace('___',`<b>${esc(p.answer)}</b>`);
+  const plainFull=bare.replace('___', p.answer);
+  const willGoing = (landId==='future-simple') ? `<div class="nl" style="color:var(--dim)">Tip: <b>will</b> = spontaan besluit/voorspelling/belofte · <b>going to</b> = plan of voorspelling met bewijs.</div>` : '';
+  const why = ok ? '' : `<div class="why"><div class="wh">Waar liep het mis?</div><ul>${diagnose(p).map(m=>`<li>${m}</li>`).join('')}</ul></div>`;
+  return `<div class="result">
+    <div class="lands">Volgens jouw antwoorden kom je uit bij:</div>
+    <div class="tn" style="color:${COL[land?land.time:'present']}">${esc(land?land.name:'?')} · ${walk.voice==='active'?'actief':'passief'}</div>
+    <div class="resTl">${land?timelineSVG(land.time,land.aspect):''}</div>
+    <div class="crumbs" style="margin-top:8px">${walk.crumbs.map(c=>`<span class="crumb">${esc(c[0])}: <b>${esc(c[1])}</b></span>`).join('')}</div>
+    <div class="full">${filled} ${sayBtn(plainFull)}</div>
+    ${verbMorphHTML(p)}
+    <div class="nl">${esc(p.nl||'')}</div>
+    <div class="ans">✔ juiste vorm: ${esc(p.answer)} — <b style="color:var(--ink)">${esc(right.name)}</b> (${p.voice==='active'?'actief':'passief'})</div>
+    ${willGoing}
+    <div class="verdict ${ok?'ok':'no'}">${ok?'✓ Perfect — je boom-antwoord klopt met de juiste tijd!':'↳ Bijna! Je pad sloeg ergens af — hieronder zie je precies waar.'}</div>
+    ${why}
+  </div>`;
+}
+
+/* static tree reference */
+function renderTreeRef(){
+  document.getElementById('treeRef').innerHTML=
+   `<h3>🌳 De beslissingsboom</h3>
+    <div class="tnode" data-node="1"><div class="qq">1. Toekomst?</div><div class="br">Ja → <b>future</b> · Nee → vraag 2</div></div>
+    <div class="tnode" data-node="2"><div class="qq">2. Afgelopen verleden?</div><div class="br">Ja → <b>past</b> · Nee → <b>present</b></div></div>
+    <div class="tindent">
+      <div class="tnode" data-node="3"><div class="qq">3. Nadruk op DUUR (for/since, hoe lang)?</div><div class="br">Ja → <b>perfect continuous</b></div></div>
+      <div class="tnode" data-node="4"><div class="qq">4. VOLTOOID + verbonden met ander moment?</div><div class="br">Ja → <b>perfect</b></div></div>
+      <div class="tnode" data-node="5"><div class="qq">5. BEZIG / tijdelijk op dat moment?</div><div class="br">Ja → <b>continuous</b> · Nee → <b>simple</b></div></div>
+    </div>
+    <div class="tnode" data-node="6"><div class="qq">6. Actief of passief?</div><div class="br">onderwerp doet → <b>actief</b> · onderwerp ondergaat → <b>passief</b> (be + voltooid deelwoord)</div></div>
+    <div style="font-size:11.5px;color:var(--dim);margin-top:10px">Tijd (3) × aspect (4) = 12 tijden, elk in actief én passief = 24 vormen.</div>`;
+}
+
+/* ================= VIEW 4 · VERGELIJK ================= */
+const COMPARE=[
+  { title:'Present Perfect vs Past Simple', cq:'Telt het NU nog, of is het een afgesloten moment?',
+    left:{tenseId:'present-perfect', short:'Present Perfect', ex:'I have lost my keys.', exnl:'Ik ben mijn sleutels kwijt (nu nog).'},
+    right:{tenseId:'past-simple', short:'Past Simple', ex:'I lost my keys yesterday.', exnl:'Ik verloor gisteren mijn sleutels.'},
+    note:{rule:'Past simple = een afgesloten moment mét tijdstip. Present perfect = verleden dat NU nog telt, zonder concreet tijdstip.',
+      body:'Zodra je zegt wanneer iets gebeurde (yesterday, in 2010, two years ago), gebruik je past simple.'},
+    table:[['Tijdstip','niet genoemd — het moment telt niet','genoemd: yesterday, in 2010, ago'],
+           ['Signaalwoorden','already, yet, just, ever, never, since, for','yesterday, last week, ago, in 2010'],
+           ['Kernvraag','Is het resultaat nu nog belangrijk?','Wanneer precies gebeurde het?']] },
+  { title:'Present Simple vs Present Continuous', cq:'Een gewoonte/feit, of NÚ bezig?',
+    left:{tenseId:'present-simple', short:'Present Simple', ex:'She works in Ghent.', exnl:'Ze werkt in Gent (vast, altijd).'},
+    right:{tenseId:'present-continuous', short:'Present Continuous', ex:'She is working from home today.', exnl:'Ze werkt vandaag thuis (tijdelijk, nu).'},
+    note:{rule:'Present simple = gewoonte, feit of routine. Present continuous = bezig op dit moment of tijdelijk.',
+      body:'Let op: state verbs (know, love, want, believe) staan bijna altijd in de simple, ook al gaat het over nu.'},
+    table:[['Betekenis','gewoonte / feit / altijd waar','bezig nu / tijdelijk'],
+           ['Signaalwoorden','always, usually, every day, on Mondays','now, right now, at the moment, today'],
+           ['Kernvraag','Gebeurt dit meestal / in het algemeen?','Ben je er nu mee bezig?']] },
+  { title:'Past Simple vs Past Continuous', cq:'Gebeurde iets op één moment, of was iets BÉZIG?',
+    left:{tenseId:'past-simple', short:'Past Simple', ex:'The lights went out at 8 p.m.', exnl:'De lichten gingen om 8u uit (één moment).'},
+    right:{tenseId:'past-continuous', short:'Past Continuous', ex:'I was watching TV at 8 p.m.', exnl:'Ik was om 8u tv aan het kijken (bezig).'},
+    note:{rule:'Past simple = een korte, afgeronde gebeurtenis. Past continuous = de achtergrond, iets dat al bezig was.',
+      body:'Vaak samen: While I was cooking (achtergrond), the phone rang (onderbreking).'},
+    table:[['Rol in het verhaal','gebeurtenis / onderbreking','achtergrond / al bezig'],
+           ['Signaalwoorden','when, suddenly, then, yesterday','while, as, at 8 o’clock, all evening'],
+           ['Kernvraag','Gebeurde het en was het meteen klaar?','Was het aan de gang op dat moment?']] },
+  { title:'will vs going to', cq:'Een spontaan besluit/voorspelling, of een plan/bewijs?',
+    left:{tenseId:'future-simple', short:'will', label:'will + base verb', form:'will + base verb',
+      ex:'I’ll get it!', exnl:'Ik neem wel op! (spontaan besluit — de telefoon rinkelt).'},
+    right:{tenseId:'future-simple', short:'going to', label:'be going to + base verb', form:'am/is/are + going to + base verb',
+      ex:'Look at those clouds — it’s going to rain.', exnl:'Kijk naar die wolken — het gaat regenen (voorspelling met bewijs).'},
+    note:{rule:'will = beslissing op het moment zelf, voorspelling of belofte. going to = een plan dat je al had, of voorspelling met bewijs dat je nu ziet.',
+      body:'Beide zijn future, maar de keuze zit in de reden: spontaan (will) of vooraf/bewijs (going to).'},
+    table:[['Gebruik','spontaan besluit, belofte, aanbod','plan of intentie, voorspelling met bewijs'],
+           ['Signaal','I think, probably, maybe, I promise','al gepland, look!, zichtbaar bewijs'],
+           ['Voorbeeld','I’ll help you. (nu beslist)','I’m going to visit Rome next month. (gepland)']] },
+  // ---- derde graad ----
+  { title:'Past Perfect vs Past Simple', cq:'Welke gebeurtenis was EERST?',
+    left:{tenseId:'past-perfect', short:'Past Perfect', ex:'The train had left when we arrived.', exnl:'De trein was al vertrokken toen we aankwamen (eerst vertrokken).'},
+    right:{tenseId:'past-simple', short:'Past Simple', ex:'We arrived at the station.', exnl:'We kwamen aan in het station (gewone gebeurtenis).'},
+    note:{rule:'Past simple = een gebeurtenis in het verleden. Past perfect = een gebeurtenis die nóg vroeger was — het verleden vóór het verleden.',
+      body:'Gebruik past perfect om te tonen dat iets al gebeurd was vóór een ander moment in het verleden.'},
+    table:[['Volgorde','de vroegste gebeurtenis','de latere gebeurtenis'],
+           ['Signaalwoorden','already, before, by the time, after','yesterday, then, when, in 2010'],
+           ['Kernvraag','Was dit al gebeurd vóór iets anders?','Wat gebeurde er gewoon in het verleden?']] },
+  { title:'Present Perfect Simple vs Present Perfect Continuous', cq:'Gaat het om het RESULTAAT, of om de DUUR/bezigheid?',
+    left:{tenseId:'present-perfect', short:'Perfect Simple', ex:'I have painted the kitchen.', exnl:'Ik heb de keuken geschilderd (klaar — resultaat).'},
+    right:{tenseId:'present-perfect-continuous', short:'Perfect Continuous', ex:'I have been painting all morning.', exnl:'Ik ben de hele ochtend aan het schilderen (bezig — duur).'},
+    note:{rule:'Present perfect simple = het afgeronde resultaat (hoeveel, klaar). Present perfect continuous = de duur of de bezigheid tot nu (hoe lang).',
+      body:'Continuous hoort vaak bij for/since en how long; simple bij how many/how much of een afgewerkt aantal.'},
+    table:[['Nadruk','resultaat / afgerond','duur / bezig geweest'],
+           ['Signaalwoorden','already, just, yet, ever, how many','for, since, how long, all day, lately'],
+           ['Voorbeeld','I have read three books.','I have been reading all day.']] },
+  { title:'Future Perfect vs Future Simple', cq:'Klaar VÓÓR een deadline, of gewoon in de toekomst?',
+    left:{tenseId:'future-perfect', short:'Future Perfect', ex:'By 6 p.m. I will have finished the report.', exnl:'Tegen 18u zal ik het rapport af hebben (klaar vóór dat moment).'},
+    right:{tenseId:'future-simple', short:'Future Simple', ex:'I will finish the report tomorrow.', exnl:'Ik zal het rapport morgen afmaken (gewoon in de toekomst).'},
+    note:{rule:'Future simple = iets gebeurt in de toekomst. Future perfect = iets zal al áf zijn vóór een bepaald toekomstig moment.',
+      body:'Future perfect kijkt vanuit een punt in de toekomst terug op iets dat dan al gedaan is (by + tijdstip).'},
+    table:[['Betekenis','gebeurt (later)','zal al klaar zijn vóór dan'],
+           ['Signaalwoorden','tomorrow, next week, soon, I think','by then, by 2030, by the time, before'],
+           ['Voorbeeld','I will call you.','By tonight I will have called everyone.']] },
+  { title:'Future Continuous vs Present Continuous (voor toekomst)', cq:'Bezig op een toekomstig moment, of een vast geregeld plan?',
+    left:{tenseId:'future-continuous', short:'Future Continuous', ex:'This time tomorrow I will be flying to Rome.', exnl:'Morgen om deze tijd zal ik naar Rome aan het vliegen zijn (bezig op dat moment).'},
+    right:{tenseId:'present-continuous', short:'Present Continuous (toekomst)', label:'Present Continuous (toekomst)', ex:'I am flying to Rome next Monday.', exnl:'Ik vlieg volgende maandag naar Rome (vast, afgesproken plan).'},
+    note:{rule:'Future continuous = je zult ergens mee bezig zijn op een bepaald toekomstig moment. Present continuous voor de toekomst = een vaste, al geregelde afspraak.',
+      body:'Dezelfde -ing-vorm, maar present continuous gebruik je voor arrangementen die al vastliggen (tickets geboekt, afspraak gemaakt).'},
+    table:[['Betekenis','bezig op dat toekomstige moment','vast geregelde afspraak'],
+           ['Signaalwoorden','this time tomorrow, at 8 tomorrow, all day','tonight, next Monday, at 7 (afgesproken)'],
+           ['Voorbeeld','I will be working at 9.','I am meeting Sam at 9.']] }
+];
+function cmpColHTML(side){
+  const t=byId[side.tenseId]; if(!t) return '';
+  const name=side.label||t.name;
+  const form=side.form||t.form.active;
+  return `<div class="cmpCol time-${t.time}">
+    <div class="cname">${esc(name)} <span class="cbadge">${esc(t.time)} · ${esc(t.aspect)}</span></div>
+    <div class="ctl">${timelineSVG(t.time,t.aspect)}</div>
+    <div class="crecipe">${formSlots(form)}</div>
+    <div class="cex">${esc(side.ex)} ${sayBtn(side.ex)}</div>
+    <div class="cexnl">${esc(side.exnl)}</div>
+  </div>`;
+}
+function renderVergelijk(){
+  const el=document.getElementById('cmpBody'); if(!el) return;
+  const items=COMPARE.filter(c=> byId[c.left.tenseId] && byId[c.right.tenseId] && byId[c.left.tenseId].graad<=grade && byId[c.right.tenseId].graad<=grade);
+  el.innerHTML = items.map(c=>`
+    <div class="cmpCard">
+      <div class="cmpHead"><h3>${esc(c.title)}</h3><div class="cq">${esc(c.cq)}</div></div>
+      <div class="cmpCols">
+        ${cmpColHTML(c.left)}
+        <div class="cmpVs">vs</div>
+        ${cmpColHTML(c.right)}
+      </div>
+      <div class="cmpNote"><span class="rule">${esc(c.note.rule)}</span>${esc(c.note.body||'')}
+        <table class="cmpTable"><tr><th></th><th>${esc(c.left.short)}</th><th>${esc(c.right.short)}</th></tr>
+        ${c.table.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('')}</table>
+      </div>
+    </div>`).join('');
+}
+
+/* ================= CONFETTI ================= */
+const cvs=document.getElementById('confetti'), ctx=cvs.getContext('2d');
+let parts=[], rafOn=false;
+function sizeConfetti(){ cvs.width=window.innerWidth; cvs.height=window.innerHeight; }
+window.addEventListener('resize', sizeConfetti); sizeConfetti();
+function confettiBurst(){
+  const cols=['#cf7526','#0e8db3','#7a4fd0','#1f9d57','#e0a91f','#d6459a'];
+  const cx=window.innerWidth*0.62, cy=window.innerHeight*0.42;
+  for(let i=0;i<90;i++){
+    const ang=Math.random()*Math.PI*2, sp=4+Math.random()*8;
+    parts.push({x:cx,y:cy,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-4,g:0.22+Math.random()*0.1,
+      s:5+Math.random()*6,c:cols[i%cols.length],rot:Math.random()*6.28,vr:(Math.random()-.5)*0.4,life:0,max:70+Math.random()*30});
+  }
+  if(!rafOn){ rafOn=true; requestAnimationFrame(tickConfetti); }
+}
+function tickConfetti(){
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  parts=parts.filter(p=>p.life<p.max);
+  for(const p of parts){
+    p.life++; p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
+    ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.globalAlpha=Math.max(0,1-p.life/p.max);
+    ctx.fillStyle=p.c; ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*0.6); ctx.restore();
+  }
+  if(parts.length){ requestAnimationFrame(tickConfetti); } else { rafOn=false; ctx.clearRect(0,0,cvs.width,cvs.height); }
+}
+
+/* ================= THEME (light / dark) ================= */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  const b=document.getElementById('themeBtn');
+  if(b){ b.textContent = t==='dark'?'☀️':'🌙'; b.title = t==='dark'?'Licht thema':'Donker thema'; }
+}
+function toggleTheme(){
+  const cur=document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light';
+  const nxt=cur==='dark'?'light':'dark';
+  applyTheme(nxt); lsSet('et_theme', nxt);
+}
+function initTheme(){
+  const saved=lsGet('et_theme');
+  const os=(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  applyTheme(saved==='dark'?'dark': saved==='light'?'light': os);
+}
+
+/* ================= KEYBOARD (decision tree) ================= */
+function onKey(e){
+  if(view!=='boom' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag=(e.target&&e.target.tagName)||''; if(tag==='INPUT'||tag==='TEXTAREA') return;
+  const k=e.key.toLowerCase();
+  if(k==='h'){ e.preventDefault(); toggleHints(); return; }
+  if(exState==='done'){
+    if(k==='enter'||k===' '||k==='arrowright'){ e.preventDefault(); afterDone(); }
+    else if(k==='s'){ e.preventDefault(); skipEx(); }
+    return;
+  }
+  if(k==='s'){ e.preventDefault(); skipEx(); return; }
+  if(!walk) return;
+  if(walk.stage==='voice'){
+    if(k==='a'){ e.preventDefault(); answerVoice('active'); }
+    else if(k==='p'){ e.preventDefault(); answerVoice('passive'); }
+  } else {
+    if(k==='j'||k==='y'){ e.preventDefault(); answer('yes'); }
+    else if(k==='n'){ e.preventDefault(); answer('no'); }
+  }
+}
+document.addEventListener('keydown', onKey);
+
+/* ================= INIT ================= */
+initTheme();
+best=parseInt(lsGet('et_best')||'0',10)||0;
+showHints = lsGet('et_hints')==='1';
+renderTreeRef();
+renderAll();
+const svRec=document.querySelector('#svRecord b'); if(svRec) svRec.textContent=best;
+setHintBtn();
+setView('uitleg');
+document.getElementById('foot').innerHTML='English Tenses — The Ultimate Overview · SJB · aanpak geïnspireerd op Murphy, eigen uitleg &amp; voorbeelden · 12 tijden × actief/passief + will/going to.';
+</script>
+</body>
+</html>
